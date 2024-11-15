@@ -16,7 +16,7 @@
 
 import {useData} from 'vitepress'
 import {useSidebar} from 'vitepress/theme'
-import {extractLinks} from './function.ts'
+import {extractLinks,formatTimestamp} from './function.ts'
 
 // 获取当前侧边栏数据
 const { sidebar } = useSidebar();
@@ -24,7 +24,8 @@ const links = extractLinks(sidebar.value);
 
 links.forEach(item => {
     const {page}  = useData(item.link)
-    console.log(item.link + "\t" + page.value.lastUpdated)
+    var update = formatTimestamp(page.value.lastUpdated)
+    console.log(update + "\t" + item.link)
 })
 
 
