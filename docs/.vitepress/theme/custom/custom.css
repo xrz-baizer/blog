@@ -1,0 +1,19 @@
+/* .vitepress/theme/custom.css */
+/*
+ 自定义样式，覆盖默认主题样式
+ */
+:root {
+    /*!* 主题基色 *!*/
+    /*--vp-c-brand-1: #f5439c;*/
+    /*!* 鼠标悬浮时 *!*/
+    /*--vp-c-brand-2: #f96fb4;*/
+    /*--vp-c-brand-3: #f5439c;*/
+}
+
+
+h1,h2{
+    margin-left: -20px !important;
+}
+h3{
+    margin-left: -10px !important;
+}
