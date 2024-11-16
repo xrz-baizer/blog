@@ -2,18 +2,90 @@
 /*
  自定义样式，覆盖默认主题样式
  */
-:root {
-    /*!* 主题基色 *!*/
-    /*--vp-c-brand-1: #f5439c;*/
-    /*!* 鼠标悬浮时 *!*/
-    /*--vp-c-brand-2: #f96fb4;*/
-    /*--vp-c-brand-3: #f5439c;*/
-}
 
+/*h1 {*/
+/*    background: -webkit-linear-gradient(10deg, #bd34fe 5%, #e43498 15%);*/
+/*    background-clip: text;*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*}*/
 
-h1,h2{
+h1, h2 {
     margin-left: -20px !important;
 }
-h3{
+
+h3 {
     margin-left: -10px !important;
 }
+
+
+/* Markdown引用符号样式 */
+.vp-doc blockquote {
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px 10px;
+    position: relative;
+    background-color: var(--vp-c-gray-soft);
+    border-left: 3px solid var(--vp-c-green-2);
+}
+.vp-doc p {
+    margin: 0;
+}
+
+/* 侧边栏 标题样式*/
+.VPSidebarItem.level-1 .text{
+    font-weight: 600 !important;
+    font-size: .9rem;
+}
+
+:root {
+    /* 主题基色 */
+    --vp-c-brand-1: #18794e;
+    --vp-c-brand-2: #299764;
+    --vp-c-brand-3: #30a46c;
+
+    /* 首页下滑后导航透明 */
+    .VPNavBar:not(.has-sidebar):not(.home.top) {
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(10px);
+    }
+
+    /* 搜索框透明 */
+    .DocSearch-Button {
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(10px);
+    }
+
+    /* Feature透明 */
+    .VPFeature {
+        border: none;
+        box-shadow: 0 10px 30px 0 rgb(0 0 0 / 15%);
+        background-color: transparent;
+    }
+
+    /* 文档页侧边栏顶部透明 */
+    .curtain {
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(10px);
+    }
+
+    @media (min-width: 960px) {
+
+        /* 文档页导航中间透明 */
+        .VPNavBar:not(.home.top) .content-body {
+            background-color: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+        }
+    }
+
+    /* 移动端大纲栏透明 */
+    .VPLocalNav {
+        background-color: rgba(255, 255, 255, 0);
+        backdrop-filter: blur(10px);
+    }
+}
+.dark {
+    --vp-c-brand-1: #3dd68c;
+    --vp-c-brand-2: #30a46c;
+    --vp-c-brand-3: #298459;
+}
+

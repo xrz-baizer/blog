@@ -1,17 +1,43 @@
+import {PageData} from 'vitepress'
 
 type Item = {
-    text: string;
-    link?: string;
+    text: string; // 文件名
+    link?: string; // html文件路径
     items?: Item[];
     collapsed?: boolean;
 };
 
-/**
- * 提前侧边栏所有文章路径信息
- * @param items
- */
-export function extractLinks(items: Item[]): { text: string; link: string }[] {
-    let result: { text: string; link: string }[] = [];
+export interface Article extends PageData,Item {
+    lastUpdatedFormat: string;
+    formePart: string;
+}
+
+export function getRecentArticles(items: Item[],num: number): Article[] {
+    let result: Article[] = [];
+    // 获取侧边栏所有路径
+    let paths: any[] = extractLinks(items);
+
+    // 转换pageData
+    paths.forEach(item => {
+        let page = getPageDataByPath(item.link);
+        if (page?.lastUpdated) {
+            result.push({
+                ...page,
+                ...item,
+                // formePart: , //提取文件内存
+                lastUpdatedFormat: formatTimestamp(page.lastUpdated) //日期重新格式化
+            });
+        }
+    })
+
+    // 排序：根据 lastUpdated 时间戳降序排列
+    result.sort((a, b) => b.lastUpdated - a.lastUpdated);
+
+    // 提取前14条
+    return result.slice(0, num);
+}
+export function extractLinks(items: Item[]): Item[] {
+    let result: Item[] = [];
 
     items.forEach(item => {
         if (item.link) {
@@ -26,6 +52,16 @@ export function extractLinks(items: Item[]): { text: string; link: string }[] {
     });
 
     return result;
+}
+export function getPageDataByPath(path: string) : Article {
+    // 动态加载所有 Markdown 文件
+    let pages = import.meta.glob('/**/*.md', { eager: true });
+
+    // 将路径中的 .html 替换为 .md
+    let mdPath = path.replace(/\.html$/, '.md');
+
+    // 查找匹配的 Markdown 文件
+    return pages[mdPath].__pageData;
 }
 
 export function formatTimestamp(timestamp: number): string {

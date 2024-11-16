@@ -2,6 +2,21 @@
 
 ## 服务器准备
 
+```sh
+cat >> /etc/hosts <<EOF
+116.205.134.46  cloudserver
+EOF
+```
+
+--- java
+
+public void test(){
+ // 什么
+}
+
+
+---
+
 > 购买的华为云服务：
 >
 > - 116.205.134.46  root/Root321!

@@ -1,32 +1,28 @@
 <template>
-    <div v-for="(article, index) in links" :key="index" class="post-list">
+    <div v-for="(article, index) in recentArticles" :key="index" class="post-list">
         <div class="post-header">
             <div class="post-title">
-                <a :href="article.link"> {{ article.link }}</a>
+                <a :href="article.link"> {{ article.text }}</a>
+                <div class='post-info'>
+                    {{ article.lastUpdatedFormat }}
+                </div>
             </div>
         </div>
-        <p class="describe" v-html="article.text"></p>
-<!--        <div class='post-info'>-->
-<!--            {{ article.frontMatter.date }} <span v-for="item in article.frontMatter.tags"><a :href="withBase(`/pages/tags.html?tag=${item}`)"> {{ item }}</a></span>-->
-<!--        </div>-->
+        <p class="describe" v-html="article.filePath"></p>
     </div>
 </template>
 
 <script lang="ts" setup>
-
-import {useData} from 'vitepress'
+import {PageData} from 'vitepress'
 import {useSidebar} from 'vitepress/theme'
-import {extractLinks,formatTimestamp} from './function.ts'
+import {getRecentArticles,Article} from './function.ts'
 
 // 获取当前侧边栏数据
 const { sidebar } = useSidebar();
-const links = extractLinks(sidebar.value);
+// 提取最近 14篇文章
+const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
 
-links.forEach(item => {
-    const {page}  = useData(item.link)
-    var update = formatTimestamp(page.value.lastUpdated)
-    console.log(update + "\t" + item.link)
-})
+
 
 
 </script>
