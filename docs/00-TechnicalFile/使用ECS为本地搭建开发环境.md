@@ -1,7 +1,3 @@
----
-sidebar: false
----
-
 # 使用ECS为本地搭建开发环境
 
 ## 服务器准备
@@ -30,7 +26,7 @@ public void test(){
 
 - 查询本机IP地址：https://ip111.cn/
 
-<img src="Other/Image/image-20241029182512603.png" alt="image-20241029182512603"/>
+<img src="/lotus.png" alt="image-20241029182512603"/>
 
 #### 本地配置
 
@@ -184,7 +180,7 @@ docker images | grep [NAME]
 - 查看容器使用资源：`docker stats`、`docoker stats <container>`
   - **MEM USAGE / LIMIT**：显示当前内存使用量和限制值。
   - **MEM %**：当前内存使用占设定限制的百分比。
-  - ![image-20241029181426963](Other/Image/image-20241029181426963.png)
+  - ![image-20241029181426963](/lotus.png)
 
 ####  run 命令参数介绍
 

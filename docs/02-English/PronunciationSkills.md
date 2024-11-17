@@ -1,3 +1,5 @@
+# 发音技巧
+
 博客园笔记：https://www.cnblogs.com/Wizard-Z/p/14279943.html
 
 ChatGPT整理：https://chatgpt.com/c/6ac100b8-46ec-4d88-a53c-f1801f8761c9

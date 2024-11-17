@@ -73,22 +73,27 @@ export default {
       return route.path === '/00-TechnicalFile/' || route.path === '/02-English/';
     };
 
+    // 在客户端环境中使用 MutationObserver ，避免构建失败
+    if (typeof window !== 'undefined') {
 
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes') {
-          const element = mutation.target as HTMLElement;
-          if (!isIndexPage() && element.classList.contains('VPNavBar') && element.classList.contains('has-sidebar')) {
-            element.classList.remove('has-sidebar');
+      // 解决滚动正文时has-sidebar类移除失败的问题
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'attributes') {
+            const element = mutation.target as HTMLElement;
+            if (!isIndexPage() && element.classList.contains('VPNavBar') && element.classList.contains('has-sidebar')) {
+              element.classList.remove('has-sidebar');
+            }
           }
-        }
+        });
       });
-    });
 
-    observer.observe(document.body, {
-      attributes: true, // 监听属性变化
-      subtree: true, // 监听所有子元素
-    });
+      observer.observe(document.body, {
+        attributes: true, // 监听属性变化
+        subtree: true, // 监听所有子元素
+      });
+    }
+
 
 
     onMounted(() => {

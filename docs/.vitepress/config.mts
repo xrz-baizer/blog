@@ -18,8 +18,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'English Leaning', link: '/02-English/' },
-      { text: 'Technical Article', link: '/00-TechnicalFile/' },
+      { text: 'TechnicalArticles', link: '/00-TechnicalFile/' },
+      { text: 'EnglishLeaning', link: '/02-English/' },
     ],
 
     socialLinks: [

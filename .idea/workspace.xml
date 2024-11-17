@@ -5,108 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/docs/.vitepress/cache/deps/medium-zoom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vitepress/cache/deps/medium-zoom.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Update.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/cache/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/cache/deps/_metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/JVM参数调优和故障排查.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/JVM的内存管理.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Java线程池.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Java锁机制.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Java集合.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/20-MySQL/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/1-SpringIOC与循环依赖.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/2-SpringAOP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/3-Spring的事物管理.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/4-Spring事件机制.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/5-SpringMVC.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/6-SpringBoot2.x.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/50-Microservise/RocketMQ.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/50-Microservise/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/80-Solution/秒杀系统设计.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/80-Solution/缓存同步方案.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/中台上线方案.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/常用解决方案.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/服务监控方案.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/百果园业务模式.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/线上问题整理.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/通用操作日志记录方案.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Algorithm.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/InternetArticle.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Interview/InterviewQuestions.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Interview/InterviewingSkills.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Interview/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Arthas基本操作.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515090939489-2100195140.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515090952266-752518221.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515091003954-293407786.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515091018431-830709339.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/B+树索引图.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/JVM组织结构图.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/MySQL主从同步过程.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/SQL执行过程.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213033355.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213059838.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213329784.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213823385.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017214812328.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241018105554455.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241029181426963.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241029182512603.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030222050522.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030222309879.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030222549921.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030223339094.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030224358935.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030230147082.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030230355305.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030230441909.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030231930157.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031120342738.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031120357097.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031215702450.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031215907792.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031222156131.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031224314347.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031224544567.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031224957228.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031232232958.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241101121538089.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241104170311922.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241104181014194.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241104182006189.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241108073157265.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/prototype-bean-7921285.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/spring.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/供应链主流程图.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/百果园数字化八大平台.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/线程池的执行流程.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/配送业务流程.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/采购业务流程.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/销售业务流程.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/集合分类.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/RemoteX_ 远程指南&amp;入门教程.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/blog.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/使用ECS为本地搭建开发环境.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/使用ECS为本地搭建开发环境.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/图灵-语雀.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/文章结构模板.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/有道笔记.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Summary.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/other/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/other/test.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/使用ECS为本地搭建开发环境.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/使用ECS为本地搭建开发环境.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/02-English/PronunciationSkills.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/PronunciationSkills.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,14 +84,14 @@
       <recent name="$PROJECT_DIR$/docs/02-English" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/02-English" />
+      <recent name="$PROJECT_DIR$/docs/00-TechnicalFile" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme/custom" />
       <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/docs/public" />
-      <recent name="$PROJECT_DIR$/docs/02-English" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.preview">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -199,8 +102,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="preview" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.preview" />
         <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
@@ -219,7 +133,8 @@
       <workItem from="1731652378223" duration="11899000" />
       <workItem from="1731675126872" duration="27382000" />
       <workItem from="1731763197896" duration="7469000" />
-      <workItem from="1731815978344" duration="17231000" />
+      <workItem from="1731815978344" duration="18310000" />
+      <workItem from="1731846182741" duration="466000" />
     </task>
     <servers />
   </component>
