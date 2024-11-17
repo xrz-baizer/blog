@@ -34,6 +34,10 @@ export default {
     const route = useRoute();
     const frontmatter = useData();
 
+    const hiddenAside = () => {
+      console.log()
+    };
+
     const initZoom = () => {
       mediumZoom('.main img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
     };
@@ -59,6 +63,31 @@ export default {
       }
     };
 
+    // 当只有一级标题时 隐藏目录
+    const toggleAsideVisibility = () => {
+      // 查找页面中是否有 h2 标签
+      const hasH2Tag = document.querySelectorAll('h2').length > 0;
+      // 获取目标元素
+      const asideElement = document.querySelector('.VPDoc .aside');
+      // const contentContainerElement = document.querySelector('.VPDoc.has-aside .content-container');
+      // const contentElement = document.querySelector('#VPContent .content');
+
+      if (asideElement) {
+        if (hasH2Tag) {
+          asideElement.style.display = '';
+        } else {
+          asideElement.style.display = 'none';
+          // contentContainerElement.style.maxWidth = '100%';
+          // contentElement.style.maxWidth = '1260px !important';
+        }
+      }
+    };
+
+    // 在页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', () => {
+      toggleAsideVisibility();
+    });
+
     // 判断是否是 index.md 页面
     const isIndexPage = () => {
       return route.path === '/00-TechnicalFile/' || route.path === '/02-English/';
@@ -67,8 +96,8 @@ export default {
     // 在客户端环境中使用 MutationObserver ，避免构建失败
     if (typeof window !== 'undefined') {
 
-      // 解决滚动正文时has-sidebar类移除失败的问题
       const observer = new MutationObserver((mutations) => {
+      // 解决滚动正文时has-sidebar类移除失败的问题
         mutations.forEach((mutation) => {
           if (mutation.type === 'attributes') {
             const element = mutation.target as HTMLElement;
@@ -77,6 +106,8 @@ export default {
             }
           }
         });
+
+        toggleAsideVisibility();
       });
 
       observer.observe(document.body, {
@@ -84,8 +115,6 @@ export default {
         subtree: true, // 监听所有子元素
       });
     };
-
-
 
     onMounted(() => {
       toggleSidebar(isIndexPage());

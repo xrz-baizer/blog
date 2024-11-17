@@ -18,7 +18,7 @@ const date = computed(
 
 <style >
 .LastUpdated {
-    margin-top: 8px;
+    margin-top: -30px;
     margin-left: -10%;
     font-size: .9rem;
     float: right;

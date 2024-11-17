@@ -2,6 +2,46 @@
 
 ## Other
 
+## 查看提交日志
+
+**查看当前分支日志**	`git log`
+
+**查看当前分支日志 一行展示**	`git log -- oneline`
+
+**查看当前分支日志详情**	`git log -p`
+
+**查看指定分支日志详情** `git log [branch-name] -p`
+
+> 翻页：`b`/`f`     上一页/下一页
+
+## 创建分支
+
+**根据当前分支创建副本**	`git checkout -b [new-branch-name]`
+
+**根据指定分支创建副本**	`git checkout -b [new-branch-name] [branch-name]`
+
+**切换分支**	`git checkout [branch-name]`
+
+**清除当前缓冲区的内容**	`git checkout -f`
+
+**强制切换分支（会清除当前缓冲区的内容）**	`git checkout -f [branch-name]`
+
+## 查看分支
+
+**查看本地分支**	`git branch`
+
+**查看远程分支**	`git branch -r`
+
+**查看所有分支**	`git branch -a`
+
+## 删除分支
+
+**强制删除本地分支**	`git branch -D [branch-name]`
+
+**删除远程分支**	`git push origin --delete [branch-name]`
+
+**清除所有本地分支，除了（production）**	`git branch | grep -v 'production' | xargs git branch -D`
+
 #### 回退commit
 > 想修改上一次的commit信息可以用这个
 

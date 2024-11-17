@@ -50,7 +50,7 @@ h2 {
     /*background-color: #f8f8fe;*/
     /*background-color: #e6f6e6;*/
     background-color: #fafafa;
-    border-left: 4px solid var(--vp-c-green-2);
+    border-left: 2px solid var(--vp-c-green-2);
     border-radius: 8px;
 }
 
