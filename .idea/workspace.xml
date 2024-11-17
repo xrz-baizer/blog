@@ -5,230 +5,106 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vitepress/cache/deps/medium-zoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vitepress/cache/deps/medium-zoom.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Update.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/cache/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/cache/deps/_metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/1.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/2019年《学位英语》考试真题.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/2020年《学位英语》考试真题.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/2023年深圳大学高等教育学士学位英语水平考试样卷及参考答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2016年《学位英语》考试真题.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2016年《学位英语》考试真题参考答案.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2017年《学位英语》考试真题.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2017年《学位英语》考试真题参考答案.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2018年《学位英语》考试真题.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2018年《学位英语》考试真题参考答案.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2019年《学位英语》考试真题.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2019年《学位英语》考试真题参考答案.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2020年《学位英语》考试真题.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/2020年《学位英语》考试真题参考答案.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/附件1. 2023年深圳大学成人高等教育学士学位英语水平考试介绍.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/ExaminationPaper/附件2. 2023年深圳大学成人高等教育学士学位英语水平考试样卷及参考答案.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/不规则动词.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/常用介词短语.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/真题近义词.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/真题选项词.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/考前资料.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/阅读真题.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/DegreeEnglish/附件2. 2023年深圳大学成人高等教育学士学位英语水平考试样卷及参考答案.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/Self testing.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/Writing.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/2019年10月历年真题--英语（二）.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/2019年10月历年真题--英语（二）答案.doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二)2204试卷(1).doc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2015年4月历年试卷.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2015年4月历年试卷答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2018年10月历年真题.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2018年10月历年真题答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2018年4月历年真题.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2018年4月历年真题答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2019年04月历年真题.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2019年04月历年真题答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2020年10月历年真题.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2020年10月历年真题答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2020年8月历年真题.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2020年8月历年真题答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2021年10月历年真题及答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）2021年4月历年真题.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）全真模拟题1.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）全真模拟题1答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）押题一及答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）押题三及答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）押题二及答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/往年真题/英语（二）押题四及答案.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/必备900.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnglishTwo/高频1800.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyApp-Record.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyApp-Record.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyEnglish-1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyEnglish-2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyEnglish-3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/audios/02c3e5c4ae9e6e6609b73d209e2b1e17.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/audios/21e51daa32b90d29fcc81e5e714c3669.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/audios/23a76312e85db0275fe141cb1191a404.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/audios/3f35bca7389329d9aaf53d2e51cd269d.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/audios/4d86359f7e528b9c50e24dce89fddd52.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/audios/75f7f88652c28d1651809a7ea212e60d.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/audios/9cbdf96ed715ccdf6e93e7b40c167229.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/backup/enjoy_database.sqlite.1731229499550" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/enjoy_database.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/recordings/2e521f064a78115961e5afc6c00b1de5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/recordings/4ce68ad99d22dbb1473b4675a70010bd.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/recordings/564991652bd4626088b089a170557018.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/00ef90c326449a6f662c061ffc7dc653.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/01b7a3bcaff20531e3b20ab6f4c20e2b.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/0235b7e617a16011a732a97d48b42e95.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/0886f85103bc9403169825fc68317171.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/0a1fcb023fc03b53f1acd6efc87cd3a0.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/11c7674d052da10230ab2fe03e0967bd.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/122c8e8193a0e7c04423f145d9d3d4d5.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/124656dd1dafb73af2b94a47cefb3cc6.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/142638060256cf0cc45c3f98c958c97a.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/17329c4bf0037cd0c100a562537193df.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/195b094657b5c3383fb7f141d0db34f1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/1d010670f17cb1fb3643b6cd0904b61f.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/1d4a85bc1833c7876facd8eff5649204.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/1ef8f1d11e224f12f31d64d7e2809fe0.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/1f137d205694afadd47b0b7c6402d76d.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/2cb14c8ffbb7680f7f0b4d4169e81ef5.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/36d48bf287d0be369b5450875c1f82e3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/3be11770e1df866c5af9aaf5b2970e07.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/478e2a9620358b2ffbad9358c63ed05f.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/4a2b46ad819308b34a7f293f155bb29d.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/4a9d3ac383ce40cccd9f38a7e2e0aebe.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/4e49cd816f48fc87972a513995070925.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/50cc2a027ba7308ce1caced9e266d861.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/513061a55f2ad7624fd3a1f78c56259b.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/514229f212f3b812d50a365bad5a4dc9.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/532d9471112f6fcafeff226418984e16.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/53f8aa5572ce9377d41b313549976171.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/54d6ce8cdf5e5ab1550406795e1a566a.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5add0e84f42f21828655cc1c9726e5f7.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5af57d2622885958a53196ee423da821.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5b9aec31d20d2b529321b3f10be96fe3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5c7e404e69a21003a8973d501f09adfa.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5ccb9d9bd94bb9ab6406968f0d4749a7.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5d6463a10682e99504dd5cfe62e6e8cf.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5f351be832bb3635a06c372027c4e2f1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/5fc17e2cd39a20928f4108854634cdb7.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/61407c8ae960a3067b3ff13bd16ae3cb.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/6423a1c8ed662879cbfd35901b44d257.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/67bb96c27a44d86763cff14bf1f31d0e.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/6a5c0e401eb176a2efed197283f4863c.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/6a7760a1ee432de3833f24b0ac63044a.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/6dd3a8ce4f7cec73ca2a199067ca9a6d.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/6f32ab4893cb6c46a344dea801aac141.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/729db285a9ee42b2bc843279e98702b2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/7ab1ea912206574cce08a408b634feff.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/7c42efd97892a299abf878b292ef059e.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/7d83251a07f8f309438d1e57e463e525.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/843b67b043b30450c2b99822ecb9526e.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/8b7b268a6af47eccca220914ac63ba67.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/8b7b548547a7694696bc849949f17479.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/8cce8f85ffbcf2b0dca9bbabea9d3c4e.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/8f5988d7a54ed7e6224d8e17280541d7.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/93c5cb73a1dc3cb47bfdd8df24afc4da.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/93c60ce8e4269cf21c9697589125ed59.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/961bbb395f58d15a13eef29f89786cdf.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/96d51251411f0b969b3bd54e5b87defe.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/9a98bad8642ce6af40d1861757fc4a3d.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/9e9ae2320e7ac70da5f0d2d843cbdf8f.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/a2a301ef4e354b49c006a7c2336d0fc1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/ad18fc74414430640de02128023bdf20.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/ae5666ad20636bbf763166b6cbae3dfc.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/c076d3b1b71ac9b4ab700d076db152ef.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/c14acee0cc6260699aa4db69faf5306c.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/c6d00fbf7028019a7b5a924489ccd51f.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/caacaa25eee8c966219d247d6579e3ab.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/d015e456405f1d21895a9af90c93c21e.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/d8ba413a6d647b095d3714a9dc915cf5.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/dc1054273bd1c5efd9a8f27789dfb600.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/ea6d64a3ce525d66c08c02bfcb949293.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/f083e9fa85a19a2d5fbf45239a46153b.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/f138d4834a62084c6324e8d16744f99c.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/f4a1482747bf593abf39638f65cd5ee9.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/f4ec4953dc77a9e04523f2d181a4fcb7.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/f8e5d9a9449b954fe0ab8d85081d4cf9.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/24009702/segments/fe3769c9d06866fa16ed0d9be77a3733.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/02c3e5c4ae9e6e6609b73d209e2b1e17.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/066d5d01c2ea382a363302b692ccd365.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/0895230447a6f53e419c3aba4d310809.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/21e51daa32b90d29fcc81e5e714c3669.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/23a76312e85db0275fe141cb1191a404.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/331d44cbe3584724f2b1d31af487fab7.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/3f35bca7389329d9aaf53d2e51cd269d.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/4338b9bc6e47e4029a9d53356bd702c2.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/4d86359f7e528b9c50e24dce89fddd52.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/75f7f88652c28d1651809a7ea212e60d.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/9cbdf96ed715ccdf6e93e7b40c167229.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/b2e943e16835978278050ff942c83974.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/EnjoyLibrary/waveforms/ba722310274fec20377ca8ac031b1f5b.waveform.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/Original-Text.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/1.getting up/Lucy1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/1.getting up/Lucy11dialogregular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/1.getting up/Lucy12dialogregular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/1.getting up/Lucy13dialogregular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/1.getting up/Lucy1dialogregular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/1.getting up/Lucy1dialogslow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/10/Lucy10.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/10/Lucy101normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/10/Lucy102normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/10/Lucy10normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/10/Lucy10slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/2.cleaning up/Lucy2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/2.cleaning up/Lucy21regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/2.cleaning up/Lucy22regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/2.cleaning up/Lucy23regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/2.cleaning up/Lucy2regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/2.cleaning up/Lucy2slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/3/Lucy3.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/3/Lucy31regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/3/Lucy32regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/3/Lucy33regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/3/Lucy3regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/3/Lucy3slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/4/Lucy4.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/4/Lucy41regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/4/Lucy42regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/4/Lucy4regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/4/Lucy4slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/5/Lucy5.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/5/Lucy51normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/5/Lucy52normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/5/Lucy5normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/5/Lucy5slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/6/Lucy6.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/6/Lucy61regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/6/Lucy62regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/6/Lucy6regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/6/Lucy6slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/7/Lucy7.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/7/Lucy71regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/7/Lucy72regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/7/Lucy7regular.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/7/Lucy7slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/8/Lucy8.mp3.baiduyun.p.downloading" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/8/Lucy81normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/8/Lucy82normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/8/Lucy83normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/8/Lucy8normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/8/Lucy8slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/9/Lucy9.mp3.baiduyun.p.downloading" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/9/Lucy91normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/9/Lucy92normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/9/Lucy9normal.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/9/Lucy9slow.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/原文.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/EnjoyEnglish/露西的一天/字幕文件.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/JVM参数调优和故障排查.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/JVM的内存管理.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Java线程池.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Java锁机制.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Java集合.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/10-JavaStandardEdition/Summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/20-MySQL/Summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/1-SpringIOC与循环依赖.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/2-SpringAOP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/3-Spring的事物管理.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/4-Spring事件机制.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/5-SpringMVC.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/6-SpringBoot2.x.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/30-Spring5.x/Summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/50-Microservise/RocketMQ.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/50-Microservise/Summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/80-Solution/秒杀系统设计.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/80-Solution/缓存同步方案.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/Summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/中台上线方案.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/常用解决方案.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/服务监控方案.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/百果园业务模式.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/线上问题整理.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/90-Work/通用操作日志记录方案.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Algorithm.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/InternetArticle.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Interview/InterviewQuestions.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Interview/InterviewingSkills.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Interview/Summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Arthas基本操作.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515090939489-2100195140.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515090952266-752518221.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515091003954-293407786.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/1473551-20220515091018431-830709339.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/B+树索引图.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/JVM组织结构图.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/MySQL主从同步过程.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/SQL执行过程.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213033355.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213059838.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213329784.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017213823385.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241017214812328.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241018105554455.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241029181426963.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241029182512603.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030222050522.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030222309879.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030222549921.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030223339094.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030224358935.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030230147082.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030230355305.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030230441909.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241030231930157.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031120342738.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031120357097.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031215702450.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031215907792.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031222156131.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031224314347.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031224544567.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031224957228.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241031232232958.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241101121538089.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241104170311922.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241104181014194.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241104182006189.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/image-20241108073157265.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/prototype-bean-7921285.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/spring.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/供应链主流程图.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/百果园数字化八大平台.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/线程池的执行流程.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/配送业务流程.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/采购业务流程.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/销售业务流程.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Image/集合分类.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/RemoteX_ 远程指南&amp;入门教程.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/blog.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/使用ECS为本地搭建开发环境.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/使用ECS为本地搭建开发环境.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/图灵-语雀.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/文章结构模板.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/有道笔记.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/Summary.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/02-English/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/双语阅读/RocketMQ-4.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/双语阅读/RocketMQ-4.0.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/双语阅读/TheNights.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/双语阅读/TheNights.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/双语阅读/阅读清单.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/双语阅读/阅读清单.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/02-English/other/test.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/other/test.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -271,7 +147,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2orpeSdxiXUrd1tVr6MdkhU7cs1" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -279,24 +155,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/Work/Pagoda/this/Blog/docs/.vitepress/theme",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "yarn",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.36206895",
-    "settings.editor.selected.configurable": "settings.typescriptcompiler",
-    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Work/Pagoda/this/Blog/docs/.vitepress/theme&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.36206895&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme" />
@@ -341,15 +217,31 @@
       <workItem from="1731644567004" duration="2652000" />
       <workItem from="1731652262440" duration="110000" />
       <workItem from="1731652378223" duration="11899000" />
-      <workItem from="1731675126872" duration="24408000" />
+      <workItem from="1731675126872" duration="27382000" />
+      <workItem from="1731763197896" duration="7469000" />
+      <workItem from="1731815978344" duration="17231000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/docs/00-TechnicalFile" />
+    </ignored-roots>
     <MESSAGE value="init" />
     <option name="LAST_COMMIT_MESSAGE" value="init" />
   </component>

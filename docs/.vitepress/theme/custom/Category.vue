@@ -3,12 +3,11 @@
         <div class="post-header">
             <div class="post-title">
                 <a :href="article.link"> {{ article.text }}</a>
-                <div class='post-info'>
-                    {{ article.lastUpdatedFormat }}
-                </div>
             </div>
+            <span>{{ article.filePath }}</span>
+<!--            <span>{{ article.lastUpdatedFormat }}</span>-->
         </div>
-        <p class="describe" v-html="article.filePath"></p>
+        <p class="describe" v-html="article.lastUpdatedFormat"></p>
     </div>
 </template>
 
@@ -28,9 +27,23 @@ const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
 </script>
 
 <style scoped>
+
+span{
+    color: var(--vp-c-text-2);
+}
+/*!* 针对 VitePress 默认侧边栏 *!*/
+/*.VPSidebar {*/
+/*    display: block;*/
+/*}*/
+
+/*:root{*/
+/*    --vp-sidebar-width:275px !important;*/
+/*}*/
+
+
 .post-list {
     border-bottom: 1px dashed var(--vp-c-divider-light);
-    padding: 14px 0 14px 0;
+    padding: 5px 0;
 }
 .post-header {
     display: flex;
@@ -38,7 +51,7 @@ const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
     justify-content: space-between;
 }
 .post-title {
-    font-size: 1.125rem;
+    font-size: 1.225rem;
     font-weight: 500;
     margin: 0.1rem 0;
 }
@@ -50,7 +63,7 @@ const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
     -webkit-line-clamp: 3;
     overflow: hidden;
     color: var(--vp-c-text-2);
-    margin: 10px 0;
+    margin-bottom: 10px;
     line-height: 1.5rem;
 }
 

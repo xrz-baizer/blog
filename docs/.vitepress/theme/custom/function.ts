@@ -24,7 +24,7 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
             result.push({
                 ...page,
                 ...item,
-                // formePart: , //提取文件内存
+                // formePart: , //提取文件内容
                 lastUpdatedFormat: formatTimestamp(page.lastUpdated) //日期重新格式化
             });
         }
@@ -65,7 +65,9 @@ export function getPageDataByPath(path: string) : Article {
 }
 
 export function formatTimestamp(timestamp: number): string {
+    if (!timestamp) return null;
     const date = new Date(timestamp);
+    if (isNaN(date.getTime())) return null;
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从0开始，需加1
     const day = String(date.getDate()).padStart(2, '0');
@@ -74,4 +76,15 @@ export function formatTimestamp(timestamp: number): string {
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+export function formatTimestampY(timestamp: number): string {
+    if (!timestamp) return null;
+    const date = new Date(timestamp);
+    if (isNaN(date.getTime())) return null;
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // 月份从0开始，需加1
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
 }

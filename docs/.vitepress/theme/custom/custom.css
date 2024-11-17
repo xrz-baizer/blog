@@ -2,34 +2,136 @@
 /*
  自定义样式，覆盖默认主题样式
  */
+body.no-sidebar .sidebar {
+    display: none;
+}
+body.no-sidebar .content {
+    margin-left: 0;
+}
 
-/*h1 {*/
-/*    background: -webkit-linear-gradient(10deg, #bd34fe 5%, #e43498 15%);*/
-/*    background-clip: text;*/
-/*    -webkit-background-clip: text;*/
-/*    -webkit-text-fill-color: transparent;*/
-/*}*/
+.VPNavBarTitle .title {
+    font-size: 20px !important;
+    background: var(--vp-home-hero-name-background);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: var(--vp-home-hero-name-color);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
 
 h1, h2 {
     margin-left: -20px !important;
 }
 
-h3 {
-    margin-left: -10px !important;
+h2 {
+   margin-top: 20px !important;
+   margin-bottom: 20px !important;
+   border-top: none !important;
 }
+
+.vp-doc h3 {
+    margin-left: -10px !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
 
 
 /* Markdown引用符号样式 */
 .vp-doc blockquote {
+
+    color: var(--vp-c-text-2);
     border-radius: 0px 10px 10px 0px;
     padding: 10px 10px;
     position: relative;
-    background-color: var(--vp-c-gray-soft);
-    border-left: 3px solid var(--vp-c-green-2);
+    /*background-color: var(--vp-c-gray-soft);*/
+    /*background-color: #f8f8fe;*/
+    /*background-color: #e6f6e6;*/
+    background-color: #fafafa;
+    border-left: 4px solid var(--vp-c-green-2);
+    border-radius: 8px;
 }
+
+mark {
+    background: none; /* 去除默认的黄色背景 */
+    color: red; /* 设置文字为红色 */
+    /*font-weight: bold; !* 可选：加粗文字 *!*/
+}
+
+/* 行级代码样式 */
+.vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code{
+    color: #d9702b;
+    /*font-weight: 500;*/
+    background: #f8f9fa;
+}
+
+/* 块代码样式 */
+.vp-doc code {
+    font-weight: bold;
+}
+
+
+.vp-doc div[class*='language-'] {
+    background-color: #f8f8fe !important;
+}
+
+.vp-doc :lang(zh) {
+    letter-spacing: 0.2em !important; /* 中文字符的间距 */
+}
+
+
 .vp-doc p {
     margin: 0;
 }
+
+.vp-doc a {
+    color: #1769e0;
+    text-decoration: none;
+}
+.vp-doc a:hover {
+    text-decoration: underline;
+}
+
+/* 隐藏最下面的更新时间 */
+.VPLastUpdated{
+    display: none;
+}
+
+/* 针对 VitePress 默认侧边栏 */
+.VPSidebar {
+    /*display: none;*/
+    background-color: #f8f8fe!important;
+    overflow-y: auto; /* 保留滚动功能 */
+    scrollbar-width: none; /* 针对 Firefox 隐藏滚动条 */
+}
+
+/*:root{*/
+/*    --vp-sidebar-width:0px;*/
+/*}*/
+
+/* 针对 Webkit 浏览器（如 Chrome, Edge, Safari） */
+.VPSidebar::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+}
+
+.outline-marker{
+    width: 4px !important;
+}
+
+
+
+/* 图片层级 */
+.medium-zoom-overlay {
+    z-index: 30;
+}
+
+.medium-zoom-image {
+    box-shadow: 1px 2px 5px #0006;
+    z-index: 9999 !important;/* 给的值是21，但是实测盖不住，直接999 */
+}
+
 
 /* 侧边栏 标题样式*/
 .VPSidebarItem.level-1 .text{
@@ -37,11 +139,17 @@ h3 {
     font-size: .9rem;
 }
 
+/* 导航栏样式 */
+.VPNavBarMenuLink{
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+}
+
 :root {
     /* 主题基色 */
     --vp-c-brand-1: #18794e;
-    --vp-c-brand-2: #299764;
-    --vp-c-brand-3: #30a46c;
+    --vp-c-brand-2: var(--vp-c-indigo-2);
+    --vp-c-brand-3: var(--vp-c-indigo-2);
 
     /* 首页下滑后导航透明 */
     .VPNavBar:not(.has-sidebar):not(.home.top) {
@@ -88,4 +196,6 @@ h3 {
     --vp-c-brand-2: #30a46c;
     --vp-c-brand-3: #298459;
 }
+
+
 

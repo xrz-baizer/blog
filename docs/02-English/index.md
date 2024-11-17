@@ -5,8 +5,8 @@ aside: false
 prev: false
 next: false
 lastUpdated: false
+showSidebar: true
 ---
 
-# English页面一级标题
-
+# Recent English Learning Notes
 <category/>

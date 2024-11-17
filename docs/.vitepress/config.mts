@@ -1,19 +1,19 @@
 import { defineConfig } from 'vitepress'
 import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar'
 import taskLists from 'markdown-it-task-lists';
-
+import markdownItMark from 'markdown-it-mark';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "花有重开日",
+  title: "Baizer白泽",
   titleTemplate: ':title | Baizer', //:title 为md文件一级标题
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   // head: [['link', { rel: "icon", type: "image/png", sizes: "72x72", href: "/xrz.png"}]],
-
+  appearance: false,
   themeConfig: {
 
     // logo: '/xrz.png',
-    logo: '/lotus.svg',
+    // logo: '/lotus.svg',
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -27,13 +27,14 @@ export default defineConfig({
     ],
 
     outline:{
-      level: [1,4],  //配置所有文章目录显示的深度
+      level: [2,4],  //配置所有文章目录显示的深度
+      // label: '',  // On this page
     },
     search: {
       provider: 'local' //开启本地搜索
     },
     lastUpdated: {  //设置最后更新时间样式
-      text: 'Updated at',
+      // text: 'Updated at',
       formatOptions: {
         year: 'numeric',
         month: '2-digit',
@@ -48,8 +49,7 @@ export default defineConfig({
     footer: { // 页脚版权信息
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2019-present Evan You'
-    }
-
+    },
   },
   lastUpdated: true,  //显示最后更新时间
   markdown: {
@@ -58,6 +58,7 @@ export default defineConfig({
     },
     config: (md) => {
       md.use(taskLists); // 启用任务列表插件
+      md.use(markdownItMark); // 启用 ==标记== 的解析
     },
     theme: { // 样式挑选： https://shiki.style/themes
       light: 'catppuccin-latte',

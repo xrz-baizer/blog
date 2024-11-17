@@ -4,7 +4,8 @@ aside: false
 prev: false
 next: false
 lastUpdated: false
+showSidebar: true
 ---
-# Technical Articles List
+# Recent Technical Articles
 <category/>
 
