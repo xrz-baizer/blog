@@ -22,7 +22,7 @@ const { sidebar } = useSidebar();
 const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
 
 
-
+// console.log(sidebar.value)
 
 </script>
 

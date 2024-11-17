@@ -5,11 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/CICD/CICD - Jenkins实现.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/CICD/Docker安装和基本使用.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/CICD/Jenkins安装和基本使用.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/CICD/Mysql安装和基本使用.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/CICD/Nexus安装和基本使用.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/CICD/No plugin found for prefix 'docker' in the current project and in the plugin groups.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/CICD/项目环境区分.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Kubernetes/Kubectl的基本使用.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Kubernetes/Kubernetes中的日志管理（EFK）.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Kubernetes/Kubernetes中的服务发现.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Kubernetes/Kubernetes单机版部署.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Kubernetes/Kubernetes安装和基本使用.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Kubernetes/kubernetes之配置域名访问.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/MacOS/Apache Bench（Mac自带的压力测试工具）.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/MacOS/Mac多屏切换鼠标的神器——CatchMouse.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/MacOS/使用Mac SSH连接 WIN10虚拟机上的CentOS系统.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Git常用操作.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/IDEA 2023.1 破解.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/IDEA 搜索优化.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/IDEA项目文件滑动有卡顿 解决（Mac M1Pro）.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/RocetMQ事务消息与延迟消息冲突的问题.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/Windows Defender内核隔离无法关闭，提示此设置由管理员进行管理.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/order by导致where中索引失效的问题.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/select for update.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/微信APP授权登录.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Other/阿里云OSS图片上传.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Web/Mac中配置前端开发环境.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Web/Vue3+TypeScript的基本使用（1）.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Web/Vue3+TypeScript的基本使用（2）.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/Web/Vue3+TypeScript的基本使用（3）部署上线.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/使用ECS为本地搭建开发环境.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/使用ECS为本地搭建开发环境.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/02-English/PronunciationSkills.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-English/PronunciationSkills.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/使用ECS为本地搭建开发环境.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,26 +85,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Work/Pagoda/this/Blog/docs/.vitepress/theme&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.36206895&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/Work/Pagoda/this/Blog/docs/00-TechnicalFile",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "yarn",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.36206895",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/00-TechnicalFile" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme" />
       <recent name="$PROJECT_DIR$/docs/public" />
       <recent name="$PROJECT_DIR$/docs" />
@@ -134,7 +162,8 @@
       <workItem from="1731675126872" duration="27382000" />
       <workItem from="1731763197896" duration="7469000" />
       <workItem from="1731815978344" duration="18310000" />
-      <workItem from="1731846182741" duration="466000" />
+      <workItem from="1731846182741" duration="1158000" />
+      <workItem from="1731851453977" duration="236000" />
     </task>
     <servers />
   </component>

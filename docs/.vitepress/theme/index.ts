@@ -25,19 +25,10 @@ export default {
     // 注册全局组件
     app.component('category', Category);
 
-    router.onAfterRouteChanged = () => {
-      let data = router.route.data;
-
-      // data.frontmatter.sidebar = false;
-
-      // route.data.frontmatter = false
-      // sidebar: false
-      // console.log(route.data.frontmatter)
-      // if (route.path.startsWith('/')) {
-      //   // 假设所有 doc 页面路径以 "/" 开头
-      //   route.meta.sidebar = true;
-      // }
-    };
+    // router.onAfterRouteChanged = () => {
+    //   let data = router.route.data;
+    //
+    // };
   },
   setup() {
     const route = useRoute();
@@ -92,7 +83,7 @@ export default {
         attributes: true, // 监听属性变化
         subtree: true, // 监听所有子元素
       });
-    }
+    };
 
 
 
