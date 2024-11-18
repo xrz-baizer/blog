@@ -25,7 +25,7 @@ echo "代码提交并推送成功。"
 
 # 移动文件到目标目录
 echo "==========>移动文档到 Blog 项目中..."
-rsync -av --delete "$REPO_PATH/notes/" "$BLOG_PATH/docs/"
+rsync -av --delete "$REPO_PATH/notes/" "$BLOG_PATH/docs1/"
 rsync -av --delete "$REPO_PATH/00-TechnicalFile/" "$BLOG_PATH/docs/00-TechnicalFile/"
 rsync -av --delete "$REPO_PATH/01-Essay/" "$BLOG_PATH/docs/01-Essay/"
 rsync -av --delete "$REPO_PATH/02-English/" "$BLOG_PATH/docs/02-English/"
