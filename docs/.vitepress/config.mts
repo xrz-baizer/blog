@@ -17,7 +17,7 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Essay', link: '/01-Essay/' },
       { text: 'TechnicalArticles', link: '/00-TechnicalFile/' },
       { text: 'EnglishLeaning', link: '/02-English/' },
     ],

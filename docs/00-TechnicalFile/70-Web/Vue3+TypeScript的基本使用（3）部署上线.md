@@ -2,7 +2,7 @@
 
 ## 前言
 
-继上一篇：https://www.cnblogs.com/xurongze/p/16060288.html
+继上一篇：[Vue3+TypeScript的基本使用（2）](./Vue3+TypeScript的基本使用（2）.md)
 
 部署项目至Kubernetes上，实现通过域名访问整体服务
 
@@ -27,7 +27,7 @@ module.exports = defineConfig({
 
 执行`yarn build`命令进行打包，生成dist文件
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222053969-373985226.png)
+![](../../Image/1473551-20220328222053969-373985226.png)
 
 
 打开index.html即可测试访问项目
@@ -77,7 +77,7 @@ kubectl --namespace default patch deployments $PROJECT_NAME -p '{"spec": {"templ
 
 相关参考之前文章
 
-> CICD - JenKins实现：https://www.cnblogs.com/xurongze/p/15834553.html
+[CICD - Jenkins实现.md](../60-DevOps/CICD/CICD%20-%20Jenkins实现.md)
 
 ### 配置环境
 
@@ -101,20 +101,20 @@ npm config set registry https://registry.npmmirror.com
 
 **配置git仓库信息**
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222109395-745142613.png)
+![](../../Image/1473551-20220328222109395-745142613.png)
 
 
 **设置执行shell**
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222120147-34300054.png)
+![](../../Image/1473551-20220328222120147-34300054.png)
 
 
 **Build Now**
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222129337-595646924.png)
+![](../../Image/1473551-20220328222129337-595646924.png)
 
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222138682-419922462.png)
+![](../../Image/1473551-20220328222138682-419922462.png)
 
 
 第一次会构建失败，因为`deployer.sh`中有更新Kubernetes的命令，而上面又没有这个项目，不过这次构建的目的是为了推送镜像至阿里镜像仓库
@@ -123,14 +123,14 @@ npm config set registry https://registry.npmmirror.com
 
 新项目第一次需要手动新增
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222156343-354609607.png)
+![](../../Image/1473551-20220328222156343-354609607.png)
 
 
 **名称**与Jenkins任务名称和镜像仓库名称保持一致
 
 **容器端口**开放内部nginx的80端口
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222206225-1238614987.png)
+![](../../Image/1473551-20220328222206225-1238614987.png)
 
 
 通过http://master:32044访问项目
@@ -138,14 +138,14 @@ npm config set registry https://registry.npmmirror.com
 ## 配置域名访问
 
 域名、Ingress相关配置参考之前文章
-
-> 后端项目配置域名访问：https://www.cnblogs.com/xurongze/p/15932717.html
-
+ 
+> 后端项目配置域名访问：[kubernetes之配置域名访问](../60-DevOps/Kubernetes/4-kubernetes之配置域名访问.md)
+ 
 ### 调整项目端口
 
 调整项目端口映射的网络模式，更改为集群内部访问，后续通过Ingress暴露出去
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222218984-818943946.png)
+![](../../Image/1473551-20220328222218984-818943946.png)
 
 
 
@@ -155,7 +155,7 @@ npm config set registry https://registry.npmmirror.com
 
 #### 通过Rancher调整
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222229747-1391615882.png)
+![](../../Image/1473551-20220328222229747-1391615882.png)
 
 
 #### 通过Yaml方式调整
@@ -197,7 +197,7 @@ spec:
 
 在master上执行`kubectl apply -f user-ingress.yaml`应用配置
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222241913-518265336.png)
+![](../../Image/1473551-20220328222241913-518265336.png)
 
 
 ## 测试
@@ -206,8 +206,8 @@ spec:
 
 https://user.xurongze.com
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222337027-26614474.png)
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220328222414847-1423375075.png)
+![](../../Image/1473551-20220328222337027-26614474.png)
+![](../../Image/1473551-20220328222414847-1423375075.png)
 
 ## 其它
 

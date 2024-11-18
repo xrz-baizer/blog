@@ -44,12 +44,12 @@ update test_xrz set price = 14 where id = 2; # waiting...
 
 **事物B`for update`和 `update`语句会一直等待**
 
-![](https://img2022.cnblogs.com/blog/1473551/202208/1473551-20220831093604181-738389175.png)
+![](../Image/1473551-20220831093604181-738389175.png)
 
 
 **提交事务A**
 
-![](https://img2022.cnblogs.com/blog/1473551/202208/1473551-20220831093620684-125945015.png)
+![](../Image/1473551-20220831093620684-125945015.png)
 
 
 **事务A提交后事务B`for update`和 `update`语句才会执行**

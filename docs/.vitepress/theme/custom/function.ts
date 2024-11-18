@@ -61,7 +61,8 @@ export function getPageDataByPath(path: string) : Article {
     let mdPath = path.replace(/\.html$/, '.md');
 
     // 查找匹配的 Markdown 文件
-    return pages[mdPath].__pageData;
+
+    return pages[mdPath] ? pages[mdPath].__pageData : null;;
 }
 
 export function formatTimestamp(timestamp: number): string {

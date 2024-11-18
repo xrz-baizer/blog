@@ -2,7 +2,7 @@
 
 ## 前言
 
-继上一篇：https://www.cnblogs.com/xurongze/p/16047085.html
+继上一篇：[Vue3+TypeScript的基本使用（1）](./Vue3+TypeScript的基本使用（1）.md)
 
 使用`localStorage`简单完善登录的逻辑
 

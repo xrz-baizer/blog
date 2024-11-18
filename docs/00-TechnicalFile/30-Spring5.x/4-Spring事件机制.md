@@ -94,7 +94,7 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 <img src="../../Image/image-20241030222050522.png" alt="image-20241030222050522" style="zoom:50%;" />
 
 对应`SimpleApplicationEventMulticaster#multicastEvent`广播器广播事件，内部通过`AbstractApplicationEventMulticaster#getApplicationListeners`获取事件对应的监听器
-<img src="../Other/Image/image-20241030222309879.png" alt="image-20241030222309879" style="zoom:50%;" />
+<img src="../../Image/image-20241030222309879.png" alt="image-20241030222309879" style="zoom:50%;" />
 
 再循环执行监听器的`onApplicationEvent`方法
 ![image-20241030222549921](../../Image/image-20241030222549921.png)

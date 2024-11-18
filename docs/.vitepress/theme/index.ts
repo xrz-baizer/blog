@@ -21,6 +21,11 @@ export default {
       // 'aside-top': () => h(Update)
     })
   },
+
+  // enhanceApp
+  // 这是在 Vue 3 中用于增强应用的一个钩子函数。
+  // 它通常在应用初始化时被调用，可以用来注册全局组件、插件或修改 Vue 实例。
+  // 通过 enhanceApp，开发者可以在应用启动前执行一些配置或初始化操作。
   enhanceApp({ app, router, siteData }) {
     // 注册全局组件
     app.component('category', Category);
@@ -30,6 +35,11 @@ export default {
     //
     // };
   },
+
+  // setup 是 Vue 3 引入的一个组合式 API 函数。
+  // 它在组件实例创建之前被调用，可以用来定义组件的响应式数据、计算属性、方法等。
+  // setup 函数返回的对象中的属性和方法将自动暴露给模板使用。
+  // 使用 setup 可以更灵活地管理组件的逻辑，支持更好的代码组织和复用。
   setup() {
     const route = useRoute();
     const frontmatter = useData();
@@ -90,7 +100,7 @@ export default {
 
     // 判断是否是 index.md 页面
     const isIndexPage = () => {
-      return route.path === '/00-TechnicalFile/' || route.path === '/02-English/';
+      return route.path === '/00-TechnicalFile/' || route.path === '/01-Essay/' || route.path === '/02-English/';
     };
 
     // 在客户端环境中使用 MutationObserver ，避免构建失败

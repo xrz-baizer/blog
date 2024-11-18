@@ -136,7 +136,7 @@ scp -r ./  root@master:~/user.xurongze.com
 kubectl create secret tls https-user --key user.xurongze.com.key --cert user.xurongze.com.crt
 ```
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220224171754208-2063494523.png)
+![](../../../Image/1473551-20220224171754208-2063494523.png)
 
 
 

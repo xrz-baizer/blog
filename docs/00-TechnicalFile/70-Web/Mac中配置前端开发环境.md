@@ -101,8 +101,7 @@ vue create user-web
 `Unit Testing`：支持单元测试
 `E2E Testing`： 支持 E2E 测试
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220301093001799-710935100.png)
-
+![](../../Image/1473551-20220301093001799-710935100.png)
 后续选项全部为Y或者回车（最后选项为是否保留当前配置）
 
 相关解释可参考：https://xiabing.blog.csdn.net/article/details/119945472
@@ -114,7 +113,7 @@ cd user-web
 npm run serve
 ```
 
-![](https://img2022.cnblogs.com/blog/1473551/202203/1473551-20220301093014710-1447898251.png)
+![](../../Image/1473551-20220301093014710-1447898251.png)
 
 ### 项目配置
 

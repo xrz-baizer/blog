@@ -1,10 +1,10 @@
-# Kubernetes单机版部署
+# Kubernetes单机版部署（K3S）
 
 ## 前言
 
 仅记录部署**单机版K8S**的流程，用于测试实验
 
-- 集群版的部署流程：https://www.cnblogs.com/xurongze/articles/15756399.html
+- 集群版的部署流程：[Kubernetes安装和基本使用](./1-Kubernetes安装和基本使用.md)
 - K3S官网：https://docs.k3s.io/
 
 ## 准备配置
@@ -18,7 +18,7 @@
 
 ### 服务器配置
 
-安装Docker：https://www.cnblogs.com/xurongze/articles/15756738.html
+安装Docker：[Docker安装和基本使用](../CICD/Docker安装和基本使用.md)
 
 ```sh
 # 调整命令行字符颜色（防止眼瞎）
@@ -96,7 +96,7 @@ kubectl get node -o wide
 
 ## 基本使用
 
-kubectl：https://www.cnblogs.com/xurongze/p/17377559.html
+kubectl：[Kubectl的基本使用](./Kubectl的基本使用.md)
 
 ### 创建命名空间
 

@@ -3,10 +3,10 @@
 ## 前言
 
 前置：
-- [Kubernetes安装和基本使用](https://www.cnblogs.com/xurongze/p/15756399.html)
-- [CICD-Jenkins实现](https://www.cnblogs.com/xurongze/p/15834553.html)
-- [项目环境区分](https://www.cnblogs.com/xurongze/p/15854509.html)
-- [Kubernetes中的服务发现](https://www.cnblogs.com/xurongze/p/15873188.html)
+- [Kubernetes安装和基本使用](./1-Kubernetes安装和基本使用.md)
+- [CICD-Jenkins实现](../CICD/CICD%20-%20Jenkins实现.md)
+- [CICD-项目环境区分](../CICD/CICD%20-%20项目环境区分.md)
+- [Kubernetes中的服务发现](./2-Kubernetes中的服务发现.md)
 
 在Kubernetes上的微服务架构系统上接入EFK日志系统。
 
@@ -559,14 +559,14 @@ kubkubectl apply -f filebeat-kubernetes.yaml
 
 上Rancher或者通过`kubectl get ds -n kube-system -owide`命令查看启动状态
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174330756-610943159.png)
+![](../../../Image/1473551-20220213174330756-610943159.png)
 
 
 ## 测试
 
 ### 先调用提前准备的项目生成日志
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174158828-1679797723.png)
+![](../../../Image/1473551-20220213174158828-1679797723.png)
 
 
 ### 确认日志输出
@@ -574,7 +574,7 @@ kubkubectl apply -f filebeat-kubernetes.yaml
 - 直接在rancher上查看
 - 在工作节点的`/var/lib/docker/containers/`目录查看
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174342203-1101726749.png)
+![](../../../Image/1473551-20220213174342203-1101726749.png)
 
 
 ###  在Kibana上查看
@@ -583,15 +583,15 @@ kubkubectl apply -f filebeat-kubernetes.yaml
 
 提示先创建索引（默认生成一个`filebeat-*`索引）
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174357732-1106416900.png)
+![](../../../Image/1473551-20220213174357732-1106416900.png)
 
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174410175-281434682.png)
+![](../../../Image/1473551-20220213174410175-281434682.png)
 
 
 搜索指定内容
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174420363-1586131974.png)
+![](../../../Image/1473551-20220213174420363-1586131974.png)
 
 
 ## 日志打印优化
@@ -633,19 +633,19 @@ logtube:
 
 输出log文件名格式为`[env].[info or warn or error].[项目名].log`（后续用于生成索引）
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174437352-709956303.png)
+![](../../../Image/1473551-20220213174437352-709956303.png)
 
 
 ### Kuberentes调整
 
 直接上Rancher调整对应的项目，增加主机路径映射
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174448093-1251080048.png)
+![](../../../Image/1473551-20220213174448093-1251080048.png)
 
 
 在node节点上查看/logs/xlog目录
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174500221-1164444743.png)
+![](../../../Image/1473551-20220213174500221-1164444743.png)
 
 
 ### Filebeat调整
@@ -948,26 +948,26 @@ metadata:
 ```
 script选择的是 javascript，根据输出日志的格式进行测试
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174540028-660879230.png)
+![](../../../Image/1473551-20220213174540028-660879230.png)
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174551637-1158402266.png)
+![](../../../Image/1473551-20220213174551637-1158402266.png)
 
 
 `kubectl apply -f filebeat-kuberentes.yaml`重新部署一下即可
 
 如果只是单纯修改filebeat.yml可以直接上rancher的config中进行调整，save后重新部署filebeat即可
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174608031-1270521217.png)
+![](../../../Image/1473551-20220213174608031-1270521217.png)
 
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174620120-759945901.png)
+![](../../../Image/1473551-20220213174620120-759945901.png)
 
 
 ### Kibana配置索引
 
 运行测试接口后，在kibana页面中Elasticsearch索引管理中就可以看到对应的索引了
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174633222-968426395.png)
+![](../../../Image/1473551-20220213174633222-968426395.png)
 
 
 新增索引模式
@@ -982,16 +982,16 @@ script选择的是 javascript，根据输出日志的格式进行测试
 
 `test-x-access-*`
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174647887-141040113.png)
+![](../../../Image/1473551-20220213174647887-141040113.png)
 
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174705674-942527360.png)
+![](../../../Image/1473551-20220213174705674-942527360.png)
 
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174715172-828042259.png)
+![](../../../Image/1473551-20220213174715172-828042259.png)
 
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174724800-1237023583.png)
+![](../../../Image/1473551-20220213174724800-1237023583.png)
 
 
 ### 查看效果
@@ -1012,18 +1012,18 @@ public UserDTO getById(@PathVariable Long userId){
 
 `test-info-*`
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174741900-1808304510.png)
+![](../../../Image/1473551-20220213174741900-1808304510.png)
 
 
 `test-err-*`
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174751324-176191795.png)
+![](../../../Image/1473551-20220213174751324-176191795.png)
 
 
 通过CRID查询调用链
 
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174801223-1614977974.png)
+![](../../../Image/1473551-20220213174801223-1614977974.png)
 
 
 ### 日志中文乱码
@@ -1037,7 +1037,7 @@ ADD ${JAR_NAME}/ms-starter/target/${JAR_NAME}.jar app.jar
 ENTRYPOINT ["java", "-jar","-Dfile.encoding=UTF-8","-Dsun.jnu.encoding=UTF-8","/app.jar"]
 ```
 
-![](https://img2022.cnblogs.com/blog/1473551/202202/1473551-20220213174824383-733936225.png)
+![](../../../Image/1473551-20220213174824383-733936225.png)
 
 
 ## 总结
