@@ -7,8 +7,10 @@ if [ -z "$1" ]; then
 fi
 
 # 定义变量
-REPO_PATH="/Users/Work/Pagoda/temp"
-BLOG_PATH="/Users/Work/Pagoda/temp"
+REPO_PATH="/Users/xrz/Library/Mobile\ Documents/com~apple~CloudDocs/KnowledgeRepository"
+BLOG_PATH="/Users/Work/Pagoda/this/Blog"
+# 同步的文件夹
+SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
 REMOTE_SERVER="root@cloudserver"
 REMOTE_PATH="/app"
 
@@ -25,8 +27,6 @@ echo "代码提交并推送成功。"
 
 # 移动文件到目标目录
 echo "==========>移动文档到 Blog 项目中..."
-# 定义需要同步的目录
-SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
 
 for DIR in "${SYNC_DIRS[@]}"; do
   if [ -d "$REPO_PATH/$DIR" ]; then
