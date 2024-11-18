@@ -25,15 +25,17 @@ echo "代码提交并推送成功。"
 
 # 移动文件到目标目录
 echo "==========>移动文档到 Blog 项目中..."
-rsync -av --delete "$REPO_PATH/notes/" "$BLOG_PATH/docs1/"
-rsync -av --delete "$REPO_PATH/00-TechnicalFile/" "$BLOG_PATH/docs/00-TechnicalFile/"
-rsync -av --delete "$REPO_PATH/01-Essay/" "$BLOG_PATH/docs/01-Essay/"
-rsync -av --delete "$REPO_PATH/02-English/" "$BLOG_PATH/docs/02-English/"
-rsync -av --delete "$REPO_PATH/Image/" "$BLOG_PATH/docs/Image/"
-if [ $? -ne 0 ]; then
-  echo "文件移动失败，请检查！"
-  exit 1
-fi
+# 定义需要同步的目录
+SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
+
+for DIR in "${SYNC_DIRS[@]}"; do
+  if [ -d "$REPO_PATH/$DIR" ]; then
+    rsync -av --delete  "$REPO_PATH/$DIR/" "$BLOG_PATH/$DIR/"
+    echo "$DIR 文件同步成功。"
+  else
+    echo "源目录 $REPO_PATH/$DIR 不存在，跳过同步。"
+  fi
+done
 echo "文档移动成功。"
 
 # 进入 Blog 项目目录并构建静态文件
