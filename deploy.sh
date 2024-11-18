@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 检查是否传递提交备注
+# 检查是否传递提交备注 1
 if [ -z "$1" ]; then
   echo "请提供提交备注，例如：git deploy '本次提交备注'"
   exit 1
