@@ -32,7 +32,7 @@ for DIR in "${SYNC_DIRS[@]}"; do
 done
 echo "知识库文章同步完成。"
 
-echo "==========> 开始提交代码..."
+echo "==========> 开始提交并推送GitHub中..."
 cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
 git add .
 git commit -m "$COMMIT"
@@ -41,17 +41,17 @@ if [ $? -ne 0 ]; then
   echo "Git 提交或推送失败，请检查！"
   exit 1
 fi
-echo "代码提交并推送成功。"
+echo "提交并推送成功。"
 
-## 构建静态文件
-#echo "==========> 开始构建静态文件..."
-#cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
-#yarn build
-#if [ $? -ne 0 ]; then
-#  echo "静态文件构建失败，请检查！"
-#  exit 1
-#fi
-#echo "静态文件构建成功。"
+# 构建静态文件
+echo "==========> 开始构建静态文件..."
+cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+yarn build
+if [ $? -ne 0 ]; then
+  echo "静态文件构建失败，请检查！"
+  exit 1
+fi
+echo "静态文件构建成功。"
 
 # 上传静态文件到云服务器
 echo "==========> 上传静态文件到云服务器..."
