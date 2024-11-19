@@ -151,6 +151,9 @@ mark {
     --vp-c-brand-2: var(--vp-c-indigo-2);
     --vp-c-brand-3: var(--vp-c-indigo-2);
 
+    /* 侧边栏 宽度 */
+    --vp-sidebar-width: 345px;
+
     /* 首页下滑后导航透明 */
     .VPNavBar:not(.has-sidebar):not(.home.top) {
         background-color: rgba(255, 255, 255, 0);

@@ -103,14 +103,14 @@
 
   ```sh
   #!/bin/bash
-
+  
   #获取jenkins环境变量
   PROJECT_NAME=${JOB_NAME%%-*}
   PROJECT_ENV=${JOB_NAME#*.}
-
+  
   REGISTRY_PRE="registry.cn-shenzhen.aliyuncs.com/xurongze"
   IMAGES_NAME="${REGISTRY_PRE}/${PROJECT_NAME}:${PROJECT_ENV}-${BUILD_NUMBER}"
-
+  
   echo "================================================================构建镜像"
   docker build --build-arg JAR_NAME="${PROJECT_NAME}" -t $IMAGES_NAME  -f dm-$PROJECT_NAME/dm-$PROJECT_NAME-web/Dockerfile .
   echo "================================================================推送镜像"

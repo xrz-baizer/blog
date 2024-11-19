@@ -33,6 +33,88 @@
 
 部署方式有很多种，最终选择本地编写脚本的方式部署，因为本地的各种环境已经搭建好，而且有自己有云服务器，所以只要构建好静态文件推送到服务器即可。
 
+### 服务器准备
+
+在根目录/下创建app文件夹，创建nginx.conf配置文件
+
+- `/app`用于存放Vitepres构建的静态文件
+- `/nginx.conf`参考Vitepress提供的配置文件，不过需要做一些调整，否则会出现各种问题
+  - Vitepress提供Nginx配置文件：https://vitepress.dev/zh/guide/deploy#nginx
+
+完整nginx.conf配置如下：
+
+```
+
+# 设置并行CPU核心数，在轻量级应用或单核环境中：可以设置为 1。
+worker_processes 1;
+
+events {
+    # 定义每个 worker_process 可以同时处理的最大连接数。默认值1024
+    worker_connections 1024;
+}
+
+http {
+
+    # 确保JavaScript文件被服务器识别为js文件
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    server {
+        gzip on;
+        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        listen 80;
+        server_name _;
+        index index.html;
+
+        location / {
+            # 静态文件目录
+            root /app;
+
+            # exact matches -> reverse clean urls -> folders -> not found
+            try_files $uri $uri.html $uri/ =404;
+
+            # non existent pages
+            error_page 404 /404.html;
+
+            # a folder without index.html raises 403 in this setup
+            error_page 403 /404.html;
+
+            # adjust caching headers
+            # files in the assets folder have hashes filenames
+            location ~* ^/assets/ {
+                expires 1y;
+                add_header Cache-Control "public, immutable";
+            }
+        }
+    }
+}
+
+```
+
+安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx
+
+- 注意挂载目录的路径
+
+设置编码格式：（解决上传的静态文件名中文乱码的问题）
+
+```sh
+# 使用cat <<EOF >快速写入
+cat <<EOF >/etc/locale.conf
+LANG=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+EOF
+
+# 配置刷新
+source /etc/locale.conf
+
+# 检查当前服务器的语言环境 
+locale
+```
+
+
+
+
 ### 编写deploy.sh
 
 `REPO_PATH`是本地编写文章的知识库目录。（放置iCloud中多重保险）
@@ -54,57 +136,6 @@ alias deploy-blog="/Users/Work/Pagoda/this/Blog/deploy.sh"
 ```
 
 在任意处执行`deploy-blog`即可发布博客
-
-### 服务器准备
-
-安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./使用ECS为本地搭建开发环境.md) 中的#部署Nginx
-
-安装上传工具rsync：
-
-```sh
-# yam 安装
-yum install -y rsync
-
-# 查看版本
-rsync --version
-```
-
-设置编码格式：（解决上传的静态文件名中文乱码的问题）
-
-```sh
-# 检查当前服务器的语言环境 
-locale
-
-# 设置环境变量并且导出到子进程
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-```
-
-
-
-
-
-
-
-![image-20241119175634506](../Image/image-20241119175634506.png)
-
-```sh
-curl -I http://116.205.134.46/assets/index.md.Dv2cWUd1.lean.js
-HTTP/1.1 200 OK
-Server: nginx/1.27.2
-Date: Tue, 19 Nov 2024 09:55:18 GMT
-Content-Type: text/plain
-Content-Length: 194
-Last-Modified: Tue, 19 Nov 2024 04:04:54 GMT
-Connection: keep-alive
-ETag: "673c0e66-c2"
-Expires: Wed, 19 Nov 2025 09:55:18 GMT
-Cache-Control: max-age=31536000
-Cache-Control: public, immutable
-Accept-Ranges: bytes
-```
-
-
 
 
 
