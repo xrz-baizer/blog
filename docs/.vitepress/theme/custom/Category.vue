@@ -4,10 +4,10 @@
             <div class="post-title">
                 <a :href="article.link"> {{ article.text }}</a>
             </div>
-            <span>{{ article.filePath }}</span>
-<!--            <span>{{ article.lastUpdatedFormat }}</span>-->
+            <span>{{ article.lastUpdatedFormat }}</span>
+<!--            <span>{{ article.filePath }}</span>-->
         </div>
-        <p class="describe" v-html="article.lastUpdatedFormat"></p>
+        <p class="describe" v-html="article.filePath"></p>
     </div>
 </template>
 
@@ -21,6 +21,7 @@ const { sidebar } = useSidebar();
 // 提取最近 14篇文章
 const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
 
+console.log(recentArticles)
 
 // console.log(sidebar.value)
 
@@ -29,7 +30,7 @@ const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
 <style scoped>
 
 span{
-    color: var(--vp-c-text-2);
+    color: var(--vp-c-text-1);
 }
 /*!* 针对 VitePress 默认侧边栏 *!*/
 /*.VPSidebar {*/
@@ -57,6 +58,7 @@ span{
 }
 
 .describe {
+    text-align: right;
     font-size: 0.9375rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;

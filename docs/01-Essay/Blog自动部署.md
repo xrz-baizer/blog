@@ -119,10 +119,94 @@ locale
 
 `BLOG_PATH`Blog项目，进入该目录执行git、yarn构建相关命令。（会推送GitHub）
 
-`SYNC_DIRS`知识库部分内容包含隐私内容，所以会指定同步的文件夹，只要这些文件夹的内容才需要打包构建。如果全部内容都是开放的甚至可以直接在Blog项目中编写文章，就不需要移动复制了。
+`SYNC_DIRS`知识库部分内容包含隐私内容，所以会指定同步的文件夹，只有这些文件夹的内容才需要打包构建。如果全部内容都是开放的甚至可以直接在Blog项目中编写文章，就不需要移动复制了。
 
 ```sh
-# todo
+#!/bin/bash
+
+# 定义变量
+REPO_PATH="/Users/xrz/Library/Mobile Documents/com~apple~CloudDocs/KnowledgeRepository"
+BLOG_PATH="/Users/Work/Blog"
+SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
+
+REMOTE_SERVER="root@cloudserver"
+REMOTE_PATH="/app"
+NGINX_CONTAINER_NAME="nginxBlog"
+
+# 默认 Commit 信息
+if [ -z "$1" ]; then
+  COMMIT="auto commit"
+else
+  COMMIT="$1"
+fi
+
+echo "==========> 同步知识库到Blog项目docs目录中..."
+for DIR in "${SYNC_DIRS[@]}"; do
+  SOURCE_DIR="$REPO_PATH/$DIR"
+  TARGET_DIR="$BLOG_PATH/docs/$DIR"
+
+  if [ -d "$SOURCE_DIR" ]; then
+    rsync -av --delete "$SOURCE_DIR/" "$TARGET_DIR/"
+    if [ $? -ne 0 ]; then
+      echo "$DIR 文件同步失败，请检查！"
+      exit 1
+    fi
+  else
+    echo "源目录 $SOURCE_DIR 不存在，跳过同步。"
+  fi
+done
+
+echo "==========> 进入Blog项目执行Git提交并推送..."
+cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+git add .
+git commit -m "$COMMIT"
+git push
+if [ $? -ne 0 ]; then
+  echo "Git 提交或推送失败，请检查！"
+  exit 1
+fi
+
+echo "==========> 执行'yarn build'构建静态文件..."
+cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+yarn build
+if [ $? -ne 0 ]; then
+  echo "静态文件构建失败，请检查！"
+  exit 1
+fi
+
+echo "==========> 压缩静态文件并上传到云服务器 $REMOTE_PATH ..."
+DIST_PATH="$BLOG_PATH/docs/.vitepress/dist"
+ARCHIVE_NAME="dist.tar.gz"
+
+tar -czf "$DIST_PATH/$ARCHIVE_NAME" -C "$DIST_PATH" .
+if [ $? -ne 0 ]; then
+  echo "静态文件压缩失败，请检查！"
+  exit 1
+fi
+
+ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
+scp "$DIST_PATH/$ARCHIVE_NAME" "$REMOTE_SERVER:$REMOTE_PATH/"
+if [ $? -ne 0 ]; then
+  echo "压缩文件上传失败，请检查！"
+  exit 1
+fi
+echo "文件上传成功！"
+
+echo "==========> 解压文件并重启 $NGINX_CONTAINER_NAME 容器..."
+ssh "$REMOTE_SERVER" "tar -xzf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH"
+if [ $? -ne 0 ]; then
+  echo "文件解压失败，请检查！"
+  exit 1
+fi
+ssh "$REMOTE_SERVER" "docker restart $NGINX_CONTAINER_NAME"
+if [ $? -ne 0 ]; then
+  echo "$NGINX_CONTAINER_NAME 容器重启失败，请检查！"
+  exit 1
+fi
+
+echo "部署完成！"
+
+
 ```
 
 ### 配置全局命令（alias）
