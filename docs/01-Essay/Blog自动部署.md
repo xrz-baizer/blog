@@ -10,7 +10,7 @@
 2. 执行`deploy-blog`命令（执行deploy.sh脚本）
    1. 将需要发布的文章复制到Blog项目的docs目录中
    2. 重新构建Vitepress生成静态html文件
-   3. 推送静态文件至远程服务器
+   3. 压缩静态文件推送至远程服务器/app目录再解压（配合Nginx部署）
    4. 推送本地项目至Github
 
 
@@ -29,7 +29,7 @@
 
 - 样式美化参考：https://vitepress.yiov.top/style.html
 
-## 本地自动部署
+## 本地配置自动部署
 
 部署方式有很多种，最终选择本地编写脚本的方式部署，因为本地的各种环境已经搭建好，而且有自己有云服务器，所以只要构建好静态文件推送到服务器即可。
 
@@ -41,81 +41,8 @@
 
 `SYNC_DIRS`知识库部分内容包含隐私内容，所以会指定同步的文件夹，只要这些文件夹的内容才需要打包构建。如果全部内容都是开放的甚至可以直接在Blog项目中编写文章，就不需要移动复制了。
 
-> 明确功能：
->
-> 1. 提交Blog项目至Github上
-> 2. 将需要发布的文章复制到Blog项目的docs目录中
-> 3. 重新构建Vitepress生成静态html文件
-> 4. 推送静态文件至远程服务器
-
 ```sh
-#!/bin/bash
-
-# 定义变量
-REPO_PATH="/Users/xrz/Library/Mobile Documents/com~apple~CloudDocs/KnowledgeRepository"
-BLOG_PATH="/Users/Work/Pagoda/this/Blog"
-SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
-
-REMOTE_SERVER="root@cloudserver"
-REMOTE_PATH="/app"
-
-# 默认 Commit 信息
-if [ -z "$1" ]; then
-  COMMIT="auto commit"
-else
-  COMMIT="$1"
-fi
-
-echo "==========> 同步知识库文章到 Blog 项目中..."
-for DIR in "${SYNC_DIRS[@]}"; do
-  SOURCE_DIR="$REPO_PATH/$DIR"
-  TARGET_DIR="$BLOG_PATH/docs/$DIR"
-
-  if [ -d "$SOURCE_DIR" ]; then
-    rsync -av --delete "$SOURCE_DIR/" "$TARGET_DIR/"
-    if [ $? -ne 0 ]; then
-      echo "$DIR 文件同步失败，请检查！"
-      exit 1
-    fi
-  else
-    echo "源目录 $SOURCE_DIR 不存在，跳过同步。"
-  fi
-done
-echo "知识库文章同步完成。"
-
-echo "==========> 开始提交并推送GitHub中..."
-cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
-git add .
-git commit -m "$COMMIT"
-git push
-if [ $? -ne 0 ]; then
-  echo "Git 提交或推送失败，请检查！"
-  exit 1
-fi
-echo "提交并推送成功。"
-
-# 构建静态文件
-echo "==========> 开始构建静态文件..."
-cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
-yarn build
-if [ $? -ne 0 ]; then
-  echo "静态文件构建失败，请检查！"
-  exit 1
-fi
-echo "静态文件构建成功。"
-
-# 上传静态文件到云服务器
-echo "==========> 上传静态文件到云服务器..."
-echo "$BLOG_PATH/docs/.vitepress/dist/"
-echo "$REMOTE_SERVER:$REMOTE_PATH/"
-rsync -av --delete "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
-if [ $? -ne 0 ]; then
-  echo "静态文件上传失败，请检查！"
-  exit 1
-fi
-echo "静态文件上传成功。"
-
-echo "部署完成！"
+# todo
 ```
 
 ### 本地配置执行命令
@@ -128,27 +55,64 @@ alias deploy-blog="/Users/Work/Pagoda/this/Blog/deploy.sh"
 
 在任意处执行`deploy-blog`即可发布博客
 
-### 服务器安装Nginx
+### 服务器准备
 
-参考另一篇博客：[](./使用E)
+安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./使用ECS为本地搭建开发环境.md) 中的#部署Nginx
 
-
-
-提前安装上传工具 rsync
+安装上传工具rsync：
 
 ```sh
+# yam 安装
 yum install -y rsync
 
+# 查看版本
 rsync --version
+```
+
+设置编码格式：（解决上传的静态文件名中文乱码的问题）
+
+```sh
+# 检查当前服务器的语言环境 
+locale
+
+# 设置环境变量并且导出到子进程
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 ```
 
 
 
-### 其它部署方式
+
+
+
+
+![image-20241119175634506](../Image/image-20241119175634506.png)
+
+```sh
+curl -I http://116.205.134.46/assets/index.md.Dv2cWUd1.lean.js
+HTTP/1.1 200 OK
+Server: nginx/1.27.2
+Date: Tue, 19 Nov 2024 09:55:18 GMT
+Content-Type: text/plain
+Content-Length: 194
+Last-Modified: Tue, 19 Nov 2024 04:04:54 GMT
+Connection: keep-alive
+ETag: "673c0e66-c2"
+Expires: Wed, 19 Nov 2025 09:55:18 GMT
+Cache-Control: max-age=31536000
+Cache-Control: public, immutable
+Accept-Ranges: bytes
+```
+
+
+
+
+
+## 其它部署方式
 
 Vitepress各种部署方式参考：https://vitepress.dev/zh/guide/deploy
 
-#### GitHub Pages
+### GitHub Pages
 
 如果选择部署到Github Pages可以使用Github Action。当检测到分支合并，自动执行脚本进行部署。
 
@@ -156,7 +120,7 @@ Vitepress各种部署方式参考：https://vitepress.dev/zh/guide/deploy
 - 优点：免费流量、天然集成Github
 - 缺点：域名有限制、国内网络不好
 
-#### Webhooks
+### Webhooks
 
 Github提供的一个钩子，监听到代码合并时，可以执行一个请求。
 

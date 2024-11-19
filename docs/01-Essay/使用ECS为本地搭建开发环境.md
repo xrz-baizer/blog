@@ -297,13 +297,12 @@ docker run -d --name rmqbroker \
 ```sh
 docker run -d --name nginxBlog \
   -p 80:80 \
-  -v /nginx.conf:/root/nginx/nginx.conf \
+  -v /nginx.conf:/etc/nginx/nginx.conf \
   -v /app:/app \
   --memory 100m \
   nginx
 ```
 
-`  -v /nginx.conf:/root/nginx/nginx.conf` 挂载自定义的配置文件
+`  -v /nginx.conf:/etc/nginx/nginx.conf` 挂载自定义的配置文件
 
-`  -v /app:/app \`挂载静态文件目录
-
+`  -v /app:/app `挂载静态文件目录

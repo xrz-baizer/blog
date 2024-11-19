@@ -8,12 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/docs/01-Essay/Apache Bench（Mac自带的压力测试工具）.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/01-Essay/Mac多屏切换鼠标的神器——CatchMouse.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/01-Essay/使用Mac SSH连接 WIN10虚拟机上的CentOS系统.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/01-Essay/Mac/Apache Bench（Mac自带的压力测试工具）.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/01-Essay/Mac/Mac多屏切换鼠标的神器——CatchMouse.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/01-Essay/Mac/使用Mac SSH连接 WIN10虚拟机上的CentOS系统.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +146,8 @@
       <workItem from="1731923911131" duration="566000" />
       <workItem from="1731924670739" duration="6825000" />
       <workItem from="1731983829596" duration="2622000" />
+      <workItem from="1731987180980" duration="5438000" />
+      <workItem from="1732005645208" duration="5570000" />
     </task>
     <servers />
   </component>
