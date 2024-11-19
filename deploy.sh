@@ -15,20 +15,7 @@ else
   COMMIT="$1"
 fi
 
-# 自动提交并推送代码
-echo "==========> 开始提交代码..."
-cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
-git add .
-git commit -m "$COMMIT"
-git push
-if [ $? -ne 0 ]; then
-  echo "Git 提交或推送失败，请检查！"
-  exit 1
-fi
-echo "代码提交并推送成功。"
-
-# 同步文件到 Blog 项目目录
-echo "==========> 同步文档到 Blog 项目中..."
+echo "==========> 同步知识库文章到 Blog 项目中..."
 for DIR in "${SYNC_DIRS[@]}"; do
   SOURCE_DIR="$REPO_PATH/$DIR"
   TARGET_DIR="$BLOG_PATH/docs/$DIR"
@@ -39,12 +26,22 @@ for DIR in "${SYNC_DIRS[@]}"; do
       echo "$DIR 文件同步失败，请检查！"
       exit 1
     fi
-    echo "$DIR 文件同步成功。"
   else
     echo "源目录 $SOURCE_DIR 不存在，跳过同步。"
   fi
 done
-echo "文档同步完成。"
+echo "知识库文章同步完成。"
+
+echo "==========> 开始提交代码..."
+cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+git add .
+git commit -m "$COMMIT"
+git push
+if [ $? -ne 0 ]; then
+  echo "Git 提交或推送失败，请检查！"
+  exit 1
+fi
+echo "代码提交并推送成功。"
 
 ## 构建静态文件
 #echo "==========> 开始构建静态文件..."
@@ -60,7 +57,7 @@ echo "文档同步完成。"
 echo "==========> 上传静态文件到云服务器..."
 echo "$BLOG_PATH/docs/.vitepress/dist/"
 echo "$REMOTE_SERVER:$REMOTE_PATH/"
-rsync -av --delete --iconv=UTF-8 "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
+rsync -av --delete "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
 if [ $? -ne 0 ]; then
   echo "静态文件上传失败，请检查！"
   exit 1

@@ -135,7 +135,17 @@ alias deploy-blog="/Users/Work/Pagoda/this/Blog/deploy.sh"
 
 ### 服务器安装Nginx
 
+参考另一篇博客：[](./使用E)
 
+
+
+提前安装上传工具 rsync
+
+```sh
+yum install -y rsync
+
+rsync --version
+```
 
 
 
