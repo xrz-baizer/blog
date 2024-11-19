@@ -33,7 +33,7 @@ echo "代码提交并推送成功。"
 echo "==========>移动文档到 Blog 项目中..."
 for DIR in "${SYNC_DIRS[@]}"; do
   SOURCE_DIR="$REPO_PATH/$DIR"
-  TARGET_DIR="$BLOG_PATH/$DIR"
+  TARGET_DIR="$BLOG_PATH/docs/$DIR"
 
   if [ -d "$SOURCE_DIR" ]; then
     mkdir -p "$TARGET_DIR"
