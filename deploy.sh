@@ -7,6 +7,7 @@ SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
 
 REMOTE_SERVER="root@cloudserver"
 REMOTE_PATH="/app"
+NGINX_CONTAINER_NAME="nginxBlog"
 nginxContainerName="nginxBlog"
 
 # 默认 Commit 信息
@@ -50,11 +51,11 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "==========> 压缩静态文件并上传到云服务器..."
+echo "==========> 压缩静态文件并上传到云服务器 $REMOTE_PATH ..."
 DIST_PATH="$BLOG_PATH/docs/.vitepress/dist"
 ARCHIVE_NAME="dist.tar.gz"
 
-tar -czvf "$DIST_PATH/$ARCHIVE_NAME" -C "$DIST_PATH" .
+tar -czf "$DIST_PATH/$ARCHIVE_NAME" -C "$DIST_PATH" .
 if [ $? -ne 0 ]; then
   echo "静态文件压缩失败，请检查！"
   exit 1
@@ -67,10 +68,16 @@ if [ $? -ne 0 ]; then
 fi
 echo "文件上传成功！"
 
-echo "==========> 解压文件并重启Nginx..."
-ssh "$REMOTE_SERVER" "mkdir -p $REMOTE_PATH && tar -xzvf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH && rm $REMOTE_PATH/$ARCHIVE_NAME && docker restart $nginxContainerName"
+echo "==========> 解压文件并重启 $NGINX_CONTAINER_NAME 容器..."
+ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
+ssh "$REMOTE_SERVER" "tar -xzf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH"
 if [ $? -ne 0 ]; then
   echo "文件解压失败，请检查！"
+  exit 1
+fi
+ssh "$REMOTE_SERVER" "docker restart $NGINX_CONTAINER_NAME"
+if [ $? -ne 0 ]; then
+  echo "$NGINX_CONTAINER_NAME 容器重启失败，请检查！"
   exit 1
 fi
 
