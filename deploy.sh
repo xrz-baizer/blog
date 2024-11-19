@@ -43,21 +43,20 @@ if [ $? -ne 0 ]; then
 fi
 echo "提交并推送成功。"
 
-# 构建静态文件
-echo "==========> 开始构建静态文件..."
-cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
-yarn build
-if [ $? -ne 0 ]; then
-  echo "静态文件构建失败，请检查！"
-  exit 1
-fi
-echo "静态文件构建成功。"
+## 构建静态文件
+#echo "==========> 开始构建静态文件..."
+#cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+#yarn build
+#if [ $? -ne 0 ]; then
+#  echo "静态文件构建失败，请检查！"
+#  exit 1
+#fi
+#echo "静态文件构建成功。"
 
 # 上传静态文件到云服务器
 echo "==========> 上传静态文件到云服务器..."
-echo "$BLOG_PATH/docs/.vitepress/dist/"
-echo "$REMOTE_SERVER:$REMOTE_PATH/"
-rsync -av --delete "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
+#rsync -av --delete "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
+scp -r "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
 if [ $? -ne 0 ]; then
   echo "静态文件上传失败，请检查！"
   exit 1
