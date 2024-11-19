@@ -7,7 +7,7 @@
 最终实现效果：
 
 1. 在本地Typora编写文章
-2. 执行`deploy-blog`命令（执行deploy.sh脚本）
+2. 执行`publish-blog`命令即可发布（执行deploy.sh脚本）
    1. 将需要发布的文章复制到Blog项目的docs目录中
    2. 重新构建Vitepress生成静态html文件
    3. 压缩静态文件推送至远程服务器/app目录再解压（配合Nginx部署）
@@ -113,8 +113,6 @@ locale
 ```
 
 
-
-
 ### 编写deploy.sh
 
 `REPO_PATH`是本地编写文章的知识库目录。（放置iCloud中多重保险）
@@ -127,15 +125,21 @@ locale
 # todo
 ```
 
-### 本地配置执行命令
+### 配置全局命令（alias）
 
-本地使用的是zsh，所以可以通过配置 `~/.zshrc` 执行命令
+本地使用的是zsh，在 `~/.zshrc` 中配置对应的命令别名
 
 ```sh
-alias deploy-blog="/Users/Work/Pagoda/this/Blog/deploy.sh"
+alias publish-blog="/Users/Work/Pagoda/this/Blog/deploy.sh"
 ```
 
-在任意处执行`deploy-blog`即可发布博客
+使配置生效
+
+```sh
+source ~/.zshrc
+```
+
+之后在Terminal任意处执行`publish-blog`即可发布博客
 
 
 
