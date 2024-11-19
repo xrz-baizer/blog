@@ -6,7 +6,7 @@ BLOG_PATH="/Users/Work/Pagoda/this/Blog"
 SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
 
 REMOTE_SERVER="root@cloudserver"
-REMOTE_PATH="/app"
+REMOTE_PATH="/app2"
 
 # 默认 Commit 信息
 if [ -z "$1" ]; then
