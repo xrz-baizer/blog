@@ -68,18 +68,18 @@ if [ $? -ne 0 ]; then
 fi
 echo "文件上传成功！"
 
-echo "==========> 解压文件并重启 $NGINX_CONTAINER_NAME 容器..."
-ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
-ssh "$REMOTE_SERVER" "tar -xzf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH"
-if [ $? -ne 0 ]; then
-  echo "文件解压失败，请检查！"
-  exit 1
-fi
-ssh "$REMOTE_SERVER" "docker restart $NGINX_CONTAINER_NAME"
-if [ $? -ne 0 ]; then
-  echo "$NGINX_CONTAINER_NAME 容器重启失败，请检查！"
-  exit 1
-fi
+#echo "==========> 解压文件并重启 $NGINX_CONTAINER_NAME 容器..."
+#ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
+#ssh "$REMOTE_SERVER" "tar -xzf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH"
+#if [ $? -ne 0 ]; then
+#  echo "文件解压失败，请检查！"
+#  exit 1
+#fi
+#ssh "$REMOTE_SERVER" "docker restart $NGINX_CONTAINER_NAME"
+#if [ $? -ne 0 ]; then
+#  echo "$NGINX_CONTAINER_NAME 容器重启失败，请检查！"
+#  exit 1
+#fi
 
 echo "部署完成！"
 
