@@ -36,7 +36,24 @@ for DIR in "${SYNC_DIRS[@]}"; do
   TARGET_DIR="$BLOG_PATH/docs/$DIR"
 
   if [ -d "$SOURCE_DIR" ]; then
+    # 删除目标目录
+    if [ -d "$TARGET_DIR" ]; then
+      rm -rf "$TARGET_DIR"
+      if [ $? -ne 0 ]; then
+        echo "删除目标目录 $TARGET_DIR 失败，请检查！"
+        exit 1
+      fi
+      echo "目标目录 $TARGET_DIR 已删除。"
+    fi
+
+    # 创建目标目录
     mkdir -p "$TARGET_DIR"
+    if [ $? -ne 0 ]; then
+      echo "创建目标目录 $TARGET_DIR 失败，请检查！"
+      exit 1
+    fi
+
+    # 同步文件
     scp -r "$SOURCE_DIR/" "$TARGET_DIR/"
     if [ $? -ne 0 ]; then
       echo "$DIR 文件同步失败，请检查！"

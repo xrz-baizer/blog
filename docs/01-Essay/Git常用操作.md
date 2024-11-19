@@ -10,11 +10,9 @@
 
 #### 拉取指定commit
 
-`git cherry-pick [commit-id]` 当前分支拉取其它分支指定的commit
+`git cherry-pick [commit-id]` 拉取其它分支指定的commit到当前分支上
 
-批量拉取
-
-`git cherry-pick 9dba07f4^..32aba548` ##出错版本后的第一个commit直至最新commit
+`git cherry-pick 9dba07f4^..32aba548` 批量拉取，注意是连续的。
 
 #### 忽略本地文件
 

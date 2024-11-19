@@ -4,7 +4,7 @@
 
 > 购买的华为云服务：
 >
-> - 116.205.134.46  root/Root321!
+> - 116.205.134.46
 >
 > - 2vCPUs | 4GiB | ac7.large.2
 >
@@ -289,3 +289,21 @@ docker run -d --name rmqbroker \
 ```
 
 在容器启动后，执行 `sh mqbroker` 命令，启动 Broker。执行`-n namesrv:9876` 指定 Broker 连接的 NameServer 的地址和端口。
+
+### 部署Nginx
+
+内存需求很小，5M以内。
+
+```sh
+docker run -d --name nginxBlog \
+  -p 80:80 \
+  -v /nginx.conf:/root/nginx/nginx.conf \
+  -v /app:/app \
+  --memory 100m \
+  nginx
+```
+
+`  -v /nginx.conf:/root/nginx/nginx.conf` 挂载自定义的配置文件
+
+`  -v /app:/app \`挂载静态文件目录
+
