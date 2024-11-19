@@ -58,7 +58,9 @@ echo "静态文件构建成功。"
 
 # 上传静态文件到云服务器
 echo "==========> 上传静态文件到云服务器..."
-rsync -av --delete --iconv=UTF-8,UTF-8 "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
+echo "$BLOG_PATH/docs/.vitepress/dist/"
+echo "$REMOTE_SERVER:$REMOTE_PATH/"
+rsync -av --delete --iconv UTF-8 "$BLOG_PATH/docs/.vitepress/dist/" "$REMOTE_SERVER:$REMOTE_PATH/"
 if [ $? -ne 0 ]; then
   echo "静态文件上传失败，请检查！"
   exit 1
