@@ -93,11 +93,6 @@ export default {
       }
     };
 
-    // 在页面加载完成后执行
-    document.addEventListener('DOMContentLoaded', () => {
-      toggleAsideVisibility();
-    });
-
     // 判断是否是 index.md 页面
     const isIndexPage = () => {
       return route.path === '/00-TechnicalFile/' || route.path === '/01-Essay/' || route.path === '/02-English/';
@@ -127,6 +122,13 @@ export default {
     };
 
     onMounted(() => {
+
+      // 在页面加载完成后执行
+      document.addEventListener('DOMContentLoaded', () => {
+        toggleAsideVisibility();
+      });
+
+
       toggleSidebar(isIndexPage());
       initZoom();
     });
