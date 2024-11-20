@@ -62,7 +62,7 @@ export default {
 
     // 为每个H1标签下生成Git提交时间
     const addUpdateTimeDiv = () => {
-      const h1Element = document.querySelector('h1');
+      const h1Element = document.querySelector('.vp-doc h1');
       if (h1Element && !document.querySelector('.LastUpdated') && page.value.lastUpdated) {
         const updateTimeDiv = document.createElement('div');
         updateTimeDiv.textContent = ` Last Updated: ` + formatTimestamp(page.value.lastUpdated);

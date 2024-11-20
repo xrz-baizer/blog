@@ -71,6 +71,16 @@ h2 {
     padding-top: 0px;
 }
 
+.vp-doc h4{
+    margin-left: -10px !important;
+    margin: 10px 0px;
+}
+
+.vp-doc h2 .header-anchor {
+     top: 0px;
+}
+
+
 
 /* Markdown引用符号样式 */
 .vp-doc blockquote {
@@ -157,16 +167,19 @@ mark {
 }
 
 .medium-zoom-image {
+    margin: 10px 0px;
     box-shadow: 1px 2px 5px #0006;
     z-index: 9999 !important;/* 给的值是21，但是实测盖不住，直接999 */
 }
 
 
 /* 侧边栏 文件夹样式*/
-.VPSidebarItem h2,h3,h4{
-    font-weight: 600 !important;
+.VPSidebarItem h2,
+.VPSidebarItem h3,
+.VPSidebarItem h4{
+    /*font-weight: 600 !important;*/
     font-size: 1.2rem !important;
-    color: var(--vp-c-text-1) !important;
+    color: var(--vp-c-text-2) !important;
 }
 /* 侧边栏 文章标题样式*/
 .VPSidebarItem p{
@@ -183,7 +196,8 @@ mark {
 
 :root {
     /* 主题基色 */
-    --vp-c-brand-1: #18794e;
+    /*--vp-c-brand-1: #18794e;*/
+    --vp-c-brand-1: var(--vp-c-indigo-1);
     --vp-c-brand-2: var(--vp-c-indigo-2);
     --vp-c-brand-3: var(--vp-c-indigo-2);
 

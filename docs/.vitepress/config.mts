@@ -23,7 +23,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/xrz-baizer/blog' }
     ],
 
     outline:{
@@ -76,18 +76,6 @@ export default defineConfig({
         collapsed: true,        //收起所有侧边栏
         // 侧边栏排序
         beforeCreateSideBarItems: (data) => {
-          console.log(data);
-
-          // [
-          //   '.DS_Store',
-          //   'EnjoyApp-Record.html',
-          //   'EnjoyApp-Record.md',
-          //   'EnjoyEnglish-1.mp3',
-          //   'EnjoyEnglish-2.mp3',
-          //   'EnjoyEnglish-3.mp3',
-          //   'EnjoyLibrary',
-          //   '露西的一天'
-          // ]
           function getOrder(item: string): number {
             // 如果项没有扩展名，则认为它是文件夹
             if (!/\.[^/.]+$/.test(item)) {
@@ -95,7 +83,6 @@ export default defineConfig({
             }
             return 0; // 其他文件排在后面
           }
-
           data.sort((a, b) => {
             return getOrder(a) - getOrder(b);
           });
