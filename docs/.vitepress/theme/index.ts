@@ -37,14 +37,7 @@ export default {
       // 等待 DOM 渲染完成后操作
       setTimeout(() => {
 
-        // 为每个H1标签下生成Git提交时间
-        const h1Element = document.querySelector('h1');
-        if (h1Element && !document.querySelector('.LastUpdated')) {
-          const updateTimeDiv = document.createElement('div');
-          updateTimeDiv.textContent = ` Last Updated: ` + formatTimestamp(pageData.lastUpdated);
-          updateTimeDiv.className = 'LastUpdated';
-          h1Element.insertAdjacentElement('afterend', updateTimeDiv);
-        }
+
 
       }, 0);
 
@@ -57,16 +50,27 @@ export default {
   // 使用 setup 可以更灵活地管理组件的逻辑，支持更好的代码组织和复用。
   setup() {
     const route = useRoute();
-    const frontmatter = useData();
+    const {page,theme} = useData();
 
-    // const hiddenAside = () => {
-    //   console.log()
-    // };
+    // 动态获取主题中的配置 '/00-TechnicalFile/', '/01-Essay/', '/02-English/'
+    const indexPagePaths = theme.value.nav.map(item => item.link);
 
     // 判断是否是 index.md 页面
     const isIndexPage = () => {
-      return route.path === '/00-TechnicalFile/' || route.path === '/01-Essay/' || route.path === '/02-English/';
+      return indexPagePaths.includes(route.path);
     };
+
+    // 为每个H1标签下生成Git提交时间
+    const addUpdateTimeDiv = () => {
+      const h1Element = document.querySelector('h1');
+      if (h1Element && !document.querySelector('.LastUpdated') && page.value.lastUpdated) {
+        const updateTimeDiv = document.createElement('div');
+        updateTimeDiv.textContent = ` Last Updated: ` + formatTimestamp(page.value.lastUpdated);
+        updateTimeDiv.className = 'LastUpdated';
+        h1Element.insertAdjacentElement('afterend', updateTimeDiv);
+      }
+    }
+
 
     const initZoom = () => {
       mediumZoom('.main img', { background: 'var(--vp-c-bg)' }); // 不显式添加{data-zoomable}的情况下为所有图像启用此功能
@@ -137,13 +141,11 @@ export default {
     };
 
     onMounted(() => {
-
       // 在页面加载完成后执行
       document.addEventListener('DOMContentLoaded', () => {
         toggleAsideVisibility();
       });
-
-
+      addUpdateTimeDiv();
       toggleSidebar(isIndexPage());
       initZoom();
     });
@@ -153,6 +155,7 @@ export default {
           nextTick(() => {
             initZoom();
             toggleSidebar(isIndexPage());
+            addUpdateTimeDiv();
           });
         }
     );

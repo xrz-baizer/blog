@@ -9,12 +9,13 @@ body.no-sidebar .content {
     margin-left: 0;
 }
 
+/* 左上角网站名称 */
 .VPNavBarTitle .title {
     font-size: 20px !important;
-    /*background: var(--vp-home-hero-name-background);*/
-    /*-webkit-background-clip: text;*/
-    /*background-clip: text;*/
-    /*-webkit-text-fill-color: var(--vp-home-hero-name-color);*/
+    background: var(--vp-home-hero-name-background);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: var(--vp-home-hero-name-color);
 }
 
 /* Git最后更新时间 */
@@ -60,6 +61,9 @@ h2 {
     margin-bottom: 20px !important;
 }
 
+.vp-doc h2 {
+    padding-top: 0px;
+}
 
 
 /* Markdown引用符号样式 */
