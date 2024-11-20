@@ -9,6 +9,17 @@ body.no-sidebar .content {
     margin-left: 0;
 }
 
+/* 隐藏页脚 */
+.VPDocFooter {
+    display: none;
+}
+
+/* 隐藏主题默认的更新时间 */
+.VPLastUpdated{
+    /*display: none;*/
+}
+
+
 /* 左上角网站名称 */
 .VPNavBarTitle .title {
     font-size: 20px !important;
@@ -20,7 +31,7 @@ body.no-sidebar .content {
 
 /* Git最后更新时间 */
 .LastUpdated {
-    /*margin-top: -30px;*/
+    margin-bottom: 10px;
     /*margin-left: -10%;*/
     font-size: .9rem;
     /*float: right;*/
@@ -35,14 +46,9 @@ body.no-sidebar .content {
     }
 }
 
-/* 隐藏主题默认的更新时间 */
-.VPLastUpdated{
-    display: none;
-}
-
 
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h1, h2 {
@@ -70,7 +76,7 @@ h2 {
 .vp-doc blockquote {
 
     color: var(--vp-c-text-2);
-    border-radius: 0px 10px 10px 0px;
+    /*border-radius: 0px 10px 10px 0px;*/
     padding: 10px 10px;
     position: relative;
     /*background-color: var(--vp-c-gray-soft);*/
@@ -78,7 +84,7 @@ h2 {
     /*background-color: #e6f6e6;*/
     background-color: #fafafa;
     border-left: 2px solid var(--vp-c-green-2);
-    border-radius: 8px;
+    /*border-radius: 8px;*/
 }
 
 mark {
@@ -156,10 +162,17 @@ mark {
 }
 
 
-/* 侧边栏 标题样式*/
-.VPSidebarItem.level-1 .text{
+/* 侧边栏 文件夹样式*/
+.VPSidebarItem h2,h3,h4{
     font-weight: 600 !important;
-    font-size: .9rem;
+    font-size: 1.2rem !important;
+    color: var(--vp-c-text-1) !important;
+}
+/* 侧边栏 文章标题样式*/
+.VPSidebarItem p{
+    /*font-weight: 500 !important;*/
+    font-size: 1rem !important;;
+    /*color: #1769e0 !important;*/
 }
 
 /* 导航栏样式 */

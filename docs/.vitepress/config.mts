@@ -33,23 +33,23 @@ export default defineConfig({
     search: {
       provider: 'local' //开启本地搜索
     },
-    lastUpdated: {  //设置最后更新时间样式
-      // text: 'Updated at',
-      formatOptions: {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        timeZone: "Asia/Shanghai",
-        hour12: false,
-      }
-    },
-    footer: { // 页脚版权信息
+    // lastUpdated: {  //设置最后更新时间样式
+    //   // text: 'Updated at',
+    //   formatOptions: {
+    //     year: 'numeric',
+    //     month: '2-digit',
+    //     day: '2-digit',
+    //     hour: '2-digit',
+    //     minute: '2-digit',
+    //     second: '2-digit',
+    //     timeZone: "Asia/Shanghai",
+    //     hour12: false,
+    //   }
+    // },
+    footer: { // 页脚版权信息（仅需在首页下展示即可）（域名必须备案 https://cloud.tencent.com/document/product/243/61412）
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Evan You'
-    },
+      copyright: 'Copyright © 2024 Baizer | <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备12345678号</a>'
+    }
   },
   lastUpdated: true,  //显示最后更新时间
   markdown: {
@@ -72,8 +72,36 @@ export default defineConfig({
     plugins: [
       // 自动生成侧边栏 https://github.com/QC2168/vite-plugin-vitepress-auto-sidebar
       AutoSidebar({
-        ignoreIndexItem: true, //忽略index文件
-        collapsed: true, //收起所有侧边栏
+        ignoreIndexItem: true,  //忽略index文件
+        collapsed: true,        //收起所有侧边栏
+        // 侧边栏排序
+        beforeCreateSideBarItems: (data) => {
+          console.log(data);
+
+          // [
+          //   '.DS_Store',
+          //   'EnjoyApp-Record.html',
+          //   'EnjoyApp-Record.md',
+          //   'EnjoyEnglish-1.mp3',
+          //   'EnjoyEnglish-2.mp3',
+          //   'EnjoyEnglish-3.mp3',
+          //   'EnjoyLibrary',
+          //   '露西的一天'
+          // ]
+          function getOrder(item: string): number {
+            // 如果项没有扩展名，则认为它是文件夹
+            if (!/\.[^/.]+$/.test(item)) {
+              return -1; // 文件夹排在前面
+            }
+            return 0; // 其他文件排在后面
+          }
+
+          data.sort((a, b) => {
+            return getOrder(a) - getOrder(b);
+          });
+
+          return data;
+        },
       })
     ]
   },
