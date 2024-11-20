@@ -6,8 +6,9 @@ import mediumZoom from 'medium-zoom';
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import './custom/custom.css'
+import { formatTimestamp } from './custom/function.js'
 import Category from './custom/Category.vue'
-import Update from './custom/Update.vue'
+// import Update from './custom/Update.vue'
 // import MyLayout from './MyLayout.vue'
 
 
@@ -17,7 +18,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       // 在所有doc类型md文件前加载该组件
-      'doc-before': () => h(Update),
+      // 'doc-before': () => h(Update),
       // 'aside-top': () => h(Update)
     })
   },
@@ -30,10 +31,24 @@ export default {
     // 注册全局组件
     app.component('category', Category);
 
-    // router.onAfterRouteChanged = () => {
-    //   let data = router.route.data;
-    //
-    // };
+    router.onAfterRouteChanged = () => {
+      // 当前页面数据
+      let pageData = router.route.data;
+      // 等待 DOM 渲染完成后操作
+      setTimeout(() => {
+
+        // 为每个H1标签下生成Git提交时间
+        const h1Element = document.querySelector('h1');
+        if (h1Element && !document.querySelector('.LastUpdated')) {
+          const updateTimeDiv = document.createElement('div');
+          updateTimeDiv.textContent = ` Last Updated: ` + formatTimestamp(pageData.lastUpdated);
+          updateTimeDiv.className = 'LastUpdated';
+          h1Element.insertAdjacentElement('afterend', updateTimeDiv);
+        }
+
+      }, 0);
+
+    };
   },
 
   // setup 是 Vue 3 引入的一个组合式 API 函数。
@@ -44,8 +59,13 @@ export default {
     const route = useRoute();
     const frontmatter = useData();
 
-    const hiddenAside = () => {
-      console.log()
+    // const hiddenAside = () => {
+    //   console.log()
+    // };
+
+    // 判断是否是 index.md 页面
+    const isIndexPage = () => {
+      return route.path === '/00-TechnicalFile/' || route.path === '/01-Essay/' || route.path === '/02-English/';
     };
 
     const initZoom = () => {
@@ -91,11 +111,6 @@ export default {
           // contentElement.style.maxWidth = '1260px !important';
         }
       }
-    };
-
-    // 判断是否是 index.md 页面
-    const isIndexPage = () => {
-      return route.path === '/00-TechnicalFile/' || route.path === '/01-Essay/' || route.path === '/02-English/';
     };
 
     // 在客户端环境中使用 MutationObserver ，避免构建失败

@@ -92,7 +92,7 @@ http {
 
 ```
 
-安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx
+安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./1-使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx
 
 - 注意挂载目录的路径
 
@@ -211,10 +211,10 @@ echo "部署完成！"
 
 ### 配置全局命令（alias）
 
-本地使用的是zsh，在 `~/.zshrc` 中配置对应的命令别名
+本地使用的是zsh，在 `~/.zshrc` 中配置对应的命令别名，执行deploy.sh
 
 ```sh
-alias publish-blog="/Users/Work/Pagoda/this/Blog/deploy.sh"
+alias publish-blog="/Users/Work/this/Blog/deploy.sh"
 ```
 
 使配置生效

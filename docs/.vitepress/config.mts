@@ -6,7 +6,7 @@ import markdownItMark from 'markdown-it-mark';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Baizer白泽",
-  titleTemplate: ':title | Baizer', //:title 为md文件一级标题
+  titleTemplate: ':title | Baizer白泽', //:title 为md文件一级标题
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   // head: [['link', { rel: "icon", type: "image/png", sizes: "72x72", href: "/xrz.png"}]],
   appearance: false,
