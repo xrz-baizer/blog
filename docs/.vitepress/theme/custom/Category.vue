@@ -21,9 +21,6 @@ const { sidebar } = useSidebar();
 // 提取最近 14篇文章
 const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
 
-console.log(recentArticles)
-
-// console.log(sidebar.value)
 
 </script>
 
