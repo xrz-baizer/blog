@@ -8,4 +8,4 @@
 2. **长按3秒Fn+1/2/3**
 3. **在设备上与K3Pro配对（配对名称：Keychron K3Pro)**
 
-![IMG_1684](../Image/IMG_1684.PNG)
+![IMG_1684](../Image/IMG_1684.png)
