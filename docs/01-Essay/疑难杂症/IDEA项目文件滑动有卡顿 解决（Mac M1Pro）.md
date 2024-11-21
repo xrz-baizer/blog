@@ -7,7 +7,7 @@ Help -> Edit Custom Vm Options
 -Dsun.java2d.opengl.fbobject=false
 ```
 
-![6b844b51c9d5dc320dcd3f721884f7a1.png](../Image/6b844b51c9d5dc320dcd3f721884f7a1.png)
+![6b844b51c9d5dc320dcd3f721884f7a1.png](../../Image/6b844b51c9d5dc320dcd3f721884f7a1.png)
 
 重启即可
 

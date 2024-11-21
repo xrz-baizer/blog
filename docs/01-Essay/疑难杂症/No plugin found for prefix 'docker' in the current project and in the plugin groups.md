@@ -17,4 +17,4 @@ central (https://repo.maven.apache.org/maven2)] -> [Help 1]
     </pluginGroups>
 ```
 
-![](../Image/1473551-20220115165612286-37990170.png)
+![](../../Image/1473551-20220115165612286-37990170.png)
