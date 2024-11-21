@@ -43,6 +43,11 @@
 - 切换到业务分支，合并配置分支：`git merge xrz-local-configuration`
 - 自测完毕，清除配置分支：`git reset --hard origin/业务分支`
 
+#### git add 文件名乱码
+
+添加文件名为中文时乱码可以通过该设置解决
+
+`git config --global core.quotepath false` 
 
 ## 暂存区（stash）
 
