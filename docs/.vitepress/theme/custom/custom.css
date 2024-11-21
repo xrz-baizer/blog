@@ -23,10 +23,10 @@ body.no-sidebar .content {
 /* 左上角网站名称 */
 .VPNavBarTitle .title {
     font-size: 20px !important;
-    background: var(--vp-home-hero-name-background);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: var(--vp-home-hero-name-color);
+    /*background: var(--vp-home-hero-name-background);*/
+    /*-webkit-background-clip: text;*/
+    /*background-clip: text;*/
+    /*-webkit-text-fill-color: var(--vp-home-hero-name-color);*/
 }
 
 /* Git最后更新时间 */
@@ -94,6 +94,7 @@ h2 {
     /*background-color: #e6f6e6;*/
     background-color: #fafafa;
     border-left: 2px solid var(--vp-c-green-2);
+    /*border-left: 2px solid var(--vp-c-indigo-1);*/
     /*border-radius: 8px;*/
 }
 
@@ -126,7 +127,7 @@ mark {
 
 
 .vp-doc p {
-    margin: 0;
+    margin: 10px 0px;
 }
 
 .vp-doc a {

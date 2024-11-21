@@ -43,6 +43,9 @@ span{
     border-bottom: 1px dashed var(--vp-c-divider-light);
     padding: 5px 0;
 }
+.post-list p{
+    margin: 0px !important;
+}
 .post-header {
     display: flex;
     align-items: center;
