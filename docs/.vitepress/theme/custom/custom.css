@@ -126,8 +126,10 @@ mark {
 }
 
 
-.vp-doc p {
-    margin: 10px 0px;
+.vp-doc p,.vp-doc ul {
+    /*margin: 10px 0px;*/
+    margin-top: 0px;
+    margin-bottom: 12px;
 }
 
 .vp-doc a {
@@ -156,7 +158,9 @@ mark {
     display: none; /* 隐藏滚动条 */
 }
 
+/* 目录标记样式 */
 .outline-marker{
+    background-color: #30a46c !important;
     width: 4px !important;
 }
 

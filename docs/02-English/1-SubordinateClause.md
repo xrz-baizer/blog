@@ -28,12 +28,12 @@
 
 英文思维：这兔子在吃一根胡萝卜that 我来买的，定语是后置的，即The rabbit is eating a carrot **that I bought**
 
->- 二者区别在于前后置，那个好一点视情况而定
+>二者区别在于前后置，那个好一点视情况而定。
 >
->- 中文的好处是顺序思维，但是如果定语太长时，就无法直观的了解和知道主语
->    - 一只<u>几个月前开始上传视频专门教英语的讨人喜爱的</u>兔子（说了半天才知道是只兔子）
->    - This is a rabbit <u>who started uploading videos since a few months ago to focus on English teaching and is liked by students.</u>
->    - 不过通常这种情况都是拆句表达：这是一只从几个月前开始上传视频，专注于英语教学的兔子，受到了学生们的喜欢。
+>中文的好处是顺序思维，但是如果定语太长时，就无法直观的了解和知道主语。
+> - 一只<u>几个月前开始上传视频专门教英语的讨人喜爱的</u>兔子（说了半天才知道是只兔子）
+> - This is a rabbit <u>who started uploading videos since a few months ago to focus on English teaching and is liked by students.</u>
+> - 不过通常这种情况都是拆句表达：这是一只从几个月前开始上传视频，专注于英语教学的兔子，受到了学生们的喜欢。
 
 ### 	形容词从句的构成
 
@@ -65,11 +65,12 @@
 
 ### 形容词从句的限定性和非限定性
 
-- The rabbit ate the carrot <u>which was on the table</u>. 兔子吃了桌上的胡萝卜
-  - 限定是兔子吃的是桌上的胡萝卜
-- The rabbit ate the carrot,which was on the table. 兔子吃了桌上的胡萝卜
-  - 言下之意是指：兔子吃了胡萝卜，这根恰巧在桌上
-  - 同时which也是有代指的意思，此处which代指了The rabbit ate the carrot
+The rabbit ate the carrot <u>which was on the table</u>. 兔子吃了桌上的胡萝卜
+- 限定是兔子吃的是桌上的胡萝卜
+
+The rabbit ate the carrot,which was on the table. 兔子吃了桌上的胡萝卜
+- 言下之意是指：兔子吃了胡萝卜，这根恰巧在桌上
+- 同时which也是有代指的意思，此处which代指了The rabbit ate the carrot
 
 
 
@@ -141,7 +142,7 @@
 
 - I <u>knew</u> that the sun <u>rises</u> in the east. 我知道太阳从东方升起
 
-# 并列句
+## 并列句
 
 用并列连词连接起来的2个或者2个以上的简单句组成的句子
 
@@ -155,50 +156,67 @@
 - Is it a girl ==or== a boy? 是男孩还是女孩？
 - They were making a lot of noise,==so== the teacher got angry. 他们制造了很多噪音，所以老师生气了。
 
-# 状语从句连词
+## 状语从句连词
 
-### 时间状语——==While==、==When==
+### 时间状语——While、When
 
-- **==While== 当···时候、与···同时**
-  - While my wife was reding the newspaper,I was watching TV. 当我妻子在看报纸时，我正在看电视。
-- **==When== 在···时候、什么时候**
-  - When I lived in the countryside,I used to carry some water for him. 当我住在乡下的时候，我常常给他挑水。
+**==While== 当···时候、与···同时**
 
-### 条件状语——==if==
+- **While** my wife was reding the newspaper,I was watching TV. 当我妻子在看报纸时，我正在看电视。
 
-- **==if== 如果**
-  - We will give you a good price if you are thinking of buying it. 如果你想买的话，我们会给你一个好价钱。
+**==When== 在···时候、什么时候**
 
-### 原因状语——==because==、==Since==
+- **When** I lived in the countryside,I used to carry some water for him. 当我住在乡下的时候，我常常给他挑水。
 
-- **==because== 因为**
-  - I did that because she told me to. 我这么做是因为她让我这么做的。
-- **==since== 自从、既然**
-  - Since you can’t answer the question,you can ask him for help. 既然你不能回答这个问题，你可以向他寻求帮助。
+### 条件状语——if
 
-### 目的状语——==so that==、==in order to==
+**==if== 如果**
 
-- **==so that== 因此、以便**
-  - He must get up early so that he can go to work on time. 他必须早起，这样他才能按时上班。
-- **==in order to== 为了···**
-  - He worked hard in order to succeed. 他为了成功而努力工作。
+- We will give you a good price **if** you are thinking of buying it. 如果你想买的话，我们会给你一个好价钱。
 
-### 结果状语——==so that==
+### 原因状语——because、Since
 
-- **==so that== 因此、以便**
-  - It was very cold,so that the river froze. 天气很冷，所以河水结冰了。
+**==because== 因为**
 
-### 让步状语——==Although/Though==、==whether==
+- I did that **because** she told me to. 我这么做是因为她让我这么做的。
 
-- **==Although/Though== 虽然、尽管、即使**
-  - Although he was exhausted,he kept on working. 尽管他筋疲力尽，但他仍继续工作。
-- **==whether== 是否、无论、不管**
-  - Whether you believe it or not,it's true. 不管你信不信，这是真的。
+**==since== 自从、既然**
 
-### 地点状语——==wherever==、==where==
+- **Since** you can’t answer the question,you can ask him for help. 既然你不能回答这个问题，你可以向他寻求帮助。
 
-- **==wherever== 无论什么地方**
-  - Sit wherever you like. 你喜欢坐哪儿都行。
-- **==where== 哪里**
-  - I walk into the canteen where students are eating. 我走进学生们正在吃饭的食堂。
+### 目的状语——so that、in order to
+
+**==so that== 因此、以便**
+
+- He must get up early **so that** he can go to work on time. 他必须早起，这样他才能按时上班。
+
+**==in order to== 为了···**
+
+- He worked hard **in order to** succeed. 他为了成功而努力工作。
+
+### 结果状语——so that
+
+**==so that== 因此、以便**
+
+- It was very cold,**so that** the river froze. 天气很冷，所以河水结冰了。
+
+### 让步状语——Although/Though、whether
+
+**==Although/Though== 虽然、尽管、即使**
+
+- **Although** he was exhausted,he kept on working. 尽管他筋疲力尽，但他仍继续工作。
+
+**==whether== 是否、无论、不管**
+
+- **Whether** you believe it or not,it's true. 不管你信不信，这是真的。
+
+### 地点状语——wherever、where
+
+**==wherever== 无论什么地方**
+
+- Sit **wherever** you like. 你喜欢坐哪儿都行。
+
+**==where== 哪里**
+
+- I walk into the canteen **where** students are eating. 我走进学生们正在吃饭的食堂。
 

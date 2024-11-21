@@ -41,4 +41,3 @@ AI语法分析：https://chatglm.cn/main/gdetail/65bfe47c6b011e2d6c914b42
 
 IELTS 雅思（验证所学）
 有道AI口语？
-远程coding？Web3？外企？出国？

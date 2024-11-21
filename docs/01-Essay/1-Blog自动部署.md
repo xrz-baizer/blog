@@ -225,6 +225,7 @@ source ~/.zshrc
 
 之后在Terminal任意处执行`publish-blog`即可发布博客
 
+![blogAutoDeploymentEffectPicture.png](../Image/blogAutoDeploymentEffectPicture.png)
 
 
 ## 其它部署方式
