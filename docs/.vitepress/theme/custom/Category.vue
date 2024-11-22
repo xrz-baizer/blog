@@ -4,10 +4,11 @@
             <div class="post-title">
                 <a :href="article.link"> {{ article.text }}</a>
             </div>
-            <span>{{ article.lastUpdatedFormat }}</span>
+            <span class="category-pc" >{{ article.lastUpdatedFormat }}</span>
 <!--            <span>{{ article.filePath }}</span>-->
         </div>
         <p class="describe" v-html="article.filePath"></p>
+        <span class="category-app" >{{ article.lastUpdatedFormat }}</span>
     </div>
 </template>
 
@@ -27,8 +28,15 @@ const recentArticles: Article[] = getRecentArticles(sidebar.value,14);
 <style scoped>
 
 span{
+    font-weight: 500;
     color: var(--vp-c-text-1);
 }
+
+.category-app{
+    text-align: right;
+    display: none;
+}
+
 /*!* 针对 VitePress 默认侧边栏 *!*/
 /*.VPSidebar {*/
 /*    display: block;*/
@@ -85,15 +93,22 @@ span{
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
-        width: 17rem;
+        /*width: 17rem;*/
     }
     .describe {
         font-size: 0.9375rem;
-        display: -webkit-box;
+        /*display: -webkit-box;*/
+        display: none;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         overflow: hidden;
         margin: 0.5rem 0 1rem;
+    }
+    .category-app{
+        display: block;
+    }
+    .category-pc{
+        display: none;
     }
 }
 </style>
