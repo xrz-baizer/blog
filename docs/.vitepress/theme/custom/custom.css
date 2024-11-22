@@ -158,6 +158,8 @@ mark {
 .vp-doc a {
     color: #1769e0;
     text-decoration: none;
+    word-wrap:break-word;
+    word-break:break-all;
 }
 .vp-doc a:hover {
     text-decoration: underline;
