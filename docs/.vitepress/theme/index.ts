@@ -92,8 +92,17 @@ export default {
         }
       });
 
+      // if (sidebarElement) {
+      //   sidebarElement.style.display = isIndexPage ? '' : 'none';
+      // }
       if (sidebarElement) {
-        sidebarElement.style.display = isIndexPage ? '' : 'none';
+        // 检查页面宽度是否大于960px
+        if (window.innerWidth > 960) {
+          sidebarElement.style.display = isIndexPage ? '' : 'none';
+        } else {
+          // 如果页面宽度小于或等于960px，不隐藏侧边栏（兼容app端）
+          sidebarElement.style.display = '';
+        }
       }
     };
 
