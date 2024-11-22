@@ -144,6 +144,7 @@ mark {
 .vp-doc div[class*='language-'] {
     background-color: #f8f8fe !important;
     margin: 16px 0px;
+    border-radius: 5px;
 }
 
 .vp-doc :lang(zh) {

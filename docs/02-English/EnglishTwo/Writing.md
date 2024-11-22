@@ -14,39 +14,39 @@
 
 ### 个人生活类
 
-​		**There are ==A==, such as ==B== and ==C==. **
+​		**There are ==A==, such as ==B== and ==C==.**
 
 **When it comes to ==A==, the majority of people believe <u>that</u> they have their own benefits.**
 
-​		**Faced with ==A==, different people have different choices. **
+​		**Faced with ==A==, different people have different choices.**
 
-**On the one hand, some people like ==B== because it is more meaningful. **
+**On the one hand, some people like ==B== because it is more meaningful.**
 
-**On the other hand, other people prefer ==C== because it is more enjoyable. **
+**On the other hand, other people prefer ==C== because it is more enjoyable.**
 
 **Everyone can choose what he likes.**
 
-​		**As far as I am concerned, I like ==B== because it is more meaningful. **
+​		**As far as I am concerned, I like ==B== because it is more meaningful.**
 
 **I hope you can enjoy it, as it is indeed good for us.**
 
 ### 解决问题类
 
-​		**With the rapid growth of the national economy, ==A== has become more and more important in our daily life. **
+​		**With the rapid growth of the national economy, ==A== has become more and more important in our daily life.**
 
-**First of all, it may cause environmental problems. **
+**First of all, it may cause environmental problems.**
 
 **What's more, it may cause social problems.**
 
-​		**Faced with it, different people have different views. **
+​		**Faced with it, different people have different views.**
 
-**On the one hand,  some people hold the view <u>that</u> legal sanctions are more effectives. **
+**On the one hand,  some people hold the view <u>that</u> legal sanctions are more effectives.**
 
-**On the other hand, other people hold the view <u>that</u> individual actions are more useful. **
+**On the other hand, other people hold the view <u>that</u> individual actions are more useful.**
 
 **But solving the problem is not so simple.**
 
-​		**In a word, the whole society should focus on the problem of ==A==. **
+​		**In a word, the whole society should focus on the problem of ==A==.**
 
 **In the future, we can have a better place to live.**
 
@@ -337,7 +337,7 @@ Fight against Haze 抵抗雾霾
 
 随着国民经济的快速增长，==A or B==在我们的日常生活中变得越来越重要。然而，对此的看法可能各不相同。
 
-**Faced with it, different people have different views.On the one hand, some people hold the view that ==A== is/are more meaningful. On the other hand, other people hold the view that ==B== is/are more enjoyable. **
+**Faced with it, different people have different views.On the one hand, some people hold the view that ==A== is/are more meaningful. On the other hand, other people hold the view that ==B== is/are more enjoyable.**
 
 面对它，不同的人有不同的看法。一方面，有些人认为==A==更有意义。另一方面，另一些人认为==B==更有趣。
 
