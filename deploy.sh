@@ -5,7 +5,8 @@ REPO_PATH="/Users/xrz/Library/Mobile Documents/com~apple~CloudDocs/KnowledgeRepo
 BLOG_PATH="/Users/Work/Pagoda/this/Blog"
 SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
 
-REMOTE_SERVER="root@cloudserver"
+#REMOTE_SERVER="root@cloudserver"
+REMOTE_SERVER="root@tencentserver"
 REMOTE_PATH="/app"
 NGINX_CONTAINER_NAME="nginxBlog"
 

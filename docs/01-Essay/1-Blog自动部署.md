@@ -43,7 +43,7 @@
 
 完整nginx.conf配置如下：
 
-```
+```sh
 
 # 设置并行CPU核心数，在轻量级应用或单核环境中：可以设置为 1。
 worker_processes 1;
@@ -89,16 +89,18 @@ http {
         }
     }
 }
-
 ```
 
-安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./1-使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx
+安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./0-使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx
 
 - 注意挂载目录的路径
 
 设置编码格式：（解决上传的静态文件名中文乱码的问题）
 
 ```sh
+# 检查当前服务器的语言环境 
+locale
+
 # 使用cat <<EOF >快速写入
 cat <<EOF >/etc/locale.conf
 LANG=zh_CN.UTF-8
@@ -107,9 +109,6 @@ EOF
 
 # 配置刷新
 source /etc/locale.conf
-
-# 检查当前服务器的语言环境 
-locale
 ```
 
 

@@ -26,7 +26,7 @@ cat >> /etc/hosts <<EOF
 EOF
 ```
 
-配置免密登陆，先生成密钥对
+配置免密登陆，生成密钥对
 
 ```sh
 ssh-keygen -t rsa
@@ -38,20 +38,36 @@ ssh-keygen -t rsa
 ssh root@cloudserver 'cat >> .ssh/authorized_keys' < ~/.ssh/id_rsa.pub
 ```
 
-后续直接通过`ssh root@baizer`登录服务器
-
+后续直接通过`ssh root@cloudserver`登录服务器
 
 #### 基础配置
 
-```sh
-#修改主机名（购买服务器时可提前设置）
+调整命令行字符颜色（防止眼瞎）
 
-#调整命令行字符颜色（防止眼瞎）
+```sh
+# 使用cat <<EOF >快速写入
 cat >> ~/.bashrc <<EOF
 PS1='\[\e[32;40m\]\u@\h \W ➤ \e[m'
 EOF
 
+# 配置刷新
 source ~/.bashrc
+```
+
+设置服务器的语言环境（解决上传的静态文件名中文乱码的问题）
+
+```sh
+# 检查当前服务器的语言环境 
+locale
+
+# 使用cat <<EOF >快速写入
+cat <<EOF >/etc/locale.conf
+LANG=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+EOF
+
+# 配置刷新
+source /etc/locale.conf
 ```
 
 ## 安装Docker

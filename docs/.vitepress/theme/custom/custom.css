@@ -19,14 +19,27 @@ body.no-sidebar .content {
     /*display: none;*/
 }
 
+/* 文档页宽度 */
+.VPDoc .content-container{
+    /*max-width: 768px !important;*/
+}
+/* 文档页目录宽度 */
+.aside .aside-container{
+    width: 365px;
+}
 
 /* 左上角网站名称 */
 .VPNavBarTitle .title {
-    font-size: 20px !important;
+    font-size: 22px !important;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+
     /*background: var(--vp-home-hero-name-background);*/
-    /*-webkit-background-clip: text;*/
-    /*background-clip: text;*/
     /*-webkit-text-fill-color: var(--vp-home-hero-name-color);*/
+
+    background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+    -webkit-text-fill-color: transparent;
 }
 
 /* Git最后更新时间 */
@@ -202,6 +215,7 @@ mark {
 :root {
     /* 主题基色 */
     /*--vp-c-brand-1: #18794e;*/
+    /*--vp-c-brand-1: #30a46c;*/
     --vp-c-brand-1: var(--vp-c-indigo-1);
     --vp-c-brand-2: var(--vp-c-indigo-2);
     --vp-c-brand-3: var(--vp-c-indigo-2);

@@ -4,11 +4,11 @@ layout: home
 
 hero:
   name: "Personal Knowledge Repository"
-  text: ""
-  tagline: "花有重开日"
-  image:
-    src: /lotus.png
-    alt: Baizer
+  text: "个人知识库"
+  tagline: "Baizer白泽"
+#  image:
+#    src: /魔方3.svg
+#    alt: Baizer
   actions:
     - theme: brand
       text: Technical Article

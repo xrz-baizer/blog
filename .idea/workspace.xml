@@ -7,7 +7,13 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init" />
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/lotus.png" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +67,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Work/Pagoda/this/Blog/docs/01-Essay&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Work/Pagoda/this/Blog/docs/public&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -78,11 +84,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/public" />
       <recent name="$PROJECT_DIR$/docs/01-Essay" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/00-TechnicalFile" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme" />
-      <recent name="$PROJECT_DIR$/docs/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs/01-Essay/Mac" />
@@ -151,6 +157,8 @@
       <workItem from="1732143291979" duration="2317000" />
       <workItem from="1732159717776" duration="788000" />
       <workItem from="1732170033084" duration="3353000" />
+      <workItem from="1732197093641" duration="3036000" />
+      <workItem from="1732244276101" duration="2432000" />
     </task>
     <servers />
   </component>
