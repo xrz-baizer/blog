@@ -231,7 +231,6 @@ source ~/.zshrc
 
 ![blogAutoDeploymentEffectPicture.png](../Image/blogAutoDeploymentEffectPicture.png)
 
-
 ## 其它部署方式
 
 Vitepress各种部署方式参考：https://vitepress.dev/zh/guide/deploy

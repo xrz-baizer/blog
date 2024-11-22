@@ -9,6 +9,7 @@ body.no-sidebar .content {
     margin-left: 0;
 }
 
+
 /* 隐藏页脚 */
 .VPDocFooter {
     display: none;
@@ -19,13 +20,15 @@ body.no-sidebar .content {
     /*display: none;*/
 }
 
-/* 文档页宽度 */
-.VPDoc .content-container{
+.VPDoc .content-container{ /* 文档页 容器  */
+    font-size: 17px !important;
     /*max-width: 768px !important;*/
 }
-/* 文档页目录宽度 */
-.aside .aside-container{
+.aside .aside-container{ /* 文档页 目录宽度 */
     width: 365px;
+}
+.VPDoc .VPDocOutlineItem .outline-link{  /* 文档页 目录字体大小 */
+    font-size: 15px ;
 }
 
 /* 左上角网站名称 */
@@ -80,7 +83,7 @@ body.no-sidebar .content {
 
 
 .vp-doc h4{
-    margin-left: -10px !important;
+    margin-left: -5px !important;
     margin: 10px 0px;
 }
 
@@ -93,15 +96,26 @@ body.no-sidebar .content {
 /* Markdown引用符号样式 */
 .vp-doc blockquote {
 
-    color: var(--vp-c-text-2);
-    /*border-radius: 0px 10px 10px 0px;*/
-    padding: 10px 10px;
+    padding: 10px 16px;
     position: relative;
+
+    border-radius: 8px;
+    color: #275796;
+    background-color: #e8f4fc;
+    border-left: none;
+
+    /*color: var(--vp-c-text-1);*/
+    /*background-color: #fbf9fd;*/
+    /*border-left: 3px solid #5db17d;*/
+
+
+    /*color: var(--vp-c-text-2);*/
+    /*border-radius: 0px 10px 10px 0px;*/
     /*background-color: var(--vp-c-gray-soft);*/
     /*background-color: #f8f8fe;*/
     /*background-color: #e6f6e6;*/
-    background-color: #fafafa;
-    border-left: 2px solid var(--vp-c-green-2);
+    /*background-color: #fafafa;*/
+    /*border-left: 2px solid var(--vp-c-green-2);*/
     /*border-left: 2px solid var(--vp-c-indigo-1);*/
     /*border-radius: 8px;*/
 }
@@ -207,6 +221,12 @@ mark {
     font-size: 1.1rem !important;
 }
 
+
+/*@font-face {*/
+/*    font-family: 'customFont';*/
+/*    src: url('../../../public/font/gbsn00lp.ttf') format('truetype');*/
+/*}*/
+
 :root {
     /* 主题基色 */
     /*--vp-c-brand-1: #18794e;*/
@@ -217,6 +237,8 @@ mark {
 
     /* 侧边栏 宽度 */
     --vp-sidebar-width: 345px;
+    /* 自定义字体 */
+    /*--vp-font-family-base: "customFont";  */
 
     /* 首页下滑后导航透明 */
     .VPNavBar:not(.has-sidebar):not(.home.top) {

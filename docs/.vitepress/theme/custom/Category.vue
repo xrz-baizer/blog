@@ -48,8 +48,9 @@ span{
 
 
 .post-list {
-    border-bottom: 1px dashed var(--vp-c-text-3);
+    border-bottom: 1px dashed #eee;
     padding: 5px 0;
+    margin: 10px 0;
 }
 .post-list p{
     margin: 0px !important;
@@ -66,7 +67,7 @@ span{
 }
 
 .describe {
-    text-align: right;
+    /*text-align: right;*/
     font-size: 0.9375rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -87,7 +88,7 @@ span{
         justify-content: space-between;
     }
     .post-title {
-        font-size: 1.0625rem;
+        font-size: 1.1rem;
         font-weight: 400;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -105,6 +106,7 @@ span{
         margin: 0.5rem 0 1rem;
     }
     .category-app{
+        font-size: 14px;
         display: block;
     }
     .category-pc{
