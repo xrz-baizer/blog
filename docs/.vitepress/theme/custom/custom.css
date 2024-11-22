@@ -140,8 +140,10 @@ mark {
 }
 
 
+/* 代码块样式 */
 .vp-doc div[class*='language-'] {
     background-color: #f8f8fe !important;
+    margin: 16px 0px;
 }
 
 .vp-doc :lang(zh) {
@@ -158,6 +160,9 @@ mark {
 .vp-doc a {
     color: #1769e0;
     text-decoration: none;
+
+    /* 修复app端 超出页面长度的BUG */
+    /* url强制换行 */
     word-wrap:break-word;
     word-break:break-all;
 }
