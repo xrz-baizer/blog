@@ -48,7 +48,7 @@ span{
 
 
 .post-list {
-    border-bottom: 1px dashed var(--vp-c-divider-light);
+    border-bottom: 1px dashed var(--vp-c-text-3);
     padding: 5px 0;
 }
 .post-list p{

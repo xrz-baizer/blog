@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # 定义变量
+start_time=$(date +%s)
 REPO_PATH="/Users/xrz/Library/Mobile Documents/com~apple~CloudDocs/KnowledgeRepository"
 BLOG_PATH="/Users/Work/Pagoda/this/Blog"
 SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
@@ -9,6 +10,8 @@ SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
 REMOTE_SERVER="root@tencentserver"
 REMOTE_PATH="/app"
 NGINX_CONTAINER_NAME="nginxBlog"
+
+
 
 # 默认 Commit 信息
 if [ -z "$1" ]; then
@@ -81,5 +84,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "部署完成！"
+end_time=$(date +%s)
+elapsed_time=$((end_time - start_time))
+
+echo "部署完成！执行耗时: $elapsed_time 秒"
 
