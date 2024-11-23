@@ -10,19 +10,23 @@
 
 ### Lucy的一天
 
-- [Lucy原文.md](EnjoyEnglish/Lucy的一天/Lucy原文.md) 
+[Lucy原文.md](EnjoyEnglish/Lucy的一天/Lucy原文.md) 
 
 ### 新概念英语
 
 - [第三册课文](EnjoyEnglish/NewConceptEnglish/第三册课文) 
 - [第四册课文](EnjoyEnglish/NewConceptEnglish/第四册课文) 
 
-- 学习说明：https://hezhigang.github.io/2018/07/18/New-Concept-English/
-- 音频资源：https://www.listeningexpress.com/nce-b/book1/
+学习说明：https://hezhigang.github.io/2018/07/18/New-Concept-English/
+
+音频资源：https://www.listeningexpress.com/nce-b/book1/
+
+学习笔记：https://github.com/andylee1890/NewConceptEnglish/tree/main
 
 ## Learning Tool
 
 英语语法分析：https://www.kogrammar.com/analyze/
+
 AI语法分析：https://chatglm.cn/main/gdetail/65bfe47c6b011e2d6c914b42
 
 ## 可可英语学习记录
