@@ -1,4 +1,6 @@
 /* .vitepress/theme/custom.css */
+
+
 /*
  自定义样式，覆盖默认主题样式
  */
@@ -270,6 +272,7 @@ mark {
     --vp-nav-height: 56px;
     --vp-nav-logo-height: 20px;
 
+    /* 主页图片眩晕大小 */
     --vp-home-hero-image-filter: blur(80px);
 
     /* 首页下滑后导航透明 */

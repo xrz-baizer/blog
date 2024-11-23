@@ -5,6 +5,11 @@
 （大声朗诵+死记硬背）
 - B站连读讲解
 - 素材整理：[EnjoyEnglish](EnjoyEnglish) 
+  - Lucy的一天
+  - 新概念英语
+    - 学习说明：https://hezhigang.github.io/2018/07/18/New-Concept-English/
+    - 音频资源：https://www.listeningexpress.com/nce-b/book1/
+
 - 训练方法：https://1000h.org/training-tasks/kick-off.html
 
 ## Learning Tool

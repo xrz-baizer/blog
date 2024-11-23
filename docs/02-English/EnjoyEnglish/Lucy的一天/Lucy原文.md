@@ -1,4 +1,4 @@
-# 露西的一天（原文）
+# Lucy原文
 
 可可英语：https://www.kekenet.com/Article/201709/525398.shtml
 
@@ -34,13 +34,13 @@ I don’t wear a lot of make-up to work so I just put on a little blush and a li
 
 In the kitchen, the first thing I do is pour myself a cup of coffee and I add a little skim milk and sugar. My roommate usually makes a pot when she wakes up for both of us since she gets up first.
 
-走到厨房我先给自己倒一杯咖啡，加一点脱脂奶和糖。我室友起得早，所以她起来后会煮一壶咖啡。
-
 I go the fridge to take out the eggs. When I have time, I like to cook a hot breakfast, so I take out the frying pan, pour a little oil in it, and turn on the front burner on the stovetop. While the eggs are cooking, I put two pieces of bread into the toaster. When the eggs are nice and brown on the edges, I use a spatula to put them on a plate. Some mornings, I have to settle for some cold cereal or just toast with jam, but it’s nice to start the day with a sit-down meal when I get the chance.
 
-有时间的时候我还是想做顿热饭。我到冰箱拿几个鸡蛋，拿出煎锅，倒一点油，打开炉子。鸡蛋在锅里煎着，我又往烤箱里放了两片面包。鸡蛋煎好了，边缘变成了棕色，我用铲子把它盛到盘子里。有时候早上我只能吃冷麦片和果酱夹吐司凑合一下，但是有机会的时候还是坐下来认真吃顿早饭比较好。
-
 When I’m done, I take my plate and my silverware to the sink, where my roommate has left her breakfast dishes. Since she makes the coffee in the morning, I wash the dishes. It’s a pretty good arrangement. I put a little dishwashing detergent on the sponge, scrub the dishes, and leave them in the drying rack to dry.
+
+走到厨房我先给自己倒一杯咖啡，加一点脱脂奶和糖。我室友起得早，所以她起来后会煮一壶咖啡。
+
+有时间的时候我还是想做顿热饭。我到冰箱拿几个鸡蛋，拿出煎锅，倒一点油，打开炉子。鸡蛋在锅里煎着，我又往烤箱里放了两片面包。鸡蛋煎好了，边缘变成了棕色，我用铲子把它盛到盘子里。有时候早上我只能吃冷麦片和果酱夹吐司凑合一下，但是有机会的时候还是坐下来认真吃顿早饭比较好。
 
 吃饱之后，我把我的盘子和镀银餐具拿到水池里，水池里有我室友吃早餐留下的盘子，我一块洗了。她早上煮了咖啡，我就洗碗，这个安排很合理。我在海绵上倒一点餐具洗涤剂，擦洗盘子，最后放在干燥架上晾干。
 

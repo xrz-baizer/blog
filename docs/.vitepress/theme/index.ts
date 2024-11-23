@@ -6,6 +6,7 @@ import mediumZoom from 'medium-zoom';
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import './custom/custom.css'
+import './rainbow.css'
 import { formatTimestamp } from './custom/function.js'
 import Category from './custom/Category.vue'
 // import Update from './custom/Update.vue'
