@@ -20,7 +20,7 @@ else
   COMMIT="$1"
 fi
 
-echo "==========> 同步知识库到Blog项目docs目录中..."
+echo "==============================> 同步知识库到Blog项目docs目录中..."
 for DIR in "${SYNC_DIRS[@]}"; do
   SOURCE_DIR="$REPO_PATH/$DIR"
   TARGET_DIR="$BLOG_PATH/docs/$DIR"
@@ -36,7 +36,7 @@ for DIR in "${SYNC_DIRS[@]}"; do
   fi
 done
 
-echo "==========> 进入Blog项目执行Git提交并推送..."
+echo "==============================> 进入Blog项目执行Git提交并推送..."
 cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
 git add .
 git commit -m "$COMMIT"
@@ -46,7 +46,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "==========> 执行'yarn build'构建静态文件..."
+echo "==============================> 执行'yarn build'构建静态文件..."
 cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
 yarn build
 if [ $? -ne 0 ]; then
@@ -54,7 +54,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "==========> 压缩静态文件并上传到云服务器 $REMOTE_PATH ..."
+echo "==============================> 压缩静态文件并上传到云服务器 $REMOTE_PATH ..."
 DIST_PATH="$BLOG_PATH/docs/.vitepress/dist"
 ARCHIVE_NAME="dist.tar.gz"
 
@@ -72,7 +72,7 @@ if [ $? -ne 0 ]; then
 fi
 echo "文件上传成功！"
 
-echo "==========> 解压文件并重启 $NGINX_CONTAINER_NAME 容器..."
+echo "==============================> 解压文件并重启 $NGINX_CONTAINER_NAME 容器..."
 ssh "$REMOTE_SERVER" "tar -xzf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH"
 if [ $? -ne 0 ]; then
   echo "文件解压失败，请检查！"
@@ -87,5 +87,5 @@ fi
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))
 
-echo "部署完成！执行耗时: $elapsed_time 秒"
+echo "==========> 部署完成！执行耗时: $elapsed_time 秒"
 
