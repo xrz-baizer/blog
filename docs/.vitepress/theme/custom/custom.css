@@ -9,6 +9,17 @@ body.no-sidebar .content {
     margin-left: 0;
 }
 
+/* 主页 居中 */
+.VPHome{
+    /*margin-bottom: 0px !important;*/
+}
+.VPHero{
+    margin: auto !important;
+    /*margin: 6% 0px !important;*/
+}
+/*#app{*/
+/*    background-image: url("https://cn.bing.com//th?id=OHR.FibonacciAloe_ZH-CN8974137481_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");*/
+/*}*/
 
 /* 隐藏页脚 */
 .VPDocFooter {
@@ -30,6 +41,13 @@ body.no-sidebar .content {
 .VPDoc .VPDocOutlineItem .outline-link{  /* 文档页 目录字体大小 */
     font-size: 15px ;
 }
+
+.search-input{
+    padding: 12px 12px !important;
+    font-size: 20px !important;
+}
+
+
 
 /* 左上角网站名称 */
 .VPNavBarTitle .title {
@@ -251,6 +269,8 @@ mark {
 
     --vp-nav-height: 56px;
     --vp-nav-logo-height: 20px;
+
+    --vp-home-hero-image-filter: blur(80px);
 
     /* 首页下滑后导航透明 */
     .VPNavBar:not(.has-sidebar):not(.home.top) {
