@@ -249,6 +249,9 @@ mark {
     /* 自定义字体 */
     /*--vp-font-family-base: "customFont";  */
 
+    --vp-nav-height: 56px;
+    --vp-nav-logo-height: 20px;
+
     /* 首页下滑后导航透明 */
     .VPNavBar:not(.has-sidebar):not(.home.top) {
         background-color: rgba(255, 255, 255, 0);
