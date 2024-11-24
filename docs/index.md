@@ -9,7 +9,7 @@ hero:
   image:
     src: /lotus.svg
 #    src: /file.svg
-#    alt: Baizer
+    alt: Baizer
   actions:
     - theme: brand
       text: Essay
@@ -32,3 +32,4 @@ hero:
 #    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+大道至简，即使的确存在着方法和技巧，也需要用定力与时间来换取！
