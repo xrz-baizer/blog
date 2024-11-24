@@ -2,11 +2,14 @@
 
 ## EnjoyEnglish—EnjoyApp
 
-（大声朗诵+死记硬背）
-- B站连读讲解
-- 训练方法：https://1000h.org/training-tasks/kick-off.html
+素材整理：[EnjoyEnglish](EnjoyEnglish) （大声朗诵+死记硬背）
 
-> 素材整理：[EnjoyEnglish](EnjoyEnglish) 
+- 训练方法：https://1000h.org/training-tasks/kick-off.html
+- B站连读讲解，配合Lucy巩固
+  - 慢速版（了解连读基本概念）
+  - 常速版
+
+- 背诵新概念
 
 ### Lucy的一天
 

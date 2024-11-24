@@ -1,9 +1,8 @@
-# PronunciationSkills 发音技巧
+# 发音技巧 PronunciationSkills
 
 B站英语兔视频：https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=1&vd_source=201e659a1198f26ce165fcaad0d7ddb1
 
 Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
-
 
 ## 连读
 
@@ -15,14 +14,19 @@ Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
 
 前一个单词==以辅音结尾==，后一个单词==以元音开头==，并且两个词处于==同个意群==或者说话者语速较快时，==这两个词连读==。
 
-这是最常见的一种连读方式，也是大家最熟悉的情况，我们来看下面的例子。
+这是最常见的一种连读方式，例句：
 
-- A==m I== right?
-  - [ə **mai** rait] 我做对了吗?
-- Not at all
-  - [nɒ tæ tɔːl] 一点也不
-- My pen's out of ink again.
-  - [mai pən zau tə fiŋ kə gein]
+**A==m I== right?**
+
+- [ə **mai** rait] 我做对了吗?
+
+**Not at all**
+
+- [nɒ tæ tɔːl] 一点也不
+
+**My pen's out of ink again.**
+
+- [mai pən zau tə fiŋ kə gein]
 
 ### 前后相同辅音（省音）（叠音）
 
@@ -56,7 +60,7 @@ Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
 
 ### 失爆
 
-在同一个意群中，当前一个单词以/p/，/b/，/t/，/d/，/k/和/g/六个爆破音中的任何一个结尾，后面一个单词以爆破音或摩擦音等辅音开头时，**前面的一个爆破音就失去爆破**。
+在同一个意群中，当前一个单词以`/p/`、`/b/`、`/t/`、`/d/`、`/k/`、`/g/`六个爆破音中的任何一个结尾，后面一个单词以`爆破音或摩擦音`等辅音开头时，**前面的一个爆破音就失去爆破**。
 
 但是要注意，失去爆破并不等于吞音。前一个爆破音虽然不再爆破，但是仍然存在，应先摆好发音姿势，稍作停顿之后再发下面的一个辅音。
 
