@@ -13,17 +13,28 @@ body.no-sidebar .content {
 
 /* 主页 居中 */
 .VPHome{
-    /*margin-bottom: 0px !important;*/
+    /*background-image: var(--vp-home-hero-image-background-image);*/
+    /*filter: var(--vp-home-hero-image-filter);*/
+
+    margin-bottom: 0px !important;
 }
 .VPHero{
     margin: auto !important;
     /*margin: 6% 0px !important;*/
+
+    /*background-image: var(--vp-home-hero-image-background-image);*/
+    /*filter: var(--vp-home-hero-image-filter);*/
 }
 /*#app{*/
 /*    background-image: url("https://cn.bing.com//th?id=OHR.FibonacciAloe_ZH-CN8974137481_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");*/
 /*}*/
 
-/* 隐藏页脚 */
+.VPFeatures{
+    padding-top: 24px !important;
+    padding-bottom: 30px !important;
+}
+
+/* 隐藏文档页的页脚 */
 .VPDocFooter {
     display: none;
 }
