@@ -86,10 +86,13 @@ body.no-sidebar .content {
     color: rgba(60, 60, 67, 0.56);
 }
 
-/* 超过640px不显示 */
+/* 640px以下生效 */
 @media (max-width: 640px) {
     .LastUpdated {
         display: none;
+    }
+    .VPFeatures{
+        padding-top: 0px !important;
     }
 }
 
