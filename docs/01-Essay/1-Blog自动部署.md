@@ -9,12 +9,13 @@
 1. 在本地Typora编写文章
 2. 执行`publish-blog`命令即可发布（执行deploy.sh脚本）
    1. 将需要发布的文章复制到Blog项目的docs目录中
-   2. 重新构建Vitepress生成静态html文件
-   3. 压缩静态文件推送至远程服务器/app目录再解压（配合Nginx部署）
-   4. 推送本地项目至Github
+   2. 推送Blog项目至Github备份
+   3. 重新构建Blog生成静态html文件
+   4. 压缩静态文件推送至远程服务器/app目录再解压
+   5. 重启用docker部署的Nginx容器
 
 
-## 编写Blog项目
+## 编写Blog项目（Vitepress）
 
 经过多方考察，最终选择了VitePress。
 

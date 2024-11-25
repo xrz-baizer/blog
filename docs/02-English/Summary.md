@@ -13,18 +13,43 @@
 
 ### Lucy的一天
 
-[Lucy原文.md](EnjoyEnglish/Lucy的一天/Lucy原文.md) 
+ [Lucy的一天.md](Lucy的一天.md) 
 
 ### 新概念英语
-
-- [第三册课文](EnjoyEnglish/NewConceptEnglish/第三册课文) 
-- [第四册课文](EnjoyEnglish/NewConceptEnglish/第四册课文) 
 
 学习说明：https://hezhigang.github.io/2018/07/18/New-Concept-English/
 
 音频资源：https://www.listeningexpress.com/nce-b/book1/
 
-学习笔记：https://github.com/andylee1890/NewConceptEnglish/tree/main
+音频课文资源：http://www.newconceptenglish.com/index.php
+
+#### 第一册
+
+课文：http://www.newconceptenglish.com/index.php?id=nce-1
+
+英音：https://www.listeningexpress.com/nce-b/book1/
+
+#### 第二册
+
+课文：http://www.newconceptenglish.com/index.php?id=nce-2
+
+英音：https://www.listeningexpress.com/nce-b/book2/
+
+#### 第三册
+
+[第三册课文（带讲解）](NewConceptEnglish/第三册课文/Lesson-1-A-puma-at-large-逃遁的美洲狮.md) 
+
+课文：http://www.newconceptenglish.com/index.php?id=nce-3
+
+英音：https://www.listeningexpress.com/nce-b/book3/
+
+#### 第四册
+
+[第四册课文（带讲解）](NewConceptEnglish/第四册课文/Lesson-1-Finding-fossil-man-发现化石人.md) 
+
+课文：http://www.newconceptenglish.com/index.php?id=nce-4
+
+音频：http://www.newconceptenglish.com/index.php?id=nce-4
 
 ## Learning Tool
 
