@@ -6,7 +6,7 @@ layout: home
 hero:
   name: "Personal Knowledge Repository"
   text: "Baizer"
-  tagline: "白泽-个人知识库"
+  tagline: "个人知识库"
   image:
     src: /lotus.svg
 #    alt: Baizer
