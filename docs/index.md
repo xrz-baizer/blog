@@ -23,12 +23,15 @@ hero:
 
 features:
   - title: Essay
+    link: /01-Essay/
 #    icon:
 #     src: /file.svg
-    details: 个人随笔、代码
+#    linkText: 随笔、疑难杂症
+    details: 随笔、疑难杂症
   - title: TechnicalArticles
-    details: 技术文章、系列知识、各种业务场景解决方案
+    link: /00-TechnicalFile/
+    details: 技术文章、系列知识、业务场景解决方案
   - title: EnglishLeaning
-    url: https://bing.com
-    details: 英语学习笔记、新概念
+    link: /02-English/
+    details: 英语学习笔记、新概念英语
 ---
