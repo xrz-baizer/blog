@@ -33,6 +33,8 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
     // 排序：根据 lastUpdated 时间戳降序排列
     result.sort((a, b) => b.lastUpdated - a.lastUpdated);
 
+    if(num == -1) return result;
+
     // 提取前14条
     return result.slice(0, num);
 }

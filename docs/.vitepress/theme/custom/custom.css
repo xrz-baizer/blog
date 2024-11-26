@@ -327,6 +327,15 @@ mark {
         .container:has(.aside) .content{
             max-width: 850px !important;
         }
+
+        /* 分类页特殊处理 */
+        .container:has(.pagination) .content{
+            padding: 0px 32px;
+        }
+        .VPDoc:has(.pagination){
+            padding-top: 22px;
+        }
+
     }
 
     /* 移动端大纲栏透明 */
