@@ -11,11 +11,11 @@
 
 - 背诵新概念
 
-### Lucy的一天
+### Lucy的一天（周末）
 
  [Lucy的一天.md](Lucy的一天.md) 
 
-### 新概念英语
+### 新概念英语（工作日）
 
 学习说明：https://hezhigang.github.io/2018/07/18/New-Concept-English/
 

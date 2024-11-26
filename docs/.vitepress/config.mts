@@ -76,7 +76,7 @@ export default defineConfig({
       AutoSidebar({
         ignoreIndexItem: true,  //忽略index文件
         collapsed: true,        //收起所有侧边栏
-        // 侧边栏排序
+        // 侧边栏排序（文件夹排在前面）
         beforeCreateSideBarItems: (data) => {
           function getOrder(item: string): number {
             // 如果项没有扩展名，则认为它是文件夹
@@ -92,6 +92,6 @@ export default defineConfig({
           return data;
         },
       })
-    ]
+    ],
   },
 })

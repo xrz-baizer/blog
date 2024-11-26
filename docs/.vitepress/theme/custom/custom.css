@@ -46,7 +46,7 @@ body.no-sidebar .content {
 
 .VPDoc .content-container{ /* 文档页 容器  */
     font-size: 17px !important;
-    /*max-width: 768px !important;*/
+    max-width: 100% !important;
 }
 .aside .aside-container{ /* 文档页 目录宽度 */
     width: 365px;
@@ -102,8 +102,8 @@ body.no-sidebar .content {
 }
 
 .vp-doc h2 {
-    margin-top: 20px !important;
-    margin-bottom: 10px !important;
+    margin-top: 26px !important;
+    margin-bottom: 16px !important;
     border-top: none !important;
     padding-top: 0px;
     margin-left: -8px !important;
@@ -223,6 +223,7 @@ mark {
     display: none; /* 隐藏滚动条 */
 }
 
+
 /* 目录标记样式 */
 .outline-marker{
     background-color: #30a46c !important;
@@ -314,12 +315,17 @@ mark {
         backdrop-filter: blur(10px);
     }
 
+    /* 960px以上生效 */
     @media (min-width: 960px) {
 
         /* 文档页导航中间透明 */
         .VPNavBar:not(.home.top) .content-body {
             background-color: rgba(255, 255, 255, 0);
             backdrop-filter: blur(10px);
+        }
+
+        .container:has(.aside) .content{
+            max-width: 850px !important;
         }
     }
 
