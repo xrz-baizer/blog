@@ -110,7 +110,7 @@ span{
 .post-list {
     border-bottom: 1px dashed #eee;
     padding: 5px 0;
-    margin: 10px 0;
+    margin: 7px 0;
 }
 .post-list p{
     margin: 0px !important;
@@ -140,7 +140,7 @@ span{
 
 @media screen and (max-width: 768px) {
     .post-list {
-        padding: 14px 0 14px 0;
+        padding: 5px 0 5px 0;
     }
     .post-header {
         display: flex;
@@ -148,7 +148,7 @@ span{
         justify-content: space-between;
     }
     .post-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 400;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -166,8 +166,9 @@ span{
         margin: 0.5rem 0 1rem;
     }
     .category-app{
-        font-size: 14px;
+        font-size: 12px;
         display: block;
+        color: var(--vp-c-text-2);
     }
     .category-pc{
         display: none;

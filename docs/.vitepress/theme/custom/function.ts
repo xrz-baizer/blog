@@ -19,8 +19,6 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
 
     // 转换pageData
     paths.forEach(item => {
-        console.log(item.text)
-
         let page = getPageDataByPath(item.link);
         if (page?.lastUpdated) {
             result.push({
