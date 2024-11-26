@@ -1,4 +1,4 @@
-# Lucy原文
+# Lucy的一天（原文）
 
 可可英语：https://www.kekenet.com/Article/201709/525398.shtml
 

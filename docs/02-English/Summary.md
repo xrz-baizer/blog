@@ -1,4 +1,4 @@
-# English - Summary
+# Summary
 
 ## EnjoyEnglish—EnjoyApp
 

@@ -19,19 +19,36 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
 
     // 转换pageData
     paths.forEach(item => {
+        console.log(item.text)
+
         let page = getPageDataByPath(item.link);
         if (page?.lastUpdated) {
             result.push({
                 ...page,
                 ...item,
                 // formePart: , //提取文件内容
+                // 替换 `0-` 开头的文件名为 `xxx【Pinned】`
+                text: item.text.startsWith('0-') ? `${item.text.slice(2)}【Pinned】` : item.text,
                 lastUpdatedFormat: formatTimestamp(page.lastUpdated) //日期重新格式化
             });
         }
     })
 
-    // 排序：根据 lastUpdated 时间戳降序排列
-    result.sort((a, b) => b.lastUpdated - a.lastUpdated);
+    // // 排序：根据 lastUpdated 时间戳降序排列
+    // result.sort((a, b) => b.lastUpdated - a.lastUpdated);
+
+    // 排序逻辑：数字 `0-` 开头的文件名优先，然后按更新时间降序排列
+    result.sort((a, b) => {
+        const isASticky = a.text.endsWith('【Pinned】') ? 1 : 0;
+        const isBSticky = b.text.endsWith('【Pinned】') ? 1 : 0;
+
+        // 如果两个文件都不是置顶，按更新时间排序
+        if (isASticky === isBSticky) {
+            return b.lastUpdated - a.lastUpdated;
+        }
+        // 如果某个文件是置顶文件，将其放到前面
+        return isBSticky - isASticky;
+    });
 
     if(num == -1) return result;
 
