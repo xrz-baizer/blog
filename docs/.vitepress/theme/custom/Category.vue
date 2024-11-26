@@ -80,18 +80,26 @@ function changePage(page: number) {
 }
 
 button {
+    font-weight: bold;
+    color: var(--vp-c-text-1);
     padding: 5px 10px;
-    border: 1px solid #ccc;
-    background-color: white;
     cursor: pointer;
+    /*border: 1px solid var(--vp-c-text-3);*/
+    /*background-color: white;*/
+
+    /*border: none;*/
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 1px rgb(0 0 0 / 8%);
+    background-color: transparent;
 }
 
 button:disabled {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 
 .current-page-info {
+    color: var(--vp-c-text-2);
     font-weight: bold;
 }
 

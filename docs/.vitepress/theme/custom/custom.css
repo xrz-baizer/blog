@@ -94,6 +94,12 @@ body.no-sidebar .content {
     .VPFeatures{
         padding-top: 0px !important;
     }
+    .VPDoc{
+        padding-top: 18px !important;
+    }
+    .vp-doc h1{
+        font-size: 1.4rem;
+    }
 }
 
 .vp-doc h1 {
