@@ -11,6 +11,10 @@ body.no-sidebar .content {
     margin-left: 0;
 }
 
+.home-email{
+    font-size: 1rem;
+}
+
 /* 主页 居中 */
 .VPHome{
     /*background-image: var(--vp-home-hero-image-background-image);*/
@@ -36,7 +40,7 @@ body.no-sidebar .content {
 
 /* 隐藏文档页的页脚 */
 .VPDocFooter {
-    display: none;
+    /*display: none;*/
 }
 
 /* 隐藏主题默认的更新时间 */
@@ -169,9 +173,11 @@ mark {
 
 /* 行级代码样式 */
 .vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code{
-    color: #d9702b;
-    /*font-weight: 500;*/
-    background: #f8f9fa;
+    /*color: #d9702b;*/
+    /*background: #f8f9fa;*/
+
+    color: #ec6e30;
+    background: #f8f8fd;
 }
 
 /* 块代码样式 */
@@ -185,10 +191,6 @@ mark {
     background-color: #f8f8fe !important;
     margin: 16px 0px;
     border-radius: 5px;
-}
-
-.vp-doc :lang(zh) {
-    letter-spacing: 0.2em !important; /* 中文字符的间距 */
 }
 
 

@@ -18,7 +18,7 @@
                 :disabled="currentPage === 1"
                 @click="changePage(currentPage - 1)"
             >
-                上一页
+                Previous page
             </button>
 
             <span class="current-page-info">{{ currentPage }} / {{ totalPages }}</span>
@@ -27,7 +27,7 @@
                 :disabled="currentPage === totalPages"
                 @click="changePage(currentPage + 1)"
             >
-                下一页
+                Next page
             </button>
         </div>
     </div>
@@ -80,7 +80,7 @@ function changePage(page: number) {
 }
 
 button {
-    font-weight: bold;
+    font-weight: 500;
     color: var(--vp-c-text-1);
     padding: 5px 10px;
     cursor: pointer;
