@@ -59,7 +59,7 @@ body.no-sidebar .content {
     width: 365px;
 }
 .VPDoc .VPDocOutlineItem .outline-link{  /* 文档页 目录字体大小 */
-    font-size: 15px ;
+    font-size: 16px ;
 }
 
 .search-input{
@@ -96,7 +96,10 @@ body.no-sidebar .content {
 /* 640px以下生效 */
 @media (max-width: 640px) {
     .LastUpdated {
-        display: none;
+        /*display: none;*/
+        margin-bottom: 0px;
+        /*margin-left: -10%;*/
+        font-size: .8rem;
     }
     .VPFeatures{
         padding-top: 0px !important;
@@ -106,7 +109,13 @@ body.no-sidebar .content {
         padding-bottom: 0px !important;
     }
     .vp-doc h1{
-        font-size: 1.4rem;
+        font-size: 1.5rem !important;
+        margin-bottom: 0px !important;
+    }
+    .vp-doc h2{
+        font-size: 1.5rem !important;
+        /*margin-top: 26px !important;*/
+        /*margin-bottom: 10px !important;*/
     }
     .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
         margin-left: 0px !important;
@@ -119,21 +128,25 @@ body.no-sidebar .content {
 
 .vp-doc h1 {
     margin-bottom: 10px;
+    font-size: 2rem;;
 }
 
 .vp-doc h2 {
-    margin-top: 26px !important;
-    margin-bottom: 16px !important;
+    margin-top: 26px;
+    margin-bottom: 16px;
     border-top: none !important;
     padding-top: 0px;
+    font-size: 1.6rem;;
 }
 
 .vp-doc h3 {
-    margin-top: 15px;
+    font-size: 1.4rem;
+    margin-top: 25px;
     margin-bottom: 15px;
 }
 
 .vp-doc h4{
+    font-size: 1.2rem;
     margin-top: 15px;
     margin-bottom: 15px;
 }

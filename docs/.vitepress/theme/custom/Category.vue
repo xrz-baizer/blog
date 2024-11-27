@@ -132,6 +132,20 @@ span{
     font-size: 1.225rem;
     font-weight: 500;
     margin: 0.1rem 0;
+
+    /*!* 超出换行，并以省略号显示 *!*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden !important;*/
+    /*text-overflow: ellipsis;*/
+    /*width: 100%;*/
+}
+.post-title a{
+    /* 超出换行，并以省略号显示 */
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
 }
 
 .describe {
