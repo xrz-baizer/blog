@@ -71,10 +71,9 @@ function changePage(page: number) {
 
 .pagination {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 350px;
     margin: 20px auto;
     gap: 10px;
 }
@@ -101,6 +100,7 @@ button:disabled {
 .current-page-info {
     color: var(--vp-c-text-2);
     font-weight: bold;
+    margin: 0 1rem;
 }
 
 
