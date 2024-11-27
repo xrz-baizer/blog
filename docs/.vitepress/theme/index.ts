@@ -81,7 +81,7 @@ export default {
         document.querySelector('.VPNavBarTitle')
       ];
 
-      const sidebarElement = document.querySelector('.VPSidebar');
+      const sidebarElement:HTMLElement = document.querySelector('.VPSidebar');
 
       elements.forEach(element => {
         if (element) {
@@ -108,7 +108,7 @@ export default {
       // 查找页面中是否有 h2 标签
       const hasH2Tag = document.querySelectorAll('h2').length > 0;
       // 获取目标元素
-      const asideElement = document.querySelector('.VPDoc .aside');
+      const asideElement:HTMLElement = document.querySelector('.VPDoc .aside');
       // const contentContainerElement = document.querySelector('.VPDoc.has-aside .content-container');
       // const contentElement = document.querySelector('#VPContent .content');
 

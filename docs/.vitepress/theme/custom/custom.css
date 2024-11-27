@@ -196,7 +196,10 @@ mark {
     /*background: #f8f9fa;*/
 
     color: #ec6e30;
-    background: #f8f8fd;
+    background: #f8f8fe;
+
+    /*color: #444746;*/
+    /*background: #e9eef6;*/
 }
 
 /* 块代码样式 */
@@ -207,11 +210,18 @@ mark {
 
 /* 代码块样式 */
 .vp-doc div[class*='language-'] {
-    background-color: #f8f8fe !important;
+    /*background-color: #f8f8fe !important;*/
+    background-color: #f0f4f9 !important;
+
     margin: 16px 0px;
-    border-radius: 5px;
+    border-radius: 12px;
+    padding: 0 10px;
 }
 
+/* 代码块 行号样式 */
+.vp-doc .line-numbers-wrapper{
+    border-right: 3px solid var(--vp-c-bg);
+}
 
 .vp-doc p,.vp-doc ul {
     /*margin: 10px 0px;*/
@@ -325,6 +335,13 @@ mark {
 
     /* 主页图片眩晕大小 */
     --vp-home-hero-image-filter: blur(80px);
+
+
+    /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif !important;*/
+    /*--vp-font-family-mono: Google Sans,Helvetica Neue,sans-serif !important;*/
+
+    /*--vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';*/
+    /*--vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;*/
 
     /* 首页下滑后导航透明 */
     .VPNavBar:not(.has-sidebar):not(.home.top) {
