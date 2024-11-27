@@ -97,7 +97,7 @@ body.no-sidebar .content {
 @media (max-width: 640px) {
     .LastUpdated {
         /*display: none;*/
-        margin-bottom: 0px;
+        /*margin-bottom: 0px;*/
         /*margin-left: -10%;*/
         font-size: .8rem;
     }
@@ -110,11 +110,11 @@ body.no-sidebar .content {
     }
     .vp-doc h1{
         font-size: 1.5rem !important;
-        margin-bottom: 0px !important;
+        /*margin-bottom: 0px !important;*/
     }
     .vp-doc h2{
         font-size: 1.5rem !important;
-        /*margin-top: 26px !important;*/
+        margin-top: 16px !important;
         /*margin-bottom: 10px !important;*/
     }
     .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
