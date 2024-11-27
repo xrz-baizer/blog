@@ -40,7 +40,7 @@ body.no-sidebar .content {
 
 /* 隐藏文档页的页脚 */
 .VPDocFooter {
-    /*display: none;*/
+    display: none;
 }
 
 /* 隐藏主题默认的更新时间 */
