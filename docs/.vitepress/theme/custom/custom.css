@@ -4,6 +4,36 @@
 /*
  自定义样式，覆盖默认主题样式
  */
+
+:root {
+    /* 主题基色 */
+    /*--vp-c-brand-1: #18794e;*/
+    /*--vp-c-brand-1: #30a46c;*/
+    --vp-c-brand-1: var(--vp-c-indigo-1);
+    --vp-c-brand-2: var(--vp-c-indigo-2);
+    --vp-c-brand-3: var(--vp-c-indigo-2);
+
+    /* 侧边栏 宽度 */
+    --vp-sidebar-width: 345px;
+    /* 自定义字体 */
+    /*--vp-font-family-base: "customFont";  */
+
+    --vp-nav-height: 56px;
+    --vp-nav-logo-height: 20px;
+
+    /* 主页图片眩晕大小 */
+    --vp-home-hero-image-filter: blur(80px);
+
+
+    /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif;*/
+    /*--vp-font-family-mono: Google Sans,Helvetica Neue,sans-serif !important;*/
+
+    /*--vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';*/
+    /*--vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;*/
+
+
+}
+
 body.no-sidebar .sidebar {
     display: none;
 }
@@ -68,17 +98,11 @@ body.no-sidebar .content {
 }
 
 
-
 /* 左上角网站名称 */
-.VPNavBarTitle .title {
+.VPNavBarTitle span {
     font-size: 22px !important;
     -webkit-background-clip: text;
     background-clip: text;
-
-
-    /*background: var(--vp-home-hero-name-background);*/
-    /*-webkit-text-fill-color: var(--vp-home-hero-name-color);*/
-
     background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
     -webkit-text-fill-color: transparent;
 }
@@ -229,6 +253,11 @@ mark {
     margin-bottom: 12px;
 }
 
+.vp-doc p,.vp-doc ul,.vp-doc ol{
+    /*letter-spacing:0.2px;*/
+    /*letter-spacing:normal;*/
+}
+
 .vp-doc a {
     color: #1769e0;
     text-decoration: none;
@@ -287,7 +316,7 @@ mark {
 .VPSidebarItem h4{
     /*font-weight: 600 !important;*/
     font-size: 1.2rem !important;
-    color: var(--vp-c-text-2) !important;
+    color: var(--vp-c-text-1) !important;
 }
 /* 侧边栏 文章标题样式*/
 .VPSidebarItem p{
@@ -312,92 +341,61 @@ mark {
 }
 
 
-/*@font-face {*/
-/*    font-family: 'customFont';*/
-/*    src: url('../../../public/font/gbsn00lp.ttf') format('truetype');*/
-/*}*/
-
-:root {
-    /* 主题基色 */
-    /*--vp-c-brand-1: #18794e;*/
-    /*--vp-c-brand-1: #30a46c;*/
-    --vp-c-brand-1: var(--vp-c-indigo-1);
-    --vp-c-brand-2: var(--vp-c-indigo-2);
-    --vp-c-brand-3: var(--vp-c-indigo-2);
-
-    /* 侧边栏 宽度 */
-    --vp-sidebar-width: 345px;
-    /* 自定义字体 */
-    /*--vp-font-family-base: "customFont";  */
-
-    --vp-nav-height: 56px;
-    --vp-nav-logo-height: 20px;
-
-    /* 主页图片眩晕大小 */
-    --vp-home-hero-image-filter: blur(80px);
-
-
-    /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif !important;*/
-    /*--vp-font-family-mono: Google Sans,Helvetica Neue,sans-serif !important;*/
-
-    /*--vp-font-family-base: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';*/
-    /*--vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;*/
-
-    /* 首页下滑后导航透明 */
-    .VPNavBar:not(.has-sidebar):not(.home.top) {
-        background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
-    }
-
-    /* 搜索框透明 */
-    .DocSearch-Button {
-        background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
-    }
-
-    /* Feature透明 */
-    .VPFeature {
-        border: none;
-        box-shadow: 1px 3px 8px 0 rgb(0 0 0 / 15%);
-        background-color: transparent;
-    }
-
-    /* 文档页侧边栏顶部透明 */
-    .curtain {
-        background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
-        top: calc(var(--vp-nav-height)* -1);
-    }
-
-    /* 960px以上生效 */
-    @media (min-width: 960px) {
-
-        /* 文档页导航中间透明 */
-        .VPNavBar:not(.home.top) .content-body {
-            background-color: rgba(255, 255, 255, 0);
-            backdrop-filter: blur(10px);
-        }
-
-        .container:has(.aside) .content{
-            max-width: 850px !important;
-        }
-
-        /* 分类页特殊处理 */
-        .container:has(.pagination) .content{
-            padding: 0px 32px;
-        }
-        .VPDoc:has(.pagination){
-            padding-top: 22px;
-        }
-
-    }
-
-    /* 移动端大纲栏透明 */
-    .VPLocalNav {
-        background-color: rgba(255, 255, 255, 0);
-        backdrop-filter: blur(10px);
-    }
+/* 首页下滑后导航透明 */
+.VPNavBar:not(.has-sidebar):not(.home.top) {
+    background-color: rgba(255, 255, 255, 0) !important;
+    backdrop-filter: blur(10px);
 }
+
+/* 搜索框透明 */
+.DocSearch-Button {
+    background-color: rgba(255, 255, 255, 0) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Feature透明 */
+.VPFeature {
+    border: none !important;
+    box-shadow: 1px 3px 8px 0 rgb(0 0 0 / 15%);
+    background-color: transparent !important;;
+}
+
+/* 文档页侧边栏顶部透明 */
+.curtain {
+    background-color: rgba(255, 255, 255, 0) !important;
+    backdrop-filter: blur(10px) !important;
+    top: calc(var(--vp-nav-height)* -1) !important;
+}
+
+/* 960px以上生效 */
+@media (min-width: 960px) {
+
+    /* 文档页导航中间透明 */
+    .VPNavBar:not(.home.top) .content-body {
+        background-color: rgba(255, 255, 255, 0) !important;;
+        backdrop-filter: blur(10px);
+    }
+
+    .container:has(.aside) .content{
+        max-width: 850px !important;
+    }
+
+    /* 分类页特殊处理 */
+    .container:has(.pagination) .content{
+        padding: 0px 32px;
+    }
+    .VPDoc:has(.pagination){
+        padding-top: 22px;
+    }
+
+}
+
+/* 移动端大纲栏透明 */
+.VPLocalNav {
+    background-color: rgba(255, 255, 255, 0) !important;
+    backdrop-filter: blur(10px);
+}
+
 .dark {
     --vp-c-brand-1: #3dd68c;
     --vp-c-brand-2: #30a46c;
