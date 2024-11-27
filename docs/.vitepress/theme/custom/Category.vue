@@ -74,7 +74,7 @@ function changePage(page: number) {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     margin: 20px auto;
     gap: 10px;
 }
