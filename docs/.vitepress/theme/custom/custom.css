@@ -11,9 +11,6 @@ body.no-sidebar .content {
     margin-left: 0;
 }
 
-.home-email{
-    font-size: 1rem;
-}
 
 /* 主页 居中 */
 .VPHome{
@@ -38,15 +35,21 @@ body.no-sidebar .content {
     padding-bottom: 30px !important;
 }
 
+
+.message, .copyright{
+    font-size: .8rem !important;
+}
+
 /* 隐藏文档页的页脚 */
 .VPDocFooter {
     display: none;
 }
 
-/* 隐藏主题默认的更新时间 */
-.VPLastUpdated{
-    /*display: none;*/
-}
+
+/*!* 隐藏主题默认的更新时间 *!*/
+/*.VPLastUpdated{*/
+/*    display: none;*/
+/*}*/
 
 .VPDoc .content-container{ /* 文档页 容器  */
     font-size: 17px !important;
@@ -265,6 +268,13 @@ mark {
     /*font-weight: 500 !important;*/
     font-size: 1rem !important;;
     /*color: #1769e0 !important;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.VPSidebarItem .VPLink{
+    width: 100%;
 }
 
 /* 导航栏样式 */
@@ -321,6 +331,7 @@ mark {
     .curtain {
         background-color: rgba(255, 255, 255, 0);
         backdrop-filter: blur(10px);
+        top: calc(var(--vp-nav-height)* -1);
     }
 
     /* 960px以上生效 */
