@@ -8,9 +8,10 @@ hero:
   text: "Baizer"
   tagline: "个人知识库"
   image:
-    src: /lotus.svg
+    src: /peach-blossom.svg
+#    src: /lotus.svg
 #    alt: Baizer
-#  actions:
+  actions:
 #    - theme: brand
 #      text: Essay
 #      link: /01-Essay/
@@ -20,6 +21,9 @@ hero:
 #    - theme: alt
 #      text: EnglishLeaning
 #      link: /02-English/
+    - theme: alt
+      text: baizer.dev@cloud.com
+      link: 
 
 features:
   - title: Essay

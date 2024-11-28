@@ -8,7 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/auto-deploy/deploy.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/file.svg" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/file.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.conf" beforeDir="false" afterPath="$PROJECT_DIR$/auto-deploy/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +92,11 @@
       <recent name="$PROJECT_DIR$/docs/00-TechnicalFile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/auto-deploy" />
       <recent name="$PROJECT_DIR$/docs/01-Essay/Mac" />
       <recent name="$PROJECT_DIR$/docs/00-TechnicalFile/Other" />
       <recent name="$PROJECT_DIR$/docs/00-TechnicalFile" />
       <recent name="$PROJECT_DIR$/docs/02-English" />
-      <recent name="$PROJECT_DIR$/docs/.vitepress/theme" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -174,6 +178,8 @@
       <workItem from="1732687929842" duration="269000" />
       <workItem from="1732696211724" duration="7416000" />
       <workItem from="1732711420723" duration="4753000" />
+      <workItem from="1732758822116" duration="656000" />
+      <workItem from="1732786232622" duration="4855000" />
     </task>
     <servers />
   </component>

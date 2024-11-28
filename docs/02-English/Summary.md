@@ -29,7 +29,7 @@
 
 英音：https://www.listeningexpress.com/nce-b/book1/
 
->https://www.listeningexpress.com/nce-b/book1/049-050-At-the-Butcher's.html
+>https://www.listeningexpress.com/nce-b/book1/053-054-An-Interesting-Climate.html
 
 #### 第二册
 
