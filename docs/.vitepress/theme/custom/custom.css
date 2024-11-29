@@ -132,6 +132,7 @@ body.no-sidebar .content {
 /* 640px以下生效 */
 @media (max-width: 640px) {
 
+    /*--vp-home-hero-image-filter: blur(80px);*/
     .VPHero{
         padding-top: 30px !important;
         padding-bottom: 20px !important;
@@ -139,7 +140,7 @@ body.no-sidebar .content {
         /*filter: blur(30px);*/
     }
     .VPHero .container{
-        flex-direction: column-reverse;
+        /*flex-direction: column-reverse;*/
     }
     .LastUpdated {
         /*display: none;*/
