@@ -131,6 +131,16 @@ body.no-sidebar .content {
 
 /* 640px以下生效 */
 @media (max-width: 640px) {
+
+    .VPHero{
+        padding-top: 30px !important;
+        padding-bottom: 20px !important;
+        /*background-image: var(--vp-home-hero-image-background-image);*/
+        /*filter: blur(30px);*/
+    }
+    .VPHero .container{
+        flex-direction: column-reverse;
+    }
     .LastUpdated {
         /*display: none;*/
         /*margin-bottom: 0px;*/
@@ -139,6 +149,14 @@ body.no-sidebar .content {
     }
     .VPFeatures{
         padding-top: 0px !important;
+    }
+    .VPHomeFeatures .box{
+        padding: 10px 20px;
+    }
+    .VPHomeFeatures .details{
+        padding-top: 4px;
+        line-height: 14px;
+        font-size: 12px;
     }
     .VPDoc{
         padding-top: 18px !important;
