@@ -159,6 +159,10 @@ body.no-sidebar .content {
         line-height: 14px;
         font-size: 12px;
     }
+    .VPHomeFeatures .item{
+        margin: 0 auto;
+        width: 87%;
+    }
     .VPDoc{
         padding-top: 18px !important;
         padding-bottom: 0px !important;

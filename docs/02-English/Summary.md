@@ -29,7 +29,7 @@
 
 英音：https://www.listeningexpress.com/nce-b/book1/
 
->https://www.listeningexpress.com/nce-b/book1/059-060-Is-That-All.html
+>https://www.listeningexpress.com/nce-a/book1/069-070-The-Car-Race.html
 
 #### 第二册
 

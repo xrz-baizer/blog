@@ -8,9 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/HomePage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category_backups.vue-page" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,7 @@
         <option value="CSS File" />
         <option value="Vue Single File Component" />
         <option value="TypeScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -179,6 +178,9 @@
       <workItem from="1732758822116" duration="656000" />
       <workItem from="1732786232622" duration="5899000" />
       <workItem from="1732861985846" duration="651000" />
+      <workItem from="1732867572607" duration="5402000" />
+      <workItem from="1732923816428" duration="314000" />
+      <workItem from="1732951392134" duration="599000" />
     </task>
     <servers />
   </component>
