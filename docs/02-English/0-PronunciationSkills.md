@@ -4,6 +4,39 @@ B站英语兔视频：https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=1&vd_source=
 
 Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
 
+
+## 读音规则（常用）
+
+### 元音字母`a` `e` `i` `o` `u`在==开闭==音节中发不同的音
+
+#### 开音节
+
+开音节是以一个元音结尾的音节，通常没有辅音跟在元音后面。一般发其字母本身的音。
+例如：be, go, she, my。
+
+#### 闭音节
+
+闭音节是以一个辅音结尾的音节，元音字母前通常有一个或多个辅音。一般发短元音音值。
+例如：cat, pen, sit, top, run。
+
+
+| 元音字母 |   `a`    |                 |   `e`    |          |   `i`    |             |   `o`    |           |    `u`    |            |
+| -------- | :------: | --------------- | :------: | -------- | :------: | ----------- | :------: | --------- | :-------: | ---------- |
+| 开音节   | **[eɪ]** | date [deɪt]     | **[iː]** | he [hiː] | **[aɪ]** | nice [naɪs] | **[əʊ]** | go [ɡəʊ]  | **[juː]** | use [juːz] |
+| 闭音节   | **[æ]**  | apple [ˈæp(ə)l] | **[e]**  | egg [eg] | **[ɪ]**  | fish [fɪʃ]  | **[ɒ]**  | dog [dɒg] |  **[ʌ]**  | bus [bʌs]  |
+
+### 字母 `c` 后面有 e,i,y 读[s]，其它读[k]
+
+- **center [ˈsentə(r)]**
+- **call [kɔːl]**
+
+### 字母 `g` 后面有 e,i,y 读[dʒ]，其它读[g]
+
+- **age [eɪdʒ]**
+
+- **good [ɡʊd]**
+
+
 ## 连读
 
 连读是听力中最常见的问题，也是长期困扰中国学生的一大难点。可能许多人都有过这样的经历，一串词连在一起怎么也听不出来，可对照原文一看，其实是最简单不过的单词组合而已。为什么会这样呢？这是因为我们对英语的连读方式太陌生了，没有受过训练的耳朵自然听不出英美人讲话时约定俗成的习惯连读方式。
@@ -146,19 +179,19 @@ Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
 
 - **单音节单词（1拍）**
 
-  act 行动 cry 哭 want 想要
+  `act` 行动 `cry` 哭 `want` 想要
 
 - **双音节单词（2拍）**
 
-  cor-rect 正确的 ac-tive 积极的 for-get 忘记
+  `cor-rect` 正确的 `ac-tive` 积极的 `for-get` 忘记
 
 - **三音节单词（3拍）**
 
-  Oc-to-ber 十月 ac-ci-dent 事故 ra-di-o 收音机
+  `Oc-to-ber` 十月 `ac-ci-dent` 事故 `ra-di-o` 收音机
 
 - **多音节单词（4或5拍）**
 
-  dis-cov-er-y 发现 ac-tiv-i-ty 活动 vo-cab-u-la-ry 词汇
+  `dis-cov-er-y` 发现 `ac-tiv-i-ty` 活动 `vo-cab-u-la-ry` 词汇
 
 ### 音节重读
 
