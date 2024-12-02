@@ -29,7 +29,7 @@
 
 英音：https://www.listeningexpress.com/nce-b/book1/
 
->https://www.listeningexpress.com/nce-a/book1/069-070-The-Car-Race.html
+>https://www.listeningexpress.com/nce-a/book1/091-092-Poor-Ian.html
 
 #### 第二册
 
