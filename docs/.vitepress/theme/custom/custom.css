@@ -170,14 +170,14 @@ body.no-sidebar .content {
 /*}*/
 
 .VPDoc .content-container{ /* 文档页 容器  */
-    font-size: 17px !important;
+    font-size: 16px !important;
     max-width: 100% !important;
 }
 .aside .aside-container{ /* 文档页 目录宽度 */
     width: 365px;
 }
 .VPDoc .VPDocOutlineItem .outline-link{  /* 文档页 目录字体大小 */
-    font-size: 16px ;
+    font-size: 15px ;
 }
 
 .search-input{
