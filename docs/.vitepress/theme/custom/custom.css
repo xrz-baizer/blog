@@ -335,7 +335,8 @@ mark {
 /* 针对 VitePress 默认侧边栏 */
 .VPSidebar {
     /*display: none;*/
-    background-color: #f8f8fe!important;
+    /*background-color: #f8f8fe!important;*/
+    background-color: #f0f4f9 !important;
     overflow-y: auto; /* 保留滚动功能 */
     scrollbar-width: none; /* 针对 Firefox 隐藏滚动条 */
 }
