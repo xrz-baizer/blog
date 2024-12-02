@@ -413,8 +413,6 @@
     animation: rainbow 8s linear infinite;
 }
 
-
-
 :root {
     /* hero标题渐变色 */
     --vp-home-hero-name-color: transparent;

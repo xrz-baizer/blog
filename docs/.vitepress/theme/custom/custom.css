@@ -31,11 +31,80 @@
 }
 
 
-/* .vitepress/theme/custom.css */
+/* 960px以上生效 */
+@media (min-width: 960px) {
 
-/*
- 自定义样式，覆盖默认主题样式
- */
+    /* 文档页导航中间透明 */
+    .VPNavBar:not(.home.top) .content-body {
+        background-color: rgba(255, 255, 255, 0) !important;;
+        backdrop-filter: blur(10px);
+    }
+
+    .container:has(.aside) .content{
+        max-width: 850px !important;
+    }
+
+    /* 分类页特殊处理 */
+    .container:has(.pagination) .content{
+        padding: 0px 32px;
+    }
+    .VPDoc:has(.pagination){
+        padding-top: 22px;
+    }
+
+}
+
+/* 640px以下生效 */
+@media (max-width: 640px) {
+
+    /*--vp-home-hero-image-filter: blur(80px);*/
+    .VPHero{
+        padding-top: 30px !important;
+        padding-bottom: 20px !important;
+        /*background-image: var(--vp-home-hero-image-background-image);*/
+        /*filter: blur(30px);*/
+    }
+    .VPHero .container{
+        /*flex-direction: column-reverse;*/
+    }
+    .LastUpdated {
+        /*display: none;*/
+        /*margin-bottom: 0px;*/
+        /*margin-left: -10%;*/
+        font-size: .8rem;
+    }
+    .VPFeatures{
+        padding-top: 0px !important;
+    }
+    .VPHomeFeatures .box{
+        padding: 10px 20px;
+    }
+    .VPHomeFeatures .details{
+        padding-top: 4px;
+        line-height: 14px;
+        font-size: 12px;
+    }
+    .VPHomeFeatures .item{
+        margin: 0 auto;
+        width: 87%;
+    }
+    .VPDoc{
+        padding-top: 18px !important;
+        padding-bottom: 0px !important;
+    }
+    .vp-doc h1{
+        font-size: 1.5rem !important;
+        /*margin-bottom: 0px !important;*/
+    }
+    .vp-doc h2{
+        font-size: 1.5rem !important;
+        margin-top: 16px !important;
+        /*margin-bottom: 10px !important;*/
+    }
+    .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
+        margin-left: 0px !important;
+    }
+}
 
 body.no-sidebar .sidebar {
     display: none;
@@ -62,6 +131,11 @@ body.no-sidebar .content {
 /*#app{*/
 /*    background-image: url("https://cn.bing.com//th?id=OHR.FibonacciAloe_ZH-CN8974137481_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");*/
 /*}*/
+
+.VPImage{
+    opacity: 0.8;
+    /*transition: opacity 1s ease;*/
+}
 
 /* 首页功能块 */
 .VPFeatures{
@@ -131,57 +205,6 @@ body.no-sidebar .content {
     color: rgba(60, 60, 67, 0.56);
 }
 
-/* 640px以下生效 */
-@media (max-width: 640px) {
-
-    /*--vp-home-hero-image-filter: blur(80px);*/
-    .VPHero{
-        padding-top: 30px !important;
-        padding-bottom: 20px !important;
-        /*background-image: var(--vp-home-hero-image-background-image);*/
-        /*filter: blur(30px);*/
-    }
-    .VPHero .container{
-        /*flex-direction: column-reverse;*/
-    }
-    .LastUpdated {
-        /*display: none;*/
-        /*margin-bottom: 0px;*/
-        /*margin-left: -10%;*/
-        font-size: .8rem;
-    }
-    .VPFeatures{
-        padding-top: 0px !important;
-    }
-    .VPHomeFeatures .box{
-        padding: 10px 20px;
-    }
-    .VPHomeFeatures .details{
-        padding-top: 4px;
-        line-height: 14px;
-        font-size: 12px;
-    }
-    .VPHomeFeatures .item{
-        margin: 0 auto;
-        width: 87%;
-    }
-    .VPDoc{
-        padding-top: 18px !important;
-        padding-bottom: 0px !important;
-    }
-    .vp-doc h1{
-        font-size: 1.5rem !important;
-        /*margin-bottom: 0px !important;*/
-    }
-    .vp-doc h2{
-        font-size: 1.5rem !important;
-        margin-top: 16px !important;
-        /*margin-bottom: 10px !important;*/
-    }
-    .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
-        margin-left: 0px !important;
-    }
-}
 
 .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
     margin-left: -8px;
@@ -408,28 +431,6 @@ mark {
     top: calc(var(--vp-nav-height)* -1) !important;
 }
 
-/* 960px以上生效 */
-@media (min-width: 960px) {
-
-    /* 文档页导航中间透明 */
-    .VPNavBar:not(.home.top) .content-body {
-        background-color: rgba(255, 255, 255, 0) !important;;
-        backdrop-filter: blur(10px);
-    }
-
-    .container:has(.aside) .content{
-        max-width: 850px !important;
-    }
-
-    /* 分类页特殊处理 */
-    .container:has(.pagination) .content{
-        padding: 0px 32px;
-    }
-    .VPDoc:has(.pagination){
-        padding-top: 22px;
-    }
-
-}
 
 /* 移动端大纲栏透明 */
 .VPLocalNav {
