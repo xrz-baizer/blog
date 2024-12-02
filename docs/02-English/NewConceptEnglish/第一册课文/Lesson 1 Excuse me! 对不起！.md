@@ -1,1 +1,0 @@
-# ﻿ Lesson 1 Excuse me! 对不起！
