@@ -1,4 +1,7 @@
 import {PageData} from 'vitepress'
+// 动态加载所有 Markdown 文件
+const pages = import.meta.glob('/**/*.md', { eager: true });
+const rawPages = import.meta.glob('/**/*.md', { eager: true, as: 'raw' }); //包含文件内容
 
 type Item = {
     text: string; // 文件名
@@ -9,7 +12,7 @@ type Item = {
 
 export interface Article extends PageData,Item {
     lastUpdatedFormat: string;
-    formePart: string;
+    summary: string;
 }
 
 export function getRecentArticles(items: Item[],num: number): Article[] {
@@ -19,16 +22,20 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
 
     // 转换pageData
     paths.forEach(item => {
-        let page = getPageDataByPath(item.link);
-        if (page?.lastUpdated) {
-            result.push({
-                ...page,
-                ...item,
-                // formePart: , //提取文件内容
-                // 替换 `0-` 开头的文件名为 `xxx【Pinned】`
-                text: item.text.startsWith('0-') ? `${item.text.slice(2)}【Pinned】` : item.text,
-                lastUpdatedFormat: formatTimestamp(page.lastUpdated) //日期重新格式化
-            });
+        // 将路径中的 .html 替换为 .md
+        let mdPath = item.link.replace(/\.html$/, '.md');
+        if(pages[mdPath]){
+            // 查找匹配的 Markdown 文件
+            let page = pages[mdPath].__pageData;
+            if (page?.lastUpdated) {
+                result.push({
+                    ...page,
+                    ...item,
+                    // 替换 `0-` 开头的文件名为 `xxx【Pinned】`
+                    text: item.text.startsWith('0-') ? `${item.text.slice(2)}【Pinned】` : item.text,
+                    lastUpdatedFormat: formatTimestamp(page.lastUpdated) //日期重新格式化
+                });
+            }
         }
     })
 
@@ -70,17 +77,8 @@ export function extractLinks(items: Item[]): Item[] {
 
     return result;
 }
-export function getPageDataByPath(path: string) : Article {
-    // 动态加载所有 Markdown 文件
-    let pages = import.meta.glob('/**/*.md', { eager: true });
 
-    // 将路径中的 .html 替换为 .md
-    let mdPath = path.replace(/\.html$/, '.md');
 
-    // 查找匹配的 Markdown 文件
-
-    return pages[mdPath] ? pages[mdPath].__pageData : null;;
-}
 
 export function formatTimestamp(timestamp: number): string {
     if (!timestamp) return null;

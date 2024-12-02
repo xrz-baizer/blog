@@ -9,15 +9,12 @@
     --vp-c-brand-3: var(--vp-c-indigo-2);
 
     /* 侧边栏 宽度 */
-    --vp-sidebar-width: 345px;
+    --vp-sidebar-width: 325px;
     /* 自定义字体 */
     /*--vp-font-family-base: "customFont";  */
 
     --vp-nav-height: 56px;
     --vp-nav-logo-height: 20px;
-
-    /* 主页图片眩晕大小 */
-    --vp-home-hero-image-filter: blur(80px);
 
 
     /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif;*/
@@ -162,6 +159,25 @@ body.no-sidebar .content {
 .VPDocFooter {
     display: none;
 }
+
+/* 针对 VitePress 默认侧边栏 */
+.VPSidebar {
+    /*display: none;*/
+    /*background-color: #f8f8fe!important;*/
+    background-color: #f0f4f9 !important;
+    overflow-y: auto; /* 保留滚动功能 */
+    scrollbar-width: none; /* 针对 Firefox 隐藏滚动条 */
+}
+
+/*:root{*/
+/*    --vp-sidebar-width:0px;*/
+/*}*/
+
+/* 针对 Webkit 浏览器（如 Chrome, Edge, Safari） */
+.VPSidebar::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
+}
+
 
 
 /*!* 隐藏主题默认的更新时间 *!*/
@@ -331,24 +347,6 @@ mark {
     text-decoration: underline;
 }
 
-
-/* 针对 VitePress 默认侧边栏 */
-.VPSidebar {
-    /*display: none;*/
-    /*background-color: #f8f8fe!important;*/
-    background-color: #f0f4f9 !important;
-    overflow-y: auto; /* 保留滚动功能 */
-    scrollbar-width: none; /* 针对 Firefox 隐藏滚动条 */
-}
-
-/*:root{*/
-/*    --vp-sidebar-width:0px;*/
-/*}*/
-
-/* 针对 Webkit 浏览器（如 Chrome, Edge, Safari） */
-.VPSidebar::-webkit-scrollbar {
-    display: none; /* 隐藏滚动条 */
-}
 
 
 /* 目录标记样式 */

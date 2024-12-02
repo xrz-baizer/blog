@@ -7,7 +7,15 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init" />
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function-b.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/articles.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +103,16 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -118,6 +136,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.preview" />
       </list>
     </recent_temporary>
@@ -184,6 +203,8 @@
       <workItem from="1733106258132" duration="4763000" />
       <workItem from="1733126824855" duration="832000" />
       <workItem from="1733127812149" duration="861000" />
+      <workItem from="1733129250227" duration="341000" />
+      <workItem from="1733130084859" duration="5951000" />
     </task>
     <servers />
   </component>

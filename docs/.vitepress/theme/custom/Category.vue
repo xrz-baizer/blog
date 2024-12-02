@@ -8,7 +8,7 @@
                 </div>
                 <span class="category-pc">{{ article.lastUpdatedFormat }}</span>
             </div>
-            <p class="describe" v-html="article.filePath"></p>
+            <p class="describe" v-html="article.summary"></p>
             <span class="category-app">{{ article.lastUpdatedFormat }}</span>
         </div>
 
@@ -36,7 +36,12 @@
 <script lang="ts" setup>
 import {PageData} from 'vitepress'
 import {useSidebar} from 'vitepress/theme'
-import {getRecentArticles,Article} from './function.ts'
+import {getRecentArticles, Article} from './function.ts'
+import { articlesMap } from '../../../public/articles.js';
+
+function getArticleSummary(path) {
+    return articlesMap[path] || 'Summary not found.';
+}
 
 // 获取当前侧边栏数据
 const { sidebar } = useSidebar();
@@ -47,15 +52,24 @@ const articles: Article[] = getRecentArticles(sidebar.value,-1);
 // 分页状态
 import { ref, computed } from 'vue';
 const currentPage = ref(1); // 当前页码
-const pageSize = 9; // 每页文章数
+const pageSize = 7; // 每页文章数
 
 // 计算总页数
 const totalPages = computed(() => Math.ceil(articles.length / pageSize));
 
 // 当前页显示的文章
 const paginatedArticles = computed(() => {
-    const start = (currentPage.value - 1) * pageSize;
-    return articles.slice(start, start + pageSize);
+    let start = (currentPage.value - 1) * pageSize;
+    let currentArticles = articles.slice(start, start + pageSize);
+
+    // 填充文章概述
+    currentArticles.forEach(article => {
+        // 获取build中生成的文章概述
+        article.summary = getArticleSummary(article.filePath);;
+    })
+
+
+    return currentArticles;
 });
 
 // 切换页码
@@ -153,7 +167,8 @@ span{
     font-size: 0.9375rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    /* 当 p 标签内的内容超过两行时，超出的部分会被隐藏，并显示省略号 ...。 */
+    -webkit-line-clamp: 2;
     overflow: hidden;
     color: var(--vp-c-text-2);
     margin-bottom: 10px;

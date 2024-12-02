@@ -2,7 +2,7 @@
 
 ## 前言
 
-[CICD-Jenkins实现](./CICD%20-%20Jenkins实现.md)
+[CICD-Jenkins实现](./0-CICD - Jenkins实现.md)
 
 在上一篇文章的基础下进行调整，增加环境区分 local、test、prod
 

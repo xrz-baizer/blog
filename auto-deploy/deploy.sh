@@ -36,6 +36,15 @@ for DIR in "${SYNC_DIRS[@]}"; do
   fi
 done
 
+echo "==============================> 执行'yarn build'构建静态文件..."
+cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+yarn build
+if [ $? -ne 0 ]; then
+  echo "静态文件构建失败，请检查！"
+  exit 1
+fi
+
+
 echo "==============================> 进入Blog项目执行Git提交并推送..."
 cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
 git add .
@@ -43,14 +52,6 @@ git commit -m "$COMMIT"
 git push
 if [ $? -ne 0 ]; then
   echo "Git 提交或推送失败，请检查！"
-  exit 1
-fi
-
-echo "==============================> 执行'yarn build'构建静态文件..."
-cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
-yarn build
-if [ $? -ne 0 ]; then
-  echo "静态文件构建失败，请检查！"
   exit 1
 fi
 
