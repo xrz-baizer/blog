@@ -1,7 +1,6 @@
 import {PageData} from 'vitepress'
 // 动态加载所有 Markdown 文件
 const pages = import.meta.glob('/**/*.md', { eager: true });
-const rawPages = import.meta.glob('/**/*.md', { eager: true, as: 'raw' }); //包含文件内容
 
 type Item = {
     text: string; // 文件名
