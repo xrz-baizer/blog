@@ -1,6 +1,6 @@
 # Notes on the text 课文注释（2）
 
-### 1
+## 1
 
 1. go to the theatre，去看戏。
 
@@ -16,7 +16,7 @@
 
  
 
-### 2
+## 2
 
 1. I on Sundays，指每个星期日。星期几的前面用介词on。
 
@@ -28,7 +28,7 @@
 
  
 
-### 3
+## 3
 
 1. I a few words，几句话。
 
@@ -36,7 +36,7 @@
 
  
 
-### 4
+## 4
 
 1. He has been there for six months．他在那儿已经住了6个月了。关于动词的现在完成时，可以参看第1册第83至87课。
 
@@ -46,7 +46,7 @@
 
  
 
-### 5
+## 5
 
 1. from Silbury：介词 from作"距...．"、"离....．．"讲，常与 away 连用。如： It is far （away） from here.离这里很远。
 
@@ -56,7 +56,7 @@
 
  
 
-### 6
+## 6
 
 1. He asked me for a meal and a glass of beer.他问我要一顿饭和一杯啤酒。ask sb.for sth.，向某人索要某物。
 
@@ -68,7 +68,7 @@
 
  
 
-### 7
+## 7
 
 1. detectives were waiting at the airport all morning，侦探们在机场等了整整一上午。句中的动词时态是过去进行时。过去进行时常用来表示过去某时正在进行的情况或动作。本课课文中有4个句子使用了过去进行时。参看第1册第117-119等课中的例句。
 
@@ -78,7 +78,7 @@
 
  
 
-### 8
+## 8
 
 1. Joe Sanders has the most beautiful garden in our town．乔.桑德斯拥有我们镇上最漂亮的花园。在第1册的第107-112课中，我们讲到了英文中形容词和副词的比较级和最高级。本课的主要句型仍是形容词和副词的比较级和最高级。如果形容词或副词有两个以上音节，其比较级和最高级是在形容词或副词前加上 more或most，如 more interesting，the most beautiful。
 
@@ -90,7 +90,7 @@
 
  
 
-### 9
+## 9
 
 1. Town Hall，市政厅，地方政府办公之处。
 
@@ -100,7 +100,7 @@
 
  
 
-### 10
+## 10
 
 1. It is called a clavichord．它被称作古钢琴，这是一个被动语态的句子。本课的许多动词都是被动语态，如： &#34;Our clavichord is kept ..", "The instrument was bought ... &#34;, "it was damaged ...&#34;,&#34;two of the strings were broken"等。
 
@@ -108,7 +108,7 @@
 
  
 
-### 11
+## 11
 
 1. One good turn deserves another.这是句谚语，意思是对于别人的善意或帮助应作出相应的回报。
 
@@ -118,7 +118,7 @@
 
  
 
-### 12
+## 12
 
 1. Captain Charles Alison，查尔斯.艾利森船长。
 
@@ -126,7 +126,7 @@
 
  
 
-### 13
+## 13
 
 1. all parts of the country，全国各地。
 
@@ -140,7 +140,7 @@
 
  
 
-### 14
+## 14
 
 1. I drove on to the next town．我继续驶往下一个城镇。句中的副词on有"继续地"，"不停顿地"的意思。
 
@@ -154,7 +154,7 @@
 
  
 
-### 15
+## 15
 
 1. look up，抬头看。
 
@@ -164,7 +164,7 @@
 
  
 
-### 16
+## 16
 
 1. if he lets you go without a ticket，如果他没给你罚款单就放你走，let （someone）go是"放开"的意思。
 
@@ -176,7 +176,7 @@
 
  
 
-### 17
+## 17
 
 1. She must be at least thirty-five years old．她至少也有35岁了。must be一定是，表示对现在情况的一种推测，带有一定的肯定
 
@@ -190,7 +190,7 @@
 
  
 
-### 18
+## 18
 
 1. pay the bill，付账。
 
@@ -198,7 +198,7 @@
 
  
 
-### 19
+## 19
 
 1. The play may begin at any moment，剧马上就要开演了。在这句话中，说话人指的并不是一种确信不疑的事实，而是可能发生的事情，因此用了may＋动词的结构。
 
@@ -216,7 +216,7 @@
 
  
 
-### 20
+## 20
 
 1. Fishing is my favourite sport.钓鱼是我最喜欢的一项运动。在这句话中，主语是fishing，这是一个动名词，由动词加上-ing组成。
 
@@ -228,7 +228,7 @@
 
  
 
-### 21
+## 21
 
 1. Aeroplanes are slowly driving me mad．飞机正在逐渐把我逼疯。drive someone mad，逼疯。
 
@@ -240,7 +240,7 @@
 
  
 
-### 22
+## 22
 
 1. dreamed of receiving a letter，想到会收到一封信。dream of作"梦想"，"幻想"讲；receiving是动名词，作介词of的宾语。
 
@@ -250,7 +250,7 @@
 
  
 
-### 23
+## 23
 
 1. get a surprise 中的，surprise 这里作"使人惊奇、意外的事物"解，是可数名词。
 
@@ -260,14 +260,14 @@
 
  
 
-### 24
+## 24
 
 1. 本文的题目可以有几种不同的理解方式："如果我丢失的不止50英镑"，"如果经理没有任何同情心"，"如果拾到钱的姑娘没有把钱送回来"，结局会更糟糕。
 
 2. Everyone's losing money these days．现在大家都在丢钱。 用现在进行时来表示不断重复的动作，其中常含有埋怨的意思。
 
 
-### 25
+## 25
 
 1. at last，终于。
 
@@ -283,7 +283,7 @@
 
  
 
-### 26
+## 26
 
 1. art student，学美术的学生。
 
@@ -293,7 +293,7 @@
 
  
 
-### 27
+## 27
 
 1. late in the afternoon，快到傍晚的时候。
 
@@ -305,7 +305,7 @@
 
  
 
-### 28
+## 28
 
 1. one of those rare people who believes in ancient myths，少有的相信古代神话的人之一。其中 who belicves in ancient myths是一个从句，起定语作用，修饰one；由于one是单数，因此，从句中需用单数动词。of those rare people 是另一个定语，也用来修饰one。
 
@@ -317,7 +317,7 @@
 
  
 
-### 29
+## 29
 
 1. The most surprising thing about it， however， is that it can land anywhere.然而，最令人惊奇的是它能在任何地方降落。在这句话中 that it can land anywhere 是一个从句，起表语作用，被称为表语从句。
 
@@ -329,7 +329,7 @@
 
  
 
-### 30
+## 30
 
 1. a small river that cuts across the park，横穿公园的一条小河。其中，以that 引导的定语从句用来修饰 a small river。
 
@@ -345,7 +345,7 @@
 
  
 
-### 31
+## 31
 
 1. but as a boy he used to work in a small shop，但他小时候却在一家小铺里工作。used to do表示"过去经常做、而现在已经停止，不再重复的动作"。
 
@@ -355,7 +355,7 @@
 
  
 
-### 32
+## 32
 
 1. People are not so honest as they once were．人们不再像以前那样诚实了。其中的句型"not so＋形容词＋as ."是比较状语从句，可以译成"不如...那样....."。
 
@@ -375,7 +375,7 @@
 
  
 
-### 33
+## 33
 
 1. set out，出发，动身。
 
@@ -391,7 +391,7 @@
 
  
 
-### 34
+## 34
 
 1. I the local police，当地警察（局）。
 
@@ -409,7 +409,7 @@
 
  
 
-### 35
+## 35
 
 1. a short while ago，不久前。
 
@@ -425,7 +425,7 @@
 
  
 
-### 36
+## 36
 
 1. set out．出发。
 
@@ -439,7 +439,7 @@
 
  
 
-### 37
+## 37
 
 1. the Olympic Games，奥林匹克运动会。
 
@@ -457,7 +457,7 @@
 
  
 
-### 38
+## 38
 
 1. dreamed of，梦想、幻想、向往。
 
@@ -475,7 +475,7 @@
 
  
 
-### 39
+## 39
 
 1. While John Gilbert was in hospital，当约翰.吉尔伯特住院的时候。
 
@@ -487,7 +487,7 @@
 
  
 
-### 40
+## 40
 
 1. next to，挨着。
 
@@ -501,7 +501,7 @@
 
  
 
-### 41
+## 41
 
 1. ...needn't be so rude...英语中实际上有两个need。一个是普通动词need；另一个是情态动词need。情态动词的 need 和 can，may等情态动词一样，后接动词原形，但只用于否定和疑问句，肯定句用 must，have to， ought to 或 should。
 
@@ -519,7 +519,7 @@
 
  
 
-### 42
+## 42
 
 1. Not very musical是指蛇并不那样"懂"音乐。
 
@@ -527,7 +527,7 @@
 
  
 
-### 43
+## 43
 
 1. the North Pole，北极；the South Pole，南极。
 
@@ -545,7 +545,7 @@
 
  
 
-### 44
+## 44
 
 1. the risk she was taking，她所冒的风险，take the risk有"冒．.....风险"的意思。
 
@@ -565,7 +565,7 @@
 
  
 
-### 45
+## 45
 
 1. Sam Benton， the local butcher， had lost his wallet while taking his savings to the post office．当地的屠户萨姆.本顿在把存款送往邮局的途中把钱包丢了。其中的 while taking his savings是现在分词用于连词之后，与表示时间的状语从句 while he was taking his savings作用是一致的。
 
@@ -575,7 +575,7 @@
 
  
 
-### 46
+## 46
 
 1. a number of，许多。
 
@@ -593,7 +593,7 @@
 
  
 
-### 47
+## 47
 
 1. up for sale，供出售，to be up for是"为了某一目的"的意思。
 
@@ -609,7 +609,7 @@
 
  
 
-### 48
+## 48
 
 1. for a while，一会儿，片刻。
 
@@ -623,7 +623,7 @@
 
 
 
-### 49
+## 49
 
 1. Tired of sleeping on the floor，由于对睡地板感到厌倦。be tired of是"对...感到厌倦"的意思。在这句话里省略了现在分词being，这个短语表示原因状语。
 
@@ -637,7 +637,7 @@
 
  
 
-### 50
+## 50
 
 1. 标题"Taken for a ride"中 take...for...是"把....当作..．．"的意思。taken for a ride 意思是"就当作是一次乘车兜风"；take sb.for a ride 又作"欺骗"讲，因此 taken for也有"上当了"的含义。
 
@@ -653,7 +653,7 @@
 
  
 
-### 51
+## 51
 
 1. Reward for virtue，virtue作"美德"讲，此处指"节食"一事。
 
@@ -671,7 +671,7 @@
 
  
 
-### 52
+## 52
 
 1. I have been working hard all morning．我辛辛苦苦地干了整整一个上午。句中用了现在完成进行时，用来强调动作在某一段时间内一直在进行，而且动作有现在的结果。
 
@@ -683,7 +683,7 @@
 
  
 
-### 53
+## 53
 
 1. at last，最后，终于。
 
@@ -697,7 +697,7 @@
 
  
 
-### 54
+## 54
 
 1. The children were at school， my husband was at work.孩子在上学，我丈夫在上班。
 
@@ -715,7 +715,7 @@
 
  
 
-### 55
+## 55
 
 1. Dreams of finding lost treasure almost came true recently．最近，找到失踪宝藏的梦想差一点儿变成了现实。come true变成现实。
 
@@ -731,7 +731,7 @@
 
  
 
-### 56
+## 56
 
 1. once a year，每年一次。
 
@@ -749,7 +749,7 @@
 
  
 
-### 57
+## 57
 
 1. Can I help you，Madam？您要买什么，夫人？这是售货员的常用语。
 
@@ -765,7 +765,7 @@
 
  
 
-### 58
+## 58
 
 1. a blessing in disguise，坏事变好事，因祸得福。
 
@@ -779,7 +779,7 @@
 
  
 
-### 59
+## 59
 
 1. every time 此处是连词，作"每当"、"无论何时"讲，引出时间状语从句。
 
@@ -791,7 +791,7 @@
 
  
 
-### 60
+## 60
 
 1. a relation of yours，您的一个亲戚，这是名词双重所有格的又一个例子。
 
@@ -803,7 +803,7 @@
 
  
 
-### 61
+## 61
 
 1. the Hubble telescope，哈勃望远镜。
 
@@ -813,7 +813,7 @@
 
  
 
-### 62
+## 62
 
 1. had been fighting 是过去完成进行时，表示过去某一时刻之前一直进行的动作。
 
@@ -833,7 +833,7 @@
 
  
 
-### 63
+## 63
 
 1. a large circle of friends，交际很广。
 
@@ -847,7 +847,7 @@
 
  
 
-### 64
+## 64
 
 1. a plan for a twenty-one-mile tunnel under the English Channel，建造一条长21英里、穿越英吉利海峡的隧道计划，for a...Channel是介词短语，作定语，修饰名词plan。
 
@@ -861,7 +861,7 @@
 
  
 
-### 65
+## 65
 
 1. Dressed up as Father Christmas and accompanied by a ‘guard of honour’ of six pretty girls，打扮成圣诞老人，在由6位漂亮姑娘组成的"仪仗队"的陪同下。过去分词短语 dressed up...和 accompanied by 作状语．说明伴随状态。
 
@@ -879,7 +879,7 @@
 
  
 
-### 66
+## 66
 
 1. west of Samoa，萨摩亚群岛以西。
 
@@ -889,7 +889,7 @@
 
  
 
-### 67
+## 67
 
 1. has spent his lifetime studying，把毕生的精力都用于研究。动词 spend 后面常加 in doing sth.，其中in 可以省略。
 
@@ -905,7 +905,7 @@
 
  
 
-### 68
+## 68
 
 1. to avoid meeting him，避免碰上他，这是动词后面用动名词作宾语的结构。本课下文中出现的 enjoy，fancy， mind，finish 等动词，也是只接动名词作宾语的动词。
 
@@ -927,7 +927,7 @@
 
  
 
-### 69
+## 69
 
 1. driving licence，驾驶执照。
 
@@ -941,7 +941,7 @@
 
  
 
-### 70
+## 70
 
 1. be unaware of...，不知道，没有觉察....．．。
 
@@ -959,7 +959,7 @@
 
  
 
-### 71
+## 71
 
 1. Big Ben.大钟的名字，译成"大本"。
 
@@ -977,7 +977,7 @@
 
  
 
-### 72
+## 72
 
 1. drive at over 300 miles per hour，以每小时300多英里的速度驾车。
 
@@ -988,7 +988,7 @@
 4. Following in his father's footsteps，踏着父亲的足迹。
 
 
-### 73
+## 73
 
 1. play truant from school，逃学，也可以说 play truant。
 
@@ -1004,7 +1004,7 @@
 
  
 
-### 74
+## 74
 
 1. Out of the limelight，这里的limelight是指舞台。
 
@@ -1020,7 +1020,7 @@
 
  
 
-### 75
+## 75
 
 1. SOS ＝"Save Our Souls"，国际通用的呼救信号。
 
@@ -1036,7 +1036,7 @@
 
  
 
-### 76
+## 76
 
 1. April Fools'Day，愚人节，4月1日。根据西方国家的风俗，这一天人们往往以愚弄别人作为乐事，本文所述的通心粉长在地里便是一个例子。Notes on the text 课文注释
 
@@ -1046,7 +1046,7 @@
 
  
 
-### 77
+## 77
 
 1. 800 B．C．，公元前800年。B．C．是Before Christ的缩略语。
 
@@ -1060,7 +1060,7 @@
 
  
 
-### 78
+## 78
 
 1. an article entitled...，题名为...的文章。
 
@@ -1078,7 +1078,7 @@
 
  
 
-### 79
+## 79
 
 1. take charge of me，照顾我。
 
@@ -1096,7 +1096,7 @@
 
  
 
-### 80
+## 80
 
 1. which was built in Hyde Park，是一个非限定性定语从句，修饰 the Crystal Palace。
 
@@ -1114,7 +1114,7 @@
 
  
 
-### 81
+## 81
 
 1. When he had killed the guard， the prisoner of war quickly dragged him into the bushcs.那个战俘杀死卫兵之后，（他）迅速地将（那个卫兵的）尸体拖进灌木从。这是一个含有时间语从句的复合句，根据英语的习惯，人称代词要放在从句中，所代的名词要放在主句当中。
 
@@ -1128,7 +1128,7 @@
 
  
 
-### 82
+## 82
 
 1. Fishermen and sailors sometimes claim to have seen monsters in the sea．渔夫和水手有时声称看见过海里的妖怪。句中的动词不定式 to have seen是不定式的完成时结构，作动词 claim的宾语。
 
@@ -1142,7 +1142,7 @@
 
  
 
-### 83
+## 83
 
 1. the elections，大选。在英文中 election 常用复数形式，后接表示复数的动词，用来指全国性的选举。
 
@@ -1156,7 +1156,7 @@
 
  
 
-### 84
+## 84
 
 1. go on strike，举行罢工。
 
@@ -1170,7 +1170,7 @@
 
  
 
-### 85
+## 85
 
 1. old and new 是 pupils of the school的同位语。由并列连词连接的两个形容词作定语时，要放在所修饰的词的后面。
 
@@ -1188,7 +1188,7 @@
 
  
 
-### 86
+## 86
 
 1. came away，脱落，离开。
 
@@ -1200,7 +1200,7 @@
 
  
 
-### 87
+## 87
 
 1. At the time the murder was committed，the murder was committed可以看作是定语从句修饰 time 。at the time意为 at the moment when something happened。
 
@@ -1212,7 +1212,7 @@
 
  
 
-### 88
+## 88
 
 1. rescue operations，营救工作。
 
@@ -1230,7 +1230,7 @@
 
  
 
-### 89
+## 89
 
 1. a slip of the tongue，说走了嘴；失言。
 
@@ -1246,7 +1246,7 @@
 
  
 
-### 90
+## 90
 
 1. fish and chips，油煎鱼加炸土豆片。这是英国的一种家常菜，被看作是一盘菜，因此要用单数动词。
 
@@ -1262,7 +1262,7 @@
 
  
 
-### 91
+## 91
 
 1. which seemed to be making for a Royal Air Force Station nearby，好像正朝着附近的一个皇家空军机场的方向移动。这是定语从句。seem后接不定式的进行式，是"似乎正在进行某事"的意思。make for，走向.飞向。
 
@@ -1274,7 +1274,7 @@
 
  
 
-### 92
+## 92
 
 1. I don't think，"í think 后接表示否定意思的宾语从句时，通常在主句中使用否定形式，但译成汉语时否定意义仍在宾语从句中。
 
@@ -1284,7 +1284,7 @@
 
  
 
-### 93
+## 93
 
 1. the site chosen ＝the site which was chosen，这里用过去分词作定语，与定语从句的作用相同。
 
@@ -1296,7 +1296,7 @@
 
  
 
-### 94
+## 94
 
 1. hold their breath，屏住呼吸。
 
@@ -1310,7 +1310,7 @@
 
  
 
-### 95
+## 95
 
 1. get into such a mess，搞得这样槽。
 
@@ -1326,7 +1326,7 @@
 
  
 
-### 96
+## 96
 
 1. the dead are said to return to their homes，据说死去的人要回到他们的家里来。the dead，死人。定冠词用在某些形容词之后，可以用来表示某类人。
 

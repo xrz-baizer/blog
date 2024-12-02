@@ -1,7 +1,7 @@
 # Notes on the text 课文注释（1）
 
 
-### 1
+## 1
 
 1. Excuse me.  这个短语常用于与陌生人搭话，打断别人的说话或从别人身边挤过。在课文中，男士为了吸引女士的注意力而用了这个表示客套的短语。
 
@@ -9,7 +9,7 @@
 
  
 
-### 3
+## 3
 
 1. Here's是Here is的缩写形式，类似的例子有He's （He is），It's（It is）等。缩写形式和非缩写形式在英语的书面用语和口语中均有，但非缩写形式常用于比较正式的场合。
 
@@ -21,7 +21,7 @@
 
  
 
-### 5
+## 5
 
 1. Good morning.  早上好。英语中常见的问候用语。
 
@@ -31,7 +31,7 @@
 
  
 
-### 7
+## 7
 
 1. My name's=My name is.
 
@@ -43,7 +43,7 @@
 
  
 
-### 9
+## 9
 
 1. How are you?  这是朋友或相识的人之间见面时问对方身体情况的寒暄话，一般回答是：Fine，thank you.
 
@@ -53,7 +53,7 @@
 
  
 
-### 11
+## 11
 
 1. Whose shirt is that?  疑问代词Whose 在本句中作定语，修饰shirt。
 
@@ -63,7 +63,7 @@
 
  
 
-### 13
+## 13
 
 1. What colour's = What colour is.
 
@@ -71,13 +71,13 @@
 
  
 
-### 15
+## 15
 
 1. 可数名词的复数形式一般是在单数名词后面加上-s，如课文中的friend-friends／frendz／；tourist- tourists／＂toarists／；case-cases／'kersiz／。请注意-s的不同发音。
 
  
 
-### 16
+## 16
 
 1. 如果名词是以-s结尾的，变成复数时要加-es．如 dress-dresses。
 
@@ -91,7 +91,7 @@
 
  
 
-### 17
+## 17
 
 1. How do you do？您好（用于第一次见面时）。一般用同样的话来回答。见第5课课文注释3。
 
@@ -101,7 +101,7 @@
 
  
 
-### 18
+## 18
 
 1. 如果名词是以-f或-fe结尾的，变成复数时，一般要把-f或-fe变成-v，再加-es，如housewife-housewives。
 
@@ -109,14 +109,14 @@
 
  
 
-### 20
+## 20
 
 1. What's the matter? =Tell me what's wrong. 怎么啦？
 
 2. There's=There is.
 
 
-### 21
+## 21
 
 1. Give me a book, please.  这是祈使句，省略了主语 you。
 
@@ -126,7 +126,7 @@
 
  
 
-### 23
+## 23
 
 1. 在Give me some glasses中，动词 give后面有两个宾语，即直接宾语some glasses 和间接宾语me。人称代词作宾语时要用人称代词的宾格，如：me（I的宾格），us（we的宾格），you（you的宾格）.him （he的宾格）.her（she的宾格），them（they的宾格）和it（it的宾格）。
 
@@ -136,7 +136,7 @@
 
  
 
-### 25
+## 25
 
 1. There is的结构用来说明人或物的存在，在汉语中可以译为"有"。这个结构要跟单数名词，句中往往要有一个介词短语来表示位置或地点。
 
@@ -150,7 +150,7 @@
 
  
 
-### 27
+## 27
 
 1. There are 的结构中要用复数名词。
 
@@ -160,7 +160,7 @@
 
  
 
-### 29
+## 29
 
 1.  英文中需用祈使语气来表示直接的命令、建议、告诫、邀请等多种意图。祈使句一般省略主语you，动词采用动词的原形。如本课对话中的 Come in，shut the door.open the window...等均为祈使句。
 
@@ -170,7 +170,7 @@
 
  
 
-### 31
+## 31
 
 1. 在英文中表示说话时正在进行的动作或事件，要用动词的现在进行时。现在进行时由 be的现在时加上现在分词组成，如课文中的"She's sitting under the tree."和"He's climbing the tree."等句子均为现在进行时。对大多数动词来说，在动词后面直接加-ing即可组成现在分词，如doing.climbing 。对以-e结尾的动词，要去掉-e，再加-ing，如 making。如果动词只有一个元音字母，而其后跟了一个辅音字母时，则需将辅音字母双写，再加-ing， 如 running，sitting 。
 
@@ -180,7 +180,7 @@
 
  
 
-### 33
+## 33
 
 1. It is a fine day today.句中的it是指天气。
 
@@ -188,7 +188,7 @@
 
  
 
-### 35
+## 35
 
 1. The village is on a river.  这句话中的介词on 不表示"在.......上"，而是"邻近"，"靠近"的意思。
 
@@ -198,7 +198,7 @@
 
  
 
-### 37
+## 37
 
 1. You're working hard，George．在这句话中 hard是一个副词，修饰动词work，有"努力地"、"费劲地"的意思。hard 还常常与表示动作、举止的动词连用，如 work，listen，play，try 等，用来加强动作的强度，常译成"拼命地"。
 
@@ -208,7 +208,7 @@
 
  
 
-### 39
+## 39
 
 1. do with指对某件事物或人的处理。
 
@@ -221,7 +221,7 @@
 5. There we are．就放在那里。参见第11课课文注释3。
 
 
-### 61
+## 61
 
 1. I What's the matter with him？他怎么啦？ What's the matter with...？常用来询问人或事物的状况，常作"是否有问题？""是否有麻烦"讲。
 
@@ -237,7 +237,7 @@
 
  
 
-### 62
+## 62
 
 1. take an aspirin 相当于 have an aspirin，服（吃）一片阿斯匹林。
 
@@ -245,7 +245,7 @@
 
  
 
-### 63
+## 63
 
 1. He's better. 在英文中，如果将一个人或物等与另一个人或物等进行比较，就可以用比较级。在这句话中，威廉斯夫人是把吉米今天的状况和前几天相比。形容词well的比较级形式不规则，意思是"健康状况有所好转"。
 
@@ -259,7 +259,7 @@
 
  
 
-### 64
+## 64
 
 1. play with matches，玩火柴。
 
@@ -267,7 +267,7 @@
 
  
 
-### 65
+## 65
 
 1. the key to the front door.   to the front door是介词短语，作定语，修饰key。
 
@@ -277,7 +277,7 @@
 
  
 
-### 67
+## 67
 
 1. 在英文表示某一种商店的短语中，往往可以把shop这个词省略，如课文中的 the butcher's（shop）和the greengrocer's （shop）。类似的例子还有 the hairdresser's （shop），the stationer's （shop）， the doctor's （office），my mother's（house）等。
 
@@ -291,7 +291,7 @@
 
  
 
-### 69
+## 69
 
 1. hundreds of...．数以百计的......，用来表示不确定数量的复数形式。
 
@@ -299,7 +299,7 @@
 
  
 
-### 71
+## 71
 
 1. He telephoned me four times yesterday．他昨天给我打了4次电话。"是"动词以外的动词在过去时中般有两种形式。规则动词一般是在动词后面加-ed，如 answer／answered；以-e 结尾的规则动词加-d.如 telephone／telephoned，arrive／arrived。另一部分动词的过去式拼写不规则，因此称为不规则动词，如：say／said，do／did。从本课开始，单词表中的不规则动词除列出原形外，还将在括弧中列出过去式的拼写和读音。
 
@@ -307,7 +307,7 @@
 
  
 
-### 73
+## 73
 
 1. ...and she lost her way...。 ...因此她迷路了。句中的and当"所以"讲，表示结果。
 
@@ -315,7 +315,7 @@
 
  
 
-### 75
+## 75
 
 1. like these是介词短语作定语，修饰shoes。意思是"像这样的鞋子"。
 
@@ -329,7 +329,7 @@
 
  
 
-### 77
+## 77
 
 1. Can't the dentist see me now? 这是情态动词的否定疑问句，表示请求。
 
@@ -337,7 +337,7 @@
 
  
 
-### 79
+## 79
 
 1. make a shopping list，写一张采购物品的单子。
 
@@ -348,7 +348,7 @@
 4. many 和 much 均可译成"许多"，但用法不同：many 主要用于疑问句和否定句中，放在可数名词之前.如 many tomatoes；much 用于疑问句和否定句中，放在不可数名词之前，如 much tea，much money。
 
 
-### 81
+## 81
 
 1. 在第13课中我们见到了这样的句子：Come upstairs...，其中的 upstairs 表示动作的方向。本课中的He's upstairs.则表示他的方位，其中的 upstairs 可译为"在楼上"。
 
@@ -356,7 +356,7 @@
 
  
 
-### 83
+## 83
 
 1. 在英语中，现在完成时主要用于以下两种情况：（1）表示在过去不确定的时间里发生的并与现在有着某种联系的动作；（2）表示开始于过去并持续到现在的动作。本课中萨姆的3句话属于第一种情况，正是因为他吃了饭、喝过了咖啡、也休过假，因此他谢绝了汤姆的邀请，并表示今年已无可能再次休假。现在完成时是由 have的现在式加上过去分词组成。规则动词的过去分词与过去式相同、而不规则动词的过去分词则无统一的规律可言。从本课起不规则动词还将列出过去分词的拼写和读音。
 
@@ -370,7 +370,7 @@
 
  
 
-### 85
+## 85
 
 1. have been to...，到过.....。"到过那里"则说have been there。注意，在这里我们讲 to the cinema，同时也说 to the park，但在第55课中，我们有to work，to school的短语。在名词 school，work，church之前不加定冠词 the。
 
@@ -384,7 +384,7 @@
 
  
 
-### 87
+## 87
 
 1. 在英文中可以用一般疑问句的否定形式来表示期待、请求或希望得到肯定的答复，如课文中的Isn't that your car？和 Didn't you have a crash？
 
@@ -396,7 +396,7 @@
 
  
 
-### 89
+## 89
 
 1. for sale．供出售，待售。
 
@@ -412,7 +412,7 @@
 
  
 
-### 91
+## 91
 
 1. No．not yet．不，还没有。  这是简略回答，完整的回答是 He hasn't moved to his new house ye
 
@@ -424,7 +424,7 @@
 
  
 
-### 93
+## 93
 
 1. I next-door neighbour.隔壁邻居。next-door是一个复合词，作定语。
 
@@ -434,7 +434,7 @@
 
  
 
-### 95
+## 95
 
 1. return ticket．往返票。
 
@@ -448,7 +448,7 @@
 
  
 
-### 97
+## 97
 
 1. the other day．几天前。
 
@@ -462,7 +462,7 @@
 
  
 
-### 99
+## 99
 
 1. fell downstairs，从楼梯上摔下来。  downstairs 是副词，修饰fell，作状语。
 
@@ -475,7 +475,7 @@
 5. The doctor says that he will come at once. 在英文中如果要把某人所说的话告诉另一个人，要用间接引语。间接引语不用引号，往往在引语前加 that等引导词。
 
 
-### 101
+## 101
 
 1. "I have just arrived in Scotland...a Youth Hostel." 这是一个直接引语的例子。直接引语是英文中用书面语的形式来表示口语的方式，实际讲的话要放在引号之间，句尾的标点符号也要放在引号之内。
 
@@ -489,7 +489,7 @@
 
  
 
-### 103
+## 103
 
 1. I think I passed in English and Mathematics.我想我的英语和数学及格了。如果说通过某一个考试，直接用动词pass；如果说通过某一科目，则用pass in。
 
@@ -503,7 +503,7 @@
 
  
 
-### 105
+## 105
 
 1. Do you want to speak to her?
 
@@ -525,7 +525,7 @@
 
  
 
-### 107
+## 107
 
 1. madam，是对妇女的一种尊称，服务行业的人员常用此称呼；同时，对于不知姓名的女士也可以用此来表示尊重。这个单词也可拼作ma'am／mæm／.
 
@@ -549,7 +549,7 @@
 
  
 
-### 109
+## 109
 
 1. less than that，意思是"比那稍微少一些"，其中的that指上文中的 two teaspoonfuls。
 
@@ -559,7 +559,7 @@
 
  
 
-### 111
+## 111
 
 1. 大多数两个以上音节的形容词可与more／less连用构成其比较级形式，与most／least 连用构成其最高级形式，如本课中的几个例子：This model's less expensive than that one； The other model's more expensive;It's the most expensive model in the shop.
 
@@ -569,7 +569,7 @@
 
  
 
-### 113
+## 113
 
 1. Fares，please！请买票！这是公共车辆售票员用语。
 
@@ -591,7 +591,7 @@
 
  
 
-### 115
+## 115
 
 1. Isn't there anyone at home？家里没人吗？在英语中，由some，any，no，every 与-one，-thing 组成的复合词，起代词作用，常被称为不定代词，这是因为我们常常不清楚其所指的是谁或什么。
 
@@ -605,7 +605,7 @@
 
  
 
-### 117
+## 117
 
 1. 在英文中表示过去某时正在进行的动作，要用过去进行时。与现在进行时相比，过去进行时的区别就在于要用be的过去式。过去进行时的例子有：When my husband was going into the dining room this morning...；While we were having breakfast...等。
 
@@ -633,7 +633,7 @@
 
  
 
-### 119
+## 119
 
 1. as quickly as they could 是状语，修饰 ran away。第1个as是副词，第2个as是连词，引导比较.状语从句。could 后省略了run，是"能跑多快就跑多快"的意思。
 
@@ -646,7 +646,7 @@
 4. go back to sleep．继续睡觉。
 
 
-### 121
+## 121
 
 1. to take them with me 把它们带上。them 指"两本词典"。
 
@@ -660,7 +660,7 @@
 
  
 
-### 123
+## 123
 
 1. This is a photograph I took . . .
 
@@ -672,7 +672,7 @@
 
  
 
-### 125
+## 125
 
 1. have to（过去式 had to），不得不，必须。
 
@@ -684,7 +684,7 @@
 
  
 
-### 127
+## 127
 
 1. 在It must be Karen Marsh...这一句中，must be是英文中用来表示根据事实所作的推论，往往译为"一定"。must be 的否定式是 can't be，如 Kate的话"Itcan't be."是对Liz的推论（"That must be Conrad Reeves．"）的否定。同时，请注意这里的 can'tbe（表示不可能）和第45课中 I can't type this letter． （表示能力）的区别。
 
@@ -698,7 +698,7 @@
 
  
 
-### 129
+## 129
 
 1. Where do you think you are?
 
@@ -722,7 +722,7 @@
 
  
 
-### 131
+## 131
 
 1. We may go abroad．我们可能去国外。
 
@@ -744,7 +744,7 @@
 
  
 
-### 133
+## 133
 
 1. Let's＝Let us，常用于第一人称的祈使句中，用来表示请求、建议、命令。
 
@@ -756,7 +756,7 @@
 
  
 
-### 135
+## 135
 
 1. 请注意在直接引语变成间接引语的动词时态倒移过程中，情态助动词的变化：may-might， can-could， will-would 等，won't-wouldn't， going to--would，can't-couldn't等。
 
@@ -766,7 +766,7 @@
 
  
 
-### 137
+## 137
 
 1. football pools，英国流行的一种赌博方式，靠在足球比赛结果上的赌注来决定输赢。
 
@@ -778,7 +778,7 @@
 
  
 
-### 139
+## 139
 
 1. Is that you,John?
 
@@ -800,7 +800,7 @@
 
  
 
-### 141
+## 141
 
 1. my four-year-old daughter，我那4岁的女儿。
 
@@ -822,7 +822,7 @@
 
  
 
-### 143
+## 143
 
 1. was covered with...，覆盖着......。
 
