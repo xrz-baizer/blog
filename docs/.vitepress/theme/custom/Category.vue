@@ -9,7 +9,7 @@
                 <span class="category-pc">{{ article.lastUpdatedFormat }}</span>
             </div>
             <p class="describe" v-html="article.summary"></p>
-            <span class="category-app">{{ article.lastUpdatedFormat }}</span>
+<!--            <span class="category-app">{{ article.lastUpdatedFormat }}</span>-->
         </div>
 
         <!-- 统一的分页控件 -->
@@ -52,7 +52,7 @@ const articles: Article[] = getRecentArticles(sidebar.value,-1);
 // 分页状态
 import { ref, computed } from 'vue';
 const currentPage = ref(1); // 当前页码
-const pageSize = 7; // 每页文章数
+const pageSize = 9; // 每页文章数
 
 // 计算总页数
 const totalPages = computed(() => Math.ceil(articles.length / pageSize));
@@ -166,7 +166,7 @@ span{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     /* 当 p 标签内的内容超过两行时，超出的部分会被隐藏，并显示省略号 ...。 */
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
     color: var(--vp-c-text-2);
     margin-bottom: 10px;
@@ -193,8 +193,8 @@ span{
     }
     .describe {
         font-size: 0.9375rem;
-        /*display: -webkit-box;*/
-        display: none;
+        display: -webkit-box;
+        /*display: none;*/
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
@@ -204,6 +204,7 @@ span{
         font-size: 12px;
         display: block;
         color: var(--vp-c-text-2);
+        display: none;
     }
     .category-pc{
         display: none;
