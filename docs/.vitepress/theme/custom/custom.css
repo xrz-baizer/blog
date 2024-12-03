@@ -179,6 +179,10 @@ body.no-sidebar .content {
 }
 
 
+.VPFooter{
+    border-top:none !important;
+}
+
 
 /*!* 隐藏主题默认的更新时间 *!*/
 /*.VPLastUpdated{*/
@@ -401,7 +405,7 @@ mark {
 
 
 /* 首页下滑后导航透明 */
-.VPNavBar:not(.has-sidebar):not(.home.top) {
+.VPNavBar:not(.home.top) {
     background-color: rgba(255, 255, 255, 0) !important;
     backdrop-filter: blur(10px);
 }
