@@ -122,10 +122,10 @@ span{
     color: var(--vp-c-text-1);
 }
 
-.category-app{
-    text-align: right;
-    display: none;
-}
+/*.category-app{*/
+/*    text-align: right;*/
+/*    display: none;*/
+/*}*/
 
 .post-list {
     border-bottom: 1px dashed #eee;
@@ -200,12 +200,11 @@ span{
         overflow: hidden;
         margin: 0.5rem 0 1rem;
     }
-    .category-app{
-        font-size: 12px;
-        display: block;
-        color: var(--vp-c-text-2);
-        display: none;
-    }
+    /*.category-app{*/
+    /*    font-size: 12px;*/
+    /*    display: block;*/
+    /*    color: var(--vp-c-text-2);*/
+    /*}*/
     .category-pc{
         display: none;
     }
