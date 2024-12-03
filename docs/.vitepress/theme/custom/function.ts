@@ -14,6 +14,11 @@ export interface Article extends PageData,Item {
     summary: string;
 }
 
+/**
+ * 读取侧边栏数据，`0-` 开头的文件置顶，再根据更新时间排序
+ * @param items
+ * @param num
+ */
 export function getRecentArticles(items: Item[],num: number): Article[] {
     let result: Article[] = [];
     // 获取侧边栏所有路径
@@ -56,7 +61,7 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
 
     if(num == -1) return result;
 
-    // 提取前14条
+    // 提取前num条
     return result.slice(0, num);
 }
 export function extractLinks(items: Item[]): Item[] {

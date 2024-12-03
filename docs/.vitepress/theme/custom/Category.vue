@@ -64,11 +64,9 @@ const paginatedArticles = computed(() => {
 
     // 填充文章概述
     currentArticles.forEach(article => {
-        // 获取build中生成的文章概述
+        // 获取build时生成的文章概述
         article.summary = getArticleSummary(article.filePath);;
     })
-
-
     return currentArticles;
 });
 
@@ -198,7 +196,7 @@ span{
         /*display: -webkit-box;*/
         display: none;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         overflow: hidden;
         margin: 0.5rem 0 1rem;
     }
