@@ -5,8 +5,10 @@ import path from 'path';
  * 在构建时调用，读取所有MD文件生成文章概述js文件。在分类页面（Category.vue）引入该js文件，通过文章path读取对应文章概述
  */
 export function generateArticlesSummaryJSON(){
-    const articlesDir = path.resolve(__dirname, '../../../../docs'); // Markdown 文件所在目录
-    const outputPath = path.resolve(__dirname, '../../../../docs/public/articles.js'); // 输出 JSON 文件路径
+    // Markdown 文件所在目录
+    const articlesDir = path.resolve(__dirname, '../../../../docs');
+    // 输出 JSON 文件路径
+    const outputPath = path.resolve(__dirname, '../../../../docs/public/articles.js');
 
     const markdownFiles = getMarkdownFiles(articlesDir);
     const articlesMap = {};

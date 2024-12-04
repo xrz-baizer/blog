@@ -23,13 +23,16 @@
 
 音频课文资源：http://www.newconceptenglish.com/index.php
 
+>- 生词多的文章可以先跟 美音读一遍，再跟英音读
+>- 简单的文章直接跟英音读，听不懂的连词再听美音
+>
+>https://www.listeningexpress.com/nce-b/book1/105-106-Full-of-Mistakes.html
+
 #### 第一册
 
 课文：http://www.newconceptenglish.com/index.php?id=nce-1
 
 英音：https://www.listeningexpress.com/nce-b/book1/
-
->https://www.listeningexpress.com/nce-b/book1/099-100-Ow.html
 
 #### 第二册
 
