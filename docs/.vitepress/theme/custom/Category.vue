@@ -1,8 +1,4 @@
 <template>
-    本站总访问量 <span id="busuanzi_value_site_pv" /> 次
-    本站访客数 <span id="busuanzi_value_site_uv" /> 人次
-    本站访客数- <span id="busuanzi_value_page_uv" /> 人次
-    本站访客数- <span id="busuanzi_value_page_pv" /> 人次
     <div>
         <!-- 遍历当前页的文章 -->
         <div v-for="(article, index) in paginatedArticles" :key="index" class="post-list">

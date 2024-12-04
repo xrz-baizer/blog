@@ -39,3 +39,11 @@ features:
     link: /02-English/
     details: 英语学习笔记、新概念英语
 ---
+
+本站总访问量 <span id="busuanzi_value_site_pv" /> 次
+本站访客数 <span id="busuanzi_value_site_uv" /> 人次
+
+本站总访问量 <span id="busuanzi_page_pv" /> 次
+本站总访问量 <span id="busuanzi_page_uv" /> 次
+本站总访问量 <span id="busuanzi_site_pv" /> 次
+本站访客数 <span id="busuanzi_site_uv" /> 人次

@@ -9,13 +9,11 @@ import './custom/custom.css'
 import { formatTimestamp } from './custom/function.js'
 import Category from './custom/Category.vue'
 
-
-import { inBrowser } from 'vitepress'
-import busuanzi from 'busuanzi.pure.js'
-
 // import Update from './custom/Update.vue'
 // import MyLayout from './MyLayout.vue'
 
+import { inBrowser } from 'vitepress'
+import busuanzi from 'busuanzi.pure.js'
 
 export default {
   extends: DefaultTheme,
