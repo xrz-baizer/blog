@@ -187,5 +187,5 @@ export const articlesMap = {
   "02-English/NewConceptEnglish/第四册课文/Lesson-8-Trading-standards-贸易标准.md": "Chickens slaughtered in the United States, claim officials in Brussels, are not fit to grace European tables. No, say the Americans: our fowl are fine, we simply clean them in a different way. These d",
   "02-English/NewConceptEnglish/第四册课文/Lesson-9-Royal-espionage-王室谍报活动.md": "Alfred the Great acted as his own spy, visiting Danish camps disguised as a minstrel. In those days wandering minstrels were welcome everywhere. They were not fighting men, and their harp was their pa",
   "02-English/index.md": "<category/>",
-  "index.md": "本站总访问量 <span id=\"busuanzi_value_site_pv\" /> 次 本站访客数 <span id=\"busuanzi_value_site_uv\" /> 人次  本站总访问量 <span id=\"busuanzi_page_pv\" /> 次 本站总访问量 <span id=\"busuanzi_page_uv\" /> 次 本站总访问量 <span id=\"busuanzi_s"
+  "index.md": ""
 }

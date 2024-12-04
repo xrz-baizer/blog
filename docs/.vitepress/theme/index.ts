@@ -8,12 +8,9 @@ import './style.css'
 import './custom/custom.css'
 import { formatTimestamp } from './custom/function.js'
 import Category from './custom/Category.vue'
-
 // import Update from './custom/Update.vue'
 // import MyLayout from './MyLayout.vue'
 
-import { inBrowser } from 'vitepress'
-import busuanzi from 'busuanzi.pure.js'
 
 export default {
   extends: DefaultTheme,
@@ -33,12 +30,6 @@ export default {
   enhanceApp({ app, router, siteData }) {
     // 注册全局组件
     app.component('category', Category);
-
-    if (inBrowser) {
-      router.onAfterRouteChanged = () => {
-        busuanzi.fetch()
-      }
-    }
 
     // router.onAfterRouteChanged = () => {
     //

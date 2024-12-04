@@ -8,8 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +205,7 @@
       <workItem from="1733130084859" duration="16744000" />
       <workItem from="1733195570671" duration="2922000" />
       <workItem from="1733277709761" duration="96000" />
-      <workItem from="1733300664625" duration="5999000" />
+      <workItem from="1733300664625" duration="6457000" />
     </task>
     <servers />
   </component>
