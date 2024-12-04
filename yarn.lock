@@ -767,6 +767,11 @@ braces@^3.0.3:
   dependencies:
     fill-range "^7.1.1"
 
+busuanzi.pure.js@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/busuanzi.pure.js/-/busuanzi.pure.js-1.0.3.tgz#a03784db9e5b2c42a059b16551d2511933a46f5c"
+  integrity sha512-tPULdyx+8NNb9geZYDpktKmHAYx9f2LEOBaHyWCaM7iPEMIa/43KgYAUluuU7YG9UFSOFpj4dO7Nj2Vlu3V9Rg==
+
 ccount@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npmmirror.com/ccount/-/ccount-2.0.1.tgz"
