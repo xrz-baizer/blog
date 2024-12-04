@@ -186,7 +186,6 @@ export const articlesMap = {
   "02-English/NewConceptEnglish/第四册课文/Lesson-7-Bats-蝙蝠.md": "Not all sounds made by animals serve as language, and we have only to turn to that extraordinary discovery of echo-location in bats to see a case in which the voice plays a strictly utilitarian role. ",
   "02-English/NewConceptEnglish/第四册课文/Lesson-8-Trading-standards-贸易标准.md": "Chickens slaughtered in the United States, claim officials in Brussels, are not fit to grace European tables. No, say the Americans: our fowl are fine, we simply clean them in a different way. These d",
   "02-English/NewConceptEnglish/第四册课文/Lesson-9-Royal-espionage-王室谍报活动.md": "Alfred the Great acted as his own spy, visiting Danish camps disguised as a minstrel. In those days wandering minstrels were welcome everywhere. They were not fighting men, and their harp was their pa",
-  "02-English/Summary.md": " ## EnjoyEnglish—EnjoyApp  素材整理：[EnjoyEnglish](EnjoyEnglish) （大声朗诵+死记硬背）  - 训练方法：https://1000h.o... - B站连读讲解，配合Lucy巩固   - 慢速版（了解连读基本概念）   - 常速版  - 背诵新概念  ### Lucy的一天（周末）   [Lucy的一天.md](Lucy的一天.md)   #",
   "02-English/index.md": "<category/>",
   "index.md": ""
 }

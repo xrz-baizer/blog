@@ -1,5 +1,8 @@
 <template>
     <div>
+        当前页面浏览量：<span id="busuanzi_value_page_pv"></span>
+    </div>
+    <div>
         <!-- 遍历当前页的文章 -->
         <div v-for="(article, index) in paginatedArticles" :key="index" class="post-list">
             <div class="post-header">
@@ -34,6 +37,8 @@
 </template>
 
 <script lang="ts" setup>
+
+
 import {PageData} from 'vitepress'
 import {useSidebar} from 'vitepress/theme'
 import {getRecentArticles, Article} from './function.ts'

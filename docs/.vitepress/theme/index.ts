@@ -9,6 +9,7 @@ import './custom/custom.css'
 import { formatTimestamp } from './custom/function.js'
 import Category from './custom/Category.vue'
 
+
 // import Update from './custom/Update.vue'
 // import MyLayout from './MyLayout.vue'
 
@@ -32,14 +33,15 @@ export default {
     // 注册全局组件
     app.component('category', Category);
 
-    // router.onAfterRouteChanged = () => {
-    //   // 当前页面数据
-    //   let pageData = router.route.data;
-    //   // 等待 DOM 渲染完成后操作
-    //   setTimeout(() => {
-    //     // td
-    //   }, 0);
-    // };
+    router.onAfterRouteChanged = () => {
+
+      // // 当前页面数据
+      // let pageData = router.route.data;
+      // // 等待 DOM 渲染完成后操作
+      // setTimeout(() => {
+      //   // td
+      // }, 0);
+    };
   },
 
   // setup 是 Vue 3 引入的一个组合式 API 函数。

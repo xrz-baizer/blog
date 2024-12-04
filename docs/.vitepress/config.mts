@@ -10,7 +10,15 @@ import { generateArticlesSummaryJSON } from './theme/custom/generateSummary';
 export default defineConfig({
   title: "Baizer",
   titleTemplate: ':title | Baizer', //:title 为md文件一级标题
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+      ['link', { rel: 'icon', href: '/favicon.ico' }],
+          [
+          'script',
+              {
+                src: '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',
+              },
+          ],
+  ],
   // head: [['link', { rel: "icon", type: "image/png", sizes: "72x72", href: "/xrz.png"}]],
   appearance: false,  // 放弃暗黑模式
   themeConfig: {
