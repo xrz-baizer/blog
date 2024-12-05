@@ -44,7 +44,7 @@
 - `/nginx.conf`参考Vitepress提供的配置文件，不过需要做一些调整，否则会出现各种问题
   - Vitepress提供Nginx配置文件：https://vitepress.dev/zh/guide/deploy#nginx
 
-完整nginx.conf配置如下：
+::: details  完整nginx.conf配置
 
 ```sh
 
@@ -94,6 +94,8 @@ http {
 }
 ```
 
+:::
+
 安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./0-使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx
 
 - 注意挂载目录的路径
@@ -122,6 +124,8 @@ source /etc/locale.conf
 `BLOG_PATH`Blog项目，进入该目录执行git、yarn构建相关命令。（会推送GitHub）
 
 `SYNC_DIRS`知识库部分内容包含隐私内容，所以会指定同步的文件夹，只有这些文件夹的内容才需要打包构建。如果全部内容都是开放的甚至可以直接在Blog项目中编写文章，就不需要移动复制了。
+
+::: details deploy.sh
 
 ```sh
 #!/bin/bash
@@ -218,6 +222,8 @@ echo "==========> 部署完成！执行耗时: $elapsed_time 秒"
 
 
 ```
+
+:::
 
 ### 配置全局命令（alias）
 
