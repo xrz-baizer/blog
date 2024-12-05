@@ -12,6 +12,7 @@ type Item = {
 export interface Article extends PageData,Item {
     lastUpdatedFormat: string;
     summary: string;
+    pinned: boolean;
 }
 
 /**
@@ -23,6 +24,8 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
     let result: Article[] = [];
     // 获取侧边栏所有路径
     let paths: any[] = extractLinks(items);
+    // 置顶标识符，文件名0-开头的
+    let topIdentifier = `0-`
 
     // 转换pageData
     paths.forEach(item => {
@@ -35,8 +38,8 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
                 result.push({
                     ...page,
                     ...item,
-                    // 替换 `0-` 开头的文件名为 `xxx【Pinned】`
-                    text: item.text.startsWith('0-') ? `${item.text.slice(2)}【Pinned】` : item.text,
+                    pinned: item.text.startsWith(topIdentifier) ?  true : false,
+                    text: item.text,
                     lastUpdatedFormat: formatTimestamp(page.lastUpdated) //日期重新格式化
                 });
             }
@@ -48,8 +51,8 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
 
     // 排序逻辑：数字 `0-` 开头的文件名优先，然后按更新时间降序排列
     result.sort((a, b) => {
-        const isASticky = a.text.endsWith('【Pinned】') ? 1 : 0;
-        const isBSticky = b.text.endsWith('【Pinned】') ? 1 : 0;
+        const isASticky = a.text.startsWith(topIdentifier) ? 1 : 0;
+        const isBSticky = b.text.startsWith(topIdentifier) ? 1 : 0;
 
         // 如果两个文件都不是置顶，按更新时间排序
         if (isASticky === isBSticky) {
@@ -58,6 +61,10 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
         // 如果某个文件是置顶文件，将其放到前面
         return isBSticky - isASticky;
     });
+
+    //移除文件名 `0-`
+    result.forEach(item => { item.text = item.text.replace(topIdentifier, '')})
+
 
     if(num == -1) return result;
 

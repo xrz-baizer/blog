@@ -58,10 +58,9 @@ export default {
           repoId: 'R_kgDONPwC5A', //仓库ID
           category: 'Announcements', // 讨论分类
           categoryId: 'DIC_kwDONPwC5M4Ck7mC', //讨论分类ID
-          mapping: 'pathname',
-          inputPosition: 'bottom',
+          mapping: 'title',
+          inputPosition: 'top',  // 将评论框放在评论上方
           reactionsEnabled: '0', //禁用点赞
-          // lightTheme: 'light',
           lang: 'zh-CN',
         },
         {frontmatter, route},

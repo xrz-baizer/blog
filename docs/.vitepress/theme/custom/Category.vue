@@ -4,7 +4,9 @@
         <div v-for="(article, index) in paginatedArticles" :key="index" class="post-list">
             <div class="post-header">
                 <div class="post-title">
-                    <a :href="article.link"> {{ article.text }}</a>
+                    <a :href="article.link"> {{ article.text }}
+                        <Badge type="danger" v-if="article.pinned">Pinned</Badge>
+                    </a>
                 </div>
                 <span class="category-pc">{{ article.lastUpdatedFormat }}</span>
             </div>
