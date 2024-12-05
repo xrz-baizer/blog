@@ -27,9 +27,9 @@
 安装启动运行参考官网：[Vitepress快速开始](https://vitepress.dev/zh/guide/getting-started)
 
 - 根据文件目录自动生成侧边栏插件：https://github.com/QC2168/vite-plugin-vitepress-auto-sidebar
-
 - 样式美化参考：https://vitepress.yiov.top/style.html
   - [动态彩虹背景样式](https://vitepress.yiov.top/style.html#%E5%BD%A9%E8%99%B9%E8%83%8C%E6%99%AF%E5%8A%A8%E7%94%BB)
+  - [评论功能](https://vitepress.yiov.top/plugin.html#%E8%AF%84%E8%AE%BA)
 
 
 ## 本地配置自动部署

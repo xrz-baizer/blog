@@ -11,6 +11,8 @@ import Category from './custom/Category.vue'
 // import Update from './custom/Update.vue'
 // import MyLayout from './MyLayout.vue'
 
+import giscusTalk from 'vitepress-plugin-comment-with-giscus';
+
 
 export default {
   extends: DefaultTheme,
@@ -48,7 +50,23 @@ export default {
   // 使用 setup 可以更灵活地管理组件的逻辑，支持更好的代码组织和复用。
   setup() {
     const route = useRoute();
-    const {page,theme} = useData();
+    const {page,theme,frontmatter} = useData();
+
+    // giscus配置（评论系统）  https://giscus.app/zh-CN
+    giscusTalk({
+          repo: 'xrz-baizer/blog', //仓库
+          repoId: 'R_kgDONPwC5A', //仓库ID
+          category: 'Announcements', // 讨论分类
+          categoryId: 'DIC_kwDONPwC5M4Ck7mC', //讨论分类ID
+          mapping: 'pathname',
+          inputPosition: 'bottom',
+          reactionsEnabled: '0', //禁用点赞
+          // lightTheme: 'light',
+          lang: 'zh-CN',
+        },
+        {frontmatter, route},
+        true //是否启用，默认为true。也可以在frontmatter中单独配置“comment:true”
+    );
 
     // 动态获取主题中的配置 '/00-TechnicalFile/', '/01-Essay/', '/02-English/'
     const indexPagePaths = theme.value.nav.map(item => item.link);

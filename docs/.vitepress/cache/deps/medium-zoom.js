@@ -1,5 +1,3 @@
-import "./chunk-BUSYA2B4.js";
-
 // node_modules/medium-zoom/dist/medium-zoom.esm.js
 var _extends = Object.assign || function(target) {
   for (var i = 1; i < arguments.length; i++) {

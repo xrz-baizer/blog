@@ -160,7 +160,7 @@ body.no-sidebar .content {
 
 /* 隐藏文档页的页脚 */
 .VPDocFooter {
-    display: none;
+    /*display: none;*/
 }
 
 /* 针对 VitePress 默认侧边栏 */

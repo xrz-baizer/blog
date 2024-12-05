@@ -55,13 +55,23 @@
 
 `git stash save "优化XXX"` 暂存当前改动，添加备注
 
+---
+
 `git stash  pop` 还原最近一次暂存
+
+`git stash apply stash@{索引号}` 还原指定stash
+
+---
 
 `git stash  list` 查看所有暂存
 
 `git stash show -p ` 查看最近一次暂存详细信息
 
-`git stash show -p stash@{0}` 查看指定暂存详细信息
+`git stash show -p stash@{索引号}` 查看指定暂存详细信息
+
+---
+
+`git stash drop stash@{索引号}` 删除指定stash
 
 `git stash clear` 清除所有stash
 
