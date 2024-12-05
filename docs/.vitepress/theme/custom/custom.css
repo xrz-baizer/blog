@@ -158,10 +158,23 @@ body.no-sidebar .content {
     font-size: .8rem !important;
 }
 
-/* 隐藏文档页的页脚 */
+/* 文档页 页脚 */
 .VPDocFooter {
     /*display: none;*/
+    margin-top: 108px !important;
 }
+
+.VPDocFooter .edit-info{
+    display: none;
+}
+.VPDocFooter .prev-next{
+    border-top: none;
+}
+#giscus{
+    border-top: none !important;
+    margin-top: 0px !important;
+}
+
 
 /* 针对 VitePress 默认侧边栏 */
 .VPSidebar {
