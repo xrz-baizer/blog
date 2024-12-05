@@ -31,6 +31,110 @@
   - [动态彩虹背景样式](https://vitepress.yiov.top/style.html#%E5%BD%A9%E8%99%B9%E8%83%8C%E6%99%AF%E5%8A%A8%E7%94%BB)
   - [评论功能](https://vitepress.yiov.top/plugin.html#%E8%AF%84%E8%AE%BA)
 
+### 文章摘要
+
+网上没找到，自己实现一个吧。
+
+大致思路是在构建时触发一个js函数，读取项目中所有.md文件，截取文档前一部分内容作为文章摘要。再写入到项目中提前创建好的一个js文件中，并且包装为一个Map对象，key为文章Path，value为文章摘要。之后在需要使用的组件中导入该js对象即可
+
+> 这种方案是在构建时预处理，提前生成一个索引文件，而无需动态加载所有文件，所以运行时性能最佳
+
+生成的Map对象示例：
+
+```js
+// articles.js
+export const articlesMap = {
+    "Essay/Blog自动部署.md":" ## 前言  为建立个人知识库，打造个人博客，用于记录成体系的知识、随笔。 "，
+    "Essay/使用ECS为本地搭建开发环境.md": " ## 服务器准备  > 购买的华为云服务： > > - 116.205.134.4",
+  }
+```
+
+使用示例：
+
+```js
+import { articlesMap } from '../../../public/articles.js';
+
+// 填充文章概述
+currentArticles.forEach(article => {
+  article.summary = articlesMap[article.path];
+})
+```
+
+::: details 触发的JS函数（读取文章生成摘要）
+
+```js
+import fs from 'fs';
+import path from 'path';
+
+/**
+ * 在构建时调用，读取所有MD文件生成文章概述js文件。在分类页面（Category.vue）引入该js文件，通过文章path读取对应文章概述
+ */
+export function generateArticlesSummaryJSON(){
+    // Markdown 文件所在目录
+    const articlesDir = path.resolve(__dirname, '../../../../docs');
+    // 输出 JSON 文件路径
+    const outputPath = path.resolve(__dirname, '../../../../docs/public/articles.js');
+
+    const markdownFiles = getMarkdownFiles(articlesDir);
+    const articlesMap = {};
+
+    markdownFiles.forEach(filePath => {
+        // 读取 Markdown 文件
+        const content = fs.readFileSync(filePath, 'utf-8');
+        // 清理无用内容
+        const cleanText = cleanContent(content);
+        // 提取前 200 个字符作为摘要
+        const summary = cleanText.slice(0, 200).replace(/[\r\n]/g, ' ');
+        // 使用相对路径作为key
+        const relativePath = path.relative(articlesDir, filePath);
+        // 记录
+        articlesMap[relativePath] = summary;
+    });
+
+    // 将数据导出为 JavaScript 模块
+    const fileContent = `export const articlesMap = ${JSON.stringify(articlesMap, null, 2)}`;
+
+    fs.writeFileSync(outputPath, fileContent);
+}
+
+
+function cleanContent(content) {
+    // 跳过 YAML Front Matter
+    content = content.replace(/^---[\s\S]*?---/, '').trim();
+    // 移除标题（例如 # 一级标题）
+    content = content.replace(/^#\s*[^#\n]*\n/gm, '');
+    // 替换 <img> 标签
+    content = content.replace(/<img[^>]*>/gi, '');
+    // 移除 Markdown 图片引用 ![](url)
+    content = content.replace(/!\[[^\]]*\]\([^\)]+\)/g, '');
+    // 处理 http:// 和 https:// 开头的 URL，保留前 15 个字符并在后面加上省略号
+    content = content.replace(/(https?:\/\/[^\s]+)(?=\s|$)/gi, (match) => match.slice(0, 15) + '...');
+    // 移除加粗文本（**加粗文本**）
+    content = content.replace(/\*\*[^*]*\*\*/g, '');
+    // 移除所有 == 高亮文本
+    content = content.replace(/==[^=]*==/g, '');
+    return content;
+}
+
+function getMarkdownFiles(dir) {
+    const results = [];
+    fs.readdirSync(dir).forEach(file => {
+        const filePath = path.join(dir, file);
+        const stats = fs.statSync(filePath);
+
+        if (stats.isDirectory()) {
+            // 递归扫描子文件夹
+            results.push(...getMarkdownFiles(filePath));
+        } else if (stats.isFile() && file.endsWith('.md')) {
+            results.push(filePath);
+        }
+    });
+    return results;
+}
+```
+
+:::
+
 
 ## 本地配置自动部署
 
