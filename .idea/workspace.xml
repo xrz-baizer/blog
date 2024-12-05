@@ -7,11 +7,7 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/function.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
-    </list>
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,7 +202,7 @@
       <workItem from="1733277709761" duration="96000" />
       <workItem from="1733300664625" duration="7863000" />
       <workItem from="1733370522472" duration="5903000" />
-      <workItem from="1733390495615" duration="1654000" />
+      <workItem from="1733390495615" duration="2040000" />
     </task>
     <servers />
   </component>
