@@ -38,6 +38,8 @@ function cleanContent(content) {
     content = content.replace(/^---[\s\S]*?---/, '').trim();
     // 移除标题（例如 # 一级标题）
     content = content.replace(/^#\s*[^#\n]*\n/gm, '');
+    // 移除其它标题的##标识符
+    content = content.replace(/^(#+) *(.*?)( *#*)?$/gm, '$2\n');
     // 替换 <img> 标签
     content = content.replace(/<img[^>]*>/gi, '');
     // 移除 Markdown 图片引用 ![](url)

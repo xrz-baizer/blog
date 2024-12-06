@@ -9,7 +9,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/generateSummary.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/generateSummary.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +207,7 @@
       <workItem from="1733390495615" duration="7404000" />
       <workItem from="1733451149961" duration="3364000" />
       <workItem from="1733472474334" duration="4246000" />
-      <workItem from="1733526205072" duration="351000" />
+      <workItem from="1733526205072" duration="885000" />
     </task>
     <servers />
   </component>
