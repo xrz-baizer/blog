@@ -6,6 +6,5 @@ next: false
 lastUpdated: false
 comment: false
 ---
-# Essay List
 <category/>
 

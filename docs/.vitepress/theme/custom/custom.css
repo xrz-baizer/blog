@@ -8,6 +8,8 @@
     --vp-c-brand-2: var(--vp-c-indigo-2);
     --vp-c-brand-3: var(--vp-c-indigo-2);
 
+    --custom-a-1: #1769e0;
+
     /* 侧边栏 宽度 */
     --vp-sidebar-width: 325px;
     /* 自定义字体 */
@@ -356,7 +358,7 @@ mark {
 }
 
 .vp-doc a {
-    color: #1769e0;
+    color: var(--custom-a-1);
     text-decoration: none;
 
     /* 修复app端 超出页面长度的BUG */
@@ -402,7 +404,7 @@ mark {
 .VPSidebarItem p{
     /*font-weight: 500 !important;*/
     font-size: 1rem !important;;
-    /*color: #1769e0 !important;*/
+    /*color: var(--custom-a-1) !important;*/
 
     /* 超出换行，并以省略号显示 */
     white-space: nowrap;
@@ -420,7 +422,13 @@ mark {
     font-weight: bold !important;
     font-size: 1rem !important
 }
+.VPNavBarMenuLink.active {
+   color: var(--custom-a-1) !important;
+}
 
+.VPNavBarMenuLink:hover {
+    color: var(--custom-a-1) !important;
+}
 
 /* 首页下滑后导航透明 */
 .VPNavBar:not(.has-sidebar):not(.home.top) {
