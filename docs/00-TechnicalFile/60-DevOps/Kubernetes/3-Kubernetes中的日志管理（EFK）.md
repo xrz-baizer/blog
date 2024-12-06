@@ -4,8 +4,8 @@
 
 前置：
 - [Kubernetes安装和基本使用](./1-Kubernetes安装和基本使用.md)
-- [CICD-Jenkins实现](../CICD/CICD%20-%20Jenkins实现.md)
-- [CICD-项目环境区分](../CICD/CICD%20-%20项目环境区分.md)
+- [CICD-Jenkins实现](../CICD/CICD-Jenkins实现.md)
+- [CICD-项目环境区分](../CICD/CICD-项目环境区分.md)
 - [Kubernetes中的服务发现](./2-Kubernetes中的服务发现.md)
 
 在Kubernetes上的微服务架构系统上接入EFK日志系统。

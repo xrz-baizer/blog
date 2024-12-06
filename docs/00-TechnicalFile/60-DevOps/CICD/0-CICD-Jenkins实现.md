@@ -1,4 +1,4 @@
-# CICD - Jenkins实现
+# CICD-Jenkins实现
 
 ## 流程
 
@@ -243,4 +243,4 @@ tag为 环境-构建次数
 
 - [Docker镜像体积优化](./Docker镜像体积优化.md)
 
-- [CICD - 项目环境区分](./CICD%20-%20项目环境区分.md)
+- [CICD-项目环境区分](./ CICD-项目环境区分.md)

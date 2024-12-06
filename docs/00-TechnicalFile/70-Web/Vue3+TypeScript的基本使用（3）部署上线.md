@@ -77,7 +77,7 @@ kubectl --namespace default patch deployments $PROJECT_NAME -p '{"spec": {"templ
 
 相关参考之前文章
 
-[CICD - Jenkins实现.md](../60-DevOps/CICD/CICD%20-%20Jenkins实现.md)
+[CICD-Jenkins实现.md](../60-DevOps/CICD/CICD-Jenkins实现.md)
 
 ### 配置环境
 
