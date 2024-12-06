@@ -54,6 +54,9 @@ function cleanContent(content) {
     // 移除 Markdown 表格样式，只保留文本
     content = content.replace(/\| *(.*?) *(\| +.*? *)*\| */g, '$1\n');
     content = content.replace(/-{3,}/g, '');
+
+    // 将大于等于两个的空格替换为一个空格
+    content = content.replace(/\s{2,}/g, ' ');
     return content;
 }
 
