@@ -59,7 +59,7 @@ export default {
           category: 'Announcements', // 讨论分类
           categoryId: 'DIC_kwDONPwC5M4Ck7mC', //讨论分类ID
           mapping: 'title',
-          inputPosition: 'top',  // 将评论框放在评论上方
+          inputPosition: 'bottom',  // 将评论框放在评论下面
           reactionsEnabled: '0', //禁用点赞
           lang: 'zh-CN',
         },
