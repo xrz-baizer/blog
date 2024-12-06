@@ -35,9 +35,23 @@
 
 网上没找到，自己实现一个吧。
 
-大致思路是在构建时触发一个js函数，读取项目中所有.md文件，截取文档前一部分内容作为文章摘要。再写入到项目中提前创建好的一个js文件中，并且包装为一个Map对象，key为文章Path，value为文章摘要。之后在需要使用的组件中导入该js对象即可
+大致思路是在构建时触发一个js函数，读取项目中所有.md文件，截取文档前一部分内容作为文章摘要。
 
-> 这种方案是在构建时预处理，提前生成一个索引文件，而无需动态加载所有文件，所以运行时性能最佳
+- 再写入到项目中提前创建好的一个js文件中，并且包装为一个Map对象，key为文章Path，value为文章摘要。
+- 之后在需要使用的组件中导入该js对象即可
+
+> 这种方案是在构建时预处理，提前生成一个索引文件，无需动态加载所有文件，所以运行时性能最佳
+
+使用示例：
+
+```js
+import { articlesMap } from '../../../public/articles.js';
+
+// 填充文章概述
+currentArticles.forEach(article => {
+  article.summary = articlesMap[article.path];
+})
+```
 
 生成的Map对象示例：
 
@@ -49,14 +63,21 @@ export const articlesMap = {
   }
 ```
 
-使用示例：
+引入示例：
 
-```js
-import { articlesMap } from '../../../public/articles.js';
-
-// 填充文章概述
-currentArticles.forEach(article => {
-  article.summary = articlesMap[article.path];
+```ts
+export default defineConfig({
+  vite: {
+        // 当 Vite 构建项目时，会自动加载并执行这些插件
+    plugins: [
+      {
+        name: 'generate-articles-json',
+        buildStart() {
+          generateArticlesSummaryJSON();
+        },
+      },
+    ],
+  }
 })
 ```
 
