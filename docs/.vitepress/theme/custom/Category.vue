@@ -5,7 +5,7 @@
             <div class="post-header">
                 <div class="post-title">
                     <a :href="article.link"> {{ article.text }}
-                        <Badge type="danger" v-if="article.pinned">Pinned</Badge>
+                        <Badge type="tip" v-if="article.pinned">Pinned</Badge>
                     </a>
                 </div>
                 <span class="category-pc">{{ article.lastUpdatedFormat }}</span>

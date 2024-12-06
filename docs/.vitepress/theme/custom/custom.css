@@ -317,7 +317,7 @@ mark {
 .vp-doc :not(pre, h1, h2, h3, h4, h5, h6) > code{
     /*color: #d9702b;*/
     /*background: #f8f9fa;*/
-
+    margin: 0 3px;
     color: #ec6e30;
     background: #f8f8fe;
 
