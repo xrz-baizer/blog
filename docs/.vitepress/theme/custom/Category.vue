@@ -56,7 +56,7 @@ const articles: Article[] = getRecentArticles(sidebar.value,-1);
 // 分页状态
 import { ref, computed } from 'vue';
 const currentPage = ref(1); // 当前页码
-const pageSize = 9; // 每页文章数
+const pageSize = 10; // 每页文章数
 
 // 计算总页数
 const totalPages = computed(() => Math.ceil(articles.length / pageSize));
