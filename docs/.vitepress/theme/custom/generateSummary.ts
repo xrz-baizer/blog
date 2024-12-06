@@ -44,10 +44,14 @@ function cleanContent(content) {
     content = content.replace(/!\[[^\]]*\]\([^\)]+\)/g, '');
     // 处理 http:// 和 https:// 开头的 URL，保留前 15 个字符并在后面加上省略号
     content = content.replace(/(https?:\/\/[^\s]+)(?=\s|$)/gi, (match) => match.slice(0, 15) + '...');
-    // 移除加粗文本（**加粗文本**）
-    content = content.replace(/\*\*[^*]*\*\*/g, '');
-    // 移除所有 == 高亮文本
-    content = content.replace(/==[^=]*==/g, '');
+    // 移除 ** 标识符
+    content = content.replace(/\*\*(.*?)\*\*/g, '$1');
+    // 移除 == 标识符
+    content = content.replace(/==(.*?)==/g, '$1');
+
+    // 移除 Markdown 表格样式，只保留文本
+    content = content.replace(/\| *(.*?) *(\| +.*? *)*\| */g, '$1\n');
+    content = content.replace(/-{3,}/g, '');
     return content;
 }
 
