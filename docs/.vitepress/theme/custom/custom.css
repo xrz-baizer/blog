@@ -21,6 +21,8 @@
     /* 容器折叠块 */
     --vp-custom-block-details-bg: #f0f4f9;
 
+    --color-accent-muted: #eee !important;
+
 
     /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif;*/
     /*--vp-font-family-mono: Google Sans,Helvetica Neue,sans-serif !important;*/
