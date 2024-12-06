@@ -56,6 +56,8 @@ export const articlesMap = {
   "01-Essay/index.md": "<category/>",
   "01-Essay/select-for-update.md": " MySQL版本：5.7.29  #### for update确保操作的唯一性（行锁）  > - where条件必须使用索引，最好是唯一索引，如果没有索引可能会升级为表锁。 > - 注意死锁的问题：如果两个或多个事务以不同的顺序获取锁，可能会导致死锁。例如，事务 A 锁定了行 X 并尝试获取行 Y 的锁，而事务 B 锁定了行 Y 并尝试获取行 X 的锁，导致死锁，进而引发事务回滚。   ### ",
   "01-Essay/微信APP授权登录.md": " ## Maven  ```xml    <dependency>             <groupId>org.apache.commons</groupId>             <artifactId>commons-io</artifactId>             <version>1.3.2</version>         </dependency>         <",
+  "01-Essay/柴米油盐/执行标准指南.md": " ## GB的含义  GB是“”的缩写。  GB标准由和发布，具有强制性或推荐性：  - （`GB`）：法律法规要求强制执行，例如食品安全国家标准。 - （`GB/T`）：建议性标准，通常适用于产品质量要求。 - （`QB/T`，机械行业）：适用于特定行业。 - （`DB`）：由地方政府制定，适用于本区域。 - （`Q/`企业代码）：由企业自行制定，通常高于国家标准，用于内部或对外展示品质。  #",
+  "01-Essay/柴米油盐/服装材料选择指南.md": " ## 服装的安全技术类别  根据，服装按安全技术性能划分为以下三个类别：  |  |            |                                                  |                                                  | | -------- | ------------------ | -------",
   "01-Essay/疑难杂症/IDEA 2023.1 破解.md": " > 通过jar包+激活码破解  #### VM Options  ```text -Xms3G -Xmx4G -XX:ReservedCodeCacheSize=512m -XX:+IgnoreUnrecognizedVMOptions -XX:+UseG1GC -XX:SoftRefLRUPolicyMSPerMB=50 -XX:CICompilerCount=2 -XX:+HeapDumpO",
   "01-Essay/疑难杂症/IDEA搜索卡顿优化.md": " > 在IDEA内全局搜索内容时有时候会卡顿，通过以下设置优化  ## Preferences设置 关闭此选项   ## Project Structure设置 排除log文件 ",
   "01-Essay/疑难杂症/IDEA项目文件滑动有卡顿解决（Mac M1Pro）.md": " Help -> Edit Custom Vm Options  ``` -Dsun.java2d.opengl=true -Dsun.java2d.opengl.fbobject=false ```    重启即可  DataGrip同",
