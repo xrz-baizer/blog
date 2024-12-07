@@ -145,7 +145,7 @@ span{
     justify-content: space-between;
 }
 .post-title {
-    font-size: 1.225rem;
+    font-size: 1.1rem;
     font-weight: 500;
     margin: 0.1rem 0;
 

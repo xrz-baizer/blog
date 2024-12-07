@@ -1,10 +1,116 @@
-# 英语语法 EnglishGrammar
+# EnglishGrammar 英语语法
 
-英语兔语法讲解：https://www.bilibili.com/video/BV1XY411J7aG
+## 句子种类
 
-## 五大句型
+>**按目的分为四种：**
+>
+>- 陈述句、疑问句、祈使句、感叹句
+>
+>**按结构分为三种：**
+>
+>- 简单句、并列句、复合句（各种从句）
 
-### 主系表	——基础句型1
+### 陈述句(statements)
+
+陈述一个事实，表明一个愿望、猜测等：
+
+- I wish you success.（愿望）
+- He may be in bed now.（猜测）
+
+### 祈使句(imperatives)
+
+提出命令、请求等：
+
+- Get everything ready tomorrow.（命令）
+- Take care!（叮嘱）
+
+### 感叹句(exclamations)
+
+表示赞美、惊异等情绪：
+
+- How beautiful (this is)!
+- How silly (you are)!
+
+### 问句(questions)
+
+#### 一般疑问句(general questions)
+
+也可称为“yes/no” questions（是否型问句），因为它一般是由 yes 或 no 回答的：
+
+- Are you from Japan? —Yes, I am.
+- Do you like horror films? —No, I don't.
+
+#### 特殊疑问句(special questions)
+
+也可称为“wh” -questions，因为它们多数都以who、what、where、when、which、whose、why这类词开头：
+
+- Who is it on the phone?
+- Where have you been?
+
+#### 选择问句(alternative questions)
+
+一般提出两种可能，看哪一种属实。这类问句都由两部分组成，由or把它们连接起来。通常前面部分用升调，后面部分用降调：
+
+- Are you from the South or from the North?
+- Is he going by train or by plane?
+
+#### 反意问句(disjunctive questions)
+
+- 这种问句由两部分组成，前面部分是一个陈述句，后面部分为一简短问句（称为question tag），如：
+  - This is your car, isn't it?
+  - They are your children, aren't they?
+- 要注意，如果前面部分是肯定句，后面的简短问句一般要用否定形式（上面例句都是这样的）。反之，如果前面部分为否定句，则后面的简短问句要用肯定形式，如：
+  - You don't like rock music, do you?
+  - Your wife isn't in China now, is she?
+- 在个别情况下，前后两部分可以都是肯定或都是否定。这时有特殊的含义，如：
+  - So he won't pay his bills, won't he? We'll see about that.(=He is too naive to think.)（有威胁的意思。）
+  - You sold that lovely bracelet, did you? (=I'm sorry you did.)（真遗憾。）
+
+## 语序
+
+在构成句子时有一定的顺序，肯定句通常按下列顺序排列：
+
+### 自然语序(natural word order)
+
+![image-20241207150514095](../Image/image-20241207150514095.png)
+
+### 倒装语序(inverted word order)
+
+谓语有时全部或部分地提到主语前面时，称为倒装语序。问句很多都用倒装语序
+
+![image-20241207150528191](../Image/image-20241207150528191.png)
+
+## 句子成分
+
+### 由单词表示的句子成分
+
+**主语**：名词、代词、数词、动名词
+
+**系统词**：be动词（am、is、are）
+
+**谓语**：动词、动词短语
+
+**表语**：代词、名词、形容词
+
+**宾语**：代词、名词
+
+**定语：**代词、形容词、数词、 
+
+**补语**：形容词、名词、介词短语
+
+### 由短语表示的句子成分
+
+- 介词短语（prepositional phrases）
+- 不定式短语(infinitive phrases)
+- 动名词短语(gerund phrases)
+- 现在分词短语(-ing participle phrases)
+- 过去分词短语(-en participle phrases)
+- 名词短语(noun phrases)
+- 动词短语(verb phrases)
+
+## 基础句型（简单句）
+
+### 主系表
 
 > 表示什么是什么
 
@@ -20,7 +126,7 @@ eg
 - How is the teacher?
 - We are Chinese
 
-### 主谓宾	——基础句型2
+### 主谓宾
 
 > 表示什么做了什么
 
@@ -35,7 +141,7 @@ eg
 - I love you
 - Children plant trees
 
-### 主谓	——基础句型3
+### 主谓
 
 > 和主谓宾的区别是此句型使用的动词do是不及物动词vi，后面不能带宾语
 >
@@ -50,7 +156,7 @@ eg
 - Spring comes
 - The teacher <u>listens to</u> the music
 
-### 主谓宾补	——基础句型4
+### 主谓宾补
 
 > 有些句子使用主谓宾是无法完整表达句子意思的，所以需要一个补语补充
 
@@ -66,7 +172,7 @@ eg
 
 - She found the pen <u>on the floor</u>
 
-### 主谓宾宾	——基础句型5
+### 主谓宾宾
 
 > 谓语由==双宾语动词==组成，间接宾语通常指“人”，直接宾语通常指“物”
 >
@@ -90,7 +196,7 @@ eg
 
 - The old man is telling <u>stories</u> <u>to</u> <u>the childre</u>
 
-### There be	——基础句型6
+### There be
 
 > 表示 时间、空间 存在某种事物
 
@@ -115,6 +221,23 @@ eg
 eg
 
 - <u>There was</u> an accident（这里发生了事故）
+
+## 并列句
+
+用并列连词连接起来的2个或者2个以上的简单句组成的句子
+
+**结构：简单句 + 并列连词 + 简单句**
+
+- I help him ==and== he helps me. 我帮助他，他帮助我。
+- My sister ==not only== sings well,==but also== dances well. 我妹妹不仅唱得好，而且跳舞也很好
+- I bought my sister a present,==but== she didn't like it. 我给我妹妹买了一份礼物，但她不喜欢。
+- Is it a girl ==or== a boy? 是男孩还是女孩？
+- They were making a lot of noise,==so== the teacher got angry. 他们制造了很多噪音，所以老师生气了。
+
+**结构：分号（;）连接**
+
+- It was getting late==;== she must start back home. 天色已晚；她必须动身回家。
+- We fished all day==;== we didn't catch a thing. 我们钓了一整天的鱼；我们什么也没抓到。
 
 ## 谓语动词 PredicateVerb
 
@@ -297,7 +420,7 @@ eg
 
 ## SubordinateClause 从句
 
-英语五大基础句型中，除了动词之外，其它都可以使用从句通过连词扩展替代
+英语五大基础句型中，除了动词之外，其它都可以==使用从句==通过==连词扩展==替代
 
 - 主语 + ==动词==
 - 主语 + ==动词== + 宾语
@@ -506,14 +629,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 - I walk into the canteen **where** students are eating. 我走进学生们正在吃饭的食堂。
 
-### 并列句
+## 参考资料
 
-用并列连词连接起来的2个或者2个以上的简单句组成的句子
-
-**结构：简单句 + 并列连词 + 简单句**
-
-- I help him ==and== he helps me. 我帮助他，他帮助我。
-- My sister ==not only== sings well,==but also== dances well. 我妹妹不仅唱得好，而且跳舞也很好
-- I bought my sister a present,==but== she didn't like it. 我给我妹妹买了一份礼物，但她不喜欢。
-- Is it a girl ==or== a boy? 是男孩还是女孩？
-- They were making a lot of noise,==so== the teacher got angry. 他们制造了很多噪音，所以老师生气了。
+- 英语兔语法讲解：https://www.bilibili.com/video/BV1XY411J7aG
+- 《张道真英语语法（第三版）（精华版）》

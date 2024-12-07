@@ -1,8 +1,4 @@
-# 发音技巧 PronunciationSkills
-
-B站英语兔视频：https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=1&vd_source=201e659a1198f26ce165fcaad0d7ddb1
-
-Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
+# PronunciationSkills 发音技巧
 
 
 ## 读音规则（常用）
@@ -162,8 +158,6 @@ Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
 
 
 ## 单词重读
-
-> 原文：https://www.cnblogs.com/Wizard-Z/p/14279943.html
 
 ### 音节介绍
 
@@ -434,3 +428,9 @@ Did you see my ↗book?
 升调和降调有时组合起来一起用，例如同时用升调和降调来列举一系列事物：
 
 He went to ↗England, ↗Spain, and ↘Russia
+
+## 参考资料
+
+- B站英语兔视频：https://www.bilibili.com/video/BV1SZ4y1K7Lr?p=1&vd_source=201e659a1198f26ce165fcaad0d7ddb1
+- Enjoy：https://1000h.org/sounds-of-american-english/4.4-linking.html
+- [英语口语——英语连读、发音、英文音标、语调、语气、节奏等等](https://www.cnblogs.com/Wizard-Z/p/14279943.html)

@@ -8,6 +8,10 @@
     --vp-c-brand-2: var(--vp-c-indigo-2);
     --vp-c-brand-3: var(--vp-c-indigo-2);
 
+    /* 文档文本颜色 */
+    --vp-c-text-1: #1f1f1f;
+
+    /* 导航栏、A标签 active颜色 */
     --custom-a-1: #1769e0;
 
     /* 侧边栏 宽度 */
@@ -133,6 +137,10 @@ body.no-sidebar .content {
 
     /*background-image: var(--vp-home-hero-image-background-image);*/
     /*filter: var(--vp-home-hero-image-filter);*/
+}
+
+.VPHero .text{
+    opacity: .8;
 }
 /*#app{*/
 /*    background-image: url("https://cn.bing.com//th?id=OHR.FibonacciAloe_ZH-CN8974137481_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");*/
@@ -420,8 +428,8 @@ mark {
 
 /* 导航栏样式 */
 .VPNavBarMenuLink{
-    color: var(--vp-c-text-2) !important;
-    font-weight: bold !important;
+    /*color: var(--vp-c-text-2) !important;*/
+    /*font-weight: bold !important;*/
     font-size: 1rem !important
 }
 .VPNavBarMenuLink.active {
