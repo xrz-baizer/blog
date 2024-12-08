@@ -12,59 +12,140 @@
 
 ### 陈述句(statements)
 
-陈述一个事实，表明一个愿望、猜测等：
+ 用于陈述事实、观点、事件或描述的句子，通常以句号（.）结尾。
 
-- I wish you success.（愿望）
-- He may be in bed now.（猜测）
+- **肯定陈述句：主语 + 谓语（动词） + 其他成分。**
+  - She loves chocolate.
+
+- **否定陈述句：主语 + 助动词 + not + 动词 + 其他成分。**
+  - She does not like tea.
+  - They are not happy.
 
 ### 祈使句(imperatives)
 
-提出命令、请求等：
+ 用于表示命令、请求、建议或邀请的句子，通常省略主语“you”。以句号（.）或感叹号（!）结尾，取决于语气。
 
-- Get everything ready tomorrow.（命令）
-- Take care!（叮嘱）
+- **肯定祈使句：动词原形 + 其他成分。**
+  - Open the door.
+  - Please sit down.
+
+- **否定祈使句：Don't + 动词原形 + 其他成分。**
+  - Don’t touch that.
+  - Don’t be late.
 
 ### 感叹句(exclamations)
 
-表示赞美、惊异等情绪：
+感叹句用于表达强烈的情感，如惊讶、愤怒、喜悦或遗憾等，通常以 **感叹号（!）** 结尾。
 
-- How beautiful (this is)!
-- How silly (you are)!
+**结构：What + (a/an) + 形容词 + 名词 + 主谓结构！**（用于感叹某事物的性质或状态）
+
+- **What** 后面通常接名词或名词短语，强调事物本身。
+
+- What a beautiful day it is! （多美好的一天啊！）
+- What an amazing story you told! （你讲的故事多精彩！）
+- What big eyes you have! （你的眼睛真大！）
+
+
+
+**结构：How + 形容词/副词 + 主谓结构！**（用于感叹某事物的程度）
+
+- **How** 后面接形容词或副词，强调状态或程度
+
+- How lovely she looks! （她看起来多可爱！）
+- How quickly time flies! （时间过得多快啊！）
+
+​	
+
+其它感叹词（如 Wow, Oh, Alas 等）开头，表达强烈情感。
+
+- Wow! That’s awesome! （哇！太棒了！）
+- Oh no! I forgot my wallet! （哦不！我忘带钱包了！）
+- Alas! We lost the game. （唉！我们输了比赛。）
 
 ### 问句(questions)
 
 #### 一般疑问句(general questions)
 
-也可称为“yes/no” questions（是否型问句），因为它一般是由 yes 或 no 回答的：
+>  以助动词或情态动词开头，对某事进行提问，通常答案是 “Yes” 或 “No”。
 
-- Are you from Japan? —Yes, I am.
-- Do you like horror films? —No, I don't.
+**结构：助动词/情态动词 + 主语 + 谓语 + 其它?**
+
+如果句子中有动词 **be** 或 **情态动词**，它们直接移到句首。
+
+如果句子是一般动词，则需要加上助动词 **do/does/did**。
+
+- 含be动词：==Are== you from Japan? —Yes, I am.
+- 含情态动词：==Can== she drive?
+- 含一般动词，需加上助动词 do/does/did： 
+  - ==Do== you ==like== horror films? —No, I don't.
+  - ==Does== she ==like== apples? 
+  - ==Did== you ==finish== your homework?
 
 #### 特殊疑问句(special questions)
 
-也可称为“wh” -questions，因为它们多数都以who、what、where、when、which、whose、why这类词开头：
+> 用来问具体信息的句子，答案不是简单的 “Yes” 或 “No”。
 
-- Who is it on the phone?
+常见的疑问词：**What, Where, When, Why, Who, Which, How**
+
+**结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它?**
+
 - Where have you been?
+- When did she leave?
+- How can I help you?
+
+
+
+**结构：疑问词 + 谓语 + 其它?**
+
+当疑问词（如 **Who, What** 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后
+
+- What happened yesterday? 
+- Who broke the glass?
 
 #### 选择问句(alternative questions)
 
-一般提出两种可能，看哪一种属实。这类问句都由两部分组成，由or把它们连接起来。通常前面部分用升调，后面部分用降调：
+> 一般提出两种可能，看哪一种属实。这类问句都由两部分组成，由or把它们连接起来。通常前面部分用升调，后面部分用降调：
 
-- Are you from the South or from the North?
-- Is he going by train or by plane?
+**结构：助动词 + 主语 + 谓语 + 选项 1 + or + 选项 2？**
+
+- Are you from ==the South== or from ==the North==?
+- Do you want ==tea== or ==coffee==?
+- Is he going ==by train== or ==by plane==?
 
 #### 反意问句(disjunctive questions)
 
-- 这种问句由两部分组成，前面部分是一个陈述句，后面部分为一简短问句（称为question tag），如：
-  - This is your car, isn't it?
-  - They are your children, aren't they?
-- 要注意，如果前面部分是肯定句，后面的简短问句一般要用否定形式（上面例句都是这样的）。反之，如果前面部分为否定句，则后面的简短问句要用肯定形式，如：
-  - You don't like rock music, do you?
-  - Your wife isn't in China now, is she?
-- 在个别情况下，前后两部分可以都是肯定或都是否定。这时有特殊的含义，如：
-  - So he won't pay his bills, won't he? We'll see about that.(=He is too naive to think.)（有威胁的意思。）
-  - You sold that lovely bracelet, did you? (=I'm sorry you did.)（真遗憾。）
+>  一个陈述句后加一个简短的疑问部分，用来确认或反问。
+>
+> 简短疑问 = 助动词 + 主语代词
+
+**结构：否定句 + 肯定简短疑问？**
+
+- You don't like rock music, do you?
+- Your wife isn't in China now, is she?
+
+
+
+**结构：肯定句 + 否定简短疑问？**
+
+- This is your car, isn't it?
+- They are your children, aren't they?
+
+
+
+**简短疑问 = 助动词 + 主语代词**
+
+- 如果陈述句（否定句 ro 肯定句）有情态动词或 be 动词，直接用其中的帮助动词构成简短疑问
+  - She ==can== swim, ==can't== she?
+  - It ==is== raining, ==isn't== it?
+- 如果是一般动词，则使用 do/does/did
+  - You don't ==like== rock music, ==do== you?
+
+
+
+**结构：肯定句 + 肯定简短疑问？or 否定句 + 否定简短疑问？**（个别情况下出现，这时有特殊的含义）
+
+- So he won't pay his bills, won't he? We'll see about that.(=He is too naive to think.)（有威胁的意思。）
+- You sold that lovely bracelet, did you? (=I'm sorry you did.)（真遗憾。）
 
 ## 句子成分 Clause Elements
 
@@ -81,6 +162,8 @@
 - **定语 (Modifier)**：修饰主语或者宾语。短定语前置成为前置定语，长定语放后面成为后置定语。（常为形容词）
 - **状语 (Adverbial)**：表示动作发生的时间、地点、原因、目的、结果、方式。
 - **同位语（Appositive）**：同位语是对一个名词或代词进行补充说明的成分，通常紧跟在被说明的名词或代词之后，用于进一步解释或限定其含义。说白了就是同一个人和事用不同的方式再说一遍。
+
+> 句子 = 主干 + 修饰
 
 ## 语序
 
@@ -457,7 +540,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 ### 动词的时间
 
-#### 动词的时间-`现在`
+#### 动词的时间-==现在==
 
 **==一般现在时态==**
 
@@ -478,7 +561,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 - The rabbit <u>has been eating</u> carrots. 这兔子一直在吃胡萝卜
 
-#### 动词的时间-`过去`
+#### 动词的时间-==过去==
 
 **==一般过去时态==	动词过去式**
 
@@ -496,7 +579,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 - The rabbit <u>hed been eating</u> carrots. 这兔子一直在吃胡萝卜
 
-#### 动词的时间-`将来`
+#### 动词的时间-==将来==
 
 **==一般将来时态==**
 
@@ -529,7 +612,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 - The rabbit <u>will have been eating</u> carrots. 这兔子会一直在吃胡萝卜
 
-#### 动词的时间-`过去将来`
+#### 动词的时间-==过去将来==
 
 >通常出现在从句，它描述的是过去视角中的“未来”。
 
@@ -854,3 +937,6 @@ B站讲解：https://www.bilibili.com/video/BV1XY411J7aG?vd_source=201e659a1198f
 
 - 英语兔语法讲解：https://www.bilibili.com/video/BV1XY411J7aG
 - 《张道真英语语法（第三版）（精华版）》
+
+- 在线英语句子语法分析：https://www.kogrammar.com/analyze/
+- [Learning English GPT](https://chatgpt.com/g/g-CX4YNVw3l-ying-yu-xue-xi-gpt-english-learning-gpt)
