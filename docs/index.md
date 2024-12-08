@@ -2,6 +2,7 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 #navbar: false
+title: 花有重开日
 
 hero:
   name: "Personal Knowledge Repository"

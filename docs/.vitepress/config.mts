@@ -9,7 +9,7 @@ import { generateArticlesSummaryJSON } from './theme/custom/generateSummary';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Baizer",
-  titleTemplate: ':title | Baizer', //:title 为md文件一级标题
+  titleTemplate: ':title - Baizer', //:title 为md文件一级标题
   head: [
       ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
