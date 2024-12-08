@@ -167,17 +167,25 @@
 
 ## 语序
 
+#### 自然语序(natural word order)
+
 在构成句子时有一定的顺序，肯定句通常按下列顺序排列：
 
-### 自然语序(natural word order)
+| 主语（及修饰语）    | 谓语（动词及动词短语） | 宾语（及修饰语）              | 状语（方式） | 状语（地点） | 状语（时间） |
+| ------------------- | ---------------------- | ----------------------------- | ------------ | ------------ | ------------ |
+| A group of children | are playing            | football                      | happily      | in the park  |              |
+| We                  | will be back           |                               |              |              | tomorrow     |
+| I                   | saw                    | a cute dog                    |              |              |              |
+| I                   | saw                    | a cute dog running            |              | in the park  |              |
 
-![image-20241207150514095](../Image/image-20241207150514095.png)
-
-### 倒装语序(inverted word order)
+#### 倒装语序(inverted word order)
 
 谓语有时全部或部分地提到主语前面时，称为倒装语序。问句很多都用倒装语序
 
-![image-20241207150528191](../Image/image-20241207150528191.png)
+| 疑问词   | 助动词/情态动词 | 主要 | 动词（+表语）  | 宾语      | 状语 |
+| -------- | --------------- | ---- | -------------- | --------- | ---- |
+| How long | have            | you  | been in China? |           |      |
+|          | May             | I    | borrow         | your book | now? |
 
 ## 简单句（动词五大基础句型）
 
