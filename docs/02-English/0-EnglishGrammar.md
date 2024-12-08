@@ -722,7 +722,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 >
 >**I will you tomorrow.** 语法错误：缺乏主要动词，will不能单独做谓语动词。
 
-**基本助动词：be、have、do**
+**基本助动词：`be`、`have`、`do` **
 
 - 这三个动词作**助动词**时没有实际含义。（She <u>is</u> <u>writing</u> a letter. is没有实际含义）
 - 不过这三个动词也可以单独做谓语动词，那就有自己的实际含义了。（She <u>is</u> a teacher. is=是）

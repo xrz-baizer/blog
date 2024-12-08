@@ -103,12 +103,12 @@
         padding-bottom: 0px !important;
     }
     .vp-doc h1{
-        font-size: 1.5rem !important;
+        font-size: 1.8rem !important;
         /*margin-bottom: 0px !important;*/
     }
     .vp-doc h2{
         font-size: 1.5rem !important;
-        margin-top: 16px !important;
+        /*margin-top: 16px !important;*/
         /*margin-bottom: 10px !important;*/
     }
     .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
@@ -265,7 +265,7 @@ body.no-sidebar .content {
 }
 
 .vp-doc h2 {
-    margin-top: 26px;
+    margin-top: 36px;
     margin-bottom: 16px;
     border-top: none !important;
     padding-top: 0px;
@@ -274,14 +274,14 @@ body.no-sidebar .content {
 
 .vp-doc h3 {
     font-size: 1.4rem;
-    margin-top: 25px;
-    margin-bottom: 15px;
+    margin-top: 36px;
+    margin-bottom: 16px;
 }
 
 .vp-doc h4{
     font-size: 1.2rem;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 32px;
+    margin-bottom: 16px;
 }
 
 .vp-doc h2 .header-anchor {
@@ -292,7 +292,6 @@ body.no-sidebar .content {
 
 /* Markdown引用符号样式 */
 .vp-doc blockquote {
-
     padding: 10px 16px;
     position: relative;
 
@@ -300,21 +299,6 @@ body.no-sidebar .content {
     color: #275796;
     background-color: #e8f4fc;
     border-left: none;
-
-    /*color: var(--vp-c-text-1);*/
-    /*background-color: #fbf9fd;*/
-    /*border-left: 3px solid #5db17d;*/
-
-
-    /*color: var(--vp-c-text-2);*/
-    /*border-radius: 0px 10px 10px 0px;*/
-    /*background-color: var(--vp-c-gray-soft);*/
-    /*background-color: #f8f8fe;*/
-    /*background-color: #e6f6e6;*/
-    /*background-color: #fafafa;*/
-    /*border-left: 2px solid var(--vp-c-green-2);*/
-    /*border-left: 2px solid var(--vp-c-indigo-1);*/
-    /*border-radius: 8px;*/
 }
 
 mark {
@@ -354,6 +338,17 @@ mark {
 /* 代码块 行号样式 */
 .vp-doc .line-numbers-wrapper{
     border-right: 3px solid var(--vp-c-bg);
+}
+
+/* 表格头  */
+.vp-doc th{
+    color: var(--vp-c-text-1);
+    background-color: #f0f4f9 ;
+}
+
+/* 表格双数行 样式 */
+.vp-doc tr:nth-child(2n){
+    background-color: var(--vp-c-bg);
 }
 
 .vp-doc p,.vp-doc ul {
