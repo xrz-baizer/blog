@@ -32,7 +32,7 @@ features:
 #    icon:
 #     src: /file.svg
 #    linkText: 随笔、疑难杂症
-    details: 随笔、疑难杂症
+    details: 随笔、疑难杂症、生活常识
   - title: TechnicalArticles
     link: /00-TechnicalFile/
     details: 技术文章、系列知识、业务场景解决方案

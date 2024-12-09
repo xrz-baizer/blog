@@ -58,6 +58,13 @@
         padding-top: 22px;
     }
 
+    .VPHero .text{
+        margin-top: 40px !important;
+    }
+    .VPHomeFeatures .box{
+        padding: 20px 16px;
+    }
+
 }
 
 /* 640px以下生效 */
@@ -72,6 +79,9 @@
     }
     .VPHero .container{
         /*flex-direction: column-reverse;*/
+    }
+    .VPHero .text{
+        margin-top: 8px !important;
     }
     .LastUpdated {
         /*display: none;*/
@@ -140,7 +150,7 @@ body.no-sidebar .content {
 }
 
 .VPHero .text{
-    opacity: .8;
+    opacity: .85;
 }
 /*#app{*/
 /*    background-image: url("https://cn.bing.com//th?id=OHR.FibonacciAloe_ZH-CN8974137481_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");*/
