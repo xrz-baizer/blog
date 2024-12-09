@@ -352,9 +352,9 @@ mark {
 }
 
 .vp-doc p,.vp-doc ul {
-    /*margin: 10px 0px;*/
-    margin-top: 0px;
-    margin-bottom: 12px;
+    margin: 8px 0px;
+    /*margin-top: 0px;*/
+    /*margin-bottom: 12px;*/
 }
 
 .vp-doc p,.vp-doc ul,.vp-doc ol{
