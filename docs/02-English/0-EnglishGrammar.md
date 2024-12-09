@@ -14,47 +14,49 @@
 
  用于陈述事实、观点、事件或描述的句子，通常以句号（.）结尾。
 
-- **肯定陈述句：主语 + 谓语 + 其他成分。**
-  - She loves chocolate.
+**==肯定陈述句：主语 + 谓语 + 其他成分==**
 
-- **否定陈述句：主语 + 助动词 + not + 动词 + 其他成分。**
-  - She does not like tea.
-  - They are not happy.
+- She loves chocolate.
+
+**==否定陈述句：主语 + 助动词 + not + 动词 + 其他成分==**
+
+- She does not like tea.
+- They are not happy.
 
 ### 祈使句(imperatives)
 
  用于表示命令、请求、建议或邀请的句子，通常省略主语“you”。
 
-- **==肯定祈使句：动词原形 + 其他成分。==**
-  - Open the door.
-  - Please sit down.
+**==肯定祈使句：动词原形 + 其他成分。==**
 
-- **==否定祈使句：Don't + 动词原形 + 其他成分。==**
-  - Don’t touch that.
-  - Don’t be late.
+- Open the door.
+- Please sit down.
+
+**==否定祈使句：Don't + 动词原形 + 其他成分。==**
+
+- Don’t touch that.
+- Don’t be late.
 
 ### 感叹句(exclamations)
 
 感叹句用于表达强烈的情感，如惊讶、愤怒、喜悦或遗憾等，通常以 **感叹号（!）** 结尾。用于感叹某事物的性质或状态。
 
-**==结构：What + (a/an) + 形容词 + 名词 + 主谓结构！==**
+**结构：==What + (a/an) + 形容词 + 名词 + 主谓结构！==**
 
-- What 后面通常接名词或名词短语，强调事物本身。
+What 后面通常接名词或名词短语，强调事物本身。
 
 - What a beautiful day it is! （多美好的一天啊！）
 - What an amazing story you told! （你讲的故事多精彩！）
 - What big eyes you have! （你的眼睛真大！）
 
+**结构：==How + 形容词/副词 + 主谓结构！==**（用于感叹某事物的程度）
 
-
-**结构：How + 形容词/副词 + 主谓结构！**（用于感叹某事物的程度）
-
-- **How** 后面接形容词或副词，强调状态或程度
+**How** 后面接形容词或副词，强调状态或程度
 
 - How lovely she looks! （她看起来多可爱！）
 - How quickly time flies! （时间过得多快啊！）
 
-​	
+
 
 其它感叹词（如 Wow, Oh, Alas 等）开头，表达强烈情感。
 
@@ -68,13 +70,11 @@
 
 >  以助动词或情态动词开头，对某事进行提问，通常答案是 “Yes” 或 “No”。
 
-**结构：助动词/情态动词 + 主语 + 谓语 + 其它?**
+**结构：==助动词/情态动词 + 主语 + 谓语 + 其它?==**
 
-- 规则1：如果句子中有动词 **be** 或 **情态动词**，它们直接移到句首。
+如果句子中有动词 **be** 或 **情态动词**，它们直接移到句首。
 
-- 规则2：如果句子是一般动词，则需要加上助动词 **do/does/did**。
-
-
+如果句子是一般动词，则需要加上助动词 **do/does/did**。
 
 - 含be动词：==Are== you from Japan? —Yes, I am.
 - 含情态动词：==Can== she drive?
@@ -87,17 +87,15 @@
 
 > 用来问具体信息的句子，答案不是简单的 “Yes” 或 “No”。
 
-常见的疑问词：**What, Where, When, Why, Who, Which, How**
+**结构：==疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它?==**
 
-**结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它?**
+常见的疑问词：**What, Where, When, Why, Who, Which, How**
 
 - Where have you been?
 - When did she leave?
 - How can I help you?
 
-
-
-**结构：疑问词 + 谓语 + 其它?**
+**结构：==疑问词 + 谓语 + 其它?==**
 
 当疑问词（如 **Who, What** 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后
 
@@ -108,7 +106,7 @@
 
 > 一般提出两种可能，看哪一种属实。这类问句都由两部分组成，由or把它们连接起来。通常前面部分用升调，后面部分用降调：
 
-**结构：助动词 + 主语 + 谓语 + 选项 1 + or + 选项 2？**
+**结构：==助动词 + 主语 + 谓语 + 选项 1 + or + 选项 2？==**
 
 - Are you from ==the South== or from ==the North==?
 - Do you want ==tea== or ==coffee==?
@@ -120,52 +118,51 @@
 >
 > 简短疑问 = 助动词 + 主语代词
 
-**结构：否定句 + 肯定简短疑问？**
+**结构：==否定句 + 肯定简短疑问？==**
 
 - You don't like rock music, do you?
 - Your wife isn't in China now, is she?
 
-
-
-**结构：肯定句 + 否定简短疑问？**
+**结构：==肯定句 + 否定简短疑问？==**
 
 - This is your car, isn't it?
 - They are your children, aren't they?
 
 
 
-**简短疑问 = 助动词 + 主语代词**
+**==简短疑问 = 助动词 + 主语代词==**
 
-- 如果陈述句（否定句 ro 肯定句）有情态动词或 be 动词，直接用其中的帮助动词构成简短疑问
-  - She ==can== swim, ==can't== she?
-  - It ==is== raining, ==isn't== it?
-- 如果是一般动词，则使用 do/does/did
-  - You don't ==like== rock music, ==do== you?
+如果陈述句（否定句 ro 肯定句）有情态动词或 be 动词，直接用其中的帮助动词构成简短疑问
+- She ==can== swim, ==can't== she?
+- It ==is== raining, ==isn't== it?
+
+如果是一般动词，则使用 do/does/did
+- You don't ==like== rock music, ==do== you?
 
 
 
-**结构：肯定句 + 肯定简短疑问？or 否定句 + 否定简短疑问？**（个别情况下出现，这时有特殊的含义）
+**结构：==肯定句 + 肯定简短疑问？or 否定句 + 否定简短疑问？==**（个别情况下出现，这时有特殊的含义）
 
 - So he won't pay his bills, won't he? We'll see about that.(=He is too naive to think.)（有威胁的意思。）
 - You sold that lovely bracelet, did you? (=I'm sorry you did.)（真遗憾。）
 
 ## 句子成分 Clause Elements
 
+> 句子 = 主干 + 修饰
+
 #### 主干成分
 
 - **主语 (Subject)**：句子的主题、动作的发出者
-- **谓语 (Predicate)**：表示句子的主要动作或状态，通常由动词或动词短语表示。
+- **谓语 (Predicate)**：表示句子的主要动作或状态，通常由动词或动词短语表示
 - **宾语 (Object)**：谓语动作的承受者
 - **表语 (Predicative)**：用来补充说明主语的特征、状态或身份
 - **补语 (Complement)**：补充说明宾语、补充说明主语
 
 #### 修饰成分
 
-- **定语 (Modifier)**：修饰主语或者宾语。短定语前置成为前置定语，长定语放后面成为后置定语。（常为形容词）
+- **定语 (Modifier)**：修饰主语或者宾语（常为形容词）。短定语前置成为前置定语，长定语放后面成为后置定语
 - **状语 (Adverbial)**：表示动作发生的时间、地点、原因、目的、结果、方式。
 - **同位语（Appositive）**：同位语是对一个名词或代词进行补充说明的成分，通常紧跟在被说明的名词或代词之后，用于进一步解释或限定其含义。说白了就是同一个人和事用不同的方式再说一遍。
-
-> 句子 = 主干 + 修饰
 
 ## 语序
 
@@ -199,8 +196,6 @@
 
 **谓语**：不及物动词vi（和主谓宾的区别是此句型使用的动词do是不及物动词vi，后面不能带宾语，如果非要带宾语 需要在vi后面加介词）
 
-eg
-
 - Spring comes
 - The teacher <u>listens to</u> the music
 
@@ -211,8 +206,6 @@ eg
 > 表示什么做了什么
 
 **谓语**：及物动词vt（这类动词后面必须跟一个宾语，才能使句子的意思完整。宾语就是动作的承受者）
-
-eg
 
 - I love you
 - Children plant trees
@@ -225,11 +218,7 @@ eg
 
 **谓语**：双宾语动词（双及物动词）
 
-**宾语**：间接宾语
-
-**宾语**：直接宾语
-
-eg
+**宾语**：间接宾语、直接宾语
 
 - Her father bought <u>her</u> <u>a bicycle</u>
 
@@ -248,10 +237,8 @@ eg
 
 **谓语**：及物动词vt
 
-eg
-
 - She found <u>the pen</u> <u>on the floor</u>
-- The boy makes me <u>happy.</u>
+- The boy makes <u>me</u> <u>happy.</u>
 
 ### 主 + 系 + 表
 
@@ -261,8 +248,6 @@ eg
 
 **表语**：又称主语补语，对主语进行补充说明
 
-eg
-
 - The teacher is beautiful
 - How is the teacher?
 - We are Chinese
@@ -271,11 +256,9 @@ eg
 
 > 表示 时间、空间 存在某种事物
 
-**There is**：单数可数名词、不可数名词时使用
+**==There is==**：单数可数名词、不可数名词时使用
 
-**There are ...**：复数可数名词时使用
-
-eg
+**==There are ...==**：复数可数名词时使用
 
 - <u>There is</u> a teacher in the classroom（教室里有一个老师）
 
@@ -283,13 +266,9 @@ eg
 
 - <u>There are</u> three apples on the table（桌子上面有三个苹果）
 
-
-
-**There do**： do指不及物动词
+**==There do==**： do指不及物动词
 
 > 表示==存在、发生、出现、坐落==等意义的不及物动词也可以与There连用
-
-eg
 
 - <u>There was</u> an accident（这里发生了事故）
 
@@ -297,7 +276,7 @@ eg
 
 > 强调除谓语以外的句子成分
 
-**结构：It be + 被强调部分 + that/who + 句子**
+**结构：==It be + 被强调部分 + that/who + 句子==**
 
 The rabbit will eat the carrot. 
 
