@@ -436,7 +436,8 @@ mark {
 }
 
 /* 首页下滑后导航透明 */
-.VPNavBar:not(.has-sidebar):not(.home.top) {
+/*.VPNavBar:not(.has-sidebar):not(.home.top) {*/
+.VPNavBar {
     background-color: rgba(255, 255, 255, 0) !important;
     backdrop-filter: blur(10px);
 }
