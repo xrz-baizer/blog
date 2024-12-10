@@ -571,73 +571,73 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 #### 动词的时间-==现在==
 
-**==一般现在时态==**
+**一般现在时态**
 
-- **`动词原型`**：I <u>eat</u> carrots. 我吃胡萝卜
-- **`动词原型+s（第三人称单数时）`**：She <u>eats</u> carrots. 她吃胡萝卜
+- **==动词原型==**：I <u>eat</u> carrots. 我吃胡萝卜
+- **==动词原型+s（第三人称单数时）==**：She <u>eats</u> carrots. 她吃胡萝卜
 
-**==现在进行时态==  `am/are/is + 动词的现在分词`**
+**现在进行时态  ==am/are/is + 动词的现在分词==**
 
 - I <u>am eating</u> a carrot. 我正在吃一跟胡萝卜
 - You <u>are eating</u> a carrot. 你正在吃一根胡萝卜
 - He <u>is eating</u> a carrot. 他正在吃一根胡萝卜
 
-**==现在完成时态==	`have/has + 动词的过去分词`**
+**现在完成时态  ==have/has + 动词的过去分词==**
 
 - The rabbit <u>has eaten</u> a carrot. 这兔子吃了一根胡萝卜
 
-**==现在完成进行时态==	`have/has + been + 动词的现在分词`**（已经完成了还在继续）
+**现在完成进行时态	==have/has + been + 动词的现在分词==**（已经完成了还在继续）
 
 - The rabbit <u>has been eating</u> carrots. 这兔子一直在吃胡萝卜
 
 #### 动词的时间-==过去==
 
-**==一般过去时态==	`动词过去式`**
+**一般过去时态	==动词过去式==**
 
 - The rabbit <u>ate</u> carrots. 兔子吃胡萝卜
 
-**==过去进行时态==	`was/were + 动词的现在分词`**（在过去某个节点正在发生的）
+**过去进行时态	==was/were + 动词的现在分词==**（在过去某个节点正在发生的）
 
 - The rabbit <u>was/were eating</u> a carrot. 这兔子正在吃一根胡萝卜
 
-**==过去完成时态==	`had + 动词的过去分词`**（在过去某个节点已经发生的）
+**过去完成时态	==had + 动词的过去分词==**（在过去某个节点已经发生的）
 
 - The rabbit <u>had eaten</u> a carrot. 这兔子吃了一根胡萝卜
 
-**==过去完成进行时态==	`hed + been + 动词的现在分词`**（在过去某个节点已经发生一段时间还在继续）
+**过去完成进行时态	==hed + been + 动词的现在分词==**（在过去某个节点已经发生一段时间还在继续）
 
 - The rabbit <u>hed been eating</u> carrots. 这兔子一直在吃胡萝卜
 
 #### 动词的时间-==将来==
 
-**==一般将来时态==**
+**一般将来时态**
 
-- **`be的变位(am/are/is) + going + to + 动词原型`**
+- **==be的变位(am/are/is) + going + to + 动词原型==**
   - I <u>am going to visit</u> my grandparents this weekend. 我这个周末要去看望我的祖父母。
   - They <u>are going to watch</u> a movie tonight. 他们今晚打算看电影。
 
-- **`be的变位(am/are/is) + about +to + 动词原型`**
+- **==be的变位(am/are/is) + about +to + 动词原型==**
   - She <u>is about to leave</u> for the airport. 她即将前往机场。
   - The train <u>is about to arrive</u> at the station. 火车即将到站。
 
-- **`be的变位(am/are/is) + to + 动词原型`**
+- **==be的变位(am/are/is) + to + 动词原型==**
   - The president <u>is to meet</u> the delegates tomorrow. 总统将于明天会见代表团。
   - The event <u>is to start</u> at 10 a.m. sharp. 活动将在上午十点准时开始。
 
-- **`will + 动词原型`**
+- **==will + 动词原型==**
   - The sun <u>will rise</u> again tomorrow. 太阳明天也会照常升起
   - We <u>will succeed</u> if we work hard. 如果我们努力，我们会成功的。
   - I <u>will call</u> you as soon as I get home. 我到家后会马上给你打电话。
 
-**==将来进行时态==	`will + be + 动词的现在分词`**（在将来的某个时间，某个动作是在进行的过程中）
+**将来进行时态	==will + be + 动词的现在分词==**（在将来的某个时间，某个动作是在进行的过程中）
 
 - I <u>will be eating</u> a carrot for lunch tomorrow. 我明天午饭要吃胡萝卜
 
-**==将来完成时态==	`will + have + 动词的过去分词`**
+**将来完成时态	==will + have + 动词的过去分词==**
 
 - The rabbit <u>will have eaten</u> a carrot. 兔子会吃掉一根胡萝卜
 
-**==将来完成进行时态==	`will + have + been + 动词的现在分词`**
+**将来完成进行时态	==will + have + been + 动词的现在分词==**
 
 - The rabbit <u>will have been eating</u> carrots. 这兔子会一直在吃胡萝卜
 
@@ -645,28 +645,28 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 >通常出现在从句，它描述的是过去视角中的“未来”。
 
-**==一般过去将来时态==**
+**一般过去将来时态**
 
-- **`was/were + going + to + 动词原型`**
-- **`was/were + about +to + 动词原型`**
-- **`was/were + to + 动词原型`**
-- **`would + 动词原型`**
+- **==was/were + going + to + 动词原型==**
+- **==was/were + about +to + 动词原型==**
+- **==was/were + to + 动词原型==**
+- **==would + 动词原型==**
   - I said I <u>would eat</u> a carrot for lunch. 我（之前）说过我午饭要吃胡萝卜
   - We knew it <u>would rain</u> later that day. 我们知道那天下午会下雨。
 
-**==过去将来进行时态==	`would + be + 动词的现在分词`**
+**过去将来进行时态 ==would + be + 动词的现在分词==**
 
 - I thought we <u>would be traveling</u> by now. 我以为我们现在应该在旅途中。
 
 - They said they <u>would be working</u> late tonight. 他们说今晚会工作到很晚。
 
-**==将来完成时态==	`would + have + 动词的过去分词`**
+**将来完成时态	==would + have + 动词的过去分词==**
 
 - By the time you arrived, I <u>would have finished</u> my dinner. 在你到之前，我晚饭应该已经吃完了。
 
 - She <u>would have completed</u> the project if she had more time. 如果她有更多时间，她本该完成这个项目了。
 
-**==将来完成进行时态==	`would + have + been + 动词的现在分词`**
+**将来完成进行时态  ==would + have + been + 动词的现在分词==**
 
 - By the end of the year, I <u>would have been working</u> here for five years. 到今年年底，我将在这里工作五年了。
 
@@ -674,7 +674,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 ## 非谓语动词
 
-==一个简单句中只能有一个核心的谓语动词，其它动词只能充当非谓语动词。==
+**一个简单句中只能有一个核心的谓语动词，其它动词只能充当非谓语动词。**
 
 中文：我喜欢吃胡萝卜，有两个动词：喜欢、吃
 
