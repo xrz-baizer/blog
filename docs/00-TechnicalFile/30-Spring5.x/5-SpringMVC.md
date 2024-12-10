@@ -108,7 +108,7 @@ MVC英文是Model View Controller，是模型(model)－视图(view)－控制器(
 2. **HandlerAdapter在执行handler时，会通过RequestResponseBodyMethodProcessor处理返回值，在handleReturnValue方法中创建ServletServerHttpResponse，将返回值通过序列化写入这个Response的Body。**
 3. **最后，返回一个null空的ModealAndView。**
 
-<img src="../../Image/image-20241108073157265.png" alt="image-20241108073157265" style="zoom:50%;" />
+<img src="../../Image/image-20241108073157265.png" alt="image-20241108073157265"  />
 
 ## 参考资料
 

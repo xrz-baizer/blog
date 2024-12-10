@@ -75,7 +75,7 @@ MVCC是通过行的隐藏字段、UndoLog、ReadView来实现的。
 - DB_ROLL_PTR：回滚指针，指向这条记录的上一个版本，用于配合undolog，指向上一个旧版本（7字节）
 - DB_ROW_ID：隐藏的主键，如果数据表没有主键，那么innodb会自动生成一个6字节的row_id（6字节）
 
-<img src="../../Image/image-20241017213033355.png" alt="image-20241017213033355" style="zoom:50%;" />
+<img src="../../Image/image-20241017213033355.png" alt="image-20241017213033355"  />
 
 ### UndoLog
 
@@ -95,7 +95,7 @@ UndoLog被称之为回滚日志，保存的备份数据不仅用于实现事务�
 - 记录该行操作事务ID=1（事务ID全局递增） 
 - 回滚指针为null（新行默认为null）
 
-<img src="../../Image/image-20241017213059838.png" alt="image-20241017213059838" style="zoom:50%;" />
+<img src="../../Image/image-20241017213059838.png" alt="image-20241017213059838"  />
 
 2、创建事务2，修改数据的name。流程和数据状态如下：
 
@@ -106,7 +106,7 @@ UndoLog被称之为回滚日志，保存的备份数据不仅用于实现事务�
   - 回滚指针为UndoLog中备份地址
 - 释放锁：事务提交后，释放锁
 
-<img src="../../Image/image-20241017213329784.png" alt="image-20241017213329784" style="zoom:50%;" />
+<img src="../../Image/image-20241017213329784.png" alt="image-20241017213329784"  />
 
 3、创建事务3，修改数据的age。流程和数据状态如下：
 
@@ -117,7 +117,7 @@ UndoLog被称之为回滚日志，保存的备份数据不仅用于实现事务�
   - 回滚指针为UndoLog中最新备份地址
 - 释放锁：事务提交后，释放锁
 
-<img src="../../Image/image-20241017213823385.png" alt="image-20241017213823385" style="zoom:50%;" />
+<img src="../../Image/image-20241017213823385.png" alt="image-20241017213823385"  />
 
 > 在上诉的流程中，不同事务或者相同事务的对同一行数据进行修改时，会为该行数据在UndoLog中生成一条多版本的线性链表，即版本链，链首是最新的备份，链尾是最早的备份。
 
@@ -138,7 +138,7 @@ UndoLog被称之为回滚日志，保存的备份数据不仅用于实现事务�
 
 - `low_limit_id`：ReadView生成时，系统尚未分配的下一个事务ID
 
-  <img src="../../Image/image-20241017214812328.png" alt="image-20241017214812328" style="zoom:50%;" />
+  <img src="../../Image/image-20241017214812328.png" alt="image-20241017214812328"  />
 
 #### 可见性判断
 
@@ -217,7 +217,7 @@ UndoLog被称之为回滚日志，保存的备份数据不仅用于实现事务�
     - 虽然事务4读取的是事务1的数据，但事务3修改后，它指向的是事务3的UndoLog。
     - 回滚指针总是指向上一个事务生成的最新UndoLog版本，不会指向更早的版本。
 
-<img src="../../Image/image-20241018105554455.png" alt="image-20241018105554455" style="zoom:50%;" />
+<img src="../../Image/image-20241018105554455.png" alt="image-20241018105554455"  />
 
 ## MySQL锁
 
@@ -448,7 +448,7 @@ MySQL是只支持一种Join算法Nested-Loop Join(嵌套循环连接)，并不�
 
 ### 一条SQL语句的执行过程
 
-<img src="../../Image/SQL执行过程.png" alt="SQL执行过程" style="zoom:50%;" />
+<img src="../../Image/SQL执行过程.png" alt="SQL执行过程"  />
 
 **客户端：**发送 SQL 语句到 MySQL 服务器。
 

@@ -91,10 +91,10 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 > `ApplicationContext`是Spring的核心容器，它也继承了`ApplicationEventPublisher`，所以也能发布事件。
 
-<img src="../../Image/image-20241030222050522.png" alt="image-20241030222050522" style="zoom:50%;" />
+<img src="../../Image/image-20241030222050522.png" alt="image-20241030222050522"  />
 
 对应`SimpleApplicationEventMulticaster#multicastEvent`广播器广播事件，内部通过`AbstractApplicationEventMulticaster#getApplicationListeners`获取事件对应的监听器
-<img src="../../Image/image-20241030222309879.png" alt="image-20241030222309879" style="zoom:50%;" />
+<img src="../../Image/image-20241030222309879.png" alt="image-20241030222309879"  />
 
 再循环执行监听器的`onApplicationEvent`方法
 ![image-20241030222549921](../../Image/image-20241030222549921.png)
@@ -112,7 +112,7 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 @RefreshScope注解也是Spring事件的一个典型应用，主要作用是可以在不重启应用的情况下重新加载配置。
 
-<img src="../../Image/image-20241031120342738.png" alt="image-20241031120342738" style="zoom:50%;" />
+<img src="../../Image/image-20241031120342738.png" alt="image-20241031120342738"  />
 
 @RefreshScope是SpringCloud在@Scope基础上的一个实现，用于标识Bean的作用域为`refresh`，代理模式为CGLB基于类的代理。
 
@@ -136,7 +136,7 @@ Scope是一个接口，对应的实现类是GenericScope，重点关注对应get
   - 内部使用的是ConcurrentMap存放
   - key是BeanName，value是Warpper包装器
 
-<img src="../../Image/image-20241031215907792.png" alt="image-20241031215907792" style="zoom:50%;" />
+<img src="../../Image/image-20241031215907792.png" alt="image-20241031215907792"  />
 
 - 最终返回的是通过BeanLifecycleWrapper.getBean()方法返回ObjectFactory对象工厂创建的Bean
   - Wrapper包装器内部持有一个ObjectFactory对象工厂和Bean。
@@ -151,11 +151,11 @@ GenericScope#destroy方法作用是
 - 先获取所有BeanLifecycleWrapper包装器，循环执行destroy方法，置空包装器中记录的bean
 - 清空this.cache（BeanLifecycleWrapperCache）当前作用域的所有缓存
 
-<img src="../../Image/image-20241031224314347.png" alt="image-20241031224314347" style="zoom:50%;" />
+<img src="../../Image/image-20241031224314347.png" alt="image-20241031224314347"  />
 
 RefreshScope是GenericScope对应的子类，内部通过refreshAll执行父类GenericScope#destroy方法。
 
-<img src="../../Image/image-20241031224544567.png" alt="image-20241031224544567" style="zoom:50%;" />
+<img src="../../Image/image-20241031224544567.png" alt="image-20241031224544567"  />
 
 而RefreshScope#refreshAll方法又被ContextRefresher#refresh方法调用
 
@@ -175,7 +175,7 @@ RefreshScope是GenericScope对应的子类，内部通过refreshAll执行父类G
 >     - 此时mbd.getScope()获取的就是bean修饰的@RefreshScope注解中的value=`refresh`
 >     - 通过this.scopes.get("refersh")获取到的就是RefreshScope
 
-<img src="../../Image/image-20241031232232958.png" alt="image-20241031232232958" style="zoom:50%;" />
+<img src="../../Image/image-20241031232232958.png" alt="image-20241031232232958"  />
 
 ### 如何触发刷新事件 
 
@@ -208,7 +208,7 @@ management:
 - `@WriteOperation` 标识映射为HTTP POST请求。
 - 最后也是通过调用ContextRefresher#refresh方法，清空该作用域的所有Bean。
 
-<img src="../../Image/image-20241101121538089.png" alt="image-20241101121538089" style="zoom:50%;" />
+<img src="../../Image/image-20241101121538089.png" alt="image-20241101121538089"  />
 
 
 

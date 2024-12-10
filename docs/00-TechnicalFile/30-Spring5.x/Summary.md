@@ -18,7 +18,7 @@
 
 ## Spring流程图
 
-<img src="../../Image/spring.png" alt="spring" style="zoom:50%;" />
+<img src="../../Image/spring.png" alt="spring"  />
 
 ## 答题技巧
 

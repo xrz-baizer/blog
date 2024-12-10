@@ -145,7 +145,7 @@ Spring Boot Starter 是一组方便的 Maven 依赖，旨在简化 Spring Boot �
 ### 创建Maven项目
 
 
-<img src="../../Image/image-20241104170311922.png" alt="image-20241104170311922" style="zoom:50%;" />
+<img src="../../Image/image-20241104170311922.png" alt="image-20241104170311922"  />
 
 注意命名规范：
 - 官方的命名格式为 `spring-boot-starter-{xxxx}`
@@ -299,7 +299,7 @@ SpringBoot 会自动加载该文件并根据条件装配。
 
 生成 starter 包：`bytehouse-spring-boot-starter`
 
-<img src="../../Image/image-20241104181014194.png" alt="image-20241104181014194" style="zoom:50%;" />
+<img src="../../Image/image-20241104181014194.png" alt="image-20241104181014194"  />
 
 ### 测试Starter
 
@@ -349,7 +349,7 @@ public class CustomTest {
 
 打印结果：{"mode":"clickhose_sql","token":"token1","url":"https://bing.com","vwID":"test-1"}
 
-<img src="../../Image/image-20241104182006189.png" alt="image-20241104182006189" style="zoom:50%;" />
+<img src="../../Image/image-20241104182006189.png" alt="image-20241104182006189"  />
 
 ## 参考
 
