@@ -283,6 +283,47 @@ The rabbit will eat the carrot.
 - 强调兔子 -> ==It is== the rabbit ==that== will eat the carrot.
 - 强调我的IPhone -> ==It was== my iphone ==that== I lost last week.
 
+
+## 被动语态
+
+> 英语语态中分为主动语态和被动语态，被动语态用于强调动作的承受者，而不是动作的执行者。
+>
+> - 主动语态：兔子咬人了（强调动作执行者“兔子”）
+> - 被动语态：谁被兔子咬了？（强调动作承受者“谁”）
+
+在英语中，被动语态是通过谓语动词的变化完成的，它的结构是 `be动词 + 过去分词`。
+
+五种基本句型被动语态的演化：
+
+- 主谓：谓语是不及物动词，没有宾语，即没有动作的承受者，所以也没有被动语态
+- 主系表：没有别动语态
+
+### 主谓宾
+
+主动语态：<u>The rabbit</u> ate <u>the carrot</u>. （兔子吃了胡萝卜）
+
+1. 调换主语和宾语的位置 -> ==The carrot== ate ==the rabbit==.（胡萝卜吃了兔子）
+2. 动词前面+be动词，并都变为过去式 ->  The carrot ==was eaten== the rabbit.（胡萝卜被兔子吃了）
+3. 句子还是有点奇怪，需要借助 `by` 表明动作的执行者 ->  The carrot was eaten ==by== the rabbit.（胡萝卜被兔子吃了）
+
+### 主谓宾宾
+
+主动语态：<u>The rabbit</u> gave <u>the carrot</u> to <u>the wolf</u>. （兔子给了狼胡萝卜）
+
+1. 想强调那个宾语，就调换那个宾语和主语的位置（此例中通过to 替换了间接宾语和直接宾语的位置）
+2. 强调直接宾语 the carrot ->  ==The carrot== was given to the wolf by the rabbit. （胡萝卜被兔子给了狼）
+3. 强调间接宾语 the wolf ->  ==The wolf== was given the carrot by the rabbit. （狼被兔子给了胡萝卜）
+4. 在上下文明确动作执行者时，可以省略 by + 动作执行者
+   - The carrot was given to the wolf ~~by the rabbit~~.
+   - The wolf was given the carrot ~~by the rabbit~~.
+
+### 主谓宾补
+
+主动语态：<u>The wolf</u> invited <u>the rabbit</u> <u>to her party</u>. （狼邀请了兔子去她的聚会）
+
+1. 调换主语和宾语的位置，保留补语，保持时态一致，通过by指出动作的执行者（大多数情况下，by放置句子末尾）
+2. The rabbit was invited to the party by the wolf. （兔子被狼邀请去了聚合）
+
 ## 并列句
 
 用并列连词连接起来的2个或者2个以上的简单句组成的句子
@@ -297,8 +338,8 @@ The rabbit will eat the carrot.
 
 **结构：分号（;）连接**
 
-- It was getting late==;== she must start back home. 天色已晚；她必须动身回家。
-- We fished all day==;== we didn't catch a thing. 我们钓了一整天的鱼；我们什么也没抓到。
+- It was getting late`;` she must start back home. 天色已晚；她必须动身回家。
+- We fished all day`;` we didn't catch a thing. 我们钓了一整天的鱼；我们什么也没抓到。
 
 ## 从句 SubordinateClause
 
@@ -316,7 +357,7 @@ The rabbit will eat the carrot.
 
 这类从句对某个人或者某个事物进行描述，具有形容词的性质
 
-同时有充当定义成分，又称定义从句。
+同时有充当定语成分，又称定语从句。
 
 #### 	形容词从句的思维方式
 
@@ -400,7 +441,6 @@ The rabbit ate the carrot,which was on the table. 兔子吃了桌上的胡萝卜
 
 - ==It== is diffcult <u>that he learns English.</u> 他学英语很难
 
-
 <u>What the rabbit ate</u> is obvious.
 
 - **It** is obvious <u>what the rabbit ate.</u>
@@ -443,7 +483,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 - I <u>knew</u> that the rabbit <u>liked</u> carrots. 我知道兔子喜欢胡萝卜 
 
-描述不变的客观现象时是例外
+注意：描述不变的客观现象时是例外
 
 - I <u>knew</u> that the sun <u>rises</u> in the east. 我知道太阳从东方升起
 
@@ -533,38 +573,38 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 **==一般现在时态==**
 
-- **动词原型**：I <u>eat</u> carrots. 我吃胡萝卜
-- **动词原型+s（第三人称单数时）**：She <u>eats</u> carrots. 她吃胡萝卜
+- **`动词原型`**：I <u>eat</u> carrots. 我吃胡萝卜
+- **`动词原型+s（第三人称单数时）`**：She <u>eats</u> carrots. 她吃胡萝卜
 
-**==现在进行时态==  am/are/is + 动词的现在分词**
+**==现在进行时态==  `am/are/is + 动词的现在分词`**
 
 - I <u>am eating</u> a carrot. 我正在吃一跟胡萝卜
 - You <u>are eating</u> a carrot. 你正在吃一根胡萝卜
 - He <u>is eating</u> a carrot. 他正在吃一根胡萝卜
 
-**==现在完成时态==	have/has + 动词的过去分词**
+**==现在完成时态==	`have/has + 动词的过去分词`**
 
 - The rabbit <u>has eaten</u> a carrot. 这兔子吃了一根胡萝卜
 
-**==现在完成进行时态==	have/has + been + 动词的现在分词**（已经完成了还在继续）
+**==现在完成进行时态==	`have/has + been + 动词的现在分词`**（已经完成了还在继续）
 
 - The rabbit <u>has been eating</u> carrots. 这兔子一直在吃胡萝卜
 
 #### 动词的时间-==过去==
 
-**==一般过去时态==	动词过去式**
+**==一般过去时态==	`动词过去式`**
 
 - The rabbit <u>ate</u> carrots. 兔子吃胡萝卜
 
-**==过去进行时态==	was/were + 动词的现在分词**（在过去某个节点正在发生的）
+**==过去进行时态==	`was/were + 动词的现在分词`**（在过去某个节点正在发生的）
 
 - The rabbit <u>was/were eating</u> a carrot. 这兔子正在吃一根胡萝卜
 
-**==过去完成时态==	had + 动词的过去分词**（在过去某个节点已经发生的）
+**==过去完成时态==	`had + 动词的过去分词`**（在过去某个节点已经发生的）
 
 - The rabbit <u>had eaten</u> a carrot. 这兔子吃了一根胡萝卜
 
-**==过去完成进行时态==	hed + been + 动词的现在分词**（在过去某个节点已经发生一段时间还在继续）
+**==过去完成进行时态==	`hed + been + 动词的现在分词`**（在过去某个节点已经发生一段时间还在继续）
 
 - The rabbit <u>hed been eating</u> carrots. 这兔子一直在吃胡萝卜
 
@@ -572,32 +612,32 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 **==一般将来时态==**
 
-- **be的变位(am/are/is) + going + to + 动词原型**
+- **`be的变位(am/are/is) + going + to + 动词原型`**
   - I <u>am going to visit</u> my grandparents this weekend. 我这个周末要去看望我的祖父母。
   - They <u>are going to watch</u> a movie tonight. 他们今晚打算看电影。
 
-- **be的变位(am/are/is) + about +to + 动词原型**
+- **`be的变位(am/are/is) + about +to + 动词原型`**
   - She <u>is about to leave</u> for the airport. 她即将前往机场。
   - The train <u>is about to arrive</u> at the station. 火车即将到站。
 
-- **be的变位(am/are/is) + to + 动词原型**
+- **`be的变位(am/are/is) + to + 动词原型`**
   - The president <u>is to meet</u> the delegates tomorrow. 总统将于明天会见代表团。
   - The event <u>is to start</u> at 10 a.m. sharp. 活动将在上午十点准时开始。
 
-- **will + 动词原型**
+- **`will + 动词原型`**
   - The sun <u>will rise</u> again tomorrow. 太阳明天也会照常升起
   - We <u>will succeed</u> if we work hard. 如果我们努力，我们会成功的。
   - I <u>will call</u> you as soon as I get home. 我到家后会马上给你打电话。
 
-**==将来进行时态==	will + be + 动词的现在分词**（在将来的某个时间，某个动作是在进行的过程中）
+**==将来进行时态==	`will + be + 动词的现在分词`**（在将来的某个时间，某个动作是在进行的过程中）
 
 - I <u>will be eating</u> a carrot for lunch tomorrow. 我明天午饭要吃胡萝卜
 
-**==将来完成时态==	will + have + 动词的过去分词**
+**==将来完成时态==	`will + have + 动词的过去分词`**
 
 - The rabbit <u>will have eaten</u> a carrot. 兔子会吃掉一根胡萝卜
 
-**==将来完成进行时态==	will + have + been + 动词的现在分词**
+**==将来完成进行时态==	`will + have + been + 动词的现在分词`**
 
 - The rabbit <u>will have been eating</u> carrots. 这兔子会一直在吃胡萝卜
 
@@ -607,26 +647,26 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 **==一般过去将来时态==**
 
-- **was/were + going + to + 动词原型**
-- **was/were + about +to + 动词原型**
-- **was/were + to + 动词原型**
-- **would + 动词原型**
+- **`was/were + going + to + 动词原型`**
+- **`was/were + about +to + 动词原型`**
+- **`was/were + to + 动词原型`**
+- **`would + 动词原型`**
   - I said I <u>would eat</u> a carrot for lunch. 我（之前）说过我午饭要吃胡萝卜
   - We knew it <u>would rain</u> later that day. 我们知道那天下午会下雨。
 
-**==过去将来进行时态==	would + be + 动词的现在分词**
+**==过去将来进行时态==	`would + be + 动词的现在分词`**
 
 - I thought we <u>would be traveling</u> by now. 我以为我们现在应该在旅途中。
 
 - They said they <u>would be working</u> late tonight. 他们说今晚会工作到很晚。
 
-**==将来完成时态==	would + have + 动词的过去分词**
+**==将来完成时态==	`would + have + 动词的过去分词`**
 
 - By the time you arrived, I <u>would have finished</u> my dinner. 在你到之前，我晚饭应该已经吃完了。
 
 - She <u>would have completed</u> the project if she had more time. 如果她有更多时间，她本该完成这个项目了。
 
-**==将来完成进行时态==	would + have + been + 动词的现在分词**
+**==将来完成进行时态==	`would + have + been + 动词的现在分词`**
 
 - By the end of the year, I <u>would have been working</u> here for five years. 到今年年底，我将在这里工作五年了。
 
@@ -636,8 +676,9 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 ==一个简单句中只能有一个核心的谓语动词，其它动词只能充当非谓语动词。==
 
-- 中文：我喜欢吃胡萝卜，有两个动词：喜欢、吃
-- 英文：直译I like eat carrots，是错误的，第二个动词eat只能用非谓语动词的形式来表达（动词不定式、动名词、现在分词、过去分词）
+中文：我喜欢吃胡萝卜，有两个动词：喜欢、吃
+
+英文：直译I like eat carrots，是错误的，第二个动词eat只能用非谓语动词的形式来表达（动词不定式、动名词、现在分词、过去分词）
 
 ### 动词不定式
 
@@ -652,14 +693,14 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 ### 动名词
 
-**==动词原型 + ing==**: （将动词转化为名词的形式）
+**将动词转化为名词的形式：==动词原型 + ing==**
 
 - Seeing is **beliveing**. 看到就是相信（眼见为实）
 - a **swimming** pool. 游泳池
 
 ### 现在分词
 
-**==动词的现在分词（v+ing）==**：（将动词转化为形容词的形式）
+**将动词转化为形容词的形式：==动词的现在分词（v+ing）==**
 
 - The story is **interesting**. 这个故事很有趣
 
@@ -671,9 +712,9 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 ### 过去分词
 
-**==动词的过去分词（v+ed）==**：（将动词转化为形容词的形式）
+**将动词转化为形容词的形式：==动词的过去分词（v+ed）==**
 
-- The rabbit is interested. 兔子很有兴趣
+- The rabbit is **interested**. 兔子很有兴趣
 
 
 >过去分词和现在分词都是形容词，二者区别在于主动和被动的关系。
@@ -723,13 +764,15 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 一般用来表示“让某人做某事”或“使某事发生”的动词，表达含义：使、让、令...
 
-某些动词构成的句子除了必须要有宾语之外，还必须要加上宾语补语。例如这个句子，如果没有**eat carrots**这个补语，就不构成一个完整的句子，而这种make动词则称为使役动词！
+某些动词构成的句子除了必须要有宾语之外，还必须要加上宾语补语。
 
 - I <u>make</u> <u>the wolf</u> <u>eat carrots</u>.  我让狼吃胡萝卜
 
+例如这个句子，如果没有**eat carrots**这个补语，就不构成一个完整的句子，而这种需要宾语补语的动词 make 则称为使役动词！
+
 #### Make：强迫或要求某人做某事
 
-结构：make + 宾语 + 动词原形
+**结构：==make + 宾语 + 动词原形==**
 
 - The teacher **made** the students **finish** their homework.（老师让学生完成作业。）
 - His attitude **makes** me **feel** uncomfortable.（他的态度让我感到不舒服。）
@@ -742,7 +785,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 #### Let：允许某人做某事
 
-结构：let + 宾语 + 动词原形
+**结构：==let + 宾语 + 动词原形==**
 
 - Her parents **let** her **go** to the party.（她的父母允许她去参加派对。）
 - Please **let** me **help** you.（请让我帮助你。）
@@ -755,7 +798,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 #### Have：让某人做某事（通常表示安排或指示）
 
-结构：have + 宾语 + 动词原形
+**结构：==have + 宾语 + 动词原形==**
 
 - I **had** the mechanic **fix** my car.（我让技师修了我的车。）
 - She **has** her assistant **call** the clients.（她让助手打电话给客户。）
@@ -767,7 +810,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 #### Get：说服或要求某人做某事（比“have”语气更弱，带有“努力促成”的意思）
 
-结构：get + 宾语 + to + 动词原形
+**结构：==get + 宾语 + to + 动词原形==**
 
 - He **got** his brother **to help** with the project.（他让他的兄弟帮忙做这个项目。）
 - I finally **got** him **to agree** with my idea.（我终于让他同意了我的想法。）
@@ -780,9 +823,9 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 #### Help：帮助某人做某事
 
-结构1：help + 宾语 + 动词原形
+**结构1：==help + 宾语 + 动词原形==**
 
-结构2：help + 宾语 + to + 动词原形
+**结构2：==help + 宾语 + to + 动词原形==**
 
 - She **helped** me **finish** the report.（她帮我完成了报告。）
 - He **helped** her **to move** the furniture.（他帮她搬家具。）
@@ -881,46 +924,6 @@ B站讲解：https://www.bilibili.com/video/BV1XY411J7aG?vd_source=201e659a1198f
 1. 表达与事实相反的内容时，动词常用过去式或过去完成式。
 2. 表示建议、要求时，用动词原形。
 3. 注意特定句型和时态的搭配。
-
-## 被动语态
-
-> 英语语态中分为主动语态和被动语态，被动语态用于强调动作的承受者，而不是动作的执行者。
->
-> - 主动语态：兔子咬人了（强调动作执行者“兔子”）
-> - 被动语态：谁被兔子咬了？（强调动作承受者“谁”）
-
-在英语中，被动语态是通过谓语动词的变化完成的，它的结构是 `be动词 + 过去分词`。
-
-五种基本句型被动语态的演化：
-
-- 主谓：谓语是不及物动词，没有宾语，即没有动作的承受者，所以也没有被动语态
-- 主系表：没有别动语态
-
-### 主谓宾
-
-主动语态：<u>The rabbit</u> ate <u>the carrot</u>. （兔子吃了胡萝卜）
-
-1. 调换主语和宾语的位置 -> ==The carrot== ate ==the rabbit==.（胡萝卜吃了兔子）
-2. 动词前面+be动词，并都变为过去式 ->  The carrot ==was eaten== the rabbit.（胡萝卜被兔子吃了）
-3. 句子还是有点奇怪，需要借助 `by` 表明动作的执行者 ->  The carrot was eaten ==by== the rabbit.（胡萝卜被兔子吃了）
-
-### 主谓宾宾
-
-主动语态：<u>The rabbit</u> gave <u>the carrot</u> to <u>the wolf</u>. （兔子给了狼胡萝卜）
-
-1. 想强调那个宾语，就调换那个宾语和主语的位置（此例中通过to 替换了间接宾语和直接宾语的位置）
-2. 强调直接宾语 the carrot ->  ==The carrot== was given to the wolf by the rabbit. （胡萝卜被兔子给了狼）
-3. 强调间接宾语 the wolf ->  ==The wolf== was given the carrot by the rabbit. （狼被兔子给了胡萝卜）
-4. 在上下文明确动作执行者时，可以省略 by + 动作执行者
-   - The carrot was given to the wolf ~~by the rabbit~~.
-   - The wolf was given the carrot ~~by the rabbit~~.
-
-### 主谓宾补
-
-主动语态：<u>The wolf</u> invited <u>the rabbit</u> <u>to her party</u>. （狼邀请了兔子去她的聚会）
-
-1. 调换主语和宾语的位置，保留补语，保持时态一致，通过by指出动作的执行者（大多数情况下，by放置句子末尾）
-2. The rabbit was invited to the party by the wolf. （兔子被狼邀请去了聚合）
 
 ## 参考资料
 
