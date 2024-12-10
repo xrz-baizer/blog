@@ -372,6 +372,10 @@ mark {
     /*letter-spacing:normal;*/
 }
 
+.task-list-item::marker{
+    content: "";
+}
+
 .vp-doc a {
     color: var(--custom-a-1);
     text-decoration: none;
