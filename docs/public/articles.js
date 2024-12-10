@@ -1,5 +1,5 @@
 export const articlesMap = {
-  "00-TechnicalFile/00-Algorithm/DataStructureAndAlgorithm-数据结构与算法.md": " - WEB书籍：https://www.hel... - B站视频左程云：https://space.b... - 课上代码、ppt、资料：https://github.... - 排序动画演示：http://www.dong... - 代码Demo：/Users/Work/Pagoda/Demo/AlgorithmDemo - [Hello 算法](https://www.hel... - [",
+  "00-TechnicalFile/00-Algorithm/DataStructureAndAlgorithm-数据结构与算法.md": " - WEB书籍：https://www.hel... - B站视频左程云：https://space.b... - 课上代码、ppt、资料：https://github.... - 排序动画演示：http://www.dong... - 代码Demo：/Users/Work/Pagoda/Demo/AlgorithmDemo - 动态规划 - [公司使用案例: 最优代金券组合-动态规划](htt",
   "00-TechnicalFile/10-JavaStandardEdition/0-JVM的内存管理.md": " 不同语言的内存管理方式 C、C++ 手工管理内存 - 容易忘记释放内存——产生内存泄漏，最终导致内存溢出 - 释放多次 - 开发效率低，运行效率高 Java、Python、Go GC（Garbage Collector）管理内存 - 开发效率高，运行效率相对低 - 使用门槛低 Rust 无需管理内存（栈帧推出时自动清理） - 运行效率高，使用门槛高 > 所有权（ownership）：同一时刻只有",
   "00-TechnicalFile/10-JavaStandardEdition/JVM参数调优和故障排查.md": " 继上一篇：[JVM的内存管理](0-JVM的内存管理.md) JVM参数 关键参数 `-XX:MaxRAMPercentage=80.0`\t百分比形式的Xmx，最大堆内存设置为物理服务器（或容器）中的总可用内存大小的80% ，默认值25% `-XX:InitialRAMPercentage=80.0`\t百分比形式的Xms，初始堆内存设置为物理服务器（或容器）中的总可用内存大小的80% ，默认值1",
   "00-TechnicalFile/10-JavaStandardEdition/Java线程池.md": " 核心概念 >线程池，主要是用来管理和复用线程。 > >Java中的线程池核心实现类是ThreadPoolExecutor。 线程池的核心参数 ```java public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnab",
