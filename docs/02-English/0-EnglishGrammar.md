@@ -272,6 +272,23 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 - <u>There was</u> an accident（这里发生了事故）
 
+#### 变疑问句
+
+**结构：==将动词 be 和 there 互换位置即可==**
+
+- Are there any ties on the floor?
+
+- Is there a dirty fork on the plate?
+
+
+#### 变否定句
+
+**结构：==在动词 be 后面加 not (any) 或者 no==**
+
+- There is not a fork on the plate.
+- There are no newspaper on the shelf.
+- There are't any ties on the floor.
+
 ### It is ... that 强调句
 
 > 强调除谓语以外的句子成分
