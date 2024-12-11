@@ -118,5 +118,5 @@ https://mp.weixin.qq.com/s/brbK62nty2cWBmjitvfgPQ
 
 - [ ] [从执行力角度，一线Leader应该最后裁](https://mp.weixin.qq.com/s/2XXLMCGd3u2s4qW63e0dzw)
 - [ ] [能力，无法伪装。](https://mp.weixin.qq.com/s/onJUj9jvuZ_2fgUO4kI3XQ)
-- [x] [向上管理：让你主动汇报就这么难？](https://mp.weixin.qq.com/s/AXeS9TvXEFdoQE-8_od8hQ)
+- [ ] [向上管理：让你主动汇报就这么难？](https://mp.weixin.qq.com/s/AXeS9TvXEFdoQE-8_od8hQ)
 

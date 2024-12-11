@@ -27,7 +27,6 @@
 
     --color-accent-muted: #eee !important;
 
-
     /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif;*/
     /*--vp-font-family-mono: Google Sans,Helvetica Neue,sans-serif !important;*/
     /*--vp-font-family-base: Helvetica Neue, ui-sans-serif, system-ui, sans-serif !important;*/
@@ -372,8 +371,17 @@ mark {
     /*letter-spacing:normal;*/
 }
 
-.task-list-item::marker{
+.vp-doc .task-list-item::marker{
     content: "";
+}
+
+input[type="checkbox"]{
+    display: inline-block;
+    position: absolute;
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-left: -2em;
+
 }
 
 .vp-doc a {
