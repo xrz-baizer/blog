@@ -424,3 +424,88 @@ public class WebhookListener {
 }
 ```
 
+## 备案
+
+**不管域名是在哪里购买的，只要想解析到中国大陆境内的服务器，就必须要备案！否则属于非法行为！**
+
+- 备案流程，参考腾讯云：https://cloud.tencent.com/product/ba
+- 备案注销：如果申请备案的域名即将过期而不续费，一定要在云厂商==申请注销该域名的备案！！！切记！！否则后续其它人申请该域名从事非法活动时，又查到备案主体是你的话会很麻烦！！！==
+
+## SSL证书的问题
+
+**问题：云厂商提供的免费SSL证书只有三个月，很麻烦。**
+
+**解决方案：把 Nginx 替换为 Caddy 这种自带 HTTPS 的 Web 服务器**
+
+> - Caddy官网：https://caddyserver.com/
+>
+> - 核心功能：自动 HTTPS、HTTP/3 支持、**证书自动续期**、**内容自动更新**、反向代理、免费开源。
+
+#### 服务器内创建文件夹
+
+```sh
+# 批量创建（caddy目录会自动创建）
+mkdir -p /caddy/{app,caddy_data,caddy_config}
+```
+
+`app`存放静态文件
+
+`caddy_data`存储 TLS 证书等持久化数据（后续挂载docker）
+
+`caddy_config`存储 Caddy 的配置文件数据（后续挂载docker）
+
+#### 配置Caddyfile
+
+作用类似nginx.config
+
+```sh
+# 创建Caddyfile文件
+touch /caddy/Caddyfile
+
+# 使用cat <<EOF >快速写入
+cat <<EOF >/caddy/Caddyfile
+baizer.info,www.baizer.info {
+    root * /srv #指定静态文件的根目录。
+    file_server #启用静态文件服务器功能。
+}
+EOF
+```
+
+#### Docker部署Caddy
+
+docker使用参考： [使用ECS为本地搭建开发环境](0-使用ECS为本地搭建开发环境.md) 
+
+```sh
+# 一键部署
+docker run -d --name caddyBlog \
+  -p 80:80 \
+  -p 443:443 \
+  -v /caddy/Caddyfile:/etc/caddy/Caddyfile \
+  -v /caddy/app:/srv \
+  -v /caddy/caddy_data:/data \
+  -v /caddy/caddy_config:/config \
+  --memory 50m \
+  caddy:latest
+```
+
+`--memory 50m`实际使用内存10M左右
+
+`/caddy/Caddyfile`：本地的 Caddy 配置文件路径。
+
+`/caddy/app`：静态网站文件的路径（如 HTML、CSS 等）。
+
+`/caddy/caddy_data`：用于存储 TLS 证书等持久化数据。
+
+`/caddy/caddy_config`：存储 Caddy 的配置文件数据。
+
+#### depoly.sh 调整
+
+修改远程服务器的上传目录即可
+
+```sh
+#REMOTE_PATH="/app"
+REMOTE_PATH="/caddy/app"
+```
+
+移除重启docker代码，待验证
+

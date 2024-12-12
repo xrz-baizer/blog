@@ -13,7 +13,7 @@
 ---
 
 - [Hello 算法](https://www.hello-algo.com/chapter_data_structure/classification_of_data_structure/#311)
-- [恋上数据结构 CSDN学习笔记](https://blog.csdn.net/weixin_43734095/article/details/105116064)
+- [恋上数据结构 CSDN学习笔记](https://blog.csdn.net/weixin_43734095/article/details/104847976)
 
 ## 数据结构分类
 
