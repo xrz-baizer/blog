@@ -66,7 +66,7 @@
 
 
 
-**I needed someone to call me a cab to the nearest Apple repair center **
+**I needed someone to call me a cab to the nearest Apple repair center**
 
 
 
@@ -94,7 +94,7 @@
 
 
 
-**The staff asked if I had an appointment, and I said no, **
+**The staff asked if I had an appointment, and I said no,**
 
 
 
