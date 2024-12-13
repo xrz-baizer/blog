@@ -240,11 +240,15 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 > - 有两个动作承受者
 >
-> 谓语由==双宾语动词==组成，间接宾语通常指“人”，直接宾语通常指“物”。也可以对调，但是需要借助介词 to 或者 for
+> 谓语由==双宾语动词==组成，间接宾语通常指“人”，直接宾语通常指“物”。
+>
+> 间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 to 或者 for
 
 **谓语**：双宾语动词（双及物动词）
 
 **宾语**：间接宾语、直接宾语
+
+常见双宾语动词：give,show,send,bring,lend,tell,return,write,pay,teach,make,buy,find等
 
 - Her father bought <u>her</u> <u>a bicycle</u>
 
@@ -610,20 +614,31 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 > 状态结合时间，总共可以出现16种时态
 
-### 动词的时间
+### 动词的时间-现在时
+
+#### 一般现在时
 
 #### 动词的时间-==现在==
 
-**一般现在时态**
+##### 一般现在时态
+
+一般现在时可以表示习惯性动作，往往与频度副词连用，如often，always, sometimes, never等
 
 - **==动词原型==**：I <u>eat</u> carrots. 我吃胡萝卜
 - **==动词原型+s（第三人称单数时）==**：She <u>eats</u> carrots. 她吃胡萝卜
 
-**现在进行时态  ==am/are/is + 动词的现在分词==**
+**现在进行时态 **
 
-- I <u>am eating</u> a carrot. 我正在吃一跟胡萝卜
-- You <u>are eating</u> a carrot. 你正在吃一根胡萝卜
-- He <u>is eating</u> a carrot. 他正在吃一根胡萝卜
+现在进行时表示说话时正在进行的动作或正在发生的事件，往往与now, just, stll等副词连用
+
+- **==am/are/is + 动词的现在分词==**
+
+  - I <u>am eating</u> a carrot. 我正在吃一跟胡萝卜
+
+  - You <u>are eating</u> a carrot. 你正在吃一根胡萝卜
+
+  - He <u>is eating</u> a carrot. 他正在吃一根胡萝卜
+
 
 **现在完成时态  ==have/has + 动词的过去分词==**
 
@@ -635,9 +650,19 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 #### 动词的时间-==过去==
 
-**一般过去时态	==动词过去式==**
+**一般过去时**
+
+一般过去时通常表示过去发生的而现在已经结束的事件、动作或情况。它通常指动作何时发生，而不指动作持续多久。
+
+常与表明事情何时发生的状语（last summer, last winter, last week, last night）连用
+
+因此，过去时与表明事情何时发生的状语连用是非常重要的。
+
+**结构：==动词过去式==**
 
 - The rabbit <u>ate</u> carrots. 兔子吃胡萝卜
+- Yes I caught a cold last winter.
+- I played tentislast weekend.
 
 **过去进行时态	==was/were + 动词的现在分词==**（在过去某个节点正在发生的）
 
@@ -740,6 +765,12 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 - Seeing is **beliveing**. 看到就是相信（眼见为实）
 - a **swimming** pool. 游泳池
+
+>动词不定式和动名词的区别：
+>
+>- Giving = 动名词 = 实事
+>
+>- to give = 不定式 = 将来 = ==不==确==定==的形==式==
 
 ### 现在分词
 
