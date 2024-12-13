@@ -13,4 +13,4 @@
 1. 换个浏览器
 2. 在Chrome地址栏输入：`chrome://net-internals/#hsts`
    - 在Delete domain security policies中删除HSTS策略
-   - ![image-20241205212352114](../Image/image-20241205212352114.png)
+   - ![image-20241205212352114](../../Image/image-20241205212352114.png)
