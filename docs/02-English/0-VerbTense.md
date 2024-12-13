@@ -2,18 +2,38 @@
 
 ## 动词的状态
 
-**==一般状态（Simple）==**：一般，没有具体说明、表中性的、实事陈述
+**==一般状态（Simple）==**：**一般，没有具体说明、表中性的、实事陈述**
 
 - 兔子吃胡萝卜、太阳从东边升起、你喜欢她
 
-**==进行状态（Continuous）==**：这兔子正在吃着胡萝卜
+**==进行状态（Continuous）==**：**正在做的**
 
-**==完成状态（Perfect）==**：这兔子吃掉了胡萝卜
+- 这兔子正在吃着胡萝卜
 
-**==完成进行状态（Perfect Continuous）==**：这兔子从早上就开始吃胡萝卜，现在还没停呢（不但已经完成了的，还要继续进行的）
+**==完成状态（Perfect）==**：**已经做完了的**
 
+- 这兔子吃掉了胡萝卜
 
-> 状态结合时间，总共可以出现16种时态
+**==完成进行状态（Perfect Continuous）==**：**不但已经完成了的，还要继续进行的**
+
+- 这兔子从早上就开始吃胡萝卜，现在还没停呢
+
+#### 状态结合时间，总共可以出现16种时态
+
+|                     |                                              ==Simple== |           ==Continuous== |               ==Perfect== |            ==Perfect Continuous== |
+| :-----------------: | ------------------------------------------------------: | -----------------------: | ------------------------: | --------------------------------: |
+|   **==Present==**   |                             **am/is/are + `done`/`do`** |  **am/is/are + `doing`** |     **have/has + `done`** |     **have/has + been + `doing`** |
+|    **==Past==**     |                                    **was/were + `did`** |   **was/were + `doing`** |          **had + `done`** |          **had + been + `doing`** |
+|   **==Future==**    | **am/is/are + going to + `do`<br /> will/shall + `do`** |  **will + be + `doing`** |  **will + have + `done`** |  **will + have + been + `doing`** |
+| **==Past future==** |  **was/were + going to + `do`<br />would/shall + `do`** | **would + be + `doing`** | **would + have + `done`** | **would + have + been + `doing`** |
+
+**动词的变位含义：**
+
+- `do`（表示动词原型）
+- `does`（表示动词的第三人称单数）
+- `doing`（表示动词的现在分词）
+- `done`（表示动词的过去分词）（表示动作已经完成、被动语态）
+- `did`（表示动词的过去式）（表示过去某个时间发生的动作）
 
 ## 现在时（Present tense）
 
@@ -85,6 +105,7 @@
 **结构：==was/were + 动词的现在分词==**
 
 -  I **was watching** TV at 8 PM yesterday.
+-  I **was playing** football at seven o'clock in the morning.
 - The rabbit **was/were eating** a carrot. 这兔子正在吃一根胡萝卜
 
 ### 过去完成时态
@@ -117,12 +138,12 @@
 - We **will succeed** if we work hard. 如果我们努力，我们会成功的。
 - I **will call** you as soon as I get home. 我到家后会马上给你打电话。
 
-**结构：==am/are/is + going + to + 动词原型==**
+**结构：==am/are/is + going to + 动词原型==**
 
 - I **am going to visit** my grandparents this weekend. 我这个周末要去看望我的祖父母。
 - They **are going to watch** a movie tonight. 他们今晚打算看电影。
 
-**结构：==am/are/is + about +to + 动词原型==**
+**结构：==am/are/is + about to + 动词原型==**
 
 - She **is about to leave** for the airport. 她即将前往机场。
 - The train **is about to arrive** at the station. 火车即将到站。
@@ -163,12 +184,14 @@
 ## 过去将来时（Past future tense）
 
 >通常出现在从句，它描述的是过去视角中的“未来”。
+>
+>比如上周三的明天，就是上周四，过去的未来时。
 
 ### 一般过去将来时态
 
-**结构：==was/were + going + to + 动词原型==**
+**结构：==was/were + going to + 动词原型==**
 
-**结构：==was/were + about +to + 动词原型==**
+**结构：==was/were + about to + 动词原型==**
 
 **结构：==was/were + to + 动词原型==**
 
