@@ -322,3 +322,27 @@ docker run -d --name nginxBlog \
 `  -v /nginx.conf:/etc/nginx/nginx.conf` 挂载自定义的配置文件
 
 `  -v /app:/app `挂载静态文件目录
+
+### 部署Caddy
+
+实际使用内存10M左右
+
+```sh
+docker run -d --name caddyBlog \
+  -p 80:80 \
+  -p 443:443 \
+  -v /caddy/Caddyfile:/etc/caddy/Caddyfile \
+  -v /caddy/app:/srv \
+  -v /caddy/caddy_data:/data \
+  -v /caddy/caddy_config:/config \
+  --memory 50m \
+  caddy:latest
+```
+
+`/caddy/Caddyfile`：本地的 Caddy 配置文件路径。
+
+`/caddy/app`：静态网站文件的路径（如 HTML、CSS 等）。
+
+`/caddy/caddy_data`：用于存储 TLS 证书等持久化数据。
+
+`/caddy/caddy_config`：存储 Caddy 的配置文件数据。

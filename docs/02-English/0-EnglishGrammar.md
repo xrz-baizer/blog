@@ -254,7 +254,7 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 - Her father bought <u>a bicycle</u> <u>for</u> <u>her</u>
 
-- The old man is telling <u>the childre</u> <u>stories</u>
+- The old man is telling <u>the children</u> <u>stories</u>
 
 - The old man is telling <u>stories</u> <u>to</u> <u>the childre</u>
 

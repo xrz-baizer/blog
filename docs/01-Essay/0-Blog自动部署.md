@@ -439,7 +439,7 @@ public class WebhookListener {
 
 > - Caddy官网：https://caddyserver.com/
 >
-> - 核心功能：自动 HTTPS、HTTP/3 支持、**证书自动续期**、**内容自动更新**、反向代理、免费开源。
+> - 核心功能：自带HTTPS、HTTP/3 支持、**证书自动续期**、**内容自动更新**、反向代理、免费开源。
 
 #### 服务器内创建文件夹
 
