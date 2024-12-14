@@ -61,7 +61,8 @@ export default {
           mapping: 'title',
           inputPosition: 'bottom',  // 将评论框放在评论下面
           reactionsEnabled: '0', //禁用点赞
-          lang: 'zh-CN',
+          lang: 'en',
+          // lang: 'zh-CN',
         },
         {frontmatter, route},
         true //是否启用，默认为true。也可以在frontmatter中单独配置“comment:true”

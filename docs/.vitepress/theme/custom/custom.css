@@ -35,6 +35,9 @@
     /*--vp-font-family-mono: ui-monospace, 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;*/
 }
 
+.BtnGroup-item.BtnGroup-item--selected{
+    border-color: #red !important;
+}
 
 /* 960px以上生效 */
 @media (min-width: 960px) {
@@ -195,7 +198,6 @@ body.no-sidebar .content {
 }
 #giscus{
     border-top: none !important;
-    /*margin-top: 0px !important;*/
 }
 
 /* 针对 VitePress 默认侧边栏 */
@@ -402,7 +404,7 @@ input[type="checkbox"]{
 /* 目录标记样式 */
 .outline-marker{
     background-color: #30a46c !important;
-    width: 4px !important;
+    width: 2px !important;
 }
 
 
