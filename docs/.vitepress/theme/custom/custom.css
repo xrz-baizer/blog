@@ -96,7 +96,7 @@
         padding-top: 0px !important;
     }
     .VPFeature{
-        box-shadow: 1px 2px 3px 0 rgb(0 0 0 / 15%);
+        box-shadow: 1px 1px 3px 0 rgb(0 0 0 / 15%);
     }
     .VPHomeFeatures .box{
         padding: 10px 20px;
@@ -480,7 +480,7 @@ input[type="checkbox"]{
 /* Feature透明 */
 .VPFeature {
     border: none !important;
-    box-shadow: 1px 3px 8px 0 rgb(0 0 0 / 15%);
+    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 15%);
     background-color: transparent !important;;
 }
 
