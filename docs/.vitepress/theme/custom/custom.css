@@ -335,6 +335,10 @@ mark {
     font-weight: bold;
 }
 
+.vp-doc .custom-block div[class*=language-] code {
+    font-weight: bold;
+}
+
 
 /* 代码块样式 */
 .vp-doc div[class*='language-'] {

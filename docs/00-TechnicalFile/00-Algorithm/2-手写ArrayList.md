@@ -2,7 +2,7 @@
 
 ##  ArrayList（动态数组）
 
-> 继承java**.**util**.**AbstractList，实现一些通用的方法
+> 继承 `java.util.AbstractList` ，实现一些通用的方法
 > - 动态数组：通过扩容实现动态数组：grow(int minCapacity)
 > - 添加功能：通过部分元素右移实现添加：add(int index, E element)
 > - 删除功能：通过部分元素左移实现删除：remove(int index)
