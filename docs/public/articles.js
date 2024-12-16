@@ -1,5 +1,7 @@
 export const articlesMap = {
-  "00-TechnicalFile/00-Algorithm/DataStructure.md": " - WEB书籍：https://www.hel... - B站视频左程云：https://space.b... - 课上代码、ppt、资料：https://github.... - 排序动画演示：http://www.dong... - 代码Demo：/Users/Work/Pagoda/Demo/AlgorithmDemo - 动态规划 - [公司使用案例: 最优代金券组合-动态规划](htt",
+  "00-TechnicalFile/00-Algorithm/1-DataStructure.md": " - WEB书籍：https://www.hel... - B站视频左程云：https://space.b... - 课上代码、ppt、资料：https://github.... - 排序动画演示：http://www.dong... - 代码Demo：/Users/Work/Pagoda/Demo/AlgorithmDemo - 动态规划 - [公司使用案例: 最优代金券组合-动态规划](htt",
+  "00-TechnicalFile/00-Algorithm/2-ArrayList.md": " ArrayList（动态数组） > 继承AbstractList，实现一些通用的方法 > - 动态数组：通过扩容实现动态数组：grow(int minCapacity) > - 添加功能：通过部分元素右移实现添加：add(int index, E element) > - 删除功能：通过部分元素左移实现删除：remove(int index) 扩容 新增时，需要对现有数组扩容，大致流程：创建一个",
+  "00-TechnicalFile/00-Algorithm/3-LinkedList.md": " 单向链表 单向循环链表 双向链表 > 优化单向链表的查询效率：（空间换时间） > > - 把链表一分为二 > - 当判断index节点在左边时，就从头节点的next往后查询 > - 当判断index节点在右边时，就从尾节点的prev往前查询 双向循环链表 ",
   "00-TechnicalFile/10-JavaStandardEdition/0-JVM的内存管理.md": " 不同语言的内存管理方式 C、C++ 手工管理内存 - 容易忘记释放内存——产生内存泄漏，最终导致内存溢出 - 释放多次 - 开发效率低，运行效率高 Java、Python、Go GC（Garbage Collector）管理内存 - 开发效率高，运行效率相对低 - 使用门槛低 Rust 无需管理内存（栈帧推出时自动清理） - 运行效率高，使用门槛高 > 所有权（ownership）：同一时刻只有",
   "00-TechnicalFile/10-JavaStandardEdition/JVM参数调优和故障排查.md": " 继上一篇：[JVM的内存管理](0-JVM的内存管理.md) JVM参数 关键参数 `-XX:MaxRAMPercentage=80.0`\t百分比形式的Xmx，最大堆内存设置为物理服务器（或容器）中的总可用内存大小的80% ，默认值25% `-XX:InitialRAMPercentage=80.0`\t百分比形式的Xms，初始堆内存设置为物理服务器（或容器）中的总可用内存大小的80% ，默认值1",
   "00-TechnicalFile/10-JavaStandardEdition/Java线程池.md": " 核心概念 >线程池，主要是用来管理和复用线程。 > >Java中的线程池核心实现类是ThreadPoolExecutor。 线程池的核心参数 ```java public ThreadPoolExecutor(int corePoolSize, int maximumPoolSize, long keepAliveTime, TimeUnit unit, BlockingQueue<Runnab",

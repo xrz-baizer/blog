@@ -12,24 +12,20 @@
 新增时，需要对现有数组扩容，大致流程：创建一个新数组，将旧数组移到新数组中
 
 ```java
-    /**
-     * 扩容
-     * @param minCapacity
-     */
-    private void ensureCapacity(int minCapacity) {
-        int oldCapacity = elements.length;
-        if(minCapacity <= oldCapacity) return; //空闲容量还很充裕
-        
-        //新容量 = 旧容量1.5倍（`>> 1` = 除以2）
-        int newCapacity = oldCapacity + (oldCapacity >> 1);
-        Object[] newElements = new Object[newCapacity];
+private void ensureCapacity(int minCapacity) {
+    int oldCapacity = elements.length;
+    if(minCapacity <= oldCapacity) return; //空闲容量还很充裕
 
-        //旧数组移到新数组中
-        for (int i = 0; i < size; i++){
-            newElements[i] = elements[i];
-        }
-        elements = newElements;
+    //新容量 = 旧容量1.5倍（`>> 1` = 除以2）
+    int newCapacity = oldCapacity + (oldCapacity >> 1);
+    Object[] newElements = new Object[newCapacity];
+
+    //旧数组移到新数组中
+    for (int i = 0; i < size; i++){
+      newElements[i] = elements[i];
     }
+    elements = newElements;
+}
 ```
 
 ### 缩容
@@ -37,25 +33,22 @@
 删除数据时，避免空闲容量过多，考虑缩容。
 
 ```java
-    /**
-     * 缩容：删除数据时，避免空闲容量过多，考虑缩容。
-     */
-    private void trim() {
-        int oldCapacity = elements.length;
-        int newCapacity = oldCapacity >> 1; //缩小0.5倍
+private void trim() {
+    int oldCapacity = elements.length;
+    int newCapacity = oldCapacity >> 1; //缩小0.5倍
 
-        if(oldCapacity <= DEFAULT_CAPACITY || //容量太小，没必要缩容
-                size >= newCapacity){ // 实际使用量超过总容量的一半，也没必要缩容
-            return;
-        }
-        // 当实际使用量 小于 总容量的一半，触发缩容
-        // 新建数组迁移
-        Object[] newElements =  new Object[newCapacity];
-        for (int i = 0 ; i < size ; i++){
-            newElements[i] = elements[i];
-        }
-        elements = newElements;
+    if(oldCapacity <= DEFAULT_CAPACITY || //容量太小，没必要缩容
+       size >= newCapacity){ // 实际使用量超过总容量的一半，也没必要缩容
+      return;
     }
+    // 当实际使用量 小于 总容量的一半，触发缩容
+    // 新建数组迁移
+    Object[] newElements =  new Object[newCapacity];
+    for (int i = 0 ; i < size ; i++){
+      newElements[i] = elements[i];
+    }
+    elements = newElements;
+}
 ```
 
 **注意缩容时机的问题：**
