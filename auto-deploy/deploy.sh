@@ -4,7 +4,7 @@
 start_time=$(date +%s)
 REPO_PATH="/Users/xrz/Library/Mobile Documents/com~apple~CloudDocs/KnowledgeRepository"
 BLOG_PATH="/Users/Work/Pagoda/this/Blog"
-SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-English" "Image")
+SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-Other" "Image")
 
 #REMOTE_SERVER="root@cloudserver"
 REMOTE_SERVER="root@tencentserver"

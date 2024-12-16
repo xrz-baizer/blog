@@ -20,8 +20,8 @@ hero:
 #      text: TechnicalArticles
 #      link: /00-TechnicalFile/
 #    - theme: alt
-#      text: EnglishLeaning
-#      link: /02-English/
+#      text: Other
+#      link: /02-Other/
     - theme: alt
       text: baizer.dev@cloud.com
       link: 
@@ -32,11 +32,11 @@ features:
 #    icon:
 #     src: /file.svg
 #    linkText: 随笔、疑难杂症
-    details: 随笔、疑难杂症、生活常识
+    details: 随笔、疑难杂症
   - title: TechnicalArticles
     link: /00-TechnicalFile/
     details: 技术文章、系列知识、业务场景解决方案
-  - title: EnglishLeaning
-    link: /02-English/
-    details: 英语学习笔记、新概念英语
+  - title: Other
+    link: /02-Other/
+    details: 英语学习笔记、生活笔记
 ---

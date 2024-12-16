@@ -68,7 +68,7 @@ export default {
         true //是否启用，默认为true。也可以在frontmatter中单独配置“comment:true”
     );
 
-    // 动态获取主题中的配置 '/00-TechnicalFile/', '/01-Essay/', '/02-English/'
+    // 动态获取主题中的配置 '/00-TechnicalFile/', '/01-Essay/', '/02-Other/'
     const indexPagePaths = theme.value.nav.map(item => item.link);
 
     // 判断是否是 index.md 页面

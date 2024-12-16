@@ -25,7 +25,7 @@ export default defineConfig({
     nav: [
       { text: 'Essay', link: '/01-Essay/' },
       { text: 'TechnicalArticles', link: '/00-TechnicalFile/' },
-      { text: 'EnglishLeaning', link: '/02-English/' },
+      { text: 'Other', link: '/02-Other/' },
     ],
 
     socialLinks: [
