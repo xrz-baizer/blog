@@ -169,6 +169,12 @@
 
 ### 形容词、副词的比较形式
 
+> - 如果是形容词最高级前面需要加 **the**
+>   - the most delicious
+> - 在使用比较级时，如果需要把所比较的两项都提到，那么就必须在比较级后用 **than**
+>   - I know him better than you do.（我比你了解他）
+>   - My room is cleaner than the one next door.（我的房间比隔壁房间干净）
+
 **常用规则**
 
 |                        |        比较级 | 最高级        |                                                      |
@@ -179,8 +185,6 @@
 |         单辅音字母结尾 |   辅音双写+er | 辅音双写+est  | thin、thinner、thinnest（薄的、更薄的、最薄的）      |
 | 多音节和部分双音节单词 | 在单词前+more | 在单词前+most | more delicious、most delicious（更美味的、最美味的） |
 
-> 注：如果是形容词最高级前面需要加 the。（the most delicious）
-
 **不规则**
 
 |            | 比较级           | 最高级                       |
@@ -190,6 +194,7 @@
 | many、much | more             | most（最多的）               |
 |     little | less             | least（最小的）              |
 |        far | farther、further | farthest、furthest（最远的） |
+
 
 
 ## 定冠词和不定冠词
