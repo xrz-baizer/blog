@@ -69,7 +69,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  手写ArrayList（动态数组）
+ *  ArrayList（动态数组）
  *
  *    继承AbstractList，实现一些通用的方法
  *    动态数组：通过扩容实现动态数组：grow(int minCapacity)
@@ -108,7 +108,7 @@ public class XArrayList<E> extends AbstractList<E> {
         //通过部分元素右移实现插入
         // [1,2,3,4,x,x,x] size = 4, i = 3（1起始）
         // [1,2,2,3,4,x,x] 假设 index = 1 位置插入（0起始）
-        for (int i = size - 1; i > index; i--){
+        for (int i = size - 1; i >= index; i--){
             // 右移覆盖
             elements[i + 1] = elements[i];
         }
@@ -152,23 +152,12 @@ public class XArrayList<E> extends AbstractList<E> {
         this.rangeCheck(index);
 
         Object oldElement = elements[index];
-        //指定下标位置覆盖
-        elements[index] = element;
+
+        elements[index] = element; //指定下标位置覆盖
 
         return (E) oldElement;
     }
 
-
-
-    private void rangeCheck(int index){
-        if(index < 0 || index >= size)
-            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-    }
-
-    private void rangeCheckForAdd(int index) {
-        if (index < 0 || index > size)
-            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-    }
 
     /**
      * 扩容
@@ -201,8 +190,7 @@ public class XArrayList<E> extends AbstractList<E> {
             return;
         }
         // 当实际使用量 小于 总容量的一半，触发缩容
-        // 新建数组迁移
-        Object[] newElements =  new Object[newCapacity];
+        Object[] newElements =  new Object[newCapacity];  // 新建数组迁移
         for (int i = 0 ; i < size ; i++){
             newElements[i] = elements[i];
         }
@@ -210,19 +198,112 @@ public class XArrayList<E> extends AbstractList<E> {
     }
 
 
-    public static void main(String[] args) {
-        List<Integer> xList =
-                new XArrayList<>();
-//                new ArrayList<>();
+    private void rangeCheck(int index){
+        if(index < 0 || index >= size)
+            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
+    }
 
-        xList.add(1);
-        xList.add(2);
-        xList.add(3);
-        xList.add(4);
-        xList.set(2,4);
-        xList.set(0,2);
-        xList.remove(3);
-        System.out.println(xList);
+    private void rangeCheckForAdd(int index) {
+        if (index < 0 || index > size)
+            throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
+    }
+}
+
+```
+
+## 测试用例
+
+```java
+package datastructure;
+
+import org.junit.Test;
+
+import java.util.List;
+
+/**
+ * @author XRZ
+ */
+public class ListTest {
+
+    @Test
+    public void testXArrayList(){
+        List<Integer> list = new XArrayList<>();
+
+        System.out.println("===== 测试 XArrayList 功能 =====");
+
+        // 1. 测试空列表操作
+        try {
+            list.get(0);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("get from empty list: " + e);
+        }
+
+        try {
+            list.remove(0);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("remove from empty list: " + e);
+        }
+
+        // 2. 测试添加操作
+        System.out.println("\n测试添加操作：");
+        list.add(0, 10); // 插入到头部
+        System.out.println("Add 10 at index 0: " + list);
+
+        list.add(1, 20); // 插入到尾部
+        System.out.println("Add 20 at index 1: " + list);
+
+        list.add(1, 15); // 插入到中间
+        System.out.println("Add 15 at index 1: " + list);
+
+        list.add(3, 25); // 尾部插入
+        System.out.println("Add 25 at index 3: " + list);
+
+        // 3. 测试获取操作
+        System.out.println("\n测试获取操作：");
+        System.out.println("Get index 0: " + list.get(0));
+        System.out.println("Get index 1: " + list.get(1));
+        System.out.println("Get index 3: " + list.get(3));
+
+        // 4. 测试设置操作
+        System.out.println("\n测试设置操作：");
+        list.set(0, 100);
+        System.out.println("Set index 0 to 100: " + list);
+
+        list.set(2, 200);
+        System.out.println("Set index 2 to 200: " + list);
+
+        // 5. 测试删除操作
+        System.out.println("\n测试删除操作：");
+        list.remove(0); // 删除头部
+        System.out.println("Remove index 0: " + list);
+
+        list.remove(1); // 删除中间
+        System.out.println("Remove index 1: " + list);
+
+        list.remove(list.size() - 1); // 删除尾部
+        System.out.println("Remove last index: " + list);
+
+        // 6. 测试动态扩容
+        System.out.println("\n测试动态扩容：");
+        for (int i = 0; i < 15; i++) {
+            list.add(i);
+        }
+        System.out.println("List after adding 15 elements: " + list);
+        System.out.println("List size: " + list.size());
+
+        // 7. 测试缩容
+        System.out.println("\n测试缩容：");
+        for (int i = 0; i < 10; i++) {
+            list.remove(0);
+        }
+        System.out.println("List after removing 10 elements: " + list);
+        System.out.println("List size: " + list.size());
+
+        // 8. 测试清空列表
+        System.out.println("\n测试清空列表：");
+        list.clear();
+        System.out.println("List after clear: " + list);
+        System.out.println("List size: " + list.size());
     }
 }
 
