@@ -19,13 +19,17 @@
     /* 自定义字体 */
     /*--vp-font-family-base: "customFont";  */
 
+    /* 文档页 内容字体大小 */
+    --font-size-content: 17px;
+    /* 文档页 侧边栏字体大小 */
+    --font-size-sidebar: 16px;
+
     --vp-nav-height: 48px;
     --vp-nav-logo-height: 20px;
 
     /* 容器折叠块 */
     --vp-custom-block-details-bg: #f0f4f9;
 
-    --color-accent-muted: #eee !important;
 
     /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif;*/
     /*--vp-font-family-mono: Google Sans,Helvetica Neue,sans-serif !important;*/
@@ -231,14 +235,14 @@ body.no-sidebar .content {
 /*}*/
 
 .VPDoc .content-container{ /* 文档页 容器  */
-    font-size: 16px !important;
+    font-size: var(--font-size-content) !important;
     max-width: 100% !important;
 }
 .aside .aside-container{ /* 文档页 目录宽度 */
     width: 365px;
 }
 .VPDoc .VPDocOutlineItem .outline-link{  /* 文档页 目录字体大小 */
-    font-size: 15px ;
+    font-size: var(--font-size-sidebar) ;
 }
 
 .search-input{
