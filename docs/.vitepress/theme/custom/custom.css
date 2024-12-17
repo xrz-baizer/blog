@@ -20,9 +20,9 @@
     /*--vp-font-family-base: "customFont";  */
 
     /* 文档页 内容字体大小 */
-    --font-size-content: 17px;
+    --font-size-content: 16px;
     /* 文档页 侧边栏字体大小 */
-    --font-size-sidebar: 16px;
+    --font-size-sidebar: 15px;
 
     --vp-nav-height: 48px;
     --vp-nav-logo-height: 20px;
