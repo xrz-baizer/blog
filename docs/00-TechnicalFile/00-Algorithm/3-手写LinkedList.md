@@ -1,4 +1,4 @@
-# LinkedList
+# LinkedList 链表
 
 ## 单向链表
 
@@ -789,3 +789,7 @@ public class LinkedListTest {
 
 ```
 
+## 扩展
+
+- 加强版循环链表：新增current属性、reset()、next()、remove()，解决约瑟夫环的问题。
+- 静态链表：使用数组实现的链表
