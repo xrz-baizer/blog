@@ -20,7 +20,7 @@
     /*--vp-font-family-base: "customFont";  */
 
     /* 文档页 内容字体大小 */
-    --font-size-content: 16px;
+    --font-size-content: 17px;
     /* 文档页 侧边栏字体大小 */
     --font-size-sidebar: 15px;
 
@@ -372,7 +372,7 @@ mark {
 }
 
 .vp-doc p,.vp-doc ul {
-    margin: 8px 0px;
+    margin: 10px 0px;
     /*margin-top: 0px;*/
     /*margin-bottom: 12px;*/
 }
