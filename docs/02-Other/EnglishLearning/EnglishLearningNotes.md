@@ -68,37 +68,75 @@
 
 掌握了英语的词根、词缀就如同熟知了汉字的偏旁部首，不但有助于推断一些生词的意思，还能帮助我们更加迅速、高效地记忆单词，达到举一反三、事半功倍的效果
 
-### 常用后缀
+### 常用后缀（区分单词的词性）
 
-**动词后缀：`ate`、`ize`、`ify`、`ish`**
+#### **动词后缀**
 
-**形容词后缀：`ent`、`ful`、`ous`、`al`、`ive`、`ibl`**
+| **后缀** | **含义**                          | **例子**                                   |
+| -------- | --------------------------------- | ------------------------------------------ |
+| `ate`    | 使…化，变成…                      | **activate**（激活），**dominate**（主宰） |
+| `ize`    | 使…变成                           | **realize**（实现），**analyze**（分析）   |
+| `ify`    | 使…变为                           | **simplify**（简化），**beautify**（美化） |
+| `ish`    | 使…具有某种特性，或表示轻微的动作 | **finish**（完成），**diminish**（减少）   |
+| `en`     | 使变成…，具有某种性质             | **hasten**（加速），**strengthen**（加强） |
 
-**名词后缀：`ion`、`tion`、`ation`、`ness`、`ity`、`ality`、`ment`、`ence`、`ance`、`ism`**
+
+#### **形容词后缀**
+
+| **后缀** | **含义**             | **例子**                                           |
+| -------- | -------------------- | -------------------------------------------------- |
+| `ent`    | 具有…性质的          | **dependent**（依赖的），**intelligent**（聪明的） |
+| `ful`    | 充满…的，具有…特性的 | **beautiful**（美丽的），**hopeful**（充满希望的） |
+| `ous`    | 充满…的，具有…性质的 | **dangerous**（危险的），**famous**（著名的）      |
+| `al`     | …的，具有…性质的     | **natural**（自然的），**personal**（个人的）      |
+| `ive`    | 具有…性质的          | **active**（积极的），**creative**（有创意的）     |
+| `ibl`    | 可…的，能够…的       | **credible**（可信的），**edible**（可食用的）     |
+| `y`      | 具有…性质的，充满…的 | **cloudy**（多云的），**gummy**（粘的）            |
+| `ic`     | 具有…性质的          | **historic**（历史的），**economic**（经济的）     |
+| `less`   | 没有…的，缺少…的     | **careless**（粗心的），**hopeless**（无望的）     |
+
+#### **名词后缀**
+
+| **后缀** | **含义**                         | **例子**                                                     |
+| -------- | -------------------------------- | ------------------------------------------------------------ |
+| `ion`    | …的状态，行为                    | **action**（行动），**creation**（创作）                     |
+| `tion`   | …的状态，行为                    | **celebration**（庆祝），**intention**（意图）               |
+| `ation`  | …的状态，行为                    | **station**（车站），**explanation**（解释）                 |
+| `ness`   | 状态，性质                       | **happiness**（幸福），**darkness**（黑暗）                  |
+| `ity`    | …的性质，状态                    | **reality**（现实），**simplicity**（简易性）                |
+| `ality`  | …的性质，状态                    | **reality**（现实），**fatality**（致命性）                  |
+| `ment`   | 行为，状态                       | **government**（政府），**enjoyment**（享受）                |
+| `ence`   | …的状态，性质                    | **presence**（存在），**indifference**（冷漠）               |
+| `ance`   | …的状态，性质                    | **importance**（重要性），**performance**（表现）            |
+| `ism`    | 特定的思想或信仰体系             | **realism**（现实主义），**socialism**（社会主义）           |
+| `ship`   | 状态，身份，质量                 | **friendship**（友谊），**leadership**（领导地位）           |
+| `hood`   | 社会状态，群体                   | **neighborhood**（邻里），**childhood**（童年）              |
+| `er`/`or`  | 人或物的执行者或与某物相关的器具 | **teacher**（教师），**actor**（演员），**printer**（打印机） |
+| `ee`     | 接受某行为的人，动作的接受者     | **employee**（员工），**trainee**（实习生）                  |
 
 ### 常用前缀
 
-|                          |          常用前缀           |                                             |
-| -----------------------: | :-------------------------: | ------------------------------------------- |
-|                   外、出 |        **e、ex、ef**        | export 出口                                 |
-|                   内、进 |         **in、im**          | inject 注射                                 |
-|                          |                             |                                             |
-|             向前（动态） |           **pro**           | proceed 向前、progress 进步                 |
-| 在前、预先、提前（静态） |           **pre**           | prepare 准备、predict 语言                  |
-|                          |                             |                                             |
-|           回、重新、再次 |           **re**            | recycle 回收、recover 恢复                  |
-|                          |                             |                                             |
-|         聚集、一起、共同 |    **co、con、com、col**    | colleague 同事、college 大学                |
-|               分散、分开 |      **di、dis、dif**       | divorce 离婚、distribute 分配、diffuse 分数 |
-|                          |                             |                                             |
-|                 上、超过 |    **super、over、sur**     | surrealism 超现实主义、surpass 超过         |
-|                 下、不足 |   **under、de、sub、sup**   | decrease 减少、subway 地铁                  |
-|                          |                             |                                             |
-|               转移、转变 |          **trans**          | transfer 转移、transport 运输               |
-|                 相互之间 |          **inter**          | internet                                    |
-|                          |                             |                                             |
-|           a+双写辅音字母 |           **a****           | 强调、无意义                                |
-|                 否定前缀 | **un、in、im、dis、ab、il** | abnormal 不正常的、impossible 不可能的      |
+|                          |                常用前缀                 |                                             |
+| -----------------------: | :-------------------------------------: | ------------------------------------------- |
+|                   外、出 |           **`e`、`ex`、`ef`**           | export 出口                                 |
+|                   内、进 |             **`in`、`im`**              | inject 注射                                 |
+|                          |                                         |                                             |
+|             向前（动态） |                **`pro`**                | proceed 向前、progress 进步                 |
+| 在前、预先、提前（静态） |                **`pre`**                | prepare 准备、predict 语言                  |
+|                          |                                         |                                             |
+|           回、重新、再次 |                **`re`**                 | recycle 回收、recover 恢复                  |
+|                          |                                         |                                             |
+|         聚集、一起、共同 |      **`co`、`con`、`com`、`col`**      | colleague 同事、college 大学                |
+|               分散、分开 |         **`di`、`dis`、`dif`**          | divorce 离婚、distribute 分配、diffuse 分数 |
+|                          |                                         |                                             |
+|                 上、超过 |       **`super`、`over`、`sur`**        | surrealism 超现实主义、surpass 超过         |
+|                 下、不足 |     **`under`、`de`、`sub`、`sup`**     | decrease 减少、subway 地铁                  |
+|                          |                                         |                                             |
+|               转移、转变 |               **`trans`**               | transfer 转移、transport 运输               |
+|                 相互之间 |               **`inter`**               | internet                                    |
+|                          |                                         |                                             |
+|   a+双写辅音字母（强调） |                **`a++`**                | aggrandize增强、affect 影响                 |
+|                 否定前缀 | **`un`、`in`、`im`、`dis`、`ab`、`il`** | abnormal 不正常的、impossible 不可能的      |
 
 
 ## 变形
