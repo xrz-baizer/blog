@@ -15,7 +15,6 @@
 :::  details 代码实现 XStack（基于动态数组实现）
 ```java
 package datastructure;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,8 +61,6 @@ public class XStack<E> {
     public boolean isEmpty(){
         return list.isEmpty();
     }
-
 }
-
 ```
 :::

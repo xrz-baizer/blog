@@ -314,4 +314,4 @@ public class ListTest {
 
 ## 扩展
 
-- 优化 ArrayList：新增 first 属性，记录首元素位置，可以最大限度规避或者减少元素位移。
+- 优化 ArrayList：新增 first 属性，记录首元素位置，可以最大限度规避或者减少元素位移。(循环队列)
