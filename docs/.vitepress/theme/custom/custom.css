@@ -344,6 +344,10 @@ mark {
     font-weight: bold;
 }
 
+.custom-block.details{
+    font-size: var(--font-size-content);
+    color: var(--vp-c-brand-2);
+}
 
 /* 代码块样式 */
 .vp-doc div[class*='language-'] {

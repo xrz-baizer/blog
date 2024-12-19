@@ -178,46 +178,46 @@ private void transform(){
 ::: details 完整代码实现
 
 ```java
-    class MyQueue {
+class MyQueue {
 
-        Stack<Integer> aStack = new Stack<>();
-        Stack<Integer> bStack = new Stack<>();
+    Stack<Integer> aStack = new Stack<>();
+    Stack<Integer> bStack = new Stack<>();
 
-        public MyQueue() {}
+    public MyQueue() {}
 
-        public void push(int x) {
-            aStack.push(x);
-        }
-
-
-        public int pop() {
-            this.transform();
-
-            return bStack.pop(); // 出队，从B栈上取
-        }
-
-        public int peek() {
-            this.transform();
-
-            return bStack.peek();
-        }
-
-
-        /**
-         * 将A栈 倾倒在 B栈上
-         */
-        private void transform(){
-            if(bStack.isEmpty()){
-                while(! aStack.isEmpty()){
-                    bStack.push(aStack.pop());
-                }
-            }
-        }
-
-        public boolean empty() {
-            return aStack.isEmpty() && bStack.empty();
-        }
+    public void push(int x) {
+      aStack.push(x);
     }
+
+
+    public int pop() {
+      this.transform();
+
+      return bStack.pop(); // 出队，从B栈上取
+    }
+
+    public int peek() {
+      this.transform();
+
+      return bStack.peek();
+    }
+
+
+    /**
+     * 将A栈 倾倒在 B栈上
+     */
+    private void transform(){
+      if(bStack.isEmpty()){
+        while(! aStack.isEmpty()){
+          bStack.push(aStack.pop());
+        }
+      }
+    }
+
+    public boolean empty() {
+      return aStack.isEmpty() && bStack.empty();
+    }
+}
 ```
 
 
