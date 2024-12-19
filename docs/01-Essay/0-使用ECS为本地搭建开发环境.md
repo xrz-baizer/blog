@@ -148,7 +148,7 @@ docker stop <container>
 #删除容器
 docker rm <container>
 #进入容器（-it: 在容器内启动一个交互式终端，以便输入命令）
-docker exec it <container> bash
+docker exec -it <container> bash
 
 #查看容器的日志
 docker logs <container>
