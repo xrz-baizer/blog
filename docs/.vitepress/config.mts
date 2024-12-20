@@ -55,7 +55,7 @@ export default defineConfig({
 
     footer: { // 页脚版权信息（仅需在首页下展示即可）（域名必须备案 https://cloud.tencent.com/document/product/243/61412）
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2024 Baizer | <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备12345678号</a>'
+      copyright: 'Copyright © 2024 Baizer | <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024352756号</a>'
     }
   },
   lastUpdated: true,  //显示最后更新时间

@@ -429,7 +429,9 @@ public class WebhookListener {
 **不管域名是在哪里购买的，只要想解析到中国大陆境内的服务器，就必须要备案！否则属于非法行为！**
 
 - 备案流程，参考腾讯云：https://cloud.tencent.com/product/ba
-- 工信部审核时长：15天左右。
+- 工信部审核时长：12~20天左右。
+- 备案号悬挂说明：https://cloud.tencent.com/document/product/243/19142
+  - 注意，没有悬挂备案号会处五千元以上一万元以下罚款。另外备案成功后还需要在30天内去公安局备案：https://cloud.tencent.com/document/product/243/19142
 - 备案注销：如果申请备案的域名即将过期而不续费，一定要在云厂商==申请注销该域名的备案！！！切记！！否则后续其它人申请该域名从事非法活动时，又查到备案主体是你的话会很麻烦！！！==
 
 >如不想备案，可购买境外服务，例如：香港、新加坡
@@ -442,7 +444,7 @@ public class WebhookListener {
 
 > - Caddy官网：https://caddyserver.com/
 >
-> - 核心功能：自带HTTPS、HTTP/3 支持、**证书自动续期**、**内容自动更新**、反向代理、免费开源。
+> - 核心功能：默认启用HTTPS（域名）、HTTP/3 支持、**证书自动续期**、**内容自动更新**、反向代理、免费开源。
 
 #### 服务器内创建文件夹
 
@@ -511,4 +513,92 @@ REMOTE_PATH="/caddy/app"
 ```
 
 移除重启docker代码，待验证
+
+## 自建浏览量服务
+
+#### **1. 构建带 `exec` 插件的 Caddy**
+
+利用 `caddy:builder` 构建包含 `exec` 插件的 Caddy 二进制文件：
+
+```sh
+docker run --rm -v $(pwd):/out caddy:builder \
+    xcaddy build --with github.com/greenpau/caddy-exec
+    
+    
+    docker build -t caddy-with-exec --build-arg CADDY_VERSION=v2.8.2 --build-arg PLUGINS="exec" https://github.com/caddyserver/caddy.git
+
+```
+
+#### **2. 创建包含新 Caddy 二进制文件的 Docker 镜像**
+
+使用一个自定义 `Dockerfile`，打包新构建的 Caddy 二进制文件：
+
+```sh
+cat <<EOF >./Dockerfile
+# 基于官方 Caddy 镜像
+FROM caddy:alpine
+# 替换 Caddy 二进制文件
+COPY ./caddy /usr/bin/caddy
+# 添加配置文件
+COPY ./Caddyfile /etc/caddy/Caddyfile
+EOF
+```
+
+然后构建镜像：
+
+```sh
+docker build -t my-caddy .
+```
+
+
+
+update_views.sh
+
+```sh
+#!/bin/bash
+FILE="/path/to/views.json"
+SLUG=$1
+
+if [ -f "$FILE" ]; then
+    VIEWS=$(cat "$FILE" | jq ".${SLUG} += 1")
+    echo "$VIEWS" > "$FILE"
+fi
+```
+
+
+
+
+
+```sh
+
+cat <<EOF >/caddy/Caddyfile
+http://:9527 {
+    root * /srv #指定静态文件的根目录。
+    file_server #启用静态文件服务器功能。
+    
+    handle /view/increase { 
+      # 执行sh脚本，并且提取请求参数中slug，传递至sh脚本
+    	exec bash /path/to/update_views.sh {query.slug} 
+    }
+    
+    handle /view/get {
+       #响应指定文件内容
+    	respond /srv/views.json 200
+    }
+}
+EOF
+
+caddy:builder sh
+  docker run -d --name caddyBlog \
+  -p 9527:9527 \
+  -v /caddy/Caddyfile:/etc/caddy/Caddyfile \
+  -v /caddy/app:/srv \
+  -v /caddy/view:/view \
+  -v /caddy/caddy_data:/data \
+  -v /caddy/caddy_config:/config \
+  --memory 50m \
+  caddy:builder sh
+```
+
+
 
