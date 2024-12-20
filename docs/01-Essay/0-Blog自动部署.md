@@ -461,15 +461,12 @@ mkdir -p /caddy/{app,caddy_data,caddy_config}
 
 #### 配置Caddyfile
 
-作用类似nginx.config
+创建Caddyfile文件，作用类似nginx.config
 
 ```sh
-# 创建Caddyfile文件
-touch /caddy/Caddyfile
-
 # 使用cat <<EOF >快速写入
 cat <<EOF >/caddy/Caddyfile
-baizer.info,www.baizer.info {
+baizer.info www.baizer.info {
     root * /srv #指定静态文件的根目录。
     file_server #启用静态文件服务器功能。
 }
