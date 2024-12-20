@@ -448,16 +448,16 @@ public class WebhookListener {
 
 #### 服务器内创建文件夹
 
-```sh
-# 批量创建（caddy目录会自动创建）
-mkdir -p /caddy/{app,caddy_data,caddy_config}
-```
-
 `app`存放静态文件
 
 `caddy_data`存储 TLS 证书等持久化数据（后续挂载docker）
 
 `caddy_config`存储 Caddy 的配置文件数据（后续挂载docker）
+
+```sh
+# 批量创建文件（caddy目录会自动创建）
+mkdir -p /caddy/{app,caddy_data,caddy_config}
+```
 
 #### 配置Caddyfile
 
@@ -477,6 +477,16 @@ EOF
 
 docker使用参考： [使用ECS为本地搭建开发环境](0-使用ECS为本地搭建开发环境.md) 
 
+`--memory 50m`实际使用内存10M左右
+
+`/caddy/Caddyfile`：本地的 Caddy 配置文件路径。
+
+`/caddy/app`：静态网站文件的路径（如 HTML、CSS 等）。
+
+`/caddy/caddy_data`：用于存储 TLS 证书等持久化数据。
+
+`/caddy/caddy_config`：存储 Caddy 的配置文件数据。
+
 ```sh
 # 一键部署
 docker run -d --name caddyBlog \
@@ -490,26 +500,21 @@ docker run -d --name caddyBlog \
   caddy:latest
 ```
 
-`--memory 50m`实际使用内存10M左右
-
-`/caddy/Caddyfile`：本地的 Caddy 配置文件路径。
-
-`/caddy/app`：静态网站文件的路径（如 HTML、CSS 等）。
-
-`/caddy/caddy_data`：用于存储 TLS 证书等持久化数据。
-
-`/caddy/caddy_config`：存储 Caddy 的配置文件数据。
-
 #### depoly.sh 调整
 
-修改远程服务器的上传目录即可
+修改远程服务器的上传目录
 
 ```sh
 #REMOTE_PATH="/app"
 REMOTE_PATH="/caddy/app"
 ```
 
-移除重启docker代码，待验证
+调整重启的镜像name
+
+```sh
+#NGINX_CONTAINER_NAME="nginxBlog"
+NGINX_CONTAINER_NAME="caddyBlog"
+```
 
 ## 自建浏览量服务
 
@@ -520,10 +525,6 @@ REMOTE_PATH="/caddy/app"
 ```sh
 docker run --rm -v $(pwd):/out caddy:builder \
     xcaddy build --with github.com/greenpau/caddy-exec
-    
-    
-    docker build -t caddy-with-exec --build-arg CADDY_VERSION=v2.8.2 --build-arg PLUGINS="exec" https://github.com/caddyserver/caddy.git
-
 ```
 
 #### **2. 创建包含新 Caddy 二进制文件的 Docker 镜像**

@@ -9,8 +9,8 @@ SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-Other" "Image")
 #REMOTE_SERVER="root@cloudserver"
 REMOTE_SERVER="root@tencentserver"
 #REMOTE_PATH="/app"
- REMOTE_PATH="/caddy/app"
-NGINX_CONTAINER_NAME="nginxBlog"
+REMOTE_PATH="/caddy/app"
+NGINX_CONTAINER_NAME="caddyBlog"
 
 
 
@@ -80,11 +80,11 @@ if [ $? -ne 0 ]; then
   echo "文件解压失败，请检查！"
   exit 1
 fi
-#ssh "$REMOTE_SERVER" "docker restart $NGINX_CONTAINER_NAME"
-#if [ $? -ne 0 ]; then
-#  echo "$NGINX_CONTAINER_NAME 容器重启失败，请检查！"
-#  exit 1
-#fi
+ssh "$REMOTE_SERVER" "docker restart $NGINX_CONTAINER_NAME"
+if [ $? -ne 0 ]; then
+  echo "$NGINX_CONTAINER_NAME 容器重启失败，请检查！"
+  exit 1
+fi
 
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))
