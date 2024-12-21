@@ -541,7 +541,7 @@ docker run -d --name caddyBlog \
 REMOTE_PATH="/caddy/app"
 ```
 
-调整重启的镜像name
+调整重启的镜像
 
 ```sh
 #NGINX_CONTAINER_NAME="nginxBlog"
@@ -550,15 +550,20 @@ NGINX_CONTAINER_NAME="caddyBlog"
 
 ### 其它方案
 
--  https://github.com/certd/certd
-  - 通过docker部署，配置流水线生成证书、部署、自动续期等功能。
-  - 部署参考：[使用ECS为本地搭建开发环境](./0-使用ECS为本地搭建开发环境.md)
-- https://github.com/acmesh-official/acme.sh
-  - 通过shell脚本生成证书
+**1、通过docker部署，配置流水线生成证书、部署、自动续期等功能。**
 
-::: details nginx.config（HTTPS版）
+- https://github.com/certd/certd
+
+- 部署参考：[使用ECS为本地搭建开发环境](./0-使用ECS为本地搭建开发环境.md)
+
+**2、通过shell脚本生成证书**
+
+-  https://github.com/acmesh-official/acme.sh
+
+::: details 附件：nginx.config（HTTPS版）
 
 ```sh
+
 
 # 设置并行CPU核心数，在轻量级应用或单核环境中：可以设置为 1。
 worker_processes 1;
@@ -574,16 +579,54 @@ http {
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
 
+    # 启用gzip压缩
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+    # -------------------- HTTP 到 HTTPS 重定向 --------------------
+
+    # HTTP 请求重定向到 HTTPS
     server {
+        listen 80;
+        server_name baizer.info www.baizer.info;  # 替换成你的域名
+
+        # 强制 HTTP 请求重定向到 HTTPS
+        return 301 https://$host$request_uri;
+    }
+
+    # -------------------- IP 请求重定向到域名 --------------------
+
+    # IP 请求重定向到域名
+    server {
+        listen 80;
+        server_name _;  # 匹配所有 IP 请求
+
+        # 将基于 IP 的请求重定向到域名
+        return 301 https://www.baizer.info$request_uri;  # 替换成你的域名
+    }
+
+    # -------------------- HTTPS 配置 --------------------
+
+    # HTTPS 配置
+    server {
+        listen 443 ssl;
+        server_name baizer.info www.baizer.info;  # 替换成你的域名
+
+        # SSL 证书和密钥路径
+        ssl_certificate /data/certd/auto/cert.pem;  # 修改为你的证书路径
+        ssl_certificate_key /data/certd/auto/cert.key;  # 修改为你的密钥路径
+
+        # 启用 SSL 安全设置
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers 'TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384';
+        ssl_prefer_server_ciphers on;
+
+        # 启用gzip压缩
         gzip on;
         gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
 
-        listen 80;
-        server_name _;
-        index index.html;
-
+        # 静态文件目录
         location / {
-            # 静态文件目录
             root /app;
 
             # exact matches -> reverse clean urls -> folders -> not found
@@ -604,6 +647,7 @@ http {
         }
     }
 }
+
 ```
 
 :::
