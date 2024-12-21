@@ -221,9 +221,28 @@ http {
 
 :::
 
-安装Nginx：参考另一篇博客 [使用ECS为本地搭建开发环境](./0-使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx
+###  安装Nginx
 
-- 注意挂载目录的路径
+参考另一篇博客 [使用ECS为本地搭建开发环境](./0-使用ECS为本地搭建开发环境.md) 中使用docker部署Nginx。
+
+内存需求很小，5M以内。
+
+```sh
+docker run -d --name nginxBlog \
+  -p 80:80 \
+  -p 443:443 \
+  -v /nginx.conf:/etc/nginx/nginx.conf \
+  -v /app:/app \
+  -v /data/certd/auto:/data/certd/auto \
+  --memory 100m \
+  nginx
+```
+
+`  -v /nginx.conf:/etc/nginx/nginx.conf` 挂载自定义的配置文件
+
+`  -v /app:/app `挂载静态文件目录
+
+`/data/certd/auto `挂载SSL证书目录
 
 设置编码格式：（解决上传的静态文件名中文乱码的问题）
 
@@ -448,9 +467,11 @@ public class WebhookListener {
 
 ## SSL证书的问题
 
-**问题：云厂商提供的免费SSL证书只有三个月，很麻烦。**
+**问题**：云厂商提供的免费SSL证书只有三个月，很麻烦。
 
-**解决方案：把 Nginx 替换为 Caddy 这种自带 HTTPS 的 Web 服务器**
+### Caddy方案
+
+**把 Nginx 替换为 Caddy 这种自带 HTTPS 的 Web 服务器**
 
 > - Caddy官网：https://caddyserver.com/
 >
@@ -479,6 +500,7 @@ cat <<EOF >/caddy/Caddyfile
 baizer.info www.baizer.info {
     root * /srv #指定静态文件的根目录。
     file_server #启用静态文件服务器功能。
+    encode gzip #启用 gzip 压缩，减少文件传输的大小，从而加速加载
 }
 EOF
 ```
@@ -525,6 +547,66 @@ REMOTE_PATH="/caddy/app"
 #NGINX_CONTAINER_NAME="nginxBlog"
 NGINX_CONTAINER_NAME="caddyBlog"
 ```
+
+### 其它方案
+
+-  https://github.com/certd/certd
+  - 通过docker部署，配置流水线生成证书、部署、自动续期等功能。
+  - 部署参考：[使用ECS为本地搭建开发环境](./0-使用ECS为本地搭建开发环境.md)
+- https://github.com/acmesh-official/acme.sh
+  - 通过shell脚本生成证书
+
+::: details nginx.config（HTTPS版）
+
+```sh
+
+# 设置并行CPU核心数，在轻量级应用或单核环境中：可以设置为 1。
+worker_processes 1;
+
+events {
+    # 定义每个 worker_process 可以同时处理的最大连接数。默认值1024
+    worker_connections 1024;
+}
+
+http {
+
+    # 确保JavaScript文件被服务器识别为js文件
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    server {
+        gzip on;
+        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+        listen 80;
+        server_name _;
+        index index.html;
+
+        location / {
+            # 静态文件目录
+            root /app;
+
+            # exact matches -> reverse clean urls -> folders -> not found
+            try_files $uri $uri.html $uri/ =404;
+
+            # non existent pages
+            error_page 404 /404.html;
+
+            # a folder without index.html raises 403 in this setup
+            error_page 403 /404.html;
+
+            # adjust caching headers
+            # files in the assets folder have hashes filenames
+            location ~* ^/assets/ {
+                expires 1y;
+                add_header Cache-Control "public, immutable";
+            }
+        }
+    }
+}
+```
+
+:::
 
 ## 自建浏览量服务
 

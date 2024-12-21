@@ -8,9 +8,12 @@ SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-Other" "Image")
 
 #REMOTE_SERVER="root@cloudserver"
 REMOTE_SERVER="root@tencentserver"
-REMOTE_PATH="/app"
-#REMOTE_PATH="/caddy/app"
-#NGINX_CONTAINER_NAME="caddyBlog"
+
+#REMOTE_PATH="/app"
+#NGINX_CONTAINER_NAME="nginxBlog"
+
+REMOTE_PATH="/caddy/app"
+NGINX_CONTAINER_NAME="caddyBlog"
 
 
 

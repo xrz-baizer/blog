@@ -313,8 +313,10 @@ docker run -d --name rmqbroker \
 ```sh
 docker run -d --name nginxBlog \
   -p 80:80 \
+  -p 443:443 \
   -v /nginx.conf:/etc/nginx/nginx.conf \
   -v /app:/app \
+  -v /data/certd/auto:/data/certd/auto \
   --memory 100m \
   nginx
 ```
@@ -322,6 +324,8 @@ docker run -d --name nginxBlog \
 `  -v /nginx.conf:/etc/nginx/nginx.conf` 挂载自定义的配置文件
 
 `  -v /app:/app `挂载静态文件目录
+
+`/data/certd/auto `挂载SSL证书目录
 
 ### 部署Caddy
 
@@ -346,3 +350,20 @@ docker run -d --name caddyBlog \
 `/caddy/caddy_data`：用于存储 TLS 证书等持久化数据。
 
 `/caddy/caddy_config`：存储 Caddy 的配置文件数据。
+
+### 部署certd
+
+```sh
+docker run -d --name certdAuto \
+  -p 7001:7001 \
+  -p 7002:7002 \
+  -v /data/certd:/app/data \
+  --memory 200m \
+  greper/certd:latest
+```
+
+  `-v /data/certd:/app/data ` 挂载数据目录，证书也可以配置生成在此处
+
+http://your_server_ip:7001
+https://your_server_ip:7002
+默认账号密码：admin/123456
