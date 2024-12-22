@@ -76,6 +76,11 @@
 /* 640px以下生效 */
 @media (max-width: 640px) {
 
+    :root{
+        --font-size-content: 15px;
+        --font-size-sidebar: 13px;
+    }
+
     /*--vp-home-hero-image-filter: blur(80px);*/
     .VPHero{
         padding-top: 30px !important;
@@ -89,6 +94,7 @@
     .VPHero .text{
         margin-top: 8px !important;
     }
+
     .LastUpdated {
         /*display: none;*/
         /*margin-bottom: 0px;*/
@@ -129,6 +135,10 @@
     }
     .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
         margin-left: 0px !important;
+    }
+
+    .menu,.VPLocalNavOutlineDropdown button{
+        font-size: 13px !important;
     }
 }
 

@@ -196,7 +196,7 @@ span{
         /*width: 17rem;*/
     }
     .describe {
-        font-size: 0.9375rem;
+        font-size: 0.8375rem;
         display: -webkit-box;
         /*display: none;*/
         -webkit-box-orient: vertical;
