@@ -12,10 +12,12 @@ REMOTE_SERVER="root@tencentserver"
 #REMOTE_PATH="/app"
 #CONTAINER_NAME="nginxBlog"
 #CONFIGURATION_PATH="/"
+#CONFIGURATION_FILE="nginx.config"
 
 REMOTE_PATH="/caddy/app"
 CONTAINER_NAME="caddyBlog"
 CONFIGURATION_PATH="/caddy1"
+CONFIGURATION_FILE="Caddyfile"
 
 
 
@@ -80,7 +82,7 @@ fi
 #echo "文件上传成功！"
 
 echo "==============================> 覆盖更新配置文件 $CONFIGURATION_PATH ..."
-scp "$BLOG_PATH/auto-deploy" "$REMOTE_SERVER:$CONFIGURATION_PATH"
+scp "$BLOG_PATH/auto-deploy/$CONFIGURATION_FILE" "$REMOTE_SERVER:$CONFIGURATION_PATH"
 
 
 #echo "==============================> 解压文件并重启 $CONTAINER_NAME 容器..."
