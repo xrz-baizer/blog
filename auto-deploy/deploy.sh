@@ -80,7 +80,7 @@ fi
 #echo "文件上传成功！"
 
 echo "==============================> 覆盖更新配置文件 $CONFIGURATION_PATH ..."
-scp "$BLOG_PATH/auto-deploy/" "$REMOTE_SERVER:$CONFIGURATION_PATH"
+scp "$BLOG_PATH/auto-deploy" "$REMOTE_SERVER:$CONFIGURATION_PATH"
 
 
 #echo "==============================> 解压文件并重启 $CONTAINER_NAME 容器..."
