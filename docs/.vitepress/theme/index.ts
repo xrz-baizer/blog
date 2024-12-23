@@ -7,10 +7,7 @@ import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import './custom/custom.css'
 import { formatTimestamp } from './custom/function.js'
-// import Category from './custom/Category.vue'
-// 动态导入 Category 组件
-const Category = () => import('./custom/Category.vue')
-
+import Category from './custom/Category.vue'
 
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 
