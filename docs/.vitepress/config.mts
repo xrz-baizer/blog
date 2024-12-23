@@ -36,9 +36,9 @@ export default defineConfig({
       level: [2,4],  //配置所有文章目录显示的深度
       // label: '',  // On this page
     },
-    search: {
-      provider: 'local' //开启本地搜索
-    },
+    // search: {
+    //   provider: 'local' //开启本地搜索
+    // },
     // lastUpdated: {  //设置最后更新时间样式
     //   // text: 'Updated at',
     //   formatOptions: {
