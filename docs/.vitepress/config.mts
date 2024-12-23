@@ -36,9 +36,9 @@ export default defineConfig({
       level: [2,4],  //配置所有文章目录显示的深度
       // label: '',  // On this page
     },
-    // search: {
-    //   provider: 'local' //开启本地搜索
-    // },
+    search: {
+      provider: 'local' //开启本地搜索
+    },
     // lastUpdated: {  //设置最后更新时间样式
     //   // text: 'Updated at',
     //   formatOptions: {
@@ -104,4 +104,18 @@ export default defineConfig({
       },
     ],
   },
+  // 配置预加载策略
+  async transformHead({ assets }) {
+    // 返回 null 表示不预加载任何资源
+    return {
+      preload: assets.filter(file => {
+        // 只预加载首页必需的资源
+        // 返回 false 则不预加载
+        return false
+
+        // 或者你可以选择性预加载特定资源
+        // return file.includes('index') || file.includes('home')
+      })
+    }
+  }
 })
