@@ -16,7 +16,7 @@ REMOTE_SERVER="root@tencentserver"
 
 REMOTE_PATH="/caddy/app"
 CONTAINER_NAME="caddyBlog"
-CONFIGURATION_PATH="/caddy1"
+CONFIGURATION_PATH="/caddy"
 CONFIGURATION_FILE="Caddyfile"
 
 
@@ -55,47 +55,50 @@ if [ $? -ne 0 ]; then
 fi
 
 
-#echo "==============================> 执行'yarn build'构建静态文件..."
-#cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
-#yarn build
-#if [ $? -ne 0 ]; then
-#  echo "静态文件构建失败，请检查！"
-#  exit 1
-#fi
-#
-#echo "==============================> 压缩静态文件并上传到云服务器 $REMOTE_PATH ..."
-#DIST_PATH="$BLOG_PATH/docs/.vitepress/dist"
-#ARCHIVE_NAME="dist.tar.gz"
-#
-#tar -czf "$DIST_PATH/$ARCHIVE_NAME" -C "$DIST_PATH" .
-#if [ $? -ne 0 ]; then
-#  echo "静态文件压缩失败，请检查！"
-#  exit 1
-#fi
-#
-#ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
-#scp "$DIST_PATH/$ARCHIVE_NAME" "$REMOTE_SERVER:$REMOTE_PATH/"
-#if [ $? -ne 0 ]; then
-#  echo "压缩文件上传失败，请检查！"
-#  exit 1
-#fi
-#echo "文件上传成功！"
+echo "==============================> 执行'yarn build'构建静态文件..."
+cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+yarn build
+if [ $? -ne 0 ]; then
+  echo "静态文件构建失败，请检查！"
+  exit 1
+fi
+
+echo "==============================> 压缩静态文件并上传到云服务器 $REMOTE_PATH ..."
+DIST_PATH="$BLOG_PATH/docs/.vitepress/dist"
+ARCHIVE_NAME="dist.tar.gz"
+
+tar -czf "$DIST_PATH/$ARCHIVE_NAME" -C "$DIST_PATH" .
+if [ $? -ne 0 ]; then
+  echo "静态文件压缩失败，请检查！"
+  exit 1
+fi
+
+ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
+scp "$DIST_PATH/$ARCHIVE_NAME" "$REMOTE_SERVER:$REMOTE_PATH/"
+if [ $? -ne 0 ]; then
+  echo "压缩文件上传失败，请检查！"
+  exit 1
+fi
+echo "文件上传成功！"
 
 echo "==============================> 覆盖更新配置文件 $CONFIGURATION_PATH ..."
 scp "$BLOG_PATH/auto-deploy/$CONFIGURATION_FILE" "$REMOTE_SERVER:$CONFIGURATION_PATH"
+if [ $? -ne 0 ]; then
+  echo "$CONTAINER_NAME 覆盖更新配置文件，请检查！"
+  exit 1
+fi
 
-
-#echo "==============================> 解压文件并重启 $CONTAINER_NAME 容器..."
-#ssh "$REMOTE_SERVER" "tar -xzf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH"
-#if [ $? -ne 0 ]; then
-#  echo "文件解压失败，请检查！"
-#  exit 1
-#fi
-#ssh "$REMOTE_SERVER" "docker restart $CONTAINER_NAME"
-#if [ $? -ne 0 ]; then
-#  echo "$CONTAINER_NAME 容器重启失败，请检查！"
-#  exit 1
-#fi
+echo "==============================> 解压文件并重启 $CONTAINER_NAME 容器..."
+ssh "$REMOTE_SERVER" "tar -xzf $REMOTE_PATH/$ARCHIVE_NAME -C $REMOTE_PATH"
+if [ $? -ne 0 ]; then
+  echo "文件解压失败，请检查！"
+  exit 1
+fi
+ssh "$REMOTE_SERVER" "docker restart $CONTAINER_NAME"
+if [ $? -ne 0 ]; then
+  echo "$CONTAINER_NAME 容器重启失败，请检查！"
+  exit 1
+fi
 
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))
