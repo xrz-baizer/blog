@@ -508,8 +508,6 @@ EOF
 
 docker使用参考： [使用ECS为本地搭建开发环境](0-使用ECS为本地搭建开发环境.md) 
 
-`--memory 50m`实际使用内存10M左右
-
 `/caddy/Caddyfile`：本地的 Caddy 配置文件路径。
 
 `/caddy/app`：静态网站文件的路径（如 HTML、CSS 等）。
@@ -527,7 +525,7 @@ docker run -d --name caddyBlog \
   -v /caddy/app:/srv \
   -v /caddy/caddy_data:/data \
   -v /caddy/caddy_config:/config \
-  --memory 500m \
+  --memory 200m \
   caddy:latest
 ```
 

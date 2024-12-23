@@ -177,6 +177,7 @@ span{
     line-height: 1.5rem;
 }
 
+/* 768px以下生效 */
 @media screen and (max-width: 768px) {
     .post-list {
         padding: 5px 0 5px 0;

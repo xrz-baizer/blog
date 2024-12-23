@@ -329,8 +329,6 @@ docker run -d --name nginxBlog \
 
 ### 部署Caddy
 
-实际使用内存10M左右
-
 ```sh
 docker run -d --name caddyBlog \
   -p 80:80 \
@@ -339,7 +337,7 @@ docker run -d --name caddyBlog \
   -v /caddy/app:/srv \
   -v /caddy/caddy_data:/data \
   -v /caddy/caddy_config:/config \
-  --memory 50m \
+  --memory 20m \
   caddy:latest
 ```
 
