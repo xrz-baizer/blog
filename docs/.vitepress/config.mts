@@ -104,16 +104,16 @@ export default defineConfig({
       },
     ],
     build: {
-      // chunkSizeWarningLimit: 2000 * 1024, // 打包警告： Allow up to 2000 kB
-      // rollupOptions: {
-      //   output: {
-      //     manualChunks(id) {
-      //       if (id.includes('assets')) {
-      //         return 'assets-chunk';
-      //       }
-      //     }
-      //   }
-      // }
+      chunkSizeWarningLimit: 2000 * 1024, // 打包警告： Allow up to 2000 kB
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('assets')) {
+              return 'assets-chunk';
+            }
+          }
+        }
+      }
     }
   }
 
