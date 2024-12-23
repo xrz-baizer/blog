@@ -78,24 +78,24 @@ export default defineConfig({
   vite: {
     // 当 Vite 构建项目时，会自动加载并执行这些插件
     plugins: [
-      // AutoSidebar({ // 自动生成侧边栏 https://github.com/QC2168/vite-plugin-vitepress-auto-sidebar
-      //   ignoreIndexItem: true,  //忽略index文件
-      //   collapsed: true,        //收起所有侧边栏
-      //   // 侧边栏排序（文件夹排在前面）
-      //   beforeCreateSideBarItems: (data) => {
-      //     function getOrder(item: string): number {
-      //       // 如果项没有扩展名，则认为它是文件夹
-      //       if (!/\.[^/.]+$/.test(item)) {
-      //         return -1; // 文件夹排在前面
-      //       }
-      //       return 0; // 其他文件排在后面
-      //     }
-      //     data.sort((a, b) => {
-      //       return getOrder(a) - getOrder(b);
-      //     });
-      //     return data;
-      //   },
-      // }),
+      AutoSidebar({ // 自动生成侧边栏 https://github.com/QC2168/vite-plugin-vitepress-auto-sidebar
+        ignoreIndexItem: true,  //忽略index文件
+        collapsed: true,        //收起所有侧边栏
+        // 侧边栏排序（文件夹排在前面）
+        beforeCreateSideBarItems: (data) => {
+          function getOrder(item: string): number {
+            // 如果项没有扩展名，则认为它是文件夹
+            if (!/\.[^/.]+$/.test(item)) {
+              return -1; // 文件夹排在前面
+            }
+            return 0; // 其他文件排在后面
+          }
+          data.sort((a, b) => {
+            return getOrder(a) - getOrder(b);
+          });
+          return data;
+        },
+      }),
       {
         name: 'generate-articles-json',
         buildStart() {
