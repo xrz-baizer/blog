@@ -9,7 +9,8 @@ hero:
   text: "Baizer"
   tagline: "个人知识库"
   image:
-    src: /peach-blossom.svg
+    src: /peach-blossom.png
+#    src: /peach-blossom.svg
 #    src: /lotus.svg
 #    alt: Baizer
   actions:
