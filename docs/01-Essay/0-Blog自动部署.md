@@ -527,7 +527,7 @@ docker run -d --name caddyBlog \
   -v /caddy/app:/srv \
   -v /caddy/caddy_data:/data \
   -v /caddy/caddy_config:/config \
-  --memory 50m \
+  --memory 500m \
   caddy:latest
 ```
 

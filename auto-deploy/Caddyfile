@@ -1,0 +1,5 @@
+baizer.info www.baizer.info {
+    root * /srv #指定静态文件的根目录。
+    file_server #启用静态文件服务器功能。
+    encode gzip #启用 gzip 压缩，减少文件传输的大小，从而加速加载
+}
