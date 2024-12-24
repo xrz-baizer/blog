@@ -651,34 +651,34 @@ http {
 
 ## 提交网站到搜索引擎
 
-1. **在各大搜索引擎平台添加自己的网站**
+### 添加网站
 
-   - Google验证所有权：在云服务平台配置DNS记录
-   - 百度验证所有权（HTML标签验证）：[网站首页index.md文件中添加meta数据](https://vitepress.dev/zh/reference/frontmatter-config#head)
+在各大搜索引擎平台添加自己的网站，并验证所有权。
 
-2. **配置sitemap（来告诉搜索引擎你网站上有哪些页面和文件的文本文件）**
+- Google验证所有权：在云服务平台配置DNS记录
+- 百度验证所有权（HTML标签验证）：[网站首页index.md文件中添加meta数据](https://vitepress.dev/zh/reference/frontmatter-config#head)
 
-   - [Vitepress配置生成sitemap.xml文件](https://vitepress.dev/zh/guide/sitemap-generation#sitemap-generation)
+### 配置sitemap
 
-     ```js
-     // .vitepress/config.mts
-     export default {
-       sitemap: {
-         // 生成网站地图，提供搜索引擎（Google、Bing）使用
-         hostname: 'https://baizer.info'
-       }
-     }
-     ```
+配置sitemap（来告诉搜索引擎你网站上有哪些页面和文件的文本文件）
 
-3. **搜索引擎平台**
+- [Vitepress配置生成sitemap.xml文件](https://vitepress.dev/zh/guide/sitemap-generation#sitemap-generation)
 
-   - [Google Search Console： 添加你的网站，验证所有权，并提交sitemap。](https://search.google.com/search-console/about)
+```js
+  // .vitepress/config.mts
+  export default {
+    sitemap: {
+      // 生成网站地图，提供搜索引擎（Google、Bing）使用
+      hostname: 'https://baizer.info'
+    }
+  }
+```
 
+### 搜索引擎平台
 
-      - [Bing（支持从Google导入）： 同样添加网站，验证所有权，并提交sitemap。](https://www.bing.com/webmasters/home)
-
-
-      - [其他搜索引擎： 如百度、Yandex等，也可以尝试提交。](https://ziyuan.baidu.com/site/index#/)
+- [Google Search Console： 添加你的网站，验证所有权，并提交sitemap。](https://search.google.com/search-console/about)
+- [Bing（支持从Google导入）： 同样添加网站，验证所有权，并提交sitemap。](https://www.bing.com/webmasters/home)
+- [其他搜索引擎： 如百度、Yandex等，也可以尝试提交。](https://ziyuan.baidu.com/site/index#/)
 
 
 ## 自建浏览量服务

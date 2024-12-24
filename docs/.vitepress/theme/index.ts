@@ -115,8 +115,8 @@ export default {
       addUpdateTimeDiv();
       initZoom();
 
-      updateSidebarVisibility();
-      window.addEventListener('resize', updateSidebarVisibility);
+      // updateSidebarVisibility();
+      // window.addEventListener('resize', updateSidebarVisibility);
     });
     watch(
         () => route.path,

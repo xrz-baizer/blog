@@ -2,4 +2,11 @@ baizer.info www.baizer.info {
     root * /srv #指定静态文件的根目录。
     file_server #启用静态文件服务器功能。
     encode gzip #启用 gzip 压缩，减少文件传输的大小，从而加速加载
+
+    # 重定向所有IP访问到https://baizer.info
+    @ip {
+        not host baizer.info
+        not host www.baizer.info
+    }
+    redir @ip https://baizer.info{uri} permanent
 }
