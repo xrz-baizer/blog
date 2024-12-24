@@ -649,6 +649,14 @@ http {
 
 :::
 
+## 提交网站到搜索引擎
+
+- [Google Search Console： 添加你的网站，验证所有权，并提交sitemap。](https://search.google.com/search-console/about)
+
+- [Bing（支持从Google导入）： 同样添加网站，验证所有权，并提交sitemap。](https://www.bing.com/webmasters/home)
+
+- [其他搜索引擎： 如百度、Yandex等，也可以尝试提交。](https://ziyuan.baidu.com/site/index#/)
+
 ## 自建浏览量服务
 
 #### **1. 构建带 `exec` 插件的 Caddy**

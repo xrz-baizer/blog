@@ -103,6 +103,7 @@ export default defineConfig({
         },
       },
     ],
+
     build: {
       chunkSizeWarningLimit: 2000 * 1024, // 打包警告： Allow up to 2000 kB
       // rollupOptions: {
@@ -115,6 +116,9 @@ export default defineConfig({
       //   }
       // }
     }
+  },
+  sitemap: {
+    // 生成网站地图，提供搜索引擎（Google、Bing）使用
+    hostname: 'https://baizer.info'
   }
-
 })
