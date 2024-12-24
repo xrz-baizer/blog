@@ -3,8 +3,6 @@ import AutoSidebar from 'vite-plugin-vitepress-auto-sidebar'
 import taskLists from 'markdown-it-task-lists';
 import markdownItMark from 'markdown-it-mark';
 import { generateArticlesSummaryJSON } from './theme/custom/generateSummary';
-// import fs from 'fs';
-// import path from 'path';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -72,7 +70,6 @@ export default defineConfig({
       dark: 'catppuccin-macchiato'
     },
     lineNumbers: true // 代码块启用行号
-
   },
   ignoreDeadLinks: true, // When set to true, VitePress will not fail builds due to dead links.
   vite: {
@@ -120,5 +117,14 @@ export default defineConfig({
   sitemap: {
     // 生成网站地图，提供搜索引擎（Google、Bing）使用
     hostname: 'https://baizer.info'
+  },
+  // https://vitepress.dev/zh/reference/site-config#transformpagedata
+  // transformPageData 是一个钩子，用于转换每个页面的 pageData。 可以直接改变 pageData 或返回将合并到 PageData 中的更改值。
+  transformPageData(pageData) {
+
+    // 在此处变更所有页面的frontmatter属性。
+    if(! pageData.relativePath.endsWith('index.md')){
+      pageData.frontmatter.sidebar = false;
+    }
   }
 })

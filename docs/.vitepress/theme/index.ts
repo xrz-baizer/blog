@@ -4,6 +4,21 @@ import type { Theme } from 'vitepress'
 import {useData, useRoute} from 'vitepress';
 import mediumZoom from 'medium-zoom';
 import DefaultTheme from 'vitepress/theme'
+import { useSidebar } from 'vitepress/theme'
+// const { hasSidebar } = useSidebar()
+
+// export interface DocSidebar {
+//   isOpen: Ref<boolean>
+//   sidebar: ComputedRef<DefaultTheme.SidebarItem[]>
+//   sidebarGroups: ComputedRef<DefaultTheme.SidebarItem[]>
+//   hasSidebar: ComputedRef<boolean>
+//   hasAside: ComputedRef<boolean>
+//   leftAside: ComputedRef<boolean>
+//   isSidebarEnabled: ComputedRef<boolean>
+//   open: () => void
+//   close: () => void
+//   toggle: () => void
+// }
 import './style.css'
 import './custom/custom.css'
 import { formatTimestamp } from './custom/function.js'
@@ -27,19 +42,11 @@ export default {
   // 这是在 Vue 3 中用于增强应用的一个钩子函数。
   // 它通常在应用初始化时被调用，可以用来注册全局组件、插件或修改 Vue 实例。
   // 通过 enhanceApp，开发者可以在应用启动前执行一些配置或初始化操作。
-  enhanceApp({ app, router, siteData }) {
+  enhanceApp({ app, router, siteData}) {
     // 注册全局组件
     app.component('category', Category);
 
-    // router.onAfterRouteChanged = () => {
-    //
-    //   // // 当前页面数据
-    //   // let pageData = router.route.data;
-    //   // // 等待 DOM 渲染完成后操作
-    //   // setTimeout(() => {
-    //   //   // td
-    //   // }, 0);
-    // };
+
   },
 
   // setup 是 Vue 3 引入的一个组合式 API 函数。
@@ -48,6 +55,7 @@ export default {
   // 使用 setup 可以更灵活地管理组件的逻辑，支持更好的代码组织和复用。
   setup() {
     const route = useRoute();
+    const sidebar = useSidebar();
     const {page,theme,frontmatter} = useData();
 
     // giscus配置（评论系统）  https://giscus.app/zh-CN
@@ -170,16 +178,17 @@ export default {
         toggleAsideVisibility();
       });
       addUpdateTimeDiv();
-      toggleSidebar(isIndexPage());
+      // toggleSidebar(isIndexPage());
       initZoom();
     });
     watch(
         () => route.path,
-        () => {
+        (newPath) => {
           nextTick(() => {
             initZoom();
-            toggleSidebar(isIndexPage());
+            // toggleSidebar(isIndexPage());
             addUpdateTimeDiv();
+
           });
         }
     );

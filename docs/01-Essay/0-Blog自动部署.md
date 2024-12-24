@@ -653,6 +653,9 @@ http {
 
 1. **在各大搜索引擎平台添加自己的网站**
 
+   - Google验证所有权：在云服务平台配置DNS记录
+   - 百度验证所有权（HTML标签验证）：[网站首页index.md文件中添加meta数据](https://vitepress.dev/zh/reference/frontmatter-config#head)
+
 2. **配置sitemap（来告诉搜索引擎你网站上有哪些页面和文件的文本文件）**
 
    - [Vitepress配置生成sitemap.xml文件](https://vitepress.dev/zh/guide/sitemap-generation#sitemap-generation)
@@ -670,13 +673,13 @@ http {
 3. **搜索引擎平台**
 
    - [Google Search Console： 添加你的网站，验证所有权，并提交sitemap。](https://search.google.com/search-console/about)
-   
-   
+
+
       - [Bing（支持从Google导入）： 同样添加网站，验证所有权，并提交sitemap。](https://www.bing.com/webmasters/home)
-   
-   
+
+
       - [其他搜索引擎： 如百度、Yandex等，也可以尝试提交。](https://ziyuan.baidu.com/site/index#/)
-   
+
 
 ## 自建浏览量服务
 
