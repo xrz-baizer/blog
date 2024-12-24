@@ -20,17 +20,14 @@
 
 - **二叉树（Binary tree）**：
   - 每个节点最多有两个子节点，分别称为左子节点和右子节点。
-
 - **完美二叉树（Perfect binary tree）**：
-  - 又称满二叉树。每个非叶子节点都有两个子节点，且所有叶子节点在同一层。
-  - 即所有层的节点都被填满
-
+  - 又称满二叉树。
+  - 每个非叶子节点都有两个子节点，且所有叶子节点在同一层。即所有层的节点都被填满
 - **完全二叉树（Complete binary tree）**：
   - 除最后一层外，其他层的节点都被完全填满，且最后一层的节点靠左排列，中间不能有空缺。
-
 - **完满二叉树（Full binary tree）**：
-  - 又称严格二叉树，真二叉树。每个节点要么没有子节点，要么有两个子节点。
-  - 即所有节点的度都为0或2
+  - 又称严格二叉树，真二叉树。
+  - 每个节点要么没有子节点，要么有两个子节点。即所有节点的度都为0或2
 
 
 - **二叉搜索树（Binary Search Tree）**：
@@ -64,72 +61,7 @@
 
 
 
-::: details 遍历代码实现
-
-```java
-    /**
-     * 前序遍历
-     * @param node
-     */
-    public void preorderTraversal(Node<E> node){
-        if(node == null) return;
-        System.out.print(node.element+" ");
-        preorderTraversal(node.left);
-        preorderTraversal(node.right);
-    }
-
-    /**
-     * 中序遍历
-     * @param node
-     */
-    public void inorderTraversal(Node<E> node){
-        if(node == null) return;
-        inorderTraversal(node.left);
-        System.out.print(node.element+" ");
-        inorderTraversal(node.right);
-    }
-
-    /**
-     * 后序遍历
-     * @param node
-     */
-    public void postorderTraversal(Node<E> node){
-        if(node == null) return;
-        postorderTraversal(node.left);
-        postorderTraversal(node.right);
-        System.out.print(node.element+" ");
-    }
-
-    /**
-     * 层序遍历
-     * @param node
-     */
-    public void levelOrderTraversal(Node<E> node){
-        if(node == null) return;
-        Queue<Node<E>> queue = new LinkedList<>();
-        queue.add(node);
-        while(!queue.isEmpty()){
-
-            // 每层循环，取出节点
-            Node<E> cur = queue.poll();
-            System.out.print(cur.element+" "); //使用元素
-
-            // 从左到右，按顺序入队
-            if(cur.left != null){
-                queue.add(cur.left);
-            }
-
-            if(cur.right != null){
-                queue.add(cur.right);
-            }
-
-        }
-    }
-```
-
-:::
-
-## 代码实现：树的基本结构 + add()
+## 树的基本结构 + add()
 
 ### 树节点的定义
 
@@ -252,16 +184,13 @@ private int compare(E e1, E e2) {
 }
 ```
 
-## 代码实现：树的遍历
+## 树的遍历
 
 ### Visitor 访问器定义
 
+ 声明访问器，供节点实现自定义处理逻辑
+
 ```java
-/**
- * 声明访问器，供节点实现自定义处理逻辑
- *
- * @param <E>
- */
 @FunctionalInterface
 public interface Visitor<E> {
     void visit(E element);
@@ -357,26 +286,100 @@ System.out.println("\n=========== levelOrderTraversal 逐层往下访问，从�
 tree.levelOrderTraversal(tree.root,(e) -> System.out.print(e+" "));
 ```
 
-## 代码实现：获取树的高度
+### 强化遍历（支持终止遍历）
+
+在上述基础遍历的功能上增加停止遍历的功能。
+
+1. **Visitor改造，增加停止遍历的标识**
+
+```java
+public static abstract class Visitor<E>{
+
+    boolean stop; //停止遍历的标识
+
+    public abstract boolean visit(E element);
+}
+```
+
+2. **层序遍历终止比较简单，直接return**
+
+```java
+public void levelOrderTraversal(Node<E> node, Visitor<E> visitor) {
+    if (node == null) return;
+    Queue<Node<E>> queue = new LinkedList<>();
+    queue.add(node);
+    while (!queue.isEmpty()) {
+
+        // 每层循环，取出节点
+        Node<E> poll = queue.poll();
+        boolean stop = visitor.visit(poll.element);//使用元素
+        if(stop) return; //停止遍历树
+
+        // 将子节点从左到右，按顺序放入队
+        if (poll.left != null) {
+            queue.add(poll.left);
+        }
+        if (poll.right != null) {
+            queue.add(poll.right);
+        }
+
+    }
+}
+```
+
+3. **前、中、后序遍历需要双重校验**
+
+```java
+public void preorderTraversal(Node<E> node, Visitor<E> visitor) {
+    if (node == null || visitor.stop) return;
+    visitor.stop = visitor.visit(node.element); //使用元素
+
+    this.preorderTraversal(node.left, visitor);
+    this.preorderTraversal(node.right, visitor);
+}
+
+public void inorderTraversal(Node<E> node, Visitor<E> visitor) {
+    if (node == null || visitor.stop) return;
+    this.inorderTraversal(node.left, visitor);
+
+    if(visitor.stop) return;  //双重校验
+    visitor.stop = visitor.visit(node.element); //使用元素
+
+    this.inorderTraversal(node.right, visitor);
+}
+
+public void postorderTraversal(Node<E> node, Visitor<E> visitor) {
+    if (node == null || visitor.stop) return;
+    postorderTraversal(node.left, visitor);
+    postorderTraversal(node.right, visitor);
+
+    if(visitor.stop) return;  //双重校验
+    visitor.stop = visitor.visit(node.element); //使用元素
+}
+```
+
+4. **调用示例**
+
+```java
+tree.preorderTraversal(tree.root, new BinarySearchTree.Visitor<Integer>(){
+    @Override
+    public boolean visit(Integer element) {
+        System.out.print(element + "");
+        if(element == 5) return true;
+        return false;
+    }
+});
+```
+
+## 获取树的高度
 
 ### 递归实现
 
 ```java
-/**
- * 获取树的高度
- *
- * @return
- */
 public int height() {
     return height(this.root);
 }
 
-/**
- * 获取指定节点高度
- *
- * @param node
- * @return
- */
 public int height(Node<E> node) {
     if (node == null) return 0;
 
@@ -390,12 +393,6 @@ public int height(Node<E> node) {
 ### 迭代实现（基于层序遍历）
 
 ```java
-/**
- * 获取指定节点高度（迭代实现）
- *
- * @param node
- * @return
- */
 public int heightByIteration(Node<E> node) {
     if (node == null) return 0;
 
@@ -427,15 +424,13 @@ public int heightByIteration(Node<E> node) {
 
 ```
 
-## 代码实现：判断是否为完全二叉树
+## 练习：判断是否为完全二叉树
+
+判断是否为完全二叉树（通过层序遍历实现）
+
+- 完全二叉树（Complete binary tree）：除最后一层外，其他层的节点都被完全填满，且最后一层的节点靠左排列，中间不能有空缺。
 
 ```java
-/**
- * 判断是否为完全二叉树（通过层序遍历实现）
- *
- *  完全二叉树（Complete binary tree）：除最后一层外，其他层的节点都被完全填满，且最后一层的节点靠左排列，中间不能有空缺。
- * @return
- */
 public boolean isComplete(){
     Queue<Node<E>> queue = new LinkedList<>();
     queue.add(root);
@@ -462,5 +457,29 @@ public boolean isComplete(){
     }
     return true;
 }
+```
+
+## 练习：翻转二叉树
+
+取出节点，将左右节点交换
+
+## 前驱节点 / 后继节点
+
+**前驱节点定义：在中序遍历时的前一个节点**
+
+- 如果是二叉搜索树，前驱节点就是前一个比它小的节点
+
+**后驱节点定义：在中序遍历时的后一个节点**
+
+- 如果是二叉搜索树，后驱节点就是后一个比它大的节点
+
+![image-20241223215937212](../../Image/image-20241223215937212.png)
+
+> 7的前驱节点是5，后继节点是8。
+>
+> 8的前驱节点是7，后继节点是9。
+
+```java
+
 ```
 
