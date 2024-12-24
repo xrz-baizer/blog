@@ -124,7 +124,7 @@ export default defineConfig({
 
     // 在此处变更所有页面的frontmatter属性。
     if(! pageData.relativePath.endsWith('index.md')){
-      pageData.frontmatter.sidebar = false;
+      pageData.frontmatter.sidebar = false; // 优化使用动态css时，页面打开时侧边栏有延迟的问题
     }
   }
 })
