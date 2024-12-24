@@ -651,11 +651,32 @@ http {
 
 ## 提交网站到搜索引擎
 
-- [Google Search Console： 添加你的网站，验证所有权，并提交sitemap。](https://search.google.com/search-console/about)
+1. **在各大搜索引擎平台添加自己的网站**
 
-- [Bing（支持从Google导入）： 同样添加网站，验证所有权，并提交sitemap。](https://www.bing.com/webmasters/home)
+2. **配置sitemap（来告诉搜索引擎你网站上有哪些页面和文件的文本文件）**
 
-- [其他搜索引擎： 如百度、Yandex等，也可以尝试提交。](https://ziyuan.baidu.com/site/index#/)
+   - [Vitepress配置生成sitemap.xml文件](https://vitepress.dev/zh/guide/sitemap-generation#sitemap-generation)
+
+     ```js
+     // .vitepress/config.mts
+     export default {
+       sitemap: {
+         // 生成网站地图，提供搜索引擎（Google、Bing）使用
+         hostname: 'https://baizer.info'
+       }
+     }
+     ```
+
+3. **搜索引擎平台**
+
+   - [Google Search Console： 添加你的网站，验证所有权，并提交sitemap。](https://search.google.com/search-console/about)
+   
+   
+      - [Bing（支持从Google导入）： 同样添加网站，验证所有权，并提交sitemap。](https://www.bing.com/webmasters/home)
+   
+   
+      - [其他搜索引擎： 如百度、Yandex等，也可以尝试提交。](https://ziyuan.baidu.com/site/index#/)
+   
 
 ## 自建浏览量服务
 
