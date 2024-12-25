@@ -8,7 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/auto-deploy/Caddyfile" beforeDir="false" afterPath="$PROJECT_DIR$/auto-deploy/Caddyfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/02-Other/test.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +247,10 @@
       <workItem from="1734925709265" duration="2989000" />
       <workItem from="1734938159839" duration="10641000" />
       <workItem from="1735005763804" duration="16633000" />
-      <workItem from="1735033119144" duration="431000" />
+      <workItem from="1735033119144" duration="499000" />
+      <workItem from="1735034720196" duration="1030000" />
+      <workItem from="1735047384010" duration="862000" />
+      <workItem from="1735111824852" duration="587000" />
     </task>
     <servers />
   </component>

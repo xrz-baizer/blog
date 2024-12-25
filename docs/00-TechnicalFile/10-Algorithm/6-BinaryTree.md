@@ -461,7 +461,72 @@ public boolean isComplete(){
 
 ## 练习：翻转二叉树
 
-取出节点，将左右节点交换
+遍历取出节点，将左右节点交换
+
+- [leetcode原题](https://leetcode.cn/problems/invert-binary-tree/description/)
+
+### 层序遍历实现
+
+```java
+public Node<E> invertTree(Node<E> root){
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+    while (! queue.isEmpty()){
+        Node node = queue.poll();
+        // 交换左右节点
+        Node temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+
+        if(node.left != null) queue.add(node.left);
+        if(node.right != null) queue.add(node.right);
+    }
+    return root;
+}
+```
+
+### 递归实现（前、中、后序遍历）
+
+注意中序遍历时right节点的替换
+
+```java
+public Node<E> invertTreeByPreorderTraversal(Node<E> root){
+    if(root == null) return root;
+    // 交换左右节点
+    Node temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+
+    this.invertTreeByPreorderTraversal(root.left);
+    this.invertTreeByPreorderTraversal(root.right);
+    return root;
+}
+
+public Node<E> invertTreeByPostorderTraversal(Node<E> root){
+    if(root == null) return root;
+    this.invertTreeByPostorderTraversal(root.left);
+    this.invertTreeByPostorderTraversal(root.right);
+
+    // 交换左右节点
+    Node temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+    return root;
+}
+
+public Node<E> invertTreeByInorderTraversal(Node<E> root){
+    if(root == null) return root;
+    this.invertTreeByInorderTraversal(root.left);
+    // 交换左右节点
+    Node temp = root.left;
+    root.left = root.right;
+    root.right = temp;
+
+    //注意此处 left 节点是已经被替换为 right 节点
+    this.invertTreeByInorderTraversal(root.left);
+    return root;
+}
+```
 
 ## 前驱节点 / 后继节点
 
@@ -479,7 +544,67 @@ public boolean isComplete(){
 >
 > 8的前驱节点是7，后继节点是9。
 
-```java
+### 获取前驱节点
 
+```java
+/**
+ * 获取前驱节点（在中序遍历时的前一个节点）
+ *
+ * @param node
+ * @return
+ */
+public Node<E> predecessor(Node<E> node) {
+
+    // 左子树不为空时，前驱节点在左子树的最右节点中
+    if (node.left != null) {
+        node = node.left;
+
+        while (node.right != null) { // 循环左子树的右节点，为空时则到最末尾
+            node = node.right;
+        }
+        return node;
+    }
+
+    // 左子树为空时，从父节点、祖父节点中寻找前驱节点
+    // node == node.parent.left表示一直往右上（↗）找。
+    // 当不符合条件时，即向左上（↖）找了，说明到了顶层转折点，那么当前节的点就是前驱节点
+    while (node.parent != null && node == node.parent.left) {
+        node = node.parent;
+    }
+
+    //只有两种情况退出循环，node.parent就是前驱节点
+    // node.parent == null
+    // node == node.parent.right
+    return node.parent;
+}
+```
+
+### 获取后继节点
+
+```java
+/**
+ * 获取后继节点（在中序遍历时的后一个节点）
+ *
+ * @param node
+ * @return
+ */
+public Node<E> successor(Node<E> node) {
+    // 右子树不为空时，后继节点在右子树的最左节点中
+    if (node.right != null) {
+        node = node.right;
+
+        while (node.left != null) { // 循环右子树的左节点，为空时则到最末尾
+            node = node.left;
+        }
+        return node;
+    }
+
+    // 右子树为空时，从父节点、祖父节点中寻找后继节点，寻找顶层转折点
+    while (node.parent != null && node == node.parent.right) {
+        node = node.parent;
+    }
+
+    return node.parent;
+}
 ```
 
