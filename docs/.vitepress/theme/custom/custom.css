@@ -210,7 +210,7 @@ body.no-sidebar .content {
 
 
 .message, .copyright{
-    font-size: .8rem !important;
+    font-size: .7rem !important;
     color: var(--vp-c-text-3) !important;
 }
 
