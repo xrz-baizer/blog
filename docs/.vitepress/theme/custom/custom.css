@@ -202,10 +202,29 @@ body.no-sidebar .content {
 }
 
 /* 首页 页脚 */
+.VPFooter{
+    border-top:none !important;
+    /*background-color: #f8f8fe !important;*/
+    /*background-color: #f5f7fa !important;*/
+}
+
+
 .message, .copyright{
     font-size: .8rem !important;
     color: var(--vp-c-text-3) !important;
 }
+
+.VPFooter .copyright img{
+    width: 14px !important;
+    margin: 0 5px;
+    display: inline;
+}
+
+.VPFooter .copyright{
+    display: inline-flex;
+    align-items: center;
+}
+
 
 /* 文档页 页脚 */
 .VPDocFooter {
@@ -241,11 +260,6 @@ body.no-sidebar .content {
     display: none; /* 隐藏滚动条 */
 }
 
-
-.VPFooter{
-    border-top:none !important;
-    /*background-color: #f8f8fe !important;*/
-}
 
 
 /*!* 隐藏主题默认的更新时间 *!*/

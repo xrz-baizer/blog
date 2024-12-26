@@ -468,18 +468,18 @@ public boolean isComplete(){
 ### 层序遍历实现
 
 ```java
-public Node<E> invertTree(Node<E> root){
-    Queue<Node> queue = new LinkedList<>();
+public Node<E> invertTree(Node<E> root) {
+    Queue<Node<E>> queue = new LinkedList<>();
     queue.add(root);
-    while (! queue.isEmpty()){
-        Node node = queue.poll();
+    while (!queue.isEmpty()) {
+        Node<E> node = queue.poll();
         // 交换左右节点
-        Node temp = node.left;
+        Node<E> temp = node.left;
         node.left = node.right;
         node.right = temp;
 
-        if(node.left != null) queue.add(node.left);
-        if(node.right != null) queue.add(node.right);
+        if (node.left != null) queue.add(node.left);
+        if (node.right != null) queue.add(node.right);
     }
     return root;
 }
@@ -490,10 +490,10 @@ public Node<E> invertTree(Node<E> root){
 注意中序遍历时right节点的替换
 
 ```java
-public Node<E> invertTreeByPreorderTraversal(Node<E> root){
-    if(root == null) return root;
+public Node<E> invertTreeByPreorderTraversal(Node<E> root) {
+    if (root == null) return root;
     // 交换左右节点
-    Node temp = root.left;
+    Node<E> temp = root.left;
     root.left = root.right;
     root.right = temp;
 
@@ -502,23 +502,23 @@ public Node<E> invertTreeByPreorderTraversal(Node<E> root){
     return root;
 }
 
-public Node<E> invertTreeByPostorderTraversal(Node<E> root){
-    if(root == null) return root;
+public Node<E> invertTreeByPostorderTraversal(Node<E> root) {
+    if (root == null) return root;
     this.invertTreeByPostorderTraversal(root.left);
     this.invertTreeByPostorderTraversal(root.right);
 
     // 交换左右节点
-    Node temp = root.left;
+    Node<E> temp = root.left;
     root.left = root.right;
     root.right = temp;
     return root;
 }
 
-public Node<E> invertTreeByInorderTraversal(Node<E> root){
-    if(root == null) return root;
+public Node<E> invertTreeByInorderTraversal(Node<E> root) {
+    if (root == null) return root;
     this.invertTreeByInorderTraversal(root.left);
     // 交换左右节点
-    Node temp = root.left;
+    Node<E> temp = root.left;
     root.left = root.right;
     root.right = temp;
 
