@@ -82,8 +82,12 @@ public static class Node<E> {
         this.parent = parent;
     }
 
-    public boolean isLeaf(){
+    public boolean isLeaf() {
         return left == null && right == null;
+    }
+
+    public boolean hasTwoChildren() {
+        return left != null && right != null;
     }
 
 }
@@ -608,3 +612,49 @@ public Node<E> successor(Node<E> node) {
 }
 ```
 
+## 删除节点
+
+1. **根据二分查找算法获取节点**（入参是 element，需要将 element 转换为 node）
+2. **判断该节点的度（0，1，2）**
+   - **度为2的情况**：获取对应前驱/后继节点的值，覆盖当前节点值。再删除前驱/后继节点。（前驱/后继节点的度一定是0或者1）
+   - **度为1的情况**：把父节点 left/right 指向当前节点的 子节点。（root节点即父节点为空时要特殊处理）
+   - **度为0的情况**（叶子节点）：把父节点 left/right 指向 null。（（root节点即父节点为空时要特殊处理）
+
+### 根据 element 获取节点
+
+```java
+```
+
+
+
+### 删除节点 remote()
+
+```java
+
+```
+
+## 完整代码
+
+### Binary Tree
+
+::: details Binary Tree 二叉树抽象类
+
+```java
+
+```
+
+:::
+
+### Binary Search Tree
+
+::: details Binary Search Tree 二叉搜索树实现类
+
+```java
+
+```
+
+:::
+
+## 参考
+
+- https://blog.csdn.net/weixin_43734095/article/details/104687980
