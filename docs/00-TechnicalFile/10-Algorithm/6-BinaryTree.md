@@ -34,7 +34,7 @@
   - 又称BST、二叉查找树。
   - 引入二分查找，将小于根节点的元素放在左子树，大于的放在右子树。具备高效查询，时间复杂度为 O(logn)。
   - 但是极端情况下，如果每次插入的数据都是最小或者都是最大的元素，那么树结构会退化成链表。时间复杂度为 O(n)
-- **平衡二叉树（Balanced binary tree）**：
+- **平衡二叉树（Balanced Binary tree）**：
   - 又称AVL树。在二叉查找树的基础上加上限制，保证让每个节点的左右子树高度差不能超过 1，那么这样让可以让左右子树都保持平衡。
 - **红黑树（Red-Black Tree）**：
   - 又称RBTree、RBT。也是自平衡二叉树中的一种，不过是非严格的平衡树。时间复杂度为 O(logn)
@@ -623,23 +623,537 @@ public Node<E> successor(Node<E> node) {
 ### 根据 element 获取节点
 
 ```java
+/**
+ * 根据值获取节点（二分思想）
+ * @param element
+ * @return
+ */
+public Node<E> node(E element){
+    Node<E> node = root;
+    while (node != null){
+        int equal = this.compare(element, node.element);
+
+        if(equal > 0){
+            node = node.right; //往右边找
+
+        }else if (equal < 0){
+            node = node.left; //往左边找
+
+        }else {
+            return node;
+        }
+    }
+    return null;
+}
 ```
-
-
 
 ### 删除节点 remote()
 
 ```java
+/**
+ * 删除节点
+ * @param element
+ */
+public void remove(E element) {
+    Node<E> removeNode = this.node(element);
+    if(removeNode == null) return;
+    size--;
 
+    //========节点度为2的情况
+    if(removeNode.hasTwoChildren()){
+
+        //获取对应前驱/后继节点，使其覆盖当前节点值
+        Node<E> predecessor = this.predecessor(removeNode);
+        removeNode.element = predecessor.element;  // 覆盖值，相当于删除了node节点
+
+        // 更新node，真正删除的是predecessor
+        // 前驱/后继节点的度一定是0或者1，兼容下方代码
+        removeNode = predecessor;
+    }
+
+    // 获取被删除的子节点（removeNode的度为1或者0）
+    Node<E> childNode = removeNode.left != null ? removeNode.left : removeNode.right;
+
+    //========节点度为1的情况
+    if(childNode != null){
+
+        if(removeNode.parent == null){ // 没有父节点，说明是root节点
+            root = childNode;
+            return;
+        }
+
+        // 把父节点 left/right 指向当前节点的 子节点
+        if(removeNode == removeNode.parent.left){  //判断删除节点位置
+            removeNode.parent.left = childNode;
+        }else{
+            removeNode.parent.right = childNode;
+        }
+
+        // 更新子节点的父节点
+        childNode.parent = removeNode.parent;
+    }
+    //========节点度为0的情况（叶节点）
+    else{
+        if(removeNode.parent == null){ // 没有父节点，说明是root节点
+            root = null;
+            return;
+        }
+
+        // 把父节点 left/right 指向 null
+        if(removeNode == removeNode.parent.left){  //判断删除节点位置
+            removeNode.parent.left = null;
+        }else{
+            removeNode.parent.right = null;
+        }
+
+    }
+}
 ```
 
 ## 完整代码
+
+抽象二叉树， 实现公共方法，只留空`add()`、`remove()`、`contains()`这种差异方法让子类去实现
+
+- 子类：二叉搜索树、AVL树、红黑树。
 
 ### Binary Tree
 
 ::: details Binary Tree 二叉树抽象类
 
 ```java
+package datastructure.tree;
+
+import datastructure.tree.printer.BinaryTreeInfo;
+
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * @author XRZ
+ */
+public abstract class BinaryTree<E> implements BinaryTreeInfo {
+
+    protected int size;      //节点数
+    protected Node<E> root;   //根节点
+    protected Comparator<E> comparator;
+
+    public BinaryTree() {
+    }
+
+    public BinaryTree(Comparator<E> comparator) {
+        this.comparator = comparator; //指定比较器
+    }
+
+    /**
+     * 新增节点
+     *
+     * @param element
+     */
+    public abstract void add(E element);
+
+    /**
+     * 删除节点
+     *
+     * @param element
+     */
+    public abstract void remove(E element);
+
+
+    /**
+     * 根据值获取节点
+     *
+     * @param element
+     * @return
+     */
+    public abstract Node<E> node(E element);
+
+    public boolean contains(E element) {
+        return this.node(element) != null;
+    }
+
+    public void clear() {
+        root = null;
+        size = 0;
+    }
+
+    public int size() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    /**
+     * 获取树的高度
+     *
+     * @return
+     */
+    public int height() {
+        return height(this.root);
+//        return heightByIteration(this.root);
+    }
+
+    /**
+     * 获取指定节点高度
+     *
+     * @param node
+     * @return
+     */
+    public int height(Node<E> node) {
+        if (node == null) return 0;
+
+        int left = this.height(node.left);
+        int right = this.height(node.right);
+        // 递归 寻找最深的子节点
+        return 1 + Math.max(left, right);
+    }
+
+    /**
+     * 获取指定节点高度（迭代实现）
+     *
+     * @param node
+     * @return
+     */
+    public int heightByIteration(Node<E> node) {
+        if (node == null) return 0;
+
+        //====== 基于层序遍历实现
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.offer(node);
+
+        int height = 0;  //高度
+        int levelSize = queue.size(); //记录每一层的节点数量
+
+        while (!queue.isEmpty()) {
+
+            Node<E> poll = queue.poll();
+            levelSize--;  // 每取出一个节点就 -1
+
+
+            if (poll.left != null) queue.offer(poll.left);
+            if (poll.right != null) queue.offer(poll.right);
+
+            //当层节点在队列中出队完了，准备访问下一层
+            if (levelSize == 0) {
+                levelSize = queue.size(); //重置新的一层节点数
+                height++;
+            }
+
+        }
+        return height;
+    }
+
+    /**
+     * 反转二叉树（层序遍历实现）
+     *
+     * @param root
+     * @return
+     */
+    public Node<E> invertTree(Node<E> root) {
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node<E> node = queue.poll();
+            // 交换左右节点
+            Node<E> temp = node.left;
+            node.left = node.right;
+            node.right = temp;
+
+            if (node.left != null) queue.add(node.left);
+            if (node.right != null) queue.add(node.right);
+        }
+        return root;
+    }
+
+
+    public Node<E> invertTreeByPreorderTraversal(Node<E> root) {
+        if (root == null) return root;
+        // 交换左右节点
+        Node<E> temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        this.invertTreeByPreorderTraversal(root.left);
+        this.invertTreeByPreorderTraversal(root.right);
+        return root;
+    }
+
+    public Node<E> invertTreeByPostorderTraversal(Node<E> root) {
+        if (root == null) return root;
+        this.invertTreeByPostorderTraversal(root.left);
+        this.invertTreeByPostorderTraversal(root.right);
+
+        // 交换左右节点
+        Node<E> temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+        return root;
+    }
+
+    public Node<E> invertTreeByInorderTraversal(Node<E> root) {
+        if (root == null) return root;
+        this.invertTreeByInorderTraversal(root.left);
+        // 交换左右节点
+        Node<E> temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        //注意此处 left 节点是已经被替换为 right 节点
+        this.invertTreeByInorderTraversal(root.left);
+        return root;
+    }
+
+
+    /**
+     * 获取前驱节点（在中序遍历时的前一个节点）
+     *
+     * @param node
+     * @return
+     */
+    public Node<E> predecessor(Node<E> node) {
+
+        // 左子树不为空时，前驱节点在左子树的最右节点中
+        if (node.left != null) {
+            node = node.left;
+
+            while (node.right != null) { // 循环左子树的右节点，为空时则到最末尾
+                node = node.right;
+            }
+            return node;
+        }
+
+        // 左子树为空时，从父节点、祖父节点中寻找前驱节点
+        // node == node.parent.left表示一直往右上（↗）找。
+        // 当不符合条件时，即向左上（↖）找了，说明到了顶层转折点，那么当前节的点就是前驱节点
+        while (node.parent != null && node == node.parent.left) {
+            node = node.parent;
+        }
+
+        //只有两种情况退出循环，node.parent就是前驱节点
+        // node.parent == null
+        // node == node.parent.right
+        return node.parent;
+    }
+
+    /**
+     * 获取后继节点（在中序遍历时的后一个节点）
+     *
+     * @param node
+     * @return
+     */
+    public Node<E> successor(Node<E> node) {
+        // 右子树不为空时，后继节点在右子树的最左节点中
+        if (node.right != null) {
+            node = node.right;
+
+            while (node.left != null) { // 循环右子树的左节点，为空时则到最末尾
+                node = node.left;
+            }
+            return node;
+        }
+
+        // 右子树为空时，从父节点、祖父节点中寻找后继节点，寻找顶层转折点
+        while (node.parent != null && node == node.parent.right) {
+            node = node.parent;
+        }
+
+        return node.parent;
+    }
+
+
+    /**
+     * 前序遍历（Preorder Traversal）：根节点 -> 左子树 -> 右子树
+     *
+     * @param node
+     */
+    public void preorderTraversal(Node<E> node, Visitor<E> visitor) {
+        if (node == null || visitor.stop) return;
+        visitor.stop = visitor.visit(node.element); //使用元素
+
+        this.preorderTraversal(node.left, visitor);
+        this.preorderTraversal(node.right, visitor);
+    }
+
+    /**
+     * 中序遍历（Inorder Traversal）：左子树 -> 根节点 -> 右子树
+     *
+     * @param node
+     */
+    public void inorderTraversal(Node<E> node, Visitor<E> visitor) {
+        if (node == null || visitor.stop) return;
+        this.inorderTraversal(node.left, visitor);
+
+        if (visitor.stop) return;  //双重校验
+        visitor.stop = visitor.visit(node.element); //使用元素
+
+        this.inorderTraversal(node.right, visitor);
+    }
+
+    /**
+     * 后序遍历（Postorder Traversal）：左子树 -> 右子树 -> 根节点
+     *
+     * @param node
+     */
+    public void postorderTraversal(Node<E> node, Visitor<E> visitor) {
+        if (node == null || visitor.stop) return;
+        postorderTraversal(node.left, visitor);
+        postorderTraversal(node.right, visitor);
+
+        if (visitor.stop) return;  //双重校验
+        visitor.stop = visitor.visit(node.element); //使用元素
+    }
+
+
+    /**
+     * 层序遍历（Level Order Traversal）：逐层往下访问，从左到右（利用队列，逐一入队）
+     *
+     * @param node
+     * @param visitor
+     */
+    public void levelOrderTraversal(Node<E> node, Visitor<E> visitor) {
+        if (node == null) return;
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+
+            // 每层循环，取出节点
+            Node<E> poll = queue.poll();
+            boolean stop = visitor.visit(poll.element);//使用元素
+            if (stop) return; //停止遍历树
+
+            // 将子节点从左到右，按顺序放入队
+            if (poll.left != null) {
+                queue.add(poll.left);
+            }
+            if (poll.right != null) {
+                queue.add(poll.right);
+            }
+
+        }
+    }
+
+
+    /**
+     * 比较给定元素大小，由节点类型自定义
+     *
+     * @param e1
+     * @param e2
+     * @return -1 = e1 < e2
+     * 0 = e1 = e2
+     * 1 = e1 > e2
+     */
+    protected int compare(E e1, E e2) {
+        //优先使用比较器
+        if (this.comparator != null)
+            return comparator.compare(e1, e2);
+
+        // 强制转换，软限制元素必须实现Comparable接口（强限制：BinarySearchTree<E extends Comparable<E>> ）
+        Comparable icmp = (Comparable) e1;
+        // 节点类型自定义比较规则
+        return icmp.compareTo(e2);
+    }
+
+
+    /**
+     * 声明访问器，供节点实现自定义处理逻辑
+     *
+     * @param <E>
+     */
+    public static abstract class Visitor<E> {
+
+        boolean stop; //停止遍历的标识
+
+        public abstract boolean visit(E element);
+    }
+
+    /**
+     * 树节点 基本构造
+     *
+     * @param <E>
+     */
+    public static class Node<E> {
+        E element;
+        Node<E> parent;
+        Node<E> left;
+        Node<E> right;
+
+        public Node(E element, Node<E> parent) {
+            this.element = element;
+            this.parent = parent;
+        }
+
+        public boolean isLeaf() {
+            return left == null && right == null;
+        }
+
+        public boolean hasTwoChildren() {
+            return left != null && right != null;
+        }
+
+    }
+
+
+    /**
+     * 判断是否为完全二叉树（通过层序遍历实现）
+     * <p>
+     * 完全二叉树（Complete binary tree）：除最后一层外，其他层的节点都被完全填满，且最后一层的节点靠左排列，中间不能有空缺。
+     *
+     * @return
+     */
+    public boolean isComplete() {
+        Queue<Node<E>> queue = new LinkedList<>();
+        queue.add(root);
+        boolean leaf = false;
+
+        while (!queue.isEmpty()) {
+            Node<E> node = queue.poll();
+
+            // 要求是叶节点，但是当前节点不是叶节点
+            if (leaf && !node.isLeaf()) return false;
+
+            if (node.left != null) {
+                queue.add(node.left);
+            } else if (node.right != null) {
+                return false;  // 左节点为空，右节点为空，不符合完全二叉树的定义
+            }
+
+            if (node.right != null) {
+                queue.add(node.right);
+            } else {
+                leaf = true; // 右节点为空，要求后续所有节点都要为叶节点
+            }
+
+        }
+        return true;
+    }
+
+
+    /**
+     * BinaryTreeInfo 工具，用来打印二叉树
+     */
+    @Override
+    public Object root() {
+        return root;
+    }
+
+    @Override
+    public Object left(Object node) {
+        return ((Node<E>) node).left;
+    }
+
+    @Override
+    public Object right(Object node) {
+        return ((Node<E>) node).right;
+    }
+
+    @Override
+    public Object string(Object node) {
+        return ((Node<E>) node).element;
+    }
+
+}
 
 ```
 
@@ -650,6 +1164,146 @@ public Node<E> successor(Node<E> node) {
 ::: details Binary Search Tree 二叉搜索树实现类
 
 ```java
+package datastructure.tree;
+
+import java.util.Comparator;
+
+/**
+ * @author XRZ
+ */
+public class BinarySearchTree<E> extends BinaryTree<E> {
+
+    public BinarySearchTree() {
+        super();
+    }
+
+    public BinarySearchTree(Comparator<E> comparator) {
+        super(comparator);
+    }
+
+    @Override
+    public void add(E element) {
+        //======初始化
+        if (root == null) {
+            root = new Node<>(element, null);
+            size++;
+            return;
+        }
+
+        //======添加普通节点
+        // 查找叶子节点位置，用于存储新节点
+        Node<E> node = root;
+        Node<E> parent = null;
+        int cmp = 0;
+
+        //遍历树，当到末尾的叶子节点时退出
+        while (node != null) {
+            parent = node;
+            cmp = super.compare(element, node.element); //比较新元素大小
+            if (cmp > 0) {    // 比当前节点元素大，找树的右节点
+                node = node.right;
+            } else if (cmp < 0) { // 比当前节点元素小，找树的左节点
+                node = node.left;
+            } else { // 相等的元素
+                node.element = element; // 覆盖处理（可选）
+                return;
+            }
+        }
+
+        // 新增节点
+        Node<E> newNode = new Node<>(element, parent);
+        if (cmp > 0) {
+            parent.right = newNode; // 比当前节点元素大，放置右边
+        } else {
+            parent.left = newNode;  // 比当前节点元素小，放置左边
+        }
+        size++;
+    }
+
+    @Override
+    public void remove(E element) {
+        Node<E> removeNode = this.node(element);
+        if (removeNode == null) return;
+        size--;
+
+        //========节点度为2的情况
+        if (removeNode.hasTwoChildren()) {
+
+            //获取对应前驱/后继节点，使其覆盖当前节点值
+            Node<E> predecessor = this.predecessor(removeNode);
+            removeNode.element = predecessor.element;  // 覆盖值，相当于删除了node节点
+
+            // 更新node，真正删除的是predecessor
+            // 前驱/后继节点的度一定是0或者1，兼容下方代码
+            removeNode = predecessor;
+        }
+
+        // 获取被删除的子节点（removeNode的度为1或者0）
+        Node<E> childNode = removeNode.left != null ? removeNode.left : removeNode.right;
+
+        //========节点度为1的情况
+        if (childNode != null) {
+
+            if (removeNode.parent == null) { // 没有父节点，说明是root节点
+                root = childNode;
+                return;
+            }
+
+            // 把父节点 left/right 指向当前节点的 子节点
+            if (removeNode == removeNode.parent.left) {  //判断删除节点位置
+                removeNode.parent.left = childNode;
+            } else {
+                removeNode.parent.right = childNode;
+            }
+
+            // 更新子节点的父节点
+            childNode.parent = removeNode.parent;
+        }
+        //========节点度为0的情况（叶节点）
+        else {
+            if (removeNode.parent == null) { // 没有父节点，说明是root节点
+                root = null;
+                return;
+            }
+
+            // 把父节点 left/right 指向 null
+            if (removeNode == removeNode.parent.left) {  //判断删除节点位置
+                removeNode.parent.left = null;
+            } else {
+                removeNode.parent.right = null;
+            }
+
+        }
+    }
+
+
+    /**
+     * 根据值获取节点（二分思想）
+     *
+     * @param element
+     * @return
+     */
+    @Override
+    public Node<E> node(E element) {
+        Node<E> node = root;
+        while (node != null) {
+            int equal = this.compare(element, node.element);
+
+            if (equal > 0) {
+                node = node.right; //往右边找
+
+            } else if (equal < 0) {
+                node = node.left; //往左边找
+
+            } else {
+                return node;
+            }
+        }
+        return null;
+    }
+
+
+}
 
 ```
 
