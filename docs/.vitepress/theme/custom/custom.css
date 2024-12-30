@@ -310,7 +310,7 @@ body.no-sidebar .content {
 }
 
 .vp-doc h1 {
-    margin-bottom: 69px; /* 为 LastUpdated div 预留空间 */
+    margin-bottom: 65px; /* 为 LastUpdated div 预留空间 */
     font-size: 2.4rem;;
 }
 
