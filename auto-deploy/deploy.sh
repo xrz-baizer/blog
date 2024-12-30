@@ -73,8 +73,11 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+echo "==============================>test1 ..."
 ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
+echo "==============================>test2 ..."
 scp "$DIST_PATH/$ARCHIVE_NAME" "$REMOTE_SERVER:$REMOTE_PATH/"
+echo "==============================>test3 ..."
 if [ $? -ne 0 ]; then
   echo "压缩文件上传失败，请检查！"
   exit 1
