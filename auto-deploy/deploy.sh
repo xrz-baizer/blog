@@ -81,7 +81,7 @@ fi
 echo "文件上传成功！"
 
 echo "==============================> 覆盖更新配置文件 $CONFIGURATION_PATH/$CONFIGURATION_FILE ..."
-scp "$BLOG_PATH/auto-deploy/$CONFIGURATION_FILE" "$REMOTE_SERVER:$CONFIGURATION_PATH"
+scp "$BLOG_PATH/auto-deploy/$CONFIGURATION_FILE" "$REMOTE_  SERVER:$CONFIGURATION_PATH"
 if [ $? -ne 0 ]; then
   echo "$CONTAINER_NAME 覆盖更新配置文件，请检查！"
   exit 1

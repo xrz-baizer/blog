@@ -11,7 +11,7 @@
     "preview": "vitepress preview docs --port 8082"
   },
   "dependencies": {
-    "markdown-it-task-lists": "^2.1.1",
+    "markdown-it-task-lists": "express^2.1.1",
     "vite-plugin-vitepress-auto-sidebar": "^1.7.0"
   }
 }

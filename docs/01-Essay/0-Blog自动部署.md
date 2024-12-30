@@ -679,88 +679,171 @@ Google验证所有权：在云服务平台配置DNS记录
   }
 ```
 
-
 ## 自建浏览量服务
 
-#### **1. 构建带 `exec` 插件的 Caddy**
+> - 使用docker部署一台js服务，暴露两个接口，一个记录请求URL并写入JSON文件，一个读取JSON文件。
+>
+> - 通过JSON文件充当轻量级数据库。
 
-利用 `caddy:builder` 构建包含 `exec` 插件的 Caddy 二进制文件：
+JSON文件数据格式：
 
-```sh
-docker run --rm -v $(pwd):/out caddy:builder \
-    xcaddy build --with github.com/greenpau/caddy-exec
-```
-
-#### **2. 创建包含新 Caddy 二进制文件的 Docker 镜像**
-
-使用一个自定义 `Dockerfile`，打包新构建的 Caddy 二进制文件：
-
-```sh
-cat <<EOF >./Dockerfile
-# 基于官方 Caddy 镜像
-FROM caddy:alpine
-# 替换 Caddy 二进制文件
-COPY ./caddy /usr/bin/caddy
-# 添加配置文件
-COPY ./Caddyfile /etc/caddy/Caddyfile
-EOF
-```
-
-然后构建镜像：
-
-```sh
-docker build -t my-caddy .
-```
-
-
-
-update_views.sh
-
-```sh
-#!/bin/bash
-FILE="/path/to/views.json"
-SLUG=$1
-
-if [ -f "$FILE" ]; then
-    VIEWS=$(cat "$FILE" | jq ".${SLUG} += 1")
-    echo "$VIEWS" > "$FILE"
-fi
-```
-
-
-
-
-
-```sh
-
-cat <<EOF >/caddy/Caddyfile
-http://:9527 {
-    root * /srv #指定静态文件的根目录。
-    file_server #启用静态文件服务器功能。
-    
-    handle /view/increase { 
-      # 执行sh脚本，并且提取请求参数中slug，传递至sh脚本
-    	exec bash /path/to/update_views.sh {query.slug} 
-    }
-    
-    handle /view/get {
-       #响应指定文件内容
-    	respond /srv/views.json 200
-    }
+```json
+{
+  "/post/example": 123,
+  "/post/another-example": 45
 }
-EOF
-
-caddy:builder sh
-  docker run -d --name caddyBlog \
-  -p 9527:9527 \
-  -v /caddy/Caddyfile:/etc/caddy/Caddyfile \
-  -v /caddy/app:/srv \
-  -v /caddy/view:/view \
-  -v /caddy/caddy_data:/data \
-  -v /caddy/caddy_config:/config \
-  --memory 50m \
-  caddy:builder sh
 ```
 
+### 准备相关配置文件
 
+项目目录结构：
+
+```bash
+views-counter/
+├── index.js   # 服务代码
+├── package.json  # 项目依赖
+└── Dockerfile    # Docker 镜像文件
+```
+
+####  Dockerfile
+
+```dockerfile
+FROM node:16-alpine
+WORKDIR /app
+COPY . .
+RUN npm install
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+#### package.json
+
+```json
+{
+  "name": "views-counter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
+
+```
+
+####  index.js
+
+```js
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+
+const app = express();
+const PORT = 3000;
+const JSON_FILE = path.resolve('/data/views.json');
+
+app.use(express.json());
+
+// 初始化文件
+if (!fs.existsSync(JSON_FILE)) {
+    fs.writeFileSync(JSON_FILE, JSON.stringify({}), 'utf8');
+}
+
+// 记录接口
+app.post('/record', (req, res) => {
+    const { url } = req.body;
+    if (!url) {
+        return res.status(400).json({ error: 'URL is required' });
+    }
+
+    let data = {};
+    if (fs.existsSync(JSON_FILE)) {
+        try {
+            data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
+        } catch (error) {
+            console.error('Error reading JSON file:', error);
+            data = {};
+        }
+    }
+
+    // 更新浏览量
+    data[url] = (data[url] || 0) + 1;
+
+    // 写回文件
+    try {
+        fs.writeFileSync(JSON_FILE, JSON.stringify(data, null, 2), 'utf8');
+    } catch (error) {
+        console.error('Error writing to JSON file:', error);
+        return res.status(500).json({ error: 'Failed to record view' });
+    }
+
+    res.status(200).json({ message: 'View recorded', url, views: data[url] });
+});
+
+// 获取接口
+app.get('/views', (req, res) => {
+    const { url } = req.query;
+    if (!url) {
+        return res.status(400).json({ error: 'URL is required' });
+    }
+
+    let data = {};
+    if (fs.existsSync(JSON_FILE)) {
+        try {
+            data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
+        } catch (error) {
+            console.error('Error reading JSON file:', error);
+        }
+    }
+
+    res.status(200).json({ url, views: data[url] || 0 });
+});
+
+// 启动服务
+app.listen(PORT, () => {
+    console.log(`View counter service is running on port ${PORT}`);
+});
+
+```
+
+### 上传服务器并部署
+
+复制配置文件至服务器
+
+```sh
+scp -r views-counter root@baizer.info:/
+```
+
+打包镜像
+
+```sh
+# 进入目录
+cd /views-counter
+
+# 有点久
+docker build -t js-view-service .
+
+# 查看镜像
+docker iamges
+```
+
+部署服务
+```sh
+docker run -d --name view-service \
+    -v /views-counter/views.json:/data/views.json \
+    -p 3000:3000 js-view-service
+```
+
+`/views-counter/views.json`挂载数据至服务器
+
+### 测试
+
+```sh
+curl -X POST http://localhost:3000/record -H "Content-Type: application/json" -d '{"url":"/example"}'
+
+curl -X GET --location "http://localhost:3000/views?url=/example"
+curl -X GET --location "http://119.91.254.66:3000/views?url=/example"
+```
 
