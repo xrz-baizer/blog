@@ -44,7 +44,6 @@ export default {
     const sidebar = useSidebar();
     const {page,theme,frontmatter} = useData();
     const views = ref(0); // 用于存储浏览量
-
     let server = "119.91.254.66"
 
 
@@ -72,42 +71,42 @@ export default {
     //   return indexPagePaths.includes(route.path);
     // };
 
-    // 记录浏览量
-    const recordView = async () => {
-      try {
-        await fetch('http://'+server+':3000/record', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ url: route.path }),
-        });
-      } catch (error) {
-        console.error('Failed to record view:', error);
-      }
-    };
-
-    // 获取浏览量
-    const fetchViews = async () => {
-      try {
-        const response = await fetch(`http://'+server+':3000/views?url=${route.path}`);
-        const data = await response.json();
-        views.value = data.views || 0;
-
-        if(views.value){
-          const h1Element = document.querySelector('.vp-doc h1')
-          // 检查是否已存在 LastUpdated div，避免重复添加
-          if (h1Element && !document.querySelector('.views')) {
-            const viewSpan = document.createElement('span')
-            viewSpan.className = 'views'
-            viewSpan.textContent = `---${views}---`;
-
-            h1Element.insertAdjacentElement('afterend', viewSpan)
-          }
-        }
-
-      } catch (error) {
-        console.error('Failed to fetch views:', error);
-      }
-    };
+    // // 记录浏览量
+    // const recordView = async () => {
+    //   try {
+    //     await fetch('http://'+server+':3000/record', {
+    //       method: 'POST',
+    //       headers: { 'Content-Type': 'application/json' },
+    //       body: JSON.stringify({ url: route.path }),
+    //     });
+    //   } catch (error) {
+    //     console.error('Failed to record view:', error);
+    //   }
+    // };
+    //
+    // // 获取浏览量
+    // const fetchViews = async () => {
+    //   try {
+    //     const response = await fetch(`http://'+server+':3000/views?url=${route.path}`);
+    //     const data = await response.json();
+    //     views.value = data.views || 0;
+    //
+    //     if(views.value){
+    //       const h1Element = document.querySelector('.vp-doc h1')
+    //       // 检查是否已存在 LastUpdated div，避免重复添加
+    //       if (h1Element && !document.querySelector('.views')) {
+    //         const viewSpan = document.createElement('span')
+    //         viewSpan.className = 'views'
+    //         viewSpan.textContent = `---${views}---`;
+    //
+    //         h1Element.insertAdjacentElement('afterend', viewSpan)
+    //       }
+    //     }
+    //
+    //   } catch (error) {
+    //     console.error('Failed to fetch views:', error);
+    //   }
+    // };
 
     // 为每个H1标签下生成Git提交时间
     const addUpdateTimeDiv = () => {
@@ -144,24 +143,12 @@ export default {
       }
     };
 
-    const updateSidebarVisibility = () => {
-      // const sidebarElement = document.querySelector('.sidebar'); // 假设侧边栏的类名为 sidebar
-      if (window.innerWidth < 1280) {
-        // console.log(sidebar)
-        // sidebar.toggle();
-        // sidebarElement.style.display = 'none';
-      } else {
-        // sidebar.toggle();
-        // sidebarElement.style.display = 'block';
-      }
-    }
-
     onMounted(() => { // 即时触发
       toggleAsideVisibility();
       addUpdateTimeDiv();
       initZoom();
-      recordView(); // 记录当前页面的访问量
-      fetchViews(); // 获取当前页面的浏览量
+      // recordView(); // 记录当前页面的访问量
+      // fetchViews(); // 获取当前页面的浏览量
       // updateSidebarVisibility();
       // window.addEventListener('resize', updateSidebarVisibility);
     });
@@ -172,8 +159,8 @@ export default {
             initZoom();
             addUpdateTimeDiv();
             toggleAsideVisibility();
-            recordView();
-            fetchViews();
+            // recordView();
+            // fetchViews();
           });
         }
     );
