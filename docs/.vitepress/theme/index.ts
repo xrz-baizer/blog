@@ -70,12 +70,17 @@ export default {
 
     // 为每个H1标签下生成Git提交时间
     const addUpdateTimeDiv = () => {
-      const h1Element = document.querySelector('.vp-doc h1');
-      if (h1Element && !document.querySelector('.LastUpdated') && page.value.lastUpdated) {
-        const updateTimeDiv = document.createElement('div');
-        updateTimeDiv.textContent = ` Last Updated: ` + formatTimestamp(page.value.lastUpdated);
-        updateTimeDiv.className = 'LastUpdated';
-        h1Element.insertAdjacentElement('afterend', updateTimeDiv);
+      const h1Element = document.querySelector('.vp-doc h1')
+      // 检查是否已存在 LastUpdated div，避免重复添加
+      if (h1Element && !document.querySelector('.LastUpdated')) {
+        const updateTimeDiv = document.createElement('div')
+        updateTimeDiv.className = 'LastUpdated'
+
+        if (page.value.lastUpdated) {
+          updateTimeDiv.textContent = `Last Updated: ${formatTimestamp(page.value.lastUpdated)}`
+        }
+
+        h1Element.insertAdjacentElement('afterend', updateTimeDiv)
       }
     }
 

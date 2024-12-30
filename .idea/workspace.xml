@@ -7,7 +7,13 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init" />
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/config.mts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/config.mts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/00-TechnicalFile/InternetArticles.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/00-TechnicalFile/InternetArticles.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "/Users/Work/Pagoda/this/Blog/docs",
+    "last_opened_file_path": "/Users/Work/Pagoda/this/Blog/docs/.vitepress/theme",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -75,18 +81,18 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.20344828",
-    "settings.editor.selected.configurable": "shared-indexes",
+    "settings.editor.selected.configurable": "Code Search",
     "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/.vitepress/theme" />
       <recent name="$PROJECT_DIR$/docs" />
       <recent name="$PROJECT_DIR$/docs/public" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme/custom" />
       <recent name="$PROJECT_DIR$/docs/01-Essay" />
-      <recent name="$PROJECT_DIR$/docs/00-TechnicalFile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/auto-deploy" />
@@ -249,6 +255,7 @@
       <workItem from="1735047384010" duration="862000" />
       <workItem from="1735111824852" duration="587000" />
       <workItem from="1735206110780" duration="5754000" />
+      <workItem from="1735527907559" duration="1725000" />
     </task>
     <servers />
   </component>

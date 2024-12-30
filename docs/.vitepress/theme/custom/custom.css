@@ -295,21 +295,22 @@ body.no-sidebar .content {
 
 /* Git最后更新时间 */
 .LastUpdated {
-    margin-bottom: 30px;
-    /*margin-left: -10%;*/
     font-size: .9rem;
     /*float: right;*/
     text-align: right;
     color: rgba(60, 60, 67, 0.56);
-}
 
+    margin-top: -54px; /* 负边距来填充预留空间 */
+    margin-bottom: 30px;
+    min-height: 24px; /* 确保即使没有内容也保持高度 */
+}
 
 .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
     margin-left: -8px;
 }
 
 .vp-doc h1 {
-    margin-bottom: 15px;
+    margin-bottom: 69px; /* 为 LastUpdated div 预留空间 */
     font-size: 2.4rem;;
 }
 
