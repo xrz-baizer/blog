@@ -1,7 +1,9 @@
+# Internet Articles
+
 ## Blog Series
 
 - [ ] [沉默的王二：学渣逆袭](https://javabetter.cn/sidebar/sanfene/nixi.html)
-- [ ] [沉默的王二：Java面试指南==（已付费）==](https://www.yuque.com/itwanger/gykdzg)
+- [x] [沉默的王二：Java面试指南==（已付费）==](https://www.yuque.com/itwanger/gykdzg)
 - [ ] [码哥字节 124 篇优秀文章精选大集结](https://mp.weixin.qq.com/s/e0A5ERDUbUhGNTTBSwkd5g)
 - [ ] [潘志的研发笔记](https://mp.weixin.qq.com/s/7mYt8rYNlF-UjATxSgaltQ)
 

@@ -80,14 +80,12 @@ if [ $? -ne 0 ]; then
 fi
 echo "文件上传成功！"
 
-
-
 #ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH && mkdir -p $REMOTE_PATH"
-if [ ! -d "$REMOTE_PATH" ]; then
-  echo "静态文件目录 $REMOTE_PATH 不存在！"
-  exit 1
-fi
-ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH/*"
+#if ! ssh "$REMOTE_SERVER" test -d "$REMOTE_PATH"; then
+#  echo "静态文件目录 $REMOTE_PATH 不存在！"
+#  exit 1
+#fi
+#ssh "$REMOTE_SERVER" "rm -rf $REMOTE_PATH/*"
 
 echo "==============================> 覆盖更新配置文件 $CONFIGURATION_PATH/$CONFIGURATION_FILE ..."
 scp "$BLOG_PATH/auto-deploy/$CONFIGURATION_FILE" "$REMOTE_SERVER:$CONFIGURATION_PATH"
@@ -96,8 +94,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "==============================> 解压文件并重启 $CONTAINER_NAME 容器..."
-ssh "$REMOTE_SERVER" "tar -xzf /$ARCHIVE_NAME -C $REMOTE_PATH"
+echo "==============================> 解压覆盖静态资源并重启 $CONTAINER_NAME 容器..."
+ssh "$REMOTE_SERVER" "tar -xzf /$ARCHIVE_NAME -C /$REMOTE_PATH"
 if [ $? -ne 0 ]; then
   echo "文件解压失败，请检查！"
   exit 1
