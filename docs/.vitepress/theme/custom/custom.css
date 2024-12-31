@@ -154,6 +154,11 @@
 
 }
 
+.views{
+    margin-left: 1rem;
+}
+
+
 body.no-sidebar .sidebar {
     display: none;
 }

@@ -44,8 +44,16 @@ for DIR in "${SYNC_DIRS[@]}"; do
   fi
 done
 
+echo "==============================> Download synchronous access data ..."
+scp "$REMOTE_SERVER:/views-counter/views.json" "$BLOG_PATH/views-counter/"
+if [ $? -ne 0 ]; then
+  echo "下载访问数据失败，请检查！（/views-counter/views.json）"
+  exit 1
+fi
+
 echo "==============================> 进入Blog项目执行Git提交并推送..."
 cd "$BLOG_PATH" || { echo "无法进入 $BLOG_PATH，请检查路径！"; exit 1; }
+
 git add .
 git commit -m "$COMMIT"
 git push

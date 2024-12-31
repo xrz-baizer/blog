@@ -71,42 +71,51 @@ export default {
     //   return indexPagePaths.includes(route.path);
     // };
 
-    // // 记录浏览量
-    // const recordView = async () => {
-    //   try {
-    //     await fetch('http://'+server+':3000/record', {
-    //       method: 'POST',
-    //       headers: { 'Content-Type': 'application/json' },
-    //       body: JSON.stringify({ url: route.path }),
-    //     });
-    //   } catch (error) {
-    //     console.error('Failed to record view:', error);
-    //   }
-    // };
-    //
-    // // 获取浏览量
-    // const fetchViews = async () => {
-    //   try {
-    //     const response = await fetch(`http://'+server+':3000/views?url=${route.path}`);
-    //     const data = await response.json();
-    //     views.value = data.views || 0;
-    //
-    //     if(views.value){
-    //       const h1Element = document.querySelector('.vp-doc h1')
-    //       // 检查是否已存在 LastUpdated div，避免重复添加
-    //       if (h1Element && !document.querySelector('.views')) {
-    //         const viewSpan = document.createElement('span')
-    //         viewSpan.className = 'views'
-    //         viewSpan.textContent = `---${views}---`;
-    //
-    //         h1Element.insertAdjacentElement('afterend', viewSpan)
-    //       }
-    //     }
-    //
-    //   } catch (error) {
-    //     console.error('Failed to fetch views:', error);
-    //   }
-    // };
+    // 记录浏览量
+    const recordView = async () => {
+      try {
+        await fetch('https://baizer.info/proxy/record', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: route.path }),
+        });
+      } catch (error) {
+        console.error('Failed to record view:', error);
+      }
+    };
+
+    // 获取浏览量
+    const fetchViews = async (updateTimeDiv: Element) => {
+      try {
+        // 请求浏览量数据
+        const response = await fetch(`https://baizer.info/proxy/views?url=${encodeURIComponent(route.path)}`);
+
+        // 检查 HTTP 状态码
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // 安全解析数据，确保 views 存在
+        views.value = data?.views ?? 0;
+
+        if (views.value > 0) {
+          if (updateTimeDiv && !document.querySelector('.views')) {
+            // 创建 views 元素
+            const viewSpan = document.createElement('span');
+            viewSpan.className = 'views';
+            viewSpan.textContent = `View: ${views.value}`;
+
+
+            updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to fetch views:', error);
+      }
+    };
+
 
     // 为每个H1标签下生成Git提交时间
     const addUpdateTimeDiv = () => {
@@ -121,6 +130,9 @@ export default {
         }
 
         h1Element.insertAdjacentElement('afterend', updateTimeDiv)
+
+        //加载浏览量
+        fetchViews(updateTimeDiv);
       }
     }
 
@@ -147,8 +159,7 @@ export default {
       toggleAsideVisibility();
       addUpdateTimeDiv();
       initZoom();
-      // recordView(); // 记录当前页面的访问量
-      // fetchViews(); // 获取当前页面的浏览量
+      recordView(); // 记录当前页面的访问量
       // updateSidebarVisibility();
       // window.addEventListener('resize', updateSidebarVisibility);
     });
@@ -159,8 +170,7 @@ export default {
             initZoom();
             addUpdateTimeDiv();
             toggleAsideVisibility();
-            // recordView();
-            // fetchViews();
+            recordView();
           });
         }
     );

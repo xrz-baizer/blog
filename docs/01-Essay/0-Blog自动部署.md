@@ -679,7 +679,7 @@ Google验证所有权：在云服务平台配置DNS记录
   }
 ```
 
-## 自建浏览量服务（未上线）
+## 自建浏览量服务
 
 > - 使用docker部署一台js服务，暴露两个接口，一个记录请求URL并写入JSON文件，一个读取JSON文件。
 >
@@ -834,7 +834,8 @@ docker iamges
 ```sh
 docker run -d --name view-service \
     -v /views-counter/views.json:/data/views.json \
-    -p 3000:3000 js-view-service
+    -p 3000:3000 \
+    js-service
 ```
 
 `/views-counter/views.json`挂载数据至服务器
@@ -845,11 +846,45 @@ docker run -d --name view-service \
 curl -X POST http://localhost:3000/record -H "Content-Type: application/json" -d '{"url":"/example"}'
 
 curl -X GET --location "http://localhost:3000/views?url=/example"
+
+curl -X GET --location "http://172.18.0.1:3000/views?url=/example"
+```
+
+###  加入Docker网络
+
+JS服务和Caddy服务都是通过docker部署，为了使它们能够相互调用，创建一个自定义网络：
+
+```sh
+docker network create blog_network
+```
+
+删除已经部署的容器，调整run命令，添加进同一网络，再重新部署：
+```sh
+docker run -d --name view-service \
+    -v /views-counter/views.json:/data/views.json \
+    -p 3000:3000 \
+    --network blog_network \
+    js-view-service
+    
+docker run -d --name caddyBlog \
+  -p 80:80 \
+  -p 443:443 \
+  -v /caddy/Caddyfile:/etc/caddy/Caddyfile \
+  -v /caddy/app:/srv \
+  -v /caddy/caddy_data:/data \
+  -v /caddy/caddy_config:/config \
+  --network blog_network \
+  --memory 200m \
+  caddy:latest
+
+# 检查网络配置
+docker network inspect blog_network
 ```
 
 ###  调整Caddyfile
 
 ```
+cat <<EOF >/caddy/Caddyfile
 baizer.info www.baizer.info {
     root * /srv #指定静态文件的根目录。
     file_server #启用静态文件服务器功能。
@@ -857,17 +892,36 @@ baizer.info www.baizer.info {
 
     # 添加反向代理，将 /proxy 的请求转发到 JS 服务
     route /proxy/* {
-        reverse_proxy localhost:3000
+        uri strip_prefix /proxy # 去掉 /proxy 前缀
+        reverse_proxy view-service:3000 # 注意配置的容器名
     }
-
-#    # 跨域支持（如需要）
-#    header /api/* {
-#        Access-Control-Allow-Origin *
-#        Access-Control-Allow-Methods GET, POST, OPTIONS
-#        Access-Control-Allow-Headers Content-Type
-#    }
 }
+EOF
 ```
 
-测试：https://baizer.info/proxy/views?url=/example
+重启容器，测试访问：
+```sh
+docker restart caddyBlog
+
+curl -X GET "https://baizer.info/proxy/views?url=/example"
+```
+
+### Vitepress项目改造
+
+
+
+### 持久化访问数据
+
+JS服务生成的数据存储在`/views-counter/views.json`文件中，改造一下`deploy.sh`脚本，每次发布时将该文件同步本地，再推送GitHub保存。
+
+```sh
+echo "==============================> Download synchronous access data ..."
+scp "$REMOTE_SERVER:/views-counter/views.json" "$BLOG_PATH/views-counter/"
+if [ $? -ne 0 ]; then
+  echo "下载访问数据失败，请检查！（/views-counter/views.json）"
+  exit 1
+fi
+```
+
+
 
