@@ -84,19 +84,20 @@ export default {
     // 获取浏览量（入参插入的元素）
     const fetchViews = async (updateTimeDiv: Element) => {
       try {
-        // 请求浏览量数据
-        const response = await fetch(`https://baizer.info/proxy/views?url=${encodeURIComponent(route.path)}`);
+        // // 请求浏览量数据
+        // const response = await fetch(`https://baizer.info/proxy/views?url=${encodeURIComponent(route.path)}`);
+        //
+        // // 检查 HTTP 状态码
+        // if (!response.ok) {
+        //   throw new Error(`HTTP error! Status: ${response.status}`);
+        // }
+        //
+        // const data = await response.json();
+        //
+        // // 安全解析数据，确保 views 存在
+        // let views = data?.views ?? 0;
 
-        // 检查 HTTP 状态码
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // 安全解析数据，确保 views 存在
-        let views = data?.views ?? 0;
-
+        let views = 100912928;
         if (views > 0) {
           if (updateTimeDiv && !document.querySelector('.views')) {
             // 创建 views 元素
@@ -105,7 +106,8 @@ export default {
             viewSpan.textContent = `View: ${views}`;
 
 
-            updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
+            updateTimeDiv.insertAdjacentElement('afterbegin', viewSpan);
+            // updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
           }
         }
       } catch (error) {
