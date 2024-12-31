@@ -836,6 +836,10 @@ docker iamges
 
 部署服务
 ```sh
+#创建数据文件，记录访问数据（一定要提前创建）
+touch /views-counter/views.json
+
+
 docker run -d --name view-service \
     -v /views-counter/views.json:/data/views.json \
     -p 3000:3000 \
@@ -864,6 +868,10 @@ docker network create blog_network
 
 删除已经部署的容器，调整run命令，添加进同一网络，再重新部署：
 ```sh
+docker rm -f view-service
+docker rm -f caddyBlog
+
+
 docker run -d --name view-service \
     -v /views-counter/views.json:/data/views.json \
     -p 3000:3000 \
@@ -904,11 +912,9 @@ baizer.info www.baizer.info {
 EOF
 ```
 
-重启容器，测试访问：
+重启容器，测试访问
 ```sh
 docker restart caddyBlog
-
-curl -X GET "https://baizer.info/proxy/views?url=/example"
 ```
 
 ### Vitepress项目改造
