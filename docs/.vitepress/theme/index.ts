@@ -43,9 +43,6 @@ export default {
     const route = useRoute();
     const sidebar = useSidebar();
     const {page,theme,frontmatter} = useData();
-    const views = ref(0); // 用于存储浏览量
-    let server = "119.91.254.66"
-
 
     // giscus配置（评论系统）  https://giscus.app/zh-CN
     giscusTalk({
@@ -77,14 +74,14 @@ export default {
         await fetch('https://baizer.info/proxy/record', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ url: route.path }),
+          body: JSON.stringify({ url: encodeURIComponent(route.path) }),
         });
       } catch (error) {
         console.error('Failed to record view:', error);
       }
     };
 
-    // 获取浏览量
+    // 获取浏览量（入参插入的元素）
     const fetchViews = async (updateTimeDiv: Element) => {
       try {
         // 请求浏览量数据

@@ -20,7 +20,9 @@ app.post('/record', (req, res) => {
         return res.status(400).json({ error: 'URL is required' });
     }
 
+    const decodedUrl = decodeURIComponent(url); // 解码 URL
     let data = {};
+
     if (fs.existsSync(JSON_FILE)) {
         try {
             data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
@@ -31,7 +33,7 @@ app.post('/record', (req, res) => {
     }
 
     // 更新浏览量
-    data[url] = (data[url] || 0) + 1;
+    data[decodedUrl] = (data[decodedUrl] || 0) + 1;
 
     // 写回文件
     try {
@@ -41,7 +43,7 @@ app.post('/record', (req, res) => {
         return res.status(500).json({ error: 'Failed to record view' });
     }
 
-    res.status(200).json({ message: 'View recorded', url, views: data[url] });
+    res.status(200).json({ message: 'View recorded', url: decodedUrl, views: data[decodedUrl] });
 });
 
 // 获取接口
@@ -51,7 +53,9 @@ app.get('/views', (req, res) => {
         return res.status(400).json({ error: 'URL is required' });
     }
 
+    const decodedUrl = decodeURIComponent(url); // 解码 URL
     let data = {};
+
     if (fs.existsSync(JSON_FILE)) {
         try {
             data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
@@ -60,7 +64,7 @@ app.get('/views', (req, res) => {
         }
     }
 
-    res.status(200).json({ url, views: data[url] || 0 });
+    res.status(200).json({ url: decodedUrl, views: data[decodedUrl] || 0 });
 });
 
 // 启动服务

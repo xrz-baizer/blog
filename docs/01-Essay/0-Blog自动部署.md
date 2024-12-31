@@ -758,7 +758,9 @@ app.post('/record', (req, res) => {
         return res.status(400).json({ error: 'URL is required' });
     }
 
+    const decodedUrl = decodeURIComponent(url); // 解码 URL
     let data = {};
+
     if (fs.existsSync(JSON_FILE)) {
         try {
             data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
@@ -769,7 +771,7 @@ app.post('/record', (req, res) => {
     }
 
     // 更新浏览量
-    data[url] = (data[url] || 0) + 1;
+    data[decodedUrl] = (data[decodedUrl] || 0) + 1;
 
     // 写回文件
     try {
@@ -779,7 +781,7 @@ app.post('/record', (req, res) => {
         return res.status(500).json({ error: 'Failed to record view' });
     }
 
-    res.status(200).json({ message: 'View recorded', url, views: data[url] });
+    res.status(200).json({ message: 'View recorded', url: decodedUrl, views: data[decodedUrl] });
 });
 
 // 获取接口
@@ -789,7 +791,9 @@ app.get('/views', (req, res) => {
         return res.status(400).json({ error: 'URL is required' });
     }
 
+    const decodedUrl = decodeURIComponent(url); // 解码 URL
     let data = {};
+
     if (fs.existsSync(JSON_FILE)) {
         try {
             data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
@@ -798,11 +802,11 @@ app.get('/views', (req, res) => {
         }
     }
 
-    res.status(200).json({ url, views: data[url] || 0 });
+    res.status(200).json({ url: decodedUrl, views: data[decodedUrl] || 0 });
 });
 
-// 启动服务（限制本地IP访问）
-app.listen(PORT, '127.0.0.1', () => {
+// 启动服务
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`View counter service is running on port ${PORT}`);
 });
 
@@ -835,7 +839,7 @@ docker iamges
 docker run -d --name view-service \
     -v /views-counter/views.json:/data/views.json \
     -p 3000:3000 \
-    js-service
+    js-view-service
 ```
 
 `/views-counter/views.json`挂载数据至服务器
@@ -908,6 +912,57 @@ curl -X GET "https://baizer.info/proxy/views?url=/example"
 ```
 
 ### Vitepress项目改造
+
+在`index.ts`中的`setup`方法中调用
+
+```js
+// 记录浏览量
+const recordView = async () => {
+  try {
+    await fetch('https://xxxx.com/proxy/record', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: encodeURIComponent(route.path) }),
+    });
+  } catch (error) {
+    console.error('Failed to record view:', error);
+  }
+};
+```
+
+```js
+// 获取浏览量（入参插入的元素）
+const fetchViews = async (updateTimeDiv: Element) => {
+  try {
+    // 请求浏览量数据
+    const response = await fetch(`https://xxxx.com/proxy/views?url=${encodeURIComponent(route.path)}`);
+
+    // 检查 HTTP 状态码
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // 安全解析数据，确保 views 存在
+    views.value = data?.views ?? 0;
+
+    if (views.value > 0) {
+      if (updateTimeDiv && !document.querySelector('.views')) {
+        // 创建 views 元素
+        const viewSpan = document.createElement('span');
+        viewSpan.className = 'views';
+        viewSpan.textContent = `View: ${views.value}`;
+
+
+        updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
+      }
+    }
+  } catch (error) {
+    console.error('Failed to fetch views:', error);
+  }
+};
+```
 
 
 
