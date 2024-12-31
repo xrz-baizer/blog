@@ -64,6 +64,6 @@ app.get('/views', (req, res) => {
 });
 
 // 启动服务
-app.listen(PORT, () => {
+app.listen(PORT, '127.0.0.1', () => {
     console.log(`View counter service is running on port ${PORT}`);
 });

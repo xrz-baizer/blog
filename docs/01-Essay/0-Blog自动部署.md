@@ -801,8 +801,8 @@ app.get('/views', (req, res) => {
     res.status(200).json({ url, views: data[url] || 0 });
 });
 
-// 启动服务
-app.listen(PORT, () => {
+// 启动服务（限制本地IP访问）
+app.listen(PORT, '127.0.0.1', () => {
     console.log(`View counter service is running on port ${PORT}`);
 });
 
@@ -813,6 +813,7 @@ app.listen(PORT, () => {
 复制配置文件至服务器
 
 ```sh
+# -r表示循环复制 views-counter 内的文件（远程服务器的views-counter目录会自动创建）
 scp -r views-counter root@baizer.info:/
 ```
 
@@ -838,12 +839,35 @@ docker run -d --name view-service \
 
 `/views-counter/views.json`挂载数据至服务器
 
-### 测试
+测试
 
 ```sh
 curl -X POST http://localhost:3000/record -H "Content-Type: application/json" -d '{"url":"/example"}'
 
 curl -X GET --location "http://localhost:3000/views?url=/example"
-curl -X GET --location "http://119.91.254.66:3000/views?url=/example"
 ```
+
+###  调整Caddyfile
+
+```
+baizer.info www.baizer.info {
+    root * /srv #指定静态文件的根目录。
+    file_server #启用静态文件服务器功能。
+    encode gzip #启用 gzip 压缩，减少文件传输的大小，从而加速加载
+
+    # 添加反向代理，将 /proxy 的请求转发到 JS 服务
+    route /proxy/* {
+        reverse_proxy localhost:3000
+    }
+
+#    # 跨域支持（如需要）
+#    header /api/* {
+#        Access-Control-Allow-Origin *
+#        Access-Control-Allow-Methods GET, POST, OPTIONS
+#        Access-Control-Allow-Headers Content-Type
+#    }
+}
+```
+
+测试：https://baizer.info/proxy/views?url=/example
 

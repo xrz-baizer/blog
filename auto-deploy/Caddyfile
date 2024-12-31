@@ -2,4 +2,17 @@ baizer.info www.baizer.info {
     root * /srv #指定静态文件的根目录。
     file_server #启用静态文件服务器功能。
     encode gzip #启用 gzip 压缩，减少文件传输的大小，从而加速加载
+
+    # 添加反向代理，将 /proxy 的请求转发到 JS 服务
+    route /proxy/* {
+        reverse_proxy localhost:3000
+    }
+
+#    # 跨域支持（如需要）
+#    header /api/* {
+#        Access-Control-Allow-Origin *
+#        Access-Control-Allow-Methods GET, POST, OPTIONS
+#        Access-Control-Allow-Headers Content-Type
+#    }
+
 }
