@@ -74,9 +74,8 @@ export default {
         await fetch('https://baizer.info/proxy/record', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ url: encodeURIComponent(route.path) }),
+          body: JSON.stringify({ url: route.path }),
         });
-        console.log(route.path)
       } catch (error) {
         console.error('Failed to record view:', error);
       }
