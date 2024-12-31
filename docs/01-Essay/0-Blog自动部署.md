@@ -864,8 +864,9 @@ docker run -d --name view-service \
     -v /views-counter/views.json:/data/views.json \
     -p 3000:3000 \
     --network blog_network \
+    --memory 50m \
     js-view-service
-    
+
 docker run -d --name caddyBlog \
   -p 80:80 \
   -p 443:443 \
