@@ -71,6 +71,10 @@
         padding: 20px 26px;
     }
 
+    .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
+        margin-left: -.7rem;
+    }
+
 }
 
 /* 640px以下生效 */
@@ -306,10 +310,6 @@ body.no-sidebar .content {
     margin-top: -54px; /* 负边距来填充预留空间 */
     margin-bottom: 30px;
     min-height: 24px; /* 确保即使没有内容也保持高度 */
-}
-
-.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
-    margin-left: -8px;
 }
 
 .vp-doc h1 {
