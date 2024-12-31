@@ -25,7 +25,9 @@ app.post('/record', (req, res) => {
 
     if (fs.existsSync(JSON_FILE)) {
         try {
-            data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
+            const fileContent = fs.readFileSync(JSON_FILE, 'utf8');
+            // 如果文件内容为空字符串，则初始化为 {}
+            data = fileContent ? JSON.parse(fileContent) : {};
         } catch (error) {
             console.error('Error reading JSON file:', error);
             data = {};
@@ -58,7 +60,9 @@ app.get('/views', (req, res) => {
 
     if (fs.existsSync(JSON_FILE)) {
         try {
-            data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
+            const fileContent = fs.readFileSync(JSON_FILE, 'utf8');
+            // 如果文件内容为空字符串，则初始化为 {}
+            data = fileContent ? JSON.parse(fileContent) : {};
         } catch (error) {
             console.error('Error reading JSON file:', error);
         }

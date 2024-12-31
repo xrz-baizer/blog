@@ -824,10 +824,10 @@ scp -r views-counter root@baizer.info:/
 打包镜像
 
 ```sh
-# 进入目录
+# 登入服务器，进入目录
 cd /views-counter
 
-# 有点久
+# 构建会有点慢（about 10 minutes）
 docker build -t js-view-service .
 
 # 查看镜像

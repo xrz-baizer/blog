@@ -1,5 +1,5 @@
 // https://vitepress.dev/guide/custom-theme
-import { h,onMounted, watch, nextTick,ref } from 'vue'
+import { h,onMounted, watch, nextTick } from 'vue'
 import type { Theme } from 'vitepress'
 import {useData, useRoute} from 'vitepress';
 import mediumZoom from 'medium-zoom';
@@ -76,6 +76,7 @@ export default {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ url: encodeURIComponent(route.path) }),
         });
+        console.log(route.path)
       } catch (error) {
         console.error('Failed to record view:', error);
       }
@@ -95,14 +96,14 @@ export default {
         const data = await response.json();
 
         // 安全解析数据，确保 views 存在
-        views.value = data?.views ?? 0;
+        let views = data?.views ?? 0;
 
-        if (views.value > 0) {
+        if (views > 0) {
           if (updateTimeDiv && !document.querySelector('.views')) {
             // 创建 views 元素
             const viewSpan = document.createElement('span');
             viewSpan.className = 'views';
-            viewSpan.textContent = `View: ${views.value}`;
+            viewSpan.textContent = `View: ${views}`;
 
 
             updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
