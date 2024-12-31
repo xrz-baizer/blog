@@ -20,7 +20,7 @@
     /*--vp-font-family-base: "customFont";  */
 
     /* 文档页 内容字体大小 */
-    --font-size-content: 17px;
+    --font-size-content: 16px;
     /* 文档页 侧边栏字体大小 */
     --font-size-sidebar: 15px;
 
@@ -283,6 +283,9 @@ body.no-sidebar .content {
     font-size: 20px !important;
 }
 
+.outline-link:hover, .outline-link.active {
+    font-weight: 500;
+}
 
 /* 左上角网站名称 */
 .VPNavBarTitle span {
