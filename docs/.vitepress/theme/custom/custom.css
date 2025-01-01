@@ -154,10 +154,6 @@
 
 }
 
-.views{
-    margin: 0 .7rem;
-}
-
 
 body.no-sidebar .sidebar {
     display: none;
@@ -315,6 +311,17 @@ body.no-sidebar .content {
     margin-top: -54px; /* 负边距来填充预留空间 */
     margin-bottom: 30px;
     min-height: 24px; /* 确保即使没有内容也保持高度 */
+}
+
+.views{
+    margin-left: .7rem;
+    display: inline-flex; /* 使内容和背景图可以并排显示 */
+    align-items: center; /* 图标和文字垂直居中 */
+    background-image: url('/view.svg'); /* 指定图标路径 */
+    background-repeat: no-repeat; /* 不重复显示 */
+    background-size: 1.2rem; /* 设置图标大小 */
+    background-position: left center; /* 图标居左并垂直居中 */
+    padding-left: 1.5rem; /* 给文字留出空间 */
 }
 
 .vp-doc h1 {

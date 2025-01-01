@@ -102,11 +102,11 @@ export default {
             // 创建 views 元素
             const viewSpan = document.createElement('span');
             viewSpan.className = 'views';
-            viewSpan.textContent = `View: ${views}`;
+            viewSpan.textContent = `${views}`;
 
 
-            updateTimeDiv.insertAdjacentElement('afterbegin', viewSpan);
-            // updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
+            // updateTimeDiv.insertAdjacentElement('afterbegin', viewSpan);
+            updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
           }
         }
       } catch (error) {
