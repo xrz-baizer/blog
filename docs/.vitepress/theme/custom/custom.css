@@ -4,9 +4,9 @@
     /* 主题基色 */
     /*--vp-c-brand-1: #18794e;*/
     /*--vp-c-brand-1: #30a46c;*/
-    --vp-c-brand-1: var(--vp-c-indigo-1);
-    --vp-c-brand-2: var(--vp-c-indigo-2);
-    --vp-c-brand-3: var(--vp-c-indigo-2);
+    --vp-c-brand-1: var(--custom-a-1);
+    --vp-c-brand-2: var(--custom-a-1);
+    /*--vp-c-brand-3: var(--custom-a-1);*/
 
     /* 文档文本颜色 */
     --vp-c-text-1: #1f1f1f;

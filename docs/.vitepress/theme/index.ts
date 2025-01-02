@@ -7,7 +7,7 @@ import DefaultTheme from 'vitepress/theme'
 import { useSidebar } from 'vitepress/theme'
 import './style.css'
 import './custom/custom.css'
-import { formatTimestamp } from './custom/function.js'
+import { formatTimestamp,recordView,fetchViews } from './custom/function.js'
 import Category from './custom/Category.vue'
 
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
@@ -68,52 +68,6 @@ export default {
     //   return indexPagePaths.includes(route.path);
     // };
 
-    // 记录浏览量
-    const recordView = async () => {
-      try {
-        await fetch('https://baizer.info/proxy/record', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ url: route.path }),
-        });
-      } catch (error) {
-        console.error('Failed to record view:', error);
-      }
-    };
-
-    // 获取浏览量（入参插入的元素）
-    const fetchViews = async (updateTimeDiv: Element) => {
-      try {
-        // 请求浏览量数据
-        const response = await fetch(`https://baizer.info/proxy/views?url=${encodeURIComponent(route.path)}`);
-
-        // 检查 HTTP 状态码
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        // 安全解析数据，确保 views 存在
-        let views = data?.views ?? 0;
-
-        if (views > 0) {
-          if (updateTimeDiv && !document.querySelector('.views')) {
-            // 创建 views 元素
-            const viewSpan = document.createElement('span');
-            viewSpan.className = 'views';
-            viewSpan.textContent = `${views}`;
-
-
-            // updateTimeDiv.insertAdjacentElement('afterbegin', viewSpan);
-            updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
-          }
-        }
-      } catch (error) {
-        console.error('Failed to fetch views:', error);
-      }
-    };
-
 
     // 为每个H1标签下生成Git提交时间
     const addUpdateTimeDiv = () => {
@@ -130,7 +84,21 @@ export default {
         h1Element.insertAdjacentElement('afterend', updateTimeDiv)
 
         //加载浏览量
-        fetchViews(updateTimeDiv);
+        const view = fetchViews(route.path);
+
+        view.then(value => {
+          if (updateTimeDiv && !document.querySelector('.views')) {
+            // 创建 views 元素
+            const viewSpan = document.createElement('span');
+            viewSpan.className = 'views';
+            viewSpan.textContent = `${value}`;
+
+
+            // updateTimeDiv.insertAdjacentElement('afterbegin', viewSpan);
+            updateTimeDiv.insertAdjacentElement('beforeend', viewSpan);
+          }
+        })
+
       }
     }
 
@@ -157,7 +125,7 @@ export default {
       toggleAsideVisibility();
       addUpdateTimeDiv();
       initZoom();
-      recordView(); // 记录当前页面的访问量
+      recordView(route.path); // 记录当前页面的访问量
       // updateSidebarVisibility();
       // window.addEventListener('resize', updateSidebarVisibility);
     });
@@ -168,7 +136,7 @@ export default {
             initZoom();
             addUpdateTimeDiv();
             toggleAsideVisibility();
-            recordView();
+            recordView(route.path);
           });
         }
     );

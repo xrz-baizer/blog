@@ -1,18 +1,22 @@
 <template>
     <div>
         <!-- 遍历当前页的文章 -->
-        <div v-for="(article, index) in paginatedArticles" :key="index" class="post-list">
+        <a v-for="(article, index) in paginatedArticles" 
+           :key="index" 
+           :href="article.link"
+           class="post-list">
             <div class="post-header">
                 <div class="post-title">
-                    <a :href="article.link"> {{ article.text }}
+                    <span class="title-text">{{ article.text }}
                         <Badge type="tip" v-if="article.pinned">Pinned</Badge>
-                    </a>
+                    </span>
                 </div>
+                <span class="category-view" >{{ article.view }}</span>
                 <span class="category-pc">{{ article.lastUpdatedFormat }}</span>
             </div>
             <p class="describe" v-html="article.summary"></p>
 <!--            <span class="category-app">{{ article.lastUpdatedFormat }}</span>-->
-        </div>
+        </a>
 
         <!-- 统一的分页控件 -->
         <div class="pagination">
@@ -37,10 +41,10 @@
 
 <script lang="ts" setup>
 
-
+import { onMounted,watch, ref, computed } from 'vue';
 import {PageData} from 'vitepress'
 import {useSidebar} from 'vitepress/theme'
-import {getRecentArticles, Article} from './function.ts'
+import {getRecentArticles, Article, fetchViews} from './function.ts'
 import { articlesMap } from '../../../public/articles.js';
 
 function getArticleSummary(path) {
@@ -55,36 +59,148 @@ const articles: Article[] = getRecentArticles(sidebar.value,-1);
 
 
 // 分页状态
-import { ref, computed } from 'vue';
 const currentPage = ref(1); // 当前页码
-const pageSize = 10; // 每页文章数
+const pageSize = 14; // 每页文章数
 
 // 计算总页数
 const totalPages = computed(() => Math.ceil(articles.length / pageSize));
 
-// 当前页显示的文章
+// 为视图数据创建一个独立的 reactive 对象
+const viewsMap = ref(new Map());
+
+const loadViews = async () => {
+    await Promise.all(paginatedArticles.value.map(async (article) => {
+        const views = await fetchViews(article.link);
+        viewsMap.value.set(article.link, views);
+    }));
+};
+
+// 修改计算属性以包含视图数据
 const paginatedArticles = computed(() => {
     let start = (currentPage.value - 1) * pageSize;
     let currentArticles = articles.slice(start, start + pageSize);
 
-    // 填充文章概述
+    // 填充文章概述和视图数据
     currentArticles.forEach(article => {
-        // 获取build时生成的文章概述
-        article.summary = getArticleSummary(article.filePath);;
-    })
+        article.summary = getArticleSummary(article.filePath);
+        article.view = viewsMap.value.get(article.link) ?? '...'; // 使用占位符表示加载中
+    });
+
     return currentArticles;
 });
+
+// 确保在组件挂载和页面变化时加载视图
+onMounted(async () => {
+    await loadViews();
+});
+
+watch(() => currentPage.value, async () => {
+    await loadViews();
+});
+
 
 // 切换页码
 function changePage(page: number) {
     if (page >= 1 && page <= totalPages.value) {
         currentPage.value = page;
+        loadViews();
     }
 }
 
 </script>
 
 <style scoped>
+
+
+.post-list {
+    position: relative;
+    border: 1px solid rgba(60,60,67,.12);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    transition: all 0.3s ease;
+    background: var(--vp-c-bg);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    text-decoration: none !important;
+    display: block;
+    cursor: pointer;
+}
+
+
+.post-list:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+
+/* 文章标题区域 */
+.post-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.post-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.title-text {
+    /*color: var(--custom-a-1);*/
+    color: var(--vp-c-brand-3);
+    transition: all 0.2s ease;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 更新时间样式 */
+.category-pc {
+    font-size: 0.85rem;
+    color: var(--vp-c-text-2);
+    background: var(--vp-c-bg-soft);
+    padding: 4px 12px;
+    border-radius: 7px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 访问量样式 */
+.category-view {
+    font-size: 0.8rem;
+    color: var(--vp-c-text-3);
+    /*margin-left: .7rem;*/
+    display: inline-flex; /* 使内容和背景图可以并排显示 */
+    align-items: center; /* 图标和文字垂直居中 */
+    background-image: url('/view.svg'); /* 指定图标路径 */
+    background-repeat: no-repeat; /* 不重复显示 */
+    background-size: .9rem; /* 设置图标大小 */
+    background-position: left center; /* 图标居左并垂直居中 */
+    padding-left: 1.5rem; /* 给文字留出空间 */
+}
+
+/* 文章描述 */
+.describe {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--vp-c-text-2);
+    margin: 6px 0 0 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
 
 .pagination {
     display: flex;
@@ -95,7 +211,7 @@ function changePage(page: number) {
     gap: 10px;
 }
 
-button {
+.pagination button {
     font-weight: 500;
     color: var(--vp-c-text-1);
     padding: 5px 10px;
@@ -109,7 +225,7 @@ button {
     background-color: transparent;
 }
 
-button:disabled {
+.pagination button:disabled {
     cursor: not-allowed;
     opacity: 0.4;
 }
@@ -120,99 +236,35 @@ button:disabled {
     margin: 0 1rem;
 }
 
-
-
-span{
-    font-weight: 500;
-    color: var(--vp-c-text-1);
-}
-
-/*.category-app{*/
-/*    text-align: right;*/
-/*    display: none;*/
-/*}*/
-
-.post-list {
-    border-bottom: 1px dashed #eee;
-    padding: 5px 0;
-    margin: 7px 0;
-}
-.post-list p{
-    margin: 0px !important;
-}
-.post-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.post-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0.1rem 0;
-
-    /*!* 超出换行，并以省略号显示 *!*/
-    /*white-space: nowrap;*/
-    /*overflow: hidden !important;*/
-    /*text-overflow: ellipsis;*/
-    /*width: 100%;*/
-}
-.post-title a{
-    /* 超出换行，并以省略号显示 */
-    white-space: nowrap;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
-    width: 100%;
-    display: block;
-}
-
-.describe {
-    /*text-align: right;*/
-    font-size: 0.9375rem;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    /* 当 p 标签内的内容超过两行时，超出的部分会被隐藏，并显示省略号 ...。 */
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-    color: var(--vp-c-text-2);
-    margin-bottom: 10px;
-    line-height: 1.5rem;
-}
-
-/* 768px以下生效 */
+/* 响应式设计优化 */
 @media screen and (max-width: 768px) {
     .post-list {
-        padding: 5px 0 5px 0;
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 6px;
     }
+    
     .post-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
+    
     .post-title {
-        font-size: 1rem;
-        font-weight: 400;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        /*width: 17rem;*/
+        font-size: 0.9rem;
+        /*width: 100%;*/
     }
-    .describe {
-        font-size: 0.8375rem;
-        display: -webkit-box;
-        /*display: none;*/
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-        margin: 0.5rem 0 1rem;
-    }
-    /*.category-app{*/
-    /*    font-size: 12px;*/
-    /*    display: block;*/
-    /*    color: var(--vp-c-text-2);*/
-    /*}*/
-    .category-pc{
+    
+    .category-pc, .category-view {
         display: none;
     }
+    
+    .describe {
+        font-size: 0.8rem;
+        margin-top: 4px;
+        line-height: 1.5;
+    }
 }
+
+
 </style>

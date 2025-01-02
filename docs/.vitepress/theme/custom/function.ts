@@ -13,6 +13,7 @@ export interface Article extends PageData,Item {
     lastUpdatedFormat: string;
     summary: string;
     pinned: boolean;
+    view: number;
 }
 
 /**
@@ -115,3 +116,41 @@ export function formatTimestampY(timestamp: number): string {
 
     return `${year}-${month}-${day}`;
 }
+
+
+/**
+ * 记录浏览量 (入参为路径 /01-Essay/xxxx.html )
+ */
+export const recordView = async (path: string) => {
+    try {
+        await fetch('https://baizer.info/proxy/record', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url: path }),
+        });
+    } catch (error) {
+        console.error('Failed to record view:', error);
+    }
+};
+
+/**
+ * 获取浏览量 (入参为路径 /01-Essay/xxxx.html )
+ */
+export const fetchViews = async (path: string): Promise<number> => {
+    try {
+        // 请求浏览量数据
+        const response = await fetch(`https://baizer.info/proxy/views?url=${encodeURIComponent(path)}`);
+
+        // 检查 HTTP 状态码
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+
+        // 安全解析数据，确保 views 存在
+        return data?.views ?? 0;
+    } catch (error) {
+        console.error('Failed to fetch views:', error);
+        return 999;
+    }
+};
