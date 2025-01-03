@@ -1,116 +1,158 @@
 <template>
-    <div>
-        <!-- 遍历当前页的文章 -->
-        <a v-for="(article, index) in paginatedArticles" 
-           :key="index" 
-           :href="article.link"
-           class="post-list">
-            <div class="post-header">
-                <div class="post-title">
-                    <span class="title-text">{{ article.text }}
-                        <Badge type="tip" v-if="article.pinned">Pinned</Badge>
-                    </span>
+    <div class="article-container" ref="containerRef">
+        <!-- 使用transition-group添加文章列表动画 -->
+        <transition-group name="article-fade" tag="div">
+            <a v-for="(article, index) in displayedArticles" 
+               :key="article.link" 
+               :href="article.link"
+               class="post-list">
+                <div class="post-header">
+                    <div class="post-title">
+                        <span class="title-text">{{ article.text }}
+                            <Badge type="tip" v-if="article.pinned">Pinned</Badge>
+                        </span>
+                    </div>
+                    <span class="category-view">{{ article.view }}</span>
+                    <span class="category-pc">{{ article.lastUpdatedFormat }}</span>
                 </div>
-                <span class="category-view" >{{ article.view }}</span>
-                <span class="category-pc">{{ article.lastUpdatedFormat }}</span>
+                <p class="describe" v-html="article.summary"></p>
+            </a>
+        </transition-group>
+
+        <!-- 使用transition组件包装加载动画 -->
+        <transition name="fade">
+            <div v-if="loading" class="loading-wrapper">
+                <div class="loading-spinner"></div>
+                <span>Loading more articles...</span>
             </div>
-            <p class="describe" v-html="article.summary"></p>
-<!--            <span class="category-app">{{ article.lastUpdatedFormat }}</span>-->
-        </a>
+        </transition>
 
-        <!-- 统一的分页控件 -->
-        <div class="pagination">
-            <button
-                :disabled="currentPage === 1"
-                @click="changePage(currentPage - 1)"
-            >
-                Previous page
-            </button>
-
-            <span class="current-page-info">{{ currentPage }} / {{ totalPages }}</span>
-
-            <button
-                :disabled="currentPage === totalPages"
-                @click="changePage(currentPage + 1)"
-            >
-                Next page
-            </button>
-        </div>
+        <!-- 使用transition组件包装结束提示 -->
+        <transition name="fade">
+            <div v-if="isAllLoaded" class="end-message">
+                No more articles
+            </div>
+        </transition>
     </div>
 </template>
 
 <script lang="ts" setup>
-
-import { onMounted,watch, ref, computed } from 'vue';
-import {PageData} from 'vitepress'
-import {useSidebar} from 'vitepress/theme'
-import {getRecentArticles, Article, fetchViews} from './function.ts'
+import { onMounted, watch, ref, computed, onUnmounted } from 'vue';
+import { useSidebar } from 'vitepress/theme';
+import { getRecentArticles, Article, fetchViews } from './function.ts';
 import { articlesMap } from '../../../public/articles.js';
+
+const containerRef = ref(null);
+const loading = ref(false);
+const pageSize = 8; // 每页显示数量
+const currentIndex = ref(0);
+const displayedArticles = ref<Article[]>([]);
+const viewsMap = ref(new Map());
+let isLoading = false;
 
 function getArticleSummary(path) {
     return articlesMap[path] || 'Summary not found.';
 }
 
-// 获取当前侧边栏数据
 const { sidebar } = useSidebar();
+const articles: Article[] = getRecentArticles(sidebar.value, -1);
 
-// 提取侧边栏所有文章
-const articles: Article[] = getRecentArticles(sidebar.value,-1);
+const isAllLoaded = computed(() => {
+    return displayedArticles.value.length >= articles.length;
+});
 
-
-// 分页状态
-const currentPage = ref(1); // 当前页码
-const pageSize = 14; // 每页文章数
-
-// 计算总页数
-const totalPages = computed(() => Math.ceil(articles.length / pageSize));
-
-// 为视图数据创建一个独立的 reactive 对象
-const viewsMap = ref(new Map());
-
-const loadViews = async () => {
-    await Promise.all(paginatedArticles.value.map(async (article) => {
-        const views = await fetchViews(article.link);
-        viewsMap.value.set(article.link, views);
-    }));
-};
-
-// 修改计算属性以包含视图数据
-const paginatedArticles = computed(() => {
-    let start = (currentPage.value - 1) * pageSize;
-    let currentArticles = articles.slice(start, start + pageSize);
-
-    // 填充文章概述和视图数据
-    currentArticles.forEach(article => {
-        article.summary = getArticleSummary(article.filePath);
-        article.view = viewsMap.value.get(article.link) ?? '...'; // 使用占位符表示加载中
+// 简化的视图加载函数
+const loadViews = async (newArticles: Article[]) => {
+    const promises = newArticles.map(async (article) => {
+        if (!viewsMap.value.has(article.link)) {
+            try {
+                const views = await fetchViews(article.link);
+                viewsMap.value.set(article.link, views);
+                
+                const existingArticle = displayedArticles.value.find(a => a.link === article.link);
+                if (existingArticle) {
+                    existingArticle.view = views;
+                }
+            } catch (error) {
+                console.error('Error fetching views:', error);
+                viewsMap.value.set(article.link, '999');
+            }
+        }
     });
 
-    return currentArticles;
-});
+    await Promise.all(promises);
+};
 
-// 确保在组件挂载和页面变化时加载视图
-onMounted(async () => {
-    await loadViews();
-});
+// 简化的加载函数
+const loadMoreArticles = async () => {
+    if (isLoading || isAllLoaded.value) return;
 
-watch(() => currentPage.value, async () => {
-    await loadViews();
-});
+    isLoading = true;
+    loading.value = true;
 
+    try {
+        const newArticles = articles.slice(
+            currentIndex.value,
+            currentIndex.value + pageSize
+        ).map(article => ({
+            ...article,
+            summary: getArticleSummary(article.filePath),
+            view: viewsMap.value.get(article.link) || '...'
+        }));
 
-// 切换页码
-function changePage(page: number) {
-    if (page >= 1 && page <= totalPages.value) {
-        currentPage.value = page;
-        loadViews();
+        displayedArticles.value.push(...newArticles);
+        currentIndex.value += pageSize;
+
+        // 异步加载浏览量
+        loadViews(newArticles);
+    } finally {
+        loading.value = false;
+        isLoading = false;
     }
-}
+};
 
+// 优化的滚动检查函数
+const shouldLoadMore = () => {
+    if (!containerRef.value || isAllLoaded.value) return false;
+    
+    const container = containerRef.value;
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    // 当滚动到页面中间位置时触发加载
+    const middleThreshold = documentHeight - (windowHeight * 1.5);
+    return scrollPosition > middleThreshold;
+};
+
+// 使用 RAF 优化滚动处理
+let scrollTimeout: any = null;
+const handleScroll = () => {
+    if (scrollTimeout) return;
+    
+    scrollTimeout = requestAnimationFrame(async () => {
+        if (shouldLoadMore()) {
+            await loadMoreArticles();
+        }
+        scrollTimeout = null;
+    });
+};
+
+// 初始化加载
+onMounted(async () => {
+    await loadMoreArticles();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+    if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+    }
+});
 </script>
 
 <style scoped>
-
 
 .post-list {
     position: relative;
@@ -118,19 +160,19 @@ function changePage(page: number) {
     border-radius: 8px;
     padding: 14px 16px;
     margin: 12px 0;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--vp-c-bg);
     box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     text-decoration: none !important;
     display: block;
     cursor: pointer;
+    animation: slideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-
 
 .post-list:hover {
+    /*transform: translateY(-0.5px);*/
     box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
-
 
 /* 文章标题区域 */
 .post-header {
@@ -154,7 +196,7 @@ function changePage(page: number) {
 
 .title-text {
     /*color: var(--custom-a-1);*/
-    color: var(--vp-c-brand-3);
+    color: var(--vp-c-brand-1);
     transition: all 0.2s ease;
     display: block;
     overflow: hidden;
@@ -238,6 +280,7 @@ function changePage(page: number) {
 
 /* 响应式设计优化 */
 @media screen and (max-width: 768px) {
+
     .post-list {
         padding: 12px;
         margin: 8px 0;
@@ -266,5 +309,98 @@ function changePage(page: number) {
     }
 }
 
+/* 加载动画容器 */
+.loading-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--vp-c-bg);
+    border-radius: 20px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(60,60,67,.12);
+}
 
+.loading-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--vp-c-brand-1);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+/* 结束提示动画 */
+.end-message {
+    text-align: center;
+    padding: 20px;
+    color: var(--vp-c-text-3);
+    font-size: 0.9rem;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 响应式设计中的动画调整 */
+@media screen and (max-width: 768px) {
+    .post-list {
+        animation-duration: 0.5s;
+    }
+    
+    .loading-spinner {
+        animation-duration: 0.8s;
+    }
+}
+
+/* 文章列表渐入动画 */
+.article-fade-enter-active {
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.article-fade-enter-from {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+/* 加载状态和结束提示的渐变动画 */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+/* 文章列表项动画 */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 </style>
