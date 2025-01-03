@@ -52,7 +52,7 @@ export default defineConfig({
     // },
 
     footer: { // 页脚版权信息（仅需在首页下展示即可）（域名必须备案 https://cloud.tencent.com/document/product/243/61412）
-      message: 'Copyright © 2024 Baizer | All Rights Reserved',
+      message: 'Copyright © 2025 Baizer | All Rights Reserved',
       copyright: '<a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024352756号</a> ' +
           ' <img src="/public-security.png"> <a href="https://beian.mps.gov.cn/#/query/webSearch?code=44030002005542" target="_blank" >粤公网安备44030002005542号</a>'
     }
