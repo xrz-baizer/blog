@@ -1,9 +1,9 @@
 {
-  "/00-TechnicalFile/": 99,
-  "/01-Essay/": 86,
-  "/": 74,
-  "/02-Other/": 29,
-  "/01-Essay/0-Blog自动部署.html": 25,
+  "/00-TechnicalFile/": 103,
+  "/01-Essay/": 89,
+  "/": 76,
+  "/02-Other/": 32,
+  "/01-Essay/0-Blog自动部署.html": 26,
   "/02-Other/生活百科/服装材料选择指南.html": 13,
   "/01-Essay/疑难杂症/WindowsDefender内核隔离无法关闭，提示此设置由管理员进行管理.html": 9,
   "/00-TechnicalFile/20-MySQL/MySQL Summary.html": 8,
@@ -31,6 +31,7 @@
   "/00-TechnicalFile/10-Algorithm/5-手写Queue.html": 3,
   "/01-Essay/疑难杂症/No plugin found for prefix 'docker' in the current project and in the plugin groups.html": 3,
   "/01-Essay/疑难杂症/IDEA 2023.1 破解.html": 3,
+  "/01-Essay/疑难杂症/使用SpringFeign时无法正确映射属性.html": 3,
   "/02-Other/EnglishLearning/0-VerbTense.html": 2,
   "/00-TechnicalFile/90-Work/工作技术方案汇总.html": 2,
   "/01-Essay/select-for-update.html": 2,
@@ -41,7 +42,6 @@
   "/01-Essay/疑难杂症/RocetMQ事务消息与延迟消息冲突的问题.html": 2,
   "/00-TechnicalFile/10-Algorithm/6-BinaryTree.html": 2,
   "/00-TechnicalFile/90-Work/Summary.html": 2,
-  "/01-Essay/疑难杂症/使用SpringFeign时无法正确映射属性.html": 2,
   "/00-TechnicalFile/10-Algorithm/3-手写LinkedList.html": 2,
   "/00-TechnicalFile/10-Algorithm/2-手写ArrayList.html": 2,
   "/00-TechnicalFile/10-Algorithm/4-手写Stack.html": 2,
@@ -93,5 +93,8 @@
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-46-Hobbies-业余爱好.html": 1,
   "/02-Other/EnglishLearning/EnglishTwo/Self testing.html": 1,
   "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-6-Smash-and-grab-砸橱窗抢劫.html": 1,
-  "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-27-Nothing-to-sell-and-nothing-to-buy-不卖也不买.html": 1
+  "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-27-Nothing-to-sell-and-nothing-to-buy-不卖也不买.html": 1,
+  "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-20-Pioneer-pilots-飞行员的先驱.html": 1,
+  "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-18-Electric-currents-in-modern-art-现代艺述中的电流.html": 1,
+  "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-29-Funnny-or-not-是否可笑.html": 1
 }

@@ -184,17 +184,11 @@ onUnmounted(() => {
 }
 
 .post-list:hover {
-    /*transform: translateY(-0.5px);*/
-    box-shadow: 0 1px 5px rgba(0,0,0,0.16);
-}
-
-.post-list:hover {
-    /*transform: translateY(-0.5px);*/
     box-shadow: 0 1px 5px rgba(0,0,0,0.16);
 }
 
 .post-list:hover .title-text {
-    color: var(--vp-c-brand-1); /* 更改为你想要的颜色 */
+    color: var(--vp-c-brand-1);
 }
 
 /* 文章标题区域 */
