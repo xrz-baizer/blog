@@ -61,8 +61,19 @@ const isAllLoaded = computed(() => {
     return displayedArticles.value.length >= articles.length;
 });
 
-// 简化的视图加载函数
+// 添加设备检测
+const isMobile = ref(false);
+
+// 检查是否为移动设备
+const checkDevice = () => {
+    isMobile.value = window.innerWidth <= 768;
+};
+
+// 修改视图加载函数
 const loadViews = async (newArticles: Article[]) => {
+    // 如果是移动设备，直接返回，不加载浏览量
+    if (isMobile.value) return;
+
     const promises = newArticles.map(async (article) => {
         if (!viewsMap.value.has(article.link)) {
             try {
@@ -138,14 +149,17 @@ const handleScroll = () => {
     });
 };
 
-// 初始化加载
+// 修改初始化加载
 onMounted(async () => {
+    checkDevice(); // 检查设备类型
+    window.addEventListener('resize', checkDevice); // 监听窗口大小变化
     await loadMoreArticles();
     window.addEventListener('scroll', handleScroll, { passive: true });
 });
 
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('resize', checkDevice);
     if (scrollTimeout) {
         cancelAnimationFrame(scrollTimeout);
     }
