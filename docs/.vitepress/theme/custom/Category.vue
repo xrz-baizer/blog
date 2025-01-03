@@ -175,7 +175,8 @@ onUnmounted(() => {
     padding: 14px 16px;
     margin: 12px 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    background: var(--vp-c-bg);
+    /*background: var(--vp-c-bg);*/
+    /*background: var(--vp-custom-block-code);*/
     box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     text-decoration: none !important;
     display: block;
@@ -224,7 +225,7 @@ onUnmounted(() => {
 .category-pc {
     font-size: 0.9rem;
     color: var(--vp-c-text-2);
-    background: var(--vp-c-bg-soft);
+    background: #f8f8fe;
     padding: 4px 12px;
     border-radius: 7px;
     white-space: nowrap;

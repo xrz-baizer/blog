@@ -27,8 +27,8 @@
     --vp-nav-height: 56px;
     --vp-nav-logo-height: 20px;
 
-    /* 容器折叠块 */
-    --vp-custom-block-details-bg: #f0f4f9;
+    /* 侧边栏、代码块*/
+    --vp-custom-block-code: #f0f4f9;
 
 
     /*--vp-font-family-base: Google Sans,Helvetica Neue,sans-serif;*/
@@ -256,7 +256,7 @@ body.no-sidebar .content {
 .VPSidebar {
     /*display: none;*/
     /*background-color: #f8f8fe!important;*/
-    background-color: #f0f4f9 !important;
+    background-color: var(--vp-custom-block-code) !important;
     overflow-y: auto; /* 保留滚动功能 */
     scrollbar-width: none; /* 针对 Firefox 隐藏滚动条 */
 }
@@ -406,7 +406,7 @@ mark {
 /* 代码块样式 */
 .vp-doc div[class*='language-'] {
     /*background-color: #f8f8fe !important;*/
-    background-color: #f0f4f9 !important;
+    background-color: var(--vp-custom-block-code) !important;
 
     margin: 16px 0px;
     border-radius: 12px;
@@ -421,7 +421,7 @@ mark {
 /* 表格头  */
 .vp-doc th{
     color: var(--vp-c-text-1);
-    background-color: #f0f4f9 ;
+    background-color: var(var(--vp-custom-block-code)) ;
 }
 
 /* 表格双数行 样式 */
