@@ -5,7 +5,7 @@
     /*--vp-c-brand-1: #18794e;*/
     /*--vp-c-brand-1: #30a46c;*/
     --vp-c-brand-1: var(--custom-a-1);
-    --vp-c-brand-2: var(--custom-a-1);
+    /*--vp-c-brand-2: var(--custom-a-1);*/
     /*--vp-c-brand-3: var(--custom-a-1);*/
 
     /* 文档文本颜色 */
@@ -57,10 +57,10 @@
     }
 
     /* 分类页特殊处理 */
-    .container:has(.pagination) .content{
-        padding: 0px 32px;
+    .container:has(.article-container) .content{
+        padding: 0px 10px;
     }
-    .VPDoc:has(.pagination){
+    .VPDoc:has(.article-container){
         padding-top: 22px;
     }
 

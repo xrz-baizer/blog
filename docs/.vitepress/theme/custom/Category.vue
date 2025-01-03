@@ -170,7 +170,7 @@ onUnmounted(() => {
 
 .post-list {
     position: relative;
-    border: 1px solid rgba(60,60,67,.12);
+    border: 1px solid rgba(60,60,67,.07);
     border-radius: 8px;
     padding: 14px 16px;
     margin: 12px 0;
@@ -185,7 +185,16 @@ onUnmounted(() => {
 
 .post-list:hover {
     /*transform: translateY(-0.5px);*/
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.16);
+}
+
+.post-list:hover {
+    /*transform: translateY(-0.5px);*/
+    box-shadow: 0 1px 5px rgba(0,0,0,0.16);
+}
+
+.post-list:hover .title-text {
+    color: var(--vp-c-brand-1); /* 更改为你想要的颜色 */
 }
 
 /* 文章标题区域 */
@@ -197,7 +206,7 @@ onUnmounted(() => {
 }
 
 .post-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     margin: 0;
     flex: 1;
@@ -209,8 +218,7 @@ onUnmounted(() => {
 }
 
 .title-text {
-    /*color: var(--custom-a-1);*/
-    color: var(--vp-c-brand-1);
+    color: var(--vp-c-text-1);
     transition: all 0.2s ease;
     display: block;
     overflow: hidden;
@@ -220,7 +228,7 @@ onUnmounted(() => {
 
 /* 更新时间样式 */
 .category-pc {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--vp-c-text-2);
     background: var(--vp-c-bg-soft);
     padding: 4px 12px;

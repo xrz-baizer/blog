@@ -71,6 +71,10 @@
 
 
 
+> 平方 = 2次方
+>
+> 立方 = 3次方
+
 ## 参考
 
 - [Hello 算法](https://www.hello-algo.com/chapter_data_structure/classification_of_data_structure/#311)
