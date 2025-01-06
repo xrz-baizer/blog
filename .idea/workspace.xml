@@ -7,7 +7,9 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init" />
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -283,6 +285,9 @@
       <workItem from="1735876181495" duration="2044000" />
       <workItem from="1735886884817" duration="4655000" />
       <workItem from="1735899539343" duration="584000" />
+      <workItem from="1735911621769" duration="722000" />
+      <workItem from="1736078511655" duration="641000" />
+      <workItem from="1736152312713" duration="87000" />
     </task>
     <servers />
   </component>

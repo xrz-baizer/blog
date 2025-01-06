@@ -400,6 +400,7 @@ mark {
 
 .custom-block.details{
     font-size: var(--font-size-content);
+    background-color: var(--vp-custom-block-code) ;
     color: var(--vp-c-brand-2);
 }
 
