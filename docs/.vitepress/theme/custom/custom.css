@@ -153,8 +153,19 @@
     }
 
     .menu,.VPLocalNavOutlineDropdown button{
-        font-size: 14px !important;
+        font-size: .9rem !important;
         color: var(--vp-c-text-1) !important;
+    }
+
+    .VPSidebarItem h2[class='text'],
+    .VPSidebarItem h3[class='text']{
+        font-size: .9rem !important;
+    }
+    .VPSidebarItem h4[class='text']{
+        font-size: .9rem !important;
+    }
+    .VPSidebarItem p[class='text']{
+        font-size: .8rem !important;
     }
 
 }
@@ -490,17 +501,20 @@ input[type="checkbox"]{
 
 
 /* 侧边栏 文件夹样式*/
-.VPSidebarItem h2,
-.VPSidebarItem h3,
-.VPSidebarItem h4{
+.VPSidebarItem h2[class='text'],
+.VPSidebarItem h3[class='text']{
     /*font-weight: 600 !important;*/
-    font-size: 1.2rem !important;
+    font-size: 1.2rem ;
+    color: var(--vp-c-text-1) !important;
+}
+.VPSidebarItem h4[class='text']{
+    font-size: 1.1rem;
     color: var(--vp-c-text-1) !important;
 }
 /* 侧边栏 文章标题样式*/
-.VPSidebarItem p{
+.VPSidebarItem p[class='text']{
     /*font-weight: 500 !important;*/
-    font-size: 1rem !important;;
+    font-size: 1rem ;
     /*color: var(--custom-a-1) !important;*/
 
     /* 超出换行，并以省略号显示 */

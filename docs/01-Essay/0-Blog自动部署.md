@@ -906,7 +906,14 @@ baizer.info www.baizer.info {
     # 添加反向代理，将 /proxy 的请求转发到 JS 服务
     route /proxy/* {
         uri strip_prefix /proxy # 去掉 /proxy 前缀
-        reverse_proxy view-service:3000 # 注意配置的容器名
+        
+        # 注意view-service是配置的容器名
+        reverse_proxy view-service:3000 {
+            # 跨域配置
+            header_up Host {http.reverse_proxy.upstream.hostport}
+            header_down Access-Control-Allow-Headers *
+            header_down Access-Control-Allow-Origin *
+        }
     }
 }
 EOF
