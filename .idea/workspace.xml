@@ -8,7 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/auto-deploy/Caddyfile" beforeDir="false" afterPath="$PROJECT_DIR$/auto-deploy/Caddyfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -290,6 +290,8 @@
       <workItem from="1736078511655" duration="641000" />
       <workItem from="1736152312713" duration="87000" />
       <workItem from="1736155974876" duration="2790000" />
+      <workItem from="1736215537381" duration="322000" />
+      <workItem from="1736245339905" duration="728000" />
     </task>
     <servers />
   </component>

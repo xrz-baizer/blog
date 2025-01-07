@@ -170,12 +170,12 @@ onUnmounted(() => {
 
 .post-list {
     position: relative;
-    border: 1px solid rgba(60,60,67,.07);
+    border: 1px solid rgba(60,60,67,.1);
     border-radius: 8px;
     padding: 14px 16px;
     margin: 12px 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    /*background: var(--vp-c-bg);*/
+    /*background: #f8f8fe;*/
     /*background: var(--vp-custom-block-code);*/
     box-shadow: 0 1px 2px rgba(0,0,0,0.04);
     text-decoration: none !important;
@@ -190,7 +190,9 @@ onUnmounted(() => {
 
 .post-list:hover .title-text {
     color: var(--vp-c-brand-1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 /* 文章标题区域 */
 .post-header {

@@ -495,7 +495,7 @@ input[type="checkbox"]{
 
 .medium-zoom-image {
     margin-bottom: 10px;
-    box-shadow: 1px 2px 5px #0006;
+    /*box-shadow: 1px 2px 5px #0006;*/
     z-index: 9999 !important;/* 给的值是21，但是实测盖不住，直接999 */
 }
 
