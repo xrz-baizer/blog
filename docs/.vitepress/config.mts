@@ -91,6 +91,7 @@ export default defineConfig({
           data.sort((a, b) => {
             return getOrder(a) - getOrder(b);
           });
+
           return data;
         },
       }),

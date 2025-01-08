@@ -65,6 +65,8 @@ export function getRecentArticles(items: Item[],num: number): Article[] {
 
     //移除文件名 `0-`
     result.forEach(item => { item.text = item.text.replace(topIdentifier, '')})
+    //移除其它数字标识前缀
+    result.forEach(item => { item.text = item.text.replace(/^[0-9]+-/, '')})
 
 
     if(num == -1) return result;

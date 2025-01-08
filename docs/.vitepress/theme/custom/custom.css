@@ -85,6 +85,10 @@
         --font-size-sidebar: 13px;
     }
 
+    .divider,.divider-line{
+        display: block !important;
+    }
+
     /*--vp-home-hero-image-filter: blur(80px);*/
     .VPHero{
         padding-top: 30px !important;
@@ -590,7 +594,7 @@ input[type="checkbox"]{
 }
 
 .divider,.divider-line{
-    background-color: transparent !important;
+    display: none;
 }
 
 .dark {
