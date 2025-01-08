@@ -316,6 +316,9 @@ body.no-sidebar .content {
     background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
     -webkit-text-fill-color: transparent;
 }
+.VPNavBarTitle .title{
+    border-bottom: none;
+}
 
 /* Git最后更新时间 */
 .LastUpdated {
@@ -583,6 +586,11 @@ input[type="checkbox"]{
 .VPLocalNav {
     background-color: rgba(255, 255, 255, 0) !important;
     backdrop-filter: blur(10px);
+    border-bottom: none !important;
+}
+
+.divider,.divider-line{
+    background-color: transparent !important;
 }
 
 .dark {
