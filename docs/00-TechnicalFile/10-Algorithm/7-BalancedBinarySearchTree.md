@@ -57,6 +57,8 @@ Grand的最高子节点 = Parent，Parent的最高子节点  = Node，以下四�
 
 新增`isLeftChild`、`isRightChild`、`balancefactor`、`isBalanced`、`updateHight`、`tallerChild`方法，`height`属性
 
+- 注意：节点高度默认为1
+
 ```java
 /**
  *  树节点 基本构造
@@ -94,7 +96,7 @@ public class Node<E> {
 
     //===================【供AVL树使用】
 
-    public int height; //节点高度
+    public int height = 1; //节点高度默认为1
 
     /**
      * 平衡因子（Balance Factor）
@@ -146,9 +148,11 @@ public class Node<E> {
 
 ### afterAdd()
 
-添加节点之后调整，确保树的平衡。获取添加的节点，向上寻找其失衡的父节点。
+添加节点之后调整，确保树的平衡。
 
-找到第一个失衡的父节点（Grand节点）修复它，其余的父节点也就恢复了。
+- 获取添加的节点，向上寻找其失衡的父节点。
+
+- 找到第一个失衡的父节点（Grand节点）修复它，其余的父节点也就恢复了。
 
 ```java
 /**
@@ -174,17 +178,115 @@ public void afterAdd(Node<E> node){
 #### 恢复平衡 rebalance()
 
 ```java
+/**
+ * 恢复平衡
+ *
+ * @param grand 失衡节点
+ */
+private void rebalance(Node<E> grand) {
+    // Grand的最高子节点 = Parent，Parent的最高子节点 = Node
+    Node<E> parent = grand.tallerChild();
+    Node<E> node = parent.tallerChild();
 
+    // 以下四种情况涵盖了所有失衡节点的情况。
+    if (parent.isLeftChild()) {
+        if (node.isLeftChild()) {
+            // LL失衡
+            this.rotateRight(grand); // 右旋转解决
+        } else {
+            // LR失衡
+            this.rotateLeft(parent); // 先把Parent左旋转，成为LL
+            this.rotateRight(grand); // 再把Grand右旋转解决
+        }
+    } else {
+        if (node.isRightChild()) {
+            // RR失衡
+            this.rotateLeft(grand); // 左旋转解决
+        } else {
+            // RL失衡
+            this.rotateRight(parent); // 先把Parent右旋转，成为RR
+            this.rotateLeft(grand);   // 再把Grand左旋转解决
+        }
+    }
+}
 ```
 
 #### 右旋转 rotateRight()
 
 ```java
+/**
+ * 右旋转
+ *
+ * @param grand 失衡节点
+ */
+public void rotateRight(Node<E> grand) {
+    Node<E> parent = grand.left;   // 以parent为原点，把grand往右旋转
+    Node<E> childA = parent.right; // 相当于示例图中的A节点
+
+    // 更新grand、parent的子节点
+    parent.right = grand;
+    grand.left = childA;
+
+    //==========下方代码与左旋转一致
+
+    //维护原失衡节点的父节点
+    Node<E> childRoot = grand.parent;
+    if (grand.isLeftChild()) childRoot.left = parent;
+    else if (grand.isRightChild()) childRoot.right = parent;
+    else
+        super.root = parent;    //没有父节点，说明grand是root节点
+
+
+    // 更新grand、parent、child的父节点
+    parent.parent = childRoot;
+    grand.parent = parent;
+    if (childA != null) {
+        childA.parent = grand;
+    }
+
+    // 更新grand、parent的高度
+    grand.updateHight();
+    parent.updateHight();
+}
 ```
 
 #### 左旋转 rotateLeft()
 
 ```java
+/**
+ * 左旋转
+ *
+ * @param grand 失衡节点
+ */
+public void rotateLeft(Node<E> grand) {
+    Node<E> parent = grand.right;  // 以parent为原点，把grand往左旋转
+    Node<E> childA = parent.left;  // 相当于示例图中的A节点
+
+    // 更新grand、parent的子节点
+    parent.left = grand;
+    grand.right = childA;
+
+    //==========下方代码与右旋转一致
+
+    //维护原失衡节点的父节点
+    Node<E> childRoot = grand.parent;
+    if (grand.isLeftChild()) childRoot.left = parent;
+    else if (grand.isRightChild()) childRoot.right = parent;
+    else
+        super.root = parent;    //没有父节点，说明grand是root节点
+
+
+    // 更新grand、parent、child的父节点
+    parent.parent = childRoot;
+    grand.parent = parent;
+    if (childA != null) {
+        childA.parent = grand;
+    }
+
+    // 更新grand、parent的高度
+    grand.updateHight();
+    parent.updateHight();
+}
 
 ```
 
@@ -196,6 +298,12 @@ public void afterAdd(Node<E> node){
 
 ## 参考
 
-- https://onyfgwe19l.feishu.cn/docx/MIgjdurh8o0nINxG4nwcJx4MnVe
+- [数据结构动画演示 Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+
 - https://www.hello-algo.com/chapter_tree/avl_tree/#__tabbed_4_1
+
 - https://blog.csdn.net/weixin_43734095/article/details/104728663
+
+  
+
+- https://onyfgwe19l.feishu.cn/docx/MIgjdurh8o0nINxG4nwcJx4MnVe

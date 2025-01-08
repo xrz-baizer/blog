@@ -64,15 +64,16 @@
         padding-top: 22px;
     }
 
-    .VPHero .text{
-        margin-top: 40px !important;
-    }
     .VPHomeFeatures .box{
         padding: 20px 26px;
     }
 
     .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
         margin-left: -.7rem;
+    }
+
+    .VPHero .text{
+        margin-top: 12px !important;
     }
 
 }
@@ -99,9 +100,6 @@
     .VPHero .container{
         /*flex-direction: column-reverse;*/
     }
-    .VPHero .text{
-        margin-top: 8px !important;
-    }
 
     .LastUpdated {
         /*display: none;*/
@@ -124,10 +122,13 @@
     .VPHomeFeatures .box{
         padding: 10px 20px;
     }
+    .VPHomeFeatures .title{
+        font-size: .9rem;
+    }
     .VPHomeFeatures .details{
         padding-top: 4px;
         line-height: 14px;
-        font-size: 12px;
+        font-size: .7rem;
     }
     .VPHomeFeatures .item{
         margin: 0 auto;
