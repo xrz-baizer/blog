@@ -118,6 +118,7 @@
     }
     .VPFeature{
         box-shadow: 1px 1px 3px 0 rgb(0 0 0 / 15%);
+        border-radius: 7px;
     }
     .VPHomeFeatures .box{
         padding: 10px 20px;

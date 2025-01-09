@@ -1,5 +1,5 @@
 export const articlesMap = {
-  "00-TechnicalFile/10-Algorithm/1-DataStructure.md": " - WEB书籍：https://www.hel... - B站视频左程云：https://space.b... - 课上代码、ppt、资料：https://github.... - 排序动画演示：http://www.dong... - 代码Demo：/Users/Work/Pagoda/Demo/AlgorithmDemo - 动态规划 - [公司使用案例: 最优代金券组合-动态规划](htt",
+  "00-TechnicalFile/10-Algorithm/1-DataStructure.md": " 数据结构分类 >注意：所有数据结构都是基于数组、链表或二者的组合实现的 > >- 基于数组可实现：栈、队列、哈希表、树、堆、图、矩阵、张量（维度 ≥3 的数组）等。 >- 基于链表可实现：栈、队列、哈希表、树、堆、图等。 线性数据结构 - 数组 Array：用一组连续的内存空间，来存储一组具有相同类型的数据。（查询快，修改慢） - 链表 LinkedList：内存地址无须连续，每个节点都包含下一",
   "00-TechnicalFile/10-Algorithm/2-手写ArrayList.md": " ArrayList 数组 Array：用一组连续的内存空间，来存储一组具有相同类型的数据。（查询快，修改慢） > 继承 `java.util.AbstractList` ，实现一些通用的方法 > > - 动态数组：通过扩容实现动态数组：grow(int minCapacity) > - 添加功能：通过部分元素右移实现添加：add(int index, E element) > - 删除功能：通过",
   "00-TechnicalFile/10-Algorithm/3-手写LinkedList.md": " > 链表 LinkedList：内存地址无须连续，每个节点都包含下一个节点的指针。（查询慢，修改快） 单向链表 单向链表：每个节点都包含下一个节点的指针，末尾节点指向null。 - 注意新增、删除 first 头节点时特殊处理 ::: details 代码实现 SinglyLinkedList（重点关注 add、remove 方法） ```java package datastructure; ",
   "00-TechnicalFile/10-Algorithm/4-手写Stack.md": " Stack 栈 > 单端操作，后进先出，简称LIFO（Last In First Out） 栈的实现：可以基于动态数组 或者 双向链表实现 - 官方 java.util.Stack 是基于 Vector 实现（一种线程安全的数组） 栈的应用：浏览器地址的前进和后退、软件相关操作的撤销和恢复 ::: details 代码实现 XStack（基于动态数组实现） ```java package dat",
