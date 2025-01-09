@@ -79,8 +79,9 @@ export default defineConfig({
       AutoSidebar({ // 自动生成侧边栏 https://github.com/QC2168/vite-plugin-vitepress-auto-sidebar
         ignoreIndexItem: true,  //忽略index文件
         collapsed: true,        //收起所有侧边栏
+        ignoreList: ["image"],  //忽略图片文件夹
         // 侧边栏排序（文件夹排在前面）
-        beforeCreateSideBarItems: (data) => {
+        beforeCreateSideBarItems: (data: string[]) => {
           function getOrder(item: string): number {
             // 如果项没有扩展名，则认为它是文件夹
             if (!/\.[^/.]+$/.test(item)) {
@@ -91,9 +92,19 @@ export default defineConfig({
           data.sort((a, b) => {
             return getOrder(a) - getOrder(b);
           });
-
           return data;
         },
+        sideBarItemsResolved: (data ) => {
+          data.forEach( item => {
+            let fileName = item.text;
+            if(fileName.startsWith("0-")) return;  // 置顶文件，忽略；
+
+            // 移除文件夹、文件名以 xxx- 开头的字符
+            if (/^[0-9]{1,3}-/.test(fileName)) {
+              item.text = fileName.replace(/^[0-9]{1,3}-/, '');
+            }
+          })
+        }
       }),
       {
         name: 'generate-articles-json',
