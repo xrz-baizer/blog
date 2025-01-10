@@ -185,7 +185,7 @@ onUnmounted(() => {
 }
 
 .post-list:hover {
-    box-shadow: 0 1px 5px rgba(0,0,0,0.16);
+    box-shadow: rgba(0, 0, 0, 0.105) 0px 0px 10px;
 }
 
 .post-list:hover .title-text {

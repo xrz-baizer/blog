@@ -86,10 +86,6 @@
         --font-size-sidebar: 13px;
     }
 
-    .divider,.divider-line{
-        display: block !important;
-    }
-
     /*--vp-home-hero-image-filter: blur(80px);*/
     .VPHero{
         padding-top: 30px !important;
@@ -117,7 +113,6 @@
         padding-top: 0px !important;
     }
     .VPFeature{
-        box-shadow: 1px 1px 3px 0 rgb(0 0 0 / 15%);
         border-radius: 7px !important;
     }
     .VPHomeFeatures .box{
@@ -184,6 +179,9 @@ body.no-sidebar .content {
     margin-left: 0;
 }
 
+.VPNav{
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 18px;
+}
 
 /* 主页 居中 */
 .VPHome{
@@ -231,7 +229,7 @@ body.no-sidebar .content {
 /* 首页 页脚 */
 .VPFooter{
     border-top:none !important;
-    /*background-color: #f8f8fe !important;*/
+    background: none !important;
     /*background-color: #f5f7fa !important;*/
 }
 
@@ -576,7 +574,7 @@ input[type="checkbox"]{
 /* Feature透明 */
 .VPFeature {
     border: none !important;
-    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 15%);
+    box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 10px;
     background-color: transparent !important;;
 }
 
@@ -595,6 +593,7 @@ input[type="checkbox"]{
     border-bottom: none !important;
 }
 
+/* 导航栏的下边框 */
 .divider,.divider-line{
     display: none;
 }
