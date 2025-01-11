@@ -215,7 +215,8 @@ onUnmounted(() => {
 }
 
 .title-text {
-    color: var(--vp-c-text-1);
+    /*color: var(--vp-c-text-1);*/
+    color: var(--vp-c-text-title-1);
     transition: all 0.2s ease;
     display: block;
     overflow: hidden;

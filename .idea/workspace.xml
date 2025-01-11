@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/auto-deploy/github-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/Category.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
     </list>
@@ -302,6 +301,7 @@
       <workItem from="1736403568973" duration="11000" />
       <workItem from="1736408530079" duration="7865000" />
       <workItem from="1736477113532" duration="2780000" />
+      <workItem from="1736563839766" duration="2844000" />
     </task>
     <servers />
   </component>

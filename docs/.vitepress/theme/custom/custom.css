@@ -1,6 +1,12 @@
 @import './rainbow.css';
 
 :root {
+
+    /*--vp-c-bg: #f5f5fa;*/
+    /*--vp-c-bg: #f1f2f3;*/
+    /*--vp-c-bg: #ffffff;*/
+
+
     /* 主题基色 */
     /*--vp-c-brand-1: #18794e;*/
     /*--vp-c-brand-1: #30a46c;*/
@@ -10,6 +16,12 @@
 
     /* 文档文本颜色 */
     --vp-c-text-1: #1f1f1f;
+
+    /* 主要标题颜色 */
+    /*--vp-c-text-title-1: #5C6A7A;*/
+    --vp-c-text-title-1: #394759;
+    /*--vp-c-text-title-1: #3D3B40;*/
+    /*--vp-c-text-title-1: #525252;*/
 
     /* 导航栏、A标签 active颜色 */
     --custom-a-1: #1769e0;
@@ -171,7 +183,6 @@
 
 }
 
-
 body.no-sidebar .sidebar {
     display: none;
 }
@@ -200,6 +211,10 @@ body.no-sidebar .content {
 
 .VPHero .text{
     opacity: .85;
+    color: var(--vp-c-text-title-1) !important;
+}
+.VPHero .tagline{
+    color: var(--vp-c-text-title-1) !important;
 }
 /*#app{*/
 /*    background-image: url("https://cn.bing.com//th?id=OHR.FibonacciAloe_ZH-CN8974137481_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");*/
@@ -315,11 +330,16 @@ body.no-sidebar .content {
 /* 左上角网站名称 */
 .VPNavBarTitle span {
     font-size: 22px !important;
-    -webkit-background-clip: text;
+
+    /*  动态色彩 */
     background-clip: text;
-    background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);
+    background-image: var(--vp-home-hero-name-background);
+    /*background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);*/
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
 .VPNavBarTitle .title{
     border-bottom: none;
 }
@@ -536,7 +556,7 @@ input[type="checkbox"]{
 
 /* 导航栏样式 */
 .VPNavBarMenuLink{
-    /*color: var(--vp-c-text-2) !important;*/
+    color: var(--vp-c-text-title-1) !important;
     font-weight: 600 !important;
     font-size: 1rem !important
 }
@@ -575,7 +595,11 @@ input[type="checkbox"]{
 .VPFeature {
     border: none !important;
     box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 10px;
-    background-color: transparent !important;;
+    background-color: transparent !important;
+    color: var(--vp-c-text-title-1);
+}
+.VPFeature .details{
+    font-size: 0.8rem;
 }
 
 /* 文档页侧边栏顶部透明 */
