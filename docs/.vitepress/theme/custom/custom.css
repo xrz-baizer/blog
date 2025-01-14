@@ -88,9 +88,6 @@
     .VPHero .text{
         margin-top: 12px !important;
     }
-    .VPHero{
-        padding-bottom: 120px !important;
-    }
 
 }
 
@@ -105,6 +102,7 @@
     /*--vp-home-hero-image-filter: blur(80px);*/
     .VPHero{
         padding-top: 30px !important;
+        padding-bottom: 20px !important;
         /*background-image: var(--vp-home-hero-image-background-image);*/
         /*filter: blur(30px);*/
     }
