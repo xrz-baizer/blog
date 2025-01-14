@@ -88,6 +88,9 @@
     .VPHero .text{
         margin-top: 12px !important;
     }
+    .VPHero{
+        padding-bottom: 100px !important;
+    }
 
 }
 
