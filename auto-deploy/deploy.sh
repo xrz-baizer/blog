@@ -7,7 +7,8 @@ BLOG_PATH="/Users/Work/Pagoda/this/Blog"
 SYNC_DIRS=("00-TechnicalFile" "01-Essay" "02-Other" "Image")
 
 #REMOTE_SERVER="root@cloudserver"
-REMOTE_SERVER="root@tencentserver"
+#REMOTE_SERVER="root@tencentserver"
+REMOTE_SERVER="root@abroadserver"
 
 #REMOTE_PATH="/app"
 #CONTAINER_NAME="nginxBlog"

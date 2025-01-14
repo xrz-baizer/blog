@@ -831,7 +831,7 @@ cd /views-counter
 docker build -t js-view-service .
 
 # 查看镜像
-docker iamges
+docker images
 ```
 
 部署服务
