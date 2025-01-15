@@ -68,7 +68,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/Work/Pagoda/this/Blog/docs/.vitepress/theme&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/Work/Pagoda/this/Blog/docs/public&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -86,9 +86,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/public" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme" />
       <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/docs/public" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme/custom" />
       <recent name="$PROJECT_DIR$/docs/01-Essay" />
     </key>
@@ -303,6 +303,8 @@
       <workItem from="1736735008275" duration="822000" />
       <workItem from="1736844441486" duration="2826000" />
       <workItem from="1736848218334" duration="765000" />
+      <workItem from="1736850984433" duration="816000" />
+      <workItem from="1736922041125" duration="452000" />
     </task>
     <servers />
   </component>

@@ -49,26 +49,25 @@
 
 - [ ] [还在用策略模式解决 if-else？Map+函数式接口方法才是YYDS！](https://mp.weixin.qq.com/s/_RYlpoR9DFlE6FNDXm-O4A)
 
+  
+
 - [ ] [注解实现接口限流](https://mp.weixin.qq.com/s/wtYlRDEpPU3Eubvfp4CxVw)
 
+- [ ] [微服务常见限流方案及TSF限流原理](https://mp.weixin.qq.com/s/8ninOnkNXKytoflRAzCYBw)
+
+- [ ] [一文讲透数据库缓存一致性问题](https://mp.weixin.qq.com/s/HilTpiLm5VKp5pbhd-K9uQ)
+
+
+
 - [ ] [Spring Event重试方案](https://mp.weixin.qq.com/s/uFroH2fz2Atp36BtWuX8eQ)
-
 - [ ] [Grafana 中文入门教程 | 构建你的第一个仪表盘](https://mp.weixin.qq.com/s?__biz=MzI3MTI2NzkxMA==&mid=2247494567&idx=1&sn=caadacf2231c1ed3be624c9f79fa404f)
-
 - [ ] [如何阅读开源框架源码](https://mp.weixin.qq.com/s?__biz=MzIzOTU0NTQ0MA==&mid=2247536752&idx=1&sn=4a06275978029ecc480dd25b27d84312&chksm=e833e6521bd8b448d8d385a3fab1e264847c2bce9f1e1479a148ec6422921b22fe082994a380&scene=132&exptype=timeline_recommend_article_extendread_samebiz#wechat_redirect)
-
 - [ ] [订单超时自动取消该如何设计?](https://mp.weixin.qq.com/s/vnKaDanwdTYdFzl0Xl1eyg)
-
 - [ ] [拒绝宕机！一文详解分布式限流方案（附代码实现）](https://mp.weixin.qq.com/s/exRDMbNwoA0nB2GWNCWQ_Q)
-
 - [ ] [SpringBoot自动装配原理，这一篇就够了！](https://mp.weixin.qq.com/s/f6oED1hbiWat_0HOwxgfnA)
-
 - [ ] [为什么有 HTTPS？因为 HTTP 不安全！HTTPS 如何实现安全通信？](https://mp.weixin.qq.com/s/-zuloBmzdKCsP02umc2efg)
-
 - [ ] [代码千行不如架构图一张！程序员如何培养业务思维，做有价值的需求？](https://mp.weixin.qq.com/s/jepmmvy0-I2ba30g42Qacg)
-
 - [ ] [服务端开发必备：9大性能优化秘技-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2442205)
-
 - [ ] [一文读懂10种最经典的设计模式](https://mp.weixin.qq.com/s/Vo8IKRZ3RTHclI21x28bSw)
 
 ## Design Modeling

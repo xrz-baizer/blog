@@ -441,7 +441,7 @@
 
 @media (min-width: 960px) {
     :root {
-        --vp-home-hero-image-filter: blur(120px);
+        --vp-home-hero-image-filter: blur(150px);
     }
 }
 
