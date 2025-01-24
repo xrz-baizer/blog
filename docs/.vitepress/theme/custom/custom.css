@@ -135,12 +135,12 @@
         padding: 10px 20px;
     }
     .VPHomeFeatures .title{
-        font-size: .9rem;
+        font-size: .8rem;
     }
     .VPHomeFeatures .details{
         padding-top: 4px;
         line-height: 14px;
-        font-size: .7rem;
+        font-size: .7rem !important;
     }
     .VPHomeFeatures .item{
         margin: 0 auto;
@@ -559,10 +559,19 @@ input[type="checkbox"]{
 }
 
 /* 导航栏样式 */
+.VPNavBarMenu{
+    /*  动态色彩 */
+    background-clip: text;
+    background-image: var(--vp-home-hero-name-background);
+    /*background-image: linear-gradient(to right, #0090f7, #ba62fc, #f2416b);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .VPNavBarMenuLink{
     color: var(--vp-c-text-title-1) !important;
     font-weight: 600 !important;
-    font-size: 1rem !important
+    font-size: 1.1rem !important
 }
 .VPNavBarMenuLink.active {
    color: var(--custom-a-1) !important;
