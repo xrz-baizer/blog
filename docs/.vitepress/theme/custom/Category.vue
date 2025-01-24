@@ -203,7 +203,7 @@ onUnmounted(() => {
 }
 
 .post-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
     flex: 1;

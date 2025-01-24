@@ -535,17 +535,17 @@ input[type="checkbox"]{
 .VPSidebarItem h2[class='text'],
 .VPSidebarItem h3[class='text']{
     /*font-weight: 600 !important;*/
-    font-size: 1.2rem ;
+    font-size: 1rem ;
     color: var(--vp-c-text-1) !important;
 }
 .VPSidebarItem h4[class='text']{
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--vp-c-text-1) !important;
 }
 /* 侧边栏 文章标题样式*/
 .VPSidebarItem p[class='text']{
     /*font-weight: 500 !important;*/
-    font-size: 1rem ;
+    font-size: 0.96rem ;
     /*color: var(--custom-a-1) !important;*/
 
     /* 超出换行，并以省略号显示 */
@@ -571,7 +571,7 @@ input[type="checkbox"]{
 .VPNavBarMenuLink{
     color: var(--vp-c-text-title-1) !important;
     font-weight: 600 !important;
-    font-size: 1.1rem !important
+    font-size: 1rem !important
 }
 .VPNavBarMenuLink.active {
    color: var(--custom-a-1) !important;

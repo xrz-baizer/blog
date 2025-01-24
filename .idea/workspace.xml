@@ -8,7 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -311,6 +310,7 @@
       <workItem from="1736928194938" duration="1324000" />
       <workItem from="1737340368306" duration="2469000" />
       <workItem from="1737699147263" duration="534000" />
+      <workItem from="1737705617997" duration="211000" />
     </task>
     <servers />
   </component>
