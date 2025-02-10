@@ -13,7 +13,7 @@
                         </span>
                     </div>
                     <span class="category-view">{{ article.view }}</span>
-                    <span class="category-pc">{{ article.lastUpdatedFormat }}</span>
+                    <span class="category-pc">Last Updated: {{ article.lastUpdatedFormat }}</span>
                 </div>
                 <p class="describe" v-html="article.summary"></p>
             </a>
