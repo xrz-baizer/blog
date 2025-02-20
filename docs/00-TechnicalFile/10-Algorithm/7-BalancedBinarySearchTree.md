@@ -175,7 +175,40 @@ public void afterAdd(Node<E> node){
 }
 ```
 
-#### 恢复平衡 rebalance()
+### afterRemove()
+
+删除之后失衡的处理 
+
+- 与 afterAdd() 区别是，恢复平衡后，可能会导致更高层的祖先节点失衡，所以需要循环向上检查
+
+```java
+/**
+ * 删除节点之后调整，确保树的平衡
+ * @param node
+ */
+private void afterRemove(Node<E> node) {
+    if (node == null) return;
+    // 向上循环，寻找第一个失衡的父节点
+    while ((node = node.parent) != null) {
+
+        if (node.isBalanced()) {
+            //平衡节点，更新高度即可
+            node.updateHight();
+        } else {
+            //失衡节点，需要重新恢复平衡
+            this.rebalance(node);
+
+            // 恢复平衡后，可能会导致更高层的祖先节点失衡，所以需要循环向上检查
+            // break;
+        }
+    }
+}
+
+```
+
+
+
+### 恢复平衡 rebalance()
 
 ```java
 /**
@@ -211,7 +244,7 @@ private void rebalance(Node<E> grand) {
 }
 ```
 
-#### 右旋转 rotateRight()
+### 右旋转 rotateRight()
 
 ```java
 /**
@@ -250,7 +283,7 @@ public void rotateRight(Node<E> grand) {
 }
 ```
 
-#### 左旋转 rotateLeft()
+### 左旋转 rotateLeft()
 
 ```java
 /**
@@ -290,11 +323,198 @@ public void rotateLeft(Node<E> grand) {
 
 ```
 
-### afterRemove()
-
-删除之后失衡的处理 
 
 
+### 完整代码 AVLTree
+
+::: details AVLTree AVL树实现类
+
+```java
+package datastructure.tree;
+
+import java.util.Comparator;
+
+/**
+ * @author XRZ
+ */
+public class AVLTree<E> extends BinarySearchTree<E> {
+
+    public AVLTree() {
+    }
+
+    public AVLTree(Comparator<E> comparator) {
+        super(comparator);
+    }
+
+    @Override
+    public void add(E element) {
+        super.add(element);
+        Node<E> node = super.node(element);
+
+        this.afterAdd(node);
+    }
+
+    /**
+     * 添加节点之后调整，确保树的平衡
+     *
+     * @param node
+     */
+    private void afterAdd(Node<E> node) {
+        // 向上循环，寻找第一个失衡的父节点
+        while ((node = node.parent) != null) {
+
+            if (node.isBalanced()) {
+                //平衡节点，更新高度即可
+                node.updateHight();
+            } else {
+                //失衡节点，需要重新恢复平衡
+                this.rebalance(node);
+                break; //第一个失衡的父节点恢复后，所有失衡的父节点也就恢复了，直接退出
+            }
+        }
+    }
+
+
+    @Override
+    public void remove(E element) {
+        Node<E> removeNode = super.node(element);
+        super.remove(element);
+
+        this.afterRemove(removeNode);
+    }
+
+    /**
+     * 删除节点之后调整，确保树的平衡
+     *
+     * @param node
+     */
+    private void afterRemove(Node<E> node) {
+        if (node == null) return;
+        // 向上循环，寻找第一个失衡的父节点
+        while ((node = node.parent) != null) {
+
+            if (node.isBalanced()) {
+                //平衡节点，更新高度即可
+                node.updateHight();
+            } else {
+                //失衡节点，需要重新恢复平衡
+                this.rebalance(node);
+
+                // 恢复平衡后，可能会导致更高层的祖先节点失衡，所以需要循环向上检查
+                // break;
+            }
+        }
+    }
+
+
+    /**
+     * 恢复平衡
+     *
+     * @param grand 失衡节点
+     */
+    private void rebalance(Node<E> grand) {
+        // Grand的最高子节点 = Parent，Parent的最高子节点 = Node
+        Node<E> parent = grand.tallerChild();
+        Node<E> node = parent.tallerChild();
+
+        // 以下四种情况涵盖了所有失衡节点的情况。
+        if (parent.isLeftChild()) {
+            if (node.isLeftChild()) {
+                // LL失衡
+                this.rotateRight(grand); // 右旋转解决
+            } else {
+                // LR失衡
+                this.rotateLeft(parent); // 先把Parent左旋转，成为LL
+                this.rotateRight(grand); // 再把Grand右旋转解决
+            }
+        } else {
+            if (node.isRightChild()) {
+                // RR失衡
+                this.rotateLeft(grand); // 左旋转解决
+            } else {
+                // RL失衡
+                this.rotateRight(parent); // 先把Parent右旋转，成为RR
+                this.rotateLeft(grand);   // 再把Grand左旋转解决
+            }
+        }
+    }
+
+    /**
+     * 右旋转
+     *
+     * @param grand 失衡节点
+     */
+    public void rotateRight(Node<E> grand) {
+        Node<E> parent = grand.left;   // 以parent为原点，把grand往右旋转
+        Node<E> childA = parent.right; // 相当于示例图中的A节点
+
+        // 更新grand、parent的子节点
+        parent.right = grand;
+        grand.left = childA;
+
+        //==========下方代码与左旋转一致
+
+        //维护原失衡节点的父节点
+        Node<E> childRoot = grand.parent;
+        if (grand.isLeftChild()) childRoot.left = parent;
+        else if (grand.isRightChild()) childRoot.right = parent;
+        else
+            super.root = parent;    //没有父节点，说明grand是root节点
+
+
+        // 更新grand、parent、child的父节点
+        parent.parent = childRoot;
+        grand.parent = parent;
+        if (childA != null) {
+            childA.parent = grand;
+        }
+
+        // 更新grand、parent的高度
+        grand.updateHight();
+        parent.updateHight();
+    }
+
+    /**
+     * 左旋转
+     *
+     * @param grand 失衡节点
+     */
+    public void rotateLeft(Node<E> grand) {
+        Node<E> parent = grand.right;  // 以parent为原点，把grand往左旋转
+        Node<E> childA = parent.left;  // 相当于示例图中的A节点
+
+        // 更新grand、parent的子节点
+        parent.left = grand;
+        grand.right = childA;
+
+        //==========下方代码与右旋转一致
+
+        //维护原失衡节点的父节点
+        Node<E> childRoot = grand.parent;
+        if (grand.isLeftChild()) childRoot.left = parent;
+        else if (grand.isRightChild()) childRoot.right = parent;
+        else
+            super.root = parent;    //没有父节点，说明grand是root节点
+
+
+        // 更新grand、parent、child的父节点
+        parent.parent = childRoot;
+        grand.parent = parent;
+        if (childA != null) {
+            childA.parent = grand;
+        }
+
+        // 更新grand、parent的高度
+        grand.updateHight();
+        parent.updateHight();
+    }
+
+
+}
+
+```
+
+:::
 
 ## 参考
 
