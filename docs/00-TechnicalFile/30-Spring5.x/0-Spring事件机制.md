@@ -58,7 +58,7 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 - 使用`@EventListener`标注方法为监听器，该注解标注的方法上，方法参数为事件类型，标注该监听器要处理的事件类型
 
-## 事件广播器的处理
+## 事件广播器的处理（AbstractApplicationEventMulticaster）
 
 事件广播器（AbstractApplicationEventMulticaster）负责把ApplicationEventPublisher发布的事件广播给对应的监听器们。其内部维护了所有监听器。
 

@@ -4,18 +4,6 @@
 
 一步一步手绘Spring AOP运行时序图（Spring AOP 源码分析）https://blog.csdn.net/weixin_38024782/article/details/109007161
 
-
-
-
-
-- [x] Spring事件机制 
-- [ ] Spring事务的实现
-- [ ] Spring事务的传播
-- [x] SpringMVC
-- [x] SpringBoot
-- [ ] OpenFeignClient
-  - https://www.cnblogs.com/zzyang/p/18040165
-
 ## Spring流程图
 
 <img src="../../Image/spring.png" alt="spring"  />
