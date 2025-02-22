@@ -44,7 +44,135 @@
 
 ### 代码实现
 
-::: details QuickSort
+#### sort 递归排序
+
+```java
+/**
+ * 快速排序（一种基于分治策略的排序算法）
+ * @param arr
+ * @param begin 对 [begin, end) 范围的元素进行快速排序
+ * @param end
+ */
+private void sort(int[] arr,int begin,int end) {
+
+    // 子数组长度为 1 时终止递归
+    if(begin >= end) return;
+
+    // 选取轴点元素，并切割数组
+    // 根据轴点元素分割为两个子数组：小于的放左边，大于的放右边
+    int pivotIndex = this.partition(arr,begin,end);
+
+    // 继续分割，循环往复，直至将每一个元素都转换成轴点元素
+    this.sort(arr,begin,pivotIndex -1);
+    this.sort(arr,pivotIndex + 1,end);
+}
+```
+
+#### partition 切割数组
+
+```java
+/**
+ * 选取轴点元素，并切割数组
+ * @param arr
+ * @param begin
+ * @param end
+ * @return
+ */
+private int partition(int[] arr, int begin, int end) {
+
+    // 默认选择begin位置为轴点元素，并备份
+    int pivotIndex = this.smartBeginIndex(arr,begin,end);
+    int pivotValue = arr[pivotIndex];
+
+
+    // =========== 根据轴点元素分割为两个子数组：小于的放左边，大于的放右边
+    while(begin < end){ // 遍历所有元素
+
+        // =========== 逐一和轴点元素比较，从右边end开始（因为上方pivotValue备份的是begin位置的元素）
+        while(begin < end){
+            if(arr[end] > pivotValue){ // end元素 大于 pivot：即在正确的位置上，不需要触发交换，end--继续比较下一个元素即可
+                end--;
+            }else{
+                // end元素 小于或者等于 pivot：触发交换，end元素需放置左边begin元素的位置上
+                /**
+                 * 原先begin位置的元素在上方已经被备份了，所以此处end元素可以覆盖begin位置的元素
+                 **/
+                this.swap(arr,begin,end);
+                begin++; // 更新begin位置
+                break;   // 并换边，从begin位置开始比较
+            }
+        }
+        //换边
+        while(begin < end){
+            if(arr[begin] < pivotValue){
+                begin++; //begin元素小于pivot，处于合适位置，继续比较下一个begin++元素
+            }else{
+                // begin元素 大于或者等于 pivot：触发交换，begin元素需放置右边end元素的位置上
+                this.swap(arr,begin,end);
+                end--;
+                break; // 换边
+            }
+        }
+    }
+
+    // 遍历结束后，把轴点元素 放置 在begin/end的位置上
+    arr[begin] = pivotValue;
+
+    return begin; //返回轴点元素下标，begin/end都可以
+}
+
+private void swap(int[] arr, int begin, int end) {
+    int temp = arr[begin];
+    arr[begin] = arr[end];
+    arr[end] = temp;
+}
+```
+
+#### smartBeginIndex 轴点元素取值
+
+```java
+/**
+ * 默认选择begin位置为轴点元素下标
+ * - 优化轴点元素取值策略，防止极端情况（例如输入数组是完全倒序的）
+ * @return
+ */
+private int smartBeginIndex(int[] arr, int begin, int end) {
+//       return begin;
+    /**
+     * 例如输入数组是完全倒序的：54321
+     * - 如果取值begin位置元素为轴点元素，即5。
+     * - 那么切割后的右子数组长度会为0，全部元素都被分配到左子数组上，分治策略失效。
+     * - O(logn)效率会退化为O(n)，类似冒泡排序。
+     *
+     * 解决方案：尽量保证轴点元素是当前数组中的中位值。
+     * - 传递当前数组 头、中、尾 三个元素的下标
+     * - 选取其中的中位数作为轴点元素，降低极端情况发生的概率
+     */
+    int midIndex = this.medianPivot(arr, begin, (begin + end) >> 1, end);
+    // 注意将中位数交换至数组最左端，避免影响后续实现
+    this.swap(arr,begin,midIndex);
+    return begin;
+}
+
+/**
+ * 取数组指定下标位置的中位值
+ * @return index
+ */
+private int medianPivot(int[] arr, int begin,int mid,int end){
+    int b = arr[begin], m = arr[mid], e = arr[end];
+    if((m >= b && m <= e) || (m <= b && m >= e)) // 123、321
+        return mid;    // m 在 b 和 e 之间
+    if((b >= m && b <= e) || (m >= b && b >= e)) // 213、231
+        return begin; // b 在 m 和 e 之间
+    return end;
+}
+```
+
+
+
+#### 完整代码实现
+
+::: details QuickSort 完整代码实现
 
 ```java
 package algorithm.sort;
