@@ -1,0 +1,587 @@
+#  Dynamic Programming 动态规划
+
+## 相关概念
+
+### 动态规划（Dynamic Programming）
+
+> 维基百科：Dynamic Programming is a method for solving a complex problem by breaking it down into a collection of simpler subproblems, solving each of those subproblems just once, and storing their solutions.
+
+动态规划（Dynamic Programming，简称DP）是一种通过将复杂问题分解为更小的子问题来求解问题的方法。是求解**最优化问题**的一种常用策略。
+
+它主要用于解决具有“重叠子问题”和“最优子结构”性质的问题。
+
+- **重叠子问题**：当一个问题可以分解为多个子问题，而这些子问题在解决过程中会重复出现。
+
+- **最优子结构**：问题的最优解可以通过其子问题的最优解来构建。
+
+#### 使用步骤
+
+**1、==定义状态==（状态是原问题、子问题的解）**
+
+- 比如定义 `dp[i]` 的含义
+
+**2、==设置初始状态==（边界）**
+
+- 比如设置 `dp[0]` 的值
+
+**3、==确定状态转移方程==**
+
+- 比如确定 `dp[i]` 和 `dp[i - 1]`的关系
+
+> 其难点是如何**定义状态**、**确定状态转移方程**，后续将通过大量的练习来举例。
+>
+> - 本质上是通过一个数组存储每个子问题的解，之后再通过这些子问题的解来推导全局的最优解
+> - 自底向上，从算出小问题的最优解 -> 全局问题的最优解
+
+###    贪心算法（Greedy）
+
+**贪心策略**，也称为**贪婪策略**，每一步都采取当前状态下最优的选择（**局部最优解**），从而**希望推导出全局最优解**
+
+- 贪心策略并不一定能得到全局最优解
+
+- 因为一般没有测试所有可能的解，容易过早做决定，所以没法达到最佳解
+- 贪图眼前局部的利益最大化，看不到长远未来，走一步看一步
+
+优点：简单、高效、不需要穷举所有可能，通常作为其他算法的**辅助算法**来使用
+
+缺点：鼠目寸光，不从整体上考虑其他可能，每次采取局部最优解，不会再回溯，因此**很少情况会得到最优解**
+
+#### 示例问题：零钱兑换
+
+> 假设有 25 分、20 分、5 分、1 分的硬币，现要找给客户 41 分的零钱，如何办到硬币个数最少？
+
+**贪心策略：每一次都优先选择面值最大的硬币**
+
+1. 选择 25 分的硬币，剩 16 分
+2. 选择 5 分的硬币，剩 11 分
+3. 选择 5 分的硬币，剩 6 分
+4. 选择 5 分的硬币，剩 1 分
+5. 选择 1 分的硬币
+
+**得到的最终解为**： 1枚25分、3枚5分、1枚1分的硬币，共5枚硬币
+
+**可实际上本题的最优解是（使用动态规划计算）**：2枚20分、1枚1分的硬币，共3枚硬币
+
+### 分治算法（Divide And Conquer）
+
+分治，也就是**分而治之**，常用**递归**实现。
+
+它的一般步骤是：
+
+- 将原问题分解成若干个规模较小的子问题（子问题和原问题的结构一样，只是规模不一样）
+- 子问题又不断分解成规模更小的子问题，直到不能再分解（直到可以轻易计算出子问题的解）
+- 利用子问题的解推导出原问题的解
+
+**经典应用**：快速排序、归并排序、二分查找、树、大整数乘法、最大连续子数组和
+
+- 快速排序： [Sort排序算法](8-Sort排序算法.md) 
+- 二分查找： [Search搜索算法](8-Search搜索算法.md) 
+- 树： [BalancedBinarySearchTree](7-BalancedBinarySearchTree.md) 
+
+
+
+## 示例1：零钱兑换
+
+> Leetcode原题：https://leetcode.cn/problems/coin-change/description/
+>
+> **假设有 25 分、20 分、5 分、1 分的硬币，现要找给客户 41 分的零钱，如何办到硬币个数最少？**
+>
+> - 此前用贪心策略得到的解为：（25、5、5、5、1），但并非是最优解
+> - 最优解应该是：（20、20、1）
+
+### 推导解题过程
+
+**自底向上，逐渐累加金额，推断每个金额的最少找零次数（得到每个子问题的最优解）**
+
+- `dp[0]` = 0（无需找零，初始化为0，为了给后续子问题递推使用）
+- `dp[1]` = 1（1元的最少找零次数为1，硬币面值：【1】）
+- `dp[2]` = 2（2元的最少找零次数为2，硬币面值：【1、1】）
+- `dp[3]` = 3（3元的最少找零次数为3，硬币面值：【1、1、1】）
+- `dp[4]` = 4（4元的最少找零次数为4，硬币面值：【1、1、1、1】）
+- `dp[5]` = 1（5元的最少找零次数为1，硬币面值：【5】）
+
+---
+
+**==① 定义状态==（子问题的解）**：假设`dp[i]`等于 **`i`元的最少找零次数**
+
+- i 表示为从 0 到 amount 的值
+
+**==② 设置初始状态==（边界）**
+
+- `dp[0] =0`，即初始化最小子问题的解为 0，后续子问题的解根据该初始值递推
+
+**==③ 推断状态转移方程==**：`dp[i] = Math.min(dp[i], dp[i - coin] + 1)`
+
+- `dp[i]`为当前子问题的最优解
+- `dp[i - coin]`为扣减coin零钱面值之后的子问题的最优解，`+1`是本次找零的次数
+- 在 **当前最优解** 和 **尝试扣减coin之后的最优解 + 1 ** 之间选择最小值，即最少找零次数（新的最优解）
+
+---
+
+**==状态转移方程详解==：以`i = 5`为例子，即需要找零金额`= 5`时，代入公式`dp[i - coin] + 1`**
+
+- 注意`dp[5]`默认初始化为 `Integer.MAX_VALUE-1`。
+  - 其实只要比`amount`或者`i`大的值就行，例如`amount+1`
+
+  - 但是如果使用了`Integer.MAX_VALUE`则需要`-1`， 因为要给下方预留一次找零次数，避免整数溢出。
+
+
+1. **选择面值【1】的硬币找零**：`dp[5 - 1] + 1` -> `dp[4] + 1  = 5`，即此时`dp[5]`最少找零次数为`5`
+   - `dp[i]`= `5` = Math.min(`Integer.MAX_VALUE-1`, `5`)
+2. **选择面值【5】的硬币找零**：`dp[5 - 5] + 1` -> `dp[0] + 1  = 1`，即此时`dp[5]`最少找零次数为`1`
+
+   - `dp[i]`= `1` = Math.min(`5`, `1`)
+   - 此处会使用到`dp[0]`的值，所以开始时需要提前初始化。
+
+**遍历硬币面值【1、5、20、25】：在尝试不同的硬币面值的找零方案中，选择最少找零次数的方案，**
+
+- 上述例子找零金额`=5`时，遍历了硬币面值【1、5】的找零方案，最终选择了使用【5】硬币找零，即最少找零次数的方案。
+
+### 代码实现
+
+```java
+public int coinChange(int[] coins, int amount) {
+    if(amount < 1 || coins == null || coins.length  == 0)  return -1;
+
+    // ====== 初始化DP数组，用于存储子问题的解
+    //存储每分钱需要找的最少硬币数量。例如 dp[10] 时，其值=2，即最少的找的零钱为 2 个 5 分钱硬币。
+    int[] dp = new int[amount + 1];
+
+    // ====== 设置初始状态，设置边界值
+    // 填充 DP 数组每个值为最大金额
+    Arrays.fill(dp, Integer.MAX_VALUE-1);
+    dp[0] = 0; //初始化最小子问题的解为 0，以此递推
+
+    // 遍历 amount，逐步累加 amount。（自底向上）
+    // 获取每个子问题（dp[1]、dp[2]...）的最优解
+    for (int i = 1; i <= amount; i++) {
+        for (int coin : coins) { //遍历零钱面额数组
+            if (i >= coin) {     //当金额累加支持找零时（例如，最小的零钱面值为5元，而金额只有4元时，则无需找零）
+
+                // ===== 确定状态转移方程。
+                // dp[i] = Math.min(dp[i], dp[i - coin] + 1); // 等效下方代码
+                int current = dp[i];        // dp[i]为当前子问题的最优解，默认值为Integer.MAX_VALUE
+                int remain  = dp[i - coin]; // 扣减coin零钱面值之后的子问题的最优解
+                int newTime = remain + 1;   //扣减coin零钱面值的找零次数 + 本次找零 = 新的找零次数
+
+                // 判断新的找零次数，是否小于当前i金额的找零次数
+                if( newTime < current){
+                    dp[i] = newTime; // 更新当前i金额的最少找零次数（也是当前金额的最优解）
+                }
+            }
+        }
+    }
+    // 没有完整找零，返回-1
+    if(dp[amount] == Integer.MAX_VALUE - 1) return -1;
+
+    // dp[amount] 的最优解
+    return dp[amount];
+}
+```
+
+简洁版
+
+```java
+public int coinChange(int[] coins, int amount) {
+    int[] dp = new int[amount+1];
+    dp[0] = 0;
+    for (int i = 1; i <= amount; i++){
+        dp[i] = Integer.MAX_VALUE - 1;
+
+        for (int coin : coins) {
+            if(i >= coin){
+                dp[i] = Math.min(dp[i],dp[i - coin] + 1);
+            }
+        }
+    }
+    return dp[amount] == Integer.MAX_VALUE - 1 ? -1 : dp[amount];
+}
+```
+
+## 示例2：最大子数组和
+
+> Leetcode原题：https://leetcode.cn/problems/maximum-subarray/description/
+>
+> **给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。**
+>
+> - 子数组是数组中的一个连续部分。
+>
+> 示例：nums = [`-2`,`1`,`-3`,`4`,`-1`,`2`,`1`,`-5`,`4`]
+>
+> - 即连续子数组 [`4`,`-1`,`2`,`1`] 的和最大，为 6 。
+
+### 推导解题过程
+
+**==① 定义状态==（子问题的解）**：假设`dp[i]`等于 以`nums[i]`结尾的最大子连续数组之和
+
+- `nums[0] = -2` 结尾的最大子连续子数组是【-2】，其和`dp[0] = -2`
+- `nums[1] = 1` 结尾的最大子连续子数组是【1】，其和`dp[1] = 1`
+- `nums[2] = -3` 结尾的最大子连续子数组是【1、-3】，其和`dp[2] = dp[1] + -3 = -2`
+- `nums[3] = 4` 结尾的最大子连续子数组是【4】，其和`dp[3] = 4 `
+- `nums[4] = -1` 结尾的最大子连续子数组是【4、-1】，其和`dp[4] = dp[3] + -1  = 3 `
+- `nums[5] = 2` 结尾的最大子连续子数组是【4、-1、2】，其和`dp[5] = dp[4] + 2  = 5 `
+- `nums[6] = 1` 结尾的最大子连续子数组是【4、-1、2、1】，其和`dp[6] = dp[5] + 1  = 6 `
+
+**==② 设置初始状态==（边界）**
+
+- `dp[0]`= `nums[0]`，即-2。
+
+**==③ 推断状态转移方程==**
+
+- 如果`dp[i - 1] <= 0`，那么`dp[i] = num[i]`
+  - `dp[i - 1] `为上一个子问题的最优解，即上一个最大子连续子数组之和。
+  - 如果小于等于0，即上一个最大子连续子数组之和是负数，那就没必要叠加。
+  - 则当前子问题的最优解`dp[i]`，其最大和，=当前数组值`num[i]`即可。（参考**nums[1]、nums[3]**的情况）
+  
+- 如果`dp[i - 1] > 0`，那么`dp[i] = dp[i - 1] + num[i]`
+  - 即上一个最大子连续子数组之和是正数，那就必须要添加。（参考**nums[2]、nums[4]、nums[5]、nums[6]**的情况）
+  - 因为状态定义要求是以`nums[i]`结尾的，所以即使`num[i]`值为负数，也需要添加。
+
+**最终的解从`dp`数组中选取最大值即可**
+
+### 代码实现
+
+```java
+public int maxSubArray(int[] nums) {
+    if(nums == null || nums.length == 0) return 0;
+
+    // 初始化DP数组，记录每个子问题的解
+    int[] dp = new int[nums.length];
+
+    // 设置初始值  dp[0] = -2
+    dp[0] = nums[0];
+    int maxSum = dp[0]; // 记录最大之和，默认为最小子问题的解
+
+    //遍历数组，为每个元素求解
+    for (int i = 1; i < nums.length; i++){
+        // 定义状态：dp[i] = 以nums[i]结尾的最大子连续数组之和
+
+        if(dp[i - 1] <= 0){
+            // dp[i - 1] 为上一个子问题的最优解，即上一个最大子连续子数组之和。
+            // 如果小于等于0，即上一个最大子连续子数组之和是负数，那就没必要叠加。
+            // 则当前子问题的最优解 dp[i]，其最大和，=当前数组值 num[i]即可。(参考 i = 1、3 时)
+            dp[i] = nums[i];
+        }
+        else{ // dp[i - 1] > 0
+            // 即上一个最大子连续子数组之和是正数，那就必须要添加。(参考 i = 2、4、5、6 时)
+            dp[i] = dp[i - 1] + nums[i];
+
+            // 最终的解从dp数组中选取最大值即可
+            maxSum = Math.max(maxSum,dp[i]);
+        }
+    }
+    return maxSum;
+}
+```
+
+**因为 无需回溯所有子问题的解，只需要记录上一个子问题的最优解**
+
+**dp数组可优化为dp变量，进一步降低空间复杂度 O(n) -> O(1)**
+
+```java
+/**
+ * 优化空间复杂度 O(n) -> O(1)
+ * @param nums
+ * @return
+ */
+public int maxSubArray2(int[] nums) {
+    if (nums == null || nums.length == 0) return 0;
+    // 因为 无需回溯所有子问题的解，只需要记录上一个子问题的最优解
+    // dp数组可优化为dp变量，进一步降低空间复杂度 O(n) -> O(1)
+    int dp = nums[0];
+    int max = dp;
+    for (int i = 1; i < nums.length; i++) {
+        if (dp > 0) {
+            dp = dp + nums[i];
+        } else {
+            dp = nums[i];
+        }
+        max = Math.max(max, dp);
+    }
+    return max;
+}
+```
+
+## 示例3：最长递增子序列（LIS）
+
+又称：最长上升子序列（Longest Increasing Subsequence，LIS）
+
+> Leetcode原题：https://leetcode.cn/problems/longest-increasing-subsequence/description
+>
+> **给定一个无序的整数序列，求出它最长上升子序列的长度（要求严格上升）**
+>
+> -  严格上升是指`after`值必须大于`before`值，不能等于或者小于。
+>
+> 示例：nums = [`10`,`9`,`2`,`5`,`7`,`101`,`6`]
+>
+> - 最长递增子序列是 [`2`,`5`,`7`,`101`] ，因此长度为 4 
+
+### 推导解题过程
+
+**==① 定义状态==（子问题的解）**：假设`dp[i]`等于 以`nums[i]`结尾的最长上升子序列的**长度**
+
+- 以`nums[0] = 10`结尾的最长上升子序列为【10】，其长度为 1，即 `dp[0] = 1`
+- 以`nums[1] = 9 `结尾的最长上升子序列为【9】，其长度为 1，即 `dp[1] = 1`
+- 以`nums[2] = 2`结尾的最长上升子序列为【2】，其长度为 1，即 `dp[2] = 1`
+- 以`nums[3] = 5`结尾的最长上升子序列为【2、5】，其长度为 2，即 `dp[3] = dp[2] + 1 = 2`
+- 以`nums[4] = 7`结尾的最长上升子序列为【2、5、7】，其长度为 3，即 `dp[4] = dp[3] + 1 = 3`
+- 以`nums[5] = 101`结尾的最长上升子序列为【2、5、7、101】，其长度为 4，即 `dp[5] = dp[4] + 1 = 4`
+- 以`nums[6] = 6`结尾的最长上升子序列为【2、5、6】，其长度为 3，即 `dp[6] = dp[3] + 1 = 3`
+
+**==② 设置初始状态==（边界）**
+
+- `dp[0]`= `1`
+- 并且所有`dp[i]`的值均默认为`1`，即自己就是最长序列
+
+**==③ 推断状态转移方程==**：**需遍历子问题的最优解**
+
+- 如果 `nums[i] <= nums[i - 1]`，则不满足上升规则， `dp[i]`为默认值`1`
+- 如果 `nums[i] > nums[i - 1]`
+  - 则表示当前`nums[i]`满足上升规则，可以拼接在`nums[i - 1]`后面形成一个长度更长的上升子序列
+  - 更新`dp[i]`值为`dp[i - 1] + 1`
+  - 因为需要遍历子问题的最优解，`dp[i - 1]`在代码实现中会改成`dp[j]`，另起一个变量用于内循环子问题
+
+
+**最终的解从`dp`数组中选取最大值（长度最长）即可**
+
+### 代码实现
+
+```java
+public int lengthOfLIS(int[] nums) {
+    if(nums == null || nums.length == 0) return 0;
+
+    // 初始化DP数组，存储每个子问题的最优解
+    int[] dp = new int[nums.length];
+
+    // 初始化最初解
+    int max = dp[0] = 1; //默认长度都为1，即自己就是最长序列
+
+    for (int i = 1; i < nums.length; i++){
+
+        // dp[i] = 以 nums[i] 结尾的最长上升子序列的长度
+        // 当前问题的最优解，默认值为1
+        dp[i] = 1;
+
+        //遍历子问题的最优解
+        for (int j = 0; j < i; j++){
+            int curValue = nums[i]; // 当前序列值
+            int subValue = nums[j]; // 子序列值
+
+            // 当前整数 大于 前一个整数时，表示满足上升规则，需要累加长度更新
+            if( curValue > subValue ){
+
+                //更新最长上升序列的长度，子问题的最优解（dp[j]） + 1
+                // max是为了保证在内循环中也是最优解
+                dp[i] = Math.max(dp[j] + 1, dp[i]);
+            }
+        }
+        //更新总问题的最优解， 及长度最长的上升子序列
+        max = Math.max(dp[i],max);
+    }
+    return max;
+}
+```
+
+## 示例4：0-1背包
+
+>**有一个背包，它的容量为`C`，以及`n`个物品。每个物品有一个重量`w[i]`和价值`v[i]`。你需要选择一些物品放入背包，使得背包的总重量不超过`C`，同时使得背包中的物品总价值最大。**
+>
+>- 0-1 表示每件物品只能选择 0 件或者 1 件
+>
+>  
+>
+>假设背包的容量 `C = 10`，有 5 个物品，物品的重量和价值如下：
+>
+>- 物品 1：重量 `w[1] = 2`，价值 `v[1] = 3`
+>- 物品 2：重量 `w[2] = 3`，价值 `v[2] = 4`
+>- 物品 3：重量 `w[3] = 4`，价值 `v[3] = 5`
+>- 物品 4：重量 `w[4] = 5`，价值 `v[4] = 8`
+>- 物品 5：重量 `w[5] = 9`，价值 `v[5] = 10`
+>
+>最大价值是: `15`。最优解是选择物品【2、4、1】，这些物品的总重量为 3 + 5 + 2 = 10，正好填满背包，总价值为 4 + 8 + 3 = 15。
+
+### 推导解题过程
+
+**==① 定义状态==（子问题的解）**：假设`dp[i][j]`表示在`i`个物品中，能够达到背包容量`j`时，能获得的最大价值。
+
+**==② 设置初始状态==（边界）**
+
+- `dp[i][0] = 0` 背包容量为0，不管有多少件物品都不放下，最大价值也为0
+- `dp[0][j] = 0` 0件物品，不管背包容量`j`多大，没有物品，最大价值都是0
+
+**==③ 推断状态转移方程==**
+
+**逐渐增加物品数量`i`，背包容量`j`，再遍历所有物品`weights`，挑选能放得下并且价值是最高的物品**
+
+- `weights[i]`表示当前遍历的第`i`件物品的重量
+
+- 当 `j < weights[i]` 时，表示当前背包容量`j`放不下当前物品
+
+  - 则`dp[i][j] = dp[i - 1][j]` ，表示当前容量的最大价值还是上一个物品的最大价值
+
+- 当 `j >= weights[i]` 时，表示当前背包容量`j`能放得下当前物品`weights[i]`。
+
+  - 假设把当前物品放入背包：需要根据物品价值确定**值不值得放**。
+    - 需用当前容量`j`扣减当前物品的重量`weights[i]`，得到一个 **剩余容量**
+    - 再根据 **剩余容量** 去 **前一个物品中** 获取最优解，即`dp[i - 1][j - weights[i]]`
+    - 得到剩余容量的 最大价值之后，再加当前物品的价值`values[i]`，得出当前背包的最大价值。
+    - 再和上一个物品的最大价值比较`dp[i - 1][j]`，二者取其最大值，得出此轮内循环的最优解
+  - `dp[i][j] = Math.max(dp[i - 1][j],dp[i - 1][j - weights[i]] + values[i]);`
+
+  ```java
+  // 当前遍历的第i件物品的重量、价值（数组是0开始，所以需要-1）
+  int curWeight = weights[i - 1];
+  int curValue  = values[i - 1];
+  
+  //判断当前物品是否放得下
+  if( j >= curWeight){
+      // 放得下，挑选价值是最高的物品
+      dp[i][j] = Math.max(
+  
+          // j - curWeight = 剩余容量
+          // 取上一个物品[剩余容量]中的最大价值 + 当前物品的价值 = 放入当前物品后的最大价值
+          dp[i - 1][j - curWeight] + curValue,
+  
+          //上一个物品 j 容量的最大价值， 用于比较值不值得放
+          dp[i - 1][j]
+      );
+  }else{
+      // 放不下，那就不放了，用上一件物品的最优解即可
+      dp[i][j] = dp[i - 1][j];
+  }
+  ```
+
+### 代码实现
+
+```java
+public int maxValue(int capacity, int[] values, int[] weights){
+    if(values == null || weights == null) return 0;
+    if(capacity <= 0 ||  values.length == 0 || weights.length == 0) return 0;
+    if(values.length != weights.length) return 0;
+
+    //物品数量，取值该数组长度即可
+    int number = values.length;
+
+    // ==== 定义状态：假设dp[i][j]表示在i个物品中，能够达到背包容量j时，能获得的最大价值。
+    // 遍历物品时 i 从 1 开始，包含number，所以此处dp数组长度需要+1
+    int[][] dp = new int[number + 1][capacity + 1];
+
+    // ==== 设置初始值：int数组默认初始值为0
+    // dp[0][0]是指0件物品或者0容量， 最大价值就是0，无处处理
+
+    // 逐渐增加物品数量i，背包容量j，再遍历所有物品weights，挑选能放得下并且价值是最高的物品
+    // 为了符合状态转移方程：dp[i - 1][j]，i必须从1开始，0开始会导致数组越界
+    for (int i = 1; i <= number; i++){
+        for (int j = 1; j <= capacity; j++){
+
+            // 当前遍历的第i件物品的重量、价值（数组是0开始，所以需要-1）
+            int curWeight = weights[i - 1];
+            int curValue  = values[i - 1];
+
+            //判断当前物品是否放得下（状态转移）
+            if( j >= curWeight){
+
+                // 放得下，挑选价值是最高的物品
+                dp[i][j] = Math.max(
+
+                        // j - curWeight = 剩余容量
+                        // 取上一个物品[剩余容量]中的最大价值 + 当前物品的价值 = 放入当前物品后的最大价值
+                        dp[i - 1][j - curWeight] + curValue,
+
+                        // 取上一个物品 j 容量的最大价值， 用于比较值不值得放
+                        dp[i - 1][j]
+                );
+            }else{
+                // 放不下，那就不放了，用上一件物品的最优解即可
+                dp[i][j] = dp[i - 1][j];
+            }
+
+        }
+    }
+
+    return dp[number][capacity];
+}
+```
+
+简洁版本
+
+```java
+public int maxValue(int capacity, int[] values, int[] weights){
+    if(values == null || weights == null) return 0;
+    if(capacity <= 0 ||  values.length == 0 || weights.length == 0) return 0;
+    if(values.length != weights.length) return 0;
+
+    int number = values.length;
+    int[][] dp = new int[number + 1][capacity + 1];
+
+    for (int i = 1; i <= number; i++){
+        for (int j = 1; j <= capacity; j++){
+
+            int curWeight = weights[i - 1];
+            int curValue  = values[i - 1];
+            if(j >= curWeight){
+                dp[i][j] = Math.max(
+                        dp[i - 1][j - curWeight] + curValue,
+                        dp[i - 1][j]
+                );
+            }else{
+                dp[i][j] = dp[i - 1][j];
+            }
+        }
+    }
+    return dp[number][capacity];
+}
+```
+
+
+
+### 代码实现：优化为一维数组
+
+#### 优化的思路：
+
+观察上述代码可以发现，`dp[i][j]` 只依赖于 `dp[i - 1][j]` 和 `dp[i - 1][j - weights[i - 1]]`，也就是说，`dp[i][j]` 只需要前一行的信息。因此不需要保存每一行的所有状态，只需要保存当前背包容量下的最大价值。
+
+- **定义状态**：`dp[j]` 来表示背包容量 `j` 时的最大价值。
+- **状态转移方程**：`dp[j] = Math.max(dp[j],dp[j - weights[i]] + values[i])`
+
+```java
+public int maxValueOptimization(int capacity, int[] values, int[] weights){
+    if(values == null || weights == null) return 0;
+    if(capacity <= 0 ||  values.length == 0 || weights.length == 0) return 0;
+    if(values.length != weights.length) return 0;
+
+
+    int number = values.length;
+    // dp[j] 来表示背包容量 j 时的最大价值。
+    int[] dp = new int[capacity + 1];
+
+    // i不需要在dp数组中使用，不会涉及转移方程的运算，只在物品数组中使用，所以正常从0开始即可
+    for (int i = 0; i < number; i++){
+
+        // 当前遍历的第i件物品的重量、价值
+        int curWeight = weights[i];
+        int curValue  = values[i];
+
+        // 从背包容量的最大值开始遍历到当前物品的重量（倒序更新状态）
+        // j >= weights[i] 表示放得下才进入本次循环
+        for (int j = capacity; j >= weights[i]; j--){
+
+            int answer = dp[j];         //默认值为0
+            int remain = j - curWeight; // 剩余容量
+           dp[j] = Math.max(
+                   dp[j],
+                   // 取dp[剩余容量]中的最大价值 + 当前物品的价值 = 放入当前物品后的最大价值
+                   // dp[j - curWeight]，由于是倒序更新，该值默认都是0
+                   dp[j - curWeight] + curValue
+           );
+        }
+    }
+    return dp[capacity];
+}
+```
+
+## 参考
+
+- [Hello 算法：动态规划](https://www.hello-algo.com/chapter_dynamic_programming/intro_to_dynamic_programming/)
+- [CSDN 贪心、分治](https://blog.csdn.net/weixin_43734095/article/details/105585224)
+- [CSDN 动态规划](https://blog.csdn.net/weixin_43734095/article/details/105637149)
