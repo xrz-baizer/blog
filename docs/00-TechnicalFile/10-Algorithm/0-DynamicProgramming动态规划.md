@@ -746,4 +746,3 @@ public int maxValueOptimization(int capacity, int[] values, int[] weights){
 - [Hello 算法：动态规划](https://www.hello-algo.com/chapter_dynamic_programming/intro_to_dynamic_programming/)
 - [CSDN 贪心、分治](https://blog.csdn.net/weixin_43734095/article/details/105585224)
 - [CSDN 动态规划](https://blog.csdn.net/weixin_43734095/article/details/105637149)
-- https://doc.weixin.qq.com/doc/w3_AE0AAgY_ACUZXUpp7CYToG8sn3xNx?scode=APEAlweLAA4OntJsnrAE0AAgY_ACU
