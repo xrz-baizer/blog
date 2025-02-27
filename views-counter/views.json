@@ -1,6 +1,6 @@
 {
   "/": 1047,
-  "/00-TechnicalFile/": 452,
+  "/00-TechnicalFile/": 454,
   "/01-Essay/": 338,
   "/02-Other/": 160,
   "/01-Essay/0-Blog自动部署.html": 61,
@@ -332,5 +332,7 @@
   "/00-TechnicalFile/80-WorkSolution/0-秒杀系统设计方案.html": 1,
   "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-28-Five-pounds-too-dear-五镑也太贵.html": 1,
   "/00-TechnicalFile/80-WorkSolution/0-中台上线方案.html": 1,
-  "/00-TechnicalFile/30-Spring5.x/0-Spring事件机制.html": 1
+  "/00-TechnicalFile/30-Spring5.x/0-Spring事件机制.html": 1,
+  "/00-TechnicalFile/10-Algorithm/0-DynamicProgramming动态规划.html": 1,
+  "/00-TechnicalFile/10-Algorithm/Summary.html": 1
 }
