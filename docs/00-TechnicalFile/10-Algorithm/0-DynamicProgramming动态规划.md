@@ -268,9 +268,9 @@ public int maxSubArray(int[] nums) {
             // 即上一个最大子连续子数组之和是正数，那就必须要添加。(参考 i = 2、4、5、6 时)
             dp[i] = dp[i - 1] + nums[i];
 
-            // 最终的解从dp数组中选取最大值即可
-            maxSum = Math.max(maxSum,dp[i]);
         }
+        // 最终的解从dp数组中选取最大值即可
+        maxSum = Math.max(maxSum,dp[i]);
     }
     return maxSum;
 }
@@ -378,6 +378,28 @@ public int lengthOfLIS(int[] nums) {
         }
         //更新总问题的最优解， 及长度最长的上升子序列
         max = Math.max(dp[i],max);
+    }
+    return max;
+}
+```
+
+简洁版
+
+```java
+public int lengthOfLIS_Simple(int[] nums) {
+    if(nums == null || nums.length == 0) return 0;
+
+    int[] dp = new int[nums.length];
+    int max = dp[0] = 1;
+
+    for ( int i = 1; i < nums.length; i++){
+        dp[i] = 1;
+        for (int j = 0; j < i; j++){
+            if(nums[i] > nums[j]){ // 当前序列值 大于 上一个子序列值
+                dp[i] = Math.max( dp[j] + 1, dp[i] );
+            }
+        }
+        max = Math.max( dp[i] , max );
     }
     return max;
 }
