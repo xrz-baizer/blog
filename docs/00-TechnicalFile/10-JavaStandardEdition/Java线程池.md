@@ -10,33 +10,33 @@
 
 ```java
 public ThreadPoolExecutor(int corePoolSize,
-                                      int maximumPoolSize,
-                                      long keepAliveTime,
-                                      TimeUnit unit,
-                                      BlockingQueue<Runnable> workQueue,
-                                      ThreadFactory threadFactory,
-                                      RejectedExecutionHandler handler) 
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue<Runnable> workQueue,
+                          ThreadFactory threadFactory,
+                          RejectedExecutionHandler handler) 
 ```
 
-1. **corePoolSize:  核心线程数**
+1. **`corePoolSize`:  核心线程数**
    - 定义了线程池中的核心线程数量。即使这些线程处于空闲状态，它们也不会被回收。这是线程池保持在等待状态下的线程数。
 
-2. **maximumPoolSize:  最大线程数**
-   - 线程池允许的最大线程数量。当工作队列满了之后，线程池会创建新线程来处理任务，直到线程数达到这个最大值。
+2. **`maximumPoolSize`:  最大线程数**
+   - 线程池允许的最大线程数量。当工作队列满了之后，线程池会创建新线程来处理任务，直到线程数达到最大值。
 
-3. **keepAliveTime:  线程的空闲时间**
+3. **`keepAliveTime`:  线程的空闲时间**
    - 非核心线程的空闲存活时间。如果线程池中的线程数量超过了 corePoolSize，那么这些多余的线程在空闲时间超过 keepAliveTime 时会被回收。
 
-4. **unit:  空闲时间的单位（秒、分、小时等等）**
+4. **`unit`:  空闲时间的单位（秒、分、小时）**
    - keepAliveTime 参数的时间单位，TimeUnit.SECONDS、TimeUnit.MINUTES;
 
-5. **workQueue:  工作队列**
+5. **`workQueue`:  工作队列**
    - 用于存放待处理任务的阻塞队列。当所有核心线程都忙时，新任务会被放在这个队列里等待执行。
 
-6. **threadFactory:  线程工厂**
+6. **`threadFactory`:  线程工厂**
    - 一个创建新线程的工厂。它用于创建线程池中的线程。可以通过自定义 ThreadFactory 来给线程池中的线程设置有意义的名字，或设置优先级等。
 
-7. **handler:  拒绝策略**
+7. **`handler`:  拒绝策略**
    - 拒绝策略 RejectedExecutionHandler，定义了当线程池和工作队列都满了之后对新提交的任务的处理策略。
 
 ### 线程池的拒绝策略
@@ -45,71 +45,72 @@ public ThreadPoolExecutor(int corePoolSize,
 - **ThreadPoolExecutor.DiscardPolicy**：丢弃任务，但是不抛出异常。
 - **ThreadPoolExecutor.DiscardOldestPolicy**：丢弃队列最前面的任务（即队列中等待最久的任务），然后重新尝试执行任务（重复此过程）。
 - **ThreadPoolExecutor.CallerRunsPolicy**：让提交任务的线程（即调用 execute 方法的线程）自己来执行这个任务。
-- 自定义拒绝策略：通过实现RejectedExecutionHandler接口实现。
+- 自定义拒绝策略：通过实现 RejectedExecutionHandler 接口实现。
 
 ### 线程池的等待队列
 
-- ArrayBlockingQueue：数组实现（查询的时间复杂度为 O(1)），单向队列（一把锁）
+- **ArrayBlockingQueue**：数组实现（查询的时间复杂度为 O(1)），单向队列（一把锁）
   - 是一个有界队列，在创建时必须指定固定的容量，一旦达到容量上限，再次插入操作会被阻塞，直到有空间为止
   - 采用`ReentrantLock`进行加锁，只有一个`ReentrantLock`对象，这意味着生产者和消费者无法并行运行
     - 出入栈锁：`final ReentrantLock lock = this.lock`
 
-- LinkedBlockingQueue：链表实现（插入和删除操作的时间复杂度为 O(1)），双向队列（两把锁）
+- **LinkedBlockingQueue**：链表实现（插入和删除操作的时间复杂度为 O(1)），双向队列（两把锁）
   - 如果不指定大小，默认大小是 Integer.MAX_VALUE（2^31 - 1，即21亿），相当于一个无界队列。
   - 采用`ReentrantLock`进行加锁，有两个`ReentrantLock`对象，生产者和消费者可以并行运行
     - 入栈锁：`final ReentrantLock putLock = this.putLock;`
     - 出栈锁：`final ReentrantLock takeLock = this.takeLock;`
 
-- PriorityBlockingQueue：一个支持优先级排序的无界阻塞队列。任务按照其自然顺序或通过构造器给定的 Comparator 来排序。
-- DelayQueue：类似于 PriorityBlockingQueue，由二叉堆实现的无界优先级阻塞队列。
-- SynchronousQueue：实际上它不是一个真正的队列，因为没有容量。每个插入操作必须等待另一个线程的移除操作，同样任何一个移除操作都必须等待另一个线程的插入操作。
+- **PriorityBlockingQueue**：一个支持优先级排序的无界阻塞队列。任务按照其自然顺序或通过构造器给定的 Comparator 来排序。
+- **DelayQueue**：类似于 PriorityBlockingQueue，由二叉堆实现的无界优先级阻塞队列。
+- **SynchronousQueue**：实际上它不是一个真正的队列，因为没有容量。每个插入操作必须等待另一个线程的移除操作，同样任何一个移除操作都必须等待另一个线程的插入操作。
 
 > 无界指的是没有长度限制。
-> 使用有界队列可以避免资源耗尽的风险，但是可能会导致任务被拒绝。
-> 使用无界队列虽然可以避免任务被拒绝，但是可能会导致内存耗尽出现OOM。
+>
+> - 使用有界队列可以避免资源耗尽的风险，但是可能会导致任务被拒绝。
+> - 使用无界队列虽然可以避免任务被拒绝，但是可能会导致内存耗尽出现OOM。
 
 ### 线程池的创建方式
 
 四种常见的线程池：
 
-- newSingleThreadExecutor (单线程的线程池)
+- **`newSingleThreadExecutor` (单线程的线程池)**
   - 核心线程数和最大线程数都是1
   - 适用于串行执行任务的场景，一个任务一个任务地执行。
-- newFixedThreadPool (固定线程数目的线程池)
+- **`newFixedThreadPool` (固定线程数目的线程池)**
   - 核心线程数和最大线程数大小一样
   - 适用于处理 CPU 密集型的任务，确保 CPU 在长期被工作线程使用的情况下，尽可能的少的分配线程，即适用执行长期的任务。
-- newCachedThreadPool (可缓存线程的线程池)
+- **`newCachedThreadPool` (可缓存线程的线程池)**
   - 核心线程数为0，最大线程数为 Integer.MAX_VALUE
   - 用于并发执行大量短期的小任务。
-- newScheduledThreadPool (定时及周期执行的线程池)
+- **`newScheduledThreadPool` (定时及周期执行的线程池**)
   - 核心线程数由入参指定，最大线程数为 Integer.MAX_VALUE
   - 用于并发执行大量短期的小任务。
 
 ### 线程池的状态
 
-- RUNNING：（running）运行状态
+- **`RUNNING`：（running）运行状态**
   - 线程池一旦被创建，就处于RUNNING状态，任务数为0，能够接收新任务，对已排队的任务进行处理。
 
-- SHUTDOWN：（shutdown）关闭状态
+- **`SHUTDOWN`：（shutdown）关闭状态**
   - 不接收新任务，但能处理已排队的任务。当调用线程池的shutdown()方法时，线程池会由RUNNING转变为SHUTDOWN状态。
 
-- STOP：（stop）停止状态
+- **`STOP`：（stop）停止状态**
   - 不接收新任务，不处理已排队的任务，并且会中断正在处理的任务。当调用线程池的shutdownNow()方法时，线程池会由RUNNING或SHUTDOWN转变为STOP状态。
 
-- TIDYING：（tidying）整理状态
+- **`TIDYING`：（tidying）整理状态**
   - 当线程池在SHUTDOWN状态下，任务队列为空且执行中任务为空，或者线程池在STOP状态下，线程池中执行中任务为空时，线程池会变为TIDYING状态，会执行terminated()方法。这个方法在线程池中是空实现，可以重写该方法进行相应的处理。
 
-- TERMINATED：（terminated）终止状态
+- **`TERMINATED`：（terminated）终止状态**
   - 线程池彻底终止。线程池在TIDYING状态执行完terminated()方法后，就会由TIDYING转变为TERMINATED状态。
 
 
 ### 线程池的工作流程
 
-1. 调用线程池的execute()方法，检测运行状态，在RUNNING状态下在提交任务。
-2. 如果workerCount < corePoolSize，则创建并启动一个线程来执行新提交的任务。
-3. 如果workerCount >= corePoolSize，且线程池内的阻塞队列未满，则将任务添加到该阻塞队列中。
-4. 如果workerCount >= corePoolSize && workerCount < maximumPoolSize，且线程池内的阻塞队列已满，则创建并启动一个线程来执行新提交的任务。
-5. 如果workerCount >= maximumPoolSize，并且线程池内的阻塞队列已满, 则根据拒绝策略来处理该任务, 默认的处理方式是直接抛异常。
+1. 调用线程池的 `execute()` 方法，检测运行状态，在 `RUNNING` 状态下在提交任务。
+2. 如果`workerCount < corePoolSize`，则创建并启动一个线程来执行新提交的任务。
+3. 如果`workerCount >= corePoolSize`，且线程池内的阻塞队列未满，则将任务添加到该阻塞队列中。
+4. 如果`workerCount >= corePoolSize && workerCount < maximumPoolSize`，且线程池内的阻塞队列已满，则创建并启动一个线程来执行新提交的任务。
+5. 如果`workerCount >= maximumPoolSize`，并且线程池内的阻塞队列已满, 则根据拒绝策略来处理该任务, 默认的处理方式是直接抛异常。
 
 ![线程池的执行流程](../../Image/线程池的执行流程.webp)
 
@@ -117,14 +118,14 @@ public ThreadPoolExecutor(int corePoolSize,
 
 根据任务类型决定：
 
-- **CPU 密集型任务： N（CPU 核心数）+1**
-  - CPU密集定义：数据计算、加密解密、压缩文件等。
+- **CPU 密集型任务： `N（CPU 核心数）+ 1`**
+  - **CPU密集定义：数据计算、加密解密、压缩文件等。**
   - 这种任务消耗的主要是 CPU 资源，可以将线程数设置为 N（CPU 核心数）+1。比 CPU 核心数多出来的一个线程是为了防止线程偶发的缺页中断，或者其它原因导致的任务暂停而带来的影响。一旦任务暂停，CPU 就会处于空闲状态，而在这种情况下多出来的一个线程就可以充分利用 CPU 的空闲时间。
-- **IO 密集型任务： N（CPU 核心数）x2**
-  - IO密集定义：磁盘读写、网络请求、数据库操作等
+- **IO 密集型任务： `N（CPU 核心数）x 2`**
+  - **IO密集定义：磁盘读写、网络请求、数据库操作等**
   - 这种任务系统会用大部分的时间来处理 I/O 交互，而线程在处理 I/O 的时间段内不会占用 CPU 来处理，这时就可以将 CPU 交出给其它线程使用。因此在 I/O 密集型任务的应用中，可以多配置一些线程，具体的计算方法是 2N
 
-> 处理器的核心数可以通过 Java 的Runtime.getRuntime().availableProcessors()方法获取
+> PS：处理器的核心数可以通过 Java 的 Runtime.getRuntime().availableProcessors() 方法获取
 
 ```java
 ThreadPoolExecutor executor = new ThreadPoolExecutor(
@@ -137,11 +138,11 @@ ThreadPoolExecutor executor = new ThreadPoolExecutor(
 
 ## 实际应用
 
-### 自定义线程池ThreadPoolTaskExecutor
+### 自定义线程池 ThreadPoolTaskExecutor
 
-通过@Bean直接注入到Spring容器中，实现单例全局唯一。
+通过`@Bean`直接注入到 Spring 容器中，实现单例全局唯一。
 
-通过@Value声明线程池核心参数，通过配置文件来管理（可以通过分布式配置中心如 Nacos、Apollo实现动态修改）。
+通过`@Value`声明线程池核心参数，通过配置文件来管理（可以通过分布式配置中心如 Nacos、Apollo实现动态修改）。
 ```java
 @Configuration
 public class ThreadPoolConfig {
@@ -181,9 +182,9 @@ public class ThreadPoolConfig {
 }
 ```
 
-### 通过CompletableFuture使用的默认线程池ForkJoinPool
+### 通过 CompletableFuture 使用的默认线程池 ForkJoinPool
 
-java.util.concurrent.CompletableFuture，Java8中用来处理异步任务的API，入参可以指定线程池，默认使用ForkJoinPool。
+`java.util.concurrent.CompletableFuture`，是Java8中用来处理异步任务的API，入参可以指定线程池，默认使用ForkJoinPool。
 
 - CompletableFuture 在没有显式指定线程池的情况下，默认使用 ForkJoinPool.commonPool() 来执行异步任务。
   - 线程池中的线程数量是基于CPU核心数动态调整的，适合处理轻量级的计算密集型任务。默认大小等于 Runtime.getRuntime().availableProcessors()。
@@ -209,22 +210,22 @@ java.util.concurrent.CompletableFuture，Java8中用来处理异步任务的API�
 
 ## 常见面试题
 
-### submit()和execute()方法的区别
+### submit() 和 execute() 方法的区别
 
-- execute：没有返回值，仅仅是把一个任务提交给线程池处理，轻量级方法，适用于处理不需要返回结果的任务
+- `execute`：没有返回值，仅仅是把一个任务提交给线程池处理，轻量级方法，适用于处理不需要返回结果的任务
 
-- submit：返回值为Future类型，future可以用来检查任务是否已经完成，获取任务的结果等，适用于需要处理返回结果的任务
+- `submit`：返回值为`Future`类型，future可以用来检查任务是否已经完成，获取任务的结果等，适用于需要处理返回结果的任务
 
 ### 线程池的核心线程可以回收吗？（可以）
 
-ThreadPoolExecutor默认不回收核心线程，但是提供了allowCoreThreadTimeOut(boolean value)方法，当参数为true时，可以在达到线程空闲时间后，回收核心线程，在业务代码中，如果线程池是周期性的使用，可以考虑将该参数设置为true；
+`ThreadPoolExecutor` **默认不回收核心线程**，但是提供了 `allowCoreThreadTimeOut(boolean value)` 方法，当参数为`·`时，可以在达到线程空闲时间后，回收核心线程，在业务代码中，如果线程池是周期性的使用，可以考虑将该参数设置为``true``
 
 ### 线程池在提交任务前，可以提前创建线程吗？（可以）
 
 ThreadPoolExecutor提供了两个方法：
 
-- prestartCoreThread():启动一个线程，等待任务，如果核心线程数已达到，这个方法返回false，否则返回true；
-- prestartAllCoreThreads():启动所有的核心线程，返回启动成功的核心线程数 。
+- prestartCoreThread(): 启动一个线程，等待任务，如果核心线程数已达到，这个方法返回false，否则返回true；
+- prestartAllCoreThreads(): 启动所有的核心线程，返回启动成功的核心线程数 。
 
 通过这种设置，可以在提交任务前，完成核心线程的创建，从而实现线程池预热的效果；
 
@@ -249,12 +250,12 @@ public static void test2(){
 
 ### 如果线程池中执行任务的线程异常，发生异常的线程会销毁吗？其他任务还能正常执行吗？（会，能）
 
-通过观察源码：java.util.concurrent.ThreadPoolExecutor#runWorker，在processWorkerExit方法内，可以看到如果运行中的线程池有线程执行异常，会调用workers.remove()移除当前线程，并调用addWorker()重新创建新的线程。
+通过观察源码：`java.util.concurrent.ThreadPoolExecutor#runWorker`，在`processWorkerExit`方法内，可以看到如果运行中的线程池有线程执行异常，会调用`workers.remove()`移除当前线程，并调用`addWorker()`重新创建新的线程。
 
 线程池中执行任务的线程异常，并不会影响其他任务的执行。
 
-- 如果使用execute()提交任务，会直接打印异常信息。
-- 如果使用submit()提交任务，通过trycatch返回future.get()来获取异常
+- 如果使用`execute()`提交任务，会直接打印异常信息。
+- 如果使用`submit()`提交任务，通过`trycatch`返回`future.get()`来获取异常
 
 ## 参考
 

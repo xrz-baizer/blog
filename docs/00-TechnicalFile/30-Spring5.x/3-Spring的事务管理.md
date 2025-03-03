@@ -177,9 +177,11 @@ public static void main(String[] args) {
 
 ![image-20250302211609891](../../Image/image-20250302211609891.png)
 
-`doBegin()`中还有一个比较重要的地方：将当前获取到的连接绑定到当前线程ThreadLocal中，方便其它Service开启事务获取连接时能获取到同一个连接。
+`doBegin()`中还有一个比较重要的地方：将当前获取到的数据库连接`Connection`绑定到当前线程ThreadLocal中，方便其它Service开启事务获取连接时能获取到同一个连接。
 
-- `@Transactional`默认是`PROPAGATION_REQUIRED`，确保不同`Service`之间使用的是同一个事务，所有 SQL 操作使用的是同一个 `Connection`
+- `@Transactional`默认的传播行为是`PROPAGATION_REQUIRED`，存储`Connection`到ThreadLocal中是为了确保中当前线程中的不同`Service`之间使用的是同一个事务，所有 SQL 操作使用的是同一个 `Connection`
+  - 注意：这意味如果在多线程情况下，事务会失效
+
 - 事务结束后解绑：在事务提交或回滚时，Spring 需要清理 `ThreadLocal`，否则会导致 连接泄漏。
   - 这个解绑操作通常发生在 `AbstractPlatformTransactionManager#cleanupAfterCompletion()` 方法中
   - 这样事务结束后，当前线程就不会再持有 `Connection` 了。
@@ -345,5 +347,4 @@ public void insertUser(User u) {
 ![image-20250302224018375](../../Image/image-20250302224018375.png)
 
 在 SpringIOC 的`refresh`方法中，在`invokeBeanFactoryPostProcessors`方法会执行一个`ConfigurationClassPostProcessor`，通过这个对象的`postProcessBeanDefinitionRegistry`方法来解析所有配置类上的注解，包括上述的@`EnableTransactionManagement`、`@Import`、`@Bean`等注解。
-
 
