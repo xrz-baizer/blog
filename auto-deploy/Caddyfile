@@ -19,6 +19,8 @@ baizer.info www.baizer.info {
 
     route /rocketmq/* {
         uri strip_prefix /rocketmq
-        reverse_proxy localhost:8080
+        reverse_proxy localhost:8080 {
+            header_up Host {http.reverse_proxy.upstream.hostport}
+        }
     }
 }
