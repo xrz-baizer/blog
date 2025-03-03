@@ -15,4 +15,10 @@ baizer.info www.baizer.info {
             header_down Access-Control-Allow-Origin *
         }
     }
+
+
+    route /rocketmq/* {
+        uri strip_prefix /rocketmq
+        reverse_proxy localhost:8080
+    }
 }
