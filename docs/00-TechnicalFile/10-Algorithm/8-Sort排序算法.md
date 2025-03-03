@@ -31,6 +31,8 @@
 
 ![whiteboard_exported_image_quicksort](../../Image/whiteboard_exported_image_quicksort.png)
 
+> 视频动画演示：https://www.douyin.com/user/self?from_tab_name=main&modal_id=7445221354938305852
+
 ### 轴点元素取值优化
 
 优化轴点元素取值策略，防止极端情况。

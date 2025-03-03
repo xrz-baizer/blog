@@ -125,6 +125,11 @@ ENTRYPOINT java -jar \
 - 支持在不停机的情况下进行 Java 应用的诊断。
 - 包括 JVM 信息查看、监控、Trace 命令、反编译等。
 
+### 其他
+
+- [一次偏向锁导致的接口缓慢问题排查记录](https://doc.weixin.qq.com/doc/w3_ALMA0QZQAA85IDAVJ0ORAGDnvi1dg?scode=APEAlweLAA4YfI0tFoALMA0QZQAA8)
+- [浅谈JVM的 Safepoint](https://doc.weixin.qq.com/doc/w3_ALMA0QZQAA8mCrWkU5uS4u115bTn8?scode=APEAlweLAA4yZb01jIALMA0QZQAA8)
+
 ## 参考
 
 [MAT：一次线上内存泄漏排查 - 掘金](https://juejin.cn/post/6847902222202880008)

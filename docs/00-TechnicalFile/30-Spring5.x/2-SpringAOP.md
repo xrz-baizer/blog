@@ -27,8 +27,8 @@
 1. **先加载相关的BeanDefinition：Pointcut、Advisor、AbstractAutoProxyCreator**
    - 调用链：refresh -> obtainFreshBeanFactory -> loadBeanDefinitions
    - Pointcut、Advisor：我们声明的切入点、增强器等
-   - AbstractAutoProxyCreator：该类没有显式声明为Bean，但是我们启用AOP时需要声明一个注解@EnableAspectJAutoProxy，Spring会读取这个注解中声明的@Import注解，从而导入AspectJAutoProxyRegistrar，进而将AbstractAutoProxyCreator的子类类AnnotationAwareAspectJAutoProxyCreator注册为BeanBeanDefinition
-2. **注册BeanPostProcessor：AbstractAutoProxyCreator是一个实现了BeanPostProcessor接口的抽象类，所以此处需要注册。**
+   - AbstractAutoProxyCreator：该类没有显式声明为Bean，但是我们启用AOP时需要声明一个注解@EnableAspectJAutoProxy，Spring会读取这个注解中声明的@Import注解，从而导入AspectJAutoProxyRegistrar，进而将AbstractAutoProxyCreator的子类AnnotationAwareAspectJAutoProxyCreator注册为BeanBeanDefinition
+2. **注册BeanPostProcessor：AbstractAutoProxyCreator是一个实现了BeanPostProcessor接口的抽象类，所以此处需要先注册。**
    - 调用链：refresh -> registerBeanPostProcessors
 3. **初始化所有Advisor：Advisor是包含一个Pointcut和一个Advice的组合，具体的实现是AspectJPointcutAdvisor。**
    - 调用链：refresh -> finishBeanFactoryInitialization -> preInstantiateSingletons -> getBean -> doGetBean -> getSingleton -> createBean -> resolveBeforeInstantiation
@@ -40,7 +40,7 @@
 4. **创建代理对象的节点**
    - 在resolveBeforeInstantiation中执行AbstractAutoProxyCreator#postProcessBeforeInstantiation，初始化所有的Advisor。
    - 在initializeBean中执行AbstractAutoProxyCreator#postProcessAfterInitialization，创建AOP代理对象。
-     - AbstractAutoProxyCreator#postProcessAfter==Initialization==：该方法与上面的Instantiation执行类似，上面是Spring给用户一个创建自定义代理对象的机会，这里是Spring创建标准流程的代理对象。
+     - AbstractAutoProxyCreator#postProcessAfter==Initialization==：该方法与上面的Instantiation执行类似，<u>上面是Spring给用户一个创建自定义代理对象的机会，而这里是Spring自己创建标准流程的代理对象。</u>
        - 初始化Advisor：会在shouldSkip中先初始化所有Advisor，如果上面Instantiation执行过了会直接取值缓存，然后跳过
        - 获取Advisors，通过Pointcut循环匹配，ClassFilter匹配类，MethodMatcher匹配方法。
          - 在此会排序Advisors：wrapIfNecessary -> getAdvicesAndAdvisorsForBean -> findEligibleAdvisors -> sortAdvisors
@@ -50,7 +50,7 @@
 
 ## 代理对象的创建
 
-> Spring AOP主要使用**动态代理**来实现：DefaultAopProxyFactory#createAopProxy
+> Spring AOP主要使用**动态代理**来实现：**DefaultAopProxyFactory#createAopProxy**
 
 - 如果目标对象实现了接口 或者是Proxy类，则使用JDK动态代理。
   - JdkDynamicAopProxy：JDK动态代理，通过继承接口方式实现代理，在运行期间为接口生成代理对象
@@ -61,14 +61,14 @@
 
 ## Advice增强方法的执行
 
-> DynamicAdvisedInterceptor#intercept：当代理对象中的代理方法被执行时，通过该拦截器触发Advisors
+> **DynamicAdvisedInterceptor#intercept**：当代理对象中的代理方法被执行时，通过该拦截器触发Advisors
 
 - 先获取Advisor调用链，它们的顺序在初始化时就已经排序好了
 - ReflectiveMethodInvocation#proceed：递归调用Advisor调用链
 - Advice的执行顺序（@Around就是@Before+@After，实际使用时通常不会同时出现，如果同时出现，它们执行的顺序不会固定，即@Before可能在@Around前置之前或者之后执行，但是它们一定都是在代理方法之前执行）
-  1. @Around前置
-  2. @Before
+  1. **@Around前置**
+  2. **@Before**
   3. 代理方法执行
-  4. @Around后置
-  5. @After
-  6. @AfterReturning或者@AfterThrowing
+  4. **@Around后置**
+  5. **@After**
+  6. **@AfterReturning或者@AfterThrowing**

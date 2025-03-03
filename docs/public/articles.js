@@ -57,6 +57,7 @@ export const articlesMap = {
   "01-Essay/index.md": "<category/>",
   "01-Essay/select-for-update.md": " MySQL版本：5.7.29 for update确保操作的唯一性（行锁） > - where条件必须使用索引，最好是唯一索引，如果没有索引可能会升级为表锁。 > - 注意死锁的问题：如果两个或多个事务以不同的顺序获取锁，可能会导致死锁。例如，事务 A 锁定了行 X 并尝试获取行 Y 的锁，而事务 B 锁定了行 Y 并尝试获取行 X 的锁，导致死锁，进而引发事务回滚。 测试表 ```sql CR",
   "01-Essay/微信APP授权登录.md": " Maven ```xml <dependency> <groupId>org.apache.commons</groupId> <artifactId>commons-io</artifactId> <version>1.3.2</version> </dependency> <dependency> <groupId>org.apache.commons</groupId> <artifact",
+  "01-Essay/疑难杂症/2025卸载搜狗输入法Mac.md": " 前言 在 MacBook 上安装了搜狗输入法，发现居然无法直接卸载，网上找了一会发现最简单、最干净的的卸载方法居然是重新下载安装包。 卸载步骤 在官网重新下载安装包，在安装隔壁点击卸载即可 - 官网安装包：https://shurufa... ",
   "01-Essay/疑难杂症/Chrome强制访问https的问题.md": " 问题 某些私人网站开启了HSTS导致Chrome无法访问，异常信息： `You cannot visit xxx.xxx.com right now because the website uses HSTS. Network errors and attacks are usually temporary, so this page will probably work later.` > H",
   "01-Essay/疑难杂症/IDEA 2023.1 破解.md": " > 通过jar包+激活码破解 VM Options ```text -Xms3G -Xmx4G -XX:ReservedCodeCacheSize=512m -XX:+IgnoreUnrecognizedVMOptions -XX:+UseG1GC -XX:SoftRefLRUPolicyMSPerMB=50 -XX:CICompilerCount=2 -XX:+HeapDumpOnOutOfM",
   "01-Essay/疑难杂症/IDEA搜索卡顿优化.md": " > 在IDEA内全局搜索内容时有时候会卡顿，通过以下设置优化 Preferences设置 关闭此选项 Project Structure设置 排除log文件 ",
