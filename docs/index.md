@@ -6,7 +6,7 @@ head:
     - name: baidu-site-verification
       content: codeva-QmDIZ03unw
 #navbar: false
-title: 花有重开日
+title: 个人知识库
 
 hero:
   name: "Personal Knowledge Repository"

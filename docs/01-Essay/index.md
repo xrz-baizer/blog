@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: 花有重开日
+title: 随笔
 aside: false
 prev: false
 next: false

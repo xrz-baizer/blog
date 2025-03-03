@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: 花有重开日
+title: 其它笔记
 aside: false
 prev: false
 next: false

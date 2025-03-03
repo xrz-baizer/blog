@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: 花有重开日
+title: 技术文章
 aside: false
 prev: false
 next: false
