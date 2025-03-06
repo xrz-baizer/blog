@@ -12,8 +12,8 @@
 >
 >Spring支持两种主要的容器类型：
 >
->- BeanFactory：Spring框架的基础容器，提供基本的DI功能。
->- ApplicationContext：BeanFactory的子接口，提供了更多的高级特性，如事件发布、国际化支持等。
+>- **BeanFactory**：Spring框架的基础容器，提供基本的DI功能。
+>- **ApplicationContext**：BeanFactory的子接口，提供了更多的高级特性，如事件发布、国际化支持等。
 >
 >核心流程：==AbstractApplicationContext#refresh==
 
@@ -37,7 +37,7 @@ Bean工厂接口，此类接口上声明了Bean的创建过程。
 
 #### AbstractApplicationContext#==refresh==
 
-这个抽象类中的refresh方法定义了Spring容器刷新流程，包含创建和销毁Bean，注册各种PostPrecessor。
+这个抽象类中的refresh方法定义了Spring容器Bean的刷新流程，包含创建和销毁Bean，注册和执行各种PostPrecessor。
 
 #### AbstractAutowireCapableBeanFactory#doCreateBean
 
@@ -71,11 +71,11 @@ Aware一个无声明的接口，Spring用于标识bean是否需要容器对象�
 
 #### Bean作用域Scope
 
-- 单例（singleton）：整个Spring IoC容器中只有一个实例。
-- 原型（prototype）：每次获取Bean时都会创建一个新的实例。
+- **单例（singleton）**：整个Spring IoC容器中只有一个实例。
+- **原型（prototype）**：每次获取Bean时都会创建一个新的实例。
   - 例如在使用责任链模式时，Handler的实现类又想交给Spring管理的话，就需要把Handler实现类的作用域声明为@Scope("prototype")，确保每次创建Handler的next属性都为空。
-- 请求（request）：每次HTTP请求都会创建一个新的实例（Web应用中）。
-- 会话（session）：每个HTTP会话都会创建一个新的实例（Web应用中）。
+- **请求（request）**：每次HTTP请求都会创建一个新的实例（Web应用中）。
+- **会话（session）**：每个HTTP会话都会创建一个新的实例（Web应用中）。
 
 #### Bean的创建时机
 
@@ -99,14 +99,14 @@ Aware一个无声明的接口，Spring用于标识bean是否需要容器对象�
 4. **执行BeanFactoryPostProcessor**
    - BeanFactoryPostProcessor#postProcessBeanFactory：在所有BeanDefintion加载完成后，但在bean实例化之前，提供修改BeanDefinition属性值的机制，例如处理BeanDefinition中的占位符、解析配置类提前注入
    - 常见的实现类：
-     - ConfigurationClassPostProcessor：解析 @Configuration、@ComponentScan、@Bean、@Import、@PropertySource 等
-     - PropertySourcesPlaceHolderConfigurer：替换 BeanDefinition 中的 ${ }
+     - **ConfigurationClassPostProcessor**：解析 `@Configuration`、`@ComponentScan`、`@Bean`、`@Import`、`@PropertySource` 等
+     - **PropertySourcesPlaceHolderConfigurer**：替换 BeanDefinition 中的 ${ }
 5. **注册BeanPostProcessor**
    - 完成BeanPostProcessor的注册工作，方便后续在实例化前后后调用before和after方法
 
 #### ==二、实例化bean==
 
-> 在AbstractApplicationContext#refresh中的finishBeanFactoryInitialization中体现，通过getBean在容器中查找，没有的时候再去创建Bean，把之前加载的BeanDefinition转换为Bean，通AbstractBeanFactory#createBean执行以下逻辑
+> 在AbstractApplicationContext#refresh 中的 finishBeanFactoryInitialization 中体现，通过 getBean 在容器中查找，没有的时候再去创建 Bean，把之前加载的 BeanDefinition 转换为 Bean，通 AbstractBeanFactory#createBean 执行以下逻辑
 
 1. **实例化前置处理器执行InstantiationAwareBeanPostProcessor#postProcessBefore==Instantiation==**
    - AbstractAutowireCapableBeanFactory#**resolveBeforeInstantiation**：内部会触发AbstractAutoProxyCreator#postProcessBeforeInstantiation函数，主要执行两个逻辑
@@ -115,7 +115,7 @@ Aware一个无声明的接口，Spring用于标识bean是否需要容器对象�
 2. **通过反射创建Bean**
    - AbstractAutowireCapableBeanFactory#createBeanInstance
    - SimpleInstantiationStrategy#instantiate：通过执行无参构造方法getDeclaredConstructor().newInstance()创建Bean
-   - Bean的构造方法如果是有参的，且对应参数还是Bean，那么会去循环嵌套创建（例如Advisor、Adivce）
+   - 如果Bean的构造方法如果是有参的，且对应参数还是Bean，那么会去循环嵌套创建（例如Advisor、Adivce）
 3. **提前暴露（解决循环依赖的问题）**
    - AbstractAutowireCapableBeanFactory#getEarlyBeanReference
    - 通过三级缓存解决循环依赖问题：
@@ -180,7 +180,7 @@ Aware一个无声明的接口，Spring用于标识bean是否需要容器对象�
 
 回顾上面的创建流程，A实例化完成后就放到二级缓存给B用了，B此时注入的A是普通对象，假如A需要代理，A则会在初始化阶段属性填充后才会创建代理对象，并且会覆盖二级缓存中的普通对象，此时容器中的A是代理对象，但是B中的a属性却注入的是普通对象，就会出现对象版本不一致的情况。
 
-**Spring通过引入三级缓存（singletonFactories）解决上诉问题**
+**Spring通过引入三级缓存（singletonFactories）解决上述问题**
 
 - 三级缓存的设计理念是：在对象尚未完全实例化时，存储一个 **用于创建该对象的工厂**，工厂方法可以在需要的时候对对象进行代理包装。
 - 使用Lambda 函数式接口（ObjectFactory）实现代理的惰性创建，是一种延迟机制，Lambda表达式只有在调用的时候才会执行，即只有在 bean 真正被获取时才决定是否需要创建代理对象。如果 bean 不需要代理，那么就直接返回原始对象。

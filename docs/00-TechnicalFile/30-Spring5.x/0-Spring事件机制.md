@@ -2,9 +2,9 @@
 
 ## 前言
 
-> 记录了Spring事件机制的实现，并引申出@RefreshScope注解应用。
+> 记录了Spring事件机制的实现，并引申出 **@RefreshScope** 注解应用。
 
-Spring事件机制（Spring Event）是基于**观察者模式**实现的，主要用于在应用中实现事件的发布与监听。
+Spring事件机制（Spring Event）是基于**观察者模式**实现的，主要用于在程序中实现事件的发布与监听。
 
 日常业务系统应用场景：
 
@@ -43,7 +43,7 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 ### 事件发布器（ApplicationEventPublisher）
 
-`ApplicationEventPublisher`负责事件发布，通过调用`publishEvent`方法发布事件。
+`ApplicationEventPublisher`负责事件发布，通过调用`publishEvent()`方法发布事件。
 
 获取方式：
 
@@ -60,9 +60,9 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 ## 事件广播器的处理（AbstractApplicationEventMulticaster）
 
-事件广播器（AbstractApplicationEventMulticaster）负责把ApplicationEventPublisher发布的事件广播给对应的监听器们。其内部维护了所有监听器。
+事件广播器（AbstractApplicationEventMulticaster）负责把`ApplicationEventPublisher`发布的事件广播给对应的监听器们。其内部维护了所有监听器。
 
-在AbstractApplicationContext#refresh方法中通过调用initApplicationEventMulticaster方法执行初始化，默认实现类为SimpleApplicationEventMulticaster
+在`AbstractApplicationContext#refresh`方法中通过调用`initApplicationEventMulticaster`方法执行初始化，默认实现类为`SimpleApplicationEventMulticaster`
 
 ![image-20241030224358935](../../Image/image-20241030224358935.png)
 
@@ -70,15 +70,15 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 ### 添加监听器到广播器中
 
-在AbstractApplicationContext#refresh方法中通过调用registerListeners方法注册监听器，将所有事件监听器ApplicationListener注册到广播器中。
+在`AbstractApplicationContext#refresh`方法中通过调用`registerListeners`方法注册监听器，将所有事件监听器`ApplicationListener`注册到广播器中。
 
 <img src="../../Image/image-20241030230441909.png" alt="image-20241030230441909"  />
 
 ![image-20241030230355305](../../Image/image-20241030230355305.png)
 
-- 通过@EventListener注解声明的方法级别事件，Spring会在所有单例Bean初始化之后，将其转换为ApplicationListenerMethodAdapter，再放入广播器中。（ApplicationListenerMethodAdapter是ApplicationListener的子类）
+通过`@EventListener`注解声明的方法级别事件，Spring会在所有单例Bean初始化之后，将其转换为`ApplicationListenerMethodAdapter`，再放入广播器中。（ApplicationListenerMethodAdapter是ApplicationListener的子类）
 
-- 调用链：refresh() ->finishBeanFactoryInitialization -> preInstantiateSingletons() -> afterSingletonsInstantiated()
+- 调用链：refresh() -> finishBeanFactoryInitialization -> preInstantiateSingletons() -> afterSingletonsInstantiated()
 
 - 具体执行的实现方法：EventListenerMethodProcessor#processBean
   - EventListenerMethodProcessor是Spring内置的核心Bean，在容器创建的时候就会初始化：AnnotationConfigApplicationContext#AnnotationConfigApplicationContext() -> AnnotatedBeanDefinitionReader(registry,  environment) ->  AnnotationConfigUtils#registerAnnotationConfigProcessors
@@ -89,7 +89,7 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 通过`AbstractApplicationContext#publishEvent`发布事件后，传递事件给广播器处理
 
-> `ApplicationContext`是Spring的核心容器，它也继承了`ApplicationEventPublisher`，所以也能发布事件。
+> **ApplicationContext**是Spring的核心容器，它也继承了**ApplicationEventPublisher**，所以也能发布事件。
 
 <img src="../../Image/image-20241030222050522.png" alt="image-20241030222050522"  />
 
@@ -101,7 +101,7 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 ### 匹配事件
 
-通过广播器的AbstractApplicationEventMulticaster#retrieveApplicationListeners方法匹配，先获取注册在Multicaster的所有事件，再通过supportsEvent逐一匹配。
+通过广播器的AbstractApplicationEventMulticaster#`retrieveApplicationListeners`方法匹配，先获取注册在`Multicaster`的所有事件，再通过`supportsEvent`逐一匹配。
 
 1. 断事件类型和监听器上的泛型类型，是否匹配(子类也能匹配)。
 2. 监听器是否支持事件源类型，默认情况下，都是支持的。
@@ -110,76 +110,76 @@ Spring事件机制（Spring Event）是基于**观察者模式**实现的，主�
 
 ## @RefreshScope
 
-@RefreshScope注解也是Spring事件的一个典型应用，主要作用是可以在不重启应用的情况下重新加载配置。
+`@RefreshScope`注解就是Spring事件的一个典型应用，主要作用是可以在不重启应用的情况下重新加载配置。
 
 <img src="../../Image/image-20241031120342738.png" alt="image-20241031120342738"  />
 
-@RefreshScope是SpringCloud在@Scope基础上的一个实现，用于标识Bean的作用域为`refresh`，代理模式为CGLB基于类的代理。
+`@RefreshScope`是SpringCloud在`@Scope`基础上的一个实现，用于标识Bean的作用域为`refresh`，代理模式为CGLB基于类的代理。
 
-- refresh作用域相当于一个懒加载的单例，即在第一次获取的时候会去创建Bean，之后独立缓存起来。
-- ScopedProxyMode代理模式有四种
-  - DEFAULT：不使用代理（@Scope的默认值）
-  - NO：不使用代理，等价于DEFAULT。
-  - INTERFACES：使用基于接口的代理
-  - TARGET_CLASS：使用基于类的代理（@RefreshScope的代理模式）
+- `refresh`作用域相当于一个懒加载的单例，即在第一次获取的时候会去创建Bean，之后独立缓存起来。
+- `ScopedProxyMode`代理模式有四种
+  - **DEFAULT**：不使用代理（@Scope的默认值）
+  - **NO**：不使用代理，等价于DEFAULT。
+  - **INTERFACES**：使用基于接口的代理
+  - **TARGET_CLASS**：使用基于类的代理（@RefreshScope的代理模式）
 
 ### 工作流程
 
-假设有一个Bean被@RefreshScope修饰，那么在AbstractBeanFactory#doGetBean创建的时候会被判断为是其它作用域，通过Scope#get方法去创建。
+假设有一个Bean被`@RefreshScope`修饰，那么在AbstractBeanFactory#`doGetBean`创建的时候会被判断为是其它作用域，通过`Scope#get`方法去创建。
 
 <img src="../../Image/image-20241031215702450.png" alt="image-20241031215702450" style="zoom:30%;" />
 
-Scope是一个接口，对应的实现类是GenericScope，重点关注对应get方法的实现。
+`Scope`是一个接口，对应的实现类是`GenericScope`，重点关注对应`get`方法的实现。
 
-- 入参是一个BeanName和ObjectFactory对象工厂（Lambda表达，在doGetBean中放入的是一个对象创建过程）
-- this.cache是BeanLifecycleWrapperCache对象，用来缓存当前作用域的Bean。
+- 入参是一个`BeanName`和`ObjectFactory`对象工厂（Lambda表达，在doGetBean中放入的是一个对象创建过程）
+- `this.cache`是`BeanLifecycleWrapperCache`对象，用来缓存当前作用域的Bean。
   - 内部使用的是ConcurrentMap存放
   - key是BeanName，value是Warpper包装器
 
 <img src="../../Image/image-20241031215907792.png" alt="image-20241031215907792"  />
 
-- 最终返回的是通过BeanLifecycleWrapper.getBean()方法返回ObjectFactory对象工厂创建的Bean
+- 最终返回的是通过`BeanLifecycleWrapper.getBean()`方法返回`ObjectFactory`对象工厂创建的Bean
   - Wrapper包装器内部持有一个ObjectFactory对象工厂和Bean。
-  - 在第一次调用getBean()方法的时候，会通过对象工厂创建并记录该Bean，后续再调用getBean()方法时就会直接返回记录的Bean。
-  - 而记录的Bean对象，可以通过destroy()置空，那么下次再调用getBean()方法的时候，就会通过对象工厂去重新创建一个Bean对象记录起来。
+  - 在第一次调用`getBean()`方法的时候，会通过对象工厂创建并记录该Bean，后续再调用`getBean()`方法时就会直接返回记录的Bean。
+  - 而记录的Bean对象，可以通过`destroy()`置空，那么下次再调用`getBean()`方法的时候，就会通过对象工厂去重新创建一个Bean对象记录起来。
     - ==这就是动态刷新配置的核心机制，只要有配置变更，就可以发送一个刷新事件，监听器再去执行对应作用域的destroy()方法清空Bean，下次再获取时就可以通过ObjectFactory重新走一边创建过程，重新读取最新配置。==
 
 <img src="../../Image/image-20241031222156131.png" alt="image-20241031222156131" style="zoom:33%;" />
 
-GenericScope#destroy方法作用是
+`GenericScope#destroy`方法作用是
 
-- 先获取所有BeanLifecycleWrapper包装器，循环执行destroy方法，置空包装器中记录的bean
-- 清空this.cache（BeanLifecycleWrapperCache）当前作用域的所有缓存
+- 先获取所有`BeanLifecycleWrapper`包装器，循环执行`destroy`方法，置空包装器中记录的bean
+- 清空`this.cache（BeanLifecycleWrapperCache）`当前作用域的所有缓存
 
 <img src="../../Image/image-20241031224314347.png" alt="image-20241031224314347"  />
 
-RefreshScope是GenericScope对应的子类，内部通过refreshAll执行父类GenericScope#destroy方法。
+`RefreshScope`是`GenericScope`对应的子类，内部通过`refreshAll`执行父类`GenericScope#destroy`方法。
 
 <img src="../../Image/image-20241031224544567.png" alt="image-20241031224544567"  />
 
-而RefreshScope#refreshAll方法又被ContextRefresher#refresh方法调用
+而`RefreshScope#refreshAll`方法又被`ContextRefresher#refresh`方法调用
 
 - `ContextRefresher`是spring中专门用来刷新`RefreshScope`的类
 
 <img src="../../Image/image-20241031224957228.png" alt="image-20241031224957228" style="zoom:30%;" />
 
-也就是说，只要我们调用ContextRefresher#refresh方法， 就可以置空所有refresh作用域的bean。
+也就是说，只要我们调用`ContextRefresher#refresh`方法， 就可以置空所有`refresh`作用域的bean。
 
 - 下一次业务请求过来时，Spring通过getBean -> doGetBean方法就可以重新创建Bean，并读取最新的配置注入该Bean。
 
-> GenericScope是作用域的通用实现，每一种自定义的作用域bean都会维护在一个独立的缓存（StandardScopeCache内部的ConcurrentMap）中，都有独立的生命周期，与Spring的单例缓存隔离开来。
+> **GenericScope**是作用域的通用实现，每一种自定义的作用域bean都会维护在一个独立的缓存（StandardScopeCache内部的ConcurrentMap）中，都有独立的生命周期，与Spring的单例缓存隔离开来。
 >
-> - refresh作用域的实现就是RefreshScope，继承自GenericScope。
+> - **refresh**作用域的实现就是**RefreshScope**，继承自**GenericScope**。
 >   - RefreshScope是通过RefreshAutoConfiguration这个类自动装配到容器中，而GenericScope是实现了BeanFactoryPostProcessor，会在postProcessBeanFactory方法中将自己放入到ConfigurableListableBeanFactory的scopes属性中。
 >   - 回到流程中的第一步
->     - 此时mbd.getScope()获取的就是bean修饰的@RefreshScope注解中的value=`refresh`
+>     - 此时mbd.getScope()获取的就是bean修饰的@RefreshScope注解中的value=**refresh**
 >     - 通过this.scopes.get("refersh")获取到的就是RefreshScope
 
 <img src="../../Image/image-20241031232232958.png" alt="image-20241031232232958"  />
 
 ### 如何触发刷新事件 
 
-在项目中引入Spring Boot Actuator，并配置暴露对应的端点接口`/actuator/refresh`
+在项目中引入**Spring Boot Actuator**，并配置暴露对应的端点接口`/actuator/refresh`
 
 ```yml
 management:

@@ -93,7 +93,6 @@ TransactionManager是一个空接口，对应子接口为`PlatformTransactionMan
 声明了上文中描述的 Propagation 传播行为、Isolation 隔离级别等属性。默认实现类为DefaultTransactionDefinition。
 
 - `@Transactional`注解会被Spring解析并加载为`TransactionDefinition`对象。
-- 是`PlatformTransactionManager#getTransaction`方法的入参
 
 ![image-20250302200154557](../../Image/image-20250302200154557.png)
 
@@ -101,15 +100,15 @@ TransactionManager是一个空接口，对应子接口为`PlatformTransactionMan
 
 主要用于表示当前事务的状态和控制事务的提交或回滚。默认实现类为`DefaultTransactionStatus`。
 
-- 继承了 `SavepointManager`，意味着它可以创建事务保存点（`savepoints`），允许部分回滚，Spring事务的嵌套功能依赖此实现。
+- 继承了 `SavepointManager`，意味着它可以创建事务保存点（`savepoints`），允许部分回滚，Spring事务的嵌套依赖此功能实现。
 
 ## Spring事务的实现
 
 ### JDBC连接的事务管理
 
-来回顾一下以前学生时期的连接数据时的写法。
+来回顾一下以前学生时期的连接数据库的写法。
 
-1. 获取连接 `Connection`
+1. 获取连接 `Connection conn = DriverManager.getConnection("jdbc:mysql://xxxx, "root", "123456");`
 2. 关闭自动提交 `conn.setAutoCommit(false)`
 3. 正常执行则手动提交 `conn.commit()`
 4. 出现异常则回滚 `conn.rollback()`
@@ -153,7 +152,7 @@ public static void main(String[] args) {
 
 ### DataSourceTransactionManager 数据源事务管理
 
-`DataSourceTransactionManager`类是`AbstractPlatformTransactionManager`抽象类的具体实现之一，其实就是对JDBC连接的事务管理的封装。
+`DataSourceTransactionManager`类是`AbstractPlatformTransactionManager`抽象类的子类 ，实现了对JDBC数据连接的事务管理。
 
 #### 1、获取事务
 
@@ -163,12 +162,12 @@ public static void main(String[] args) {
 
 - 如果没有事务，则创建新事务 
 
-获取事务`doGetTransaction()`，开启事务`doBegin()`，由具体的子类`DataSourceTransactionManager`实现
+内部获取事务`doGetTransaction()`，开启事务`doBegin()`，由具体的子类`DataSourceTransactionManager`实现
 
 > 相当于JDBC中的：
 >
-> 1. 获取连接 `Connection`
-> 2. 关闭自动提交 `conn.setAutoCommit(false)`
+> 1. 获取连接 Connection
+> 2. 关闭自动提交 conn.setAutoCommit(false)
 
 - org.springframework.jdbc.datasource.DataSourceTransactionManager#doGetTransaction
 - org.springframework.jdbc.datasource.DataSourceTransactionManager#doBegin
@@ -177,9 +176,9 @@ public static void main(String[] args) {
 
 ![image-20250302211609891](../../Image/image-20250302211609891.png)
 
-`doBegin()`中还有一个比较重要的地方：将当前获取到的数据库连接`Connection`绑定到当前线程ThreadLocal中，方便其它Service开启事务获取连接时能获取到同一个连接。
+**`doBegin()`中还有一个比较重要的地方**：将当前获取到的数据库连接`Connection`绑定到当前线程ThreadLocal中，方便其它Service开启事务获取连接时能获取到同一个连接。
 
-- `@Transactional`默认的传播行为是`PROPAGATION_REQUIRED`，存储`Connection`到ThreadLocal中是为了确保中当前线程中的不同`Service`之间使用的是同一个事务，所有 SQL 操作使用的是同一个 `Connection`
+- `@Transactional`默认的传播行为是`PROPAGATION_REQUIRED`，存储`Connection`到ThreadLocal中是为了确保中当前线程中的不同`Service`之间的调用使用的是同一个事务，所有 SQL 操作使用的是同一个 `Connection`
   - 注意：这意味如果在多线程情况下，事务会失效
 
 - 事务结束后解绑：在事务提交或回滚时，Spring 需要清理 `ThreadLocal`，否则会导致 连接泄漏。
@@ -209,10 +208,10 @@ public static void main(String[] args) {
 
 #### 3、回滚事务
 
-先看看父类`AbstractPlatformTransactionManager#commit`的实现：
+先看看父类`AbstractPlatformTransactionManager#rollback`的实现：
 
-- 检查事务状态是否已完成
-- 执行 `doRollback()`
+- 检查事务状态是否已完成，已完成的事务则抛异常
+- 否则执行 `doRollback()`
 
 `doRollback()`由具体的子类`DataSourceTransactionManager`实现
 
@@ -228,6 +227,8 @@ public static void main(String[] args) {
 ### 编程式事务的实现
 
 其实就是在代码中显式调用事务管理的 API 来管理事物
+
+- 注入`PlatformTransactionManager`
 
 ```java
 @Autowired
@@ -276,7 +277,7 @@ public void insertUser(User u) {
 
 #### 1、进入拦截器
 
-当调用一个声明了 `@Transactional` 注解的方法时，即被代理的法时，代理对象会先执行拦截器 `TransactionInterceptor`
+当调用一个声明了 `@Transactional` 注解的方法时，即被代理的方法时，代理对象会通过拦截器 `TransactionInterceptor`的`invoke`方法来执行
 
 - org.springframework.transaction.interceptor.TransactionInterceptor#invoke
 
@@ -323,13 +324,13 @@ public void insertUser(User u) {
 
 - 前置知识： [SpringBoot2.x自动配置](6-SpringBoot2.x.md) 
 
-我们是通过`@EnableTransactionManagement`注解来启用声明式事务的，查看该注解详情，通过`@Import`导入配置类`TransactionManagementConfigurationSelector`
+我们是通过`@EnableTransactionManagement`注解来启用声明式事务的，查看该注解的详情，通过`@Import`导入配置类`TransactionManagementConfigurationSelector`
 
 - org.springframework.transaction.annotation.EnableTransactionManagement
 
 ![image-20250302223654668](../../Image/image-20250302223654668.png)
 
-`TransactionManagementConfigurationSelector`继承了`ImportSelector`接口，支持动态注入，通过重写`selectImports()`方法，其返回值是一个`String[]`，Spring 会把返参数组转换为`BeanDefinition`自动注册到容器中。
+`TransactionManagementConfigurationSelector`继承了`ImportSelector`接口，即支持动态注入，通过重写`selectImports()`方法，其返回值是一个`String[]`，Spring 会把返参数组转换为`BeanDefinition`自动注册到容器中。
 
 - 默认采用了SpringAOP的动态代理模式`PROXY`，导入了`ProxyTransactionManagementConfiguration`配置类
   - ASPECTJ 模式：采用 AspectJ 的织入技术（编译时或加载时织入），直接将通知织入目标类中。
