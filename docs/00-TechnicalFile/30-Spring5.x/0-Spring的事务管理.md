@@ -179,7 +179,7 @@ public static void main(String[] args) {
 **`doBegin()`中还有一个比较重要的地方**：将当前获取到的数据库连接`Connection`绑定到当前线程ThreadLocal中，方便其它Service开启事务获取连接时能获取到同一个连接。
 
 - `@Transactional`默认的传播行为是`PROPAGATION_REQUIRED`，存储`Connection`到ThreadLocal中是为了确保中当前线程中的不同`Service`之间的调用使用的是同一个事务，所有 SQL 操作使用的是同一个 `Connection`
-  - 注意：这意味如果在多线程情况下，事务会失效
+  - ==注意：这意味如果在多线程情况下，事务会失效==
 
 - 事务结束后解绑：在事务提交或回滚时，Spring 需要清理 `ThreadLocal`，否则会导致 连接泄漏。
   - 这个解绑操作通常发生在 `AbstractPlatformTransactionManager#cleanupAfterCompletion()` 方法中
@@ -349,3 +349,128 @@ public void insertUser(User u) {
 
 在 SpringIOC 的`refresh`方法中，在`invokeBeanFactoryPostProcessors`方法会执行一个`ConfigurationClassPostProcessor`，通过这个对象的`postProcessBeanDefinitionRegistry`方法来解析所有配置类上的注解，包括上述的@`EnableTransactionManagement`、`@Import`、`@Bean`等注解。
 
+## Spring事务失效的场景
+
+### 内部方法调用导致@Transactional失效
+
+```java
+@Service
+public class OrderService {
+
+    @Resource
+    private OrderMapper orderMapper;
+
+    @Transactional
+    public void findAndInsertOrder(){
+        this.insertOrder(order);
+    }
+    
+    @Transactional // 失效事务
+    public void insertOrder(Order order){
+        orderMapper.insertOrder(order);
+        throw new RuntimeException("异常了");
+    }
+
+}
+```
+
+Spring事务是基于AOP实现，只有使用代理对象调用某个方法时Sping事务才能生效，而在一个类中，方法之间的调用是使用this调用的，此时this并不是代理对象，所以会导致@Transactional失效。
+
+解决方案：
+
+1. **当前类中注入自己： `@Resource private OrderService oService;`，使用`oService.insertOrder(order)`方式调用**
+2. **`insertOrder()`拆解到另一个 Service 中**
+3.  **AopContent 结合 `@EnableAspectJAutoProxy(exposeProxy = true)`**
+   - 启动类上添加注解：`@EnableAspectJAutoProxy(exposeProxy = true)`
+     - `exposeProxy = true` 表示暴露代理对象，使当前代理对象在 AOP 上下文中可用。
+   - 调用方式：`((OrderService) AopContext.currentProxy()).insertOrder(order);`
+
+### 方法的访问修饰不是public
+
+```java
+@Transactional
+private void findAndInsertOrder(){
+    ((OrderService) AopContext.currentProxy()).insertOrder(order);
+}
+```
+
+findAndInsertOrder方法的访问修饰符被定义成了`private`，这样会导致事务失效，原因是Spring 要求被代理的方法必须是public的，其实在Spring的源码中已经规定了不是public的修饰的方法无法提供事务的支持
+
+- org.springframework.transaction.interceptor.AbstractFallbackTransactionAttributeSource#computeTransactionAttribute
+
+![image-20250313102524797](../../Image/image-20250313102524797.png)
+
+### 多线程调用
+
+```java
+@Transactional
+public void findAndInsertOrder() {
+    orderMapper.getOrderById(2L);
+    Order order = new Order();
+    order.setOrderId(123456789L);
+
+    new Thread(()-> {
+        orderService2.insertOrder(order);
+    }, "t2").start();
+}
+```
+
+当两个方法不在一个线程中，它们获取的数据库连接也就不一致，从而是两个不同的事务。如果insertOrder方法中抛出了异常，findAndInsertOrder方法是无法回滚的。
+
+**参考上文 DataSourceTransactionManager的 doBegin()方法解析**：
+
+- `doBegin()`中还有一个比较重要的地方：将当前获取到的数据库连接`Connection`绑定到当前线程ThreadLocal中，方便其它Service开启事务获取连接时能获取到同一个连接。
+
+- `@Transactional`默认的传播行为是`PROPAGATION_REQUIRED`，存储`Connection`到ThreadLocal中是为了确保中当前线程中的不同`Service`之间的调用使用的是同一个事务，所有 SQL 操作使用的是同一个 `Connection`
+  - ==注意：这意味如果在多线程情况下，事务会失效==
+
+### 事务传播行为配置错误
+
+若方法的传播行为设置为`NOT_SUPPORTED`、`NEVER`等，事务会失效。
+
+```java
+@Transactional(propagation = Propagation.NOT_SUPPORTED)
+public void method() { ... }
+```
+
+###  异常的类型不匹配
+
+Spring 默认情况下只会回滚运行时异常（`RuntimeException`）和错误（`Error`）。如果抛出的是检查型异常（`Exception`），事务默认不会回滚。
+
+所以一般都会使用 `rollbackFor` 属性指定需要回滚的异常类型，例如：
+
+```java
+@Transactional(rollbackFor = Exception.class)
+public void insertOrder(Order order) {
+  orderMapper.insertOrder(order);
+}
+```
+
+### 方法被 finall 或 static 修饰
+
+`final`修饰的方法子类是无法重写的，``Spring``事务的底层其实是通过`jdk`动态代理或者`cglib`代理生成代理类，然后在代理类中实现的事务功能。但是方法被`final`修饰后就无法在代理类中重写该方法，也就无法实现事务功能。
+
+同样的道理，如果某个方法是`static`修饰也是无法通过动态代理实现事务的功能，因为`static`是不属于对象的，而是属于类，所以静态方法是不能被重写的，正因为不能被重写，也就无法实现事务功能。
+
+### 没有被 Spring 管理
+
+只有被 Spring 容器管理的 Bean，事务注解才会生效。如果类没有被标注为 Spring 的组件（如 `@Service`、`@Component` 等），则事务不会生效。
+
+### 数据库引擎不支持事务
+
+若使用不支持事务的数据库引擎（如MySQL的MyISAM引擎），即使添加`@Transactional`，事务也不会生效。
+
+### 异常被捕获且未抛出
+
+如果在事务方法中捕获了异常但没有重新抛出，Spring 无法感知异常的发生，事务也不会回滚。
+
+```java
+@Transactional
+public void insertOrder() {
+    try {
+        // 可能抛异常的代码
+    } catch (Exception e) {
+        // 未抛出异常，事务不回滚
+    }
+}
+```
