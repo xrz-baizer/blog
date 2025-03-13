@@ -380,10 +380,12 @@ Spring事务是基于AOP实现，只有使用代理对象调用某个方法时Sp
 
 1. **当前类中注入自己： `@Resource private OrderService oService;`，使用`oService.insertOrder(order)`方式调用**
 2. **`insertOrder()`拆解到另一个 Service 中**
-3.  **AopContent 结合 `@EnableAspectJAutoProxy(exposeProxy = true)`**
-   - 启动类上添加注解：`@EnableAspectJAutoProxy(exposeProxy = true)`
-     - `exposeProxy = true` 表示暴露代理对象，使当前代理对象在 AOP 上下文中可用。
-   - 调用方式：`((OrderService) AopContext.currentProxy()).insertOrder(order);`
+3. **AopContent 结合 `@EnableAspectJAutoProxy(exposeProxy = true)`**
+   1. 启动类上添加注解：`@EnableAspectJAutoProxy(exposeProxy = true)`
+      1. `exposeProxy = true` 表示暴露代理对象，使当前代理对象在 AOP 上下文中可用。
+
+   2. 调用方式：`((OrderService) AopContext.currentProxy()).insertOrder(order);`
+
 
 ### 方法的访问修饰不是public
 
