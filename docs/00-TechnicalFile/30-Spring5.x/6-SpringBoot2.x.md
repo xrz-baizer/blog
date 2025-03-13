@@ -8,30 +8,30 @@ Spring Boot 是一个用于简化 Spring 应用开发的框架。它通过约定
 
 ### 约定优于配置
 
-约定优于配置是一个比较常见的软件设计思想，简单来说就是用一些通用的约定来减少人员手动配置。
+约定优于配置是一个比较常见的软件设计思想，简单来说就是==用一些通用的约定来减少人员的手动配置==。
 
-- 比如SpringBoot内嵌的Tomcat端口默认为8080， 这就是一个默认的约定，不需要开发人员去配置。
-- 只要当你想用8081端口时，才需要去配置。
+- 比如 SpringBoot 内嵌的 Tomcat 端口默认为 8080， 这就是一个默认的约定，不需要开发人员去配置。
+- 只要当你想用 8081 端口时，才需要去配置。
 
 ### 核心特性
 
-- 自动装配（Auto-Configuration）：是Spring Boot一个核心特性，旨在简化 Spring 应用的配置过程。
+- **自动装配（Auto-Configuration）：是Spring Boot一个核心特性，旨在简化 Spring 应用的配置过程。**
 
-  - 自动装配是指 Spring Boot 根据应用的类路径和已配置的 Bean 自动为应用配置适合的组件。
+  - 自动装配是指 SpringBoot 根据应用的类路径和已配置的 Bean 自动为应用配置适合的组件。
   - 提供了一系列的起步依赖，例如 spring-boot-starter-web 用于构建 Web 应用，spring-boot-starter-data-jpa 用于数据访问，简化了 Maven 依赖管理。
 
-- 内嵌服务器
+- **内嵌服务器**
 
-  - Spring Boot 支持内嵌 Web 服务器（如 Tomcat、Jetty 或 Undertow），这意味着我们可以将应用打包为一个独立运行的 JAR 文件，而不需要依赖外部的应用服务器来部署。
+  - SpringBoot 支持内嵌 Web 服务器（如 Tomcat、Jetty 或 Undertow），这意味着我们可以将应用打包为一个独立运行的 JAR 文件，而不需要依赖外部的应用服务器来部署。
   - 后续应用可以直接通过 `java -jar` 命令启动运行。
 
-- 外部化配置
+- **外部化配置**
 
   - 外部化配置允许应用的配置参数（如数据库连接、端口等）从代码中分离出来，可以通过 `application.properties` 或 `application.yml` 文件、环境变量、命令行参数等多种方式进行配置。
 
     Spring Boot 还支持多环境配置，例如在 `application-dev.properties`、`application-prod.properties` 中定义不同环境的配置文件。
 
-- 监控和管理（Spring Boot Actuator）：提供了监控和管理 Spring Boot 应用的功能，包括健康检查、应用指标、环境信息等。
+- **监控和管理（SpringBoot Actuator）：提供了监控和管理 SpringBoot 应用的功能，包括健康检查、应用指标、环境信息等。**
 
   - 通过多种监控端点，如 `/actuator/health`、`/actuator/metrics`、`/actuator/env`来查看应用的状态和性能指标。
 
@@ -39,42 +39,44 @@ Spring Boot 是一个用于简化 Spring 应用开发的框架。它通过约定
 
 #### @SpringBootApplication
 
-@SpringBootApplication是SpringBoot的启动类注解，内部包含以下三个注解
+**@SpringBootApplication是SpringBoot的启动类注解，内部包含以下三个注解**
 
-- @SpringBootConfiguration：声明该类为配置类，即@Configuration。内含@Component，将加载为Bean。
-- @EnableAutoConfiguration：启用自动配置功能（可以通过exclude属性排除不需要的配置类）。
-  - 通过@Import注入AutoConfigurationImportSelector（负责读取spring.factories文件）
-  - 通过@AutoConfigurationPackage的@Import注入AutoConfigurationPackages.Registrar
+- `@SpringBootConfiguration`：声明该类为配置类，即`@Configuration`。内含`@Component`，表示把当前类加载为Bean。
+- `@EnableAutoConfiguration`：启用自动配置功能（可以通过exclude属性排除不需要的配置类）。
+  - 通过`@Impor`t注入AutoConfigurationImportSelector（负责读取spring.factories文件）
+  - 通过`@AutoConfigurationPackage`的`@Import`注入AutoConfigurationPackages.Registrar
     - 这个注解的作用就是将主配置类（@SpringBootConfiguration标注的类）所在的包及其下面所有子包里面所有的组件扫描到IOC容器中。例如使用 `@Component`、`@Service`、`@Repository`、`@Controller` 等注解标记的类，会被 Spring 容器自动识别并注册为 Bean。
-- @ComponentScan：自动扫描当前包及其子包中的 Spring 组件。
+- `@ComponentScan`：自动扫描当前包及其子包中的 Spring 组件。
 
 #### @Conditional
 
-条件注解，每个自动配置类通常都用多个 @Conditional 注解控制是否激活。常见的条件注解包括：
+**条件注解，每个自动配置类通常都用多个 `@Conditional` 注解控制是否激活。**
 
-- @ConditionalOnClass：只有在类路径中存在特定类时，才会激活配置。
-- @ConditionalOnMissingBean：只有在 Spring 上下文中不存在特定 Bean 时，才会配置该 Bean。
-- @ConditionalOnProperty：基于配置属性值是否满足条件来激活配置。
+**常见的条件注解包括：**
+
+- `@ConditionalOnClass`：只有在类路径中存在特定类时，才会激活配置。
+- `@ConditionalOnMissingBean`：只有在 Spring 上下文中不存在特定 Bean 时，才会配置该 Bean。
+- `@ConditionalOnProperty`：基于配置属性值是否满足条件来激活配置。
 
 #### @Import
 
-@Import是Spring专门用来注入配置类的一个注解。
+**@Import是Spring专门用来注入配置类的一个注解。**
 
-注入的方式有三种：
+**注入的方式有三种：**
 
-- 静态注入：在配置类上直接声明需要导入的另一个配置类`@Import(AppConfig.class)`
+- **静态注入：在配置类上直接声明需要导入的另一个配置类，例如`@Import(AppConfig.class)`**
   - 配置类指的是被@Configuration注解的类，其它@Component、@Service一样也可以。
   - 在Spring4.2之后，即使不是配置类也可以使用@Import注入。
 
-- 动态注入：声明一个AppConfigSelector，通过实现ImportSelector接口重写selectImports方法，返回值是一个String[]，包含我们需要注入的Bean全类名。再通过`@Import(AppConfigSelector.class)`注入。
-  - 在selectImports方法可以通过自定义逻辑动态选择（@Conditional）要注入的配置类。
-  - Spring会把返参数组转换为BeanDefinition自动注册到容器中
-- 动态注入-手动注册：通过实现ImportBeanDefinitionRegistrar接口重写registerBeanDefinitions方法实现，该方法入参一个BeanDefinitionRegistry，支持自定义注册BeanDefinition的逻辑。
+- **动态注入：声明一个AppConfigSelector，通过实现 ImportSelector 接口重写 selectImports() 方法，返回值是一个 String[]，包含需要注入的 Bean 全类名。再通过`@Import(AppConfigSelector.class)`注入。**
+  - 在 selectImports() 方法可以通过自定义逻辑动态选择（@Conditional）要注入的配置类。
+  - Spring 会把返参数组转换为 BeanDefinition 自动注册到容器中
+- **动态注入-手动注册：通过实现ImportBeanDefinitionRegistrar接口重写registerBeanDefinitions方法实现，该方法入参一个BeanDefinitionRegistry，支持自定义注册BeanDefinition的逻辑。**
   - 可以自行组装BeanDefinition信息进行注入
 
 ### spring.factories 文件
 
-是Spring Boot 自动配置的核心文件，用于注册自动配置类。它通常位于项目的 `META-INF` 目录下，包含了一系列键值对，描述了接口与其实现类之间的映射关系。
+是 SpringBoot 自动配置的核心文件，用于注册自动配置类。它通常位于项目的 `META-INF` 目录下，包含了一系列键值对，描述了接口与其实现类之间的映射关系。
 
 ### SpringBoot Starter
 
@@ -109,7 +111,7 @@ Spring Boot Starter 是一组方便的 Maven 依赖，旨在简化 Spring Boot �
 
 3. **在prepareContext方法中会创建BeanFactory，把当前启动类作为一个BeanDefinition注册到registry中**
    - 后续在Context的refresh方法中加载启动类时，会触发其相关注解的解析，如@SpringBootApplicaiton、@EnableAutoConfiguration。
-4. **而在refreshContext方法中，其实就是执行SpringIOC流程的refresh方法。在invokeBeanFactoryPostProcessors方法会执行一个ConfigurationClassPostProcessor，通过这个对象的postProcessBeanDefinitionRegistry方法来解析@SpringBootApplicaiton、@EnableAutoConfiguration、@Bean、@Import等注解。**
+4. **而在refreshContext方法中，其实就是执行SpringIOC流程的refresh方法。在invokeBeanFactoryPostProcessors方法会执行一个ConfigurationClassPostProcessor，通过这个类来解析@SpringBootApplicaiton、@EnableAutoConfiguration、@Bean、@Import等注解。**
      - ConfigurationClassPostProcessor类继续自BeanDefinitionRegistryPostProcessor和BeanFactoryPostProcessor。
        - 在postProcessBeanDefinitionRegistry方法中解析@PropertySource、@ComponentScan、@Bean、@Import等注解。
 
@@ -134,7 +136,7 @@ Spring Boot Starter 是一组方便的 Maven 依赖，旨在简化 Spring Boot �
 
 其它项目直接在pom.xml文件中引用该Starter依赖，SpringBoot会通过自动配置完成依赖注入，然后在项目中注入相关Service即可使用。
 
-#### 自动配置大致流程
+#### ==自动配置大致流程==
 
 - Spring Boot 在启动时通过 AutoConfigurationImportSelector 读取 META-INF/spring.factories 文件
 - 根据 spring.factories 的配置加载 AutoConfiguration 自动配置类
@@ -147,11 +149,11 @@ Spring Boot Starter 是一组方便的 Maven 依赖，旨在简化 Spring Boot �
 
 <img src="../../Image/image-20241104170311922.png" alt="image-20241104170311922"  />
 
-注意命名规范：
+注意starter的命名规范：
 - 官方的命名格式为 `spring-boot-starter-{xxxx}`
 - 三方的命名格式为 `{xxxx}-spring-boot-starter`
 
-#### 编写pom.xml文件
+#### 1. 编写pom.xml文件
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -210,9 +212,9 @@ Spring Boot Starter 是一组方便的 Maven 依赖，旨在简化 Spring Boot �
 
 `<optional>true</optional>`表示该依赖不会传递给其它项目。
 
-例如当B项目引用该Starter时，B项目不能直接使用该依赖，如果要用就需要重新声明，或者通过该Starter来使用该依赖。
+- 例如当B项目引用该Starter时，B项目不能直接使用该依赖，如果要用就需要重新声明，或者通过该Starter来使用该依赖。
 
-#### 编写propertis通用配置类
+#### 2. 编写 propertis 通用配置类
 
 ```java
 @Data
@@ -229,7 +231,7 @@ public class BytehouseProperties {
 
 `@ConfigurationProperties(prefix = "bytehouse")`表示将配置文件（如application.yml）中前缀为`bytehouse`的属性自动映射到当前类的属性上
 
-#### 编写Service通用功能类
+#### 3. 编写Service通用功能类
 
 ```java
 @Setter
@@ -247,7 +249,7 @@ public class BytehouseRemoteService {
 
  例如BytehouseAPI是没有提供分页接口，我们在这里自行封装一个。
 
-#### 编写AutoConfiguration自动配置类
+#### 4. 编写AutoConfiguration自动配置类
 
 ```java
 @Configuration(proxyBeanMethods = false)
@@ -268,19 +270,19 @@ public class BytehouseAutoConfiguration {
 }
 ```
 
-- `@Configuration(proxyBeanMethods = false)`表示该类为配置类，内含@Component，将当前类加载为Bean。
+- **`@Configuration(proxyBeanMethods = false)`表示该类为配置类，内含@Component，将当前类加载为Bean。**
     - **proxyBeanMethods = true (默认)**
         - Spring 会为 @Configuration 类生成一个 CGLIB 代理，使其 @Bean 方法变成“拦截”方法。
         - 每当调用 @Bean 方法时，Spring 会先检查该 Bean 是否已经存在于容器中，若存在则直接返回容器中的实例，若不存在则创建新的 Bean 并放入容器。这种方式可确保同一个 @Bean 方法在配置类内多次调用时获得的是同一实例。
-    - **proxyBeanMethods = false**（适合多个@Bean方法之间没有依赖引用时使用）
+    - **proxyBeanMethods = false（适合多个@Bean方法之间没有依赖引用时使用）**
         - Spring 不会为 @Configuration 类生成代理。这种情况下，@Bean 方法的每次调用都相当于直接执行该方法，每次调用都会创建一个新的实例，而不会从容器中获取已存在的实例。
-- `@ConditionalOnClass(BytehouseRemoteService.class)`条件注解，表示项目中存在 BytehouseRemoteService.class 类时才生效该自动配置类
-- `@EnableConfigurationProperties(BytehouseProperties.class)` 告诉Spring将BytehouseProperties注册为Bean。使用时就可以直接用`@Autowired`注入。
--  `@ConditionalOnMissingBean`条件注解，当Spring容器中不存在指定类型或返参的Bean才会注册。
+- **`@ConditionalOnClass(BytehouseRemoteService.class)`条件注解，表示项目中存在 BytehouseRemoteService.class 类时才生效该自动配置类**
+- **`@EnableConfigurationProperties(BytehouseProperties.class)` 告诉 Spring 将 BytehouseProperties 注册为 Bean。使用时就可以直接用`@Autowired`注入。**
+-  **`@ConditionalOnMissingBean`条件注解，当Spring容器中不存在指定类型或返参的Bean才会注册。**
 
-#### 编写spring.factories文件
+#### 5. 编写spring.factories文件
 
-在 src/main/resources 下添加 META-INF/spring.factories 文件
+在 `src/main/resources` 下添加 `META-INF/spring.factories` 文件
 
 ```properties
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
@@ -293,7 +295,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 
 SpringBoot 会自动加载该文件并根据条件装配。
 
-#### 打包install依赖
+#### 6. 打包install依赖
 
 在 Maven 插件的 Lifecycle 下点击 install，打包项目并安装到本地 Maven 仓库中。
 
@@ -343,11 +345,10 @@ public class CustomTest {
     public void testStarter() throws IOException {
         String data = remoteService.fetchPage();
         System.out.println(data);
+        // 打印结果：{"mode":"clickhose_sql","token":"token1","url":"https://bing.com","vwID":"test-1"}
     }
 }
 ```
-
-打印结果：{"mode":"clickhose_sql","token":"token1","url":"https://bing.com","vwID":"test-1"}
 
 <img src="../../Image/image-20241104182006189.png" alt="image-20241104182006189"  />
 
