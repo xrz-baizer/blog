@@ -1,6 +1,6 @@
 {
-  "/": 1287,
-  "/00-TechnicalFile/": 527,
+  "/": 1288,
+  "/00-TechnicalFile/": 528,
   "/01-Essay/": 362,
   "/02-Other/": 179,
   "/01-Essay/0-Blog自动部署.html": 65,
@@ -289,6 +289,7 @@
   "/02-English/NewConceptEnglish/第四册课文+注释/Lesson-19-The-stuff-of-dreams-话说梦的本质.html": 3,
   "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-42-Modern-cavemen-现代洞穴人.html": 3,
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-17-A-man-made-disease-人为的疾病.html": 3,
+  "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-43-Fully-insured-全保险.html": 3,
   "/00-TechnicalFile/60-DevOps/CICD/CICD-项目环境区分.html": 2,
   "/00-TechnicalFile/10-JavaStandardEdition/Java集合.html": 2,
   "/00-TechnicalFile/60-DevOps/Kubernetes/4-kubernetes之配置域名访问.html": 2,
@@ -302,7 +303,6 @@
   "/00-TechnicalFile/60-DevOps/CICD/Mysql安装和基本使用.html": 2,
   "/02-English/NewConceptEnglish/第四册课文+注释/Lesson-40-Waves-海浪.html": 2,
   "/02-English/NewConceptEnglish/第四册课文+注释/Lesson-45-Of-men-and-galaxies-人生星系.html": 2,
-  "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-43-Fully-insured-全保险.html": 2,
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-32-Galileo-reborn-伽利略的复生.html": 2,
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-10-Silicon-valley-硅谷.html": 2,
   "/02-Other/仙人指路/什么是格局.html": 2,
@@ -347,5 +347,6 @@
   "/00-TechnicalFile/80-WorkSolution/服务监控方案.html": 1,
   "/00-TechnicalFile/80-WorkSolution/通用操作日志记录方案.html": 1,
   "/00-TechnicalFile/80-WorkSolution/常用解决方案.html": 1,
-  "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-52-Mud-is-mud-实事求是.html": 1
+  "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-52-Mud-is-mud-实事求是.html": 1,
+  "/00-TechnicalFile/10-Algorithm/9-BackTracking回溯.html": 1
 }
