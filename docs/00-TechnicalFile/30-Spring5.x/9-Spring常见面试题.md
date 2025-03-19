@@ -90,10 +90,24 @@
 
 相同点：都是用来创建bean对象的
 
-不同点：使用BeanFactory创建对象的时候，必须要遵循严格的生命周期流程，太复杂了。如果想要简单的自定义某个对象的创建，同时创建完成的对象想交给spring来管理，那么就需要实现FactroyBean接口了
+不同点：使用BeanFactory创建对象的时候，必须要遵循严格的生命周期流程。而 FactoryBean 提供了一种更灵活的方式来定制对象创建逻辑。比如如果想要自定义某个对象的创建，同时创建完成的对象想交给Spring来管理，那么就可以实现FactroyBean接口。
+
 - isSingleton:是否是单例对象
 - getObjectType:获取返回对象的类型
 - getObject:自定义创建对象的过程(new，反射，动态代理)
+
+#### FactoryBean在开源框架中的使用
+
+- **MapperFactoryBean：MyBatis 提供了 MapperFactoryBean 来完成 Mapper 接口的代理创建**（本质上是通过 `SqlSession.getMapper()` 创建代理实例）
+  - `@MapperScan` 注解的作用就是将每个接口对应的 MapperFactoryBean 注册到 Spring 容器
+  - Spring 扫描 `@Mapper` 接口时，触发 MapperScannerConfigurer。
+  - MapperFactoryBean 接管接口实例的创建，生成 Mapper 的代理对象。
+  - 托管给 Spring 容器，让我们可以像普通 Bean 那样注入使用。
+- **FeignClientFactoryBean：OpenFeign 是 Spring Cloud 里的 HTTP 客户端框架，通过 FeignClientFactoryBean 完成接口代理**（本质上是通过 `Feign.builder().target()` 创建代理实例）
+  - `@EnableFeignClients`注解的作用就是将每个接口对应的FeignClientFactoryBean注入到Spring容器
+  - `@FeignClient` 注解被 FeignClientsRegistrar 处理。
+  - 它会注册 FeignClientFactoryBean，生成对应的代理对象。
+  - 代理对象负责发起 HTTP 请求，执行远程调用。
 
 ## 谈谈你对Spring中AOP的理解
 

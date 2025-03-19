@@ -1,4 +1,4 @@
-# 2-Kubernetes中的服务发现
+# Kubernetes中的服务发现
 
 ## 前言
 

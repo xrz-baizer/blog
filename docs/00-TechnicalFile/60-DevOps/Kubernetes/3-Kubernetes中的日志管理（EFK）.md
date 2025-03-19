@@ -1,4 +1,4 @@
-# 3-Kubernetes中的日志管理（EFK）
+# Kubernetes中的日志管理（EFK）
 
 ## 前言
 

@@ -682,7 +682,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 **基本助动词：`be`、`have`、`do` **
 
-- 这三个动词作**助动词**时没有实际含义。（She <u>is</u> <u>writing</u> a letter. is没有实际含义）
+- 这三个动词作**助动词**时没有实际含义。（She <u>is</u> <u>writing</u> a letter. is **没有实际含义**）
 - 不过这三个动词也可以单独做谓语动词，那就有自己的实际含义了。（She <u>is</u> a teacher. is=是）
 
 **情态助动词（有实际含义，但是不能单独做谓语动词）**
