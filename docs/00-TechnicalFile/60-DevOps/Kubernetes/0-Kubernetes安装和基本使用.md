@@ -14,15 +14,15 @@
 
 `Master`——控制集群（Control Plane控制面板）
 
-- `Contoller Manager`——控制管理器
+- `Contoller Manager`——控制管理器，集群的“管家”，负责运行各种控制器。
 - `Etcd`——键值数据库，存储集群所有数据
-- `Scheduler`——调度器，负责把容器调度到最合适到node节点
-- `API Server`——集群访问入口，网关
+- `Scheduler`——调度器，负责将 Pod 调度到合适的节点上
+- `API Server`——集群访问入口，网关，负责处理所有 API 请求。
 
 `Node`——工作节点
 
-- `Kubelet`——创建、管理pod（容器）
-- `Kube-proxy`——负责管理流量，请求转发
+- `Kubelet`——负责管理节点上的 Pod 和容器
+- `Kube-proxy`——负责 Service 的负载均衡和网络代理
 
 ## 服务器准备
 
