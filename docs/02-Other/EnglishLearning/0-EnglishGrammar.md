@@ -672,18 +672,21 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 助动词定义：用来辅助主要动词，不能单独做谓语动词。
 
->**I <u>will</u> <u>call</u> you tomorrow.** 
+>例句：**I <u>will</u> <u>call</u> you tomorrow.** 
 >
 >- will 为助动词，call为主要动词
 >
->**I call you tomorrow.** 语法错误：tomorrow明确表示将来时间，即句子意图是表达将来动作，应该使用 "will" 辅助call构成将来时。
+>错误例句：
 >
->**I will you tomorrow.** 语法错误：缺乏主要动词，will不能单独做谓语动词。
+>- **I call you tomorrow.** 语法错误：tomorrow明确表示将来时间，即句子意图是表达将来动作，应该使用 "will" 辅助call构成将来时。
+>- **I will you tomorrow.** 语法错误：缺乏主要动词，will不能单独做谓语动词。
 
-**基本助动词：`be`、`have`、`do` **
+**基本助动词：`be`、`have`、`do`  **
 
-- 这三个动词作**助动词**时没有实际含义。（She <u>is</u> <u>writing</u> a letter. is **没有实际含义**）
+- 这三个动词作**助动词**时没有实际含义。（She <u>is</u> <u>writing</u> a letter. ==is== **没有实际含义**）
 - 不过这三个动词也可以单独做谓语动词，那就有自己的实际含义了。（She <u>is</u> a teacher. is=是）
+
+
 
 **情态助动词（有实际含义，但是不能单独做谓语动词）**
 
