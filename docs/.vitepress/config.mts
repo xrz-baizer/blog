@@ -27,7 +27,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/xrz-baizer/blog' }
+      { icon: 'github', link: 'https://github.com/xrz-baizer/vitepress-blog-baizer' }
     ],
 
     outline:{
