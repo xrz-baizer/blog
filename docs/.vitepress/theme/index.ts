@@ -128,7 +128,7 @@ export default {
 
     // giscus配置（评论系统）  https://giscus.app/zh-CN
     giscusTalk({
-          repo: 'xrz-baizer/blog', //仓库
+          repo: 'xrz-baizer/vitepress-blog-baizer', //仓库
           repoId: 'R_kgDONPwC5A', //仓库ID
           category: 'Announcements', // 讨论分类
           categoryId: 'DIC_kwDONPwC5M4Ck7mC', //讨论分类ID
