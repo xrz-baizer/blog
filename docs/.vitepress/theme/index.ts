@@ -9,6 +9,7 @@ import './style.css'
 import './custom/custom.css'
 import { formatTimestamp,recordView,fetchViews } from './custom/function.js'
 import Category from './custom/Category.vue'
+import ConvertWordComponent from './tool/ConvertWordComponent.vue'
 
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 
@@ -31,6 +32,7 @@ export default {
   enhanceApp({ app, router, siteData}) {
     // 注册全局组件
     app.component('category', Category);
+    app.component('convertWordComponent', ConvertWordComponent);
 
 
   },
