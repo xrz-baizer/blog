@@ -2,7 +2,7 @@
     <div class="xml-converter-container">
         <div class="title">
             <i class="fas fa-file-code"></i>
-            XML Converter
+            Convert YouDao Words (XML)
         </div>
 
         <div class="file-input-wrapper">

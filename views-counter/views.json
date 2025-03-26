@@ -1,8 +1,8 @@
 {
-  "/": 1454,
+  "/": 1455,
   "/00-TechnicalFile/": 556,
   "/01-Essay/": 386,
-  "/02-Other/": 201,
+  "/02-Other/": 208,
   "/01-Essay/0-Blog自动部署.html": 70,
   "/01-Essay/神兵利器/ConvertWords.html": 55,
   "/00-TechnicalFile/10-JavaStandardEdition/0-JVM的内存管理.html": 44,
@@ -355,5 +355,6 @@
   "/00-TechnicalFile/80-WorkSolution/常用解决方案.html": 1,
   "/02-Other/EnglishLearning/NewConceptEnglish/第三册课文+注释/Lesson-52-Mud-is-mud-实事求是.html": 1,
   "/02-Other/EnglishLearning/BilingualReading/OppositesAttract.html": 1,
-  "/02-Other/EnglishLearning/BilingualReading/Lucy的一天（原文）.html": 1
+  "/02-Other/EnglishLearning/BilingualReading/Lucy的一天（原文）.html": 1,
+  "/02-Other/HTML工具/ConvertWords.html": 1
 }
