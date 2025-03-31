@@ -1,3 +1,5 @@
+# 《The Nights》
+
 ## 学习-跟唱版本
 
 Once upon a younger year, when all our shadows disappeared, The animals inside came out to play.
@@ -6,7 +8,7 @@ Went face to face with all our fears, Learned our lessons through the tears, Mad
 
 
 
-When thunder clouds start pouring down, Light a fire they can't put out, Carve your name into those shining stars.
+When thunderclouds start pouring down, Light a fire they can't put out, Carve your name into those shining stars.
 
 He said go venture far beyond the shores, Don't forsake this life of yours, I'll guide you home no matter where you are.
 
@@ -32,8 +34,7 @@ My father told me, when I was just a child, These are the nights that never die,
 
 
 
-
-When thunder clouds start pouring down, Light a fire they can't put out, Carve your name into those shining stars.
+When thunderclouds start pouring down, Light a fire they can't put out, Carve your name into those shining stars.
 He said go venture far beyond the shores, Don't forsake this life of yours, I'll guide you home no matter where you are.
 
 One day my father, he told me, Son don't let it slip away, When I was just a kid I heard him say, When you get older, Your wild heart will live for younger days, Think of me if ever you're afraid.
@@ -60,7 +61,7 @@ He said, "One day you'll leave this world behind, So live a life you will rememb
 My father told me when I was just a child,
 These are the nights that never die, My father told me.
 
-When thunder clouds start pouring down,
+When thunderclouds start pouring down,
 Light a fire they can't put out,
 Carve your name into those shinning stars.
 
@@ -122,7 +123,7 @@ These are the nights that never die
 My father told me  
 我的父亲告诉我  
 
-When thunder clouds start pouring down  
+When thunderclouds start pouring down  
 当乌云开始倾泻  
 Carve your name into those shining stars  
 把你的名字刻在那些闪耀的星星上  
