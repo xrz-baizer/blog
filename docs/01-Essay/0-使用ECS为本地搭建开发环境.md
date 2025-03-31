@@ -367,3 +367,19 @@ http://your_server_ip:7001
 https://your_server_ip:7002
 
 默认账号密码：admin/123456
+
+### 部署 Kokoro-API
+
+一款TTS（Text To Speech）文字生成语音大模型，支持docker部署
+
+官网体验：https://kokorottsai.com/
+
+GitHub：https://github.com/remsky/Kokoro-FastAPI
+
+```sh
+docker run -d --name Kokorotts \
+  -p 8880:8880 \
+  --memory 2048m \
+  ghcr.io/remsky/kokoro-fastapi-cpu:v0.2.2
+```
+
