@@ -147,6 +147,7 @@ docker run <container>
 docker stop <container>
 #删除容器
 docker rm <container>
+docker rm -f <container>
 #进入容器（-it: 在容器内启动一个交互式终端，以便输入命令）
 docker exec -it <container> bash
 
@@ -203,7 +204,7 @@ docker run -d \ 		     # 以后台模式运行容器，将容器放置在后台�
 ```sh
 docker run -d --name zookeeper \
   -p 2181:2181 \
-  --memory 100m \
+  --memory 200m \
   zookeeper
 ```
 
@@ -237,49 +238,17 @@ docker run -d --name mysql \
 
 RocketMQ4.x官方部署文档：https://rocketmq.apache.org/zh/docs/4.x/quickstart/02quickstartWithDocker
 
-#### 单机版（含Dashboard）
-
->  内存最少需要1.7G，可分配2G
-
-```sh
-
-docker run -itd \
- --name=rocketmq \
- --hostname rocketmq \
- --memory 2g \
- -p 8080:808 \
- -p 9876:9876 \
- -p 10909:10909 \
- -p 10911:10911 \
- -p 10912:10912 \
- -e "NAMESRV_XMX=256m" \
- -e "NAMESRV_XMS=256m" \
- -e "NAMESRV_XMN=128m" \
- -e "BROKER_XMX=2048m" \
- -e "BROKER_XMS=1024m" \
- -e "BROKER_XMN=256m" \
- -e "BROKER_MDM=256m" \
- -e "JAVA_OPTS=-Drocketmq.console.listenPort=8081" \
- -v /etc/localtime:/etc/localtime \
- -v /var/run/docker.sock:/var/run/docker.sock \
- --net=host \
- xuchengen/rocketmq:4.9.4
-```
-
-- Console帐号以及密码
-  - 帐号：admin   密码：admin
-  - 帐号：normalt 密码：normal
-  - 端口内部配置文件默认写死8080，如需调整需挂载配置文件
-
-- 访问地址：116.205.134.46:8080、116.205.134.46:9876
-- 镜像仓库地址：https://hub.docker.com/r/xuchengen/rocketmq
-
 #### NameServer
 
 RocketMQ 的 NameServer 负责存储路由信息，相对轻量。
 
 ```sh
+# 创建容器共享网络
+docker network create rocketmq
+
+# 启动NameServer（最低内存200M）
 docker run -d --name rmqnamesrv \
+		--net rocketmq \
   -p 9876:9876 \
   --memory 512m \
   -e "JAVA_OPT=-server -Xms128m -Xmx256m" \
@@ -294,17 +263,52 @@ docker run -d --name rmqnamesrv \
 Broker 负责消息的存储和传递，它的内存需求相对较大（默认为8G）。
 
 ```sh
+# 配置 Broker 的 IP 地址（本机实际IP地址）
+echo "brokerIP1=xxx.xxx.xxx.xxx" >broker.conf
+
+# 启动 Broker（最低内存1.5G）
 docker run -d --name rmqbroker \
   -p 10911:10911 -p 10909:10909 \
-  --link rmqnamesrv:namesrv \
+		--net rocketmq \
   --memory 2g \
-  -e "NAMESRV_ADDR=namesrv:9876" \
+  -e "NAMESRV_ADDR=rmqnamesrv:9876" \
   -e "JAVA_OPT=-server -Xms512m -Xmx1500m -Xmn256m" \
-  apache/rocketmq:4.9.6 \
-  sh mqbroker -n namesrv:9876
+  -v ./broker.conf:/home/rocketmq/rocketmq-4.9.6/conf/broker.conf \
+  apache/rocketmq:4.9.6 sh mqbroker \
+  -c /home/rocketmq/rocketmq-4.9.6/conf/broker.conf
 ```
 
-在容器启动后，执行 `sh mqbroker` 命令，启动 Broker。执行`-n namesrv:9876` 指定 Broker 连接的 NameServer 的地址和端口。
+在容器启动后，执行 `sh mqbroker` 命令，启动 Broker。
+
+执行`-n rmqnamesrv:9876` 指定 Broker 连接的 NameServer 的地址和端口。
+
+- 取值上方 NameServer 的容器名称
+
+`-c `表示 Broker 将使用位于容器内部 `/home/rocketmq/rocketmq-4.9.6/conf/broker.conf` 路径下的 `broker.conf` 文件作为其配置文件。
+
+#### Dashboard
+
+```sh
+# 启动 Dashboard（最低内存500M）
+docker run -d --name rmqdashboard \
+  -p 8088:8080 \
+		--net rocketmq \
+  --memory 1G \
+  -e "JAVA_OPTS=-Drocketmq.namesrv.addr=rmqnamesrv:9876"  \
+  apacherocketmq/rocketmq-dashboard:latest
+  
+
+# 验证是否启动成功
+docker logs rmqnamesrv
+docker logs rmqbroker
+docker logs rmqdashboard
+
+# 批量操作
+docker rm -f rmqnamesrv rmqbroker rmqdashboard
+docker restart rmqnamesrv rmqbroker rmqdashboard
+docker stop rmqnamesrv rmqbroker rmqdashboard
+```
+
 
 ### 部署Nginx
 
