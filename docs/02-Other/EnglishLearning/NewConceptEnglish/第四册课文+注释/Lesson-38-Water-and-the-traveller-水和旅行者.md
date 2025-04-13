@@ -13,8 +13,7 @@ If no other safe water supply can be obtained, tap water that is too hot to touc
 
 RICHARD DAWOOD Travellers' Health
 	
-	
-	A woman is drawing water from a well
+A woman is drawing water from a well
 
 New words and expressions 生词与短语
 

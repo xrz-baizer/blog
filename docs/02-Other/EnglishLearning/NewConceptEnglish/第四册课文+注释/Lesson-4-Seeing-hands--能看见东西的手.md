@@ -9,12 +9,12 @@ Another Russian girl,Rosa Kuleshova,reads blindfold.
 
 ### New words and expressions 生词和短语
 
-solid  /ˈsɑlɪd/ adj 坚实的
+solid /ˈsɑlɪd/ adj 坚实的
 	safe /sef/ n.保险柜
 	Ulyanovsk /ulˈjɑnəfsk/ n.乌里扬诺夫斯克
 	commission /kəˈmɪʃən/ n.委员会
 	opaque /oʊˈpeɪk/ adj.不透明的
-	lotto  /'lɑ:toʊ/  n.一种有编号的纸牌
+	lotto /'lɑ:toʊ/ n.一种有编号的纸牌
 	slipper /ˈslɪpɚ/ n.拖鞋
 	blindfold /ˈblaɪndfoʊld/ adj.& adv. 被蒙上眼睛的
 

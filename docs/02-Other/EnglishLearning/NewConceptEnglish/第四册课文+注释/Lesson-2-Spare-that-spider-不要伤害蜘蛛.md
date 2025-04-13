@@ -7,14 +7,14 @@ How many spiders are engaged in this work on our behalf? One authority on spider
 
 T.H.GILLESPIE Spare that spider from The Listener
 	
-	   A spider destroys a grasshopper
+A spider destroys a grasshopper
 
 New Words and expressions 生词和短语
 	
-	beast  /bi:st/ n. 野兽
-	acre  /ˈekɚ/  n. 英亩
-	census  /ˈsɛnsəs/  n. 统计数字
-	content  /ˈkɑnˌtɛnt/ adj. 满足的
+	beast /bi:st/ n. 野兽
+	acre /ˈekɚ/ n. 英亩
+	census /ˈsɛnsəs/ n. 统计数字
+	content /ˈkɑnˌtɛnt/ adj. 满足的
 
 Notes on the text 课文注释
 	

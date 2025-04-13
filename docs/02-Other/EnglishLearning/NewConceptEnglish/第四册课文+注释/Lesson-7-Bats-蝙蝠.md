@@ -7,7 +7,7 @@ It has been found that certain bats emit squeaks and by receiving the echoes, th
 
 MAURICE BURTON Curiosities of animal life
 	
-	 Echo-location in bats is often compared with radar.
+Echo-location in bats is often compared with radar.
 
 ### New words and expressions 生词和短语
 

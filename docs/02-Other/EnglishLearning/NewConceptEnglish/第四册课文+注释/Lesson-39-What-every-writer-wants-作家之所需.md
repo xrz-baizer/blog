@@ -7,8 +7,7 @@ A young English writer made the pertinent observation a year or two back that th
 
 JOHN LE CARRE What every writer wants from Harper's
 	
-	
-	A scene from the film of John le Carre's book,The Spy who Came in from the Cold
+A scene from the film of John le Carre's book,The Spy who Came in from the Cold
 
 ### New words and expressions 生词和短语
 

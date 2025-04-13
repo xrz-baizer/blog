@@ -7,25 +7,25 @@ The adolescent, with his passion for sincerity, always respects a parent who adm
 
 Victorian parents believed that they kept their dignity by retreating behind an unreasoning authoritarian attitude; in fact they did nothing of the kind, but children were then too cowed to let them know how they really felt. Today we tend to go to the other extreme, but on the whole this is a healthier attitude both for the child and the parent. It is always wiser and safer to face up to reality, however painful it may be at the moment.
 	
-	DOTID OFLUM Journey Through Adolescence
+DOTID OFLUM Journey Through Adolescence
 
-New words and expressions 生词与短语
+### New words and expressions 生词与短语
 
 adolescence n. 青春期
-	slur n. 底毁
-	adolescent n. 青少年（12-18岁）
-	disloyalty n.不忠实
-	spiteful adj. 恶意的，怀恨的
-	disillusionment n. 幻灭感
-	evaluation n. 评价
-	infallibility n. 一贯正确
-	resent v. 怨恨
-	sincerity n. 诚挚
-	victorian adj. 维多利亚式的
-	retreat v. 后退
-	unreasoning adj. 不凭理智的
-	authoritarian adj. 专制的
-	cow v. 吓唬
+slur n. 底毁
+adolescent n. 青少年（12-18岁）
+disloyalty n.不忠实
+spiteful adj. 恶意的，怀恨的
+disillusionment n. 幻灭感
+evaluation n. 评价
+infallibility n. 一贯正确
+resent v. 怨恨
+sincerity n. 诚挚
+victorian adj. 维多利亚式的
+retreat v. 后退
+unreasoning adj. 不凭理智的
+authoritarian adj. 专制的
+cow v. 吓唬
 
 ### Notes on the text 课文注释
 

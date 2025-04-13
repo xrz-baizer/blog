@@ -9,19 +9,19 @@ Bergdorf,a mountain village in Switzerland
 
 ### New words and expressions 生词和短语
 
-Matterhorn  /ˈmætɚˌhɔrn/ n. 马特霍恩峰（阿尔卑斯山峰之一，在意大利和瑞士边境）
+Matterhorn /ˈmætɚˌhɔrn/ n. 马特霍恩峰（阿尔卑斯山峰之一，在意大利和瑞士边境）
 	alpinist /ˈælpɪnɪst/ n.登山运动员
 	pioneer /ˌpaɪəˈnɪr/ v.开辟，倡导；n.先锋，开辟者
 	summit /ˈsʌmɪt/ n. 顶峰
-	attain /əˈten/  v. 到达
-	perilous  /ˈpɛrələs/ adj. 危险的
+	attain /əˈten/ v. 到达
+	perilous /ˈpɛrələs/ adj. 危险的
 	shudder /ˈʃʌdɚ/ v. 不寒而栗
 	court /kɔrt/ v. 追求
 	solitary /ˈsɑlɪˌtɛri/ adj. 唯一的
-	impoverish  /ɪmˈpɑvərɪʃ/  v. 使贫困
-	Alpine  /ˈælˌpaɪn/ adj. 阿尔卑斯山的
+	impoverish /ɪmˈpɑvərɪʃ/ v. 使贫困
+	Alpine /ˈælˌpaɪn/ adj. 阿尔卑斯山的
 	flea-ridden /fli: 'rɪdn/ adj. 布满跳蚤的
-	coarse  /kɔrs/ adj. 粗劣的
+	coarse /kɔrs/ adj. 粗劣的
 	boast /bost/ v.自恃有
 	parishioner /pəˈrɪʃənɚ/ n. 教区居民
 	shepherd /ˈʃepərd/ n.牧羊人
