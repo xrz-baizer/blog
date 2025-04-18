@@ -1,8 +1,8 @@
 {
-  "/": 1748,
+  "/": 1760,
   "/00-TechnicalFile/": 581,
   "/01-Essay/": 398,
-  "/02-Other/": 269,
+  "/02-Other/": 271,
   "/01-Essay/0-Blog自动部署.html": 80,
   "/02-Other/生活百科/执行标准指南.html": 62,
   "/01-Essay/神兵利器/ConvertWords.html": 55,
@@ -24,8 +24,8 @@
   "/00-TechnicalFile/10-Algorithm/1-DataStructure.html": 17,
   "/00-TechnicalFile/60-DevOps/Kubernetes/0-Kubernetes安装和基本使用.html": 17,
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-22-Knowledge-and-progress-知识和进步.html": 17,
+  "/02-Other/Music/《TheNights》.html": 17,
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-6-The-sporting-spirit-体育的精神.html": 16,
-  "/02-Other/Music/《TheNights》.html": 16,
   "/01-Essay/阿里云OSS图片上传.html": 15,
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-33-Education-教育.html": 15,
   "/00-TechnicalFile/10-Algorithm/0-DynamicProgramming动态规划.html": 15,
@@ -172,6 +172,7 @@
   "/00-TechnicalFile/60-DevOps/Kubernetes/Kubectl的基本使用.html": 5,
   "/00-TechnicalFile/80-WorkSolution/0-中台上线方案.html": 5,
   "/00-TechnicalFile/10-JavaStandardEdition/Java线程池.html": 5,
+  "/02-English/NewConceptEnglish/第四册课文+注释/Lesson-10-Silicon-valley-硅谷.html": 5,
   "/00-TechnicalFile/10-JavaStandardEdition/Java锁机制.html": 4,
   "/00-TechnicalFile/90-Work/通用操作日志记录方案.html": 4,
   "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-36-A-chance-in-a-million-百万分之一的机遇.html": 4,
@@ -199,7 +200,6 @@
   "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-27-Nothing-to-sell-and-nothing-to-buy-不卖也不买.html": 4,
   "/02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-42-Recording-and-earthquake-记录地震.html": 4,
   "/02-English/NewConceptEnglish/第四册课文+注释/Lesson-18-Porpoises-海豚.html": 4,
-  "/02-English/NewConceptEnglish/第四册课文+注释/Lesson-10-Silicon-valley-硅谷.html": 4,
   "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-16-Mary-had-a-little-lamb-玛丽有一头小羔羊.html": 4,
   "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-18-Electric-currents-in-modern-art-现代艺述中的电流.html": 4,
   "/02-English/NewConceptEnglish/第三册课文+注释/Lesson-45-The-power-of-the-press-新闻报道的威力.html": 4,
@@ -362,5 +362,6 @@
   "/02-Other/EnglishLearning/BilingualReading/OppositesAttract.html": 1,
   "/00-TechnicalFile/30-Spring5.x/9-Spring常见面试题.html": 1,
   "/00-TechnicalFile/80-WorkSolution/缓存同步方案.html": 1,
-  "/02-Other/EnglishLearning/Music/《TheNights》.html": 1
+  "/02-Other/EnglishLearning/Music/《TheNights》.html": 1,
+  "/02-Other/EnglishLearning/MusicLyrics/《Far Away From Home》.html": 1
 }

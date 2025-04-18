@@ -2,112 +2,81 @@
 
 ## 学习版
 
-### [Verse 1]  
+### [Verse 1]
 
-**I'm loving living every single day**  
-- 我热爱每一天的生活  
-- **loving living**：指热爱生活，常用于表达享受生活的态度。
-- **every single day**：强调每天，表示每一天都很重要。
+**`I'm loving living every single day, But sometimes I feel so.`**
 
-**I hope to find a little peace of mind**  
-- 我希望能找到一些内心的平静  
-- **peace of mind**：内心的平静，通常用来表示心灵的安宁或无忧无虑的状态。
+- **I'm loving**（我喜欢）：这是一个常见的表达方式，表示某个状态或行为使自己感到开心、享受。
+- **living every single day**（过着每一天）：意味着珍惜并享受每天的生活，充满活力地生活。
+- **But sometimes I feel so**（但有时我感到）：这里留白，暗示说者有时候感到不开心或困惑，情感上有波动。
+  - **固定搭配**：**feel so** 是“feel”的常见用法，后面跟着感受的描述。
+- **完整意思**：我喜欢过着每一天的生活，但有时候我却感到某种困扰。
 
-**And I just want to know**  
-- 我只是想知道（表达了对生活中某些事情的疑问或渴望理解的情感）
-- **want to know**：想知道，常用于询问或表达对某事的渴望。
+**`I hope to find a little peace of mind, And I just want to know.`**
 
-### [Bridge]  
+- **hope to find**（希望找到）：表示期望能够找到某种东西，通常带有追求的意味。
+- **peace of mind**（内心的平静）：指精神上的安宁和稳定，不受外界压力或困扰的影响。
+- **just want to know**（只是想知道）：意味着想弄清楚某个问题或获得某种答案。
+- **完整意思**：我希望能够找到一些内心的平静，我只是想知道一些事情。
 
-**And who can heal those tiny broken hearts**  
-- 谁能治愈那些破碎的小心灵  
-- 含义：暗示伤心的人或情感受伤的心，表达寻找治愈的渴望。  
-- **heal hearts**：治愈心灵，通常用于表达情感上的修复和治愈。
-- **broken hearts**：破碎的心，指受伤的情感或情绪。
+**`And who can heal those tiny broken hearts, And what are we to be.`**
 
-**And what are we to be**  
-- 我们将会成为什么  
-- 含义：对未来身份或命运的疑问。  
-- **what are we to be**：我们将成为什么，表达对未来的迷茫或疑问。
+- **heal those tiny broken hearts**（治愈那些小小破碎的心）：表示修复受伤的心灵，尤其是受到伤害或失落的情感。
+- **what are we to be**（我们将成为什么）：这是一个哲学性的问题，询问人生的意义或我们在未来会变成什么样子。
+- **完整意思**：谁能治愈那些破碎的心灵？我们到底将成为什么样的人？
 
-**Where is home on the Milky Way of stars**  
-- 在星空的银河中，家在哪里  
-- 含义：星空中的“家”，比喻在浩瀚的宇宙中，找不到真正的归属感。  
-- **Milky Way**：银河，常用于描述星系或广阔的天空。
+**`Where is home on the Milky Way of stars, I dry my eyes again.`**
 
-**I dry my eyes again**  
-- 我再次擦干眼泪  
-- 含义：表达克服泪水的情感，尝试坚强。  
-- **dry my eyes**：擦干眼泪，通常表示从悲伤中恢复过来，重新振作。
+- **Where is home**（家在哪里）：这句在表达对家的渴望，询问家所在的地方。
+- **Milky Way of stars**（星星的银河）：银河系，比喻广阔的宇宙，暗示对家和归属的迷茫。
+- **dry my eyes again**（再次擦干眼泪）：表达悲伤或失望后的自我安慰，意思是虽然感到伤心，但会重新振作。
+- **完整意思**：在星星的银河中，家在哪里呢？我又一次擦干眼泪。
 
-### [Chorus]  
+**`In my dreams I am not so far away from home, What am I in a world so far away from home.`**
 
-**In my dreams I am not so far away from home**  
-- 在我的梦中，我离家并不遥远  
-- 含义：梦境中的场景，象征着对家和归属感的渴望。  
-- **not so far away from home**：离家并不遥远，表示在心灵上离家并不远。
+- **In my dreams**（在我的梦里）：表示通过梦境来逃避现实，或者是在梦中找到安慰。
+- **not so far away from home**（离家不远）：暗示在梦中，自己离家很近，感到一种安全感和归属感。
+- **so far away from home**（离家很远）：对比现实生活中的孤独或迷茫，表达对家和归属的渴望。
+- **完整意思**：在我的梦中，我离家并不远；但在这个世界上，我感到离家如此遥远。
 
-**What am I in a world so far away from home**  
-- 在这个离家如此遥远的世界里，我是谁  
-- 含义：表达对远离家乡的孤独感和困惑。  
-- **so far away from home**：离家如此遥远，用来表达远离家乡的孤独感（背井离乡）。
+**`All my life all the time so far away from home, Without you I will be so far away from home.`**
 
-**All my life, all the time, so far away from home**  
-- 我的生命，一直如此，离家如此遥远  
-- 含义：一生中一直处于这种状态，暗示长期的孤独或思乡。  
-- **all my life**：一生，强调贯穿一生的经历或感受。  
-- **all the time**：一直，表示持续不断的状态。
+- **All my life all the time**（我一生中的每时每刻）：表示整个生命中的每一刻都感受到某种情感。
+- **without you**（没有你）：暗示自己在缺少某个人（可能是爱人或亲人）的情况下，感到孤独或迷失。
+- **so far away from home**（离家如此遥远）：强调缺乏归属感和家的感觉。
+- **完整意思**：我一生中的每一刻都感到离家如此遥远，没有你在身边，我将永远感到远离家。
 
-**Without you I will be so far away from home**  
-- 没有你，我会离家如此遥远  
-- 含义：失去重要的人后，感到更加孤独。  
-- **without you**：没有你，表示失去某人或依赖的对象。
+### [Verse 2]
 
-### [Verse 2]  
+**`If we could make it through the darkest night, We'd have a brighter day.`**
 
-**If we could make it through the darkest night**  
-- 如果我们能够度过最黑暗的夜晚  
-- 含义：渡过最艰难的时刻，象征克服困境或痛苦。   
-- **make it through**：度过，表示成功克服困难或挑战。  
-- **darkest night**：最黑暗的夜晚，比喻人生中的低谷或困难时刻。
+- **make it through**（度过）：常用来表示经历困难或挑战后成功克服。
+- **darkest night**（最黑暗的夜晚）：比喻最困难、最痛苦的时刻。
+- **brighter day**（更光明的日子）：比喻未来的希望和更好的时光。
+- **完整意思**：如果我们能度过最黑暗的夜晚，我们就会迎来更光明的日子。
 
-**We'd have a brighter day**  
-- 我们将拥有更加光明的明天  
-- 含义：比喻未来的希望和光明。  
-- **brighter day**：更加光明的明天，比喻充满希望和正能量的未来。
+**`The world I see beyond your pretty eyes, Makes me want to stay.`**
 
-**The world I see beyond your pretty eyes**  
-- 在你美丽的眼睛之外，我看到的世界  
-- 含义：从对方的眼神之外，看到另一个世界，暗示深入的思考或情感。   
-- **beyond your eyes**：超越你的眼睛（视野之外），表示从更深层次去理解事物。
+- **the world I see**（我看到的世界）：指说话者看到的现实或感知的世界。
+- **beyond your pretty eyes**（在你美丽的眼睛之外）：暗示在对方的美丽或外表之下，看到的是更深层的东西。
+- **Makes me want to stay**（让我想留下）：表达了深深的依恋或想要继续陪伴的愿望。
+- **完整意思**：在你美丽眼睛之外的世界让我想留下。
 
-**Makes me want to stay**  
+### [Verse 3]
 
-- 让我想要停留下来  
-- 含义：由于对方或某种情感，想要继续停留，或停留在某个地方。   
-- **want to stay**：想要停留，表示想要继续待在某个地方或保持某种状态。
+**`I count on you, no matter what they say, cause love can find its time.`**
 
-### [Verse 3]  
+- **count on you**（依赖你）：表示对某人的信任和依靠。
+- **no matter what they say**（不管别人怎么说）：表示对外界看法的不在意，坚定地依赖某人。
+- **cause love can find its time**（因为爱能找到时机）：暗示爱有它的节奏和时机，不强求。
+- **完整意思**：我依赖你，不管别人怎么说，因为爱总会找到它的时机。
 
-**I count on you, no matter what they say**  
-- 无论他们怎么说，我都依靠你  
-- **count on**：依靠，表示对某人的信任和依赖。
+**`I hope to be a part of you again, Baby, let us shine.`**
 
-**Cause love can find its time**  
+- **a part of you**（你的一部分）：表示渴望重新与对方合为一体，可能是指重新建立关系或亲密。
+- **let us shine**（让我们发光）：意味着两个人一起变得更加闪耀，充满力量和光芒。
+- **完整意思**：我希望再次成为你的一部分，亲爱的，让我们一起发光。
 
-- 因为爱会找到它的时机  
-- 含义：爱情会在合适的时机找到，暗示耐心等待爱情。  
-- **find its time**：找到它的时机，表示事情会在合适的时刻发生。
-
-**I hope to be a part of you again**  
-- 我希望再次成为你的一部分  
-- 含义：希望与对方重新建立联系，成为对方生活的一部分。  
-- **be a part of you**：成为你的一部分，表示与某人建立亲密的关系。
-
-**Baby, let us shine**  
-- 宝贝，让我们闪耀  
-- 含义：鼓励彼此一起发光发热，展示最好的自己。  
-- **let us shine**：让我们闪耀，表达共同努力、展示光彩的愿望。
 
 
 
