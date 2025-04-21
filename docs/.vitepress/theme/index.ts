@@ -10,6 +10,7 @@ import './custom/custom.css'
 import { formatTimestamp,recordView,fetchViews } from './custom/function.js'
 import Category from './custom/Category.vue'
 import ConvertWordComponent from './tool/ConvertWordComponent.vue'
+import AudioLyricPlayer from './tool/AudioLyricPlayer.vue'
 
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 
@@ -33,6 +34,7 @@ export default {
     // 注册全局组件
     app.component('category', Category);
     app.component('convertWordComponent', ConvertWordComponent);
+    app.component('audioLyricPlayer', AudioLyricPlayer);
 
 
   },
