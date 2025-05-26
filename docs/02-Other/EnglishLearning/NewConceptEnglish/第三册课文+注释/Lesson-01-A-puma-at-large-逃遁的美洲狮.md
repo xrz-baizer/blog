@@ -5,21 +5,21 @@ The hunt for the puma began in a small village where a woman picking blackberrie
 
 ### New words and expressions 生词和短语
 
-puma(title)/'pju:m+/n. 美洲狮
-* corner（1. 9)/'k&:n+/v. 使走投无路，使陷入困境
-* spot（1. 2)/sp&t/v. 看出，发现
-* trail（1. 11)/'treil/n. 一串，一系列
-* evidence（1. 4)/'evid+ns/n．证据
-* print（1. 12)/print/n. 印痕
-* accumulate（1. 4)/e'kju:mjuleit/v. 积累，积聚
-* cling（1. 12)/kliR/(clung/kl)R/, clung)v. 粘
-* oblige（1. 5)/+'blaid{/v. 使……感到必须
-* convince（1. 14)/k+n'vins/v. 使……信服
-* hunt（1. 7)/h)nt/n. 追猎；寻找
-* somehow（1. 16)/'s)mha(/adv. 不知怎么搞地，不
-* blackberry（1. 8)/'bl$kb+ri/n. 黑莓 知什么原因
-	human being(1. 9)/?hju:m+n-'bi:iR/人类
-* disturb（1. 17)/di'st*:b/v. 令人不安
+puma	n. 美洲狮
+spot	v. 看出，发现
+evidence	n. 证据
+accumulate	v. 积累，积聚
+oblige	v. 使......感到必须
+hunt	n. 追猎；寻找
+blackberry	n. 黑莓
+human being	人类
+corner	v. 使走投无路，使陷入困境
+trail n. 一串，一系列
+print n. 印痕
+cling v. 粘
+convince v. 使......信服
+somehow adv. 不知怎么搞地，不知什么原因
+disturb v. 令人不安
 
 ### Notes on the text 课文注释
 
