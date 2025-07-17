@@ -1,5 +1,13 @@
 # Sentence-Making
 
+## Introduction
+
+**描述日常活动**：每天做什么？比如What did you do today? 或 I went to the supermarket.
+
+**表达个人观点**：写写你对某些事物的看法，如 What do you think of online learning?
+
+**讲述故事**：可以从你的日常生活出发，写一小段关于你经历的故事。例：Last weekend, I went to the park with my friends. We played soccer and had lunch together.
+
 >1. 分句型：有动作就是主谓宾，否则就是主系表
 >
 >2. 形容词只修饰名词，副词修饰其它的词（通常修饰动词）
@@ -25,14 +33,12 @@
 >- 定语：用于修饰名词， 短定语放前面，长定语放后面。
 >- 状语：用于修饰动词，顺序：方式、地点、时间
 
+扩展句型：
 
-> **描述日常活动**：每天做什么？比如What did you do today? 或 I went to the supermarket.
->
-> **表达个人观点**：写写你对某些事物的看法，如 What do you think of online learning?
->
-> **讲述故事**：可以从你的日常生活出发，写一小段关于你经历的故事。例：Last weekend, I went to the park with my friends. We played soccer and had lunch together.
+- 可可英语-句型：https://www.kekenet.com/course/15288
+- 微信读书-句型（扩展）：https://weread.qq.com/web/reader/1b4324305c87a81b49b65c7kc7432af0210c74d97b01b1c
 
-### 一、基本句型
+## 一、基本句型
 
 ####  ==主 + 系 + 表==
 
@@ -64,7 +70,7 @@
 
 **主语 + 双宾动词 + 间接宾语(人) + 直接宾语(物)，表示“谁/什么给某人某物”。**
 
-**常见双宾语动词：`give`,`show`,`send`,`bring`,`lend`,`tell`,`return`,`write`,`pay`,`teach`,`make`,`buy`,`find` **
+**常见双宾语动词：`give`,`show`,`send`,`bring`,`lend`,`tell`,`return`,`write`,`pay`,`teach`,`make`,`buy`,`find`**
 
 - He bought me a flower. (他给我买了一朵花。)
 - My father told me a story. (我父亲给我讲了一个故事。)
@@ -108,19 +114,21 @@
 - Are `there` any ties on the floor?
 - Is `there` a dirty fork on the plate?
 
-###  二、添加修饰：定语和状语
+##  二、添加修饰：定语和状语
 
 **定语 (Adjective)：修饰名词或代词，说明“什么样的”。 短定语放前面，长定语放后面。**
 
-- The girl is reading a book.
+The girl is reading a book.
+
 - The `little` girl is reading an `interesting` book. (那个小女孩在读一本有趣的书。)
 
 **状语 (Adverbial)：修饰动词、形容词或整个句子，说明动作发生的“方式、地点、时间”**
 
-- He walked.
+He walked.
+
 - He walked `slowly` `in the park` `yesterday`. (昨天他缓慢地在公园里散步。)
 
-### 三、复杂句：连接简单句
+## 三、复杂句：连接简单句
 
 #### ==结构：简单句 + 并列连词 + 简单句==
 
@@ -134,6 +142,8 @@
 
 - It was getting late`;` she must start back home. 天色已晚；她必须动身回家。
 - We fished all day`;` we didn't catch a thing. 我们钓了一整天的鱼；我们什么也没抓到。
+
+## 四、复杂句：丛句
 
 #### ==名词从句 (Noun Clauses)==
 
@@ -165,90 +175,85 @@
 
 **在句子中当副词用，表示时间、原因、条件等。**
 
-##### 时间状语
+---
 
-**==While== 当···时候、与···同时；==When== 在···时候、什么时候**
+**1、时间状语：==While== 当···时候、与···同时；==When== 在···时候、什么时候**
 
 - `While` my wife was reading the newspaper,I was watching TV. 当我妻子在看报纸时，我正在看电视。
 - `When` I lived in the countryside,I used to carry some water for him. 当我住在乡下的时候，我常常给他挑水。
 - `When` I got home, my dog ran to me. (当我到家时，我的狗向我跑来。)
 
-##### 条件状语
+---
 
-**==if== 如果**
+**2、条件状语：==if== 如果**
 
 - We will give you a good price `if` you are thinking of buying it. 如果你想买的话，我们会给你一个好价钱。
 - `If` you work hard, you will succeed. (如果你努力，你就会成功。)
 
-##### 原因状语 
+---
 
-**==because== 因为；==since== 自从、既然**
+**3、原因状语 ：==because== 因为；==since== 自从、既然**
 
 - I did that `because` she told me to. 我这么做是因为她让我这么做的。
 - He was late `because` he missed the bus. (他迟到了，因为他错过了公交车。)
 
 - `Since` you can’t answer the question,you can ask him for help. 既然你不能回答这个问题，你可以向他寻求帮助。
 
-##### 目的状语
+---
 
-**==so that== 因此、以便；==in order to== 为了···**
+**4、目的状语：==so that== 因此、以便；==in order to== 为了···**
 
 - He must get up early `so that` he can go to work on time. 他必须早起，这样他才能按时上班。
 - It was very cold,`so that` the river froze. 天气很冷，所以河水结冰了。
 
 - He worked hard `in order to` succeed. 他为了成功而努力工作。
 
-##### 让步状语
+---
 
-**==Although/Though== 虽然、尽管、即使；==whether== 是否、无论、不管**
+**5、让步状语：==Although/Though== 虽然、尽管、即使；==whether== 是否、无论、不管**
 
 - `Although` he was exhausted,he kept on working. 尽管他筋疲力尽，但他仍继续工作。
 
 - `Whether` you believe it or not,it's true. 不管你信不信，这是真的。
 
-##### 地点状语
+---
 
-**==wherever== 无论什么地方；==where== 哪里**
+**6、地点状语：==wherever== 无论什么地方；==where== 哪里**
 
 - Sit `wherever` you like. 你喜欢坐哪儿都行。
 
 - I walk into the canteen `where` students are eating. 我走进学生们正在吃饭的食堂。
 
-## 句型整理
+## Google常用问句（通用型）
 
-- 可可英语-句型：https://www.kekenet.com/course/15288
-- 微信读书-句型（扩展）：https://weread.qq.com/web/reader/1b4324305c87a81b49b65c7kc7432af0210c74d97b01b1c
+1. `What is [xxx]?`	[xxx] 是什么？
+2. `What's the best way to [do something]?`	做某事的最佳方式是什么？
+3. `What are some common uses for [xxx]?`  [xxx] 有哪些常见用途？
+4. `How to [do something]?`	如何做某事？
+5. `How do I [do something]?` 如何做某事？
+6. `How can I fix [problem]?`  我怎样才能解决 [问题]？
+7. `Give me an example of [xxx]` 给我一个 [xxx] 的例子
+8. `Give me a quick overview of [xxx].`	快速概述一下 [xxx]。
+9. `Give me a brief introduction to [xxx] `  给我简单介绍一下xxx
+10. `Do you have any tips for [doing something/using xxx]?`  关于 [做某事/使用 xxx] 你有什么建议吗？
+11. `I want to know more about [xxx].`	我想了解更多关于 [xxx] 的信息。
+12. `Tell me about [xxx].`
+13. `Explain [xxx] in simple terms.`	用简单的方式解释 [xxx]。
+14. `List the main features of [xxx].`	列出 [xxx] 的主要特征。
+15. `Summarize [xxx] for me.`	请总结一下 [xxx]。
 
-### Google常用问句（通用型）
+## 比较类句型（比较、区别）
 
-- [ ] `What is [xxx]?`	[xxx] 是什么？
-- [ ] `What's the best way to [do something]?`	做某事的最佳方式是什么？
-- [ ] `What are some common uses for [xxx]?`  [xxx] 有哪些常见用途？
-- [ ] `How to [do something]?`	如何做某事？
-- [ ] `How do I [do something]?` 如何做某事？
-- [ ] `How can I fix [problem]?`  我怎样才能解决 [问题]？
-- [ ] `Give me an example of [xxx]` 给我一个 [xxx] 的例子
-- [ ] `Give me a quick overview of [xxx].`	快速概述一下 [xxx]。
-- [ ] `Give me a brief introduction to [xxx] `  给我简单介绍一下xxx
-- [ ] `Do you have any tips for [doing something/using xxx]?`  关于 [做某事/使用 xxx] 你有什么建议吗？
-- [ ] `I want to know more about [xxx].`	我想了解更多关于 [xxx] 的信息。
-- [ ] `Tell me about [xxx].`
-- [ ] `Explain [xxx] in simple terms.`	用简单的方式解释 [xxx]。
-- [ ] `List the main features of [xxx].`	列出 [xxx] 的主要特征。
-- [ ] `Summarize [xxx] for me.`	请总结一下 [xxx]。
+1. `I want to know the differences between A,B and C` 我想知道A、B、C之间的区别
+2. `What's the difference between A and B?`	A 和 B 有什么区别？
+3. `Difference between A and B?`	A 和 B 的区别？（简略口语版）
+4. `Compare A and B.`	比较 A 和 B。
+5. `What are the pros and cons of [xxx]?`	[xxx] 的优点和缺点是什么？
+6. `Which is better, A or B?`  A 和 B 哪个更好？
+7. `Which is better for [a specific purpose], A or B?` 对于 [某个特定目的] 来说，A 和 B 哪个更好？
+8. `Create a table comparing A, B, and C based on [criteria 1], [criteria 2], and [criteria 3].`
 
-### 比较类句型（比较、区别）
-
-- [ ] `I want to know the differences between A,B and C` 我想知道A、B、C之间的区别
-- [ ] `What's the difference between A and B?`	A 和 B 有什么区别？
-- [ ] `Difference between A and B?`	A 和 B 的区别？（简略口语版）
-- [ ] `Compare A and B.`	比较 A 和 B。
-- [ ] `What are the pros and cons of [xxx]?`	[xxx] 的优点和缺点是什么？
-- [ ] `Which is better, A or B?`  A 和 B 哪个更好？
-- [ ] `Which is better for [a specific purpose], A or B?` 对于 [某个特定目的] 来说，A 和 B 哪个更好？
-- [ ] `Create a table comparing A, B, and C based on [criteria 1], [criteria 2], and [criteria 3].`
-
-### 口语写作句型
+## 口语写作句型
 
 #### ==The reason why... is that...==
 
@@ -320,7 +325,7 @@
 - `Whether` you like it `or not,` you have to follow the rules. 不管你喜不喜欢，你都得遵守规则。
 - `Whether` it rains `or not,` we’ll still go hiking. 无论下不下雨，我们都要去徒步。
 
-### 地道口语表达句型
+## 地道口语表达句型
 
 #### ==Could you possibly...==
 
