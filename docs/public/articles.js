@@ -63,6 +63,7 @@ export const articlesMap = {
   "01-Essay/疑难杂症/IDEA项目文件滑动有卡顿解决（Mac M1Pro）.md": " Help -> Edit Custom Vm Options ``` -Dsun.java2d.opengl=true -Dsun.java2d.opengl.fbobject=false ``` 重启即可 DataGrip同",
   "01-Essay/疑难杂症/No plugin found for prefix 'docker' in the current project and in the plugin groups.md": " 使用maven插件 `docker-maven-plugin` 执行 `docker:build` 报错的问题 No plugin found for prefix 'docker' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available fro",
   "01-Essay/疑难杂症/RocetMQ事务消息与延迟消息冲突的问题.md": " 在一个事务消息上发送 延迟消息，发现延迟消息失效了，查阅官方文档，才发现：message 不能拥有两种属性",
+  "01-Essay/疑难杂症/Swagger2无法映射返参的问题.md": " 分享一个Swagger2无法映射返参的问题：相关配置、包、注解都正确，最后发现是某个属性首字母大写导致的。 > Swagger 的模型扫描完全依赖 Java 反射机制，而反射对方法命名规范有严格要求。 > > 字段命名违反小驼峰规范时（getX/isX规范）会导致Swagger无法识别。",
   "01-Essay/疑难杂症/WindowsDefender内核隔离无法关闭，提示此设置由管理员进行管理.md": " 原因：本身为WIN10专业版，是不会有这个问题的，本地安装了一个docker之后，就凉了，后续本地不用docker了发现虚拟机凉了， 百度前几页就这个管用。 前往注册表以下位置： `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\DeviceGuard\\Scenarios\\HypervisorEnforcedCodeIntegrity\\En",
   "01-Essay/疑难杂症/order by导致where中索引失效的问题.md": " where和order by都存在索引的情况下，MySQL由于自身的优化器选择，可能会导致不使用where条件中的索引，导致全表扫描查询 需要使用explain确认最终使用的索引 示例 `created_at`和 `id`均为索引的情况下，通过explain查看实际使用的索引是 ID primary主键索引，没有用到where中的`created_at`索引，导致全表扫描！ ```sql WHE",
   "01-Essay/疑难杂症/使用MacSSH连接WIN10虚拟机上的CentOS系统.md": " WIN10 - 关闭防火墙 VMware配置 - 设置虚拟网络编辑器 - VMnet0设置为桥接模式 - 桥接到 当前主机网卡（可在 控制面板->网络和Internet->网络连接->以太网 or WLAN 中查看） - 设置CentOS虚拟机的网络适配器 - 网络连接 -> 桥接模式（复制物理网络连接状态） Liunx(CentOS7.6)配置 - 配置网卡 - > vi /etc/sysco",

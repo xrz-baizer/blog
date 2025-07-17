@@ -540,7 +540,7 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 
 **==While== 当···时候、与···同时**
 
-- **While** my wife was reding the newspaper,I was watching TV. 当我妻子在看报纸时，我正在看电视。
+- **While** my wife was reading the newspaper,I was watching TV. 当我妻子在看报纸时，我正在看电视。
 
 **==When== 在···时候、什么时候**
 
