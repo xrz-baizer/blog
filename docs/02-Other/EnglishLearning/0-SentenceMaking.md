@@ -405,6 +405,9 @@ He walked.
 - **why 为什么**（This is the **reason why** the rabbit ate the carrot.）
 - **when 什么时候**（That was the **day when** the rabbit ate the carrot for the first time.）
 
+>- This is the place where I work.
+>- This is the reason why Tom wants to move house.
+
 #### ==状语从句 (Adverbial Clauses)==
 
 **在句子中当副词用，表示时间、原因、条件等。**
@@ -460,32 +463,81 @@ He walked.
 
 ## Google常用问句（通用型）
 
-1. `What is [xxx]?`	[xxx] 是什么？
-2. `What's the best way to [do something]?`	做某事的最佳方式是什么？
-3. `What are some common uses for [xxx]?`  [xxx] 有哪些常见用途？
-4. `How to [do something]?`	如何做某事？
-5. `How do I [do something]?` 如何做某事？
-6. `How can I fix [problem]?`  我怎样才能解决 [问题]？
-7. `Give me an example of [xxx]` 给我一个 [xxx] 的例子
-8. `Give me a quick overview of [xxx].`	快速概述一下 [xxx]。
-9. `Give me a brief introduction to [xxx] `  给我简单介绍一下xxx
-10. `Do you have any tips for [doing something/using xxx]?`  关于 [做某事/使用 xxx] 你有什么建议吗？
-11. `I want to know more about [xxx].`	我想了解更多关于 [xxx] 的信息。
-12. `Tell me about [xxx].`
-13. `Explain [xxx] in simple terms.`	用简单的方式解释 [xxx]。
-14. `List the main features of [xxx].`	列出 [xxx] 的主要特征。
-15. `Summarize [xxx] for me.`	请总结一下 [xxx]。
+**`What is [xxx]?`	[xxx] 是什么？**
+
+- What is k8s?
+
+**`What's the best way to [do something]?`	做某事的最佳方式是什么？**
+
+- What is the best way to learn English speaking?
+
+**`What are some common uses for [xxx]?`  [xxx] 有哪些常见用途？**
+
+- Waht are some common uses for Java?
+
+**`How do I [do something]?` 如何做某事？**
+
+- How do I learn English efficiently?
+
+**`How can I fix [problem]?`  我怎样才能解决 [问题]？**
+
+- How can I fix this problem? It show a "xxx".
+
+**`Give me an example of [xxx]` 给我一个 [xxx] 的例子**
+
+- Give me an example.
+- Give me some example.
+- Gime me an example of how to use this API.
+
+**`Give me a quick overview of [xxx].`	快速概述一下 [xxx]。**
+
+- Give me a quick overview of "java.util.Optional"
+
+**`Give me a brief introduction to [xxx] `  给我简单介绍一下xxx**
+
+- Give me a brief introduction to "java.util.Optional"
+
+**`Do you have any tips for [doing something/using xxx]?`  关于 [做某事/使用 xxx] 你有什么建议吗？**
+
+- Do you have any tips for find a girlfriend?
+
+**`I want to know more about [xxx].`	我想了解更多关于 [xxx] 的信息。**
+
+- I want to know more about React.
+
+**`Tell me about [xxx].`**
+
+- Tell me about Web3.
+
+**`Explain [xxx] in simple terms.`	用简单的方式解释 [xxx]。**
+
+- Explain web3 in simple terms.
+
+**`List the main features of [xxx].`	列出 [xxx] 的主要特征。**
+
+- List the main feature  of web3.
+
+**`Summarize [xxx] for me.`	请总结一下 [xxx]。**
+
+- Summarize web3 for me.
 
 ## 比较类句型（比较、区别）
 
-1. `I want to know the differences between A,B and C` 我想知道A、B、C之间的区别
-2. `What's the difference between A and B?`	A 和 B 有什么区别？
-3. `Difference between A and B?`	A 和 B 的区别？（简略口语版）
-4. `Compare A and B.`	比较 A 和 B。
-5. `What are the pros and cons of [xxx]?`	[xxx] 的优点和缺点是什么？
-6. `Which is better, A or B?`  A 和 B 哪个更好？
-7. `Which is better for [a specific purpose], A or B?` 对于 [某个特定目的] 来说，A 和 B 哪个更好？
-8. `Create a table comparing A, B, and C based on [criteria 1], [criteria 2], and [criteria 3].`
+**`I want to know the differences between A,B and C` 我想知道A、B、C之间的区别**
+
+**`What's the difference between A and B?`	A 和 B 有什么区别？**
+
+**`Difference between A and B?`	A 和 B 的区别？（简略口语版）**
+
+**`Compare A and B.`	比较 A 和 B。**
+
+**`What are the pros and cons of [xxx]?`	[xxx] 的优点和缺点是什么？**
+
+**`Which is better, A or B?`  A 和 B 哪个更好？**
+
+**`Which is better for [a specific purpose], A or B?` 对于 [某个特定目的] 来说，A 和 B 哪个更好？**
+
+**`Create a table comparing A, B, and C based on [criteria 1], [criteria 2], and [criteria 3].`**
 
 ## 口语写作句型
 
@@ -495,6 +547,10 @@ He walked.
 
 - `The reason why` I chose this job `is that` it gives me a lot of freedom. 我选择这份工作的原因是它给了我很大的自由。
 - `The reason why` she left early `is that` she wasn’t feeling well. 她早退的原因是她身体不舒服。
+
+>- The reason why I want to buy a kettle is that I want to drink warm water.
+>- The reason why I learn English is that I want to have a better life.
+>- The reason why I am here is that I have to work late hours.
 
 ####  ==Not only... but also...==
 
@@ -630,3 +686,43 @@ He walked.
 
 - `I couldn't agree more` with your opinion on this topic. 我完全同意你对这个话题的看法。
 - `I couldn't agree more:` this app really changed how I work. 我完全同意：这个应用真的改变了我的工作方式。
+
+## 100 Practice
+
+> [句子结构解析：ChatGPT](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
+>
+> [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
+
+1. Regular exercise can increase one's self-confidence.
+2. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
