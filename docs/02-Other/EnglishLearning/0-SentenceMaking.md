@@ -2,12 +2,6 @@
 
 ## Introduction
 
-**描述日常活动**：每天做什么？比如What did you do today? 或 I went to the supermarket.
-
-**表达个人观点**：写写你对某些事物的看法，如 What do you think of online learning?
-
-**讲述故事**：可以从你的日常生活出发，写一小段关于你经历的故事。例：Last weekend, I went to the park with my friends. We played soccer and had lunch together.
-
 >1. 分句型：有动作就是主谓宾，否则就是主系表
 >
 >2. 形容词只修饰名词，副词修饰其它的词（通常修饰动词）
@@ -37,6 +31,8 @@
 
 - 可可英语-句型：https://www.kekenet.com/course/15288
 - 微信读书-句型（扩展）：https://weread.qq.com/web/reader/1b4324305c87a81b49b65c7kc7432af0210c74d97b01b1c
+- [ChatGPT Teacher](https://chatgpt.com/c/6879f525-0fa0-8010-8d84-68e6477e452c)
+- [Qwen Teacher](https://chat.qwen.ai/c/a54e418f-a2d2-48a8-aad4-6d5cb909f172)
 
 ## 一、基本句型
 
@@ -58,6 +54,12 @@
 - We are Chinese.
 - The teacher is beautiful.
 
+> - She is beautiful.
+> - They are discussing.
+> - Today the food taste normal.
+> - I am become strong.
+> - I stay self-motivated.
+
 #### ==主 + 谓 + 宾==
 
 **表示“谁/什么做了什么”，宾语是动作的承受者。**
@@ -65,6 +67,11 @@
 - I love you. (我爱你。)
 - She reads a book. (她读一本书。)
 - They are playing football. (他们在踢足球。)
+
+>- I am drinking water.
+>- My mother called me yesterday.
+>- He turns on the air conditioner.
+>- We watch TV.
 
 #### ==主 + 谓 + 宾 + 宾==
 
@@ -75,12 +82,23 @@
 - He bought me a flower. (他给我买了一朵花。)
 - My father told me a story. (我父亲给我讲了一个故事。)
 
+>- A few years ago, I bought my mother a phone .
+>- She send me  a message.
+
 **间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 `to` 或者 `for`**
+
+**`to` ：表示将某物传递/给予某人 （强调动作的转移 ）。`give`, `send`, `show`, `bring`, `lend`, `tell`, `return`**
+
+**`for` ：表示为某人做某事/买某物 （强调动作的目的 或利益 ）。`buy`, `make`, `find`, `cook`, `build`, `order`, `pay`**
 
 - Her father bought her a bicycle
 - Her father bought a bicycle `for` her
 - The old man is telling the children stories
 - The old man is telling stories `to` the children
+
+> - A few years ago, I bought a phone for my mother.
+>
+> - She send a message to me.
 
 #### ==主 + 谓 + 宾 + 补==
 
@@ -91,6 +109,11 @@
 - We call him "the Doctor".
 - I found the book very interesting.
 - She found the pen on the floor.
+
+>- Today,the weather makes me feel anxious.
+>
+>- I worry that the weather is getting worse.
+>- My parents named me Baizer.
 
 #### ==There be 句型==
 
@@ -103,30 +126,201 @@
 - `There are` three apples on the table（桌子上面有三个苹果）
 - `There was` an accident（这里发生了事故）
 
+>- There is a phone on the desk.
+>- There are Bluetooth headsets on the desk.
+>- There are two boxes of bottled water which were received yesterday.
+
 **==There 不及物动词==**
 
 - `There lived` an old king in the castle. 城堡里住着一位老国王。
 - `There exists` no such thing. 不存在这种事。
 - `There arose` a great cheer from the crowd. 人群中爆发出巨大的欢呼声。
 
+> - There exist two boxes of bottled water.
+>
+> - There lived a lot of unfortunate people.
+> - There remains a problem to solve.
+> - There occurred a serious accident.
+
 **变疑问句：将动词 be 和 there 互换位置即可**
 
 - Are `there` any ties on the floor?
 - Is `there` a dirty fork on the plate?
 
+>- Is there a phone on the desk?
+>- Are there Bluetooth headsets on the desk?
+
 ##  二、添加修饰：定语和状语
 
-**定语 (Adjective)：修饰名词或代词，说明“什么样的”。 短定语放前面，长定语放后面。**
+### 定语 (Adjective)
+
+**修饰名词或代词，说明“什么样的”。常为形容词。短定语放前面，长定语放后面。**
 
 The girl is reading a book.
 
 - The `little` girl is reading an `interesting` book. (那个小女孩在读一本有趣的书。)
 
-**状语 (Adverbial)：修饰动词、形容词或整个句子，说明动作发生的“方式、地点、时间”**
+>I am drinking water.
+>
+>- I am drinking warm water.
+>
+>He turns on the air conditioner.
+>
+>- He turns on the old air conditioner.
+>
+>We are watching TV.
+>
+>- We are watching a high-definition TV.
+
+### 状语 (Adverbial)
+
+**修饰动词、形容词或整个句子，说明动作发生的“方式、地点、时间”**
 
 He walked.
 
 - He walked `slowly` `in the park` `yesterday`. (昨天他缓慢地在公园里散步。)
+
+> I am drinking warm water.
+>
+>  - I am drinking warm water at home and  at the workplace.
+>
+> He turns on the old air conditioner.
+>
+>  - He turns on the old air conditioner at midnight.
+>
+> We are watching a high-definition TV.
+>
+>  - We are watching a high-definition TV in our apartment.
+
+#### 1. 时间状语
+
+**==in advance==**（提前）
+
+- We booked our tickets in advance.
+
+**==in the morning/afternoon/evening==**（在早上/下午/晚上）
+
+- She always goes jogging in the morning.
+- I’ll call you in the afternoon.
+- They like to read books in the evening.
+
+**==on time==**（准时）
+
+- The train arrived on time.
+
+**==at once==**（立刻）
+
+- Please come here at once!
+
+**==at the same time==**（同时）
+
+- He laughed and cried at the same time.
+
+**==in no time==**（很快，马上）
+
+- Don’t worry, I’ll finish the report in no time.
+
+#### 2. 地点状语
+
+**==in front of==**（在…前面）
+
+- The car stopped in front of the school.
+
+**==behind==**（在…后面）
+
+- The cat is hiding behind the sofa.
+
+**==next to / beside==**（在…旁边）
+
+- My house is next to a supermarket.
+- She sat beside her best friend.
+
+**==between … and …==**（在…和…之间）
+
+- The bank is between the post office and the library.
+
+**==at the corner==**（在拐角处）
+
+- There’s a café at the corner of this street.
+
+**==on the left / on the right==**（在左边/右边）
+
+- The pharmacy is on the left.
+- The museum is on the right.
+
+#### 3. 方式状语
+
+**==by chance==**（偶然地）
+
+- I met my old teacher by chance in the mall.
+
+**==on purpose==**（故意地）
+
+- He broke the vase on purpose.
+
+**==with care==**（小心翼翼地）
+
+- Please handle the glassware with care.
+
+**==by mistake==**（错误地）
+
+- I sent the email to John by mistake.
+
+**==in detail==**（详细地）
+
+- She explained the plan in detail.
+
+**==with confidence==**（自信地）
+
+- He spoke with confidence during the presentation.
+
+#### 4. 程度状语
+
+**==at least==**（至少）
+
+- You need to sleep at least eight hours.
+
+**==at most==**（最多）
+
+- The box can hold at most ten books.
+
+**==in part==**（部分地）
+
+- The success was in part due to her hard work.
+
+**==to some extent==**（在某种程度上）
+
+- I agree with you to some extent.
+
+**==by far==**（远远地，非常）
+
+- This is by far the best movie I’ve seen this year.
+
+#### 5. 原因／条件状语
+
+**==because of==**（因为）
+
+- We stayed home because of the rain.
+
+**==due to==**（由于）
+
+- The flight was canceled due to heavy fog.
+
+**==thanks to==**（多亏）
+
+- Thanks to your help, we finished early.
+
+**==in case of==**（以防）
+
+- In case of fire, use the stairs.
+
+**==in spite of==**（尽管）
+
+- In spite of the noise, she fell asleep.
+
+**==on condition that==**（在…条件下）
+
+- You can borrow my car on condition that you drive safely.
 
 ## 三、复杂句：连接简单句
 
@@ -138,6 +332,12 @@ He walked.
 - Is it a girl `or` a boy? 是男孩还是女孩？
 - They were making a lot of noise,`so` the teacher got angry. 他们制造了很多噪音，所以老师生气了。
 
+>- I want to buy a heater, and he wants to buys a cup.
+>- My mother not only cooks well, but also works well.
+>- My mother decorated my room, but I did not like it.
+>- The Company can offer a promotion or a salary increase.
+>- The room is too nosiy, so I am thinking of moving.
+
 #### ==结构：分号（;）连接==
 
 - It was getting late`;` she must start back home. 天色已晚；她必须动身回家。
@@ -147,29 +347,63 @@ He walked.
 
 #### ==名词从句 (Noun Clauses)==
 
-**在句子中当名词用（主语、宾语等）**
+**在句子中当名词用（主语、宾语等）。**
 
-- **that 那个**
-- **whether 是否**
-- **where 哪里**
-- **when 什么时候**
-- **how 怎么样**
-- **who 谁**
-- **what 什么**
+- **引导词本身可以在从句中作主语、宾语或其他成分。**
 
-**当描述的信息是确定时使用that，不确定时使用其它**
+- **that 引导时，that 本身在从句中通常不承当句内成分（可省略）**
 
-- `That the rabbit ate a carrot` is obvious. 兔子吃了胡萝卜这件事是明显的。
-- I saw `that` rabbit ate a carrot. 我看见这只兔子吃了根胡萝卜
-- I know `that` he is a good student.  我知道他是个好学生。
-- I don't know `what` I should do.  我不知道我该做什么。
+- **how、where、when 等引导的从句，how 在从句中可作状语，when/where 可作状语。**
+
+**当描述的信息是确定时使用that，不确定时使用其它。**
+
+- **that 那个**（**That** the rabbit ate the carrot is obvious. 兔子吃了胡萝卜是明显的）
+- **whether 是否**（**Whether** the rabbit ate the carrot is obvious. 兔子是否吃了胡萝卜是明显的）
+- **where 哪里**（ **Where** the rabbit ate the carrot is obvious. 兔子哪里吃的胡萝卜是明显的）
+- **when 什么时候**（**When** the rabbit ate the carrot is obvious. 兔子什么时候吃的胡萝卜是明显的）
+- **how 怎么样**（**How** the rabbit ate the carrot is obvious. 兔子怎样吃地胡萝卜是明显的）
+- **who 谁**（**Who** ate the carrotis obvious. 谁吃了胡萝卜是明显的）
+- **what 什么**（**What** the rabbit ate is obvious. 兔子吃的什么是明显的）
+
+> - I drink that water generated by Hengda company.
+
+**形式主语：当主语从句很长时，英语通常使用==it==作为形式主语代替从句，从而将主语从句放到后面**
+
+- <u>That he learns English</u> is difficult. 他学英语很难
+  - ==It== is diffcult <u>that he learns English.</u> 他学英语很难
+
+
+- <u>What the rabbit ate</u> is obvious.
+  - **It** is obvious <u>what the rabbit ate.</u>
+
+**否定前置（陈述句语序）：从句定义都是陈述句语序，描述否定意思时，需要将否定词前置**
+
+- I think <u>that the rabbit isn't smart</u>. 我认为兔子不聪明
+- I don't think <u>that the rabbit is smart</u>. 我认为兔子不聪明
 
 #### ==定语从句 (Adjective Clauses)==
 
-**在句子中当形容词用，修饰名词**
+**在句子中当形容词用，修饰名词。**
 
-- The man `who lives next door` is a doctor. (住在隔壁的那个男人是位医生。)
-- This is the book `that I bought yesterday`. (这就是我昨天买的那本书。)
+通过关系词引导，关系词（连词）又分：关系代词、关系副词。
+
+- 关系代词在从句中作==主语、宾语==等；
+
+- 关系副词在从句中作==状语==。
+
+**关系代词（that和which的区别，取决于先行词是否唯一）**
+
+- **that 那个**（The rabbit is eating a carrot **that** bought.）
+- **which 哪一个**（The food **which** the teacher likes is a carrot.）
+- **who 谁**（The teacher **who** ate a carrot is a rabbit.）
+- **whom 谁**（The teacher **whom** I saw yesterday is a rabbit.）
+- **whose 谁的**（The teacher **whose** favorite food is carrot is a rabbit.）
+
+**关系副词**
+
+- **where 哪里**（This was the **place where** the rabbit ate the carrot.）
+- **why 为什么**（This is the **reason why** the rabbit ate the carrot.）
+- **when 什么时候**（That was the **day when** the rabbit ate the carrot for the first time.）
 
 #### ==状语从句 (Adverbial Clauses)==
 
