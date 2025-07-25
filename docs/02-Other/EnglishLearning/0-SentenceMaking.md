@@ -31,8 +31,6 @@
 
 - 可可英语-句型：https://www.kekenet.com/course/15288
 - 微信读书-句型（扩展）：https://weread.qq.com/web/reader/1b4324305c87a81b49b65c7kc7432af0210c74d97b01b1c
-- [ChatGPT Teacher](https://chatgpt.com/c/6879f525-0fa0-8010-8d84-68e6477e452c)
-- [Qwen Teacher](https://chat.qwen.ai/c/a54e418f-a2d2-48a8-aad4-6d5cb909f172)
 
 ## 一、基本句型
 
@@ -174,153 +172,298 @@ The girl is reading a book.
 
 ### 状语 (Adverbial)
 
-**修饰动词、形容词或整个句子，说明动作发生的“方式、地点、时间”**
+**修饰动词、形容词或整个句子，说明动作发生的“方式、地点、时间、程度、原因、目的、条件”等**
 
-He walked.
+---
 
-- He walked `slowly` `in the park` `yesterday`. (昨天他缓慢地在公园里散步。)
+#### 1. 时间状语 (when)
 
-> I am drinking warm water.
->
->  - I am drinking warm water at home and  at the workplace.
->
-> He turns on the old air conditioner.
->
->  - He turns on the old air conditioner at midnight.
->
-> We are watching a high-definition TV.
->
->  - We are watching a high-definition TV in our apartment.
+**常见介词：`at`, `on`, `in`, `before`, `after`, `during`**
 
-#### 1. 时间状语
+**==At [具体时间], S V …==**  
 
-**==in advance==**（提前）
+- **At 7 o’clock,** I started the meeting.  
+- **At midnight,** they finished the project.  
 
-- We booked our tickets in advance.
+**==at once==（立刻）**
 
-**==in the morning/afternoon/evening==**（在早上/下午/晚上）
+- Please come here **at once**!
 
-- She always goes jogging in the morning.
-- I’ll call you in the afternoon.
-- They like to read books in the evening.
+**==at the same time==（同时）**
 
-**==on time==**（准时）
+- He laughed and cried **at the same time**.
 
-- The train arrived on time.
+**==In the [时间段], S V …==**  
 
-**==at once==**（立刻）
+- **In the morning,** she practices the piano.  
+- **In the evening,** we watch movies together.
+- I’ll call you **in the afternoon**.  
+- They like to read books **in the evening**.
 
-- Please come here at once!
+**==After [事件], S V …==**  
 
-**==at the same time==**（同时）
+- **After dinner,** we went for a walk.  
+- **After the rain stopped,** children ran outside.  
 
-- He laughed and cried at the same time.
+**==On [星期几/具体日期], S V …==**  
 
-**==in no time==**（很快，马上）
+- **On Fridays,** I attend an online yoga class.  
+- **On July 4th,** we enjoy fireworks.  
 
-- Don’t worry, I’ll finish the report in no time.
+**==During [节假日/月份/学期], S V …==（在……期间）**  
 
-#### 2. 地点状语
+- During the winter break, she visited her cousins in Canada.  
+- During exam week, students study late into the night.  
 
-**==in front of==**（在…前面）
+---
 
-- The car stopped in front of the school.
+#### 2. 地点状语 (where)
 
-**==behind==**（在…后面）
+**常见介词：`in`, `on`, `at`, `under`, `over`, `behind`, `between`, `next to`, `beside`, `in front of`**
 
-- The cat is hiding behind the sofa.
+**==In the [地点], S V …==（在……里面）**  
 
-**==next to / beside==**（在…旁边）
+- **In the park,** children play happily.  
+- **In the library,** she reads quietly.  
 
+**==On the [表面/街道], S V …==（在……表面 / 街道上）**  
+
+- **On the street,** people walk their dogs.  
+- **On the wall,** a painting hangs
+
+**==At the [具体地点], S V …==（在……具体地点）**  
+
+- **At the bus stop,** she waits for the next coach.  
+- **At the station,** we boarded the train.  
+- There’s a café **at the corner** of this street.
+
+**==Under the [地点], S V …==（在……下面）**  
+
+- **Under the tree,** kids enjoy a picnic.  
+- **Under the bridge,** fishermen cast nets.  
+
+**==Over the [地点], S V …==（在……上方 / 越过……）**  
+
+- **Over the bridge,** the view is breathtaking.  
+- **Over the city,** the plane flew at low altitude.  
+
+**==Behind the [地点], S V …==（在……后面）**  
+
+- **Behind the sofa**, the cat is hiding.  
+- **Behind the curtain**, she peeks out.  
+- The cat is hiding **behind** the sofa.
+
+**==Between [A] and [B], S V …==（在 A 和 B 之间）**  
+
+- **Between** the two buildings, there is a small alley.
+- **Between** her work **and** family, she balances both.  
+- The bank is **between** the post office **and** the library.
+
+**==Next to [X], S V …==（紧挨着 / 紧靠着 / 在……旁边）**  ：比beside更近
+
+- Next to the supermarket, a new café opened.  
+- Next to him, his sister sat quietly.  
 - My house is next to a supermarket.
-- She sat beside her best friend.
 
-**==between … and …==**（在…和…之间）
+**==Beside [X], S V …==（在……旁边）**  
 
-- The bank is between the post office and the library.
+- **Beside** the river, they set up a tent.  
+- **Beside** the road, wildflowers bloom.  
+- She sat **beside** her best friend.
 
-**==at the corner==**（在拐角处）
+**==In front of [X], S V …==（在……前面）**  
 
-- There’s a café at the corner of this street.
+- **In front of** the school, parents gather to pick up children.  
+- **In front of** the mirror, she practices makeup.  
+- The car stopped **in front of** the school.
 
-**==on the left / on the right==**（在左边/右边）
+**==On the left of [X], S V …==**  
 
-- The pharmacy is on the left.
-- The museum is on the right.
+- **On the left of** the museum, there is a gift shop.  
+- **On the left of** the stage, the lights flicker.  
 
-#### 3. 方式状语
+**==On the right of [X], S V …==**  
 
-**==by chance==**（偶然地）
+- **On the right of** the theatre, a parking lot is available.  
+- **On the right of** the building, ivy climbs the wall.  
 
-- I met my old teacher by chance in the mall.
+**==on the left / on the right==（在左边/右边）**
 
-**==on purpose==**（故意地）
+- The pharmacy is **on the left**.
+- The museum is **on the right**.
 
-- He broke the vase on purpose.
+---
 
-**==with care==**（小心翼翼地）
+#### 3. 方式状语 (how)
 
-- Please handle the glassware with care.
+**常见介词/短语：`with`, `by`, `on`, `using`**
 
-**==by mistake==**（错误地）
+**==S V with [方式].==（以……方式、带着……情绪 / 态度 / 特征）**  
 
-- I sent the email to John by mistake.
+- She greeted me **with a smile**.  
+- He spoke **with anger**.
+- He responded **with enthusiasm**.  
+- He spoke **with confidence** during the presentation.
+- Please handle the glassware **with care**.
 
-**==in detail==**（详细地）
+**==S V by [交通工具/方法].==（通过……方式、用……手段、由于……原因）**  
 
-- She explained the plan in detail.
+- He travels to work **by bike.**  
+- She sends packages **by courier**.  
+- I sent the email to John **by mistake**.
+- I met my old teacher **by chance** in the mall.
 
-**==with confidence==**（自信地）
+**==S V on [方式].==（基于、出于）**  
 
-- He spoke with confidence during the presentation.
+- He broke the vase **on purpose**.  
+- She acted **on impulse**.  
 
-#### 4. 程度状语
+**==S V using [工具/方法].==（用、利用、使用、借助）** 
 
-**==at least==**（至少）
+- She edited the photo **using Photoshop**.  
+- He fixed the leak **using tape**.  
 
-- You need to sleep at least eight hours.
+---
 
-**==at most==**（最多）
+#### 4. 程度状语 (degree)
 
-- The box can hold at most ten books.
+**常见结构：`at least`, `at most`, `in part`, `to some extent`, `by far`, `far too`, `just`, `almost`**
 
-**==in part==**（部分地）
+**==S V at least [数量/程度].==（至少）**  
 
-- The success was in part due to her hard work.
+- You need to sleep **at least** eight hours.  
+- She eats **at least** two servings of vegetables daily.  
 
-**==to some extent==**（在某种程度上）
+**==S V at most [数量/程度].==（最多）**  
 
-- I agree with you to some extent.
+- He scored **at most** 90 points on the test.  
+- The box can hold **at most** ten books.
 
-**==by far==**（远远地，非常）
+**==S V in part [原因].==（部分地）**  
 
-- This is by far the best movie I’ve seen this year.
+- The success was **in part** due to her hard work.  
+- The delay was **in part** because of traffic.  
 
-#### 5. 原因／条件状语
+**==S V to some extent [评价].==（在某种程度上）**
 
-**==because of==**（因为）
+- I agree with you **to some extent**.  
+- She found the task challenging **to some extent**.  
 
-- We stayed home because of the rain.
+**==S V by far ...==（远远地，非常）**  
 
-**==due to==**（由于）
+- This is **by far** the best movie I’ve seen this year.  
+- This is **by far** his best performance yet.
 
-- The flight was canceled due to heavy fog.
+**==S V just ...==（刚刚，差不多、快要）**：表示某事即将完成，但还没完全完成。
 
-**==thanks to==**（多亏）
+- I’m **just** about ready to go.  
+- I’m **just** about finished with my homework.
 
-- Thanks to your help, we finished early.
+**==almost==（几乎）**：强调某事几乎发生了但最后没有发生。
 
-**==in case of==**（以防）
+- We **almost** missed the train.  
+- I **almost** forgot your birthday!
+- She **almost** cried when she heard the news.
 
-- In case of fire, use the stairs.
+---
 
-**==in spite of==**（尽管）
+#### 5. 原因状语 (reason)
 
-- In spite of the noise, she fell asleep.
+**常见介词：`because of`, `due to`, `thanks to`, `owing to`**
 
-**==on condition that==**（在…条件下）
+**==Because of [原因], S V …==（因为）**  
 
-- You can borrow my car on condition that you drive safely.
+- We stayed home **because of** the rain.  
+- They left early **because of** the storm.  
+
+**==Due to [原因], S V …==（由于）**  
+
+- The flight was canceled **due to** heavy fog.  
+- The event was postponed **due to** low registration.  
+
+**==Thanks to [帮助/原因], S V …==  （多亏）**
+
+- **Thanks to** your help, we finished early.  
+- **Thanks to** modern technology, life is more convenient.  
+
+**==Owing to [原因], S V …==（由于）**  
+
+- **Owing to** a power cut, the lecture was delayed.  
+- **Owing to** high demand, prices increased.  
+
+---
+
+#### 6. 目的状语 (purpose)
+
+**常见结构：`to`, `in order to`, `so as to`, `for`, `so that`**
+
+**==S V to [动词原形] …==（为了）** ： 为了“做”什么，强调动作
+
+- He studied hard **to** pass the exam.  
+- She saved money **to** buy a car.  
+
+**==S V for [目的/名词].==（为了）**  ：为了“谁/什么”，强调人/物体
+
+- He bought flowers **for** her.
+- He bought flowers **for** a gift.  
+- They moved house **for** proximity to work.  
+
+**==S V in order to [动词原形] …==（为了、以便）**：更正式的to
+
+- She exercises daily **in order to** stay healthy.  
+- He practices scales **in order to** improve technique.  
+
+**==S V so as to [动词原形] …==  （为了、以便）**：更正式的to
+
+- They saved money **so as to** travel abroad next year.  
+- She woke up early **so as to** catch the sunrise.  
+
+**==so that==（因此、以便）**
+
+- He must get up early **so that** he can go to work on time. 
+- It was very cold, **so that** the river froze.
+
+---
+
+#### 7. 条件状语 (condition)
+
+**常见结构：`if`, `as long as`，`unless`, `on condition that`, `provided (that)`**
+
+**==If [条件], S V …==（如果、假如）**  
+
+- **If** it rains, we will cancel the picnic.  
+- **If** he studies hard, he will pass the exam.  
+
+**==as long as==（如果、只要）**
+
+- You can stay here **as long as** you are quiet.
+- **As long as** we work hard, we will succeed.
+- This deal still applies, **as long as** you get back to us before Friday.
+
+**==S V provided that [条件].== （如果、只要）**
+
+- The offer stands **provided that** you respond by Friday.  
+- She will join **provided that** the schedule fits.
+
+**==Unless [条件], S V …==  （除非）**
+
+- **Unless** you hurry, you’ll miss the bus.  
+- **Unless** she apologizes, I won’t forgive her.  
+
+**==S V on condition that [条件].==  （在…条件下）**
+
+- You can attend the party on condition that you finish your work.  
+- He agreed to help on condition that he is paid.  
+
+**==in case of==（以防）**
+
+- **In case of** fire, use the stairs.
+
+**==in spite of==（尽管）**
+
+- **In spite of** the noise, she fell asleep.
+
+
 
 ## 三、复杂句：连接简单句
 
@@ -689,12 +832,23 @@ He walked.
 
 ## 100 Practice
 
-> [句子结构解析：ChatGPT](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
+> - [句子结构解析：ChatGPT (No need to use Reason)](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
 >
-> [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
+> - [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
+>
+> - 在线句子解析：https://www.kogrammar.com/analyze/
 
 1. Regular exercise can increase one's self-confidence.
-2. 
+2. The quality of teaching can make a huge difference to student's academic performance.
+3. Parents and teachers should make an effort to limit children's screen time.
+4. Economic showdown has led to a climbing unemployment rate.
+5. A country's economic development relies on a supply of young workers.
+6. A large number of students in China have to do self-study at night.
+7. The development of cities has posed a threat to heritage sites.
+
+
+
+
 
 
 
