@@ -16,6 +16,7 @@ hero:
     src: /peach-blossom-lite.png
 #    src: /peach-blossom.svg
 #    src: /lotus.svg
+#    src: 
 #    alt: Baizer
   actions:
 #    - theme: brand
