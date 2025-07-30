@@ -334,6 +334,129 @@ The rabbit will eat the carrot.
 - 强调兔子 -> ==It is== the rabbit ==that== will eat the carrot.
 - 强调我的IPhone -> ==It was== my iphone ==that== I lost last week.
 
+## 冠词
+
+在英语语法中，冠词是用来修饰名词，说明其所指是特定还是非特定的词。冠词分为定冠词 (definite article) 和不定冠词 (indefinite article) 两种。
+
+- **定冠词 (the)**：表示**特指**，即听者和说者都明确知道所指的是哪一个或哪些人或物。它有“那个”、“这个”或“那些”、“这些”的含义。
+
+- **不定冠词 (a/an)**：表示**泛指**，即指某一类人或事物中的**任何一个**，但不具体说明是哪一个。它有“一个”或“任何一个”的含义。
+
+### 定冠词（the）
+
+- <u>the</u> sun.
+
+- <u>the</u> world.
+
+- Ah! Your dress is pretty!
+  - Thank you. I like <u>the</u> dress,too.（代指前文提到的）
+
+注意，在元音前读 `ði` , 辅音前读 `ðə`
+
+> **定冠词的主要使用场景：**
+>
+> 1. **再次提到上文已提及的人或物**：
+>    - *I saw a cat in the garden. **The** cat was black.* (我看见花园里有一只猫。**那只**猫是黑色的。)
+> 2. **双方都明确知道的人或物**：即使是第一次提到，但根据语境，双方都知道具体所指。
+>    - *Could you please close **the** door?* (你能把**那扇**门关上吗？) (指房间里唯一的那扇门)
+>    - *Where is **the** bathroom?* (洗手间在哪？) (指这栋建筑里的洗手间)
+> 3. **世界上独一无二的事物**：
+>    - ***the** sun* (太阳)
+>    - ***the** moon* (月亮)
+>    - ***the** earth* (地球)
+> 4. **用在序数词和形容词最高级前**：
+>    - ***the** first day* (第一天)
+>    - ***the** best student* (最优秀的学生)
+> 5. **指整个群体或阶层**：`the` + 形容词/国籍名词复数
+>    - ***the** rich* (富人)
+>    - ***the** poor* (穷人)
+>    - ***the** Chinese* (中国人)
+> 6. **用在某些专有名词前**：
+>    - **江河、海洋、山脉、群岛**：*the Yangtze River* (长江), *the Pacific Ocean* (太平洋), *the Himalayas* (喜马拉雅山脉)
+>    - **由普通名词构成的国家或机构名称**：*the United States* (美国), *the United Nations* (联合国)
+>    - **报纸、建筑物、博物馆名称**：*the New York Times* (纽约时报), *the Eiffel Tower* (埃菲尔铁塔)
+>    - **姓氏的复数形式，表示一家人**：*the Smiths* (史密斯一家)
+
+### 不定冠词（a,an）
+
+- <u>a</u> dog. 一只狗
+- <u>a</u> book. 一本书
+- <u>an</u> apple. 一个苹果
+
+> 用于单数可数名词前；没有具体说明是哪一个（泛指）
+
+- <u>a</u> book. [bʊk]
+- <u>an</u> apple. [ˈæp(ə)l]
+
+> a/an的选用：名词以元音开头使用an，反之使用a
+
+- Give me <u>a</u> book. Which book? <u>The</u> book on the table.
+
+> the替代a/an：第一次提到时并不知道是哪一本书，是泛指，使用a；第二次提到时是特指，需要用定冠词the
+
+**注意：某些非元音字母的也会用an，可以直接依据单词字母开头区分**
+
+This is an `A`/`E`/`F`/`H`/`I`/`L`/`M`/`N`/`O`/`S`/`X`.
+
+This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
+
+> **不定冠词的主要使用场景：**
+>
+> 1. **首次提到某人或某物**：当第一次在对话或文章中提及某个可数名词单数时。
+>
+>      - *I saw **a** cat in the garden.* (我看见花园里有**一只**猫。)
+>      - *She bought **a** new dress yesterday.* (她昨天买了**一件**新连衣裙。)
+> 2. **表示职业、身份或类别**：
+>
+>      - *He is **a** doctor.* (他是**一位**医生。)
+>      - *My father is **an** engineer.* (我父亲是**一位**工程师。)
+> 3. **表示“一个”的数量概念**：
+>
+>      - *I have **a** sister.* (我有一个姐姐。)
+>      - *Please wait for **a** minute.* (请等一分钟。)
+> 4. **用于某些固定搭配中**：
+>
+>      - *have **a** rest* (休息一下)
+>
+>      - *in **a** hurry* (匆忙地)
+>
+>      - *as **a** rule* (通常)
+
+### 零冠词
+
+在某些情况下，名词前不需要加任何冠词，这种情况被称为“零冠词”。
+
+1. **泛指的复数名词**：
+   - *I like **cats**.* (我喜欢猫。) (泛指所有的猫，而非特指)
+   - ***Doctors** are well-paid.* (医生薪水很高。) (泛指医生这个职业群体)
+2. **泛指的不可数名词**：
+   - ***Water** is essential for life.* (水对生命至关重要。)
+   - *She gave me some useful **advice**.* (她给了我一些有用的建议。)
+3. **大多数专有名词前**：
+   - **人名、地名（城市、大多数国家）、月份、星期**：*Tom*, *London*, *China*, *July*, *Monday*
+4. **三餐、球类运动、学科名称前**：
+   - *have **breakfast** / **lunch** / **dinner***
+   - *play **basketball** / **football***
+   - *study **history** / **mathematics***
+5. **在某些固定短语中**：
+   - *by **bus*** (乘公交车)
+   - *at **home*** (在家)
+   - *go to **bed*** (上床睡觉)
+
+## 所有格
+
+表示所属关系
+
+### （'s）所有格
+
+- Tim's shirt.（Tim的衬衫）
+- Tom's schoolbag. / his schoolbag.
+
+> 's加在名字后面，表示后面的事物属于前面一个人（作用和形容词性物主代词一样，一般第一次提到时所有格，第二次提到时用形容词性物主代词）
+
+有时候，所有格的第一个名词如果是以s或者es 结尾，后面只需要加“，”。
+
+-  I enjoy reading my students’ essays.
 
 ## 被动语态
 

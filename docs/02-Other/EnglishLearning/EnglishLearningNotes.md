@@ -234,62 +234,6 @@
 |        far | farther、further | farthest、furthest（最远的） |
 
 
-
-## 定冠词和不定冠词
-
-### 定冠词（the）
-
-- <u>the</u> sun.
-
-- <u>the</u> world.
-
-- Ah! Your dress is pretty!
-  - Thank you. I like <u>the</u> dress,too.（代指前文提到的）
-
-> 用于独一无二的事物；前文中提到的某一个确定的事物（特指）
-
-**注意，在元音前读 `ði` , 辅音前读 `ðə`**
-
-### 不定冠词（a,an）
-
-- <u>a</u> dog. 一只狗
-- <u>a</u> book. 一本书
-- <u>an</u> apple. 一个苹果
-
-> 用于单数可数名词前；没有具体说明是哪一个（泛指）
-
-- <u>a</u> book. [bʊk]
-- <u>an</u> apple. [ˈæp(ə)l]
-
-> a/an的选用：名词以元音开头使用an，反之使用a
-
-- Give me <u>a</u> book. Which book? <u>The</u> book on the table.
-
-> the替代a/an：第一次提到时并不知道是哪一本书，是泛指，使用a；第二次提到时是特指，需要用定冠词the
-
-**注意：某些非元音字母的也会用an，可以直接依据单词字母开头区分**
-
-This is an `A`/`E`/`F`/`H`/`I`/`L`/`M`/`N`/`O`/`S`/`X`.
-
-This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
-
-
-
-## 所有格
-
-表示所属关系
-
-### （'s）所有格
-
-- Tim's shirt.（Tim的衬衫）
-- Tom's schoolbag. / his schoolbag.
-
-> 's加在名字后面，表示后面的事物属于前面一个人（作用和形容词性物主代词一样，一般第一次提到时所有格，第二次提到时用形容词性物主代词）
-
-有时候，所有格的第一个名词如果是以s或者es 结尾，后面只需要加“，”。
-
--  I enjoy reading my students’ essays.
-
 ## 人称代词
 
 代词，顾名思义，就是用来代替名词或名词短语的词，在已经知道所指的是谁或什么的情况下使用，以免行文重复。

@@ -12,7 +12,7 @@
 >
 >5. 可数名词：表达单数时用不定冠词（a,an），表达复数时后面加s
 >
->6. 主谓一致：（simply-version：主语单数时，动词用三单，情态动词除外）
+>6. 主谓一致：（simply-version：主语单数时，动词用三单，情态动词除外）【前提：一般现在时】
 >
 >     - 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
 >     - 主语为单数时，动词用三单（加-s/es）
@@ -27,10 +27,23 @@
 >- 定语：用于修饰名词， 短定语放前面，长定语放后面。
 >- 状语：用于修饰动词，顺序：方式、地点、时间
 
-扩展句型：
+### 扩展句型
 
 - 可可英语-句型：https://www.kekenet.com/course/15288
 - 微信读书-句型（扩展）：https://weread.qq.com/web/reader/1b4324305c87a81b49b65c7kc7432af0210c74d97b01b1c
+
+### AI Copilot
+
+- [造句作业批改：Gemini-Pro](https://gemini.google.com/app/4ac3c75761994108)
+- [造句作业批改：ChatGPT（No need to use Reason）](https://chatgpt.com/g/g-CX4YNVw3l-ying-yu-xue-xi-gpt-english-learning-gpt/c/68886459-e56c-8010-bb43-ec83845e5070)
+
+---
+
+- [句子结构解析：ChatGPT (No need to use Reason)](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
+
+- [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
+
+- 在线句子解析：https://www.kogrammar.com/analyze/
 
 ## 一、基本句型
 
@@ -80,19 +93,30 @@
 - He bought me a flower. (他给我买了一朵花。)
 - My father told me a story. (我父亲给我讲了一个故事。)
 
->- A few years ago, I bought my mother a phone .
+>- He gives me a pen.
+>- My colleague shows me his job responsibilities.
+>- I bring my friend some fruit.
+>- I lend my best friend some money.
+>- I return an umbrella to the company.
+>- His supervisor writes him a letter of recommendation.
+>- I paid for the order for her.
+>- I teach my classmate coding.
+
+>- A few years ago, I bought my mother a phone.
 >- She send me  a message.
 
 **间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 `to` 或者 `for`**
 
-**`to` ：表示将某物传递/给予某人 （强调动作的转移 ）。`give`, `send`, `show`, `bring`, `lend`, `tell`, `return`**
+**`to` ：表示将某物传递/给予某人 （强调动作的转移 ）。**
 
-**`for` ：表示为某人做某事/买某物 （强调动作的目的 或利益 ）。`buy`, `make`, `find`, `cook`, `build`, `order`, `pay`**
+**`for` ：表示为某人做某事/买某物 （强调动作的目的 或利益 ）。**
 
 - Her father bought her a bicycle
-- Her father bought a bicycle `for` her
+  - Her father bought a bicycle `for` her
+
 - The old man is telling the children stories
-- The old man is telling stories `to` the children
+  - The old man is telling stories `to` the children
+
 
 > - A few years ago, I bought a phone for my mother.
 >
@@ -180,40 +204,81 @@ The girl is reading a book.
 
 **常见介词：`at`, `on`, `in`, `before`, `after`, `during`**
 
-**==At [具体时间], S V …==**  
+**==At [具体时间], S V …==**  ：具体的“时间点”，时刻（几点几分）
 
 - **At 7 o’clock,** I started the meeting.  
 - **At midnight,** they finished the project.  
 
-**==at once==（立刻）**
+> - At 2 o' clock, I will go back to the rented house.
+> - At 2 p.m.,  I will move house.
+> - At 2 a.m.,  I will move house.
+> - At 7:00 a.m., I need to go the house and unlock it.
+> - At 8:30 a.m., I have to go open up the house.
+> - At midnight, we take the elevator to the third floor for dinner.
+>   - midnight：凌晨12点
+> - At noon, someone prepares the lottery.
+>   - noon：中午12点
 
-- Please come here **at once**!
+**==On [星期几/具体日期], S V …==**  ：具体的某一天（包括带有“星期几”、“具体日期”、“节日的某一天”）
 
-**==at the same time==（同时）**
+- **On Fridays,** I attend an online yoga class.  
+- **On July 4th,** we enjoy fireworks.  
 
-- He laughed and cried **at the same time**.
+> - On Friday, I have a task，which is move house.
+> - On Thursday, I have to move house.
+> - On August 1sh, I need to apply for days off.
+> - On National Day,  we watch the military parade on TV together. 
 
-**==In the [时间段], S V …==**  
+**==In the [时间段], S V …==**  ：较长时间范围（月份、年份、世纪、某段时间）
 
 - **In the morning,** she practices the piano.  
 - **In the evening,** we watch movies together.
 - I’ll call you **in the afternoon**.  
 - They like to read books **in the evening**.
 
+> - In the morning, I go to the rented house to measure the length of the desk.
+> - In the morning, I head to the rented house to measure the desk's length.
+> - I moved house twice in 2025.
+> - In August,  my workload will be light.
+> - My workload  will decrease in Auguest.
+
+**==at once==（立刻）**:常用于比较紧急的命令或请求，可能给人一种强迫的感觉（更温和的表达：**immediately**、**right away**）
+
+- Please come here **at once**!
+
+> - Please learn English at once!
+> - Start work at once!
+> - Drink water at once!
+
+**==at the same time==（同时）**
+
+- He laughed and cried **at the same time**.
+
+> - He is working and learning at the same time.
+> - I watch videos and drink tea at the same time.
+>   - I often watch videos and drink tea simultaneously.
+>   - I am watching videos and drinking tea at the same time.
+> - My friend watches live streams and  writes code with Gemini CLI at the same time.
+
 **==After [事件], S V …==**  
 
 - **After dinner,** we went for a walk.  
 - **After the rain stopped,** children ran outside.  
 
-**==On [星期几/具体日期], S V …==**  
-
-- **On Fridays,** I attend an online yoga class.  
-- **On July 4th,** we enjoy fireworks.  
+> - After moveing house, I should sleep well.
+> - After work, I need to buy some cleaning tools and vegetables for breakfast.
+> - After eating lunch, I have to call phone to apply for opening natural gas.
+>   - have to表示必须做，need to表示有必要做
+> - After eating lunch , I need to call the gas company to active the natural gas service.
 
 **==During [节假日/月份/学期], S V …==（在……期间）**  
 
 - During the winter break, she visited her cousins in Canada.  
 - During exam week, students study late into the night.  
+
+> - During August,  I will have to move house.
+> - During the second half of the year, I need to learn hard and prepare for the IELTS exam.
+> - During the weekend, if it doesn't rain I want to visit my mother.
 
 ---
 
@@ -831,12 +896,6 @@ The girl is reading a book.
 - `I couldn't agree more:` this app really changed how I work. 我完全同意：这个应用真的改变了我的工作方式。
 
 ## 例句整理
-
-> - [句子结构解析：ChatGPT (No need to use Reason)](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
->
-> - [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
->
-> - 在线句子解析：https://www.kogrammar.com/analyze/
 
 ### 99句
 
