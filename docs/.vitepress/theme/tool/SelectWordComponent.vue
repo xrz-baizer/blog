@@ -2,7 +2,7 @@
   <div class="word-editor-container">
     <h1>Vocabulary Editor</h1>
 
-    <div class="upload-section" @click="$refs.fileInput.click()">
+    <div class="upload-section">
       <label for="file-input" class="upload-label">
         Click here to upload your JSON Vocabulary
       </label>
