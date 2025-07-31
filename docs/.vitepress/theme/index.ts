@@ -11,6 +11,7 @@ import { formatTimestamp,recordView,fetchViews } from './custom/function.js'
 import Category from './custom/Category.vue'
 import ConvertWordComponent from './tool/ConvertWordComponent.vue'
 import AudioLyricPlayer from './tool/AudioLyricPlayer.vue'
+import SelectWordComponent from './tool/SelectWordComponent.vue'
 
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 
@@ -35,6 +36,7 @@ export default {
     app.component('category', Category);
     app.component('convertWordComponent', ConvertWordComponent);
     app.component('audioLyricPlayer', AudioLyricPlayer);
+    app.component('SelectWordComponent', SelectWordComponent);
 
 
   },
