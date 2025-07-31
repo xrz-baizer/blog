@@ -205,7 +205,6 @@ export const articlesMap = {
   "02-Other/EnglishLearning/PronunciationSkills.md": " 读音规则（常用） 元音字母`a` `e` `i` `o` `u`在开/闭音节中发不同的音 开音节（单词后面没有辅音结尾） 开音节是以一个元音结尾的音节，通常没有辅音跟在元音后面。一般发其字母本身的音。 - 例如：be, go, she, my。 闭音节 闭音节是以一个辅音结尾的音节，元音字母前通常有一个或多个辅音。一般发短元音音值。 - 例如：cat, pen, sit, top, run。 元",
   "02-Other/Html工具/AudioLyricPlayer.md": "<audioLyricPlayer />",
   "02-Other/Html工具/ConvertWords.md": "<convertWordComponent />",
-  "02-Other/Html工具/SelectComponent.md": "<SelectWordComponent /> layout: page title: Select Words sidebar: true ",
   "02-Other/index.md": "<category/>",
   "02-Other/生活百科/执行标准指南.md": " GB的含义 GB是“国家标准（Guójiā Biāozhǔn）”的缩写。 GB标准由国家市场监督管理总局和中国国家标准化管理委员会发布，具有强制性或推荐性： - 强制性标准（`GB`）：法律法规要求强制执行，例如食品安全国家标准。 - 推荐性标准（`GB/T`）：建议性标准，通常适用于产品质量要求。 - 行业标准（`QB/T`，机械行业）：适用于特定行业。 - 地方标准（`DB`）：由地方政府制",
   "02-Other/生活百科/服装材料选择指南.md": " 服装的安全技术类别 根据GB 18401《国家纺织产品基本安全技术规范》，服装按安全技术性能划分为以下三个类别： 类别 A类 B类 C类 > 建议只买B类及上。商品详情、 标签未明显标出安全类别的，都是不合格产品！注意甄别！！！ 常见材料 面料 聚酯纤维 棉 羊毛 亚麻 丝绸 尼龙 腈纶 氨纶 粘纤 混纺材料 混纺材料 棉+聚酯纤维 羊毛+聚酯纤维 尼龙+氨纶 棉+氨纶 羊毛+腈纶 丝绸+聚酯纤",
