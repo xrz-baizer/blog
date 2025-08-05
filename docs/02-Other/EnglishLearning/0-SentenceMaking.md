@@ -5,8 +5,9 @@
 >1. 分句型：有动作就是主谓宾，否则就是主系表
 >
 >2. 形容词只修饰名词，副词修饰其它的词（通常修饰动词）
+>   -  副词的位置：实义动词前、助动词/情态动词后、be动词后
 >
->3. 间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 to 或者 for
+>3. 双宾语的位置：间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 to 或者 for
 >
 >4. 介词（介词词组）后面只能出现名词（动名词）
 >
@@ -14,14 +15,16 @@
 >
 >6. 主谓一致：（simply-version：主语单数时，动词用三单，情态动词除外）【前提：一般现在时】
 >
->     - 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
->     - 主语为单数时，动词用三单（加-s/es）
->     - 有情态动词时（can/may/must等） ，动词用原形（无视主语单复数）
+>   - 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
+>   - 主语为单数时，动词用三单（加-s/es）
+>   - 有情态动词时（can/may/must等） ，动词用原形（无视主语单复数）
 >
 >
 >---
 >
->找主干（有动作就是主谓宾，否则就是主系表）
+>句型分析：
+>
+>- 找主干（有动作就是主谓宾，否则就是主系表）
 >
 >- 看时态
 >- 定语：用于修饰名词， 短定语放前面，长定语放后面。
@@ -39,7 +42,7 @@
 
 ---
 
-- [句子结构解析：ChatGPT (No need to use Reason)](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
+- [句子结构解析：ChatGPT (o4-mini)](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
 
 - [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
 
@@ -291,10 +294,20 @@ The girl is reading a book.
 - **In the park,** children play happily.  
 - **In the library,** she reads quietly.  
 
+> - In the park, I am running.
+> - In Yuehai Park, I run every day.
+> - In the rented house, I study hard.
+
 **==On the [表面/街道], S V …==（在……表面 / 街道上）**  
 
 - **On the street,** people walk their dogs.  
 - **On the wall,** a painting hangs
+
+> - On the street, two men quarreled last night.
+> - Two men quereled for dinner on the street last night.
+> - On the wall, a mirror hangs.
+> - On the bed,  I placed two pillows.
+> - I put two pillows on the bed.
 
 **==At the [具体地点], S V …==（在……具体地点）**  
 
@@ -302,15 +315,28 @@ The girl is reading a book.
 - **At the station,** we boarded the train.  
 - There’s a café **at the corner** of this street.
 
+> - At the gym, I only use the treadmill.
+> - I am studying English at my workstation.
+> - At the subway station, I often use the BaiCiZhan app to memorize words.
+> - At the subway station, I often memorize words with the BaiCiZhan app.
+
 **==Under the [地点], S V …==（在……下面）**  
 
 - **Under the tree,** kids enjoy a picnic.  
 - **Under the bridge,** fishermen cast nets.  
 
+> - Under the bed, people usually place storage boxes.
+> - Under my bed, I often put some boxes with clothes.
+> - Under my bed, I often put some boxes full of clothes.
+
 **==Over the [地点], S V …==（在……上方 / 越过……）**  
 
 - **Over the bridge,** the view is breathtaking.  
 - **Over the city,** the plane flew at low altitude.  
+
+>- Over the building, many birds flew.
+>  - Many birds flew over the building.
+>- Over the village, a helicopter sometime flies.
 
 **==Behind the [地点], S V …==（在……后面）**  
 

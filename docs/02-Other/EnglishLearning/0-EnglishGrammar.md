@@ -808,38 +808,70 @@ I know (that) the rabbit ate a carrot. 我知道兔子吃了一根胡萝卜
 > - The rabbit was frightened. 兔子感到害怕（兔子被某事吓到了，所以使用过去分词）
 > - the developed countries. 发达国家（发展阶段已经结束了）
 
-
 ## 助动词&情态动词
 
-助动词定义：用来辅助主要动词，不能单独做谓语动词。
+#### 一、为什么需要 助动词 & 情态动词
 
->**I <u>will</u> <u>call</u> you tomorrow.** 
->
->- will 为助动词，call为主要动词
->
->**I call you tomorrow.** 
->
->- 语法错误：tomorrow明确表示将来时间，即句子意图是表达将来动作，应该使用 "will" 辅助call构成将来时。
->
->**I will you tomorrow.** 
->
->- 语法错误：缺乏主要动词，will不能单独做谓语动词。
+英语动词本身功能单一，需要“帮手”来表达复杂的语法结构和丰富的语气。
 
-**基本助动词**：`be`、`have`、`do`
+> **生动比喻：**
+>
+> - **主要动词** = **主食材** (如：fish, chicken)
+> - **助动词** = **厨具** (如：pot, pan) -> 用于构建，无味道
+> - **情态动词** = **调味品** (如：salt, pepper) -> 用于增添风味
 
-- 这三个动词作 **助动词** 时没有实际含义。（She <u>is</u> <u>writing</u> a letter. ==is== **没有实际含义**）
-- 不过这三个动词也可以单独做谓语动词，那就有自己的实际含义了。（She <u>is</u> a teacher. is=是）
+**I <u>will</u> <u>call</u> you tomorrow.** 
 
-**情态助动词（有实际含义，但是不能单独做谓语动词）**
+- will 为助动词，call为主要动词
 
-- `can/could` 可以、能
-- `may/might` 可能
-- `will/would` 将要、会
-- `shall/should` 应该
-- `must` 必须
-- `ought to` 应该
-- `dare/dared` 敢
-- `need` 需要
+**I call you tomorrow.** 
+
+- 语法错误：tomorrow明确表示将来时间，即句子意图是表达将来动作，应该使用 "will" 辅助call构成将来时。
+
+**I will you tomorrow.** 
+
+- 语法错误：缺乏主要动词，will不能单独做谓语动词。
+
+
+
+#### 二、助动词 (Auxiliary Verbs) 
+
+- **定义**：没有实际词义，是帮助主要动词构成完整语法结构的**语法工具**。用来辅助主要动词，不能单独做谓语动词。
+- **主要成员**：`do`, `be`, `have`
+
+**核心功能：**
+
+1. **构成否定与疑问** (主要用 `do/does/did`)
+   - 肯定: I know.
+   - 否定: I **do** not know.
+   - 疑问: **Do** you know?
+2. **构成时态**
+   - **进行时** (`be + v-ing`): He **is** watch**ing** TV.
+   - **完成时** (`have + v-pp`): They **have** finish**ed** the game.
+3. **构成被动语态** (`be + v-pp`)
+   - The window **was** broken.
+4. **加强语气** (用 `do/does/did`)
+   - He **does** work very hard. (他确实非常努力。)
+
+
+
+#### 三、情态动词 (Modal Verbs) - 情绪的“表达者”
+
+- **定义**：有实际词义，用来表达说话人的**情感、态度、观点**等。
+- **核心规则**：**情态动词 + 动词原形**（有实际含义，但是不能单独做谓语动词）
+
+**核心功能 (分类记忆)：**
+
+| 功能分类      | 常用词                  | 示例                                   |
+| ------------- | ----------------------- | -------------------------------------- |
+| **能力**      | `can`, `could`          | She **can** play the piano.            |
+| **可能**      | `may`, `might`, `could` | He **might** be late.                  |
+| **允许**      | `can`, `may`            | **May** I sit here?                    |
+| **义务/必须** | `must`, `have to`       | You **must** follow the rules.         |
+| **建议/责任** | `should`, `ought to`    | You **ought to** be more patient.      |
+| **意愿/将来** | `will`, `would`         | I **will** call you later.             |
+| **征求意见**  | `shall`                 | **Shall** we begin?                    |
+| **命令/规定** | `shall`                 | The tenant **shall** pay rent on time. |
 
 ## 使役动词
 
