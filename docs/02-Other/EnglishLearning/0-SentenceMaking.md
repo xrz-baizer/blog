@@ -37,7 +37,7 @@
 
 ### AI Copilot
 
-- [造句作业批改：Gemini-Pro](https://gemini.google.com/app/4ac3c75761994108)
+- [造句作业批改：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/8534cdba199173ae)
 - [造句作业批改：ChatGPT（No need to use Reason）](https://chatgpt.com/g/g-CX4YNVw3l-ying-yu-xue-xi-gpt-english-learning-gpt/c/68886459-e56c-8010-bb43-ec83845e5070)
 
 ---
@@ -344,11 +344,20 @@ The girl is reading a book.
 - **Behind the curtain**, she peeks out.  
 - The cat is hiding **behind** the sofa.
 
+>- Behind the rented house, a barbershop is opening.
+>- Behind the computer desk, there is a cupboard.
+
 **==Between [A] and [B], S V …==（在 A 和 B 之间）**  
 
 - **Between** the two buildings, there is a small alley.
 - **Between** her work **and** family, she balances both.  
 - The bank is **between** the post office **and** the library.
+
+> - Between the shop and the restaurant, there's a little small alley.
+> - Between mental health and physical health, I balance both.
+> - Between mental health and physical health, I try to balance both.
+> - Walmart is between the aquarium and the restaurant.
+> - Walmart is located between the city aquarium and a popular restaurant.
 
 **==Next to [X], S V …==（紧挨着 / 紧靠着 / 在……旁边）**  ：比beside更近
 
