@@ -2,22 +2,27 @@
 
 ## Introduction
 
->1. 分句型：有动作就是主谓宾，否则就是主系表
+>- 分句型：有动作就是主谓宾，否则就是主系表
 >
->2. 形容词只修饰名词，副词修饰其它的词（通常修饰动词）
->   -  副词的位置：实义动词前、助动词/情态动词后、be动词后
+>- 形容词只修饰名词，副词修饰其它的词（通常修饰动词）
 >
->3. 双宾语的位置：间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 to 或者 for
+>  - 副词的位置：实义动词前、助动词/情态动词后、be动词后
 >
->4. 介词（介词词组）后面只能出现名词（动名词）
+>- 双宾语的位置：间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 to 或者 for
 >
->5. 可数名词：表达单数时用不定冠词（a,an），表达复数时后面加s
+>- 介词（介词词组）后面只能出现名词（动名词）
 >
->6. 主谓一致：（simply-version：主语单数时，动词用三单，情态动词除外）【前提：一般现在时】
+>- 可数名词：表达单数时用不定冠词（a,an），表达复数时后面加s
 >
->   - 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
->   - 主语为单数时，动词用三单（加-s/es）
->   - 有情态动词时（can/may/must等） ，动词用原形（无视主语单复数）
+>- 主谓一致：（simply-version：主语单数时，动词用三单，情态动词除外）【前提：一般现在时】
+>
+>    - 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
+>
+>    - 主语为单数时，动词用三单（加-s/es）
+>
+>    - 有情态动词时（can/may/must等） ，动词用原形（无视主语单复数）
+>
+>- 翻译技巧：如果中文句子里没有明确的谓语，那么谓语就是隐藏的“是”，并且“是”后面的内容多半是形容词。
 >
 >
 >---
@@ -424,13 +429,16 @@ The girl is reading a book.
 
 **常见介词/短语：`with`, `by`, `on`, `using`**
 
-**==S V with [方式].==（以……方式、带着……情绪 / 态度 / 特征）**  
+**==S V with [方式（名词）].==（以……方式、带着……情绪 / 态度 / 特征）**  
 
 - She greeted me **with a smile**.  
 - He spoke **with anger**.
 - He responded **with enthusiasm**.  
 - He spoke **with confidence** during the presentation.
 - Please handle the glassware **with care**.
+
+>- I am learning English with seriousness.
+>- He apologized with sincerity.
 
 **==S V by [交通工具/方法].==（通过……方式、用……手段、由于……原因）**  
 
@@ -439,15 +447,34 @@ The girl is reading a book.
 - I sent the email to John **by mistake**.
 - I met my old teacher **by chance** in the mall.
 
+> - I  go to work by subway every day.
+>
+> - I used to go to work by bus.
+> - I want to send my gaming chair to my hometown by courier.
+> - I want to ship my gaming chair back home by courier.
+> - A few days ago, I committed the code to the remote repository by mistake.
+> - I met my supervisor by chance in the subway station.
+
 **==S V on [方式].==（基于、出于）**  
 
 - He broke the vase **on purpose**.  
 - She acted **on impulse**.  
 
+> - He stays healthy on purpose.
+> - He keeps healthy habits on purpose.
+> - I rent the house on impulse.
+> - He runs out of the house on impulse.
+
 **==S V using [工具/方法].==（用、利用、使用、借助）** 
 
 - She edited the photo **using Photoshop**.  
 - He fixed the leak **using tape**.  
+
+> - He learns English using his laptop.
+> - He learns English using a laptop and online resources.
+> - He writes code using IntelliJ IDEA.
+> - I record running data using my phone.
+> - I record my running data using a  fitness app on my phone.
 
 ---
 
@@ -460,15 +487,28 @@ The girl is reading a book.
 - You need to sleep **at least** eight hours.  
 - She eats **at least** two servings of vegetables daily.  
 
+> - I run in the park at least three times a week.
+> - He drinks tea at least twice a day.
+> - He has tea at least two or three times every day.
+> - He runs at least once on the weekend.
+
 **==S V at most [数量/程度].==（最多）**  
 
 - He scored **at most** 90 points on the test.  
 - The box can hold **at most** ten books.
 
+> - I run in the park at most four times a week.
+> - A serving of tea can be brewed at most two times.
+> - The box can hold at most twenty items of clothing.
+
 **==S V in part [原因].==（部分地）**  
 
 - The success was **in part** due to her hard work.  
 - The delay was **in part** because of traffic.  
+
+> - The failure is in part due to his lack of offort.
+> - I have a healthy body in part due to I often running.
+> - The project failure was in part due to the project manager being frequently changed.
 
 **==S V to some extent [评价].==（在某种程度上）**
 
