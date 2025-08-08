@@ -44,10 +44,88 @@
 
 - She loves chocolate.
 
-**==否定陈述句：主语 + 助动词 + not + 动词 + 其他成分==**
+#### 陈述句 变 否定句
 
-- She does not like tea.
-- They are not happy.
+---
+
+**情况一：==句中有 be 动词 (am, is, are, was, were)==**
+
+> 规则：直接在 **be** 动词后面加 **not**。
+
+He **is** a doctor.
+
+- He **is not** a doctor.
+
+-  He **isn't** a doctor.
+
+They **were** busy yesterday.
+
+- They **were not** busy yesterday.
+
+- They **weren't** busy yesterday.
+
+**【常见缩写】**
+
+- is not → `isn't`
+- are not → `aren't`
+- was not → `wasn't`
+- were not → `weren't`
+- (**am not** 没有通用的缩写，口语中 `I'm not` 最常见)
+
+---
+
+**情况二：==句中有情态动词 (can, will, should, must 等)==**
+
+> 规则：直接在情态动词后面加 **not**，后面的动词**保持原形**。
+
+You **can** park here.
+
+- You **can not** park here.
+- You **can't** park here. (注意 cannot 通常写成一个词)
+
+She **will** come to the party.
+
+- She **will not** come to the party.
+- She **won't** come to the party. (注意 will not 的特殊缩写)
+
+---
+
+**情况三：==句中有助动词 have/has/had (用于完成时态)==**
+
+> 规则：直接在 have/has/had 后面加 not，后面的动词**保持过去分词**。
+
+I **have** finished my homework.
+
+- I **have not** finished my homework.
+- I **haven't** finished my homework.
+
+He **has** seen the movie.
+
+- He **has not** seen the movie.
+- He **hasn't** seen the movie.
+
+---
+
+**情况四：==句中只有一般动词 (如 love, like, work, go)==**
+
+> 规则：需要根据人称和时态，在动词前添加 **do not**, **does not**, 或 **did not**，同时主要动词**变回原形**。
+>
+> - 一般用**do**, 三单时用**does**，过去时用**did**
+
+They **work** on weekends.
+
+- They **do not** work on weekends. (主语非三单，用 do)
+- They **don't** work on weekends.
+
+She **loves** chocolate.
+
+- She **does not love** chocolate. (主语是三单 She，用 does，loves 变回 love)
+- She **doesn't love** chocolate.
+
+He **went** to the store.
+
+- He **did not go** to the store. (过去时，用 did，went 变回 go)
+- He **didn't go** to the store.
 
 ### 祈使句(imperatives)
 
@@ -96,18 +174,50 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 >  以助动词或情态动词开头，对某事进行提问，通常答案是 “Yes” 或 “No”。
 
-**结构：==助动词/情态动词 + 主语 + 谓语 + 其它?==**
+**结构：==助动词/情态动词 + 主语 + 动词原形/过去分词 + ...?==**
 
-如果句子中有动词 **be** 或 **情态动词**，它们直接移到句首。
+---
 
-如果句子是一般动词，则需要加上助动词 **do/does/did**。
+**情况一：句中有 `be` 动词 (`am, is, are, was, were`)**
 
-- 含be动词：==Are== you from Japan? —Yes, I am.
-- 含情态动词：==Can== she drive?
-- 含一般动词，需加上助动词 do/does/did： 
-  - ==Do== you ==like== horror films? —No, I don't.
-  - ==Does== she ==like== apples? 
-  - ==Did== you ==finish== your homework?
+> 直接将 be 动词提到句首。
+
+- He **is** an engineer. → **Is** he an engineer?
+- They **were** late. → **Were** they late?
+
+---
+
+**情况二：句中有情态动词 (Modal Verbs)**
+
+> 常见情态动词：can, could, may, might, will, would, shall, should, must
+>
+> 直接将情态动词提到句首，后面的动词**保持原形**。 
+
+- She **can** speak French. → **Can** she speak French?
+- You **should** see a doctor. → **Should** you see a doctor?
+- They **will** arrive tomorrow. → **Will** they arrive tomorrow?
+
+---
+
+**情况三：句中有助动词 `have/has/had` (完成时态)**
+
+> 直接将 have/has/had 提到句首，后面的动词**保持过去分词**。
+
+- You **have** finished the report. → **Have** you finished the report?
+- She **has** been to Paris. → **Has** she been to Paris?
+- He **had** left before I arrived. → **Had** he left before I arrived?
+
+---
+
+**情况四：句中只有一般动词 (如 `play, work, eat`)**
+
+> 这是唯一需要“无中生有”添加助动词的情况。
+>
+> 根据时态和人称，在句首加上 **do**, **does**, 或 **did**，句子中的主要动词**变回原形**。
+
+- You **like** coffee. → **Do** you **like** coffee? (主语是 `you`，用 `do`)
+- He **works** hard. → **Does** he **work** hard? (主语是 `he`，用 `does` 三单，`works` 变回 `work`)
+- They **went** home. → **Did** they **go** home? (过去时，用 `did`，`went` 变回 `go`)
 
 #### 特殊疑问句(special questions)
 
@@ -116,6 +226,10 @@ What 后面通常接名词或名词短语，强调事物本身。
 **结构：==疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它?==**
 
 常见的疑问词：**What, Where, When, Why, Who, Which, How**
+
+**How much** (多少 - 对不可数名词) / **How many** (多少 - 对可数名词)
+
+**How long** (多久) / **How often** (多常) / **How far** (多远)
 
 - Where have you been?
 - When did she leave?

@@ -365,11 +365,19 @@ The girl is reading a book.
 - Next to him, his sister sat quietly.  
 - My house is next to a supermarket.
 
+>- Next to the restaurant, there is a Cainiao station.
+>- My seat is next to my leader's.
+>- My bed is next to the cabinet..
+
 **==Beside [X], S V …==（在……旁边）**  
 
 - **Beside** the river, they set up a tent.  
 - **Beside** the road, wildflowers bloom.  
 - She sat **beside** her best friend.
+
+> - Beside the subway station, there is a community service center.
+> - Beside the bus station, pedestrians are often in a hurry.
+> - I sit beside my hardworking leader.
 
 **==In front of [X], S V …==（在……前面）**  
 
@@ -377,20 +385,38 @@ The girl is reading a book.
 - **In front of** the mirror, she practices makeup.  
 - The car stopped **in front of** the school.
 
+> - In front of my colleague,  I am learning English.
+> - In front of my company, a branch of Mercedes-Benz is located.
+> - My phone is in front of the laptop.
+
 **==On the left of [X], S V …==**  
 
 - **On the left of** the museum, there is a gift shop.  
 - **On the left of** the stage, the lights flicker.  
+
+> - On the left of the laptop, there is a pair of earplugs.
+> - On the left of the laptop, there are two earplugs.
+>
+> - On the left of the keyboard, a touchpad is located.
 
 **==On the right of [X], S V …==**  
 
 - **On the right of** the theatre, a parking lot is available.  
 - **On the right of** the building, ivy climbs the wall.  
 
+> - On the right of my company, there are a lot of apartments.
+> - On the right of my laptop, there is a small fan.
+
 **==on the left / on the right==（在左边/右边）**
 
 - The pharmacy is **on the left**.
 - The museum is **on the right**.
+
+> - A branch of Mercedes-Benz is on the left.
+> - The Mercedes-Benz branch is on the left.
+> - My leader's seat is on the left.
+> - The seat of my leader is on the left.
+> - A number of coworkers sit on the right.
 
 ---
 
