@@ -47,7 +47,7 @@
 
 ---
 
-- [句子结构解析：ChatGPT (o4-mini)](https://chatgpt.com/c/687e469d-7b7c-8010-a731-203bcc8463ca)
+- [句子结构解析：ChatGPT ](https://chatgpt.com/c/689896bf-1550-8327-a87f-a7adc2abd785)
 
 - [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
 
@@ -850,151 +850,304 @@ The girl is reading a book.
 
 ## 口语写作句型
 
-#### ==The reason why... is that...==
+### 一、表达个人观点
 
-**用于解释原因，特别适合写作或Part 2/3口语描述。**
+**`From my perspective, ...` 从我的角度来看，……；在我看来，……**
 
-- `The reason why` I chose this job `is that` it gives me a lot of freedom. 我选择这份工作的原因是它给了我很大的自由。
-- `The reason why` she left early `is that` she wasn’t feeling well. 她早退的原因是她身体不舒服。
+- From my perspective, learning a second language opens up more opportunities.
+  从我的角度来看，学习第二语言能带来更多机会。
+- From my perspective, public transport should be improved before building more roads.
+  在我看来，应该先改善公共交通，再修更多道路。
 
->- The reason why I want to buy a kettle is that I want to drink warm water.
->- The reason why I learn English is that I want to have a better life.
->- The reason why I am here is that I have to work late hours.
+**`It seems to me that ...` 在我看来；依我看……**
 
-####  ==Not only... but also...==
+- It seems to me that young people today are more health-conscious than before.
+  我觉得现在的年轻人比以前更注重健康。
+- It seems to me that working from home saves both time and money.
+  我认为在家办公既省时间又省钱。
 
-**表达“不仅……而且……”，强调信息对等，句子有层次感。**
+**`As far as I’m concerned, ...` 就我而言；在我看来……**
 
-- `Not only` is he smart, `but` he `also` works really hard. 他不仅聪明，而且非常努力。
-- `Not only` did we visit the museum, `but` we `also` had a great lunch nearby. 我们不仅参观了博物馆，还在附近吃了一顿很棒的午餐。
+- As far as I’m concerned, honesty is the most important quality.
+  就我而言，诚实是最重要的品质。
+- As far as I’m concerned, online learning is just as effective as classroom learning.
+  在我看来，线上学习和课堂学习一样有效。
 
-#### ==It is + adj + to do sth==
+**`To be honest, ...` 说实话，……（用于表达真实感受或观点，通常带有一些保留或批评）**
 
-**描述一件事的特性，是万能形容结构，随时能用。**
+- To be honest, I don’t really like the new design.
+  说实话，我不太喜欢这个新设计。
+- To be honest, I forgot about the meeting.
+  说实话，我把会议忘了。
 
-- `It is` important `to get` enough sleep every night. 每天晚上睡够觉是很重要的。
-- `It’s` hard `to say` no to free food. 拒绝免费的食物真的很难。
+**`Let me just say, ...` 我得说；让我先说一句……（用于强调接下来要说的话，通常带有个人情绪或态度）**
 
-#### ==What I like / love / hate about... is that...==
+- Let me just say, that presentation was amazing.
+  我得说，那场演讲太棒了。
+- Let me just say, I totally disagree with that idea.
+  我得说，我完全不同意那个观点。
 
-**口语中表达喜好或抱怨特别自然的句式。**
+**`I’m really into ...` 我非常喜欢 / 我很热衷于……（示强烈的兴趣或爱好）**
 
-- `What I love about` this city `is that` it’s so full of life. 我喜欢这座城市的原因是它充满活力。
-- `What I hate about` Mondays `is that` I have to wake up early. 我讨厌星期一的原因是我得早起。
+- I’m really into open-world games lately.
+  我最近特别喜欢开放世界游戏。
+- I’m really into learning English through podcasts.
+  我很喜欢通过播客学英语。
 
-#### ==There’s no doubt that...==
+**`I’m on the fence about ...` 我对……还拿不定主意 / 犹豫不决（表达对某事犹豫不决、没有立场）**
 
-**表达“毫无疑问”，让你的观点更坚定、更有说服力。**
+- I’m on the fence about switching jobs.
+  我对是否换工作还拿不定主意。
+- I’m on the fence about which framework to use.
+  我还在犹豫用哪个框架。
 
-- `There’s no doubt that` exercise is good for your health. 毫无疑问，锻炼对健康有益。
-- `There’s no doubt that` technology has changed the way we live. 毫无疑问，科技改变了我们的生活方式。
+**`I couldn’t agree more ...` 我完全同意（表示强烈赞同某人的观点）**
 
-#### ==As far as I’m concerned, ...==
+- I couldn’t agree more with your opinion on this topic.
+  我完全同意你对这个话题的看法。
+- I couldn’t agree more: this app really changed how I work.
+  我完全同意：这个应用真的改变了我的工作方式。
 
-**用来表达个人观点。**
+**`That makes sense.` 有道理 / 我明白了。（用于表示理解或认同对方说法。）**
 
-- `As far as I’m concerned,` honesty is the most important quality. 就我而言，诚实是最重要的品质。
-- `As far as I’m concerned,` online learning is just as effective as classroom learning. 我认为，线上学习和课堂学习一样有效。
+- That makes sense. Now I get what you mean.
+  有道理，我现在明白你意思了。
+- That makes sense, given the current situation.
+  鉴于目前的情况，这说得通。
 
-#### ==The more..., the more...==
+**`What I like/love/hate about ... is that ...` 我喜欢/爱/讨厌……是因为……（口语中表达喜好或抱怨特别自然的句式）**
 
-**表示“越……，越……”，用于因果或强调趋势。**
+- What I love about this city is that it’s so full of life.
+  我喜欢这座城市的原因是它充满活力。
+- What I hate about Mondays is that I have to wake up early.
+  我讨厌星期一的原因是我得早起。
 
-- `The more` you practice`, the` better you get. 你练习得越多，你就会越熟练。
-- `The more` I read`, the more` I want to learn. 我读得越多，就越想学习。
+**`It goes without saying that ...` 不言而喻……（表示某事显而易见、不言而喻）**
 
-#### ==Compared to..., ...==
+- It goes without saying that teamwork is essential.
+  团队合作的重要性不言而喻。
+- It goes without saying that security should come first.
+  安全当然应该放在第一位。
 
-**用于比较，特别适合写作段落开头或转折。**
 
-- `Compared to` last year`,` I feel much more confident. 和去年比起来，我自信多了。
-- `Compared to` city life`,` the countryside is much quieter. 和城市生活相比，乡村要安静得多。
+### 二、引出原因或解释
 
-#### ==It seems that...==
+**`This is mainly because ...` 这主要是因为……**
 
-**表达推测或观察。**
+- People prefer online shopping. This is mainly because it is convenient and time-saving.
+  人们更喜欢网购，这主要是因为它方便且省时。
+- The city’s air quality has improved. This is mainly because of stricter environmental laws.
+  该城市空气质量改善了，这主要是因为环保法规更严格。
 
-- `It seems that` everyone is using AI these days. 现在好像每个人都在用人工智能。
-- `It seems that` he doesn’t want to talk about it. 他好像不想谈这件事。
+**`One possible explanation is that ...` 一个可能的解释是……**
 
-####  ==Whether... or not, ...==
+- One possible explanation is that people have more access to online resources.
+  一个可能的解释是人们能获取更多的线上资源。
+- One possible explanation is that healthier food options have become more affordable.
+  一个可能的解释是健康食品变得更容易负担得起了。
 
-**表达“无论……，都……”，常用于强调不变的决定或态度。**
+**`The reason why ... is that ...` ……的原因是……**
 
-- `Whether` you like it `or not,` you have to follow the rules. 不管你喜不喜欢，你都得遵守规则。
-- `Whether` it rains `or not,` we’ll still go hiking. 无论下不下雨，我们都要去徒步。
+- The reason why I chose this job is that it gives me a lot of freedom.
+  我选择这份工作的原因是它给了我很大的自由。
+- The reason why traffic congestion is getting worse is that more people are buying cars.
+  交通拥堵加剧的原因是越来越多人买车。
 
-## 地道口语表达句型
 
-#### ==Could you possibly...==
+### 三、举例说明
 
-**用于礼貌地提出请求或建议。**
+**`For example, ... / For instance, ...` 例如 / 比如说**
 
-- `Could you possibly` help me fix this bug? 你能帮我修这个bug吗？
-- `Could you possibly` explain that part again? 你能再解释一下那一部分吗？
+- For example, regular exercise can improve both physical and mental health.
+  例如，规律锻炼能改善身心健康。
+- For instance, reading in a foreign language can boost vocabulary quickly.
+  比如，用外语阅读能迅速增加词汇量。
 
-#### ==Let me just say...==
+**`Such as ...` 如……；例如……**
 
-**用于强调接下来要说的话，通常带有个人情绪或态度。**
+- Many countries, such as Japan and Canada, have strict recycling policies.
+  许多国家，如日本和加拿大，都有严格的回收政策。
+- I enjoy outdoor activities, such as hiking and cycling.
+  我喜欢户外活动，比如徒步和骑行。
 
-- `Let me just say,` that presentation was amazing. 我得说，那场演讲太棒了。
-- `Let me just say,` I totally disagree with that idea. 我得说，我完全不同意那个观点。
+**`A good example of this is ...` 一个很好的例子是……**
 
-#### ==I'm really into...==
+- A good example of this is the rapid growth of electric cars.
+  一个很好的例子是电动车的快速增长。
+- A good example of this is Singapore’s efficient public transport system.
+  一个很好的例子是新加坡高效的公共交通系统。
 
-**表示强烈的兴趣或爱好。**
 
-- `I'm really into` open-world games lately. 我最近特别喜欢开放世界游戏。
-- `I'm really into` learning English through podcasts. 我特别喜欢通过播客学英语。
+### 四、对比与让步
 
-#### ==It's worth doing...==
+**`On the one hand..., on the other hand...` 一方面……，另一方面……**
 
-**表示某事值得去做，有价值。**
+- On the one hand, social media connects people; on the other hand, it can cause distraction.
+  一方面，社交媒体能连接人们；另一方面，它可能分散注意力。
+- On the one hand, city life is exciting; on the other hand, it can be stressful.
+  一方面，城市生活很精彩；另一方面，它可能带来压力。
 
-- `It's worth` learning a second language. 学一门第二语言是值得的。
-- `It's worth` taking time to plan ahead. 提前规划是值得花时间做的。
+**`While it is true that ..., it is also important to note that ...` 虽然……，但同样重要的是……**
 
-#### ==I was wondering...==
+- While it is true that studying abroad is costly, it is also important to note that it provides valuable experience.
+  虽然留学花费高，但它能提供宝贵的经历。
+- While it is true that technology can cause job loss, it is also important to note that it creates new jobs.
+  虽然科技可能造成失业，但也会创造新工作。
 
-**委婉提出请求或表达疑问。**
+**`In contrast, ...` 相比之下……**
 
-- `I was wondering` if you could review my code. 我在想你能不能帮我检查下我的代码。
-- `I was wondering` what the deadline is for this project. 我在想这个项目的截止时间是什么时候。
+- In contrast, rural areas are quieter and have cleaner air.
+  相比之下，农村更安静、空气更清新。
+- In contrast, young people are more open to change than the older generation.
+  相比之下，年轻人更容易接受变化。
 
-#### ==That makes sense...==
+**`Compared to ..., ...` 与……相比……（用于比较，特别适合写作段落开头或转折）**
 
-**用于表示理解或认同对方说法。**
+- Compared to last year, I feel much more confident.
+  和去年比起来，我自信多了。
+- Compared to city life, the countryside is much quieter.
+  和城市生活相比，乡村要安静得多。
 
-- `That makes sense.` Now I get what you mean. 有道理，我现在明白你意思了。
-- `That makes sense,` given the current situation. 鉴于目前的情况，这说得通。
+**`Whether ... or not, ...` 无论……与否，都……（常用于强调不变的决定或态度）**
 
-#### ==To be honest...==
+- Whether you like it or not, you have to follow the rules.
+  不管你喜不喜欢，你都得遵守规则。
+- Whether it rains or not, we’ll still go hiking.
+  无论下不下雨，我们都要去徒步。
 
-**用于表达真实感受或观点，通常带有一些保留或批评。**
 
-- `To be honest,` I don’t really like the new design. 说实话，我不太喜欢这个新设计。
-- `To be honest,` I forgot about the meeting. 说实话，我把会议忘了。
+### 五、强调与总结
 
-#### ==I'm on the fence about...==
+**`It is worth noting that ...` 值得注意的是……**
 
-**表达对某事犹豫不决、没有立场。**
+- It is worth noting that online learning requires strong self-discipline.
+  值得注意的是，线上学习需要很强的自律。
+- It is worth noting that children learn better through play.
+  值得注意的是，孩子通过玩耍学习效果更好。
 
-- `I'm on the fence about` switching jobs. 我对是否换工作还拿不定主意。
-- `I'm on the fence about` which framework to use. 我还在犹豫用哪个框架。
+**`It’s worth doing ...` 值得去做……（表示某事值得去做，有价值）**
 
-#### ==It goes without saying that...==
+- It’s worth learning a second language.
+  学一门第二语言是值得的。
+- It’s worth taking time to plan ahead.
+  提前规划是值得花时间做的。
 
-**表示某事显而易见、不言而喻。**
+**`What matters most is ...` 最重要的是……**
 
-- `It goes without saying that` teamwork is essential. 团队合作的重要性不言而喻。
-- `It goes without saying that` security should come first. 安全当然应该放在第一位。
+- What matters most is having a positive attitude toward challenges.
+  最重要的是对挑战保持积极态度。
+- What matters most is protecting the environment for future generations.
+  最重要的是为下一代保护环境。
 
-#### ==I couldn't agree more...==
+**`In conclusion, ... / To sum up, ...` 总之……**
 
-**表示强烈赞同某人的观点。**
+- In conclusion, adopting a healthy lifestyle benefits everyone.
+  总之，采取健康的生活方式对每个人都有好处。
+- To sum up, renewable energy is essential for sustainable development.
+  总之，可再生能源对可持续发展至关重要。
 
-- `I couldn't agree more` with your opinion on this topic. 我完全同意你对这个话题的看法。
-- `I couldn't agree more:` this app really changed how I work. 我完全同意：这个应用真的改变了我的工作方式。
+**`There’s no doubt that ...` 毫无疑问……（让你的观点更坚定、更有说服力）**
+
+- There’s no doubt that exercise is good for your health.
+  毫无疑问，锻炼对健康有益。
+- There’s no doubt that technology has changed the way we live.
+  毫无疑问，科技改变了我们的生活方式。
+
+**`Not only ... but also ...` 不仅……而且……（强调信息对等，句子有层次感）**
+
+- Not only is he smart, but he also works really hard.
+  他不仅聪明，而且非常努力。
+- Not only did we visit the museum, but we also had a great lunch nearby.
+  我们不仅参观了博物馆，还在附近吃了一顿很棒的午餐。
+
+**`It is + adj + to do sth` 描述某事的特性（万能结构）**
+
+- It is important to get enough sleep every night.
+  每天晚上睡够觉是很重要的。
+- It’s hard to say no to free food.
+  拒绝免费的食物真的很难。
+
+
+### 六、结果与影响
+
+**`As a result, ...` 因此 / 结果是……**
+
+- The population has increased rapidly. As a result, housing prices have gone up.
+  人口快速增长，因此房价上涨了。
+- He studied hard every day. As a result, he passed the exam with flying colours.
+  他每天努力学习，因此高分通过了考试。
+
+**`This leads to ... / leads to ...` 导致 / 引起……**
+
+- High sugar intake leads to health problems such as obesity.
+  高糖摄入会导致肥胖等健康问题。
+- Deforestation leads to the loss of biodiversity.
+  森林砍伐会导致生物多样性丧失。
+
+**`Consequently, ...` 因而 / 结果是……**
+
+- The company failed to innovate. Consequently, it lost market share.
+  公司缺乏创新，因此失去了市场份额。
+- Public transport has improved; consequently, fewer people drive to work.
+  公共交通改善了，因此通勤开车的人减少了。
+
+**`The more ..., the more ...` 越……越……**
+
+- The more you practice, the better you get.
+  你练习得越多，你就会越熟练。
+- The more I read, the more I want to learn.
+  我读得越多，就越想学习。
+
+
+### 七、可能性与假设（推测 / 条件句）
+
+**`It is likely that ...` 很可能……**
+
+- It is likely that renewable energy will replace fossil fuels in the future.
+  很可能可再生能源将在未来取代化石燃料。
+- It is likely that online learning will become more popular.
+  很可能线上学习会变得更受欢迎。
+
+**`If ..., then ...` 如果……那么……**
+
+- If governments invest more in education, then society will benefit as a whole.
+  如果政府加大教育投资，那么整个社会都会受益。
+- If we reduce waste, then we can protect the environment more effectively.
+  如果减少浪费，我们就能更有效地保护环境。
+
+**`It seems that ...` 好像 / 看起来（表达推测或观察）**
+
+- It seems that everyone is using AI these days.
+  现在好像每个人都在用人工智能。
+- It seems that he doesn’t want to talk about it.
+  他好像不想谈这件事。
+
+
+### 八、日常请求与地道口语表达（便于口语/写作自然）
+
+**`Could you possibly ...` 你能否……？（用于礼貌地提出请求或建议）**
+
+- Could you possibly help me fix this bug?
+  你能帮我修这个 bug 吗？
+- Could you possibly explain that part again?
+  你能再解释一下那一部分吗？
+
+**`I was wondering ...` 我在想（委婉提出请求或表达疑问）**
+
+- I was wondering if you could review my code.
+  我在想你能不能帮我检查下我的代码。
+- I was wondering what the deadline is for this project.
+  我在想这个项目的截止时间是什么时候。
+
+**`That makes sense.` 那是有道理的（用于表示理解或认同对方说法）**
+
+- That makes sense. Now I get what you mean.
+  有道理，我现在明白你意思了。
+
+**`Could you possibly ... / I was wondering ...`（结合用）**
+
+- I was wondering if you could possibly send me the report by Friday.
+  我在想你能否在周五之前把报告发给我
 
 ## 例句整理
 
