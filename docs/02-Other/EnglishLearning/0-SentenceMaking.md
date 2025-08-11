@@ -515,21 +515,40 @@ The girl is reading a book.
 - I agree with you **to some extent**.  
 - She found the task challenging **to some extent**.  
 
-**==S V by far ...==（远远地，非常）**  
+> - I agree with your view to some extent.
+> - You can do it to some extent, but it might be challenging.
+> - It is achievable to some extent.
+> - This will increate your success rate to some extent.
+
+**==S V by far [最高级/比较级] ...==（远远地，非常）**  
 
 - This is **by far** the best movie I’ve seen this year.  
 - This is **by far** his best performance yet.
 
-**==S V just ...==（刚刚，差不多、快要）**：表示某事即将完成，但还没完全完成。
+> - This is by far the best Bluetooth headset I have bought in the past few years.
+> - This is by far my best performance yet.
+> - The house I rented recently is by far the most cost-effective one.
 
-- I’m **just** about ready to go.  
-- I’m **just** about finished with my homework.
+**==S V just about ...==（刚刚，差不多、快要）**：表示某事即将完成，但还没完全完成。
 
-**==almost==（几乎）**：强调某事几乎发生了但最后没有发生。
+**be + just about + 形容词**
+
+- I’m **just abou**t ready to go.  
+- I’m **just about** finished with my homework.
+
+> - I am just about finished with this project.
+> - He just woke up because it was hot.
+
+**==almost==（几乎）**：强调某事几乎发生了但最后没有发生。（过去时）
 
 - We **almost** missed the train.  
 - I **almost** forgot your birthday!
 - She **almost** cried when she heard the news.
+
+> - I am almost done with this project.
+> - My body has almost recovered.
+> - The man was almost successful.
+> - I almost bought Bilibili's VIP service.
 
 ---
 
