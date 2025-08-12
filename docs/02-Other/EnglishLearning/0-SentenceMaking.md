@@ -1168,6 +1168,196 @@ The girl is reading a book.
 - I was wondering if you could possibly send me the report by Friday.
   我在想你能否在周五之前把报告发给我
 
+## 常用英语特殊句型
+
+这里整理了一些英语中常见的固定句型，它们不完全遵循标准的主谓宾结构，但在实际使用中频率非常高。
+
+- 在这些句型中，`sth` 通常指代一个**名词**或**名词短语**，并且在句子中充当**宾语**（Object）的角色。
+
+### 1. 疑问词 + to do 结构
+
+这种结构通常在句中作宾语、主语或表语，表示“如何/什么/何时/去哪里做某事”。
+
+**==how to + 动词== 如何去做某事**
+
+- He showed me **how to use** the new software.（他向我演示了如何使用这个新软件。）
+- The manual explains **how to assemble** the furniture.（说明书解释了如何组装这个家具。）
+- Can you teach me **how to cook** this dish?（你能教我怎么做这道菜吗？）
+
+**==what to + 动词== 做什么**
+
+- I don't know **what to buy** for her birthday.（我不知道该买什么作为她的生日礼物。）
+- He couldn't decide **what to wear** to the party.（他无法决定聚会该穿什么。）
+- We need to discuss **what to do** next.（我们需要讨论接下来做什么。）
+
+**==when to + 动词== 何时去做某事**
+
+- Please tell me **when to start**.（请告诉我什么时候开始。）
+- We need to figure out **when to leave** for the airport.（我们需要搞清楚什么时候出发去机场。）
+- The signal will tell you **when to cross** the road.（信号灯会告诉你何时过马路。）
+
+**==where to + 动词== 去哪里做某事**
+
+- She is considering **where to travel** for the holiday.（她正在考虑假期去哪里旅行。）
+- Let's decide **where to eat** dinner.（我们来决定去哪儿吃晚饭吧。）
+- He asked for directions on **where to park** his car.（他询问该把车停在哪里。）
+
+### 2. 使役动词和感官动词
+
+这类动词后面通常跟不带 `to` 的动词不定式（即动词原形）。
+
+**==make sb do sth== 让/迫使某人做某事（带有强制性）**
+
+- The sad story **made her cry**.（那个悲伤的故事让她哭了。）
+- His jokes always **make me laugh**.（他的笑话总能让我发笑。）
+- The teacher **made the students stand** up.（老师让学生们站起来。）
+
+**==let sb do sth== 允许某人做某事**
+
+- My parents **let me decide** for myself.（我的父母让我自己做决定。）
+- **Let me help** you with those bags.（让我来帮你拿那些包吧。）
+- Please **let me know** if you have any questions.（如果你有任何问题，请告诉我。）
+
+**==have sb do sth== 安排/叫某人做某事**
+
+- I'll **have my assistant call** you to schedule a meeting.（我会让我的助理给你打电话安排会议。）
+- I need to **have a plumber fix** the sink.（我需要找个水管工来修水槽。）
+- She **had the mechanic check** her car before the long trip.（在长途旅行前，她让技工检查了她的车。）
+
+**==see/hear/watch/feel sb do sth== 看见/听见/观察/感觉到某人做了某事（强调动作的全过程）**
+
+- I **saw him leave** the room.（我看见他离开了房间。）
+- We **watched the sun rise** over the mountain.（我们看着太阳从山后升起。）
+- Did you **hear the phone ring**?（你听到电话响了吗？）
+
+**==see/hear/watch/feel sb doing sth== 看见/听见/观察/感觉到某人正在做某事（强调动作正在进行）**
+
+- I **heard someone singing** next door.（我听到隔壁有人在唱歌。）
+- She **watched the children playing** in the park.（她看着孩子们在公园里玩耍。）
+- I can **feel the wind blowing** on my face.（我能感觉到风正吹在我脸上。）
+
+### 3. It's... 句型
+
+以 `It` 作为形式主语或形式宾语的常见句型。
+
+**==It's + 形容词 + to do sth== 做某事是……的**
+
+- **It's important to learn** from mistakes.（从错误中学习很重要。）
+- **It's nice to see** you again.（很高兴再次见到你。）
+- **It's dangerous to swim** in this river.（在这条河里游泳很危险。）
+
+**==It takes sb some time to do sth== 做某事花费了某人多少时间**
+
+- **It took me three hours to finish** the report.（我花了三个小时才完成这份报告。）
+- **It takes about an hour to get** to the city center.（到市中心大约需要一个小时。）
+- **It will take a few weeks to build** the new website.（开发这个新网站需要几周时间。）
+
+**==It's time (for sb) to do sth== 是（某人）该做某事的时候了**
+
+- **It's time to go** to bed.（该上床睡觉了。）
+- The alarm rang. **It's time to wake up**.（闹钟响了，该起床了。）
+- **It's time for us to start** the meeting.（我们该开始开会了。）
+
+**==It is no use/good doing sth== 做某事没有用**
+
+- **It is no use crying** over spilled milk.（覆水难收，哭也没用。）
+- **It's no good complaining** about the weather.（抱怨天气是没用的。）
+- **It's no use trying** to persuade him; he won't change his mind.（试图说服他是没用的，他不会改变主意的。）
+
+### 4. 其他常见固定搭配
+
+**==have to do sth== 必须做某事（强调客观需要）**
+
+- I **have to get up** early for work tomorrow.（我明天必须早起上班。）
+- You **have to show** your passport at the border.（在边境你必须出示护照。）
+- All employees **have to attend** the safety training.（所有员工都必须参加安全培训。）
+
+**==used to do sth== 过去常常做某事（现在不了）**
+
+- He **used to live** in London.（他过去住在伦敦。）
+- I **used to play** the piano when I was a child.（我小时候常常弹钢琴。）
+- This building **used to be** a library.（这栋楼过去是图书馆。）
+
+**==be used to doing sth== 习惯于做某事**
+
+- I **am used to working** under pressure.（我习惯在压力下工作。）
+- He is not **used to living** in a big city.（他不习惯住在大城市。）
+- After a few months, she **got used to waking up** early.（几个月后，她习惯了早起。）
+
+**==spend time/money (in) doing sth / on sth== 花费时间/金钱在某事上**
+
+- She **spent the whole afternoon reading** the book.（她花了一整个下午读书。）
+- He **spent too much money on** that car.（他花了太多钱在那辆车上。）
+- We **spend a lot of time practicing** our presentation.（我们花了很多时间练习演讲。）
+
+**==stop to do sth== 停下来去做另一件事**
+
+- He **stopped to talk** to his friend.（他停下来和朋友说话。）
+- On our way home, we **stopped to buy** some milk.（在回家的路上，我们停下来买了些牛奶。）
+- She **stopped to tie** her shoelace.（她停下来系鞋带。）
+
+**==stop doing sth== 停止正在做的事**
+
+- Please **stop making** so much noise.（请不要再制造那么多噪音了。）
+- The doctor told him to **stop smoking**.（医生告诉他要戒烟。）
+- You should **stop worrying** about things you can't control.（你应该停止担心那些你无法控制的事情。）
+
+**==prefer to do sth rather than do sth== 宁愿做某事而不愿做另一件事**
+
+- I **prefer to walk rather than take** a crowded bus.（我宁愿走路，也不愿坐拥挤的公交车。）
+- She **prefers to read a book rather than watch** TV.（她宁愿看书也不愿看电视。）
+- They **prefer to cook at home rather than eat** out.（他们宁愿在家做饭也不愿在外面吃。）
+
+### 5. 补充常见句型
+
+**==so... that... / such... that...== 如此……以至于……（引导结果状语从句）**
+
+- He was **so tired that** he fell asleep immediately.（他太累了，以至于立刻就睡着了。）
+- It was **such a beautiful day that** we decided to go for a picnic.（那是个如此美好的天气，所以我们决定去野餐。）
+- The movie was **so interesting that** I watched it twice.（这部电影太有趣了，我看了两遍。）
+
+**==too... to...== 太……而不能……**
+
+- The box is **too heavy to lift**.（这个箱子太重了，搬不起来。）
+- It's **too cold to go** swimming today.（今天太冷了，不能去游泳。）
+- He speaks **too quickly for me to understand**.（他话说得太快，我听不懂。）
+
+**==...enough to...== 足够……可以……**
+
+- He is tall **enough to reach** the top shelf.（他足够高，可以够到顶层的架子。）
+- The water is warm **enough to swim** in.（水足够暖和，可以游泳。）
+- She is smart **enough to solve** this difficult problem.（她足够聪明，可以解决这个难题。）
+
+**==the more..., the more...== 越……就越……**
+
+- **The more you practice**, **the better you will become**.（你练习得越多，你就会变得越好。）
+- **The more I learn** about history, **the more interesting** I find it.（我对历史了解得越多，就觉得它越有趣。）
+- **The more you read**, **the more you know**.（你读得越多，你知道得就越多。）
+
+**==would rather... than...== 宁愿……也不愿……**
+
+- I **would rather stay home than go** to the party.（我宁愿待在家里也不愿去参加派对。）
+- She **would rather read a book than play** video games.（她宁愿看书也不愿玩电子游戏。）
+- He **would rather try and fail than do** nothing.（他宁愿尝试后失败，也不愿什么都不做。）
+
+**==Why not...?== 为什么不……呢？（用于提建议，后跟动词原形）**
+
+- **Why not take** a break? You look tired.（为什么不休息一下呢？你看起来很累。）
+- **Why not ask** the teacher for help?（为什么不向老师求助呢？）
+- It's a nice day. **Why not go** for a walk?（今天天气很好，为什么不出去散散步呢？）
+
+**==How about...?== ……怎么样？（用于提建议，后跟 doing sth）**
+
+- **How about going** to the movies tonight?（今晚去看电影怎么样？）
+- **How about trying** that new restaurant?（去试试那家新餐厅怎么样？）
+- We have no plans. **How about playing** a game?（我们没什么计划，玩个游戏怎么样？）
+
+**==You'd better (not) do sth== 你最好（不要）做某事（带有建议或轻微警告的语气）**
+
+- **You'd better hurry** or you'll be late.（你最好快点，否则就要迟到了。）
+- **You'd better not forget** to call her.（你最好别忘了给她打电话。）
+- It's going to rain. **You'd better take** an umbrella.（要下雨了，你最好带上雨伞。）
+
 ## 例句整理
 
 ### 99句
