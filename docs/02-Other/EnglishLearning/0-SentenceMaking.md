@@ -556,10 +556,18 @@ The girl is reading a book.
 
 **常见介词：`because of`, `due to`, `thanks to`, `owing to`**
 
-**==Because of [原因], S V …==（因为）**  
+**==S V  Because of [原因]==（因为）**  
+
+**because of：是一个介词短语，其后跟名词、代词或名词短语。**
+
+**because： 是一个连词，其后跟一个完整的句子**
 
 - We stayed home **because of** the rain.  
 - They left early **because of** the storm.  
+
+>- I stayed in rented house  because of the weekend.
+>- I wear a mesk at the workstation because of the pungent smell.
+>- I was very hot last night because of the lack of air conditioning.
 
 **==Due to [原因], S V …==（由于）**  
 
