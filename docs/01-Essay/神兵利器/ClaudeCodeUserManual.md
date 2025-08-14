@@ -48,7 +48,7 @@
   - 使用方法：结束Claude Code会话后，执行`ccundo list`（只能回退上一次会话）
 
 - MCP
-  - [让Claude Code超过训练数据有截止日期，获取最新的软件库文档信息](https://github.com/upstash/context7)
+  - [Context7：帮助AI查找最新代码文档（让Claude Code能获取超过训练数据截止日期的数据）](https://github.com/upstash/context7)
 
 - Claude Code UI：
   - https://github.com/getAsterisk/claudia

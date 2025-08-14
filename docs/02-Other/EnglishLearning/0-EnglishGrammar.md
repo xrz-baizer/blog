@@ -659,6 +659,48 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 - He worked **hard** (方式) **at home** (地点) **all day** (时间). (他一整天都在家努力工作。)
 - The children played **happily** (方式) **in the garden** (地点) **all afternoon** (时间). (孩子们整个下午都在花园里开心地玩耍。)
 
+## 条件句
+
+主要有四种核心条件句
+
+#### 1. 零条件句 (Zero Conditional)
+
+**用途**：描述一个**普遍的真理、科学事实**或**必然发生**的结果。可以理解为“一旦...就...”。
+
+**==结构：If + 一般现在时, 一般现在时==**
+
+- **If** you **heat** ice, it **melts**. (如果你加热冰，它就会融化。)
+-  **If** plants **don't get** water, they **die**. (如果植物得不到水，它们就会死亡。)
+
+#### 2. 第一条件句 (First Conditional)【常用】
+
+**用途**：描述一个**未来可能发生的真实情况**以及其可能的结果。这是对未来的“预测”或“计划”。
+
+**==结构：If + 一般现在时, will + 动词原形==**
+
+- **If** it **rains** tomorrow, we **will cancel** the trip. (如果明天下雨，我们就会取消行程。)
+-  **If** you **study** hard, you **will pass** the exam. (如果你努力学习，你就会通过考试。)
+
+#### 3. 第二条件句 (Second Conditional)【常用】
+
+**用途**：描述一个**与现在或未来事实相反**的**假设**或**想象**。常用于表达“如果我是...我就会...”这种不真实的愿望。
+
+**==结构：If + 一般过去时, would + 动词原形==**
+
+- **If** I **had** more money, I **would buy** a car. (如果我有很多钱，我就会买一辆车。 -> 事实是我现在钱不够)
+- **If** I **were** you, I **would take** the job. (如果我是你，我就会接受这份工作。 -> 事实我不是你)
+
+**注意**: 在这种句型里，`be`动词通常都用 `were`，即使主语是 `I/he/she/it`。
+
+#### 4. 第三条件句 (Third Conditional)
+
+**用途**：描述一个**与过去事实相反**的**假设**，通常用来表达对过去的**懊悔**或**抱怨**。
+
+ **==结构：If + 过去完成时 (had + 动词的过去分词), would have + 动词过去分词==**
+
+- **If** I **had left** earlier, I **would have caught** the train. (如果我当时早点出发，我就赶上火车了。 -> 事实是我出发晚了，没赶上)
+- **If** she **had studied**, she **would have passed** the exam. (如果她当时学习了，她就能通过考试了。 -> 事实是她没学，所以没通过)
+
 ## 被动语态
 
 > 英语语态中分为主动语态和被动语态，被动语态用于强调动作的承受者，而不是动作的执行者。
@@ -1197,16 +1239,17 @@ B站讲解：https://www.bilibili.com/video/BV1XY411J7aG?vd_source=201e659a1198f
 - She wishes she **had attended** the meeting. （她希望她参加了会议。）
 - I wish it **would stop** raining. （我希望雨停了。）
 
-#### 3.2. 条件句 (Conditionals)
+#### 3.2. 条件句使用虚拟语气(Conditionals)
 
-条件句分为三种类型，根据条件的实现可能性不同使用不同的虚拟语气。
+部分条件句需要使用虚拟语气来表达。
 
-1. **真实条件句**：表示可能发生的情况，用陈述语气。
-   - If it **rains**, we **will stay** at home. （如果下雨，我们就呆在家。）
-2. **第二条件句**：表示与现在事实相反或不太可能的情况，用虚拟语气。
+1. **零条件句和第一条件句**：讨论的是真实或可能真实的情况，所以**不用虚拟语气**。
+   - If you heat ice, it melts. (这是事实)
+   - If it rains, I will stay home. (这是未来可能发生的事)
+2. **第二条件句**：表示与现在事实相反或不太可能的情况，**用虚拟语气**。
    - If I **were** you, I **would apologize**. （如果我是你，我会道歉。）
    - If he **had** more time, he **could finish** it. （如果他有更多时间，他可以完成它。）
-3. **第三条件句**：表示与过去事实相反的假设，用虚拟语气。
+3. **第三条件句**：表示与过去事实相反的假设，**用虚拟语气**。
    - If I **had known**, I **would have helped** you. （如果我当时知道，我就会帮助你。）
    - If she **had studied**, she **might have passed** the exam. （如果她努力学习，她可能会通过考试。）
 

@@ -61,15 +61,13 @@
 
 ### AI Copilot
 
-- [造句作业批改：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/8534cdba199173ae)
-- [造句作业批改：ChatGPT（No need to use Reason）](https://chatgpt.com/g/g-CX4YNVw3l-ying-yu-xue-xi-gpt-english-learning-gpt/c/68886459-e56c-8010-bb43-ec83845e5070)
-
+- [造句作业批改：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/b2bb61c5f94aaeeb)
+- [句子结构解析：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/4279f0b0cc4a2dae)
+- [Senior English Teacher：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/3f1f5a3b41aaaf3e)
 ---
 
+- [造句作业批改：ChatGPT（No need to use Reason）](https://chatgpt.com/c/689d8770-9e48-8322-ae70-1555df6da59d)
 - [句子结构解析：ChatGPT ](https://chatgpt.com/c/689896bf-1550-8327-a87f-a7adc2abd785)
-
-- [句子结构解析：Gemini](https://gemini.google.com/app/0c6db3b3ed25b98a)
-
 - 在线句子解析：https://www.kogrammar.com/analyze/
 
 ## 一、基本句型
@@ -638,20 +636,34 @@ The girl is reading a book.
 - He bought flowers **for** a gift.  
 - They moved house **for** proximity to work.  
 
+> - He subscribed to a video service just for one movie.
+> - I moved here for better sleep.
+> - I am leaning about emotions for her.
+
 **==S V in order to [动词原形] …==（为了、以便）**：更正式的to
 
 - She exercises daily **in order to** stay healthy.  
 - He practices scales **in order to** improve technique.  
+
+> - I keep inner peace in order to have a better future.
+> - I maintain inner peace in order to create a better future for myself.
+> - She studies how to use Claude Code in order to code more easily.
 
 **==S V so as to [动词原形] …==  （为了、以便）**：更正式的to
 
 - They saved money **so as to** travel abroad next year.  
 - She woke up early **so as to** catch the sunrise.  
 
+> - I saved money so as to live a better life in the future.
+> - I woke up early so as to have my first cup of tea of the day.
+
 **==so that==（因此、以便）**
 
 - He must get up early **so that** he can go to work on time. 
 - It was very cold, **so that** the river froze.
+
+> - I must get up early so that I can go to work on time.
+> - I bring my MacBook to work every day so that I can have a better experience.
 
 ---
 
@@ -663,6 +675,10 @@ The girl is reading a book.
 
 - **If** it rains, we will cancel the picnic.  
 - **If** he studies hard, he will pass the exam.  
+
+> - If you work hard, you will get a better salary.
+> - You will get a better salary if you work hard.
+> - If it doesn't rain, I will go running.
 
 **==as long as==（如果、只要）**
 
@@ -2031,18 +2047,6 @@ The girl is reading a book.
 10. As suggested earlier, businesspeople should read news whenever possible to make well-informed decisions.
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
