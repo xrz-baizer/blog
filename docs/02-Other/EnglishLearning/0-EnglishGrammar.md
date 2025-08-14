@@ -577,6 +577,88 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 -  I enjoy reading my students’ essays.
 
+## 副词的位置
+
+副词用来修饰动词、形容词、其他副词或整个句子，说明动作或状态的 **方式、频率、地点、时间、程度** 等。
+
+### 副词的基本位置原则
+
+一个简单好记的原则是：**助动词/情态动词后，be动词后，实义动词前**。
+
+**==Be 动词之后==**
+
+- He is **always** on time. (他总是很准时。)
+- She is **often** late for class. (她上课经常迟到。)
+- They were **very** happy after winning the game. (赢得比赛后他们非常开心。)
+
+**==助动词/情态动词之后==**
+
+- I have **already** finished my homework. (我已经完成了我的作业。)
+- You should **never** give up. (你永远不应该放弃。)
+- He can **easily** solve this problem. (他能轻松解决这个问题。)
+
+**==实义动词之前==**
+
+- She **often** reads in the evening. (她经常在晚上阅读。)
+- I **rarely** watch TV. (我很少看电视。)
+- They **usually** eat out on weekends. (他们通常在周末外出吃饭。)
+
+### 按功能分类的副词位置详解
+
+#### 1. 方式副词 (Adverbs of Manner)
+
+- **常见词**：carefully, well, hard, slowly, quickly, fast
+- **位置**：通常放在 **动词或宾语之后**。
+- He drives **carefully**. (他开车很小心。)
+- She speaks English **fluently**. (她英语说得很流利。)
+- They finished the project **quickly**. (他们很快地完成了这个项目。)
+
+#### 2. 频率副词 (Adverbs of Frequency)
+
+- **常见词**：always, usually, often, sometimes, seldom, never
+- **位置**：遵循基本位置原则（be动词后，助动词后，实义动词前）。
+- I **always** study in the morning. (我总是在早上学习。)
+- He is **sometimes** busy. (他有时候很忙。)
+- Do you **usually** get up so early? (你通常这么早起床吗？)
+
+#### 3. 时间副词 (Adverbs of Time)
+
+- **常见词**：today, yesterday, now, then, soon, recently
+- **位置**：通常放在 **句末**，也可为强调而放在 **句首**。
+- We will have a meeting **tomorrow**. (我们明天要开会。)
+- **Yesterday**, I went to the museum. (昨天我去了博物馆。)
+- I saw him **recently**. (我最近见过他。)
+
+#### 4. 地点副词 (Adverbs of Place)
+
+- **常见词**：here, there, everywhere, outside, upstairs
+- **位置**：通常放在 **句末**。
+- The kids are playing **outside**. (孩子们在外面玩。)
+- Please put the box **here**. (请把箱子放在这里。)
+- Let's go **somewhere** quiet. (我们去个安静的地方吧。)
+
+#### 5. 程度副词 (Adverbs of Degree)
+
+- **常见词**：very, quite, too, extremely, almost, enough
+- **位置**：通常放在所修饰的 **形容词或副词之前**。
+- The weather is **extremely** cold. (天气极其寒冷。)
+- He runs **very** fast. (他跑得非常快。)
+- This book is **quite** interesting. (这本书相当有趣。)
+- **特别注意**：`enough` 要放在形容词或副词的 **后面**。
+  - He is tall **enough** to reach the shelf. (他足够高，能够到架子。)
+  - The water is warm **enough** to swim. (水足够暖和，可以游泳了。)
+  - You didn't work hard **enough**. (你不够努力。)
+
+### 多个副词在句中的顺序
+
+当一个句子中出现多个不同类型的副词来修饰同一个动词时，一般的排列顺序是：
+
+**方式副词 → 地点副词 → 时间副词**
+
+- She sang **beautifully** (方式) **in the concert** (地点) **last night** (时间). (她昨晚在音乐会上唱得非常美。)
+- He worked **hard** (方式) **at home** (地点) **all day** (时间). (他一整天都在家努力工作。)
+- The children played **happily** (方式) **in the garden** (地点) **all afternoon** (时间). (孩子们整个下午都在花园里开心地玩耍。)
+
 ## 被动语态
 
 > 英语语态中分为主动语态和被动语态，被动语态用于强调动作的承受者，而不是动作的执行者。
