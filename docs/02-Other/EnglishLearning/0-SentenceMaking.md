@@ -6,7 +6,7 @@
 >
 >- 形容词只修饰名词，副词修饰其它的词（通常修饰动词）
 >
->  - 副词的位置：实义动词前、助动词/情态动词后、be动词后
+> - 副词的位置：实义动词前、助动词/情态动词后、be动词后
 >
 >- 双宾语的位置：间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 to 或者 for
 >
@@ -14,13 +14,18 @@
 >
 >- 可数名词：表达单数时用不定冠词（a,an），表达复数时后面加s
 >
+>- 冠词的使用：修饰名词
+>   - 单数、可数名词前必须要加 a/an，表泛指
+>
+>   - 表特指时，都可以用 the
+>
 >- 主谓一致：（simply-version：主语单数时，动词用三单，情态动词除外）【前提：一般现在时】
 >
->    - 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
+>   - 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
 >
->    - 主语为单数时，动词用三单（加-s/es）
+>   - 主语为单数时，动词用三单（加-s/es）
 >
->    - 有情态动词时（can/may/must等） ，动词用原形（无视主语单复数）
+>   - 有情态动词时（can/may/must等） ，动词用原形（无视主语单复数）
 >
 >- 翻译技巧：如果中文句子里没有明确的谓语，那么谓语就是隐藏的“是”，并且“是”后面的内容多半是形容词。
 >
@@ -569,20 +574,35 @@ The girl is reading a book.
 >- I wear a mesk at the workstation because of the pungent smell.
 >- I was very hot last night because of the lack of air conditioning.
 
-**==Due to [原因], S V …==（由于）**  
+**==S V  Due to [原因]==（由于）**  
+
+**due to：是一个介词短语，其后跟名词、代词或名词短语。**
 
 - The flight was canceled **due to** heavy fog.  
 - The event was postponed **due to** low registration.  
 
+> - I want to buy an air conditioner due to the hot weather.
+> - I did not drink tea at the company due to the lack of hot water.
+
 **==Thanks to [帮助/原因], S V …==  （多亏）**
+
+**Thanks to：作介词，后面跟名词、名词短语**
 
 - **Thanks to** your help, we finished early.  
 - **Thanks to** modern technology, life is more convenient.  
 
+> - Thanks to the efforts of my leader, my work become much easier now.
+> - Thanks to my continuous work, My life has basic security.
+
 **==Owing to [原因], S V …==（由于）**  
+
+**Owing to：作介词，后面跟名词、名词短语**
 
 - **Owing to** a power cut, the lecture was delayed.  
 - **Owing to** high demand, prices increased.  
+
+> - Owing to the rained, I can't go for a run.
+> - Owing to the hot weather, I must buy an air conditioner.
 
 ---
 
@@ -594,6 +614,8 @@ The girl is reading a book.
 
 - He studied hard **to** pass the exam.  
 - She saved money **to** buy a car.  
+
+> - 
 
 **==S V for [目的/名词].==（为了）**  ：为了“谁/什么”，强调人/物体
 
