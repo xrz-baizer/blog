@@ -108,9 +108,9 @@ He **has** seen the movie.
 
 **情况四：==句中只有一般动词 (如 love, like, work, go)==**
 
-> 规则：需要根据人称和时态，在动词前添加 **do not**, **does not**, 或 **did not**，同时主要动词**变回原形**。
+> 规则：需要根据人称和时态，在动词前==添加== **do not**, **does not**, 或 **did not**，同时主要动词==变回原形==。
 >
-> - 一般用**do**, 三单时用**does**，过去时用**did**
+> - **一般用do, 三单时用does，过去时用did**
 
 They **work** on weekends.
 
@@ -227,11 +227,15 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 - **其实就是：==疑问词 + 一般疑问句==**
 
-常见的疑问词：**What, Where, When, Why, Who, Which, How**
+常见的疑问词：**What, Where, When, Why, Who, Which**
 
-**How much** (多少 - 对不可数名词) / **How many** (多少 - 对可数名词)
+**How** (怎样，如何)
 
-**How long** (多久) / **How often** (多常) / **How far** (多远)
+- **How much** (多少 - 对不可数名词) / **How many** (多少 - 对可数名词)
+
+- **How long** (多久) / **How often** (多常) / **How far** (多远)
+
+---
 
 - Where have you been?
 - When did she leave?

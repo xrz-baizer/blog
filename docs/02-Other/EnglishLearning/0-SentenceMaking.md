@@ -90,11 +90,72 @@
 - We are Chinese.
 - The teacher is beautiful.
 
-> - She is beautiful.
-> - They are discussing.
-> - Today the food taste normal.
-> - I am become strong.
-> - I stay self-motivated.
+> **She is beautiful.**
+>
+> - 否定句：She is not beautiful.
+> - 一般疑问句：Is she beautiful?
+> - 特殊疑问句：Who is she beautiful?
+> - 现在时：
+>   - She has been beautiful.
+>
+> - 过去时：
+>   - She was beautiful.
+>   - She had been beautiful.
+>
+> - 将来时：
+>   - She will be beautiful.
+>   - She will have been beautiful.
+>
+>
+> **They are discussing.**
+>
+> - 否定句：They are not discussing.
+> - 一般疑问句：Are they discussing?
+> - 特殊疑问句：What are they discussing?
+> - 现在时：
+>   - They have discussed.
+>   - They have been discussing.
+>
+> - 过去时：
+>   - They discussed.
+>   - They were discussing.
+>   - They had discussed.
+>
+> - 将来时：
+>   - They will discuss.
+>   - They are going to discuss.
+>   - They will be discussing.
+>   - They will have discussed.
+>   - They will have been discussing.
+>
+> - 过去将来时：
+>   - They would discuss.
+>   - They were going to discuss.
+>   - They would be discussing.
+>   - They would have discussed.
+>   - They would have been discussing.
+>
+>
+> **Today the food tastes normal.**
+>
+> - 否定句：The food does not taste normal today.
+> - 一般疑问句：Does the food taste today?
+> - 特殊疑问句：How does today the food taste normal?
+> - 过去时：The food tasted normal yesterday.
+> - 将来时：The food will taste normal tomorrow.
+>
+> **I am become strong.**
+>
+> - 否定句：
+>
+> - 一般疑问句：
+> - 特殊疑问句：
+> - 被动语态：
+> - 现在时：
+> - 过去时：
+> - 将来时：
+>
+> **I stay self-motivated.**
 
 #### ==主 + 谓 + 宾==
 
@@ -104,10 +165,13 @@
 - She reads a book. (她读一本书。)
 - They are playing football. (他们在踢足球。)
 
->- I am drinking water.
->- My mother called me yesterday.
->- He turns on the air conditioner.
->- We watch TV.
+>**I am drinking water.**
+>
+>**My mother called me yesterday.**
+>
+>**He turns on the air conditioner.**
+>
+>**We watch TV.**
 
 #### ==主 + 谓 + 宾 + 宾==
 
@@ -118,17 +182,25 @@
 - He bought me a flower. (他给我买了一朵花。)
 - My father told me a story. (我父亲给我讲了一个故事。)
 
->- He gives me a pen.
->- My colleague shows me his job responsibilities.
->- I bring my friend some fruit.
->- I lend my best friend some money.
->- I return an umbrella to the company.
->- His supervisor writes him a letter of recommendation.
->- I paid for the order for her.
->- I teach my classmate coding.
+>**He gives me a pen.**
+>
+>**My colleague shows me his job responsibilities.**
+>
+>**I bring my friend some fruit.**
+>
+>**I lend my best friend some money.**
+>
+>**I return an umbrella to the company.**
+>
+>**His supervisor writes him a letter of recommendation.**
+>
+>**I paid for the order for her.**
+>
+>**I teach my classmate coding.**
 
->- A few years ago, I bought my mother a phone.
->- She send me  a message.
+>**A few years ago, I bought my mother a phone.**
+>
+>**She send me  a message.**
 
 **间接宾语在前，直接宾语在后，也可以对调，但是需要借助介词 `to` 或者 `for`**
 
@@ -143,9 +215,9 @@
   - The old man is telling stories `to` the children
 
 
-> - A few years ago, I bought a phone for my mother.
+> **A few years ago, I bought a phone for my mother.**
 >
-> - She send a message to me.
+> **She send a message to me.**
 
 #### ==主 + 谓 + 宾 + 补==
 
@@ -157,10 +229,11 @@
 - I found the book very interesting.
 - She found the pen on the floor.
 
->- Today,the weather makes me feel anxious.
+>**Today,the weather makes me feel anxious.**
 >
->- I worry that the weather is getting worse.
->- My parents named me Baizer.
+>**I worry that the weather is getting worse.**
+>
+>**My parents named me Baizer.**
 
 #### ==There be 句型==
 
@@ -680,34 +753,60 @@ The girl is reading a book.
 > - You will get a better salary if you work hard.
 > - If it doesn't rain, I will go running.
 
-**==as long as==（如果、只要）**
+**==as long as==（如果、只要）**：只要条件满足，结果就一定会发生。
 
 - You can stay here **as long as** you are quiet.
 - **As long as** we work hard, we will succeed.
 - This deal still applies, **as long as** you get back to us before Friday.
 
-**==S V provided that [条件].== （如果、只要）**
+> - As long as I keep learning, I can achieve a score of 7.5 in the IELTS.
+> - You will get a good result as long as you try your best.
+
+**==S V provided that [条件].== （如果、只要）**：和 if、as long as 意思相近，语气更正式、更庄重，经常用于商务合同、协议或非常认真的计划中
 
 - The offer stands **provided that** you respond by Friday.  
 - She will join **provided that** the schedule fits.
+
+> - Our contract will take effec provided that you fulfill your commitment.
+> - I will take my mother hiking provided that the schedule fits.
 
 **==Unless [条件], S V …==  （除非）**
 
 - **Unless** you hurry, you’ll miss the bus.  
 - **Unless** she apologizes, I won’t forgive her.  
 
-**==S V on condition that [条件].==  （在…条件下）**
+> - Unless your body is healthy, you need to go running weekly.
+> - Unless it rains tomorrow, I will take my mother hiking.
+> - I will take my mother hiking tomorrow unless it rains.
 
-- You can attend the party on condition that you finish your work.  
-- He agreed to help on condition that he is paid.  
+**==S V on condition that [条件].==  （在…条件下）**：比 if 或 as long as 的语气要强硬得多，常见于规定、协议或正式承诺中。
 
-**==in case of==（以防）**
+- You can attend the party **on condition that** you finish your work.  
+- He agreed to help **on condition that** he is paid. 
+
+> - You can attend the activity tomorrow on condition that you have time.
+> - The courier will delivers home on condition that you buy the air conditioner in the TaoBao APP.
+
+**==in case of [名词/名词短语]==（以防）**
+
+**in case of**：后面跟 **名词**。意思是“以防（某种情况的发生）”。
+
+**in case**：后面跟完整的 **句子 **。意思是“以防（某件事发生）”。
 
 - **In case of** fire, use the stairs.
 
-**==in spite of==（尽管）**
+> - In case of rians, I bring an umbrella every day.
+> - I bring an umbrella every day in case of rains.
+> - I place an umbrella on top of the washing machine in case of rain.
+> - In case the washing machine on the balcony gets wet, I place an umbrella on top of it.
+
+**==in spite of [名词/名词短语]==（尽管）**
 
 - **In spite of** the noise, she fell asleep.
+
+> - In spite of the low salary, I still stay with my company.
+> - In spite of not being tall, I have a lot of confidence.
+> - In spite of not being tall, I am very confident.
 
 
 

@@ -20,12 +20,12 @@
 
 #### 状态结合时间，总共可以出现16种时态
 
-|                     |                                              ==Simple== |           ==Continuous== |               ==Perfect== |            ==Perfect Continuous== |
-| :-----------------: | ------------------------------------------------------: | -----------------------: | ------------------------: | --------------------------------: |
-|   **==Present==**   |                             **am/is/are + `done`/`do`** |  **am/is/are + `doing`** |     **have/has + `done`** |     **have/has + been + `doing`** |
-|    **==Past==**     |                                    **was/were + `did`** |   **was/were + `doing`** |          **had + `done`** |          **had + been + `doing`** |
-|   **==Future==**    | **am/is/are + going to + `do`<br /> will/shall + `do`** |  **will + be + `doing`** |  **will + have + `done`** |  **will + have + been + `doing`** |
-| **==Past future==** |  **was/were + going to + `do`<br />would/shall + `do`** | **would + be + `doing`** | **would + have + `done`** | **would + have + been + `doing`** |
+|                     |                                        ==Simple== |           ==Continuous== |               ==Perfect== |            ==Perfect Continuous== |
+| :-----------------: | ------------------------------------------------: | -----------------------: | ------------------------: | --------------------------------: |
+|   **==Present==**   |                       **am/is/are + `done`/`do`** |  **am/is/are + `doing`** |     **have/has + `done`** |     **have/has + been + `doing`** |
+|    **==Past==**     |                              **was/were + `did`** |   **was/were + `doing`** |          **had + `done`** |          **had + been + `doing`** |
+|   **==Future==**    | **am/is/are + going to + `do`<br /> will + `do`** |  **will + be + `doing`** |  **will + have + `done`** |  **will + have + been + `doing`** |
+| **==Past future==** |  **was/were + going to + `do`<br />would + `do`** | **would + be + `doing`** | **would + have + `done`** | **would + have + been + `doing`** |
 
 **动词的变位含义：**
 
