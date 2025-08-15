@@ -1419,6 +1419,10 @@ The girl is reading a book.
 - **You'd better not forget** to call her.（你最好别忘了给她打电话。）
 - It's going to rain. **You'd better take** an umbrella.（要下雨了，你最好带上雨伞。）
 
+**==One of the + (形容词最高级) + (复数名词)== 表示“……中最……之一”。**
+
+- This is one of the most important lessons in my life. (这是我生命中最重要的一课之一。)
+
 ## 例句整理
 
 ### 99句
