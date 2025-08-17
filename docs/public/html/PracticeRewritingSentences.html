@@ -783,12 +783,12 @@
 
         // Reset UI for new question
         appState = 'submit';
-        actionBtn.textContent = '提交答案';
+        actionBtn.textContent = 'Submit the answer';
         answerInput.value = exercise.sentence;
         answerInput.disabled = false;
         feedbackSection.style.display = 'none';
         noteSection.style.display = 'none';
-        hintBtn.textContent = '显示提示';
+        hintBtn.textContent = 'Show hint';
         hintBtn.style.display = 'inline-flex';
         skipBtn.style.display = 'inline-flex';
         answerSection.style.display = 'block';
@@ -847,7 +847,7 @@
             const subCategoryData = exerciseData[currentMainCategory].subcategories.find(sc => sc.name === currentSubCategory);
             const correctAnswer = subCategoryData.questions[currentQuestionIndex].answer[0];
             feedbackSection.className = 'p-4 rounded-lg border-l-4 incorrect';
-            feedbackSection.innerHTML = `❌  <strong>Mistake</strong> <br>The correct answer is: <strong class="font-semibold">${correctAnswer}</strong>`;
+            feedbackSection.innerHTML = `❌   The correct answer is: <br>         <strong class="font-semibold">${correctAnswer}</strong>`;
             return false;
         }
     }
