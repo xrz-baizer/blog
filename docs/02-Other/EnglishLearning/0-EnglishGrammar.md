@@ -187,29 +187,7 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 ---
 
-**情况二：句中有情态动词 (Modal Verbs)**
-
-> 常见情态动词：can, could, may, might, will, would, shall, should, must
->
-> 直接将情态动词提到句首，后面的动词**保持原形**。 
-
-- She **can** speak French. → **Can** she speak French?
-- You **should** see a doctor. → **Should** you see a doctor?
-- They **will** arrive tomorrow. → **Will** they arrive tomorrow?
-
----
-
-**情况三：句中有助动词 `have/has/had + 过去分词(完成时态)`**
-
-> 直接将 have/has/had 提到句首，后面的动词**保持过去分词**。
-
-- You **have** finished the report. → **Have** you finished the report?
-- She **has** been to Paris. → **Has** she been to Paris?
-- He **had** left before I arrived. → **Had** he left before I arrived?
-
----
-
-**情况四：句中只有一般动词 (如 `play, work, eat, have`)**
+**情况二：句中只有一般动词 (如 `play, work, eat, have`)**
 
 > 这是唯一需要“**无中生有**”添加助动词的情况。
 >
@@ -222,6 +200,28 @@ What 后面通常接名词或名词短语，强调事物本身。
 - You **like** coffee. → **Do** you **like** coffee? (主语是 `you`，用 `do`)
 - He **works** hard. → **Does** he **work** hard? (主语是 `he`，用 `does` 三单，`works` 变回 `work`)
 - They **went** home. → **Did** they **go** home? (过去时，用 `did`，`went` 变回 `go`)
+
+---
+
+**情况三：句中有情态动词 (Modal Verbs)**
+
+> 常见情态动词：can, could, may, might, will, would, shall, should, must
+>
+> 直接将情态动词提到句首，后面的动词**保持原形**。 
+
+- She **can** speak French. → **Can** she speak French?
+- You **should** see a doctor. → **Should** you see a doctor?
+- They **will** arrive tomorrow. → **Will** they arrive tomorrow?
+
+---
+
+**情况四：句中有助动词 `have/has/had + 过去分词(完成时态)`**
+
+> 直接将 have/has/had 提到句首，后面的动词**保持过去分词**。
+
+- You **have** finished the report. → **Have** you finished the report?
+- She **has** been to Paris. → **Has** she been to Paris?
+- He **had** left before I arrived. → **Had** he left before I arrived?
 
 #### 特殊疑问句(special questions)
 
