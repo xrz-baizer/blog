@@ -87,7 +87,7 @@
                 <div id="answer-section">
                     <p id="target-translation" class="text-slate-500 text-sm mt-1 mb-2"></p>
                     <div class="mt-1 flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200">
-                        <textarea id="answer-input" rows="2" class="w-full p-2 text-slate-900 bg-transparent border-none focus:ring-0 resize-none" placeholder="在这里输入改写后的句子..."></textarea>
+                        <textarea id="answer-input" rows="2" class="text-lg  font-semibold w-full p-2 text-slate-700 bg-transparent border-none focus:ring-0 resize-none" placeholder="在这里输入改写后的句子..."></textarea>
                     </div>
                 </div>
 
@@ -118,7 +118,10 @@
 </div>
 
 <!-- Toast Notification -->
-<div id="toast" class="fixed top-5 right-5 bg-green-500 text-white py-3 px-5 rounded-lg shadow-lg opacity-0"></div>
+<div id="toast" class="fixed top-5 right-5 flex items-center bg-green-500 text-white py-3 px-5 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 ease-in-out transform translate-y-[-20px]">
+    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+    <span id="toast-message"></span>
+</div>
 
 <script>
     // Data structure with answers and target translations
@@ -850,7 +853,8 @@
     }
 
     function showToast(message) {
-        toastEl.textContent = message;
+        const toastMessageEl = document.getElementById('toast-message');
+        toastMessageEl.textContent = message;
         toastEl.style.opacity = '1';
         toastEl.style.transform = 'translateY(0)';
         setTimeout(() => {
@@ -902,9 +906,15 @@
         }
     }
 
+    function handleEnterKey(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault(); // Prevent new line
+            actionBtn.click(); // Trigger the submit button click
+        }
+    }
+
     window.onload = () => {
-        // This is the correct place for the full data
-        const fullExerciseData = exerciseData; // Use the global one
+        const fullExerciseData = exerciseData;
 
         initializeProgress();
         setupCategories();
@@ -913,6 +923,7 @@
         actionBtn.addEventListener('click', handleActionClick);
         skipBtn.addEventListener('click', handleSkipClick);
         hintBtn.addEventListener('click', handleHintClick);
+        answerInput.addEventListener('keydown', handleEnterKey);
 
         const firstSubCatBtn = categoryContainer.querySelector('.sidebar-subcategory-btn');
         firstSubCatBtn.classList.add('active');
