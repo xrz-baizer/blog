@@ -70,7 +70,9 @@
 - [句子结构解析：ChatGPT ](https://chatgpt.com/c/689896bf-1550-8327-a87f-a7adc2abd785)
 - 在线句子解析：https://www.kogrammar.com/analyze/
 
-> 练习工具：https://baizer.info/html/PracticeRewritingSentences.html
+## 句型改造练习
+
+https://baizer.info/html/PracticeRewritingSentences.html
 
 ## 一、基本句型
 

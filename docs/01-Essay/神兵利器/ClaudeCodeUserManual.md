@@ -13,6 +13,12 @@
 - `ctrl + j` 输入框换行
 - `shift + tab`切换输入模式
 
+## Prompt
+
+- **思考强度：**`think` < `think hard` < `think harder` < `ultrathink`
+- **上下文压缩：**`我需要总结当前所有工作内容，后续将由其他开发者接手继续开发`
+- **修复问题：**`请分析此Bug的根本原因，并制定修复方案`
+
 ##  Plugins
 
 - [集成 IntelliJ IDEA](https://docs.anthropic.com/en/docs/claude-code/ide-integrations#jet-brains)

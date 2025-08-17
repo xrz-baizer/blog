@@ -110,7 +110,7 @@ He **has** seen the movie.
 
 > 规则：需要根据人称和时态，在动词前==添加== **do not**, **does not**, 或 **did not**，同时主要动词==变回原形==。
 >
-> - **一般用do, 三单时用does，过去时用did**
+> - **do（一般）, does（三单），did（过去时）**
 
 They **work** on weekends.
 
@@ -199,7 +199,7 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 ---
 
-**情况三：句中有助动词 `have/has/had` (完成时态)**
+**情况三：句中有助动词 `have/has/had + 过去分词(完成时态)`**
 
 > 直接将 have/has/had 提到句首，后面的动词**保持过去分词**。
 
@@ -209,11 +209,15 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 ---
 
-**情况四：句中只有一般动词 (如 `play, work, eat`)**
+**情况四：句中只有一般动词 (如 `play, work, eat, have`)**
 
 > 这是唯一需要“**无中生有**”添加助动词的情况。
 >
 > 根据时态和人称，在句首加上 **do**, **does**, 或 **did**，句子中的主要动词**变回原形**。
+>
+> - **do（一般）, does（三单），did（过去时）**
+
+特别注意：当 have/has/had 作为主动词（表示“拥有”）而不是助动词（用于完成时）时，它也属于情况四。
 
 - You **like** coffee. → **Do** you **like** coffee? (主语是 `you`，用 `do`)
 - He **works** hard. → **Does** he **work** hard? (主语是 `he`，用 `does` 三单，`works` 变回 `work`)
