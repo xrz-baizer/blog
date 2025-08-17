@@ -181,8 +181,11 @@ What 后面通常接名词或名词短语，强调事物本身。
 **情况一：句中有 `be` 动词 (`am, is, are, was, were`)**
 
 > 直接将 be 动词提到句首。
+>
+> 特别注意：大多数情况下，**I am** 都会转化为 **Are you**。
 
 - He **is** an engineer. → **Is** he an engineer?
+  - **Isn't** he an engineer?
 - They **were** late. → **Were** they late?
 
 ---
@@ -194,10 +197,11 @@ What 后面通常接名词或名词短语，强调事物本身。
 > 根据时态和人称，在句首加上 **do**, **does**, 或 **did**，句子中的主要动词**变回原形**。
 >
 > - **do（一般）, does（三单），did（过去时）**
-
-特别注意：当 have/has/had 作为主动词（表示“拥有”）而不是助动词（用于完成时）时，它也属于情况四。
+>
+> 特别注意：当 **have/has/had** 作为主动词（表示“拥有”）而不是助动词（用于完成时）时，它也属于情况二。
 
 - You **like** coffee. → **Do** you **like** coffee? (主语是 `you`，用 `do`)
+  - **Don't** you **like** coffee?
 - He **works** hard. → **Does** he **work** hard? (主语是 `he`，用 `does` 三单，`works` 变回 `work`)
 - They **went** home. → **Did** they **go** home? (过去时，用 `did`，`went` 变回 `go`)
 
@@ -210,6 +214,8 @@ What 后面通常接名词或名词短语，强调事物本身。
 > 直接将情态动词提到句首，后面的动词**保持原形**。 
 
 - She **can** speak French. → **Can** she speak French?
+  - **Can't** she speak French?
+
 - You **should** see a doctor. → **Should** you see a doctor?
 - They **will** arrive tomorrow. → **Will** they arrive tomorrow?
 
@@ -220,6 +226,8 @@ What 后面通常接名词或名词短语，强调事物本身。
 > 直接将 have/has/had 提到句首，后面的动词**保持过去分词**。
 
 - You **have** finished the report. → **Have** you finished the report?
+  - **Haven't** you finished the report?
+
 - She **has** been to Paris. → **Has** she been to Paris?
 - He **had** left before I arrived. → **Had** he left before I arrived?
 
