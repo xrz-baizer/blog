@@ -63,7 +63,7 @@
 
 - [造句作业批改：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/b2bb61c5f94aaeeb)
 - [句子结构解析：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/4279f0b0cc4a2dae)
-- [Senior English Teacher：Gemini-Pro（Advenced）==(Lasts until 09-02)==](https://gemini.google.com/u/1/app/3f1f5a3b41aaaf3e)
+- [Senior English Teacher：Gemini-Pro（Advenced）](https://gemini.google.com/u/1/app/76717552dbb5f969)==(Lasts until 09-02)==
 ---
 
 - [造句作业批改：ChatGPT（No need to use Reason）](https://chatgpt.com/c/689d8770-9e48-8322-ae70-1555df6da59d)
