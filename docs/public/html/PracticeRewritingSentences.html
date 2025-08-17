@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English sentence modification practice V8</title>
+    <title>English Sentence Practice Tool V9</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -32,6 +32,9 @@
         .sidebar-main-category {
             cursor: pointer;
         }
+        .sidebar-main-category.completed {
+            background-color: #f0fdf4; /* bg-green-50 */
+        }
         .sidebar-main-category.completed .main-category-title {
             color: #16a34a; /* text-green-600 */
         }
@@ -56,8 +59,8 @@
 <div class="flex flex-col md:flex-row min-h-screen">
     <!-- Sidebar -->
     <aside class="w-full md:w-80 bg-white p-6 border-b md:border-r border-slate-200 flex-shrink-0">
-        <h1 class="text-xl font-bold text-slate-800 mb-1">English sentence modification practice</h1>
-        <p class="text-sm text-slate-500 mb-6">Choose a topic for practice</p>
+        <h1 class="text-xl font-bold text-slate-800 mb-1">English Sentence Practice</h1>
+        <p class="text-sm text-slate-500 mb-6">Choose a topic to practice</p>
         <nav id="category-container" class="space-y-2">
             <!-- Accordion menu will be inserted here -->
         </nav>
@@ -78,7 +81,7 @@
                 <div>
                     <p id="instruction" class="text-slate-500 mb-2 mt-1"></p>
                     <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-                        <p id="sentence" class="text-slate-600 font-medium text-base md:text-lg"></p>
+                        <p id="sentence" class="text-slate-900 font-medium text-base md:text-lg"></p>
                         <p id="translation" class="text-slate-500 text-sm mt-2"></p>
                     </div>
                 </div>
@@ -87,7 +90,7 @@
                 <div id="answer-section">
                     <p id="target-translation" class="text-slate-500 text-sm mt-1 mb-2"></p>
                     <div class="mt-1 flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200">
-                        <textarea id="answer-input" rows="2" class="text-lg  font-semibold w-full p-2 text-slate-700 bg-transparent border-none focus:ring-0 resize-none" placeholder="在这里输入改写后的句子..."></textarea>
+                        <textarea id="answer-input" rows="2" class="w-full p-2 text-slate-900 bg-transparent border-none focus:ring-0 resize-none" placeholder="Type the rewritten sentence here..."></textarea>
                     </div>
                 </div>
 
@@ -101,15 +104,18 @@
                 </div>
 
                 <!-- Action Buttons -->
-                <div class="flex flex-col sm:flex-row justify-center items-center pt-4 space-y-3 sm:space-y-0 sm:space-x-4">
+                <div id="button-container" class="flex flex-col sm:flex-row justify-center items-center pt-4 space-y-3 sm:space-y-0 sm:space-x-4">
+                    <button id="action-btn" class="w-full sm:w-auto bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 active:scale-95 transition-transform shadow-lg hover:shadow-xl">
+                        Submit Answer
+                    </button>
                     <button id="hint-btn" class="w-full sm:w-auto bg-slate-200 text-slate-700 font-bold py-3 px-8 rounded-full hover:bg-slate-300 active:scale-95 transition-transform">
-                        Show hint
+                        Show Hint
                     </button>
                     <button id="skip-btn" class="w-full sm:w-auto bg-slate-200 text-slate-700 font-bold py-3 px-8 rounded-full hover:bg-slate-300 active:scale-95 transition-transform">
-                        Skip and finish
+                        Skip Question
                     </button>
-                    <button id="action-btn" class="w-full sm:w-auto bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 active:scale-95 transition-transform shadow-lg hover:shadow-xl">
-                        Submit the answer
+                    <button id="next-section-btn" class="w-full sm:w-auto bg-green-600 text-white font-bold py-3 px-8 rounded-full hover:bg-green-700 active:scale-95 transition-transform shadow-lg hover:shadow-xl" style="display: none;">
+                        Next Section
                     </button>
                 </div>
             </div>
@@ -118,7 +124,7 @@
 </div>
 
 <!-- Toast Notification -->
-<div id="toast" class="fixed top-5 right-5 flex items-center bg-green-500 text-white py-3 px-5 rounded-lg shadow-lg opacity-0 pointer-events-none transition-all duration-300 ease-in-out transform translate-y-[-20px]">
+<div id="toast" class="fixed top-5 right-5 flex items-center bg-green-500 text-white py-3 px-5 rounded-lg shadow-lg opacity-0 pointer-events-none">
     <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
     <span id="toast-message"></span>
 </div>
@@ -340,7 +346,7 @@
                         { sentence: "He can run <u>10 kilometers</u> without stopping.", translation: "他可以不停地跑10公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far can he run without stopping?"], targetTranslation: "他可以不停地跑多远？" },
                         { sentence: "The flight takes <u>about 3 hours</u>.", translation: "这次飞行大约需要3小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does the flight take?"], targetTranslation: "这次飞行需要多长时间？" }
                     ]},
-                { name: "疑问词作主语", description: "当疑问词（如 Who, What 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+                { name: "疑问词作主语", description: "当疑问词（如 Who, What 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后。</br></br> 结构：疑问词 + 谓语 + 其它?", instruction: "请对划线部分提问。", questions: [
                         { sentence: "<u>Someone</u> broke the vase.", translation: "有人打碎了花瓶。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who broke the vase?"], targetTranslation: "谁打碎了花瓶？" },
                         { sentence: "<u>Something strange</u> happened last night.", translation: "昨晚发生了一些奇怪的事。", note: "<b>提示:</b> What 作主语，后面直接跟动词。", answer: ["what happened last night?"], targetTranslation: "昨晚发生了什么？" },
                         { sentence: "<u>John</u> called you this morning.", translation: "约翰今天早上给你打了电话。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who called you this morning?"], targetTranslation: "谁今天早上给你打了电话？" },
@@ -356,7 +362,7 @@
         },
         "被动语态": {
             subcategories: [
-                { name: "主谓宾 (S+V+O)", description: "将主动语态的宾语变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
+                { name: "主谓宾", description: "将主动语态的宾语变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
                         { sentence: "The teacher praised the student.", translation: "老师表扬了那个学生。", note: "<b>提示:</b> The student was praised by the teacher.", answer: ["the student was praised by the teacher."], targetTranslation: "那个学生被老师表扬了。" },
                         { sentence: "Someone has stolen my wallet.", translation: "有人偷了我的钱包。", note: "<b>提示:</b> My wallet has been stolen.", answer: ["my wallet has been stolen."], targetTranslation: "我的钱包被偷了。" },
                         { sentence: "They will build a new hospital here.", translation: "他们将在这里建一所新医院。", note: "<b>提示:</b> A new hospital will be built here.", answer: ["a new hospital will be built here."], targetTranslation: "一所新医院将在这里被建造。" },
@@ -368,7 +374,7 @@
                         { sentence: "My mother made this cake.", translation: "我妈妈做了这个蛋糕。", note: "<b>提示:</b> This cake was made by my mother.", answer: ["this cake was made by my mother."], targetTranslation: "这个蛋糕是我妈妈做的。" },
                         { sentence: "Shakespeare wrote 'Hamlet'.", translation: "莎士比亚写了《哈姆雷特》。", note: "<b>提示:</b> 'Hamlet' was written by Shakespeare.", answer: ["'hamlet' was written by shakespeare.", "hamlet was written by shakespeare."], targetTranslation: "《哈姆雷特》是莎士比亚写的。" }
                     ]},
-                { name: "主谓宾宾 (S+V+O+O)", description: "主动语态有两个宾语（直接宾语和间接宾语），任何一个都可以变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
+                { name: "主谓宾宾", description: "主动语态有两个宾语（直接宾语和间接宾语），任何一个都可以变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
                         { sentence: "He gave me a book.", translation: "他给了我一本书。", note: "<b>提示:</b> 可以用 I 或 a book 作主语。", answer: ["i was given a book by him.", "a book was given to me by him."], targetTranslation: "我被给了一本书。 / 一本书被给了我。" },
                         { sentence: "She told us a story.", translation: "她给我们讲了一个故事。", note: "<b>提示:</b> 可以用 We 或 a story 作主语。", answer: ["we were told a story by her.", "a story was told to us by her."], targetTranslation: "我们被告知了一个故事。 / 一个故事被讲给了我们。" },
                         { sentence: "My father bought me a new bike.", translation: "我父亲给我买了一辆新自行车。", note: "<b>提示:</b> 可以用 I 或 a new bike 作主语。", answer: ["i was bought a new bike by my father.", "a new bike was bought for me by my father."], targetTranslation: "我被买了一辆新自行车。 / 一辆新自行车被买给了我。" },
@@ -380,7 +386,7 @@
                         { sentence: "The waiter brought us the bill.", translation: "服务员给我们拿来了账单。", note: "<b>提示:</b> 可以用 We 或 the bill 作主语。", answer: ["we were brought the bill by the waiter.", "the bill was brought to us by the waiter."], targetTranslation: "我们被拿来了账单。 / 账单被拿给了我们。" },
                         { sentence: "My grandmother made me a sweater.", translation: "我奶奶给我织了一件毛衣。", note: "<b>提示:</b> 可以用 I 或 a sweater 作主语。", answer: ["i was made a sweater by my grandmother.", "a sweater was made for me by my grandmother."], targetTranslation: "我被织了一件毛衣。 / 一件毛衣被织给了我。" }
                     ]},
-                { name: "主谓宾补 (S+V+O+C)", description: "将主动语态的宾语变成被动语态的主语，宾语补足语保留在谓语动词之后。", instruction: "请将此句改写为被动语态。", questions: [
+                { name: "主谓宾补", description: "将主动语态的宾语变成被动语态的主语，宾语补足语保留在谓语动词之后。", instruction: "请将此句改写为被动语态。", questions: [
                         { sentence: "They elected him president.", translation: "他们选举他为总统。", note: "<b>提示:</b> He was elected president.", answer: ["he was elected president."], targetTranslation: "他被选为总统。" },
                         { sentence: "We call the dog 'Lucky'.", translation: "我们叫这只狗“幸运”。", note: "<b>提示:</b> The dog is called 'Lucky'.", answer: ["the dog is called 'lucky'."], targetTranslation: "这只狗被叫做“幸运”。" },
                         { sentence: "The news made her happy.", translation: "这个消息让她很高兴。", note: "<b>提示:</b> She was made happy by the news.", answer: ["she was made happy by the news."], targetTranslation: "她被这个消息弄得很开心。" },
@@ -648,8 +654,10 @@
     const hintBtn = document.getElementById('hint-btn');
     const skipBtn = document.getElementById('skip-btn');
     const actionBtn = document.getElementById('action-btn');
+    const nextSectionBtn = document.getElementById('next-section-btn');
     const exerciseCard = document.getElementById('exercise-card');
     const toastEl = document.getElementById('toast');
+    const toastMessageEl = document.getElementById('toast-message');
 
     let progressState = {};
     let currentMainCategory = Object.keys(exerciseData)[0];
@@ -688,11 +696,29 @@
                 const titleSpan = document.createElement('span');
                 titleSpan.textContent = subCategory.name;
 
+                const completeSectionBtn = document.createElement('span');
+                completeSectionBtn.innerHTML = '✔';
+                completeSectionBtn.className = 'text-green-500 opacity-50 hover:opacity-100';
+                completeSectionBtn.title = 'Complete this section';
+                completeSectionBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    progressState[mainCategory][subCategory.name].fill(true);
+                    updateAllSidebarProgress();
+                    if (currentMainCategory === mainCategory && currentSubCategory === subCategory.name) {
+                        displayExerciseForSubcategory();
+                    }
+                };
+
                 const progressSpan = document.createElement('span');
                 progressSpan.className = 'progress-text text-xs text-slate-400 font-mono';
 
+                const wrapper = document.createElement('div');
+                wrapper.className = "flex items-center space-x-2";
+                wrapper.appendChild(progressSpan);
+                wrapper.appendChild(completeSectionBtn);
+
                 subCatBtn.appendChild(titleSpan);
-                subCatBtn.appendChild(progressSpan);
+                subCatBtn.appendChild(wrapper);
 
                 subCatBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -744,7 +770,7 @@
 
             const progressSpan = btn.querySelector('.progress-text');
             if (completedCount === totalCount) {
-                progressSpan.textContent = `[ 已完成 ]`;
+                progressSpan.textContent = `[${totalCount}/${totalCount}]`;
                 btn.classList.add('completed');
             } else {
                 progressSpan.textContent = `[ ${completedCount}/${totalCount} ]`;
@@ -781,16 +807,19 @@
         const subCategoryData = exerciseData[currentMainCategory].subcategories.find(sc => sc.name === currentSubCategory);
         const exercise = subCategoryData.questions[questionIndex];
 
-        // Reset UI for new question
         appState = 'submit';
-        actionBtn.textContent = 'Submit the answer';
+        actionBtn.textContent = 'Submit Answer';
         answerInput.value = exercise.sentence.replace(/<[^>]*>/g, '');
         answerInput.disabled = false;
         feedbackSection.style.display = 'none';
         noteSection.style.display = 'none';
-        hintBtn.textContent = 'Show hint';
-        hintBtn.style.display = 'inline-flex';
+        hintBtn.textContent = 'Show Hint';
+
+        document.getElementById('button-container').style.display = 'flex';
+        actionBtn.style.display = 'inline-flex';
         skipBtn.style.display = 'inline-flex';
+        hintBtn.style.display = 'inline-flex';
+        nextSectionBtn.style.display = 'none';
         answerSection.style.display = 'block';
 
         exerciseCard.classList.remove('fade-in');
@@ -800,22 +829,25 @@
         instructionEl.textContent = subCategoryData.instruction;
         sentenceEl.innerHTML = exercise.sentence;
         translationEl.textContent = exercise.translation;
-        targetTranslationEl.textContent = `Tips: ${exercise.targetTranslation || ''}`;
+        targetTranslationEl.textContent = `Target: ${exercise.targetTranslation || ''}`;
 
         exerciseCard.classList.add('fade-in');
     }
 
     function displayCompletionMessage() {
         appState = 'reset';
-        instructionEl.textContent = "You can choose other topics to continue practicing or reset the progress of this section.";
-        sentenceEl.innerHTML = "<span class='text-2xl'>🎉</span> Congratulations！";
-        translationEl.textContent = "You have completed all the exercises in this section.";
+        instructionEl.textContent = "You can choose another topic or reset the progress for this section.";
+        sentenceEl.innerHTML = "<span class='text-2xl'>🎉</span> Congratulations!";
+        translationEl.textContent = "You have completed all exercises in this section.";
         answerSection.style.display = 'none';
         feedbackSection.style.display = 'none';
         noteSection.style.display = 'none';
+
+        const buttonContainer = document.getElementById('button-container');
+        actionBtn.textContent = 'Reset Section';
+        nextSectionBtn.style.display = 'inline-flex';
         hintBtn.style.display = 'none';
         skipBtn.style.display = 'none';
-        actionBtn.textContent = 'Reset this section';
     }
 
     function displayExerciseForSubcategory() {
@@ -840,7 +872,7 @@
 
     function showFeedback(isCorrect) {
         if(isCorrect) {
-            showToast('Correct!');
+            showToast('🎉 Great! Keep up the good work and come on!');
             return true;
         } else {
             feedbackSection.style.display = 'block';
@@ -853,7 +885,6 @@
     }
 
     function showToast(message) {
-        const toastMessageEl = document.getElementById('toast-message');
         toastMessageEl.textContent = message;
         toastEl.style.opacity = '1';
         toastEl.style.transform = 'translateY(0)';
@@ -868,7 +899,7 @@
             const isCorrect = validateAnswer();
 
             if (isCorrect) {
-                showToast('Correct!');
+                showToast('🎉 Great! Keep up the good work and come on!');
                 progressState[currentMainCategory][currentSubCategory][currentQuestionIndex] = true;
                 answerInput.disabled = true;
 
@@ -878,8 +909,6 @@
                 }, 1000);
             } else {
                 showFeedback(false);
-                noteSection.style.display = 'block';
-                // Allow user to re-submit
             }
 
         } else if (appState === 'reset') {
@@ -899,10 +928,10 @@
         const isHidden = noteSection.style.display === 'none';
         if(isHidden) {
             noteSection.style.display = 'block';
-            hintBtn.textContent = 'Hidden hint';
+            hintBtn.textContent = 'Hide Hint';
         } else {
             noteSection.style.display = 'none';
-            hintBtn.textContent = 'Show hint';
+            hintBtn.textContent = 'Show Hint';
         }
     }
 
@@ -913,17 +942,26 @@
         }
     }
 
-    window.onload = () => {
-        const fullExerciseData = exerciseData;
+    function handleNextSectionClick() {
+        const allSubCatBtns = [...document.querySelectorAll('.sidebar-subcategory-btn')];
+        const currentBtnIndex = allSubCatBtns.findIndex(btn => btn.dataset.mainCategory === currentMainCategory && btn.dataset.subCategory === currentSubCategory);
 
+        if (currentBtnIndex > -1 && currentBtnIndex < allSubCatBtns.length - 1) {
+            allSubCatBtns[currentBtnIndex + 1].click();
+        } else {
+            showToast("🎉 You have completed all sections!");
+        }
+    }
+
+    window.onload = () => {
         initializeProgress();
         setupCategories();
 
-        // Add event listeners after elements are guaranteed to exist
         actionBtn.addEventListener('click', handleActionClick);
         skipBtn.addEventListener('click', handleSkipClick);
         hintBtn.addEventListener('click', handleHintClick);
         answerInput.addEventListener('keydown', handleEnterKey);
+        nextSectionBtn.addEventListener('click', handleNextSectionClick);
 
         const firstSubCatBtn = categoryContainer.querySelector('.sidebar-subcategory-btn');
         firstSubCatBtn.classList.add('active');
