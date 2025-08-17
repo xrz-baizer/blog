@@ -90,73 +90,6 @@
 - We are Chinese.
 - The teacher is beautiful.
 
-> **She is beautiful.**
->
-> - 否定句：She is not beautiful.
-> - 一般疑问句：Is she beautiful?
-> - 特殊疑问句：Who is she beautiful?
-> - 现在时：
->   - She has been beautiful.
->
-> - 过去时：
->   - She was beautiful.
->   - She had been beautiful.
->
-> - 将来时：
->   - She will be beautiful.
->   - She will have been beautiful.
->
->
-> **They are discussing.**
->
-> - 否定句：They are not discussing.
-> - 一般疑问句：Are they discussing?
-> - 特殊疑问句：What are they discussing?
-> - 现在时：
->   - They have discussed.
->   - They have been discussing.
->
-> - 过去时：
->   - They discussed.
->   - They were discussing.
->   - They had discussed.
->
-> - 将来时：
->   - They will discuss.
->   - They are going to discuss.
->   - They will be discussing.
->   - They will have discussed.
->   - They will have been discussing.
->
-> - 过去将来时：
->   - They would discuss.
->   - They were going to discuss.
->   - They would be discussing.
->   - They would have discussed.
->   - They would have been discussing.
->
->
-> **Today the food tastes normal.**
->
-> - 否定句：The food does not taste normal today.
-> - 一般疑问句：Does the food taste today?
-> - 特殊疑问句：How does today the food taste normal?
-> - 过去时：The food tasted normal yesterday.
-> - 将来时：The food will taste normal tomorrow.
->
-> **I am become strong.**
->
-> - 否定句：
->
-> - 一般疑问句：
-> - 特殊疑问句：
-> - 被动语态：
-> - 现在时：
-> - 过去时：
-> - 将来时：
->
-> **I stay self-motivated.**
-
 #### ==主 + 谓 + 宾==
 
 **表示“谁/什么做了什么”，宾语是动作的承受者。**
@@ -164,14 +97,6 @@
 - I love you. (我爱你。)
 - She reads a book. (她读一本书。)
 - They are playing football. (他们在踢足球。)
-
->**I am drinking water.**
->
->**My mother called me yesterday.**
->
->**He turns on the air conditioner.**
->
->**We watch TV.**
 
 #### ==主 + 谓 + 宾 + 宾==
 
