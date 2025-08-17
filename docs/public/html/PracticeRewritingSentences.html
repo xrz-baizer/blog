@@ -784,7 +784,7 @@
         // Reset UI for new question
         appState = 'submit';
         actionBtn.textContent = 'Submit the answer';
-        answerInput.value = exercise.sentence;
+        answerInput.value = exercise.sentence.replace(/<[^>]*>/g, '');
         answerInput.disabled = false;
         feedbackSection.style.display = 'none';
         noteSection.style.display = 'none';
