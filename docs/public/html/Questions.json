@@ -2628,36 +2628,6 @@
               "the picture was shown to me by him."
             ],
             targetTranslation: "我被展示了那张照片。 / 那张照片被展示给了我。"
-          },
-          {
-            sentence: "She lent her friend some money.",
-            translation: "她借给朋友一些钱。",
-            note: "<b>提示:</b> 可以用 Her friend 或 some money 作主语。",
-            answer: [
-              "her friend was lent some money by her.",
-              "some money was lent to her friend by her."
-            ],
-            targetTranslation: "她的朋友被借了一些钱。 / 一些钱被借给了她的朋友。"
-          },
-          {
-            sentence: "The waiter brought us the bill.",
-            translation: "服务员给我们拿来了账单。",
-            note: "<b>提示:</b> 可以用 We 或 the bill 作主语。",
-            answer: [
-              "we were brought the bill by the waiter.",
-              "the bill was brought to us by the waiter."
-            ],
-            targetTranslation: "我们被拿来了账单。 / 账单被拿给了我们。"
-          },
-          {
-            sentence: "My grandmother made me a sweater.",
-            translation: "我奶奶给我织了一件毛衣。",
-            note: "<b>提示:</b> 可以用 I 或 a sweater 作主语。",
-            answer: [
-              "i was made a sweater by my grandmother.",
-              "a sweater was made for me by my grandmother."
-            ],
-            targetTranslation: "我被织了一件毛衣。 / 一件毛衣被织给了我。"
           }
         ]
       },

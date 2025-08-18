@@ -453,14 +453,43 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 - Is there a dirty fork on the plate?
 
+**有情态动词时，直接将情态动词提到句首（常见：can, could, may, might, will, would, shall, should, must）**
+
+- There **will** be a test next week. -> **Will** there be a test next week?
+- There **should** be a sign here. -> **Should** there be a sign here?
+
+**注意：`some`在变为疑问句或者否定句时需要转化为`any`**
+
+- `some` 通常用于肯定句，而 `any` 通常用于否定句和疑问句。
+
 
 #### 变否定句
 
 **结构：==在动词 be 后面加 not (any) 或者 no==**
 
-- There is not a fork on the plate.
-- There are no newspaper on the shelf.
-- There are't any ties on the floor.
+**表示“完全没有” (数量 = 0)**
+
+- **对于复数/不可数名词: 用 `...not any...` 或 `...no...`**(语气更直接、坚决地表示“完全没有”)
+  - There are not any ties on the floor.
+  - There are no newspaper on the shelf.
+  - There aren't any cars. / There are no cars.
+  - There isn't any water. / There is no water.
+- **对于单数名词: 用 `...not a/an...` 或 `...no...`**(语气更直接、坚决地表示“完全没有”)
+  - There wasn't a tree. / There was no tree.
+  - There is not a fork on the plate.
+
+**表示“不是...” (数量 ≠ X)**
+
+- **用 `...not + 具体数字/量词`（含义: 东西是有的，但数量不是你说的那个）**
+  - There are not ten cars. (不是10辆车。)
+
+---
+
+**注意：如果有情态动词时，not要放情态动词后面，be动词前面。**
+
+- There **will not** be a meeting tomorrow.
+- There **will not** be **any** meetings tomorrow.
+- There **will** be **no** meeting tomorrow.
 
 ### It is ... that 强调句
 
@@ -722,12 +751,12 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 ## 被动语态
 
-> 英语语态中分为主动语态和被动语态，被动语态用于强调动作的承受者，而不是动作的执行者。
+> 英语语态中分为主动语态和被动语态，**被动语态用于强调动作的承受者**，而不是动作的执行者。
 >
-> - 主动语态：兔子咬人了（强调动作执行者“兔子”）
-> - 被动语态：谁被兔子咬了？（强调动作承受者“谁”）
+> - 主动语态：兔子咬人了（强调动作执行者“兔子”）（重点在“谁做了事”）
+> - 被动语态：谁被兔子咬了？（强调动作承受者“谁”）（重点在“发生了什么事”）
 
-在英语中，被动语态是通过谓语动词的变化完成的，它的结构是 `be动词 + 过去分词`。
+**==核心结构： `be动词 + 过去分词`==**
 
 五种基本句型被动语态的演化：
 
@@ -736,29 +765,57 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 ### 主谓宾
 
-主动语态：<u>The rabbit</u> ate <u>the carrot</u>. （兔子吃了胡萝卜）
+**主动语态：<u>The rabbit</u> ate <u>the carrot</u>. （兔子吃了胡萝卜）**
 
-1. 调换主语和宾语的位置 -> ==The carrot== ate ==the rabbit==.（胡萝卜吃了兔子）
-2. 动词前面+be动词，并都变为过去式 ->  The carrot ==was eaten== the rabbit.（胡萝卜被兔子吃了）
-3. 句子还是有点奇怪，需要借助 `by` 表明动作的执行者 ->  The carrot was eaten ==by== the rabbit.（胡萝卜被兔子吃了）
+**第一步：==调换主语和宾语的位置==** 
+
+- `The carrot` ate `the rabbit`.（胡萝卜吃了兔子）
+
+**第二步：==动词前面 + be动词==，==动词变为 过去分词==** 
+
+- The carrot `was eaten` the rabbit.（胡萝卜被兔子吃了）
+- be动词要根据原句的时态和新主语的人称进行变化
+
+**第三步（非必需）：句子还是有点奇怪，==可以借助 by 表明动作的执行者==**
+
+- The carrot `was eaten by` the rabbit.（胡萝卜被兔子吃了）
+- 当动作的执行者是**重要的、特定的信息**时，必须保留 `by` 短语
+
+---
+
+- **Da Vinci painted the Mona Lisa. 达芬奇画了蒙娜丽莎。**
+  - 过去式：The Mona Lisa `was painted by` Da Vinci. 蒙娜丽莎是达芬奇画的。
+  - by表明是达芬奇画的
+- **The chef is preparing the meal now. 厨师正在准备这顿饭。**
+  - 现在进行时：The meal `is being prepared by` the chef now. 这顿饭正在被厨师准备。
+  - be的现在进行时为：is being
+  - by表明是厨师在准备
+- Someone has stolen my wallet. 有人偷了我的钱包。
+  - 现在完成时：My wallet `has been stolen`. 我的钱包被偷了。
+  - be的现在完成时为：have/has been
 
 ### 主谓宾宾
 
-主动语态：<u>The rabbit</u> gave <u>the carrot</u> to <u>the wolf</u>. （兔子给了狼胡萝卜）
+**主动语态：<u>The rabbit</u> gave <u>the carrot</u> to <u>the wolf</u>. （兔子给了狼胡萝卜）**（此例中通过to 替换了间接宾语和直接宾语的位置）
 
-1. 想强调那个宾语，就调换那个宾语和主语的位置（此例中通过to 替换了间接宾语和直接宾语的位置）
-2. 强调直接宾语 the carrot ->  ==The carrot== was given to the wolf by the rabbit. （胡萝卜被兔子给了狼）
-3. 强调间接宾语 the wolf ->  ==The wolf== was given the carrot by the rabbit. （狼被兔子给了胡萝卜）
-4. 在上下文明确动作执行者时，可以省略 by + 动作执行者
-   - The carrot was given to the wolf ~~by the rabbit~~.
-   - The wolf was given the carrot ~~by the rabbit~~.
+**==想强调那个宾语，就调换那个宾语和主语的位置，其它与主谓宾一致==**
+
+- 强调直接宾语 the carrot -> The carrot was given to the wolf by the rabbit. （胡萝卜被兔子给了狼）
+
+- 强调间接宾语 the wolf -> The wolf was given the carrot by the rabbit. （狼被兔子给了胡萝卜）
+
+**在上下文明确动作执行者时，可以省略 by + 动作执行者**
+
+- The carrot was given to the wolf by the rabbit.
+- The wolf was given the carrot by the rabbit.
 
 ### 主谓宾补
 
 主动语态：<u>The wolf</u> invited <u>the rabbit</u> <u>to her party</u>. （狼邀请了兔子去她的聚会）
 
-1. 调换主语和宾语的位置，保留补语，保持时态一致，通过by指出动作的执行者（大多数情况下，by放置句子末尾）
-2. The rabbit was invited to the party by the wolf. （兔子被狼邀请去了聚合）
+**==同主谓宾，保留补语==（大多数情况下，by放置句子末尾。by同样是非必需）**
+
+- The rabbit `was` `invited` to the party `by` the wolf. （兔子被狼邀请去了聚合）
 
 ## 并列句
 

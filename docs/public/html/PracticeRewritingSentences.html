@@ -530,9 +530,6 @@
                         { sentence: "They sent her an invitation.", translation: "他们寄给她一份邀请函。", note: "<b>提示:</b> 可以用 She 或 an invitation 作主语。", answer: ["she was sent an invitation.", "an invitation was sent to her."], targetTranslation: "她被寄了一份邀请函。 / 一份邀请函被寄给了她。" },
                         { sentence: "The teacher asked the students a question.", translation: "老师问了学生们一个问题。", note: "<b>提示:</b> 可以用 The students 或 a question 作主语。", answer: ["the students were asked a question by the teacher.", "a question was asked of the students by the teacher."], targetTranslation: "学生们被问了一个问题。 / 一个问题被问给了学生们。" },
                         { sentence: "He showed me the picture.", translation: "他给我看了那张照片。", note: "<b>提示:</b> 可以用 I 或 the picture 作主语。", answer: ["i was shown the picture by him.", "the picture was shown to me by him."], targetTranslation: "我被展示了那张照片。 / 那张照片被展示给了我。" },
-                        { sentence: "She lent her friend some money.", translation: "她借给朋友一些钱。", note: "<b>提示:</b> 可以用 Her friend 或 some money 作主语。", answer: ["her friend was lent some money by her.", "some money was lent to her friend by her."], targetTranslation: "她的朋友被借了一些钱。 / 一些钱被借给了她的朋友。" },
-                        { sentence: "The waiter brought us the bill.", translation: "服务员给我们拿来了账单。", note: "<b>提示:</b> 可以用 We 或 the bill 作主语。", answer: ["we were brought the bill by the waiter.", "the bill was brought to us by the waiter."], targetTranslation: "我们被拿来了账单。 / 账单被拿给了我们。" },
-                        { sentence: "My grandmother made me a sweater.", translation: "我奶奶给我织了一件毛衣。", note: "<b>提示:</b> 可以用 I 或 a sweater 作主语。", answer: ["i was made a sweater by my grandmother.", "a sweater was made for me by my grandmother."], targetTranslation: "我被织了一件毛衣。 / 一件毛衣被织给了我。" }
                     ]},
                 { name: "主谓宾补", description: "将主动语态的宾语变成被动语态的主语，宾语补足语保留在谓语动词之后。", instruction: "请将此句改写为被动语态。", questions: [
                         { sentence: "They elected him president.", translation: "他们选举他为总统。", note: "<b>提示:</b> He was elected president.", answer: ["he was elected president."], targetTranslation: "他被选为总统。" },
@@ -1061,7 +1058,7 @@
             const subCategoryData = exerciseData[currentMainCategory].subcategories.find(sc => sc.name === currentSubCategory);
             const correctAnswer = subCategoryData.questions[currentQuestionIndex].answer[0];
             feedbackSection.className = 'p-4 rounded-lg border-l-4 incorrect';
-            feedbackSection.innerHTML = `❌ Correct answer: <strong class="font-semibold">${correctAnswer}</strong>`;
+            feedbackSection.innerHTML = `Correct answer: <strong class="font-semibold">${correctAnswer}</strong>`;
             return false;
         }
     }
