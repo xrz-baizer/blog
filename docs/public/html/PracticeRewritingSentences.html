@@ -324,18 +324,57 @@
                         { sentence: "<u>The man with the hat</u> is a detective.", translation: "那个戴帽子的男人是侦探。", note: "<b>提示:</b> 对主语人物提问用 <b>Who</b>。", answer: ["who is the man with the hat?"], targetTranslation: "那个戴帽子的男人是谁？" },
                         { sentence: "We are waiting for <u>Mr. Smith</u>.", translation: "我们正在等史密斯先生。", note: "<b>提示:</b> 对宾语人物提问用 <b>Who(m)</b>。", answer: ["who are you waiting for?", "whom are you waiting for?"], targetTranslation: "你们在等谁？" }
                     ]},
-                { name: "Which", description: "用于在有限的选择中进行询问。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
-                        { sentence: "I would like <u>the blue one</u>.", translation: "我想要蓝色的那个。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which one would you like?"], targetTranslation: "你想要哪一个？" },
-                        { sentence: "<u>The red car</u> is mine.", translation: "红色的车是我的。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which car is yours?"], targetTranslation: "哪辆车是你的？" },
-                        { sentence: "She prefers <u>the larger size</u>.", translation: "她更喜欢大号的。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which size does she prefer?"], targetTranslation: "她更喜欢哪个尺寸？" },
-                        { sentence: "He lives in <u>the house on the left</u>.", translation: "他住在左边的房子里。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which house does he live in?"], targetTranslation: "他住在哪栋房子里？" },
-                        { sentence: "I want to buy <u>this book</u>, not that one.", translation: "我想买这本书，不是那本。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which book do you want to buy?"], targetTranslation: "你想买哪本书？" },
-                        { sentence: "<u>The train to Shanghai</u> leaves at 10.", translation: "去上海的火车10点开。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which train leaves at 10?"], targetTranslation: "哪趟火车10点开？" },
-                        { sentence: "She chose <u>the chocolate cake</u>.", translation: "她选了巧克力蛋糕。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which cake did she choose?"], targetTranslation: "她选了哪个蛋糕？" },
-                        { sentence: "My favorite season is <u>summer</u>.", translation: "我最喜欢的季节是夏天。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which is your favorite season?"], targetTranslation: "你最喜欢的季节是哪个？" },
-                        { sentence: "He is in <u>the classroom at the end of the hall</u>.", translation: "他在走廊尽头的教室里。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which classroom is he in?"], targetTranslation: "他在哪个教室？" },
-                        { sentence: "I think <u>the first option</u> is better.", translation: "我认为第一个选项更好。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which option do you think is better?"], targetTranslation: "你认为哪个选项更好？" }
-                    ]},
+                {
+                    name: "Which + 名词",
+                    description: "当 Which 后面紧跟一个名词时，它的作用是限定这个名词的范围，意思是“哪一个/些...”。这时 `Which + 名词` 共同构成一个完整的疑问词组。",
+                    instruction: "请对划线部分提问。",
+                    questions: [
+                        { sentence: "<u>The red car</u> is faster than the blue one.", translation: "红色的车比蓝色的快。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which car is faster?"], targetTranslation: "哪辆车更快？" },
+                        { sentence: "She prefers <u>the larger size</u>.", translation: "她更喜欢大号的。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which size does she prefer?"], targetTranslation: "她更喜欢哪个尺寸？" },
+                        { sentence: "I want to read <u>the book on the top shelf</u>.", translation: "我想读顶层架子上的那本书。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which book do you want to read?"], targetTranslation: "你想读哪本书？" },
+                        { sentence: "He took <u>the morning flight</u> to London.", translation: "他搭乘早班机去了伦敦。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which flight did he take to London?"], targetTranslation: "他搭乘哪趟航班去了伦敦？" },
+                        { sentence: "<u>The train to Shanghai</u> is delayed.", translation: "开往上海的火车晚点了。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which train is delayed?"], targetTranslation: "哪趟火车晚点了？" },
+                        { sentence: "You should take <u>the path on the right</u>.", translation: "你应该走右边那条路。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which path should I take?"], targetTranslation: "我应该走哪条路？" },
+                        { sentence: "He is a student at <u>the university downtown</u>.", translation: "他是市中心那所大学的学生。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which university is he a student at?"], targetTranslation: "他是哪所大学的学生？" },
+                        { sentence: "She is staying in <u>the hotel near the airport</u>.", translation: "她住在机场附近的那家酒店。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which hotel is she staying in?"], targetTranslation: "她住在哪家酒店？" },
+                        { sentence: "I believe <u>the second plan</u> is more practical.", translation: "我相信第二个计划更实用。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which plan do you believe is more practical?"], targetTranslation: "你相信哪个计划更实用？" },
+                        { sentence: "My favorite color is <u>blue</u>.", translation: "我最喜欢的颜色是蓝色。", note: "<b>提示:</b> 对选项提问用 <b>Which + 名词</b>。", answer: ["which color is your favorite?"], targetTranslation: "哪个颜色是你最喜欢的？" }
+                    ]
+                },
+                {
+                    name: "Which one / ones",
+                    description: "当不想重复前面已经提过的名词时，我们用 `one` 来指代那个可数名词单数，用 `ones` 指代复数。",
+                    instruction: "请对划线部分提问。",
+                    questions: [
+                        { sentence: "Between these two shirts, I would like <u>the blue one</u>.", translation: "在这两件衬衫之间，我想要蓝色的那件。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one would you like?"], targetTranslation: "你想要哪一件？" },
+                        { sentence: "Of all the hats, she chose <u>the red one</u>.", translation: "在所有的帽子中，她选了红色的那顶。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one did she choose?"], targetTranslation: "她选了哪一顶？" },
+                        { sentence: "I have two phones. <u>The new one</u> has a better camera.", translation: "我有两部手机。新的那部相机更好。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one has a better camera?"], targetTranslation: "哪一部的相机更好？" },
+                        { sentence: "He needs a pen. He will take <u>the one on the desk</u>.", translation: "他需要一支笔。他会拿桌上的那支。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one will he take?"], targetTranslation: "他会拿哪一支？" },
+                        { sentence: "Don't use those old batteries. Use <u>the new ones</u>.", translation: "别用那些旧电池。用新的这些。", note: "<b>提示:</b> 用 <b>Which ones</b> 提问。", answer: ["which ones should I use?"], targetTranslation: "我应该用哪些？" },
+                        { sentence: "I like all these puppies. I can't decide on <u>just one</u>.", translation: "这些小狗我都喜欢。我无法只决定要一只。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one will you choose?"], targetTranslation: "你会选哪一只？" },
+                        { sentence: "Look at these two paintings. <u>The left one</u> is more famous.", translation: "看这两幅画。左边那幅更出名。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one is more famous?"], targetTranslation: "哪一幅更出名？" },
+                        { sentence: "I baked several cakes. <u>The chocolate one</u> is for the party.", translation: "我烤了几个蛋糕。巧克力那个是为派对准备的。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one is for the party?"], targetTranslation: "哪一个是为派对准备的？" },
+                        { sentence: "There are many apples in the basket. You should pick <u>the ripe ones</u>.", translation: "篮子里有很多苹果。你应该挑熟的那些。", note: "<b>提示:</b> 用 <b>Which ones</b> 提问。", answer: ["which ones should I pick?"], targetTranslation: "我应该挑哪些？" },
+                        { sentence: "She has two job offers. She accepted <u>the one with the higher salary</u>.", translation: "她有两个工作机会。她接受了薪水较高的那个。", note: "<b>提示:</b> 用 <b>Which one</b> 提问。", answer: ["which one did she accept?"], targetTranslation: "她接受了哪一个？" }
+                    ]
+                },
+                {
+                    name: "Which (as a pronoun)",
+                    description: "当 `Which` 后面不跟名词时，它本身就作为一个代词独立使用，意思是“哪一个”或“哪个”。这通常发生在上下文已经很清楚我们在谈论什么事物，或者指代抽象概念时。",
+                    instruction: "请对划线部分提问。",
+                    questions: [
+                        { sentence: "Of all the seasons, my favorite is <u>summer</u>.", translation: "在所有季节中，我最喜欢的是夏天。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which is your favorite?"], targetTranslation: "哪个是你最喜欢的？" },
+                        { sentence: "We have two options: we can go by train or by bus. <u>Going by train</u> is faster.", translation: "我们有两个选择：乘火车或乘公交。乘火车更快。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which is faster?"], targetTranslation: "哪个更快？" },
+                        { sentence: "I have tea and coffee. I would like <u>tea</u>, please.", translation: "我有茶和咖啡。我想要茶，谢谢。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which would you like?"], targetTranslation: "你想要哪个？" },
+                        { sentence: "He could either report the mistake or ignore it. He chose to <u>report it</u>.", translation: "他可以报告错误，也可以忽略它。他选择了报告。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which did he choose?"], targetTranslation: "他选择了哪个？" },
+                        { sentence: "There are two paths ahead. <u>The left one</u> leads to the castle.", translation: "前面有两条路。左边那条通向城堡。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which leads to the castle?"], targetTranslation: "哪条通向城堡？" },
+                        { sentence: "She can play the piano and the violin. She plays <u>the piano</u> better.", translation: "她会弹钢琴和小提琴。她钢琴弹得更好。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which does she play better?"], targetTranslation: "她哪个弹得更好？" },
+                        { sentence: "I don't know if I should call him or send a text. <u>Sending a text</u> is probably better.", translation: "我不知道该给他打电话还是发短信。发短信可能更好。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which is probably better?"], targetTranslation: "哪个可能更好？" },
+                        { sentence: "Between chicken and fish, I prefer <u>fish</u>.", translation: "在鸡肉和鱼肉之间，我更喜欢鱼肉。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which do you prefer?"], targetTranslation: "你更喜欢哪个？" },
+                        { sentence: "He could have invested in stocks or real estate. He decided on <u>real estate</u>.", translation: "他本可以投资股票或房地产。他决定投资房地产。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which did he decide on?"], targetTranslation: "他决定投资哪个？" },
+                        { sentence: "Of all the tasks, <u>this one</u> needs to be finished first.", translation: "在所有任务中，这个需要最先完成。", note: "<b>提示:</b> 用单独的 <b>Which</b> 提问。", answer: ["which needs to be finished first?"], targetTranslation: "哪个需要最先完成？" }
+                    ]
+                },
                 { name: "How", description: "用于询问方式、方法或状态。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
                         { sentence: "He goes to school <u>by bus</u>.", translation: "他乘公共汽车去上学。", note: "<b>提示:</b> 对方式提问用 <b>How</b>。", answer: ["how does he go to school?"], targetTranslation: "他怎么去上学？" },
                         { sentence: "She is feeling <u>much better</u> today.", translation: "她今天感觉好多了。", note: "<b>提示:</b> 对状态提问用 <b>How</b>。", answer: ["how is she feeling today?"], targetTranslation: "她今天感觉怎么样？" },
@@ -357,29 +396,7 @@
                         { sentence: "There is <u>a little</u> milk in the fridge.", translation: "冰箱里有一点牛奶。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much milk is there in the fridge?"], targetTranslation: "冰箱里有多少牛奶？" },
                         { sentence: "She bought <u>many</u> apples.", translation: "她买了很多苹果。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many apples did she buy?"], targetTranslation: "她买了多少苹果？" },
                         { sentence: "The ticket is <u>50 euros</u>.", translation: "这张票50欧元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much is the ticket?"], targetTranslation: "这张票多少钱？" },
-                        { sentence: "He has <u>a lot of</u> work to do.", translation: "他有很多工作要做。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much work does he have to do?"], targetTranslation: "他有多少工作要做？" },
-
-                        { sentence: "There are <u>seven days</u> in a week.", translation: "一周有七天。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many days are there in a week?"], targetTranslation: "一周有几天？" },
-                        { sentence: "She has <u>three</u> cats at home.", translation: "她家里有三只猫。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many cats does she have at home?"], targetTranslation: "她家里有几只猫？" },
-                        { sentence: "He visited <u>five</u> different countries last summer.", translation: "他去年夏天访问了五个不同的国家。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many different countries did he visit last summer?"], targetTranslation: "他去年夏天访问了几个不同的国家？" },
-                        { sentence: "There are <u>twenty-four</u> hours in a day.", translation: "一天有24小时。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many hours are there in a day?"], targetTranslation: "一天有多少小时？" },
-                        { sentence: "I need to write <u>two more</u> emails before I leave.", translation: "我离开前还需要写两封邮件。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many more emails do you need to write before you leave?"], targetTranslation: "你离开前还需要写几封邮件？" },
-                        { sentence: "The new library will have <u>over a million</u> books.", translation: "新图书馆将拥有一百多万册图书。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many books will the new library have?"], targetTranslation: "新图书馆将有多少册图书？" },
-                        { sentence: "She can speak <u>several</u> languages.", translation: "她会说好几种语言。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many languages can she speak?"], targetTranslation: "她会说几种语言？" },
-                        { sentence: "He has read <u>all the books</u> on this shelf.", translation: "他读完了这个书架上所有的书。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many books on this shelf has he read?"], targetTranslation: "这个书架上的书他读了多少本？" },
-                        { sentence: "There were <u>a lot of people</u> at the concert.", translation: "音乐会有很多人。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many people were there at the concert?"], targetTranslation: "音乐会有多少人？" },
-                        { sentence: "The team has won <u>four championships</u> in a row.", translation: "该队连续赢得了四次冠军。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many championships has the team won in a row?"], targetTranslation: "该队连续赢得了多少次冠军？" },
-                        { sentence: "You need to answer <u>at least ten</u> questions.", translation: "你至少需要回答十个问题。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many questions do I need to answer?"], targetTranslation: "我需要回答多少个问题？" },
-                        { sentence: "This jacket costs <u>150 dollars</u>.", translation: "这件夹克150美元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much does this jacket cost?"], targetTranslation: "这件夹克多少钱？" },
-                        { sentence: "There is <u>a little</u> juice left in the bottle.", translation: "瓶子里只剩一点果汁了。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much juice is left in the bottle?"], targetTranslation: "瓶子里还剩多少果汁？" },
-                        { sentence: "He spent <u>a lot of time</u> preparing for the exam.", translation: "他花了很多时间准备考试。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much time did he spend preparing for the exam?"], targetTranslation: "他花了多少时间准备考试？" },
-                        { sentence: "I have <u>some</u> work to finish before dinner.", translation: "晚饭前我有些工作要完成。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much work do you have to finish before dinner?"], targetTranslation: "晚饭前你有多少工作要完成？" },
-                        { sentence: "She adds <u>just a little</u> sugar to her coffee.", translation: "她的咖啡只加了一点点糖。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much sugar does she add to her coffee?"], targetTranslation: "她的咖啡里加了多少糖？" },
-                        { sentence: "The new car will cost you <u>around $30,000</u>.", translation: "这辆新车将花费你大约3万美元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much will the new car cost me?"], targetTranslation: "这辆新车将花费我多少钱？" },
-                        { sentence: "We need <u>a lot more</u> information to make a decision.", translation: "我们需要更多的信息来做决定。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much more information do you need to make a decision?"], targetTranslation: "你们需要多少信息来做决定？" },
-                        { sentence: "She has made <u>remarkable</u> progress in her studies.", translation: "她的学习取得了显著的进步。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much progress has she made in her studies?"], targetTranslation: "她在学习上取得了多大进步？" },
-                        { sentence: "I don't have <u>much</u> money with me right now.", translation: "我现在没带多少钱。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much money do you have with you right now?"], targetTranslation: "你现在带了多少钱？" },
-                        { sentence: "It took <u>a great deal of</u> courage to tell the truth.", translation: "说出真相需要巨大的勇气。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much courage did it take to tell the truth?"], targetTranslation: "说出真相需要多大的勇气？" }
+                        { sentence: "He has <u>a lot of</u> work to do.", translation: "他有很多工作要做。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much work does he have to do?"], targetTranslation: "他有多少工作要做？" }
                     ]},
                 { name: "How long / often / far", description: "分别用于询问时长、频率和距离。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
                         { sentence: "She goes to the gym <u>three times a week</u>.", translation: "她一周去三次健身房。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she go to the gym?"], targetTranslation: "她多久去一次健身房？" },
@@ -391,18 +408,48 @@
                         { sentence: "We waited <u>for a long time</u>.", translation: "我们等了很长时间。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long did you wait?"], targetTranslation: "你们等了多久？" },
                         { sentence: "She calls her mother <u>every day</u>.", translation: "她每天都给妈妈打电话。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she call her mother?"], targetTranslation: "她多久给妈妈打一次电话？" },
                         { sentence: "He can run <u>10 kilometers</u> without stopping.", translation: "他可以不停地跑10公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far can he run without stopping?"], targetTranslation: "他可以不停地跑多远？" },
-                        { sentence: "The flight takes <u>about 3 hours</u>.", translation: "这次飞行大约需要3小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does the flight take?"], targetTranslation: "这次飞行需要多长时间？" },
+                        { sentence: "The flight takes <u>about 3 hours</u>.", translation: "这次飞行大约需要3小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does the flight take?"], targetTranslation: "这次飞行需要多长时间？" }
+                    ]},
 
-                        { sentence: "She goes to the gym <u>three times a week</u>.", translation: "她一周去三次健身房。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she go to the gym?"], targetTranslation: "她多久去一次健身房？" },
-                        { sentence: "He checks his phone <u>every few minutes</u>.", translation: "他每隔几分钟就看一次手机。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does he check his phone?"], targetTranslation: "他多久看一次手机？" },
-                        { sentence: "The committee meets <u>once a month</u>.", translation: "委员会每月开一次会。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does the committee meet?"], targetTranslation: "委员会多久开一次会？" },
-                        { sentence: "I have told you <u>many times</u> not to do that.", translation: "我已经跟你说过很多次不要那样做。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often have you told me not to do that?"], targetTranslation: "你跟我说过多少次不要那样做？" },
-                        { sentence: "He <u>rarely</u> complains about anything.", translation: "他很少抱怨任何事情。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does he complain about anything?"], targetTranslation: "他会经常抱怨吗？" },
-                        { sentence: "This event is held <u>annually</u>.", translation: "这项活动每年举行一次。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often is this event held?"], targetTranslation: "这项活动多久举行一次？" },
-                        { sentence: "You should get your teeth cleaned <u>every six months</u>.", translation: "你应该每六个月洗一次牙。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often should I get my teeth cleaned?"], targetTranslation: "我应该多久洗一次牙？" },
-                        { sentence: "The bus to the airport runs <u>every hour</u>.", translation: "去机场的巴士每小时一班。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does the bus to the airport run?"], targetTranslation: "去机场的巴士多久一班？" },
-                        { sentence: "She <u>occasionally</u> visits her relatives in the countryside.", translation: "她偶尔会去看望在乡下的亲戚。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she visit her relatives in the countryside?"], targetTranslation: "她多久去看望一次在乡下的亲戚？" },
-                        { sentence: "He was late for work <u>almost every day</u> last week.", translation: "他上周几乎每天上班都迟到。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often was he late for work last week?"], targetTranslation: "他上周多久迟到一次？" },
+                {
+                    name: "How many",
+                    description: "How many 用于询问可数名词的数量。</br></br> 结构：How many + 复数名词 + 助动词/情态动词 + 主语 + 谓语 + 其它?",
+                    instruction: "请对划线部分提问。",
+                    questions: [
+                        { sentence: "She has <u>three</u> cats at home.", translation: "她家里有三只猫。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many cats does she have at home?"], targetTranslation: "她家里有几只猫？" },
+                        { sentence: "He visited <u>five</u> different countries last summer.", translation: "他去年夏天访问了五个不同的国家。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many different countries did he visit last summer?"], targetTranslation: "他去年夏天访问了几个不同的国家？" },
+                        { sentence: "There are <u>twenty-four</u> hours in a day.", translation: "一天有24小时。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many hours are there in a day?"], targetTranslation: "一天有多少小时？" },
+                        { sentence: "I need to write <u>two more</u> emails before I leave.", translation: "我离开前还需要写两封邮件。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many more emails do you need to write before you leave?"], targetTranslation: "你离开前还需要写几封邮件？" },
+                        { sentence: "The new library will have <u>over a million</u> books.", translation: "新图书馆将拥有一百多万册图书。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many books will the new library have?"], targetTranslation: "新图书馆将有多少册图书？" },
+                        { sentence: "She can speak <u>several</u> languages.", translation: "她会说好几种语言。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many languages can she speak?"], targetTranslation: "她会说几种语言？" },
+                        { sentence: "He has read <u>all the books</u> on this shelf.", translation: "他读完了这个书架上所有的书。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many books on this shelf has he read?"], targetTranslation: "这个书架上的书他读了多少本？" },
+                        { sentence: "There were <u>a lot of people</u> at the concert.", translation: "音乐会有很多人。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many people were there at the concert?"], targetTranslation: "音乐会有多少人？" },
+                        { sentence: "The team has won <u>four championships</u> in a row.", translation: "该队连续赢得了四次冠军。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many championships has the team won in a row?"], targetTranslation: "该队连续赢得了多少次冠军？" },
+                        { sentence: "You need to answer <u>at least ten</u> questions.", translation: "你至少需要回答十个问题。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many questions do I need to answer?"], targetTranslation: "我需要回答多少个问题？" }
+                    ]
+                },
+                {
+                    name: "How much",
+                    description: "How much 用于询问不可数名词的数量或价格。</br></br> 结构：How much + 不可数名词 + 助动词/情态动词 + 主语 + 谓语 + 其它?",
+                    instruction: "请对划线部分提问。",
+                    questions: [
+                        { sentence: "This jacket costs <u>150 dollars</u>.", translation: "这件夹克150美元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much does this jacket cost?"], targetTranslation: "这件夹克多少钱？" },
+                        { sentence: "There is <u>a little</u> juice left in the bottle.", translation: "瓶子里只剩一点果汁了。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much juice is left in the bottle?"], targetTranslation: "瓶子里还剩多少果汁？" },
+                        { sentence: "He spent <u>a lot of time</u> preparing for the exam.", translation: "他花了很多时间准备考试。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much time did he spend preparing for the exam?"], targetTranslation: "他花了多少时间准备考试？" },
+                        { sentence: "I have <u>some</u> work to finish before dinner.", translation: "晚饭前我有些工作要完成。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much work do you have to finish before dinner?"], targetTranslation: "晚饭前你有多少工作要完成？" },
+                        { sentence: "She adds <u>just a little</u> sugar to her coffee.", translation: "她的咖啡只加了一点点糖。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much sugar does she add to her coffee?"], targetTranslation: "她的咖啡里加了多少糖？" },
+                        { sentence: "The new car will cost you <u>around $30,000</u>.", translation: "这辆新车将花费你大约3万美元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much will the new car cost me?"], targetTranslation: "这辆新车将花费我多少钱？" },
+                        { sentence: "We need <u>a lot more</u> information to make a decision.", translation: "我们需要更多的信息来做决定。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much more information do you need to make a decision?"], targetTranslation: "你们需要多少信息来做决定？" },
+                        { sentence: "She has made <u>remarkable</u> progress in her studies.", translation: "她的学习取得了显著的进步。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much progress has she made in her studies?"], targetTranslation: "她在学习上取得了多大进步？" },
+                        { sentence: "I don't have <u>much</u> money with me right now.", translation: "我现在没带多少钱。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much money do you have with you right now?"], targetTranslation: "你现在带了多少钱？" },
+                        { sentence: "It took <u>a great deal of</u> courage to tell the truth.", translation: "说出真相需要巨大的勇气。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much courage did it take to tell the truth?"], targetTranslation: "说出真相需要多大的勇气？" }
+                    ]
+                },
+                {
+                    name: "How long",
+                    description: "How long 用于询问时间的长短或持续时间。</br></br> 结构：How long + 助动词/情态动词 + 主语 + 谓语 + 其它?",
+                    instruction: "请对划线部分提问。",
+                    questions: [
                         { sentence: "The movie lasts for <u>about two hours</u>.", translation: "这部电影大约持续两小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does the movie last?"], targetTranslation: "这部电影持续多久？" },
                         { sentence: "He has been living in this city <u>for ten years</u>.", translation: "他已经在这座城市住了十年了。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long has he been living in this city?"], targetTranslation: "他已经在这座城市住多久了？" },
                         { sentence: "The meeting took <u>longer than we expected</u>.", translation: "会议开得比我们预期的要长。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long did the meeting take?"], targetTranslation: "会议开了多久？" },
@@ -412,7 +459,31 @@
                         { sentence: "The battery can last <u>up to 8 hours</u>.", translation: "这块电池最长能用8小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long can the battery last?"], targetTranslation: "这块电池能用多久？" },
                         { sentence: "He has been working on this project <u>since last Monday</u>.", translation: "他从上周一开始就一直在这个项目上工作。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long has he been working on this project?"], targetTranslation: "他已经在这个项目上工作多久了？" },
                         { sentence: "The warranty is valid for <u>one year</u>.", translation: "保修期为一年。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long is the warranty valid?"], targetTranslation: "保修期有多长？" },
-                        { sentence: "You should keep the cake in the oven for <u>20 minutes</u>.", translation: "你应该把蛋糕在烤箱里放20分钟。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long should I keep the cake in the oven?"], targetTranslation: "我应该把蛋糕在烤箱里放多久？" },
+                        { sentence: "You should keep the cake in the oven for <u>20 minutes</u>.", translation: "你应该把蛋糕在烤箱里放20分钟。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long should I keep the cake in the oven?"], targetTranslation: "我应该把蛋糕在烤箱里放多久？" }
+                    ]
+                },
+                {
+                    name: "How often",
+                    description: "How often 用于询问动作发生的频率。",
+                    instruction: "请对划线部分提问。",
+                    questions: [
+                        { sentence: "She goes to the gym <u>three times a week</u>.", translation: "她一周去三次健身房。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she go to the gym?"], targetTranslation: "她多久去一次健身房？" },
+                        { sentence: "He checks his phone <u>every few minutes</u>.", translation: "他每隔几分钟就看一次手机。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does he check his phone?"], targetTranslation: "他多久看一次手机？" },
+                        { sentence: "The committee meets <u>once a month</u>.", translation: "委员会每月开一次会。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does the committee meet?"], targetTranslation: "委员会多久开一次会？" },
+                        { sentence: "I have told you <u>many times</u> not to do that.", translation: "我已经跟你说过很多次不要那样做。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often have you told me not to do that?"], targetTranslation: "你跟我说过多少次不要那样做？" },
+                        { sentence: "He <u>rarely</u> complains about anything.", translation: "他很少抱怨任何事情。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does he complain about anything?"], targetTranslation: "他会经常抱怨吗？" },
+                        { sentence: "This event is held <u>annually</u>.", translation: "这项活动每年举行一次。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often is this event held?"], targetTranslation: "这项活动多久举行一次？" },
+                        { sentence: "You should get your teeth cleaned <u>every six months</u>.", translation: "你应该每六个月洗一次牙。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often should I get my teeth cleaned?"], targetTranslation: "我应该多久洗一次牙？" },
+                        { sentence: "The bus to the airport runs <u>every hour</u>.", translation: "去机场的巴士每小时一班。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does the bus to the airport run?"], targetTranslation: "去机场的巴士多久一班？" },
+                        { sentence: "She <u>occasionally</u> visits her relatives in the countryside.", translation: "她偶尔会去看望在乡下的亲戚。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she visit her relatives in the countryside?"], targetTranslation: "她多久去看望一次在乡下的亲戚？" },
+                        { sentence: "He was late for work <u>almost every day</u> last week.", translation: "他上周几乎每天上班都迟到。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often was he late for work last week?"], targetTranslation: "他上周多久迟到一次？" }
+                    ]
+                },
+                {
+                    name: "How far",
+                    description: "How far 用于询问距离。",
+                    instruction: "请对划线部分提问。",
+                    questions: [
                         { sentence: "The airport is <u>about 25 kilometers</u> from the city center.", translation: "机场离市中心大约25公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the airport from the city center?"], targetTranslation: "机场离市中心有多远？" },
                         { sentence: "She can run <u>10 kilometers</u> without stopping.", translation: "她可以不停地跑10公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far can she run without stopping?"], targetTranslation: "她可以不停地跑多远？" },
                         { sentence: "They walked <u>a long way</u> to find the village.", translation: "他们走了很长的路才找到那个村庄。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far did they walk to find the village?"], targetTranslation: "他们走了多远的路才找到那个村庄？" },
@@ -423,7 +494,8 @@
                         { sentence: "We have driven <u>200 miles</u> so far.", translation: "到目前为止我们已经开了200英里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far have you driven so far?"], targetTranslation: "到目前为止你们已经开了多远？" },
                         { sentence: "How long will it take to travel <u>from London to Paris</u> by train?", translation: "乘火车从伦敦到巴黎需要多长时间？", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is it from London to Paris?"], targetTranslation: "从伦敦到巴黎有多远？" },
                         { sentence: "The next rest area is <u>50 miles ahead</u>.", translation: "下一个休息区在前方50英里处。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the next rest area?"], targetTranslation: "下一个休息区有多远？" }
-                    ]},
+                    ]
+                },
                 { name: "疑问词作主语", description: "当疑问词（如 Who, What 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
                         { sentence: "<u>Someone</u> broke the vase.", translation: "有人打碎了花瓶。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who broke the vase?"], targetTranslation: "谁打碎了花瓶？" },
                         { sentence: "<u>Something strange</u> happened last night.", translation: "昨晚发生了一些奇怪的事。", note: "<b>提示:</b> What 作主语，后面直接跟动词。", answer: ["what happened last night?"], targetTranslation: "昨晚发生了什么？" },
