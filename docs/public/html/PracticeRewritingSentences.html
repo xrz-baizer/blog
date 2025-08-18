@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Sentence Practice Tool V9</title>
+    <title>English Sentence Practice Tool V14</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -66,13 +66,18 @@
             border-color: #6ee7b7; /* A soft light green */
             box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.2);
         }
+        .truncate-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body class="bg-slate-100">
 
 <div class="flex flex-col md:flex-row min-h-screen">
     <!-- Sidebar -->
-    <aside class="w-full md:w-80 bg-white p-6 border-b md:border-r border-slate-200 flex-shrink-0 md:h-screen overflow-y-auto no-scrollbar">
+    <aside class="w-full md:w-[27rem] bg-white p-6 border-b md:border-r border-slate-200 flex-shrink-0 md:h-screen overflow-y-auto no-scrollbar">
         <h1 class="text-xl font-bold text-slate-800 mb-1">English Sentence Practice</h1>
         <p class="text-sm text-slate-500 mb-6">Choose a topic to practice</p>
         <nav id="category-container" class="space-y-2">
@@ -91,6 +96,7 @@
 
             <!-- Main Exercise Card -->
             <div id="exercise-card" class="bg-white rounded-2xl shadow-lg p-6 md:p-8 space-y-6">
+    
                 <!-- Question Section -->
                 <div>
                     <p id="instruction" class="text-slate-500 mb-2 mt-1"></p>
@@ -121,17 +127,20 @@
                 </div>
 
                 <!-- Action Buttons -->
-                <div id="button-container" class="flex flex-col sm:flex-row justify-center items-center pt-4 space-y-3 sm:space-y-0 sm:space-x-4">
-                    <button id="action-btn" class="w-full sm:w-auto bg-blue-600 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-700 active:scale-95 transition-transform shadow-lg hover:shadow-xl">
+                <div id="button-container" class="flex flex-col sm:flex-row justify-center items-center pt-4 space-y-2 sm:space-y-0 sm:space-x-2">
+                    <button id="action-btn" class="w-full sm:w-auto text-sm bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 active:scale-95 transition-transform shadow-lg hover:shadow-xl whitespace-nowrap">
                         Submit Answer
                     </button>
-                    <button id="hint-btn" class="w-full sm:w-auto bg-slate-200 text-slate-700 font-bold py-3 px-8 rounded-full hover:bg-slate-300 active:scale-95 transition-transform">
+                    <button id="hint-btn" class="w-full sm:w-auto text-sm bg-slate-200 text-slate-700 font-bold py-2 px-4 rounded-full hover:bg-slate-300 active:scale-95 transition-transform whitespace-nowrap">
                         Show Hint
                     </button>
-                    <button id="skip-btn" class="w-full sm:w-auto bg-slate-200 text-slate-700 font-bold py-3 px-8 rounded-full hover:bg-slate-300 active:scale-95 transition-transform">
+                    <button id="prev-btn" class="w-full sm:w-auto text-sm bg-slate-200 text-slate-700 font-bold py-2 px-4 rounded-full hover:bg-slate-300 active:scale-95 transition-transform whitespace-nowrap">
+                        Previous Question
+                    </button>
+                    <button id="skip-btn" class="w-full sm:w-auto text-sm bg-slate-200 text-slate-700 font-bold py-2 px-4 rounded-full hover:bg-slate-300 active:scale-95 transition-transform whitespace-nowrap">
                         Skip Question
                     </button>
-                    <button id="next-section-btn" class="w-full sm:w-auto bg-green-600 text-white font-bold py-3 px-8 rounded-full hover:bg-green-700 active:scale-95 transition-transform shadow-lg hover:shadow-xl" style="display: none;">
+                    <button id="next-section-btn" class="w-full sm:w-auto text-sm bg-green-600 text-white font-bold py-2 px-4 rounded-full hover:bg-green-700 active:scale-95 transition-transform shadow-lg hover:shadow-xl whitespace-nowrap" style="display: none;">
                         Next Section
                     </button>
                 </div>
@@ -363,7 +372,7 @@
                         { sentence: "He can run <u>10 kilometers</u> without stopping.", translation: "他可以不停地跑10公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far can he run without stopping?"], targetTranslation: "他可以不停地跑多远？" },
                         { sentence: "The flight takes <u>about 3 hours</u>.", translation: "这次飞行大约需要3小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does the flight take?"], targetTranslation: "这次飞行需要多长时间？" }
                     ]},
-                { name: "疑问词作主语", description: "当疑问词（如 Who, What 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后。</br></br> 结构：疑问词 + 谓语 + 其它?", instruction: "请对划线部分提问。", questions: [
+                { name: "疑问词作主语", description: "当疑问词（如 Who, What 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
                         { sentence: "<u>Someone</u> broke the vase.", translation: "有人打碎了花瓶。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who broke the vase?"], targetTranslation: "谁打碎了花瓶？" },
                         { sentence: "<u>Something strange</u> happened last night.", translation: "昨晚发生了一些奇怪的事。", note: "<b>提示:</b> What 作主语，后面直接跟动词。", answer: ["what happened last night?"], targetTranslation: "昨晚发生了什么？" },
                         { sentence: "<u>John</u> called you this morning.", translation: "约翰今天早上给你打了电话。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who called you this morning?"], targetTranslation: "谁今天早上给你打了电话？" },
@@ -379,7 +388,7 @@
         },
         "被动语态": {
             subcategories: [
-                { name: "主谓宾", description: "将主动语态的宾语变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
+                { name: "主谓宾 (S+V+O)", description: "将主动语态的宾语变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
                         { sentence: "The teacher praised the student.", translation: "老师表扬了那个学生。", note: "<b>提示:</b> The student was praised by the teacher.", answer: ["the student was praised by the teacher."], targetTranslation: "那个学生被老师表扬了。" },
                         { sentence: "Someone has stolen my wallet.", translation: "有人偷了我的钱包。", note: "<b>提示:</b> My wallet has been stolen.", answer: ["my wallet has been stolen."], targetTranslation: "我的钱包被偷了。" },
                         { sentence: "They will build a new hospital here.", translation: "他们将在这里建一所新医院。", note: "<b>提示:</b> A new hospital will be built here.", answer: ["a new hospital will be built here."], targetTranslation: "一所新医院将在这里被建造。" },
@@ -391,7 +400,7 @@
                         { sentence: "My mother made this cake.", translation: "我妈妈做了这个蛋糕。", note: "<b>提示:</b> This cake was made by my mother.", answer: ["this cake was made by my mother."], targetTranslation: "这个蛋糕是我妈妈做的。" },
                         { sentence: "Shakespeare wrote 'Hamlet'.", translation: "莎士比亚写了《哈姆雷特》。", note: "<b>提示:</b> 'Hamlet' was written by Shakespeare.", answer: ["'hamlet' was written by shakespeare.", "hamlet was written by shakespeare."], targetTranslation: "《哈姆雷特》是莎士比亚写的。" }
                     ]},
-                { name: "主谓宾宾", description: "主动语态有两个宾语（直接宾语和间接宾语），任何一个都可以变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
+                { name: "主谓宾宾 (S+V+O+O)", description: "主动语态有两个宾语（直接宾语和间接宾语），任何一个都可以变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
                         { sentence: "He gave me a book.", translation: "他给了我一本书。", note: "<b>提示:</b> 可以用 I 或 a book 作主语。", answer: ["i was given a book by him.", "a book was given to me by him."], targetTranslation: "我被给了一本书。 / 一本书被给了我。" },
                         { sentence: "She told us a story.", translation: "她给我们讲了一个故事。", note: "<b>提示:</b> 可以用 We 或 a story 作主语。", answer: ["we were told a story by her.", "a story was told to us by her."], targetTranslation: "我们被告知了一个故事。 / 一个故事被讲给了我们。" },
                         { sentence: "My father bought me a new bike.", translation: "我父亲给我买了一辆新自行车。", note: "<b>提示:</b> 可以用 I 或 a new bike 作主语。", answer: ["i was bought a new bike by my father.", "a new bike was bought for me by my father."], targetTranslation: "我被买了一辆新自行车。 / 一辆新自行车被买给了我。" },
@@ -403,7 +412,7 @@
                         { sentence: "The waiter brought us the bill.", translation: "服务员给我们拿来了账单。", note: "<b>提示:</b> 可以用 We 或 the bill 作主语。", answer: ["we were brought the bill by the waiter.", "the bill was brought to us by the waiter."], targetTranslation: "我们被拿来了账单。 / 账单被拿给了我们。" },
                         { sentence: "My grandmother made me a sweater.", translation: "我奶奶给我织了一件毛衣。", note: "<b>提示:</b> 可以用 I 或 a sweater 作主语。", answer: ["i was made a sweater by my grandmother.", "a sweater was made for me by my grandmother."], targetTranslation: "我被织了一件毛衣。 / 一件毛衣被织给了我。" }
                     ]},
-                { name: "主谓宾补", description: "将主动语态的宾语变成被动语态的主语，宾语补足语保留在谓语动词之后。", instruction: "请将此句改写为被动语态。", questions: [
+                { name: "主谓宾补 (S+V+O+C)", description: "将主动语态的宾语变成被动语态的主语，宾语补足语保留在谓语动词之后。", instruction: "请将此句改写为被动语态。", questions: [
                         { sentence: "They elected him president.", translation: "他们选举他为总统。", note: "<b>提示:</b> He was elected president.", answer: ["he was elected president."], targetTranslation: "他被选为总统。" },
                         { sentence: "We call the dog 'Lucky'.", translation: "我们叫这只狗“幸运”。", note: "<b>提示:</b> The dog is called 'Lucky'.", answer: ["the dog is called 'lucky'."], targetTranslation: "这只狗被叫做“幸运”。" },
                         { sentence: "The news made her happy.", translation: "这个消息让她很高兴。", note: "<b>提示:</b> She was made happy by the news.", answer: ["she was made happy by the news."], targetTranslation: "她被这个消息弄得很开心。" },
@@ -655,6 +664,7 @@
         }
     };
 
+
     // DOM Elements
     const categoryContainer = document.getElementById('category-container');
     const themeTitleEl = document.getElementById('theme-title');
@@ -670,6 +680,7 @@
     const feedbackSection = document.getElementById('feedback-section');
     const hintBtn = document.getElementById('hint-btn');
     const skipBtn = document.getElementById('skip-btn');
+    const prevBtn = document.getElementById('prev-btn');
     const actionBtn = document.getElementById('action-btn');
     const nextSectionBtn = document.getElementById('next-section-btn');
     const exerciseCard = document.getElementById('exercise-card');
@@ -683,7 +694,8 @@
     let appState = 'submit'; // 'submit', 'reset'
 
     function initializeProgress() {
-        Object.keys(exerciseData).forEach(mainCat => {
+        const wrongAnswersCategory = "Wrong Answers";
+        Object.keys(exerciseData).filter(cat => cat !== wrongAnswersCategory).forEach(mainCat => {
             progressState[mainCat] = {};
             exerciseData[mainCat].subcategories.forEach(subCat => {
                 progressState[mainCat][subCat.name] = Array(subCat.questions.length).fill(false);
@@ -692,7 +704,15 @@
     }
 
     function setupCategories() {
-        Object.keys(exerciseData).forEach(mainCategory => {
+        const wrongAnswersCategory = "Wrong Answers";
+        const originalKeys = Object.keys(exerciseData);
+        
+        let categoryKeys = originalKeys.filter(key => key !== wrongAnswersCategory);
+        if (originalKeys.includes(wrongAnswersCategory)) {
+            categoryKeys.unshift(wrongAnswersCategory);
+        }
+
+        categoryKeys.forEach(mainCategory => {
             const mainCatDiv = document.createElement('div');
 
             const mainCatHeader = document.createElement('div');
@@ -712,10 +732,11 @@
 
                 const titleSpan = document.createElement('span');
                 titleSpan.textContent = subCategory.name;
+                titleSpan.className = 'truncate-text';
 
                 const completeSectionBtn = document.createElement('span');
-                completeSectionBtn.innerHTML = '✔';
-                completeSectionBtn.className = 'text-green-500 opacity-50 hover:opacity-100';
+                completeSectionBtn.innerHTML = 'Done';
+                completeSectionBtn.className = 'text-green-500 font-semibold';
                 completeSectionBtn.title = 'Complete this section';
                 completeSectionBtn.onclick = (e) => {
                     e.stopPropagation();
@@ -744,6 +765,14 @@
 
                     document.querySelectorAll('.sidebar-subcategory-btn').forEach(btn => btn.classList.remove('active'));
                     subCatBtn.classList.add('active');
+
+                    const parentList = subCatBtn.closest('.subcategory-list');
+                    if (parentList && (!parentList.style.maxHeight || parentList.style.maxHeight === '0px')) {
+                        const parentHeader = parentList.previousElementSibling;
+                        if (parentHeader) {
+                            parentHeader.click();
+                        }
+                    }
 
                     displayExerciseForSubcategory();
                 });
@@ -813,9 +842,16 @@
 
     function updateThemeDescription() {
         const subCategoryData = exerciseData[currentMainCategory].subcategories.find(sc => sc.name === currentSubCategory);
+        const themeCard = document.getElementById('theme-description-card');
         if(subCategoryData) {
             themeTitleEl.textContent = subCategoryData.name;
             themeDescriptionEl.innerHTML = subCategoryData.description;
+
+            if (currentMainCategory === "Wrong Answers") {
+                themeCard.className = 'mb-6 bg-amber-50 border-l-4 border-amber-400 text-amber-800 p-4 rounded-lg';
+            } else {
+                themeCard.className = 'mb-6 bg-green-50 border-l-4 border-green-400 text-green-800 p-4 rounded-lg';
+            }
         }
     }
 
@@ -823,6 +859,7 @@
         currentQuestionIndex = questionIndex;
         const subCategoryData = exerciseData[currentMainCategory].subcategories.find(sc => sc.name === currentSubCategory);
         const exercise = subCategoryData.questions[questionIndex];
+
 
         appState = 'submit';
         actionBtn.textContent = 'Submit Answer';
@@ -932,6 +969,61 @@
                 }, 1000);
             } else {
                 showFeedback(false);
+                const wrongAnswersCategory = "Wrong Answers";
+                if (currentMainCategory === wrongAnswersCategory) return;
+
+                const subCategoryData = exerciseData[currentMainCategory].subcategories.find(sc => sc.name === currentSubCategory);
+                const question = subCategoryData.questions[currentQuestionIndex];
+
+                const questionCopy = { ...question };
+                questionCopy.context = {
+                    main: currentMainCategory,
+                    sub: subCategoryData.name,
+                    desc: subCategoryData.description
+                };
+
+                if (!exerciseData[wrongAnswersCategory]) {
+                    exerciseData[wrongAnswersCategory] = { subcategories: [] };
+                }
+                
+                const newReviewSubCatName = `${currentMainCategory} > ${subCategoryData.name}`;
+                let reviewSubCat = exerciseData[wrongAnswersCategory].subcategories.find(sc => sc.name === newReviewSubCatName);
+
+                if (!reviewSubCat) {
+                    reviewSubCat = { 
+                        name: newReviewSubCatName, 
+                        description: subCategoryData.description, 
+                        instruction: subCategoryData.instruction,
+                        questions: [] 
+                    };
+                    exerciseData[wrongAnswersCategory].subcategories.push(reviewSubCat);
+                }
+
+                if (!reviewSubCat.questions.some(q => q.sentence === questionCopy.sentence)) {
+                    reviewSubCat.questions.push(questionCopy);
+                }
+
+                if (!progressState[wrongAnswersCategory]) {
+                    progressState[wrongAnswersCategory] = {};
+                }
+                progressState[wrongAnswersCategory][reviewSubCat.name] = Array(reviewSubCat.questions.length).fill(false);
+
+                const currentActive = { main: currentMainCategory, sub: currentSubCategory };
+
+                categoryContainer.innerHTML = '';
+                setupCategories();
+                updateAllSidebarProgress();
+
+                const activeBtn = categoryContainer.querySelector(`.sidebar-subcategory-btn[data-main-category="${currentActive.main}"][data-sub-category="${currentActive.sub}"]`);
+                if(activeBtn) {
+                    activeBtn.classList.add('active');
+                    const parentList = activeBtn.closest('.subcategory-list');
+                    if (parentList) {
+                        parentList.style.maxHeight = parentList.scrollHeight + "px";
+                        const header = parentList.previousElementSibling;
+                        if (header) header.querySelector('svg').style.transform = 'rotate(180deg)';
+                    }
+                }
             }
 
         } else if (appState === 'reset') {
@@ -955,6 +1047,14 @@
         } else {
             noteSection.style.display = 'none';
             hintBtn.textContent = 'Show Hint';
+        }
+    }
+
+    function handlePrevClick() {
+        if (currentQuestionIndex > 0) {
+            displayExercise(currentQuestionIndex - 1);
+        } else {
+            showToast("This is the first question.");
         }
     }
 
@@ -982,6 +1082,7 @@
 
         actionBtn.addEventListener('click', handleActionClick);
         skipBtn.addEventListener('click', handleSkipClick);
+        prevBtn.addEventListener('click', handlePrevClick);
         hintBtn.addEventListener('click', handleHintClick);
         answerInput.addEventListener('keydown', handleEnterKey);
         nextSectionBtn.addEventListener('click', handleNextSectionClick);
@@ -1003,10 +1104,21 @@
         });
 
         const firstSubCatBtn = categoryContainer.querySelector('.sidebar-subcategory-btn');
-        firstSubCatBtn.classList.add('active');
-        const firstSubCatList = firstSubCatBtn.parentElement;
-        firstSubCatList.style.maxHeight = firstSubCatList.scrollHeight + "px";
-        firstSubCatList.previousElementSibling.querySelector('svg').style.transform = 'rotate(180deg)';
+        if (firstSubCatBtn) {
+            currentMainCategory = firstSubCatBtn.dataset.mainCategory;
+            currentSubCategory = firstSubCatBtn.dataset.subCategory;
+            firstSubCatBtn.classList.add('active');
+
+            // Use a timeout to ensure the DOM is fully rendered before calculating scrollHeight
+            setTimeout(() => {
+                const parentList = firstSubCatBtn.closest('.subcategory-list');
+                if (parentList) {
+                    parentList.style.maxHeight = parentList.scrollHeight + "px";
+                    const header = parentList.previousElementSibling;
+                    if (header) header.querySelector('svg').style.transform = 'rotate(180deg)';
+                }
+            }, 50);
+        }
 
         displayExerciseForSubcategory();
     };

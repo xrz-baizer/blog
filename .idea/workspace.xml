@@ -8,6 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
+      <change beforePath="$PROJECT_DIR$/docs/02-Other/HTML工具/AudioLyricPlayer.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/02-Other/HTML工具/AudioLyricPlayer.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/html/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/Questions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/public/html/PracticeRewritingSentences.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/PracticeRewritingSentences.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,11 +109,11 @@
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme/custom" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/.vitepress/theme/tool" />
       <recent name="$PROJECT_DIR$/docs/public/html" />
       <recent name="$PROJECT_DIR$/docs/01-Essay/神兵利器" />
       <recent name="$PROJECT_DIR$/docs/public" />
       <recent name="$PROJECT_DIR$/auto-deploy" />
-      <recent name="$PROJECT_DIR$/docs/01-Essay/Mac" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -358,6 +361,8 @@
       <workItem from="1755426396130" duration="6609000" />
       <workItem from="1755485030291" duration="1062000" />
       <workItem from="1755496584269" duration="147000" />
+      <workItem from="1755497361648" duration="1234000" />
+      <workItem from="1755500682668" duration="6375000" />
     </task>
     <servers />
   </component>

@@ -206,7 +206,7 @@ export const articlesMap = {
   "02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-8-Trading-standards-贸易标准.md": "Chickens slaughtered in the United States, claim officials in Brussels, are not fit to grace European tables. No, say the Americans: our fowl are fine, we simply clean them in a different way. These d",
   "02-Other/EnglishLearning/NewConceptEnglish/第四册课文+注释/Lesson-9-Royal-espionage-王室谍报活动.md": "Alfred the Great acted as his own spy, visiting Danish camps disguised as a minstrel. In those days wandering minstrels were welcome everywhere. They were not fighting men, and their harp was their pa",
   "02-Other/EnglishLearning/PronunciationSkills.md": " 读音规则（常用） 元音字母`a` `e` `i` `o` `u`在开/闭音节中发不同的音 开音节（单词后面没有辅音结尾） 开音节是以一个元音结尾的音节，通常没有辅音跟在元音后面。一般发其字母本身的音。 - 例如：be, go, she, my。 闭音节 闭音节是以一个辅音结尾的音节，元音字母前通常有一个或多个辅音。一般发短元音音值。 - 例如：cat, pen, sit, top, run。 元",
-  "02-Other/Html工具/AudioLyricPlayer.md": "<audioLyricPlayer />",
+  "02-Other/Html工具/AudioLyricPlayer.md": "<PracticeRewritingSentences />",
   "02-Other/Html工具/ConvertWords.md": "<convertWordComponent />",
   "02-Other/Html工具/SelectWords.md": "<SelectWordComponent />",
   "02-Other/index.md": "<category/>",
