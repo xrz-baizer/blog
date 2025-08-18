@@ -1,0 +1,556 @@
+{
+  "否定句": {
+    subcategories: [
+      { name: "有 be 动词", description: "句中有 be 动词 (am, is, are, was, were)，直接在 be 动词后面加 not。", instruction: "请将此句改写为否定句。", questions: [
+        { sentence: "She is a talented artist.", translation: "她是一位有才华的艺术家。", note: "<b>规则:</b> 直接在 <b>is</b> 后面加 <b>not</b>。", answer: ["she is not a talented artist.", "she isn't a talented artist."], targetTranslation: "她不是一位有才华的艺术家。" },
+        { sentence: "They were at the library this morning.", translation: "他们今天早上在图书馆。", note: "<b>规则:</b> 直接在 <b>were</b> 后面加 <b>not</b>。", answer: ["they were not at the library this morning.", "they weren't at the library this morning."], targetTranslation: "他们今天早上不在图书馆。" },
+        { sentence: "I am ready for the exam.", translation: "我准备好考试了。", note: "<b>规则:</b> 直接在 <b>am</b> 后面加 <b>not</b>。", answer: ["i am not ready for the exam.", "i'm not ready for the exam."], targetTranslation: "我还没准备好考试。" },
+        { sentence: "The weather was nice yesterday.", translation: "昨天的天气很好。", note: "<b>规则:</b> 直接在 <b>was</b> 后面加 <b>not</b>。", answer: ["the weather was not nice yesterday.", "the weather wasn't nice yesterday."], targetTranslation: "昨天的天气不好。" },
+        { sentence: "He is a reliable friend.", translation: "他是一个可靠的朋友。", note: "<b>规则:</b> 直接在 <b>is</b> 后面加 <b>not</b>。", answer: ["he is not a reliable friend.", "he isn't a reliable friend."], targetTranslation: "他不是一个可靠的朋友。" },
+        { sentence: "The books are on the shelf.", translation: "书在架子上。", note: "<b>规则:</b> 直接在 <b>are</b> 后面加 <b>not</b>。", answer: ["the books are not on the shelf.", "the books aren't on the shelf."], targetTranslation: "书不在架子上。" },
+        { sentence: "You are a good student.", translation: "你是个好学生。", note: "<b>规则:</b> 直接在 <b>are</b> 后面加 <b>not</b>。", answer: ["you are not a good student.", "you aren't a good student."], targetTranslation: "你不是个好学生。" },
+        { sentence: "It was a difficult question.", translation: "那是个难题。", note: "<b>规则:</b> 直接在 <b>was</b> 后面加 <b>not</b>。", answer: ["it was not a difficult question.", "it wasn't a difficult question."], targetTranslation: "那不是个难题。" },
+        { sentence: "We were happy to see them.", translation: "我们很高兴见到他们。", note: "<b>规则:</b> 直接在 <b>were</b> 后面加 <b>not</b>。", answer: ["we were not happy to see them.", "we weren't happy to see them."], targetTranslation: "我们见到他们并不高兴。" },
+        { sentence: "This is the right answer.", translation: "这是正确的答案。", note: "<b>规则:</b> 直接在 <b>is</b> 后面加 <b>not</b>。", answer: ["this is not the right answer.", "this isn't the right answer."], targetTranslation: "这不是正确的答案。" }
+      ]},
+      { name: "有情态动词", description: "句中有情态动词 (can, will, should, must 等)，直接在情态动词后面加 not，后面的动词保持原形。", instruction: "请将此句改写为否定句。", questions: [
+        { sentence: "He can speak three languages.", translation: "他会说三种语言。", note: "<b>规则:</b> 直接在 <b>can</b> 后面加 <b>not</b>。", answer: ["he cannot speak three languages.", "he can't speak three languages."], targetTranslation: "他不会说三种语言。" },
+        { sentence: "We will travel to Japan next year.", translation: "我们明年将去日本旅行。", note: "<b>规则:</b> 直接在 <b>will</b> 后面加 <b>not</b>。", answer: ["we will not travel to japan next year.", "we won't travel to japan next year."], targetTranslation: "我们明年不去日本旅行。" },
+        { sentence: "You must be quiet in the hospital.", translation: "在医院你必须保持安静。", note: "<b>规则:</b> 直接在 <b>must</b> 后面加 <b>not</b>。", answer: ["you must not be quiet in the hospital."], targetTranslation: "在医院你不必保持安静。" },
+        { sentence: "She might come to the party.", translation: "她可能会来参加派对。", note: "<b>规则:</b> 直接在 <b>might</b> 后面加 <b>not</b>。", answer: ["she might not come to the party."], targetTranslation: "她可能不会来参加派对。" },
+        { sentence: "They should study harder.", translation: "他们应该更努力地学习。", note: "<b>规则:</b> 直接在 <b>should</b> 后面加 <b>not</b>。", answer: ["they should not study harder.", "they shouldn't study harder."], targetTranslation: "他们不应该更努力地学习。" },
+        { sentence: "I can lift this box.", translation: "我能举起这个箱子。", note: "<b>规则:</b> 直接在 <b>can</b> 后面加 <b>not</b>。", answer: ["i cannot lift this box.", "i can't lift this box."], targetTranslation: "我举不起这个箱子。" },
+        { sentence: "He will call you later.", translation: "他稍后会给你打电话。", note: "<b>规则:</b> 直接在 <b>will</b> 后面加 <b>not</b>。", answer: ["he will not call you later.", "he won't call you later."], targetTranslation: "他稍后不会给你打电话。" },
+        { sentence: "You may enter the room.", translation: "你可以进入这个房间。", note: "<b>规则:</b> 直接在 <b>may</b> 后面加 <b>not</b>。", answer: ["you may not enter the room."], targetTranslation: "你不可以进入这个房间。" },
+        { sentence: "We could hear the music.", translation: "我们能听到音乐。", note: "<b>规则:</b> 直接在 <b>could</b> 后面加 <b>not</b>。", answer: ["we could not hear the music.", "we couldn't hear the music."], targetTranslation: "我们听不到音乐。" },
+        { sentence: "She would like some tea.", translation: "她想要一些茶。", note: "<b>规则:</b> 直接在 <b>would</b> 后面加 <b>not</b>。", answer: ["she would not like some tea.", "she wouldn't like some tea."], targetTranslation: "她不想要茶。" }
+      ]},
+      { name: "有助动词 have/has/had", description: "句中有助动词 have/has/had (用于完成时态)，直接在 have/has/had 后面加 not。", instruction: "请将此句改写为否定句。", questions: [
+        { sentence: "I have finished my assignment.", translation: "我已经完成了我的作业。", note: "<b>规则:</b> 直接在 <b>have</b> 后面加 <b>not</b>。", answer: ["i have not finished my assignment.", "i haven't finished my assignment."], targetTranslation: "我还没有完成我的作业。" },
+        { sentence: "He has visited that museum.", translation: "他参观过那个博物馆。", note: "<b>规则:</b> 直接在 <b>has</b> 后面加 <b>not</b>。", answer: ["he has not visited that museum.", "he hasn't visited that museum."], targetTranslation: "他没有参观过那个博物馆。" },
+        { sentence: "They had already eaten dinner when I arrived.", translation: "我到的时候他们已经吃过晚饭了。", note: "<b>规则:</b> 直接在 <b>had</b> 后面加 <b>not</b>。", answer: ["they had not already eaten dinner when i arrived."], targetTranslation: "我到的时候他们还没有吃晚饭。" },
+        { sentence: "She has seen this movie before.", translation: "她以前看过这部电影。", note: "<b>规则:</b> 直接在 <b>has</b> 后面加 <b>not</b>。", answer: ["she has not seen this movie before.", "she hasn't seen this movie before."], targetTranslation: "她以前没看过这部电影。" },
+        { sentence: "We have been to Canada.", translation: "我们去过加拿大。", note: "<b>规则:</b> 直接在 <b>have</b> 后面加 <b>not</b>。", answer: ["we have not been to canada.", "we haven't been to canada."], targetTranslation: "我们没去过加拿大。" },
+        { sentence: "He has completed the task.", translation: "他已经完成了任务。", note: "<b>规则:</b> 直接在 <b>has</b> 后面加 <b>not</b>。", answer: ["he has not completed the task.", "he hasn't completed the task."], targetTranslation: "他还没有完成任务。" },
+        { sentence: "You have made a mistake.", translation: "你犯了一个错误。", note: "<b>规则:</b> 直接在 <b>have</b> 后面加 <b>not</b>。", answer: ["you have not made a mistake.", "you haven't made a mistake."], targetTranslation: "你没有犯错误。" },
+        { sentence: "The company has hired new employees.", translation: "公司已经雇佣了新员工。", note: "<b>规则:</b> 直接在 <b>has</b> 后面加 <b>not</b>。", answer: ["the company has not hired new employees.", "the company hasn't hired new employees."], targetTranslation: "公司还没有雇佣新员工。" },
+        { sentence: "I had finished my work before he came.", translation: "在他来之前我已经完成了我的工作。", note: "<b>规则:</b> 直接在 <b>had</b> 后面加 <b>not</b>。", answer: ["i had not finished my work before he came.", "i hadn't finished my work before he came."], targetTranslation: "在他来之前我还没有完成我的工作。" },
+        { sentence: "She has lived here for ten years.", translation: "她在这里住了十年了。", note: "<b>规则:</b> 直接在 <b>has</b> 后面加 <b>not</b>。", answer: ["she has not lived here for ten years.", "she hasn't lived here for ten years."], targetTranslation: "她在这里没有住满十年。" }
+      ]},
+      { name: "只有一般动词", description: "句中只有一般动词，需要根据人称和时态，在动词前添加 do not, does not, 或 did not，同时主要动词变回原形。", instruction: "请将此句改写为否定句。", questions: [
+        { sentence: "They live in a big city.", translation: "他们住在一个大城市。", note: "<b>规则:</b> 主语非三单，用 <b>do not</b>。", answer: ["they do not live in a big city.", "they don't live in a big city."], targetTranslation: "他们不住在一个大城市。" },
+        { sentence: "She works at a software company.", translation: "她在一家软件公司工作。", note: "<b>规则:</b> 主语是三单，用 <b>does not</b>，动词变回原形。", answer: ["she does not work at a software company.", "she doesn't work at a software company."], targetTranslation: "她不在软件公司工作。" },
+        { sentence: "He plays the piano very well.", translation: "他钢琴弹得很好。", note: "<b>规则:</b> 主语是三单，用 <b>does not</b>，动词变回原形。", answer: ["he does not play the piano very well.", "he doesn't play the piano very well."], targetTranslation: "他钢琴弹得不是很好。" },
+        { sentence: "We watched a movie last night.", translation: "我们昨晚看了一部电影。", note: "<b>规则:</b> 过去时，用 <b>did not</b>，动词变回原形。", answer: ["we did not watch a movie last night.", "we didn't watch a movie last night."], targetTranslation: "我们昨晚没看电影。" },
+        { sentence: "The train arrived on time.", translation: "火车准时到达。", note: "<b>规则:</b> 过去时，用 <b>did not</b>，动词变回原形。", answer: ["the train did not arrive on time.", "the train didn't arrive on time."], targetTranslation: "火车没有准时到达。" },
+        { sentence: "My brother knows the answer.", translation: "我哥哥知道答案。", note: "<b>规则:</b> 主语是三单，用 <b>does not</b>，动词变回原形。", answer: ["my brother does not know the answer.", "my brother doesn't know the answer."], targetTranslation: "我哥哥不知道答案。" },
+        { sentence: "I enjoyed the concert.", translation: "我很喜欢那场音乐会。", note: "<b>规则:</b> 过去时，用 <b>did not</b>，动词变回原形。", answer: ["i did not enjoy the concert.", "i didn't enjoy the concert."], targetTranslation: "我不喜欢那场音乐会。" },
+        { sentence: "She bought a new dress.", translation: "她买了一件新裙子。", note: "<b>规则:</b> 过去时，用 <b>did not</b>，动词变回原形。", answer: ["she did not buy a new dress.", "she didn't buy a new dress."], targetTranslation: "她没有买新裙子。" },
+        { sentence: "They understand the problem.", translation: "他们理解这个问题。", note: "<b>规则:</b> 主语非三单，用 <b>do not</b>。", answer: ["they do not understand the problem.", "they don't understand the problem."], targetTranslation: "他们不理解这个问题。" },
+        { sentence: "He likes to read books.", translation: "他喜欢读书。", note: "<b>规则:</b> 主语是三单，用 <b>does not</b>，动词变回原形。", answer: ["he does not like to read books.", "he doesn't like to read books."], targetTranslation: "他不喜欢读书。" }
+      ]}
+    ]
+  },
+  "一般疑问句": {
+    subcategories: [
+      { name: "有 be 动词", description: "句中有 be 动词 (am, is, are, was, were)，直接将 be 动词提到句首。", instruction: "请将此句改写为一般疑问句。", questions: [
+        { sentence: "He is from Canada.", translation: "他来自加拿大。", note: "<b>规则:</b> 将 <b>is</b> 提到句首。", answer: ["is he from canada?"], targetTranslation: "他来自加拿大吗？" },
+        { sentence: "The keys are on the table.", translation: "钥匙在桌子上。", note: "<b>规则:</b> 将 <b>are</b> 提到句首。", answer: ["are the keys on the table?"], targetTranslation: "钥匙在桌子上吗？" },
+        { sentence: "She was a teacher.", translation: "她曾是一名老师。", note: "<b>规则:</b> 将 <b>was</b> 提到句首。", answer: ["was she a teacher?"], targetTranslation: "她曾是一名老师吗？" },
+        { sentence: "They were tired after the long trip.", translation: "长途旅行后他们很累。", note: "<b>规则:</b> 将 <b>were</b> 提到句首。", answer: ["were they tired after the long trip?"], targetTranslation: "长途旅行后他们累吗？" },
+        { sentence: "I am in the correct room.", translation: "我在正确的房间里。", note: "<b>规则:</b> 将 <b>Am</b> 提到句首。", answer: ["am i in the correct room?"], targetTranslation: "我在正确的房间里吗？" },
+        { sentence: "This is your book.", translation: "这是你的书。", note: "<b>规则:</b> 将 <b>Is</b> 提到句首。", answer: ["is this your book?"], targetTranslation: "这是你的书吗？" },
+        { sentence: "The children were asleep.", translation: "孩子们睡着了。", note: "<b>规则:</b> 将 <b>Were</b> 提到句首。", answer: ["were the children asleep?"], targetTranslation: "孩子们睡着了吗？" },
+        { sentence: "He was late for the meeting.", translation: "他开会迟到了。", note: "<b>规则:</b> 将 <b>Was</b> 提到句首。", answer: ["was he late for the meeting?"], targetTranslation: "他开会迟到了吗？" },
+        { sentence: "You are ready to start.", translation: "你准备好开始了。", note: "<b>规则:</b> 将 <b>Are</b> 提到句首。", answer: ["are you ready to start?"], targetTranslation: "你准备好开始了吗？" },
+        { sentence: "The shop is open.", translation: "商店开着门。", note: "<b>规则:</b> 将 <b>Is</b> 提到句首。", answer: ["is the shop open?"], targetTranslation: "商店开着门吗？" }
+      ]},
+      { name: "有情态动词", description: "句中有情态动词 (can, will, should 等)，直接将情态动词提到句首，后面的动词保持原形。", instruction: "请将此句改写为一般疑问句。", questions: [
+        { sentence: "You can swim.", translation: "你会游泳。", note: "<b>规则:</b> 将 <b>can</b> 提到句首。", answer: ["can you swim?"], targetTranslation: "你会游泳吗？" },
+        { sentence: "He will be here soon.", translation: "他很快就会到这里。", note: "<b>规则:</b> 将 <b>will</b> 提到句首。", answer: ["will he be here soon?"], targetTranslation: "他很快会到这里吗？" },
+        { sentence: "We should call him.", translation: "我们应该给他打电话。", note: "<b>规则:</b> 将 <b>should</b> 提到句首。", answer: ["should we call him?"], targetTranslation: "我们应该给他打电话吗？" },
+        { sentence: "It may rain later.", translation: "待会儿可能会下雨。", note: "<b>规则:</b> 将 <b>may</b> 提到句首。", answer: ["may it rain later?"], targetTranslation: "待会儿可能会下雨吗？" },
+        { sentence: "She can play the guitar.", translation: "她会弹吉他。", note: "<b>规则:</b> 将 <b>Can</b> 提到句首。", answer: ["can she play the guitar?"], targetTranslation: "她会弹吉他吗？" },
+        { sentence: "They will join us for dinner.", translation: "他们会和我们一起吃晚饭。", note: "<b>规则:</b> 将 <b>Will</b> 提到句首。", answer: ["will they join us for dinner?"], targetTranslation: "他们会和我们一起吃晚饭吗？" },
+        { sentence: "I must finish this today.", translation: "我今天必须完成这个。", note: "<b>规则:</b> 将 <b>Must</b> 提到句首。", answer: ["must i finish this today?"], targetTranslation: "我今天必须完成这个吗？" },
+        { sentence: "He could solve the problem.", translation: "他能解决那个问题。", note: "<b>规则:</b> 将 <b>Could</b> 提到句首。", answer: ["could he solve the problem?"], targetTranslation: "他能解决那个问题吗？" },
+        { sentence: "You would help me.", translation: "你会帮助我的。", note: "<b>规则:</b> 将 <b>Would</b> 提到句首。", answer: ["would you help me?"], targetTranslation: "你会帮助我吗？" },
+        { sentence: "We should leave now.", translation: "我们现在应该离开了。", note: "<b>规则:</b> 将 <b>Should</b> 提到句首。", answer: ["should we leave now?"], targetTranslation: "我们现在应该离开吗？" }
+      ]},
+      { name: "有助动词 have/has/had", description: "句中有助动词 have/has/had (用于完成时态)，直接将 have/has/had 提到句首。", instruction: "请将此句改写为一般疑问句。", questions: [
+        { sentence: "She has been to Paris.", translation: "她去过巴黎。", note: "<b>规则:</b> 将 <b>has</b> 提到句首。", answer: ["has she been to paris?"], targetTranslation: "她去过巴黎吗？" },
+        { sentence: "They have finished their homework.", translation: "他们已经完成了作业。", note: "<b>规则:</b> 将 <b>have</b> 提到句首。", answer: ["have they finished their homework?"], targetTranslation: "他们完成作业了吗？" },
+        { sentence: "You had met him before.", translation: "你以前见过他。", note: "<b>规则:</b> 将 <b>had</b> 提到句首。", answer: ["had you met him before?"], targetTranslation: "你以前见过他吗？" },
+        { sentence: "He has found his wallet.", translation: "他找到了他的钱包。", note: "<b>规则:</b> 将 <b>Has</b> 提到句首。", answer: ["has he found his wallet?"], targetTranslation: "他找到他的钱包了吗？" },
+        { sentence: "We have seen that movie.", translation: "我们看过那部电影。", note: "<b>规则:</b> 将 <b>Have</b> 提到句首。", answer: ["have we seen that movie?"], targetTranslation: "我们看过那部电影吗？" },
+        { sentence: "The rain has stopped.", translation: "雨已经停了。", note: "<b>规则:</b> 将 <b>Has</b> 提到句首。", answer: ["has the rain stopped?"], targetTranslation: "雨停了吗？" },
+        { sentence: "She has lived here for a long time.", translation: "她在这里住了很久了。", note: "<b>规则:</b> 将 <b>Has</b> 提到句首。", answer: ["has she lived here for a long time?"], targetTranslation: "她在这里住了很久了吗？" },
+        { sentence: "They had left before I arrived.", translation: "在我到达之前他们已经离开了。", note: "<b>规则:</b> 将 <b>Had</b> 提到句首。", answer: ["had they left before i arrived?"], targetTranslation: "在我到达之前他们已经离开了吗？" },
+        { sentence: "You have eaten lunch.", translation: "你吃过午饭了。", note: "<b>规则:</b> 将 <b>Have</b> 提到句首。", answer: ["have you eaten lunch?"], targetTranslation: "你吃过午饭了吗？" },
+        { sentence: "He has read the book.", translation: "他读过这本书了。", note: "<b>规则:</b> 将 <b>Has</b> 提到句首。", answer: ["has he read the book?"], targetTranslation: "他读过这本书了吗？" }
+      ]},
+      { name: "只有一般动词", description: "根据时态和人称，在句首加上 do, does, 或 did，句子中的主要动词变回原形。", instruction: "请将此句改写为一般疑问句。", questions: [
+        { sentence: "You like pizza.", translation: "你喜欢披萨。", note: "<b>规则:</b> 主语是 you，用 <b>Do</b>。", answer: ["do you like pizza?"], targetTranslation: "你喜欢披萨吗？" },
+        { sentence: "He speaks German fluently.", translation: "他德语说得很流利。", note: "<b>规则:</b> 主语是 he，用 <b>Does</b>，动词变回原形。", answer: ["does he speak german fluently?"], targetTranslation: "他德语说得流利吗？" },
+        { sentence: "They live in that house.", translation: "他们住在那栋房子里。", note: "<b>规则:</b> 主语是 they，用 <b>Do</b>。", answer: ["do they live in that house?"], targetTranslation: "他们住在那栋房子里吗？" },
+        { sentence: "She went to the party alone.", translation: "她独自一人去了派对。", note: "<b>规则:</b> 过去时，用 <b>Did</b>，动词变回原形。", answer: ["did she go to the party alone?"], targetTranslation: "她独自一人去派对了吗？" },
+        { sentence: "He sold his car.", translation: "他卖掉了他的车。", note: "<b>规则:</b> 过去时，用 <b>Did</b>，动词变回原形。", answer: ["did he sell his car?"], targetTranslation: "他卖掉他的车了吗？" },
+        { sentence: "The meeting started at 9 AM.", translation: "会议在上午9点开始。", note: "<b>规则:</b> 过去时，用 <b>Did</b>，动词变回原形。", answer: ["did the meeting start at 9 am?"], targetTranslation: "会议在上午9点开始了吗？" },
+        { sentence: "You know how to fix it.", translation: "你知道怎么修理它。", note: "<b>规则:</b> 主语是 you，用 <b>Do</b>。", answer: ["do you know how to fix it?"], targetTranslation: "你知道怎么修理它吗？" },
+        { sentence: "She feels better today.", translation: "她今天感觉好多了。", note: "<b>规则:</b> 主语是 she，用 <b>Does</b>，动词变回原形。", answer: ["does she feel better today?"], targetTranslation: "她今天感觉好些了吗？" },
+        { sentence: "They found the missing dog.", translation: "他们找到了丢失的狗。", note: "<b>规则:</b> 过去时，用 <b>Did</b>，动词变回原形。", answer: ["did they find the missing dog?"], targetTranslation: "他们找到丢失的狗了吗？" },
+        { sentence: "He wants a cup of coffee.", translation: "他想要一杯咖啡。", note: "<b>规则:</b> 主语是 he，用 <b>Does</b>，动词变回原形。", answer: ["does he want a cup of coffee?"], targetTranslation: "他想要一杯咖啡吗？" }
+      ]}
+    ]
+  },
+  "特殊疑问句": {
+    subcategories: [
+      { name: "What", description: "用于询问事物的名称、身份或具体信息。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "My name is <u>David</u>.", translation: "我的名字是大卫。", note: "<b>提示:</b> 对名字提问用 <b>What</b>。", answer: ["what is your name?"], targetTranslation: "你的名字是什么？" },
+        { sentence: "She is reading <u>a book</u>.", translation: "她正在读一本书。", note: "<b>提示:</b> 对宾语事物提问用 <b>What</b>。", answer: ["what is she reading?"], targetTranslation: "她在读什么？" },
+        { sentence: "They are talking about <u>the weather</u>.", translation: "他们在谈论天气。", note: "<b>提示:</b> 对谈论内容提问用 <b>What</b>。", answer: ["what are they talking about?"], targetTranslation: "他们在谈论什么？" },
+        { sentence: "Her favorite color is <u>purple</u>.", translation: "她最喜欢的颜色是紫色。", note: "<b>提示:</b> 对颜色提问用 <b>What</b>。", answer: ["what is her favorite color?"], targetTranslation: "她最喜欢的颜色是什么？" },
+        { sentence: "He is <u>a doctor</u>.", translation: "他是一名医生。", note: "<b>提示:</b> 对职业提问用 <b>What</b>。", answer: ["what does he do?", "what is his job?"], targetTranslation: "他是做什么工作的？" },
+        { sentence: "I want <u>some water</u>.", translation: "我想要一些水。", note: "<b>提示:</b> 对宾语事物提问用 <b>What</b>。", answer: ["what do you want?"], targetTranslation: "你想要什么？" },
+        { sentence: "The time is <u>ten o'clock</u>.", translation: "现在是十点钟。", note: "<b>提示:</b> 对时间点提问用 <b>What time</b>。", answer: ["what time is it?"], targetTranslation: "现在几点了？" },
+        { sentence: "She has <u>a new car</u> in her garage.", translation: "她的车库里有一辆新车。", note: "<b>提示:</b> 对宾语事物提问用 <b>What</b>。", answer: ["what does she have in her garage?"], targetTranslation: "她的车库里有什么？" },
+        { sentence: "He is doing <u>his homework</u>.", translation: "他正在做作业。", note: "<b>提示:</b> 对动作内容提问用 <b>What</b>。", answer: ["what is he doing?"], targetTranslation: "他正在做什么？" },
+        { sentence: "The subject of the meeting is <u>the new project</u>.", translation: "会议的主题是新项目。", note: "<b>提示:</b> 对主题提问用 <b>What</b>。", answer: ["what is the subject of the meeting?"], targetTranslation: "会议的主题是什么？" }
+      ]},
+      { name: "Where", description: "用于询问地点或位置。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "He lives in <u>New York</u>.", translation: "他住在纽约。", note: "<b>提示:</b> 对地点提问用 <b>Where</b>。", answer: ["where does he live?"], targetTranslation: "他住在哪里？" },
+        { sentence: "The keys are <u>on the table</u>.", translation: "钥匙在桌子上。", note: "<b>提示:</b> 对位置提问用 <b>Where</b>。", answer: ["where are the keys?"], targetTranslation: "钥匙在哪里？" },
+        { sentence: "She is going <u>to the supermarket</u>.", translation: "她要去超市。", note: "<b>提示:</b> 对目的地提问用 <b>Where</b>。", answer: ["where is she going?"], targetTranslation: "她要去哪里？" },
+        { sentence: "They are from <u>Canada</u>.", translation: "他们来自加拿大。", note: "<b>提示:</b> 对来源地提问用 <b>Where</b>。", answer: ["where are they from?"], targetTranslation: "他们来自哪里？" },
+        { sentence: "I met him <u>at the park</u>.", translation: "我在公园遇见了他。", note: "<b>提示:</b> 对地点提问用 <b>Where</b>。", answer: ["where did you meet him?"], targetTranslation: "你在哪里遇见他的？" },
+        { sentence: "The restaurant is <u>near the bank</u>.", translation: "餐厅在银行附近。", note: "<b>提示:</b> 对位置提问用 <b>Where</b>。", answer: ["where is the restaurant?"], targetTranslation: "餐厅在哪里？" },
+        { sentence: "He put the book <u>on the shelf</u>.", translation: "他把书放在架子上。", note: "<b>提示:</b> 对位置提问用 <b>Where</b>。", answer: ["where did he put the book?"], targetTranslation: "他把书放在哪里了？" },
+        { sentence: "She works <u>in a big office</u>.", translation: "她在一个大办公室工作。", note: "<b>提示:</b> 对工作地点提问用 <b>Where</b>。", answer: ["where does she work?"], targetTranslation: "她在哪里工作？" },
+        { sentence: "We are staying <u>at a hotel</u>.", translation: "我们住在一个酒店。", note: "<b>提示:</b> 对地点提问用 <b>Where</b>。", answer: ["where are you staying?"], targetTranslation: "你们住在哪里？" },
+        { sentence: "The cat is hiding <u>under the bed</u>.", translation: "猫躲在床底下。", note: "<b>提示:</b> 对位置提问用 <b>Where</b>。", answer: ["where is the cat hiding?"], targetTranslation: "猫躲在哪里？" }
+      ]},
+      { name: "When", description: "用于询问时间。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "The concert is <u>on Friday</u>.", translation: "音乐会在周五。", note: "<b>提示:</b> 对日期提问用 <b>When</b>。", answer: ["when is the concert?"], targetTranslation: "音乐会是什么时候？" },
+        { sentence: "He gets up <u>at 7 AM</u> every day.", translation: "他每天早上7点起床。", note: "<b>提示:</b> 对时间点提问用 <b>When</b> 或 <b>What time</b>。", answer: ["when does he get up every day?", "what time does he get up every day?"], targetTranslation: "他每天什么时候起床？" },
+        { sentence: "Her birthday is <u>in June</u>.", translation: "她的生日在六月。", note: "<b>提示:</b> 对月份提问用 <b>When</b>。", answer: ["when is her birthday?"], targetTranslation: "她的生日是什么时候？" },
+        { sentence: "They arrived <u>last night</u>.", translation: "他们昨晚到达。", note: "<b>提示:</b> 对时间提问用 <b>When</b>。", answer: ["when did they arrive?"], targetTranslation: "他们是什么时候到达的？" },
+        { sentence: "The meeting will start <u>at 10 o'clock</u>.", translation: "会议将在10点开始。", note: "<b>提示:</b> 对时间点提问用 <b>When</b> 或 <b>What time</b>。", answer: ["when will the meeting start?", "what time will the meeting start?"], targetTranslation: "会议什么时候开始？" },
+        { sentence: "I will see you <u>next week</u>.", translation: "我下周见你。", note: "<b>提示:</b> 对时间提问用 <b>When</b>。", answer: ["when will you see me?"], targetTranslation: "你什么时候见我？" },
+        { sentence: "She was born <u>in 1995</u>.", translation: "她出生于1995年。", note: "<b>提示:</b> 对年份提问用 <b>When</b>。", answer: ["when was she born?"], targetTranslation: "她是什么时候出生的？" },
+        { sentence: "He finished the project <u>two days ago</u>.", translation: "他两天前完成了这个项目。", note: "<b>提示:</b> 对时间提问用 <b>When</b>。", answer: ["when did he finish the project?"], targetTranslation: "他是什么时候完成这个项目的？" },
+        { sentence: "We are going on vacation <u>in August</u>.", translation: "我们八月份去度假。", note: "<b>提示:</b> 对时间提问用 <b>When</b>。", answer: ["when are you going on vacation?"], targetTranslation: "你们什么时候去度假？" },
+        { sentence: "The store closes <u>at 9 PM</u>.", translation: "商店晚上9点关门。", note: "<b>提示:</b> 对时间点提问用 <b>When</b> 或 <b>What time</b>。", answer: ["when does the store close?", "what time does the store close?"], targetTranslation: "商店什么时候关门？" }
+      ]},
+      { name: "Why", description: "用于询问原因。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "She is crying <u>because she lost her toy</u>.", translation: "她在哭，因为她丢了玩具。", note: "<b>提示:</b> 对原因提问用 <b>Why</b>。", answer: ["why is she crying?"], targetTranslation: "她为什么哭？" },
+        { sentence: "He was late <u>because of the traffic</u>.", translation: "他迟到是因为交通堵塞。", note: "<b>提示:</b> 对原因提问用 <b>Why</b>。", answer: ["why was he late?"], targetTranslation: "他为什么迟到？" },
+        { sentence: "I am studying hard <u>to pass the exam</u>.", translation: "我努力学习是为了通过考试。", note: "<b>提示:</b> 对目的提问用 <b>Why</b>。", answer: ["why are you studying hard?"], targetTranslation: "你为什么努力学习？" },
+        { sentence: "She went to the doctor <u>because she was sick</u>.", translation: "她去看医生是因为她生病了。", note: "<b>提示:</b> 对原因提问用 <b>Why</b>。", answer: ["why did she go to the doctor?"], targetTranslation: "她为什么去看医生？" },
+        { sentence: "He exercises every day <u>to stay healthy</u>.", translation: "他每天锻炼以保持健康。", note: "<b>提示:</b> 对目的提问用 <b>Why</b>。", answer: ["why does he exercise every day?"], targetTranslation: "他为什么每天锻炼？" },
+        { sentence: "They cancelled the trip <u>due to the bad weather</u>.", translation: "由于天气不好，他们取消了行程。", note: "<b>提示:</b> 对原因提问用 <b>Why</b>。", answer: ["why did they cancel the trip?"], targetTranslation: "他们为什么取消行程？" },
+        { sentence: "I am happy <u>because I got a promotion</u>.", translation: "我很高兴，因为我升职了。", note: "<b>提示:</b> 对原因提问用 <b>Why</b>。", answer: ["why are you happy?"], targetTranslation: "你为什么高兴？" },
+        { sentence: "She is saving money <u>to buy a new computer</u>.", translation: "她正在存钱买一台新电脑。", note: "<b>提示:</b> 对目的提问用 <b>Why</b>。", answer: ["why is she saving money?"], targetTranslation: "她为什么存钱？" },
+        { sentence: "He didn't come to the party <u>because he was busy</u>.", translation: "他没来参加派对是因为他很忙。", note: "<b>提示:</b> 对原因提问用 <b>Why</b>。", answer: ["why didn't he come to the party?"], targetTranslation: "他为什么没来参加派对？" },
+        { sentence: "We need to leave now <u>to catch the train</u>.", translation: "我们现在需要离开去赶火车。", note: "<b>提示:</b> 对目的提问用 <b>Why</b>。", answer: ["why do you need to leave now?"], targetTranslation: "你们为什么现在需要离开？" }
+      ]},
+      { name: "Who", description: "用于询问人的身份（作主语或宾语）。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "<u>The boy in the red shirt</u> is my brother.", translation: "那个穿红衬衫的男孩是我哥哥。", note: "<b>提示:</b> 对主语人物提问用 <b>Who</b>。", answer: ["who is your brother?"], targetTranslation: "谁是你的哥哥？" },
+        { sentence: "I met <u>John</u> at the party.", translation: "我在派对上遇到了约翰。", note: "<b>提示:</b> 对宾语人物提问用 <b>Who(m)</b>。", answer: ["who did you meet at the party?", "whom did you meet at the party?"], targetTranslation: "你在派对上遇到了谁？" },
+        { sentence: "<u>She</u> is my best friend.", translation: "她是我最好的朋友。", note: "<b>提示:</b> 对主语人物提问用 <b>Who</b>。", answer: ["who is your best friend?"], targetTranslation: "谁是你最好的朋友？" },
+        { sentence: "He is talking to <u>his teacher</u>.", translation: "他正在和他的老师说话。", note: "<b>提示:</b> 对宾语人物提问用 <b>Who(m)</b>。", answer: ["who is he talking to?", "whom is he talking to?"], targetTranslation: "他正在和谁说话？" },
+        { sentence: "<u>The doctor</u> helped the patient.", translation: "医生帮助了病人。", note: "<b>提示:</b> 对主语人物提问用 <b>Who</b>。", answer: ["who helped the patient?"], targetTranslation: "谁帮助了病人？" },
+        { sentence: "She invited <u>all her friends</u> to the wedding.", translation: "她邀请了所有朋友参加婚礼。", note: "<b>提示:</b> 对宾语人物提问用 <b>Who(m)</b>。", answer: ["who did she invite to the wedding?", "whom did she invite to the wedding?"], targetTranslation: "她邀请了谁参加婚礼？" },
+        { sentence: "<u>My father</u> built this house.", translation: "我父亲建了这所房子。", note: "<b>提示:</b> 对主语人物提问用 <b>Who</b>。", answer: ["who built this house?"], targetTranslation: "谁建了这所房子？" },
+        { sentence: "I saw <u>your sister</u> yesterday.", translation: "我昨天看到你姐姐了。", note: "<b>提示:</b> 对宾语人物提问用 <b>Who(m)</b>。", answer: ["who did you see yesterday?", "whom did you see yesterday?"], targetTranslation: "你昨天看到谁了？" },
+        { sentence: "<u>The man with the hat</u> is a detective.", translation: "那个戴帽子的男人是侦探。", note: "<b>提示:</b> 对主语人物提问用 <b>Who</b>。", answer: ["who is the man with the hat?"], targetTranslation: "那个戴帽子的男人是谁？" },
+        { sentence: "We are waiting for <u>Mr. Smith</u>.", translation: "我们正在等史密斯先生。", note: "<b>提示:</b> 对宾语人物提问用 <b>Who(m)</b>。", answer: ["who are you waiting for?", "whom are you waiting for?"], targetTranslation: "你们在等谁？" }
+      ]},
+      { name: "Which", description: "用于在有限的选择中进行询问。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "I would like <u>the blue one</u>.", translation: "我想要蓝色的那个。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which one would you like?"], targetTranslation: "你想要哪一个？" },
+        { sentence: "<u>The red car</u> is mine.", translation: "红色的车是我的。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which car is yours?"], targetTranslation: "哪辆车是你的？" },
+        { sentence: "She prefers <u>the larger size</u>.", translation: "她更喜欢大号的。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which size does she prefer?"], targetTranslation: "她更喜欢哪个尺寸？" },
+        { sentence: "He lives in <u>the house on the left</u>.", translation: "他住在左边的房子里。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which house does he live in?"], targetTranslation: "他住在哪栋房子里？" },
+        { sentence: "I want to buy <u>this book</u>, not that one.", translation: "我想买这本书，不是那本。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which book do you want to buy?"], targetTranslation: "你想买哪本书？" },
+        { sentence: "<u>The train to Shanghai</u> leaves at 10.", translation: "去上海的火车10点开。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which train leaves at 10?"], targetTranslation: "哪趟火车10点开？" },
+        { sentence: "She chose <u>the chocolate cake</u>.", translation: "她选了巧克力蛋糕。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which cake did she choose?"], targetTranslation: "她选了哪个蛋糕？" },
+        { sentence: "My favorite season is <u>summer</u>.", translation: "我最喜欢的季节是夏天。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which is your favorite season?"], targetTranslation: "你最喜欢的季节是哪个？" },
+        { sentence: "He is in <u>the classroom at the end of the hall</u>.", translation: "他在走廊尽头的教室里。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which classroom is he in?"], targetTranslation: "他在哪个教室？" },
+        { sentence: "I think <u>the first option</u> is better.", translation: "我认为第一个选项更好。", note: "<b>提示:</b> 在选项中提问用 <b>Which</b>。", answer: ["which option do you think is better?"], targetTranslation: "你认为哪个选项更好？" }
+      ]},
+      { name: "How", description: "用于询问方式、方法或状态。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "He goes to school <u>by bus</u>.", translation: "他乘公共汽车去上学。", note: "<b>提示:</b> 对方式提问用 <b>How</b>。", answer: ["how does he go to school?"], targetTranslation: "他怎么去上学？" },
+        { sentence: "She is feeling <u>much better</u> today.", translation: "她今天感觉好多了。", note: "<b>提示:</b> 对状态提问用 <b>How</b>。", answer: ["how is she feeling today?"], targetTranslation: "她今天感觉怎么样？" },
+        { sentence: "He solved the problem <u>by using a new method</u>.", translation: "他用一种新方法解决了这个问题。", note: "<b>提示:</b> 对方法提问用 <b>How</b>。", answer: ["how did he solve the problem?"], targetTranslation: "他是如何解决这个问题的？" },
+        { sentence: "The movie was <u>very interesting</u>.", translation: "这部电影非常有趣。", note: "<b>提示:</b> 对状态提问用 <b>How</b>。", answer: ["how was the movie?"], targetTranslation: "这部电影怎么样？" },
+        { sentence: "You can open the door <u>with this key</u>.", translation: "你可以用这把钥匙开门。", note: "<b>提示:</b> 对方式提问用 <b>How</b>。", answer: ["how can i open the door?"], targetTranslation: "我怎么能打开这扇门？" },
+        { sentence: "He speaks English <u>fluently</u>.", translation: "他英语说得很流利。", note: "<b>提示:</b> 对方式提问用 <b>How</b>。", answer: ["how does he speak english?"], targetTranslation: "他英语说得怎么样？" },
+        { sentence: "The cake tastes <u>delicious</u>.", translation: "这个蛋糕尝起来很美味。", note: "<b>提示:</b> 对状态提问用 <b>How</b>。", answer: ["how does the cake taste?"], targetTranslation: "这个蛋糕尝起来怎么样？" },
+        { sentence: "She learned to swim <u>by watching videos</u>.", translation: "她通过看视频学会了游泳。", note: "<b>提示:</b> 对方法提问用 <b>How</b>。", answer: ["how did she learn to swim?"], targetTranslation: "她是如何学会游泳的？" },
+        { sentence: "The journey was <u>tiring</u>.", translation: "旅途很累人。", note: "<b>提示:</b> 对状态提问用 <b>How</b>。", answer: ["how was the journey?"], targetTranslation: "旅途怎么样？" },
+        { sentence: "He drives <u>very carefully</u>.", translation: "他开车非常小心。", note: "<b>提示:</b> 对方式提问用 <b>How</b>。", answer: ["how does he drive?"], targetTranslation: "他开车怎么样？" }
+      ]},
+      { name: "How much / many", description: "How many 用于询问可数名词的数量，How much 用于询问不可数名词的数量或价格。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "There are <u>ten</u> students in the classroom.", translation: "教室里有十个学生。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many students are there in the classroom?"], targetTranslation: "教室里有多少学生？" },
+        { sentence: "This book costs <u>twenty dollars</u>.", translation: "这本书20美元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much does this book cost?"], targetTranslation: "这本书多少钱？" },
+        { sentence: "She has <u>three</u> brothers.", translation: "她有三个兄弟。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many brothers does she have?"], targetTranslation: "她有几个兄弟？" },
+        { sentence: "I need <u>some</u> sugar.", translation: "我需要一些糖。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much sugar do you need?"], targetTranslation: "你需要多少糖？" },
+        { sentence: "He drank <u>two glasses</u> of water.", translation: "他喝了两杯水。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many glasses of water did he drink?"], targetTranslation: "他喝了几杯水？" },
+        { sentence: "There is <u>a little</u> milk in the fridge.", translation: "冰箱里有一点牛奶。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much milk is there in the fridge?"], targetTranslation: "冰箱里有多少牛奶？" },
+        { sentence: "She bought <u>many</u> apples.", translation: "她买了很多苹果。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many apples did she buy?"], targetTranslation: "她买了多少苹果？" },
+        { sentence: "The ticket is <u>50 euros</u>.", translation: "这张票50欧元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much is the ticket?"], targetTranslation: "这张票多少钱？" },
+        { sentence: "He has <u>a lot of</u> work to do.", translation: "他有很多工作要做。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much work does he have to do?"], targetTranslation: "他有多少工作要做？" },
+
+        { sentence: "There are <u>seven days</u> in a week.", translation: "一周有七天。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many days are there in a week?"], targetTranslation: "一周有几天？" },
+        { sentence: "She has <u>three</u> cats at home.", translation: "她家里有三只猫。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many cats does she have at home?"], targetTranslation: "她家里有几只猫？" },
+        { sentence: "He visited <u>five</u> different countries last summer.", translation: "他去年夏天访问了五个不同的国家。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many different countries did he visit last summer?"], targetTranslation: "他去年夏天访问了几个不同的国家？" },
+        { sentence: "There are <u>twenty-four</u> hours in a day.", translation: "一天有24小时。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many hours are there in a day?"], targetTranslation: "一天有多少小时？" },
+        { sentence: "I need to write <u>two more</u> emails before I leave.", translation: "我离开前还需要写两封邮件。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many more emails do you need to write before you leave?"], targetTranslation: "你离开前还需要写几封邮件？" },
+        { sentence: "The new library will have <u>over a million</u> books.", translation: "新图书馆将拥有一百多万册图书。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many books will the new library have?"], targetTranslation: "新图书馆将有多少册图书？" },
+        { sentence: "She can speak <u>several</u> languages.", translation: "她会说好几种语言。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many languages can she speak?"], targetTranslation: "她会说几种语言？" },
+        { sentence: "He has read <u>all the books</u> on this shelf.", translation: "他读完了这个书架上所有的书。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many books on this shelf has he read?"], targetTranslation: "这个书架上的书他读了多少本？" },
+        { sentence: "There were <u>a lot of people</u> at the concert.", translation: "音乐会有很多人。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many people were there at the concert?"], targetTranslation: "音乐会有多少人？" },
+        { sentence: "The team has won <u>four championships</u> in a row.", translation: "该队连续赢得了四次冠军。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many championships has the team won in a row?"], targetTranslation: "该队连续赢得了多少次冠军？" },
+        { sentence: "You need to answer <u>at least ten</u> questions.", translation: "你至少需要回答十个问题。", note: "<b>提示:</b> 对可数名词数量提问用 <b>How many</b>。", answer: ["how many questions do I need to answer?"], targetTranslation: "我需要回答多少个问题？" },
+        { sentence: "This jacket costs <u>150 dollars</u>.", translation: "这件夹克150美元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much does this jacket cost?"], targetTranslation: "这件夹克多少钱？" },
+        { sentence: "There is <u>a little</u> juice left in the bottle.", translation: "瓶子里只剩一点果汁了。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much juice is left in the bottle?"], targetTranslation: "瓶子里还剩多少果汁？" },
+        { sentence: "He spent <u>a lot of time</u> preparing for the exam.", translation: "他花了很多时间准备考试。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much time did he spend preparing for the exam?"], targetTranslation: "他花了多少时间准备考试？" },
+        { sentence: "I have <u>some</u> work to finish before dinner.", translation: "晚饭前我有些工作要完成。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much work do you have to finish before dinner?"], targetTranslation: "晚饭前你有多少工作要完成？" },
+        { sentence: "She adds <u>just a little</u> sugar to her coffee.", translation: "她的咖啡只加了一点点糖。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much sugar does she add to her coffee?"], targetTranslation: "她的咖啡里加了多少糖？" },
+        { sentence: "The new car will cost you <u>around $30,000</u>.", translation: "这辆新车将花费你大约3万美元。", note: "<b>提示:</b> 对价格提问用 <b>How much</b>。", answer: ["how much will the new car cost me?"], targetTranslation: "这辆新车将花费我多少钱？" },
+        { sentence: "We need <u>a lot more</u> information to make a decision.", translation: "我们需要更多的信息来做决定。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much more information do you need to make a decision?"], targetTranslation: "你们需要多少信息来做决定？" },
+        { sentence: "She has made <u>remarkable</u> progress in her studies.", translation: "她的学习取得了显著的进步。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much progress has she made in her studies?"], targetTranslation: "她在学习上取得了多大进步？" },
+        { sentence: "I don't have <u>much</u> money with me right now.", translation: "我现在没带多少钱。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much money do you have with you right now?"], targetTranslation: "你现在带了多少钱？" },
+        { sentence: "It took <u>a great deal of</u> courage to tell the truth.", translation: "说出真相需要巨大的勇气。", note: "<b>提示:</b> 对不可数名词数量提问用 <b>How much</b>。", answer: ["how much courage did it take to tell the truth?"], targetTranslation: "说出真相需要多大的勇气？" }
+      ]},
+      { name: "How long / often / far", description: "分别用于询问时长、频率和距离。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "She goes to the gym <u>three times a week</u>.", translation: "她一周去三次健身房。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she go to the gym?"], targetTranslation: "她多久去一次健身房？" },
+        { sentence: "The airport is <u>about 30 kilometers</u> from here.", translation: "机场离这里大约30公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the airport from here?"], targetTranslation: "机场离这里有多远？" },
+        { sentence: "The meeting will last for <u>two hours</u>.", translation: "会议将持续两小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long will the meeting last?"], targetTranslation: "会议将持续多久？" },
+        { sentence: "He has lived here <u>for ten years</u>.", translation: "他在这里住了十年了。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long has he lived here?"], targetTranslation: "他在这里住了多久了？" },
+        { sentence: "I visit my grandparents <u>once a month</u>.", translation: "我每个月看望一次我的祖父母。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often do you visit your grandparents?"], targetTranslation: "你多久看望一次你的祖父母？" },
+        { sentence: "The nearest station is <u>five miles away</u>.", translation: "最近的车站在五英里外。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the nearest station?"], targetTranslation: "最近的车站在多远？" },
+        { sentence: "We waited <u>for a long time</u>.", translation: "我们等了很长时间。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long did you wait?"], targetTranslation: "你们等了多久？" },
+        { sentence: "She calls her mother <u>every day</u>.", translation: "她每天都给妈妈打电话。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she call her mother?"], targetTranslation: "她多久给妈妈打一次电话？" },
+        { sentence: "He can run <u>10 kilometers</u> without stopping.", translation: "他可以不停地跑10公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far can he run without stopping?"], targetTranslation: "他可以不停地跑多远？" },
+        { sentence: "The flight takes <u>about 3 hours</u>.", translation: "这次飞行大约需要3小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does the flight take?"], targetTranslation: "这次飞行需要多长时间？" },
+
+        { sentence: "She goes to the gym <u>three times a week</u>.", translation: "她一周去三次健身房。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she go to the gym?"], targetTranslation: "她多久去一次健身房？" },
+        { sentence: "He checks his phone <u>every few minutes</u>.", translation: "他每隔几分钟就看一次手机。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does he check his phone?"], targetTranslation: "他多久看一次手机？" },
+        { sentence: "The committee meets <u>once a month</u>.", translation: "委员会每月开一次会。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does the committee meet?"], targetTranslation: "委员会多久开一次会？" },
+        { sentence: "I have told you <u>many times</u> not to do that.", translation: "我已经跟你说过很多次不要那样做。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often have you told me not to do that?"], targetTranslation: "你跟我说过多少次不要那样做？" },
+        { sentence: "He <u>rarely</u> complains about anything.", translation: "他很少抱怨任何事情。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does he complain about anything?"], targetTranslation: "他会经常抱怨吗？" },
+        { sentence: "This event is held <u>annually</u>.", translation: "这项活动每年举行一次。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often is this event held?"], targetTranslation: "这项活动多久举行一次？" },
+        { sentence: "You should get your teeth cleaned <u>every six months</u>.", translation: "你应该每六个月洗一次牙。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often should I get my teeth cleaned?"], targetTranslation: "我应该多久洗一次牙？" },
+        { sentence: "The bus to the airport runs <u>every hour</u>.", translation: "去机场的巴士每小时一班。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does the bus to the airport run?"], targetTranslation: "去机场的巴士多久一班？" },
+        { sentence: "She <u>occasionally</u> visits her relatives in the countryside.", translation: "她偶尔会去看望在乡下的亲戚。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often does she visit her relatives in the countryside?"], targetTranslation: "她多久去看望一次在乡下的亲戚？" },
+        { sentence: "He was late for work <u>almost every day</u> last week.", translation: "他上周几乎每天上班都迟到。", note: "<b>提示:</b> 对频率提问用 <b>How often</b>。", answer: ["how often was he late for work last week?"], targetTranslation: "他上周多久迟到一次？" },
+        { sentence: "The movie lasts for <u>about two hours</u>.", translation: "这部电影大约持续两小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does the movie last?"], targetTranslation: "这部电影持续多久？" },
+        { sentence: "He has been living in this city <u>for ten years</u>.", translation: "他已经在这座城市住了十年了。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long has he been living in this city?"], targetTranslation: "他已经在这座城市住多久了？" },
+        { sentence: "The meeting took <u>longer than we expected</u>.", translation: "会议开得比我们预期的要长。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long did the meeting take?"], targetTranslation: "会议开了多久？" },
+        { sentence: "I will be on vacation <u>for two weeks</u>.", translation: "我将休假两周。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long will you be on vacation?"], targetTranslation: "你将休假多久？" },
+        { sentence: "It takes <u>approximately 30 minutes</u> to walk there.", translation: "走到那里大约需要30分钟。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long does it take to walk there?"], targetTranslation: "走到那里需要多长时间？" },
+        { sentence: "She waited for the bus <u>for half an hour</u>.", translation: "她等了半小时公交车。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long did she wait for the bus?"], targetTranslation: "她等了多久公交车？" },
+        { sentence: "The battery can last <u>up to 8 hours</u>.", translation: "这块电池最长能用8小时。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long can the battery last?"], targetTranslation: "这块电池能用多久？" },
+        { sentence: "He has been working on this project <u>since last Monday</u>.", translation: "他从上周一开始就一直在这个项目上工作。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long has he been working on this project?"], targetTranslation: "他已经在这个项目上工作多久了？" },
+        { sentence: "The warranty is valid for <u>one year</u>.", translation: "保修期为一年。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long is the warranty valid?"], targetTranslation: "保修期有多长？" },
+        { sentence: "You should keep the cake in the oven for <u>20 minutes</u>.", translation: "你应该把蛋糕在烤箱里放20分钟。", note: "<b>提示:</b> 对时长提问用 <b>How long</b>。", answer: ["how long should I keep the cake in the oven?"], targetTranslation: "我应该把蛋糕在烤箱里放多久？" },
+        { sentence: "The airport is <u>about 25 kilometers</u> from the city center.", translation: "机场离市中心大约25公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the airport from the city center?"], targetTranslation: "机场离市中心有多远？" },
+        { sentence: "She can run <u>10 kilometers</u> without stopping.", translation: "她可以不停地跑10公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far can she run without stopping?"], targetTranslation: "她可以不停地跑多远？" },
+        { sentence: "They walked <u>a long way</u> to find the village.", translation: "他们走了很长的路才找到那个村庄。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far did they walk to find the village?"], targetTranslation: "他们走了多远的路才找到那个村庄？" },
+        { sentence: "My office is <u>just a five-minute walk</u> from my home.", translation: "我的办公室离我家只有五分钟的步行路程。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is your office from your home?"], targetTranslation: "你的办公室离你家有多远？" },
+        { sentence: "The moon is <u>about 384,400 kilometers</u> from the Earth.", translation: "月球距离地球大约384,400公里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the moon from the Earth?"], targetTranslation: "月球距离地球有多远？" },
+        { sentence: "He threw the ball <u>all the way to the other side of the field</u>.", translation: "他把球扔到了场地的另一边。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far did he throw the ball?"], targetTranslation: "他把球扔了多远？" },
+        { sentence: "The nearest gas station is <u>not very far</u> from here.", translation: "最近的加油站离这里不太远。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the nearest gas station from here?"], targetTranslation: "最近的加油站离这里有多远？" },
+        { sentence: "We have driven <u>200 miles</u> so far.", translation: "到目前为止我们已经开了200英里。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far have you driven so far?"], targetTranslation: "到目前为止你们已经开了多远？" },
+        { sentence: "How long will it take to travel <u>from London to Paris</u> by train?", translation: "乘火车从伦敦到巴黎需要多长时间？", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is it from London to Paris?"], targetTranslation: "从伦敦到巴黎有多远？" },
+        { sentence: "The next rest area is <u>50 miles ahead</u>.", translation: "下一个休息区在前方50英里处。", note: "<b>提示:</b> 对距离提问用 <b>How far</b>。", answer: ["how far is the next rest area?"], targetTranslation: "下一个休息区有多远？" }
+      ]},
+      { name: "疑问词作主语", description: "当疑问词（如 Who, What 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后。</br></br> 结构：疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它? </br>其实就是：疑问词 + 一般疑问句", instruction: "请对划线部分提问。", questions: [
+        { sentence: "<u>Someone</u> broke the vase.", translation: "有人打碎了花瓶。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who broke the vase?"], targetTranslation: "谁打碎了花瓶？" },
+        { sentence: "<u>Something strange</u> happened last night.", translation: "昨晚发生了一些奇怪的事。", note: "<b>提示:</b> What 作主语，后面直接跟动词。", answer: ["what happened last night?"], targetTranslation: "昨晚发生了什么？" },
+        { sentence: "<u>John</u> called you this morning.", translation: "约翰今天早上给你打了电话。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who called you this morning?"], targetTranslation: "谁今天早上给你打了电话？" },
+        { sentence: "<u>A loud noise</u> woke me up.", translation: "一声巨响把我吵醒了。", note: "<b>提示:</b> What 作主语，后面直接跟动词。", answer: ["what woke you up?"], targetTranslation: "什么把你吵醒了？" },
+        { sentence: "<u>My sister</u> made this cake.", translation: "我姐姐做了这个蛋糕。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who made this cake?"], targetTranslation: "谁做了这个蛋糕？" },
+        { sentence: "<u>The storm</u> caused a lot of damage.", translation: "暴风雨造成了很大损失。", note: "<b>提示:</b> What 作主语，后面直接跟动词。", answer: ["what caused a lot of damage?"], targetTranslation: "什么造成了很大损失？" },
+        { sentence: "<u>The teacher</u> explained the lesson.", translation: "老师讲解了这一课。", note: "<b>提示:</b> Who 作主语，后面直接跟动词。", answer: ["who explained the lesson?"], targetTranslation: "谁讲解了这一课？" },
+        { sentence: "<u>An idea</u> came to my mind.", translation: "我脑子里冒出了一个想法。", note: "<b>提示:</b> What 作主语，后面直接跟动词。", answer: ["what came to your mind?"], targetTranslation: "你脑子里冒出了什么想法？" }
+      ]}
+    ]
+  },
+  "被动语态": {
+    subcategories: [
+      { name: "主谓宾", description: "将主动语态的宾语变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
+        { sentence: "The teacher praised the student.", translation: "老师表扬了那个学生。", note: "<b>提示:</b> The student was praised by the teacher.", answer: ["the student was praised by the teacher."], targetTranslation: "那个学生被老师表扬了。" },
+        { sentence: "Someone has stolen my wallet.", translation: "有人偷了我的钱包。", note: "<b>提示:</b> My wallet has been stolen.", answer: ["my wallet has been stolen."], targetTranslation: "我的钱包被偷了。" },
+        { sentence: "They will build a new hospital here.", translation: "他们将在这里建一所新医院。", note: "<b>提示:</b> A new hospital will be built here.", answer: ["a new hospital will be built here."], targetTranslation: "一所新医院将在这里被建造。" },
+        { sentence: "The chef is preparing the meal now.", translation: "厨师正在准备这顿饭。", note: "<b>提示:</b> The meal is being prepared by the chef now.", answer: ["the meal is being prepared by the chef now."], targetTranslation: "这顿饭正在被厨师准备。" },
+        { sentence: "Da Vinci painted the Mona Lisa.", translation: "达芬奇画了蒙娜丽莎。", note: "<b>提示:</b> The Mona Lisa was painted by Da Vinci.", answer: ["the mona lisa was painted by da vinci."], targetTranslation: "蒙娜丽莎是达芬奇画的。" },
+        { sentence: "The storm damaged many houses.", translation: "暴风雨损坏了许多房屋。", note: "<b>提示:</b> Many houses were damaged by the storm.", answer: ["many houses were damaged by the storm."], targetTranslation: "许多房屋被暴风雨损坏了。" },
+        { sentence: "The company employs two hundred people.", translation: "这家公司雇佣了两百人。", note: "<b>提示:</b> Two hundred people are employed by the company.", answer: ["two hundred people are employed by the company."], targetTranslation: "两百人被这家公司雇佣。" },
+        { sentence: "They cancelled the flight.", translation: "他们取消了航班。", note: "<b>提示:</b> The flight was cancelled.", answer: ["the flight was cancelled."], targetTranslation: "航班被取消了。" },
+        { sentence: "My mother made this cake.", translation: "我妈妈做了这个蛋糕。", note: "<b>提示:</b> This cake was made by my mother.", answer: ["this cake was made by my mother."], targetTranslation: "这个蛋糕是我妈妈做的。" },
+        { sentence: "Shakespeare wrote 'Hamlet'.", translation: "莎士比亚写了《哈姆雷特》。", note: "<b>提示:</b> 'Hamlet' was written by Shakespeare.", answer: ["'hamlet' was written by shakespeare.", "hamlet was written by shakespeare."], targetTranslation: "《哈姆雷特》是莎士比亚写的。" }
+      ]},
+      { name: "主谓宾宾", description: "主动语态有两个宾语（直接宾语和间接宾语），任何一个都可以变成被动语态的主语。", instruction: "请将此句改写为被动语态。", questions: [
+        { sentence: "He gave me a book.", translation: "他给了我一本书。", note: "<b>提示:</b> 可以用 I 或 a book 作主语。", answer: ["i was given a book by him.", "a book was given to me by him."], targetTranslation: "我被给了一本书。 / 一本书被给了我。" },
+        { sentence: "She told us a story.", translation: "她给我们讲了一个故事。", note: "<b>提示:</b> 可以用 We 或 a story 作主语。", answer: ["we were told a story by her.", "a story was told to us by her."], targetTranslation: "我们被告知了一个故事。 / 一个故事被讲给了我们。" },
+        { sentence: "My father bought me a new bike.", translation: "我父亲给我买了一辆新自行车。", note: "<b>提示:</b> 可以用 I 或 a new bike 作主语。", answer: ["i was bought a new bike by my father.", "a new bike was bought for me by my father."], targetTranslation: "我被买了一辆新自行车。 / 一辆新自行车被买给了我。" },
+        { sentence: "The company offered him a good job.", translation: "公司给了他一份好工作。", note: "<b>提示:</b> 可以用 He 或 a good job 作主语。", answer: ["he was offered a good job by the company.", "a good job was offered to him by the company."], targetTranslation: "他被提供了一份好工作。 / 一份好工作被提供给了他。" },
+        { sentence: "They sent her an invitation.", translation: "他们寄给她一份邀请函。", note: "<b>提示:</b> 可以用 She 或 an invitation 作主语。", answer: ["she was sent an invitation.", "an invitation was sent to her."], targetTranslation: "她被寄了一份邀请函。 / 一份邀请函被寄给了她。" },
+        { sentence: "The teacher asked the students a question.", translation: "老师问了学生们一个问题。", note: "<b>提示:</b> 可以用 The students 或 a question 作主语。", answer: ["the students were asked a question by the teacher.", "a question was asked of the students by the teacher."], targetTranslation: "学生们被问了一个问题。 / 一个问题被问给了学生们。" },
+        { sentence: "He showed me the picture.", translation: "他给我看了那张照片。", note: "<b>提示:</b> 可以用 I 或 the picture 作主语。", answer: ["i was shown the picture by him.", "the picture was shown to me by him."], targetTranslation: "我被展示了那张照片。 / 那张照片被展示给了我。" },
+        { sentence: "She lent her friend some money.", translation: "她借给朋友一些钱。", note: "<b>提示:</b> 可以用 Her friend 或 some money 作主语。", answer: ["her friend was lent some money by her.", "some money was lent to her friend by her."], targetTranslation: "她的朋友被借了一些钱。 / 一些钱被借给了她的朋友。" },
+        { sentence: "The waiter brought us the bill.", translation: "服务员给我们拿来了账单。", note: "<b>提示:</b> 可以用 We 或 the bill 作主语。", answer: ["we were brought the bill by the waiter.", "the bill was brought to us by the waiter."], targetTranslation: "我们被拿来了账单。 / 账单被拿给了我们。" },
+        { sentence: "My grandmother made me a sweater.", translation: "我奶奶给我织了一件毛衣。", note: "<b>提示:</b> 可以用 I 或 a sweater 作主语。", answer: ["i was made a sweater by my grandmother.", "a sweater was made for me by my grandmother."], targetTranslation: "我被织了一件毛衣。 / 一件毛衣被织给了我。" }
+      ]},
+      { name: "主谓宾补", description: "将主动语态的宾语变成被动语态的主语，宾语补足语保留在谓语动词之后。", instruction: "请将此句改写为被动语态。", questions: [
+        { sentence: "They elected him president.", translation: "他们选举他为总统。", note: "<b>提示:</b> He was elected president.", answer: ["he was elected president."], targetTranslation: "他被选为总统。" },
+        { sentence: "We call the dog 'Lucky'.", translation: "我们叫这只狗“幸运”。", note: "<b>提示:</b> The dog is called 'Lucky'.", answer: ["the dog is called 'lucky'."], targetTranslation: "这只狗被叫做“幸运”。" },
+        { sentence: "The news made her happy.", translation: "这个消息让她很高兴。", note: "<b>提示:</b> She was made happy by the news.", answer: ["she was made happy by the news."], targetTranslation: "她被这个消息弄得很开心。" },
+        { sentence: "I consider him a good friend.", translation: "我认为他是一个好朋友。", note: "<b>提示:</b> He is considered a good friend by me.", answer: ["he is considered a good friend by me."], targetTranslation: "他被我视为一个好朋友。" },
+        { sentence: "They painted the house green.", translation: "他们把房子漆成了绿色。", note: "<b>提示:</b> The house was painted green.", answer: ["the house was painted green."], targetTranslation: "房子被漆成了绿色。" },
+        { sentence: "She found the book very interesting.", translation: "她发现这本书非常有趣。", note: "<b>提示:</b> The book was found very interesting by her.", answer: ["the book was found very interesting by her."], targetTranslation: "这本书被她发现非常有趣。" },
+        { sentence: "The teacher appointed her monitor.", translation: "老师任命她为班长。", note: "<b>提示:</b> She was appointed monitor by the teacher.", answer: ["she was appointed monitor by the teacher."], targetTranslation: "她被老师任命为班长。" },
+        { sentence: "He keeps his room clean.", translation: "他保持他的房间干净。", note: "<b>提示:</b> His room is kept clean by him.", answer: ["his room is kept clean by him."], targetTranslation: "他的房间被他保持干净。" },
+        { sentence: "They named their daughter 'Alice'.", translation: "他们给女儿取名为“爱丽丝”。", note: "<b>提示:</b> Their daughter was named 'Alice'.", answer: ["their daughter was named 'alice'."], targetTranslation: "他们的女儿被取名为“爱丽丝”。" },
+        { sentence: "We believe him to be honest.", translation: "我们相信他是诚实的。", note: "<b>提示:</b> He is believed to be honest.", answer: ["he is believed to be honest."], targetTranslation: "他被认为是诚实的。" }
+      ]}
+    ]
+  },
+  "There be 句型": {
+    subcategories: [
+      { name: "变否定句", description: "在动词 be 后面加 not (any) 或者 no。", instruction: "请将此句改写为否定句。", questions: [
+        { sentence: "There is a book on the table.", translation: "桌子上有一本书。", note: "<b>提示:</b> 在 is 后面加 not。", answer: ["there is not a book on the table.", "there isn't a book on the table."], targetTranslation: "桌子上没有书。" },
+        { sentence: "There are some students in the classroom.", translation: "教室里有一些学生。", note: "<b>提示:</b> 在 are 后面加 not any。", answer: ["there are not any students in the classroom.", "there aren't any students in the classroom."], targetTranslation: "教室里没有任何学生。" },
+        { sentence: "There is some milk in the fridge.", translation: "冰箱里有一些牛奶。", note: "<b>提示:</b> 在 is 后面加 no 或者 not any。", answer: ["there is no milk in the fridge.", "there is not any milk in the fridge."], targetTranslation: "冰箱里没有牛奶。" },
+        { sentence: "There are many people at the party.", translation: "派对上有很多人。", note: "<b>提示:</b> 在 are 后面加 not。", answer: ["there are not many people at the party.", "there aren't many people at the party."], targetTranslation: "派对上没有很多人。" },
+        { sentence: "There was a big tree in the garden.", translation: "花园里曾有一棵大树。", note: "<b>提示:</b> 在 was 后面加 not。", answer: ["there was not a big tree in the garden.", "there wasn't a big tree in the garden."], targetTranslation: "花园里没有大树。" },
+        { sentence: "There were some birds in the sky.", translation: "天空中有一些鸟。", note: "<b>提示:</b> 在 were 后面加 not any。", answer: ["there were not any birds in the sky.", "there weren't any birds in the sky."], targetTranslation: "天空中没有任何鸟。" },
+        { sentence: "There will be a meeting tomorrow.", translation: "明天会有一个会议。", note: "<b>提示:</b> 在 will be 后面加 not。", answer: ["there will not be a meeting tomorrow.", "there won't be a meeting tomorrow."], targetTranslation: "明天没有会议。" },
+        { sentence: "There is a good reason for this.", translation: "这有一个很好的理由。", note: "<b>提示:</b> 在 is 后面加 no。", answer: ["there is no good reason for this."], targetTranslation: "这没有任何好理由。" },
+        { sentence: "There are two cats on the roof.", translation: "屋顶上有两只猫。", note: "<b>提示:</b> 在 are 后面加 not。", answer: ["there are not two cats on the roof.", "there aren't two cats on the roof."], targetTranslation: "屋顶上没有两只猫。" },
+        { sentence: "There was some sugar in the bowl.", translation: "碗里有一些糖。", note: "<b>提示:</b> 在 was 后面加 no 或者 not any。", answer: ["there was no sugar in the bowl.", "there was not any sugar in the bowl."], targetTranslation: "碗里没有糖。" }
+      ]},
+      { name: "变疑问句", description: "将动词 be 和 there 互换位置即可。", instruction: "请将此句改写为疑问句。", questions: [
+        { sentence: "There is a cat under the tree.", translation: "树下有一只猫。", note: "<b>提示:</b> 将 Is 和 there 互换位置。", answer: ["is there a cat under the tree?"], targetTranslation: "树下有猫吗？" },
+        { sentence: "There are many cars on the street.", translation: "街上有很多汽车。", note: "<b>提示:</b> 将 Are 和 there 互换位置。", answer: ["are there many cars on the street?"], targetTranslation: "街上有很多汽车吗？" },
+        { sentence: "There is a message for you.", translation: "有你的留言。", note: "<b>提示:</b> 将 Is 和 there 互换位置。", answer: ["is there a message for you?"], targetTranslation: "有你的留言吗？" },
+        { sentence: "There are some apples in the basket.", translation: "篮子里有一些苹果。", note: "<b>提示:</b> 疑问句中 some 变为 any。", answer: ["are there any apples in the basket?"], targetTranslation: "篮子里有苹果吗？" },
+        { sentence: "There was a problem with the computer.", translation: "电脑出了问题。", note: "<b>提示:</b> 将 Was 和 there 互换位置。", answer: ["was there a problem with the computer?"], targetTranslation: "电脑出问题了吗？" },
+        { sentence: "There were a lot of people at the concert.", translation: "音乐会有很多人。", note: "<b>提示:</b> 将 Were 和 there 互换位置。", answer: ["were there a lot of people at the concert?"], targetTranslation: "音乐会有很多人吗？" },
+        { sentence: "There will be a test next week.", translation: "下周会有一次考试。", note: "<b>提示:</b> 将 Will 和 there 互换位置。", answer: ["will there be a test next week?"], targetTranslation: "下周有考试吗？" },
+        { sentence: "There is enough time to finish.", translation: "有足够的时间来完成。", note: "<b>提示:</b> 将 Is 和 there 互换位置。", answer: ["is there enough time to finish?"], targetTranslation: "有足够的时间完成吗？" },
+        { sentence: "There are four seasons in a year.", translation: "一年有四个季节。", note: "<b>提示:</b> 将 Are 和 there 互换位置。", answer: ["are there four seasons in a year?"], targetTranslation: "一年有四个季节吗？" },
+        { sentence: "There was a good movie on TV last night.", translation: "昨晚电视上有一部好电影。", note: "<b>提示:</b> 将 Was 和 there 互换位置。", answer: ["was there a good movie on tv last night?"], targetTranslation: "昨晚电视上有好电影吗？" }
+      ]}
+    ]
+  },
+  "现在时": {
+    subcategories: [
+      { name: "一般现在时", description: "一般用于描述习惯、事实和普遍真理。当表示习惯性动作，往往与频度副词连用，如often，always, sometimes, never等。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "The sun (rise) in the east.", translation: "太阳从东方升起。", note: "<b>提示:</b> 描述事实，主语是三单。", answer: ["the sun rises in the east."], targetTranslation: "太阳从东方升起。" },
+        { sentence: "She often (go) for a walk in the evening.", translation: "她经常在晚上散步。", note: "<b>提示:</b> 描述习惯，主语是三单。", answer: ["she often goes for a walk in the evening."], targetTranslation: "她经常在晚上散步。" },
+        { sentence: "We (play) basketball every weekend.", translation: "我们每个周末都打篮球。", note: "<b>提示:</b> 描述习惯。", answer: ["we play basketball every weekend."], targetTranslation: "我们每个周末都打篮球。" },
+        { sentence: "Water (boil) at 100 degrees Celsius.", translation: "水在100摄氏度时沸腾。", note: "<b>提示:</b> 描述科学事实。", answer: ["water boils at 100 degrees celsius."], targetTranslation: "水在100摄氏度时沸腾。" },
+        { sentence: "He (work) as a doctor.", translation: "他是一名医生。", note: "<b>提示:</b> 描述职业。", answer: ["he works as a doctor."], targetTranslation: "他是一名医生。" },
+        { sentence: "My parents (live) in a small town.", translation: "我的父母住在一个小镇上。", note: "<b>提示:</b> 描述事实。", answer: ["my parents live in a small town."], targetTranslation: "我的父母住在一个小镇上。" },
+        { sentence: "The earth (revolve) around the sun.", translation: "地球围绕太阳旋转。", note: "<b>提示:</b> 描述科学事实。", answer: ["the earth revolves around the sun."], targetTranslation: "地球围绕太阳旋转。" },
+        { sentence: "I usually (get) up at 7 a.m.", translation: "我通常早上7点起床。", note: "<b>提示:</b> 描述习惯。", answer: ["i usually get up at 7 a.m."], targetTranslation: "我通常早上7点起床。" },
+        { sentence: "She (speak) four languages.", translation: "她会说四种语言。", note: "<b>提示:</b> 描述能力。", answer: ["she speaks four languages."], targetTranslation: "她会说四种语言。" },
+        { sentence: "Cats (like) milk.", translation: "猫喜欢牛奶。", note: "<b>提示:</b> 描述普遍习性。", answer: ["cats like milk."], targetTranslation: "猫喜欢牛奶。" }
+      ]},
+      { name: "现在进行时", description: "用于描述正在进行的动作、正在发生的事件，往往与now, just, still等副词连用。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "Listen! Someone (sing).", translation: "听！有人在唱歌。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["listen! someone is singing."], targetTranslation: "听！有人在唱歌。" },
+        { sentence: "I (do) my homework at the moment.", translation: "我此刻正在做作业。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["i am doing my homework at the moment."], targetTranslation: "我此刻正在做作业。" },
+        { sentence: "They (have) a meeting right now.", translation: "他们现在正在开会。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["they are having a meeting right now."], targetTranslation: "他们现在正在开会。" },
+        { sentence: "Be quiet! The baby (sleep).", translation: "安静！宝宝正在睡觉。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["be quiet! the baby is sleeping."], targetTranslation: "安静！宝宝正在睡觉。" },
+        { sentence: "What you (do) here?", translation: "你在这里做什么？", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["what are you doing here?"], targetTranslation: "你在这里做什么？" },
+        { sentence: "She (wear) a beautiful dress today.", translation: "她今天穿着一件漂亮的裙子。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["she is wearing a beautiful dress today."], targetTranslation: "她今天穿着一件漂亮的裙子。" },
+        { sentence: "The children (play) in the park.", translation: "孩子们正在公园里玩。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["the children are playing in the park."], targetTranslation: "孩子们正在公园里玩。" },
+        { sentence: "He (wait) for the bus.", translation: "他正在等公共汽车。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["he is waiting for the bus."], targetTranslation: "他正在等公共汽车。" },
+        { sentence: "Why you (look) at me like that?", translation: "你为什么那样看着我？", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["why are you looking at me like that?"], targetTranslation: "你为什么那样看着我？" },
+        { sentence: "It (get) dark.", translation: "天色越来越暗了。", note: "<b>结构:</b> am/is/are + v-ing。", answer: ["it is getting dark."], targetTranslation: "天色越来越暗了。" }
+      ]},
+      { name: "现在完成时", description: "用于描述过去发生的动作对现在的影响。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "He (just finish) his work.", translation: "他刚刚完成他的工作。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["he has just finished his work."], targetTranslation: "他刚刚完成他的工作。" },
+        { sentence: "I (lose) my keys.", translation: "我丢了钥匙。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["i have lost my keys."], targetTranslation: "我丢了钥匙。" },
+        { sentence: "She (never be) to Australia.", translation: "她从未去过澳大利亚。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["she has never been to australia."], targetTranslation: "她从未去过澳大利亚。" },
+        { sentence: "We (already see) this movie.", translation: "我们已经看过这部电影了。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["we have already seen this movie."], targetTranslation: "我们已经看过这部电影了。" },
+        { sentence: "They (not arrive) yet.", translation: "他们还没到。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["they have not arrived yet.", "they haven't arrived yet."], targetTranslation: "他们还没到。" },
+        { sentence: "You (change) a lot.", translation: "你变了很多。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["you have changed a lot."], targetTranslation: "你变了很多。" },
+        { sentence: "I (know) him for three years.", translation: "我认识他三年了。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["i have known him for three years."], targetTranslation: "我认识他三年了。" },
+        { sentence: "She (buy) a new car.", translation: "她买了一辆新车。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["she has bought a new car."], targetTranslation: "她买了一辆新车。" },
+        { sentence: "How many times you (visit) this museum?", translation: "你参观过这个博物馆多少次？", note: "<b>结构:</b> have/has + 过去分词。", answer: ["how many times have you visited this museum?"], targetTranslation: "你参观过这个博物馆多少次？" },
+        { sentence: "He (write) three books.", translation: "他写了三本书。", note: "<b>结构:</b> have/has + 过去分词。", answer: ["he has written three books."], targetTranslation: "他写了三本书。" }
+      ]},
+      { name: "现在完成进行时", description: "表示已经完成了还在继续。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "It (rain) for three hours.", translation: "雨已经下了三个小时了。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["it has been raining for three hours."], targetTranslation: "雨已经下了三个小时了。" },
+        { sentence: "They (wait) for the bus since 8 o'clock.", translation: "他们从8点就一直在等车。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["they have been waiting for the bus since 8 o'clock."], targetTranslation: "他们从8点就一直在等车。" },
+        { sentence: "She (study) English all morning.", translation: "她一上午都在学英语。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["she has been studying english all morning."], targetTranslation: "她一上午都在学英语。" },
+        { sentence: "I (work) on this project for a week.", translation: "这个项目我已经做了一个星期了。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["i have been working on this project for a week."], targetTranslation: "这个项目我已经做了一个星期了。" },
+        { sentence: "How long you (learn) the piano?", translation: "你学钢琴多久了？", note: "<b>结构:</b> have/has been + v-ing。", answer: ["how long have you been learning the piano?"], targetTranslation: "你学钢琴多久了？" },
+        { sentence: "He (live) in this city since 2010.", translation: "他从2010年起就一直住在这个城市。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["he has been living in this city since 2010."], targetTranslation: "他从2010年起就一直住在这个城市。" },
+        { sentence: "We (travel) for a month.", translation: "我们已经旅行一个月了。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["we have been traveling for a month."], targetTranslation: "我们已经旅行一个月了。" },
+        { sentence: "My eyes are tired because I (read) for hours.", translation: "我的眼睛很累，因为我读了好几个小时的书。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["my eyes are tired because i have been reading for hours."], targetTranslation: "我的眼睛很累，因为我读了好几个小时的书。" },
+        { sentence: "She (talk) on the phone for a long time.", translation: "她打了很长时间的电话。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["she has been talking on the phone for a long time."], targetTranslation: "她打了很长时间的电话。" },
+        { sentence: "They (play) video games all afternoon.", translation: "他们一下午都在玩电子游戏。", note: "<b>结构:</b> have/has been + v-ing。", answer: ["they have been playing video games all afternoon."], targetTranslation: "他们一下午都在玩电子游戏。" }
+      ]}
+    ]
+  },
+  "过去时": {
+    subcategories: [
+      { name: "一般过去时", description: "通常表示过去发生的，而现在已经结束的事件、动作或情况。常与表明事情何时发生的状语连用。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "I (see) a great film yesterday.", translation: "我昨天看了一部很棒的电影。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["i saw a great film yesterday."], targetTranslation: "我昨天看了一部很棒的电影。" },
+        { sentence: "She (buy) a new phone last week.", translation: "她上周买了一部新手机。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["she bought a new phone last week."], targetTranslation: "她上周买了一部新手机。" },
+        { sentence: "They (not come) to the party.", translation: "他们没有来参加派对。", note: "<b>提示:</b> 否定句用 did not + 动词原形。", answer: ["they did not come to the party.", "they didn't come to the party."], targetTranslation: "他们没有来参加派对。" },
+        { sentence: "What time you (get) up this morning?", translation: "你今天早上几点起床的？", note: "<b>提示:</b> 疑问句用 Did + 主语 + 动词原形。", answer: ["what time did you get up this morning?"], targetTranslation: "你今天早上几点起床的？" },
+        { sentence: "He (live) in London for ten years.", translation: "他在伦敦住了十年。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["he lived in london for ten years."], targetTranslation: "他在伦敦住了十年。" },
+        { sentence: "We (go) to the beach last summer.", translation: "我们去年夏天去了海滩。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["we went to the beach last summer."], targetTranslation: "我们去年夏天去了海滩。" },
+        { sentence: "The Second World War (end) in 1945.", translation: "第二次世界大战于1945年结束。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["the second world war ended in 1945."], targetTranslation: "第二次世界大战于1945年结束。" },
+        { sentence: "I (meet) my wife in 2015.", translation: "我2015年遇到了我的妻子。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["i met my wife in 2015."], targetTranslation: "我2015年遇到了我的妻子。" },
+        { sentence: "She (leave) the company a month ago.", translation: "她一个月前离开了公司。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["she left the company a month ago."], targetTranslation: "她一个月前离开了公司。" },
+        { sentence: "He (write) a letter to his parents.", translation: "他给父母写了一封信。", note: "<b>提示:</b> 使用动词的过去式。", answer: ["he wrote a letter to his parents."], targetTranslation: "他给父母写了一封信。" }
+      ]},
+      { name: "过去进行时", description: "在过去某个节点正在发生的动作。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "He (sleep) when I called him.", translation: "我给他打电话时他正在睡觉。", note: "<b>结构:</b> was/were + v-ing。", answer: ["he was sleeping when i called him."], targetTranslation: "我给他打电话时他正在睡觉。" },
+        { sentence: "What you (do) at 8 PM last night?", translation: "你昨晚8点在做什么？", note: "<b>结构:</b> was/were + v-ing。", answer: ["what were you doing at 8 pm last night?"], targetTranslation: "你昨晚8点在做什么？" },
+        { sentence: "It (rain) while we were on holiday.", translation: "我们度假时正在下雨。", note: "<b>结构:</b> was/were + v-ing。", answer: ["it was raining while we were on holiday."], targetTranslation: "我们度假时正在下雨。" },
+        { sentence: "I (read) a book while my sister (watch) TV.", translation: "我妹妹看电视时我正在看书。", note: "<b>结构:</b> was/were + v-ing。", answer: ["i was reading a book while my sister was watching tv."], targetTranslation: "我妹妹看电视时我正在看书。" },
+        { sentence: "The sun (shine) when I got up this morning.", translation: "我今天早上起床时阳光明媚。", note: "<b>结构:</b> was/were + v-ing。", answer: ["the sun was shining when i got up this morning."], targetTranslation: "我今天早上起床时阳光明媚。" },
+        { sentence: "They (have) dinner when the doorbell rang.", translation: "门铃响时他们正在吃晚饭。", note: "<b>结构:</b> was/were + v-ing。", answer: ["they were having dinner when the doorbell rang."], targetTranslation: "门铃响时他们正在吃晚饭。" },
+        { sentence: "She (work) in the garden all day yesterday.", translation: "她昨天一整天都在花园里干活。", note: "<b>结构:</b> was/were + v-ing。", answer: ["she was working in the garden all day yesterday."], targetTranslation: "她昨天一整天都在花园里干活。" },
+        { sentence: "At this time last year, we (travel) in Italy.", translation: "去年这个时候，我们正在意大利旅行。", note: "<b>结构:</b> was/were + v-ing。", answer: ["at this time last year, we were traveling in italy."], targetTranslation: "去年这个时候，我们正在意大利旅行。" },
+        { sentence: "He fell down while he (run).", translation: "他跑步时摔倒了。", note: "<b>结构:</b> was/were + v-ing。", answer: ["he fell down while he was running."], targetTranslation: "他跑步时摔倒了。" },
+        { sentence: "The birds (sing) outside my window.", translation: "鸟儿在我窗外歌唱。", note: "<b>结构:</b> was/were + v-ing。", answer: ["the birds were singing outside my window."], targetTranslation: "鸟儿在我窗外歌唱。" }
+      ]},
+      { name: "过去完成时", description: "在过去某个节点已经发生的动作（过去的过去）。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "The train (already leave) when we arrived at the station.", translation: "我们到达车站时，火车已经开了。", note: "<b>结构:</b> had + 过去分词。", answer: ["the train had already left when we arrived at the station."], targetTranslation: "我们到达车站时，火车已经开了。" },
+        { sentence: "She told me she (never visit) a theme park before.", translation: "她告诉我她以前从未去过主题公园。", note: "<b>结构:</b> had + 过去分词。", answer: ["she told me she had never visited a theme park before."], targetTranslation: "她告诉我她以前从未去过主题公园。" },
+        { sentence: "By the time I was 10, I (learn) to swim.", translation: "到我10岁的时候，我已经学会了游泳。", note: "<b>结构:</b> had + 过去分词。", answer: ["by the time i was 10, i had learned to swim."], targetTranslation: "到我10岁的时候，我已经学会了游泳。" },
+        { sentence: "After he (finish) his homework, he went to bed.", translation: "他做完作业后就上床睡觉了。", note: "<b>结构:</b> had + 过去分词。", answer: ["after he had finished his homework, he went to bed."], targetTranslation: "他做完作业后就上床睡觉了。" },
+        { sentence: "I didn't recognize her because she (change) so much.", translation: "我没认出她，因为她变化太大了。", note: "<b>结构:</b> had + 过去分词。", answer: ["i didn't recognize her because she had changed so much."], targetTranslation: "我没认出她，因为她变化太大了。" },
+        { sentence: "He (not see) the movie before, so he enjoyed it.", translation: "他以前没看过这部电影，所以他很喜欢。", note: "<b>结构:</b> had + 过去分词。", answer: ["he had not seen the movie before, so he enjoyed it."], targetTranslation: "他以前没看过这部电影，所以他很喜欢。" },
+        { sentence: "When I got home, I found that someone (break) into my house.", translation: "我到家时，发现有人闯进了我的房子。", note: "<b>结构:</b> had + 过去分词。", answer: ["when i got home, i found that someone had broken into my house."], targetTranslation: "我到家时，发现有人闯进了我的房子。" },
+        { sentence: "She was sad because her cat (run) away.", translation: "她很难过，因为她的猫跑了。", note: "<b>结构:</b> had + 过去分词。", answer: ["she was sad because her cat had run away."], targetTranslation: "她很难过，因为她的猫跑了。" },
+        { sentence: "They (sell) their house before they moved to the new city.", translation: "在搬到新城市之前，他们卖掉了房子。", note: "<b>结构:</b> had + 过去分词。", answer: ["they had sold their house before they moved to the new city."], targetTranslation: "在搬到新城市之前，他们卖掉了房子。" },
+        { sentence: "I (just finish) my dinner when she called.", translation: "她打电话来时，我刚吃完晚饭。", note: "<b>结构:</b> had + 过去分词。", answer: ["i had just finished my dinner when she called."], targetTranslation: "她打电话来时，我刚吃完晚饭。" }
+      ]},
+      { name: "过去完成进行时", description: "在过去某个节点已经发生一段时间还在继续的动作。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "They (play) tennis for an hour before it started to rain.", translation: "在开始下雨之前，他们已经打了一个小时的网球。", note: "<b>结构:</b> had been + v-ing。", answer: ["they had been playing tennis for an hour before it started to rain."], targetTranslation: "在开始下雨之前，他们已经打了一个小时的网球。" },
+        { sentence: "He was tired because he (work) all day.", translation: "他很累，因为他工作了一整天。", note: "<b>结构:</b> had been + v-ing。", answer: ["he was tired because he had been working all day."], targetTranslation: "他很累，因为他工作了一整天。" },
+        { sentence: "She (wait) for 30 minutes when the bus finally arrived.", translation: "公共汽车终于到的时候，她已经等了30分钟。", note: "<b>结构:</b> had been + v-ing。", answer: ["she had been waiting for 30 minutes when the bus finally arrived."], targetTranslation: "公共汽车终于到的时候，她已经等了30分钟。" },
+        { sentence: "I (study) for hours, so I needed a break.", translation: "我已经学习了好几个小时，所以我需要休息一下。", note: "<b>结构:</b> had been + v-ing。", answer: ["i had been studying for hours, so i needed a break."], targetTranslation: "我已经学习了好几个小时，所以我需要休息一下。" },
+        { sentence: "His hands were dirty because he (repair) his car.", translation: "他的手很脏，因为他一直在修车。", note: "<b>结构:</b> had been + v-ing。", answer: ["his hands were dirty because he had been repairing his car."], targetTranslation: "他的手很脏，因为他一直在修车。" },
+        { sentence: "They (live) in that apartment for five years before they bought a house.", translation: "在买房子之前，他们在那套公寓里住了五年。", note: "<b>结构:</b> had been + v-ing。", answer: ["they had been living in that apartment for five years before they bought a house."], targetTranslation: "在买房子之前，他们在那套公寓里住了五年。" },
+        { sentence: "We (drive) for a long time when we ran out of gas.", translation: "当我们的汽油用完时，我们已经开了很长时间的车。", note: "<b>结构:</b> had been + v-ing。", answer: ["we had been driving for a long time when we ran out of gas."], targetTranslation: "当我们的汽油用完时，我们已经开了很长时间的车。" },
+        { sentence: "She (look) for her keys for an hour when she found them.", translation: "当她找到钥匙时，她已经找了一个小时了。", note: "<b>结构:</b> had been + v-ing。", answer: ["she had been looking for her keys for an hour when she found them."], targetTranslation: "当她找到钥匙时，她已经找了一个小时了。" },
+        { sentence: "The ground was wet because it (rain).", translation: "地是湿的，因为一直在下雨。", note: "<b>结构:</b> had been + v-ing。", answer: ["the ground was wet because it had been raining."], targetTranslation: "地是湿的，因为一直在下雨。" },
+        { sentence: "He (feel) unwell for days before he went to the doctor.", translation: "在去看医生之前，他已经不舒服好几天了。", note: "<b>结构:</b> had been + v-ing。", answer: ["he had been feeling unwell for days before he went to the doctor."], targetTranslation: "在去看医生之前，他已经不舒服好几天了。" }
+      ]}
+    ]
+  },
+  "将来时": {
+    subcategories: [
+      { name: "一般将来时", description: "用于描述将来会发生的动作或状态。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "I think it (rain) tomorrow.", translation: "我想明天下雨。", note: "<b>提示:</b> 预测将来，用 will。", answer: ["i think it will rain tomorrow."], targetTranslation: "我想明天下雨。" },
+        { sentence: "Don't worry, I (help) you.", translation: "别担心，我会帮你的。", note: "<b>提示:</b> 即时决定，用 will。", answer: ["don't worry, i will help you."], targetTranslation: "别担心，我会帮你的。" },
+        { sentence: "We (visit) our grandparents next weekend.", translation: "我们下周末要去看望我们的祖父母。", note: "<b>提示:</b> 计划好的事，用 be going to。", answer: ["we are going to visit our grandparents next weekend."], targetTranslation: "我们下周末要去看望我们的祖父母。" },
+        { sentence: "Look at the time! We (be) late.", translation: "看看时间！我们要迟到了。", note: "<b>提示:</b> 有迹象表明要发生，用 be going to。", answer: ["look at the time! we are going to be late."], targetTranslation: "看看时间！我们要迟到了。" },
+        { sentence: "The train to London (leave) at 10:30 AM.", translation: "去伦敦的火车上午10:30开。", note: "<b>提示:</b> 按时间表发生，可用一般现在时。", answer: ["the train to london leaves at 10:30 am."], targetTranslation: "去伦敦的火车上午10:30开。" },
+        { sentence: "I am so excited! We (go) to Disneyland tomorrow.", translation: "我太兴奋了！我们明天要去迪士尼乐园。", note: "<b>提示:</b> 已安排好的计划，可用现在进行时。", answer: ["i am so excited! we are going to disneyland tomorrow."], targetTranslation: "我太兴奋了！我们明天要去迪士尼乐园。" },
+        { sentence: "Perhaps I (see) you at the party.", translation: "也许我会在派对上见到你。", note: "<b>提示:</b> 不确定的将来，用 will。", answer: ["perhaps i will see you at the party."], targetTranslation: "也许我会在派对上见到你。" },
+        { sentence: "The phone is ringing. I (get) it.", translation: "电话响了。我去接。", note: "<b>提示:</b> 即时决定，用 will。", answer: ["the phone is ringing. i will get it."], targetTranslation: "电话响了。我去接。" },
+        { sentence: "He (probably pass) the exam.", translation: "他可能会通过考试。", note: "<b>提示:</b> 预测，用 will。", answer: ["he will probably pass the exam."], targetTranslation: "他可能会通过考试。" },
+        { sentence: "This bag is heavy. I (carry) it for you.", translation: "这个包很重。我来帮你拿。", note: "<b>提示:</b> 主动提供帮助，用 will。", answer: ["this bag is heavy. i will carry it for you."], targetTranslation: "这个包很重。我来帮你拿。" }
+      ]},
+      { name: "将来进行时", description: "在将来的某个时间，某个动作是在进行的过程中。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "This time tomorrow, I (sit) on a beach.", translation: "明天这个时候，我将正坐在沙滩上。", note: "<b>结构:</b> will be + v-ing。", answer: ["this time tomorrow, i will be sitting on a beach."], targetTranslation: "明天这个时候，我将正坐在沙滩上。" },
+        { sentence: "Don't call me at 9 PM, I (watch) the final match.", translation: "晚上9点别给我打电话，我将正在看决赛。", note: "<b>结构:</b> will be + v-ing。", answer: ["don't call me at 9 pm, i will be watching the final match."], targetTranslation: "晚上9点别给我打电话，我将正在看决赛。" },
+        { sentence: "Next year, I (study) at university.", translation: "明年，我将在大学学习。", note: "<b>结构:</b> will be + v-ing。", answer: ["next year, i will be studying at university."], targetTranslation: "明年，我将在大学学习。" },
+        { sentence: "At 10 o'clock tomorrow, she (have) a meeting.", translation: "明天上午10点，她将正在开会。", note: "<b>结构:</b> will be + v-ing。", answer: ["at 10 o'clock tomorrow, she will be having a meeting."], targetTranslation: "明天上午10点，她将正在开会。" },
+        { sentence: "They (travel) to Europe this time next month.", translation: "下个月的这个时候，他们将正在欧洲旅行。", note: "<b>结构:</b> will be + v-ing。", answer: ["they will be traveling to europe this time next month."], targetTranslation: "下个月的这个时候，他们将正在欧洲旅行。" },
+        { sentence: "He (work) on the project all day tomorrow.", translation: "他明天一整天都将在这个项目上工作。", note: "<b>结构:</b> will be + v-ing。", answer: ["he will be working on the project all day tomorrow."], targetTranslation: "他明天一整天都将在这个项目上工作。" },
+        { sentence: "What you (do) this evening?", translation: "你今天晚上会做什么？", note: "<b>结构:</b> will be + v-ing。", answer: ["what will you be doing this evening?"], targetTranslation: "你今天晚上会做什么？" },
+        { sentence: "We (fly) to Paris at noon tomorrow.", translation: "我们明天中午将飞往巴黎。", note: "<b>结构:</b> will be + v-ing。", answer: ["we will be flying to paris at noon tomorrow."], targetTranslation: "我们明天中午将飞往巴黎。" },
+        { sentence: "She (not work) this weekend.", translation: "她这个周末不会工作。", note: "<b>结构:</b> will be + v-ing。", answer: ["she will not be working this weekend.", "she won't be working this weekend."], targetTranslation: "她这个周末不会工作。" },
+        { sentence: "I (think) of you when you take the exam.", translation: "你考试的时候，我会想着你的。", note: "<b>结构:</b> will be + v-ing。", answer: ["i will be thinking of you when you take the exam."], targetTranslation: "你考试的时候，我会想着你的。" }
+      ]},
+      { name: "将来完成时", description: "用于描述在将来某一时间之前已经完成的动作。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "By the end of this year, I (read) ten classic novels.", translation: "到今年年底，我将读完十本经典小说。", note: "<b>结构:</b> will have + 过去分词。", answer: ["by the end of this year, i will have read ten classic novels."], targetTranslation: "到今年年底，我将读完十本经典小说。" },
+        { sentence: "She (finish) the project by next Friday.", translation: "到下周五，她将完成这个项目。", note: "<b>结构:</b> will have + 过去分词。", answer: ["she will have finished the project by next friday."], targetTranslation: "到下周五，她将完成这个项目。" },
+        { sentence: "By the time you arrive, I (cook) dinner.", translation: "等你到的时候，我将已经做好了晚饭。", note: "<b>结构:</b> will have + 过去分词。", answer: ["by the time you arrive, i will have cooked dinner."], targetTranslation: "等你到的时候，我将已经做好了晚饭。" },
+        { sentence: "They (leave) by 6 PM.", translation: "到下午6点，他们将已经离开了。", note: "<b>结构:</b> will have + 过去分词。", answer: ["they will have left by 6 pm."], targetTranslation: "到下午6点，他们将已经离开了。" },
+        { sentence: "In two years, he (graduate) from college.", translation: "两年后，他将大学毕业。", note: "<b>结构:</b> will have + 过去分词。", answer: ["in two years, he will have graduated from college."], targetTranslation: "两年后，他将大学毕业。" },
+        { sentence: "By next month, she (save) enough money for a new car.", translation: "到下个月，她将攒够钱买一辆新车。", note: "<b>结构:</b> will have + 过去分词。", answer: ["by next month, she will have saved enough money for a new car."], targetTranslation: "到下个月，她将攒够钱买一辆新车。" },
+        { sentence: "We (not complete) the construction by then.", translation: "到那时，我们还不会完成施工。", note: "<b>结构:</b> will have + 过去分词。", answer: ["we will not have completed the construction by then.", "we won't have completed the construction by then."], targetTranslation: "到那时，我们还不会完成施工。" },
+        { sentence: "You (forget) all about this by next year.", translation: "到明年，你会把这一切都忘了。", note: "<b>结构:</b> will have + 过去分词。", answer: ["you will have forgotten all about this by next year."], targetTranslation: "到明年，你会把这一切都忘了。" },
+        { sentence: "The movie (start) by the time we get there.", translation: "等我们到那儿，电影将已经开始了。", note: "<b>结构:</b> will have + 过去分词。", answer: ["the movie will have started by the time we get there."], targetTranslation: "等我们到那儿，电影将已经开始了。" },
+        { sentence: "He (live) here for 10 years by 2030.", translation: "到2030年，他将在这里住满10年。", note: "<b>结构:</b> will have + 过去分词。", answer: ["he will have lived here for 10 years by 2030."], targetTranslation: "到2030年，他将在这里住满10年。" }
+      ]},
+      { name: "将来完成进行时", description: "用于描述在将来某一时间之前已经进行了一段时间的动作。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "By next month, we (live) here for five years.", translation: "到下个月，我们将在这里住满五年了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["by next month, we will have been living here for five years."], targetTranslation: "到下个月，我们将在这里住满五年了。" },
+        { sentence: "In September, she (teach) for twenty years.", translation: "到九月份，她将教了二十年书了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["in september, she will have been teaching for twenty years."], targetTranslation: "到九月份，她将教了二十年书了。" },
+        { sentence: "By the time he is thirty, he (play) the piano for two decades.", translation: "到他三十岁时，他将弹了二十年钢琴了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["by the time he is thirty, he will have been playing the piano for two decades."], targetTranslation: "到他三十岁时，他将弹了二十年钢琴了。" },
+        { sentence: "Next week, I (work) on this task for a month.", translation: "到下周，我将在这个任务上工作一个月了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["next week, i will have been working on this task for a month."], targetTranslation: "到下周，我将在这个任务上工作一个月了。" },
+        { sentence: "By 8 o'clock, they (drive) for six hours.", translation: "到8点钟，他们将已经开了六个小时的车了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["by 8 o'clock, they will have been driving for six hours."], targetTranslation: "到8点钟，他们将已经开了六个小时的车了。" },
+        { sentence: "When you arrive, I (wait) for an hour.", translation: "你到的时候，我将已经等了一个小时了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["when you arrive, i will have been waiting for an hour."], targetTranslation: "你到的时候，我将已经等了一个小时了。" },
+        { sentence: "At the end of his trip, he (travel) for three months.", translation: "在他旅行结束时，他将已经旅行了三个月了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["at the end of his trip, he will have been traveling for three months."], targetTranslation: "在他旅行结束时，他将已经旅行了三个月了。" },
+        { sentence: "By next year, they (build) the bridge for two years.", translation: "到明年，他们将建这座桥建了两年了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["by next year, they will have been building the bridge for two years."], targetTranslation: "到明年，他们将建这座桥建了两年了。" },
+        { sentence: "He will be tired when he gets home because he (run) for a long time.", translation: "他到家时会很累，因为他将已经跑了很长时间。", note: "<b>结构:</b> will have been + v-ing。", answer: ["he will be tired when he gets home because he will have been running for a long time."], targetTranslation: "他到家时会很累，因为他将已经跑了很长时间。" },
+        { sentence: "In June, we (date) for three years.", translation: "到六月，我们约会将满三年了。", note: "<b>结构:</b> will have been + v-ing。", answer: ["in june, we will have been dating for three years."], targetTranslation: "到六月，我们约会将满三年了。" }
+      ]}
+    ]
+  },
+  "条件句": {
+    subcategories: [
+      { name: "零条件句", description: "描述一个普遍的真理、科学事实或必然发生的结果。结构: If + 一般现在时, 一般现在时。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "If you (heat) ice, it (melt).", translation: "如果你加热冰，它就会融化。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if you heat ice, it melts."], targetTranslation: "如果你加热冰，它就会融化。" },
+        { sentence: "If plants (not get) water, they (die).", translation: "如果植物得不到水，它们就会死亡。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if plants do not get water, they die.", "if plants don't get water, they die."], targetTranslation: "如果植物得不到水，它们就会死亡。" },
+        { sentence: "If you (press) that button, the machine (start).", translation: "如果你按下那个按钮，机器就会启动。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if you press that button, the machine starts."], targetTranslation: "如果你按下那个按钮，机器就会启动。" },
+        { sentence: "If people (eat) too much, they (get) fat.", translation: "如果人们吃得太多，他们就会变胖。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if people eat too much, they get fat."], targetTranslation: "如果人们吃得太多，他们就会变胖。" },
+        { sentence: "If babies (be) hungry, they (cry).", translation: "如果婴儿饿了，他们就会哭。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if babies are hungry, they cry."], targetTranslation: "如果婴儿饿了，他们就会哭。" },
+        { sentence: "If you (mix) red and blue, you (get) purple.", translation: "如果你混合红色和蓝色，你会得到紫色。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if you mix red and blue, you get purple."], targetTranslation: "如果你混合红色和蓝色，你会得到紫色。" },
+        { sentence: "If metal (get) hot, it (expand).", translation: "如果金属变热，它会膨胀。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if metal gets hot, it expands."], targetTranslation: "如果金属变热，它会膨胀。" },
+        { sentence: "If it (rain), the ground (get) wet.", translation: "如果下雨，地面就会湿。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if it rains, the ground gets wet."], targetTranslation: "如果下雨，地面就会湿。" },
+        { sentence: "If you (not drink) enough water, you (become) dehydrated.", translation: "如果你喝水不足，你会脱水。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if you do not drink enough water, you become dehydrated.", "if you don't drink enough water, you become dehydrated."], targetTranslation: "如果你喝水不足，你会脱水。" },
+        { sentence: "If I (be) late for work, my boss (get) angry.", translation: "如果我上班迟到，我的老板会生气。", note: "<b>提示:</b> 两个从句都用一般现在时。", answer: ["if i am late for work, my boss gets angry."], targetTranslation: "如果我上班迟到，我的老板会生气。" }
+      ]},
+      { name: "第一条件句", description: "描述一个未来可能发生的真实情况以及其可能的结果。结构: If + 一般现在时, will + 动词原形。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "If it (rain) tomorrow, we (cancel) the trip.", translation: "如果明天下雨，我们就取消行程。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if it rains tomorrow, we will cancel the trip."], targetTranslation: "如果明天下雨，我们就取消行程。" },
+        { sentence: "If you (study) hard, you (pass) the exam.", translation: "如果你努力学习，你就会通过考试。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if you study hard, you will pass the exam."], targetTranslation: "如果你努力学习，你就会通过考试。" },
+        { sentence: "If I (see) her, I (tell) her the news.", translation: "如果我见到她，我会告诉她这个消息。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if i see her, i will tell her the news."], targetTranslation: "如果我见到她，我会告诉她这个消息。" },
+        { sentence: "If we (miss) the bus, we (take) a taxi.", translation: "如果我们错过了公共汽车，我们就打车。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if we miss the bus, we will take a taxi."], targetTranslation: "如果我们错过了公共汽车，我们就打车。" },
+        { sentence: "If you (not hurry), you (be) late.", translation: "如果你不快点，你就会迟到。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if you do not hurry, you will be late.", "if you don't hurry, you will be late."], targetTranslation: "如果你不快点，你就会迟到。" },
+        { sentence: "If he (come), I (be) very happy.", translation: "如果他来，我会很高兴。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if he comes, i will be very happy."], targetTranslation: "如果他来，我会很高兴。" },
+        { sentence: "If the weather (be) nice, we (go) for a picnic.", translation: "如果天气好，我们就去野餐。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if the weather is nice, we will go for a picnic."], targetTranslation: "如果天气好，我们就去野餐。" },
+        { sentence: "If I (have) enough time, I (visit) you.", translation: "如果我有足够的时间，我会去看你。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if i have enough time, i will visit you."], targetTranslation: "如果我有足够的时间，我会去看你。" },
+        { sentence: "If she (call) me, I (let) you know.", translation: "如果她给我打电话，我会让你知道。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if she calls me, i will let you know."], targetTranslation: "如果她给我打电话，我会让你知道。" },
+        { sentence: "If they (invite) us, we (go) to their party.", translation: "如果他们邀请我们，我们就会去他们的派对。", note: "<b>提示:</b> If 从句用一般现在时，主句用 will + 动词原形。", answer: ["if they invite us, we will go to their party."], targetTranslation: "如果他们邀请我们，我们就会去他们的派对。" }
+      ]},
+      { name: "第二条件句", description: "描述一个与现在或未来事实相反的假设或想象。结构: If + 一般过去时, would + 动词原形。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "If I (have) more money, I (buy) a car.", translation: "如果我有更多的钱，我就会买一辆车。", note: "<b>提示:</b> If 从句用一般过去时，主句用 would + 动词原形。", answer: ["if i had more money, i would buy a car."], targetTranslation: "如果我有更多的钱，我就会买一辆车。" },
+        { sentence: "If I (be) you, I (take) the job.", translation: "如果我是你，我就会接受这份工作。", note: "<b>提示:</b> If 从句中 be 动词常用 were。", answer: ["if i were you, i would take the job."], targetTranslation: "如果我是你，我就会接受这份工作。" },
+        { sentence: "If he (know) the answer, he (tell) us.", translation: "如果他知道答案，他会告诉我们。", note: "<b>提示:</b> If 从句用一般过去时，主句用 would + 动词原形。", answer: ["if he knew the answer, he would tell us."], targetTranslation: "如果他知道答案，他会告诉我们。" },
+        { sentence: "If we (live) in a bigger house, we (have) a dog.", translation: "如果我们住在一个更大的房子里，我们就会养一只狗。", note: "<b>提示:</b> If 从句用一般过去时，主句用 would + 动词原形。", answer: ["if we lived in a bigger house, we would have a dog."], targetTranslation: "如果我们住在一个更大的房子里，我们就会养一只狗。" },
+        { sentence: "If she (not be) so busy, she (join) us.", translation: "如果她不那么忙，她会加入我们。", note: "<b>提示:</b> If 从句用一般过去时，主句用 would + 动词原形。", answer: ["if she were not so busy, she would join us.", "if she wasn't so busy, she would join us."], targetTranslation: "如果她不那么忙，她会加入我们。" },
+        { sentence: "If I (can) fly, I (travel) the world.", translation: "如果我能飞，我会环游世界。", note: "<b>提示:</b> If 从句用一般过去时 (could)，主句用 would + 动词原形。", answer: ["if i could fly, i would travel the world."], targetTranslation: "如果我能飞，我会环游世界。" },
+        { sentence: "What you (do) if you (win) the lottery?", translation: "如果你中了彩票，你会做什么？", note: "<b>提示:</b> If 从句用一般过去时，主句用 would + 动词原形。", answer: ["what would you do if you won the lottery?"], targetTranslation: "如果你中了彩票，你会做什么？" },
+        { sentence: "If I (be) the president, I (lower) taxes.", translation: "如果我是总统，我会减税。", note: "<b>提示:</b> If 从句中 be 动词常用 were。", answer: ["if i were the president, i would lower taxes."], targetTranslation: "如果我是总统，我会减税。" },
+        { sentence: "If they (have) more time, they (visit) more places.", translation: "如果他们有更多的时间，他们会参观更多的地方。", note: "<b>提示:</b> If 从句用一般过去时，主句用 would + 动词原形。", answer: ["if they had more time, they would visit more places."], targetTranslation: "如果他们有更多的时间，他们会参观更多的地方。" },
+        { sentence: "If it (not rain), we (go) to the park.", translation: "如果不下雨，我们就会去公园。", note: "<b>提示:</b> If 从句用一般过去时，主句用 would + 动词原形。", answer: ["if it did not rain, we would go to the park.", "if it didn't rain, we would go to the park."], targetTranslation: "如果不下雨，我们就会去公园。" }
+      ]},
+      { name: "第三条件句", description: "描述一个与过去事实相反的假设。结构: If + 过去完成时, would have + 动词过去分词。", instruction: "请用括号中动词的正确形式填空。", questions: [
+        { sentence: "If I (leave) earlier, I (catch) the train.", translation: "如果我早点离开，我就赶上火车了。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if i had left earlier, i would have caught the train."], targetTranslation: "如果我早点离开，我就赶上火车了。" },
+        { sentence: "If she (study), she (pass) the exam.", translation: "如果她学习了，她就会通过考试。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if she had studied, she would have passed the exam."], targetTranslation: "如果她学习了，她就会通过考试。" },
+        { sentence: "If we (not miss) the bus, we (arrive) on time.", translation: "如果我们没有错过公共汽车，我们就会准时到达。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if we had not missed the bus, we would have arrived on time."], targetTranslation: "如果我们没有错过公共汽车，我们就会准时到达。" },
+        { sentence: "If he (be) more careful, he (not make) that mistake.", translation: "如果他更小心一点，他就不会犯那个错误了。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if he had been more careful, he would not have made that mistake."], targetTranslation: "如果他更小心一点，他就不会犯那个错误了。" },
+        { sentence: "If I (know) you were coming, I (bake) a cake.", translation: "如果我知道你要来，我就会烤一个蛋糕。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if i had known you were coming, i would have baked a cake."], targetTranslation: "如果我知道你要来，我就会烤一个蛋糕。" },
+        { sentence: "If they (take) my advice, they (not lose) their money.", translation: "如果他们听了我的建议，他们就不会亏钱了。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if they had taken my advice, they would not have lost their money."], targetTranslation: "如果他们听了我的建议，他们就不会亏钱了。" },
+        { sentence: "If you (tell) me about the problem, I (help) you.", translation: "如果你告诉我这个问题，我就会帮助你了。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if you had told me about the problem, i would have helped you."], targetTranslation: "如果你告诉我这个问题，我就会帮助你了。" },
+        { sentence: "If it (not rain) yesterday, we (go) on a picnic.", translation: "如果昨天没下雨，我们就去野餐了。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if it had not rained yesterday, we would have gone on a picnic."], targetTranslation: "如果昨天没下雨，我们就去野餐了。" },
+        { sentence: "If I (see) him, I (say) hello.", translation: "如果我见到他，我就会打招呼了。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if i had seen him, i would have said hello."], targetTranslation: "如果我见到他，我就会打招呼了。" },
+        { sentence: "If she (not be) ill, she (come) to the party.", translation: "如果她没生病，她就会来参加派对了。", note: "<b>提示:</b> If 从句用过去完成时，主句用 would have + 过去分词。", answer: ["if she had not been ill, she would have come to the party."], targetTranslation: "如果她没生病，她就会来参加派对了。" }
+      ]}
+    ]
+  }
+}
