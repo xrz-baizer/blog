@@ -8,8 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/docs/public/html/1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/public/html/PracticeRewritingSentences.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/PracticeRewritingSentences.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -358,6 +356,8 @@
       <workItem from="1755422189352" duration="1153000" />
       <workItem from="1755423420630" duration="2399000" />
       <workItem from="1755426396130" duration="6609000" />
+      <workItem from="1755485030291" duration="1062000" />
+      <workItem from="1755496584269" duration="147000" />
     </task>
     <servers />
   </component>

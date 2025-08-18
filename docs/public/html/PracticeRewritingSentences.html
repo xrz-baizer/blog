@@ -10,6 +10,13 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
         .fade-in {
             animation: fadeIn 0.5s ease-in-out;
         }
@@ -52,13 +59,20 @@
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
             transform: translateY(-20px);
         }
+        #answer-section .border {
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        #answer-section .border:focus-within {
+            border-color: #6ee7b7; /* A soft light green */
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.2);
+        }
     </style>
 </head>
 <body class="bg-slate-100">
 
 <div class="flex flex-col md:flex-row min-h-screen">
     <!-- Sidebar -->
-    <aside class="w-full md:w-80 bg-white p-6 border-b md:border-r border-slate-200 flex-shrink-0">
+    <aside class="w-full md:w-80 bg-white p-6 border-b md:border-r border-slate-200 flex-shrink-0 md:h-screen overflow-y-auto no-scrollbar">
         <h1 class="text-xl font-bold text-slate-800 mb-1">English Sentence Practice</h1>
         <p class="text-sm text-slate-500 mb-6">Choose a topic to practice</p>
         <nav id="category-container" class="space-y-2">
@@ -67,7 +81,7 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="flex-1 p-6 md:p-10">
+    <main class="flex-1 p-6 md:p-10 flex items-center justify-center">
         <div class="w-full max-w-3xl mx-auto">
             <!-- Theme Description -->
             <div id="theme-description-card" class="mb-6 bg-green-50 border-l-4 border-green-400 text-green-800 p-4 rounded-lg">
@@ -89,8 +103,11 @@
                 <!-- Answer Section -->
                 <div id="answer-section">
                     <p id="target-translation" class="text-slate-500 text-sm mt-1 mb-2"></p>
-                    <div class="mt-1 flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200">
-                        <textarea id="answer-input" rows="2" class="w-full p-2 text-slate-900 bg-transparent border-none focus:ring-0 resize-none" placeholder="Type the rewritten sentence here..."></textarea>
+                    <div class="mt-1 relative flex items-center bg-white p-2 rounded-lg border border-slate-200">
+                        <textarea id="answer-input" rows="1" class="w-full p-2 text-lg text-slate-900 bg-transparent border-none focus:outline-none resize-none" placeholder="Type the rewritten sentence here..."></textarea>
+                        <button id="clear-btn" class="absolute right-3 p-1 text-slate-400 hover:text-slate-600 hidden">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                        </button>
                     </div>
                 </div>
 
@@ -810,6 +827,11 @@
         appState = 'submit';
         actionBtn.textContent = 'Submit Answer';
         answerInput.value = exercise.sentence.replace(/<[^>]*>/g, '');
+        if (answerInput.value.length > 0) {
+            document.getElementById('clear-btn').classList.remove('hidden');
+        } else {
+            document.getElementById('clear-btn').classList.add('hidden');
+        }
         answerInput.disabled = false;
         feedbackSection.style.display = 'none';
         noteSection.style.display = 'none';
@@ -832,6 +854,7 @@
         targetTranslationEl.textContent = `Target: ${exercise.targetTranslation || ''}`;
 
         exerciseCard.classList.add('fade-in');
+        answerInput.focus();
     }
 
     function displayCompletionMessage() {
@@ -962,6 +985,22 @@
         hintBtn.addEventListener('click', handleHintClick);
         answerInput.addEventListener('keydown', handleEnterKey);
         nextSectionBtn.addEventListener('click', handleNextSectionClick);
+
+        const clearBtn = document.getElementById('clear-btn');
+
+        answerInput.addEventListener('input', () => {
+            if (answerInput.value.length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+        });
+
+        clearBtn.addEventListener('click', () => {
+            answerInput.value = '';
+            answerInput.focus();
+            clearBtn.classList.add('hidden');
+        });
 
         const firstSubCatBtn = categoryContainer.querySelector('.sidebar-subcategory-btn');
         firstSubCatBtn.classList.add('active');

@@ -241,7 +241,9 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 常见的疑问词：**What, Where, When, Why, Who, Which**
 
-**How** (怎样，如何)
+- **Which one/名词**
+
+- **How** (怎样，如何)
 
 - **How much** (多少 - 对不可数名词) / **How many** (多少 - 对可数名词)
 
@@ -255,10 +257,11 @@ What 后面通常接名词或名词短语，强调事物本身。
 
 **结构：==疑问词 + 谓语 + 其它?==**
 
-当疑问词（如 **Who, What** 等）本身就是主语时，不需要助动词，谓语直接跟在疑问词后
+**当疑问词（如 Who, What 等）或疑问词组（which train）在句中作主语时，不需要助动词 do/does/did，谓语直接跟在疑问词后**
 
 - What happened yesterday? 
 - Who broke the glass?
+- Which train leaves at 10?
 
 #### 选择问句(alternative questions)
 
