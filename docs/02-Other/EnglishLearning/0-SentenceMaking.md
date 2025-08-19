@@ -1348,11 +1348,15 @@ The girl is reading a book.
 - You **have to show** your passport at the border.（在边境你必须出示护照。）
 - All employees **have to attend** the safety training.（所有员工都必须参加安全培训。）
 
+
+
 **==used to do sth== 过去常常做某事（现在不了）**
 
 - He **used to live** in London.（他过去住在伦敦。）
 - I **used to play** the piano when I was a child.（我小时候常常弹钢琴。）
 - This building **used to be** a library.（这栋楼过去是图书馆。）
+
+
 
 **==be used to doing sth== 习惯于做某事**
 
@@ -1360,11 +1364,15 @@ The girl is reading a book.
 - He is not **used to living** in a big city.（他不习惯住在大城市。）
 - After a few months, she **got used to waking up** early.（几个月后，她习惯了早起。）
 
+
+
 **==spend time/money (in) doing sth / on sth== 花费时间/金钱在某事上**
 
 - She **spent the whole afternoon reading** the book.（她花了一整个下午读书。）
 - He **spent too much money on** that car.（他花了太多钱在那辆车上。）
 - We **spend a lot of time practicing** our presentation.（我们花了很多时间练习演讲。）
+
+
 
 **==stop to do sth== 停下来去做另一件事**
 
@@ -1372,11 +1380,15 @@ The girl is reading a book.
 - On our way home, we **stopped to buy** some milk.（在回家的路上，我们停下来买了些牛奶。）
 - She **stopped to tie** her shoelace.（她停下来系鞋带。）
 
+
+
 **==stop doing sth== 停止正在做的事**
 
 - Please **stop making** so much noise.（请不要再制造那么多噪音了。）
 - The doctor told him to **stop smoking**.（医生告诉他要戒烟。）
 - You should **stop worrying** about things you can't control.（你应该停止担心那些你无法控制的事情。）
+
+
 
 **==prefer to do sth rather than do sth== 宁愿做某事而不愿做另一件事**
 
@@ -1386,11 +1398,61 @@ The girl is reading a book.
 
 ### 5. 补充常见句型
 
+
+
+**`What do/does + 主语 + do?`（询问任何人的职业）** 
+
+- What does your father do? (你父亲是做什么工作的？)
+
+**`What time is it ?`（询问时间）**
+
+- Excuse me, what time is it? (打扰一下，现在几点了？)
+
+**`What's ... like?` 询问特征、性质或给人的感觉（天气、人的个性、某地等）**
+
+- What's the weather like in Singapore? (新加坡的天气怎么样？)
+
+**`What kind of ...?` 询问种类。**
+
+- What kind of music do you like? (你喜欢哪种类型的音乐？)
+
+**`What's the matter (with)...?` / `What's wrong (with)...?` 询问问题、麻烦（“怎么了？”）。**
+
+- What's the matter? You look sad. (怎么了？你看起来很难过。)
+
+**`Why don't you/we...?` 提出建议（而不是真的问原因）**
+
+- Why don't we go to the movies tonight? (我们今晚为什么不去看电影呢？= 今晚去看电影吧。)
+
+**`Where ... from?` 询问来源地、国籍。**
+
+- Where are you from? (你来自哪里？)
+
+**`How about...?` / `What about...?` 征求意见或提出建议。**
+
+- How about having dinner together? (一起吃晚饭怎么样？)
+
+**`How old ...?` 询问年龄。**
+
+- How old are you?
+
+**`How was...?`询问对过去经历的感受或评价。**
+
+- How was your trip? (你的旅行怎么样？)
+
+**`How do you spell...?` 询问如何拼写。**
+
+- How do you spell your name?
+
+
+
 **==so... that... / such... that...== 如此……以至于……（引导结果状语从句）**
 
 - He was **so tired that** he fell asleep immediately.（他太累了，以至于立刻就睡着了。）
 - It was **such a beautiful day that** we decided to go for a picnic.（那是个如此美好的天气，所以我们决定去野餐。）
 - The movie was **so interesting that** I watched it twice.（这部电影太有趣了，我看了两遍。）
+
+
 
 **==too... to...== 太……而不能……**
 
@@ -1398,11 +1460,15 @@ The girl is reading a book.
 - It's **too cold to go** swimming today.（今天太冷了，不能去游泳。）
 - He speaks **too quickly for me to understand**.（他话说得太快，我听不懂。）
 
+
+
 **==...enough to...== 足够……可以……**
 
 - He is tall **enough to reach** the top shelf.（他足够高，可以够到顶层的架子。）
 - The water is warm **enough to swim** in.（水足够暖和，可以游泳。）
 - She is smart **enough to solve** this difficult problem.（她足够聪明，可以解决这个难题。）
+
+
 
 **==the more..., the more...== 越……就越……**
 
@@ -1410,11 +1476,15 @@ The girl is reading a book.
 - **The more I learn** about history, **the more interesting** I find it.（我对历史了解得越多，就觉得它越有趣。）
 - **The more you read**, **the more you know**.（你读得越多，你知道得就越多。）
 
+
+
 **==would rather... than...== 宁愿……也不愿……**
 
 - I **would rather stay home than go** to the party.（我宁愿待在家里也不愿去参加派对。）
 - She **would rather read a book than play** video games.（她宁愿看书也不愿玩电子游戏。）
 - He **would rather try and fail than do** nothing.（他宁愿尝试后失败，也不愿什么都不做。）
+
+
 
 **==Why not...?== 为什么不……呢？（用于提建议，后跟动词原形）**
 
@@ -1422,21 +1492,43 @@ The girl is reading a book.
 - **Why not ask** the teacher for help?（为什么不向老师求助呢？）
 - It's a nice day. **Why not go** for a walk?（今天天气很好，为什么不出去散散步呢？）
 
+
+
 **==How about...?== ……怎么样？（用于提建议，后跟 doing sth）**
 
 - **How about going** to the movies tonight?（今晚去看电影怎么样？）
 - **How about trying** that new restaurant?（去试试那家新餐厅怎么样？）
 - We have no plans. **How about playing** a game?（我们没什么计划，玩个游戏怎么样？）
 
-**==You'd better (not) do sth== 你最好（不要）做某事（带有建议或轻微警告的语气）**
+
+
+**==One of the + (形容词最高级) + (复数名词)== 表示“……中最……之一”（注意后面的名词必须是复数）**
+
+- This is one of the most important lessons in my life. (这是我生命中最重要的一课之一。)
+- Marina Bay Sands is **one of the most iconic buildings** in Singapore.  滨海湾金沙是新加坡最具标志性的建筑之一。
+- **One of the biggest challenges** for students is managing their time effectively. 对于学生来说，最大的挑战之一是如何有效管理时间。
+- She is **one of the kindest people** I have ever met. 她是我见过最善良的人之一。
+
+
+
+**==had better (not) do sth== 最好（不要）做某事（带有建议或轻微警告的语气）**
+
+- We **had better go** home early after school. 
+- The sky is getting dark. You **had better take** an umbrella with you. 天色变暗了，你最好带上雨伞。
+- The final exam is next week. We **had better start** studying now. 期末考试就在下周了，我们最好现在就开始复习。
+- He **had better not be** late for the meeting again, or the boss will be furious. 他最好不要再开会迟到，否则老板会大发雷霆的。
 
 - **You'd better hurry** or you'll be late.（你最好快点，否则就要迟到了。）
 - **You'd better not forget** to call her.（你最好别忘了给她打电话。）
 - It's going to rain. **You'd better take** an umbrella.（要下雨了，你最好带上雨伞。）
 
-**==One of the + (形容词最高级) + (复数名词)== 表示“……中最……之一”。**
 
-- This is one of the most important lessons in my life. (这是我生命中最重要的一课之一。)
+
+**==It takes(took) sb some time to do sth== 花费某人多少时间做某事（专门用来描述完成某件事所需要的时间。）**
+
+- It took me two hours to finish my homework.
+- It took them all afternoon to clean the house. 他们花了一整个下午才把房子打扫干净。
+- In Singapore, **it** usually **takes** me 30 minutes **to get** to school by bus. 在新加坡，我通常要花30分钟坐公交车去学校。
 
 ## 例句整理
 

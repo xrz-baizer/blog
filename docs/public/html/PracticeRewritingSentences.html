@@ -4675,7 +4675,7 @@
             ]
         }
     };
-    
+
     // DOM Elements
     const categoryContainer = document.getElementById('category-container');
     const themeTitleEl = document.getElementById('theme-title');
@@ -4952,7 +4952,8 @@
             feedbackSection.className = 'p-4 rounded-lg border-l-4 incorrect';
             feedbackSection.innerHTML = `<strong class="font-semibold">${correctAnswer}</strong>`;
 
-            handleHintClick();
+            noteSection.style.display = 'block';
+            hintBtn.textContent = 'Hide Hint';
             return false;
         }
     }

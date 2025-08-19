@@ -22,7 +22,7 @@
 
 |                     |                                        ==Simple== |           ==Continuous== |               ==Perfect== |            ==Perfect Continuous== |
 | :-----------------: | ------------------------------------------------: | -----------------------: | ------------------------: | --------------------------------: |
-|   **==Present==**   |                       **am/is/are + `done`/`do`** |  **am/is/are + `doing`** |     **have/has + `done`** |     **have/has + been + `doing`** |
+|   **==Present==**   |                       **`do`**<br /> **`do` + s** |  **am/is/are + `doing`** |     **have/has + `done`** |     **have/has + been + `doing`** |
 |    **==Past==**     |                                         **`did`** |   **was/were + `doing`** |          **had + `done`** |          **had + been + `doing`** |
 |   **==Future==**    | **am/is/are + going to + `do`<br /> will + `do`** |  **will + be + `doing`** |  **will + have + `done`** |  **will + have + been + `doing`** |
 | **==Past future==** |  **was/were + going to + `do`<br />would + `do`** | **would + be + `doing`** | **would + have + `done`** | **would + have + been + `doing`** |
