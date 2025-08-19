@@ -3769,7 +3769,7 @@
           {
             sentence: "The train to London (leave) at 10:30 AM.",
             translation: "去伦敦的火车上午10:30开。",
-            note: "<b>提示:</b> 按时间表发生，可用一般现在时。",
+            note: "<b>提示:</b> 按时间表发生，可用一般现在时。</br> 当谈论公共交通、电影、课程等有固定时刻表的将来事件时，通常用“一般现在时”来代替将来时。",
             answer: [
               "the train to london leaves at 10:30 am."
             ],

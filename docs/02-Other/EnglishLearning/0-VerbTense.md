@@ -131,24 +131,65 @@
 ### 一般将来时态
 
 > 用于描述将来会发生的动作或状态
+>
+> - 注意：当谈论公共交通、电影、课程等有固定时刻表的将来事件时，通常用“一般现在时”来代替将来时。
 
-**结构：==will + 动词原型==**
+**结构：==will + 动词原型== (常用)**
 
-- The sun **will rise** again tomorrow. 太阳明天也会照常升起
-- We **will succeed** if we work hard. 如果我们努力，我们会成功的。
+**使用场景：即时决定、主观预测、承诺、客观事实**
+
+**即时决定 (Spontaneous Decision)：在说话的那一刻才决定的事。**
+
+- A: "The phone is ringing." (电话响了。)
+
+- B: "OK, **I'll** get it." (好的，**我**去接。) (B 在听到电话响后才决定去接)
+
+**主观预测/观点 (Prediction/Opinion)：基于个人感觉、经验或信念的预测，常与 I think, I believe, probably 连用。**
+
+- I think it **will** rain tomorrow. (我**觉得**明天会下雨。) (只是我的感觉)
+- We **will succeed** if we work hard. 如果我们努力，我们会成功的。（带有强烈信心的主观预测）
+
+**承诺/提议/意愿 (Promise/Offer/Willingness)**：
+
+- Don't worry, I **will** help you. (别担心，我**会**帮你的。) (承诺)
+
+- **I'll** call you tonight. (我今晚**会**给你打电话。) (意愿)
 - I **will call** you as soon as I get home. 我到家后会马上给你打电话。
 
-**结构：==am/are/is + going to + 动词原型==**
+**客观的将来事实 (Objective Future Fact)：不受人的意志影响的将来事件。**
 
-- I **am going to visit** my grandparents this weekend. 我这个周末要去看望我的祖父母。
+- The sun **will** rise at 6 a.m. (太阳**将**在早上6点升起。)
+- The sun **will rise** again tomorrow. 太阳明天也会照常升起
+
+---
+
+**结构：==am/are/is + going to + 动词原型==（常用）**
+
+**使用场景：提前的计划、有迹象的预测。**
+
+**已有的计划/意图 (Pre-existing Plan/Intention)**：在说话**之前**就已经决定好的事。
+
+- I **am going to** visit my parents this weekend. (我这个周末**打算**去看望我的父母。) (这个计划是早就定好的，不是现在才决定的)
+
+- *对比*: 如果朋友问你周末干嘛，你临时起意，可能会说 "Maybe I'll visit my parents."
 - They **are going to watch** a movie tonight. 他们今晚打算看电影。
 
+**有迹象的预测 (Prediction with Evidence)**：根据**眼前的迹象**，判断某事很可能要发生。
+
+- Look at those dark clouds! It **is going to** rain. (看那些乌云！天**要**下雨了。) (乌云是即将下雨的明显迹象)
+
+---
+
 **结构：==am/are/is + about to + 动词原型==**
+
+**强调动作“马上、即将”发生。比 be going to 更紧急。**
 
 - She **is about to leave** for the airport. 她即将前往机场。
 - The train **is about to arrive** at the station. 火车即将到站。
 
-**结构：==am/are/is + to + 动词原型==**
+**结构：==am/are/is + to + 动词原型== （很少用）** 
+
+**这个结构非常正式，通常用于新闻、官方通告或上级下达的命令。**
 
 - The president **is to meet** the delegates tomorrow. 总统将于明天会见代表团。
 - The event **is to start** at 10 a.m. sharp. 活动将在上午十点准时开始。

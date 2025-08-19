@@ -421,6 +421,16 @@ What 后面通常接名词或名词短语，强调事物本身。
 - How is the teacher?
 - We are Chinese
 
+---
+
+**常见be动词：`am` / `is` / `are` / was / were / be / been / being**
+
+**表示“感官”的系动词：`look`（看起来）/`sound`（听起来）/`smell`（闻起来）/`taste`（尝起来）/`feel`（感觉起来）**
+
+**表示“变化”或“结果”的系动词：`become`（变得）/`get`（变得）/`grow`（变得）/`turn`（变成）/`go`（变坏）/`come`（变得）**
+
+**表示“保持”或“继续”的状态：`stay`（保持）/`remain`（仍然）**
+
 ### There be 句型
 
 > 表示 时间、空间 存在某种事物
