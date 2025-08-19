@@ -982,7 +982,7 @@
 
         appState = 'submit';
         actionBtn.textContent = 'Submit Answer';
-        answerInput.value = exercise.sentence.replace(/<[^>]*>/g, '');
+        answerInput.value = exercise.sentence.replace(/<[^>]*>/g, '').replace(/\(([^)]+)\)/g, '$1');
         if (answerInput.value.length > 0) {
             document.getElementById('clear-btn').classList.remove('hidden');
         } else {
