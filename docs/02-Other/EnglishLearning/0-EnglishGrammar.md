@@ -715,6 +715,68 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 - He worked **hard** (方式) **at home** (地点) **all day** (时间). (他一整天都在家努力工作。)
 - The children played **happily** (方式) **in the garden** (地点) **all afternoon** (时间). (孩子们整个下午都在花园里开心地玩耍。)
 
+## 比较句 (Comparative Sentences)
+
+用来比较两个人或事物的特征或状态，说明它们在某方面是相同、不同，或者谁更突出。
+
+- 核心：找到比较的双方，并使用正确的比较结构。
+
+### 情况一：同级比较 (A 和 B 一样...)
+
+> 用来表示两个人或事物在某个方面程度相同。
+>
+> 否定形式表示 “A 不如 B ...”，可以用 `not as ... as` 或 `not so ... as`。
+
+**结构：==主语 + 动词 + as + 形容词/副词原级 + as + 比较对象==**
+
+- He is **as tall as** his brother. (他和他的兄弟一样高。)
+- She sings **as beautifully as** a professional singer. (她唱歌像专业歌手一样动听。)
+- This task is **not as difficult as** I thought. (这个任务没有我想象的那么难。)
+- He does**n't** run **so fast as** you. (他跑得不如你快。)
+
+### 情况二：比较级 (A 比 B 更...)
+
+> 用来表示一个人或事物在某个方面超过另一个人或事物。这是最常见的比较形式。
+>
+> **`than`** 是比较句的标志词，意为“比”。
+
+**结构：==主语 + 动词 + 形容词/副词比较级 + than + 比较对象==**
+
+- He is **taller than** me. (他比我高。)
+- This book is **more interesting than** that one. (这本书比那本更有趣。)
+- She works **harder than** her classmates. (她比她的同学更努力学习。)
+- My car is **less expensive than** yours. (我的车没你的贵。) → 另一种表达“不如”的方式
+
+### 情况三：最高级 (在...中最...)
+
+> 用来比较**三个或以上**的人或事物，并指出其中一个在某方面达到最高程度。
+>
+> **`the`** 通常和最高级连用，后面常跟一个表示范围的短语 (如 `in the class`, `of the three`)。
+
+**结构：==主语 + 动词 + the + 形容词/副词最高级 + 范围 (in/of...)==**
+
+- He is **the tallest** student **in our class**. (他是我们班最高的学生。)
+- This is **the most delicious** cake I have ever eaten. (这是我吃过的最美味的蛋糕。)
+- She is one of **the most popular** singers **in the world**. (她是世界上最受欢迎的歌手之一。)
+
+### 比较级和最高级的构成规则
+
+> 这是比较句的基石，需要牢记。
+
+1. **单音节词**：
+   - 直接加 `-er` / `-est` (e.g., tall → tall**er** → tall**est**)
+   - 以 `e` 结尾，加 `-r` / `-st` (e.g., nice → nice**r** → nice**st**)
+   - “辅音+元音+辅音”结尾，双写末尾辅音再加 `-er` / `-est` (e.g., big → bigg**er** → bigg**est**)
+2. **双音节词 (多以 `y` 结尾)**：
+   - `y` 变 `i` 再加 `-er` / `-est` (e.g., happy → happi**er** → happi**est**)
+3. **多音节词 (及部分双音节词)**：
+   - 前面加 `more` / `most` (e.g., beautiful → **more** beautiful → **most** beautiful)
+4. **不规则变化**：
+   - good/well → **better** → **best**
+   - bad/ill → **worse** → **worst**
+   - many/much → **more** → **most**
+   - far → **farther/further** → **farthest/furthest**
+
 ## 条件句
 
 主要有四种核心条件句
