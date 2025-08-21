@@ -1,5 +1,9 @@
 # Claude Code User Manual
 
+## Subscription
+
+
+
 ## Commands
 
 > Official documentation: https://docs.anthropic.com/en/docs/claude-code/overview

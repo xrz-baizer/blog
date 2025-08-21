@@ -633,6 +633,106 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 -  I enjoy reading my students’ essays.
 
+## 时间和日期表达 (Time and Date Expressions)
+
+### 时间的表达 (Time Expressions)
+
+#### 直接读法 (最常用)
+
+> 直接按顺序读出 “小时” 和 “分钟” 的数字。
+
+**结构：==小时 + 分钟==**
+
+- **7:05** → seven oh five (`0` 读作 `oh`)
+- **8:15** → eight fifteen
+- **9:30** → nine thirty
+- **10:45** → ten forty-five
+
+#### 介词读法 (传统用法)
+
+> 以 “半小时” 为界，用 **past** (过) 和 **to** (到) 来表达。
+>
+> - **分钟 ≤ 30**：用 **past**，表示 “几点过几分”
+> - **分钟 > 30**：用 **to**，表示 “差几分到几点” (小时数要 +1)
+
+**结构：==分钟 + past/to + 小时==**
+
+- **8:15** → fifteen **past** eight (八点过十五分)
+- **8:45** → fifteen **to** nine (差十五分到九点)
+- **2:10** → ten **past** two (两点过十分)
+- **2:50** → ten **to** three (差十分到三点)
+
+#### 整点、半点和特殊时间的表达
+
+> **o'clock** 只用于整点。**a quarter** 表示一刻钟 (15分钟)。
+
+- **8:00** → eight **o'clock**
+- **8:15** → **a quarter past** eight
+- **8:30** → **half past** eight (八点半)
+- **8:45** → **a quarter to** nine
+- **12:00 (白天)** → **noon** / midday
+- **12:00 (夜晚)** → **midnight**
+
+#### 模糊时间段及介词
+
+**morning, afternoon, evening 用介词 in**
+
+- **in the morning** (上午)
+- **in the afternoon** (下午)
+- **in the evening** (晚上)
+
+**night, noon, midnight 用介词 at**
+
+- **at night** (在夜里，泛指)
+- **at noon** (在正午)
+- **at midnight** (在午夜)
+
+### 日期的表达 (Date Expressions)
+
+#### 书写日期 (Writing Dates)
+
+**美式结构：==月份 日, 年份==**
+
+- August 21, 2025
+
+**英式结构：==日 月份, 年份==**
+
+- 21st August, 2025
+
+#### 朗读日期 (Saying Dates)
+
+> 日期部分要用**序数词** (first, second, twenty-first...)。
+
+**美式读法：==月份 + (the) + 日期序数词, 年份==**
+
+- August 21, 2025 → 读作: August **(the) twenty-first**, twenty twenty-five.
+
+**英式读法：==the + 日期序数词 + of + 月份, 年份==**
+
+- 21st August, 2025 → 读作: **The twenty-first of** August, twenty twenty-five.
+
+#### 时间介词总结 (Prepositions: at, on, in)
+
+> 这是最重要的规则，可以帮你应对大多数情况。
+
+**`at` + 精确时间点**
+- **at** 8 o'clock (在8点钟)
+- **at** noon / **at** midnight (在正午/午夜)
+- **at** the moment (此刻)
+
+**`on` + 具体的某一天**
+- **on** Sunday (在周日)
+- **on** my birthday (在我生日那天)
+- **on** October 1st, 2025 (在2025年10月1日)
+- **on** a winter morning (在一个冬天的早晨 - *强调是“某天”的早晨*)
+
+**`in` + 一段较长的时间**
+- **in** the morning / afternoon / evening (在上午/下午/晚上)
+- **in** May (在五月)
+- **in** summer (在夏天)
+- **in** 2025 (在2025年)
+- **in** the 1990s (在20世纪90年代)
+
 ## 副词的位置
 
 副词用来修饰动词、形容词、其他副词或整个句子，说明动作或状态的 **方式、频率、地点、时间、程度** 等。
