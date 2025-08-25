@@ -633,9 +633,9 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 -  I enjoy reading my students’ essays.
 
-## 时间和日期表达 (Time and Date Expressions)
+## 时间和日期表达
 
-### 时间的表达 (Time Expressions)
+### 时间的表达
 
 #### 直接读法 (最常用)
 
@@ -673,21 +673,7 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 - **12:00 (白天)** → **noon** / midday
 - **12:00 (夜晚)** → **midnight**
 
-#### 模糊时间段及介词
-
-**morning, afternoon, evening 用介词 in**
-
-- **in the morning** (上午)
-- **in the afternoon** (下午)
-- **in the evening** (晚上)
-
-**night, noon, midnight 用介词 at**
-
-- **at night** (在夜里，泛指)
-- **at noon** (在正午)
-- **at midnight** (在午夜)
-
-### 日期的表达 (Date Expressions)
+### 日期的表达
 
 #### 书写日期 (Writing Dates)
 
@@ -711,9 +697,9 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 - 21st August, 2025 → 读作: **The twenty-first of** August, twenty twenty-five.
 
-#### 时间介词总结 (Prepositions: at, on, in)
+### 时间介词总结
 
-> 这是最重要的规则，可以帮你应对大多数情况。
+> 这是最重要的规则，可以应对大多数情况。
 
 **`at` + 精确时间点**
 - **at** 8 o'clock (在8点钟)

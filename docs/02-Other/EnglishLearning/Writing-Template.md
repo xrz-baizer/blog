@@ -4,6 +4,14 @@
 
 >**形容词只修饰名词，副词修饰其它的词（通常修饰动词）**
 >
+>**区分表目的的 to/for：**
+>
+>- to + 动词 (Verb) → 表示目的为一个动作
+>
+>- for + 名词 (Noun) → 表示目的为一个事物或事件
+>- We need to find a time **to meet**. 
+>- We need to find a time **for a meeting**.
+>
 >**副词的位置：**
 >
 >- 基本副词：实义动词前、助动词/情态动词后、be动词后
