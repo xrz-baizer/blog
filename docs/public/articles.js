@@ -54,7 +54,7 @@ export const articlesMap = {
   "01-Essay/0-使用ECS为本地搭建开发环境.md": " 服务器准备 > 购买的华为云服务： > > - 116.205.134.46 > > - 2vCPUs 4GiB ac7.large.2 > > - CentOS 7.6 64bit 注意为对应安全组开放端口，或者直接开放所有端口，并限制只允许本机IP访问 - 查询本机IP地址：https://ip111.c... 本地配置 配置host映射，后续可直接使用hostname登入服务器 ```sh",
   "01-Essay/ClaudeCodeUserManual.md": " Subscription tbd Commands > Official documentation: https://docs.an... - `# xxx` 实时写入Memory - `! xxx` 执行本地bash命令 - `claude -p 'question'` 单次咨询claude - `ctrl + j` 输入框换行 - `shift + tab`切换输入模式 Prompt - ",
   "01-Essay/Keychron-K3Pro的蓝牙连接方式.md": " 长时间使用有时候蓝牙会连接不上，在此记录蓝牙重新连接的方式 蓝牙配对方法： 1. 将拨动开关调至Bluetooth. 2. 长按3秒Fn+1/2/3 3. 在设备上与K3Pro配对（配对名称：Keychron K3Pro) ",
-  "01-Essay/claude-code-system-prompt.md": " You are an interactive CLI tool that helps users with software engineering tasks. Use the instructions below and the tools available to you to assist the user. IMPORTANT: Assist with defensive securi",
+  "01-Essay/claude-code-system-prompt.md": " > 原版：https://github.... You are an interactive CLI tool that helps users with software engineering tasks. Use the instructions below and the tools available to you to assist the user. IMPORTANT: Assi",
   "01-Essay/index.md": "<category/>",
   "01-Essay/select-for-update.md": " MySQL版本：5.7.29 for update确保操作的唯一性（行锁） > - where条件必须使用索引，最好是唯一索引，如果没有索引可能会升级为表锁。 > - 注意死锁的问题：如果两个或多个事务以不同的顺序获取锁，可能会导致死锁。例如，事务 A 锁定了行 X 并尝试获取行 Y 的锁，而事务 B 锁定了行 Y 并尝试获取行 X 的锁，导致死锁，进而引发事务回滚。 测试表 ```sql CR",
   "01-Essay/开源框架.md": " GitHub - 一人公司方法论：https://github.... - PDF提取工具：https://github.... - 证件照生成：https://github.... - Github代码阅读神器：https://deepwik... 前端动画组件库 - https://vue-bit... - https://reactbi... - https://gsap.co... - ",
