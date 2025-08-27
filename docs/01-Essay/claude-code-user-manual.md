@@ -24,6 +24,20 @@ tbd
 - **修复问题：**`请分析此Bug的根本原因，并制定修复方案`
 - **前端界面提示器：**`请你严格遵守苹果的设计规范和交互规范。帮我把这个页面写出来。`
 
+### 其它参考提示词
+
+-  https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/main/Claude%20Code/claude-code-system-prompt.txt
+
+## Claude.md
+
+`~/.claude/CLAUDE.md`
+
+```md
+# Preferences
+- Language Style: Reply in English. Use clear, direct, and professional language. Avoid jargon where simpler terms suffice.
+- Do not test the code by executing the relevant run command
+```
+
 ##  Plugins
 
 - [集成 IntelliJ IDEA](https://docs.anthropic.com/en/docs/claude-code/ide-integrations#jet-brains)
@@ -101,3 +115,25 @@ docker run -d -p 8000:8000 --name gemini-balance \
 ghcr.io/snailyp/gemini-balance:latest
 ```
 
+
+
+### Qwen3-Code
+
+[阿里云百炼API官方文档：如何接入Claude Code](https://bailian.console.aliyun.com/?spm=5176.29619931.J__Z58Z6CX7MY__Ll8p1ZOR.1.74cd521cCg9KEb&tab=doc#/doc/?type=model&url=2949529)
+
+**设置环境变量：**
+
+- 获取key：https://bailian.console.aliyun.com/?tab=model#/api-key
+
+```sh
+echo 'export ANTHROPIC_BASE_URL="https://dashscope.aliyuncs.com/api/v2/apps/claude-code-proxy"' >> ~/.zshrc
+echo 'export ANTHROPIC_AUTH_TOKEN="YOUR_DASHSCOPE_API_KEY"' >> ~/.zshrc
+```
+```bash
+source ~/.zshrc
+```
+
+```bash
+echo $ANTHROPIC_BASE_URL
+echo $ANTHROPIC_AUTH_TOKEN
+```
