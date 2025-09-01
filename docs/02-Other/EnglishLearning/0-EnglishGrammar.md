@@ -618,6 +618,80 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
    - *at **home*** (在家)
    - *go to **bed*** (上床睡觉)
 
+## 所有格 Possessives
+
+所有格用来表示人或事物之间的“所属”关系，即“谁的”或“什么的”。最常见的两种形式是 `’s` 所有格和 `of` 所有格。
+
+### `’s` 所有格
+
+这种形式通常用于**有生命的人或动物**，有时也用于国家、组织或时间。
+
+#### 单数名词后加 `'s`
+
+- Tim's shirt (蒂姆的衬衫)
+- My dog's toy (我的狗的玩具)
+- China's economy (中国的经济)
+
+> **用法提示**: `’s` 的作用和形容词性物主代词（my, your, his, her, its, our, their）很像。通常第一次提到某人时用 `'s` 所有格，后续为了避免重复，会用物主代词。
+>
+> - *第一次提*: That is Tom's schoolbag. (那是汤姆的书包。)
+> - *再次提到*: His schoolbag is blue. (他的书包是蓝色的。)
+
+#### 以 s 结尾的复数名词，只加 `'`
+
+- my students' essays (我的学生们的论文)
+- the dogs' house (那些狗的房子)
+- the workers' rights (工人们的权利)
+
+#### 不以 s 结尾的复数名词，仍然加 `'s`
+
+- the children's books (孩子们的书)
+- the men's restroom (男厕所)
+- people's opinions (人们的观点)
+
+#### 以 s 结尾的单数名词（特别是名字），通常加 `'s`，有时也只加 `'`
+
+- Chris's car (克里斯的车) - *更常见*
+- James's plan (詹姆斯的计划) - *更常见*
+- Chris' car / James' plan - *在书写中也可接受，尤其是在古典或正式文本中*
+
+### `of` 所有格
+
+这种形式通常用于**无生命的物体、抽象概念**，或者当所有者是一个较长的短语时。
+
+结构是：**`the + 事物 + of + 所有者`**
+
+#### 用于无生命物体
+
+- the leg of the table (桌子的腿) - *不说 "the table's leg"*
+- the color of the wall (墙的颜色)
+- the roof of the house (房子的屋顶)
+
+#### 用于抽象概念
+
+- the importance of learning (学习的重要性)
+- the result of the experiment (实验的结果)
+
+#### 当所有者是一个较长的短语或从句时
+
+- the opinion of the man I met yesterday (我昨天遇到的那个男人的观点) 
+  - *用 `'s` 会很奇怪: "the man I met yesterday's opinion"*
+
+
+### `'s` 和 `of` 的核心区别
+
+**一个简单的判断方法：**
+
+- 想说“谁的”？优先考虑用 **`'s`**。
+- 想说“什么的”？优先考虑用 **`of`**。
+
+| **特性**     | **’s 所有格**                                                | **of 所有格**                                                |
+| ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| **核心用途** | **人 & 动物**                                                | **物体 & 概念**                                              |
+| **例子**     | the cat's tail (猫的尾巴)                                    | the end of the road (路的尽头)                               |
+| **感觉**     | 更简洁，更口语化                                             | 稍微正式，结构更清晰                                         |
+| **特殊情况** | 可用于时间、地点、组织<br>a week's holiday (一周的假期)<br>the school's team (学校的队伍) | 当所有者是长短语时必须使用<br>the capital of the United States (美国的首都) |
+
 ## 所有格
 
 表示所属关系

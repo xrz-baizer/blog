@@ -81,7 +81,7 @@ tbd
 }
 ```
 
-### Claude Balance
+### Gemini Balance
 
 **Gemini2.5 Pro Key 轮询**
 
@@ -137,3 +137,35 @@ source ~/.zshrc
 echo $ANTHROPIC_BASE_URL
 echo $ANTHROPIC_AUTH_TOKEN
 ```
+
+## Gemini CLI
+
+### Login with Google
+
+> 多账号可通过 `/chat` 切换会话记录
+
+**Google个人账号请求限制：**
+
+- **Free tier**: 60 requests/min and 1,000 requests/day
+
+- 每分钟最高 **60 请求**
+- 每天最多 **1 000 请求**
+
+某些账号能需要配置项目ID：
+
+```sh
+echo 'export GOOGLE_CLOUD_PROJECT="test"' >> ~/.zshrc
+```
+
+### Use Gemini API Key
+
+- **Free tier**: 100 requests/day with Gemini 2.5 Pro
+
+```sh
+echo 'export GEMINI_MODEL=gemini-2.5-pro' >> ~/.zshrc
+echo 'export GOOGLE_GEMINI_BASE_URL="http://xxx.xxx.xxx.xxx:8000"' >> ~/.zshrc
+echo 'export GEMINI_API_KEY="xxx"' >> ~/.zshrc
+
+source ~/.zshrc
+```
+
