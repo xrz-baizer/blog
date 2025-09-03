@@ -11,8 +11,8 @@
                 <div class="file-name">{{ audioFileName }}</div>
             </div>
             <div class="file-input">
-                <label>导入LRC歌词</label>
-                <input type="file" accept=".lrc,.txt" @change="handleLyricUpload" ref="lyricInput"/>
+                <label>导入LRC/SRT歌词</label>
+                <input type="file" accept=".lrc,.txt,.srt" @change="handleLyricUpload" ref="lyricInput"/>
                 <div class="file-button" @click="$refs.lyricInput.click()">
                     <span>选择歌词文件</span>
                 </div>
@@ -22,7 +22,7 @@
                     <textarea
                             class="lyric-input"
                             v-model="lyricText"
-                            placeholder="请在此粘贴LRC格式的歌词，例如：[00:00.00]歌词内容"
+                            placeholder="请在此粘贴LRC或SRT格式的歌词"
                     ></textarea>
                 </div>
             </div>
@@ -30,6 +30,7 @@
                 <audio ref="audioPlayer" controls></audio>
                 <div class="controls">
                     <button @click="playFull">全文播放</button>
+                    <button @click="clearLyrics" class="clear-btn">清空歌词</button>
                 </div>
             </div>
         </div>
@@ -70,7 +71,7 @@ export default {
     watch: {
         lyricText(newVal) {
             if (newVal.trim()) {
-                this.lyrics = this.parseLRC(newVal);
+                this.lyrics = this.parseLyrics(newVal);
                 this.showLyrics = true;
             }
         }
@@ -86,6 +87,13 @@ export default {
         audioPlayer.removeEventListener('ended', this.handleAudioEnded);
     },
     methods: {
+        parseLyrics(text) {
+            if (text.includes('-->')) {
+                return this.parseSRT(text);
+            } else {
+                return this.parseLRC(text);
+            }
+        },
         parseLRC(lrcText) {
             const lines = lrcText.split('\n');
             const result = [];
@@ -100,6 +108,29 @@ export default {
                     const time = min * 60 + sec + ms / 1000;
                     const text = line.replace(timeExp, '').trim();
                     result.push({time, text});
+                }
+            }
+            return result;
+        },
+        parseSRT(srtText) {
+            const lines = srtText.split('\n');
+            const result = [];
+            const timeExp = /(\d{2}):(\d{2}):(\d{2}),(\d{3})/;
+
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].includes('-->')) {
+                    const match = lines[i].match(timeExp);
+                    if (match) {
+                        const hour = parseInt(match[1], 10);
+                        const min = parseInt(match[2], 10);
+                        const sec = parseInt(match[3], 10);
+                        const ms = parseInt(match[4], 10);
+                        const time = hour * 3600 + min * 60 + sec + ms / 1000;
+                        const text = lines[i + 1] ? lines[i + 1].trim() : '';
+                        if (text) {
+                            result.push({ time, text });
+                        }
+                    }
                 }
             }
             return result;
@@ -119,7 +150,7 @@ export default {
                 this.lyricFileName = file.name;
                 const reader = new FileReader();
                 reader.onload = (ev) => {
-                    this.lyrics = this.parseLRC(ev.target.result);
+                    this.lyrics = this.parseLyrics(ev.target.result);
                     this.showLyrics = true;
                 };
                 reader.readAsText(file);
@@ -164,7 +195,15 @@ export default {
             audioPlayer.currentTime = this.lyrics[idx].time;
             this.singleLineMode = true;
             this.isFullPlayMode = false;
-            this.pauseAt = this.lyrics[idx + 1] ? this.lyrics[idx + 1].time : null;
+
+            if (this.lyrics[idx + 1]) {
+                const nextTime = this.lyrics[idx + 1].time;
+                // Pause 200ms before the next line starts to avoid overlap
+                this.pauseAt = Math.max(audioPlayer.currentTime, nextTime - 0.5);
+            } else {
+                this.pauseAt = null; // No next line, play to the end
+            }
+
             audioPlayer.play();
             this.currentLine = idx;
         },
@@ -180,6 +219,14 @@ export default {
             audioPlayer.play();
             this.currentLine = 0;
             this.showLyrics = true;
+        },
+        clearLyrics() {
+            this.lyrics = [];
+            this.lyricText = '';
+            this.lyricFileName = '';
+            this.showLyrics = false;
+            this.currentLine = 0;
+            this.$refs.lyricInput.value = ''; // Clear the file input
         }
     }
 }
@@ -191,7 +238,7 @@ export default {
     background: linear-gradient(135deg, #ffffff 0%, #c3cfe2 100%);
     padding: 20px;
     display: flex;
-    gap: 40px;
+    gap: 30px;
     flex: 1;
     height: calc(100vh - var(--vp-nav-height));
     overflow: hidden;
@@ -203,7 +250,7 @@ export default {
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 8px;
     overflow-y: auto;
     height: fit-content;
     margin: auto 0;
@@ -383,6 +430,20 @@ button {
     -2px 0 8px -2px rgba(0, 122, 255, 0.1);
 }
 
+.clear-btn {
+    background: rgba(255, 59, 48, 0.8);
+    box-shadow: 0 2px 8px -2px rgba(255, 59, 48, 0.2);
+}
+
+.clear-btn:hover {
+    background: rgba(255, 59, 48, 1);
+    box-shadow: 0 4px 15px -4px rgba(255, 59, 48, 0.3);
+}
+
+.clear-btn:active {
+    background: rgba(255, 59, 48, 0.7);
+}
+
 button:hover {
     background: rgba(0, 122, 255, 1);
     box-shadow: 0 4px 15px -4px rgba(0, 122, 255, 0.3),
@@ -468,7 +529,8 @@ button:active {
         flex-direction: column;
         padding: 20px;
         gap: 24px;
-        height: calc(100vh - 40px);
+        min-height: calc(100vh - 40px);
+        overflow-y: auto;
         justify-content: flex-start;
     }
 
