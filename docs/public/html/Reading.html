@@ -4,61 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>雅思阅读题型精讲与实战 - 宋鹏昊</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #005792;
+            --secondary-color: #00bbf0;
+            --background-color: #f4f7f9;
+            --content-bg-color: #ffffff;
+            --text-color: #343a40;
+            --heading-color: #212529;
+            --border-color: #e9ecef;
+            --light-blue-bg: #eef7ff;
+            --green-correct: #28a745;
+            --red-incorrect: #dc3545;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family:  -apple-system,'PingFang SC','Noto Sans SC', BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.8;
             margin: 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+        }
+        .sidebar {
+            width: 15%;
+            min-width: 180px;
+            max-width: 220px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            background: var(--content-bg-color);
+            border-right: 1px solid var(--border-color);
+            padding: 25px 15px;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+        .sidebar h3 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li a {
+            display: block;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #495057;
+            transition: all 0.2s ease;
+            font-size: 0.95em;
+        }
+        .sidebar li a:hover {
+            background-color: var(--light-blue-bg);
+            color: var(--primary-color);
+        }
+        .sidebar li a.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 600;
         }
         .container {
-            max-width: 900px;
-            margin: auto;
-            background: #ffffff;
+            flex-grow: 1;
             padding: 25px 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            max-width: 1280px; /* To maintain readability width */
+            margin: 0 auto;
         }
         .page {
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 25px;
-            margin-bottom: 25px;
+            background: var(--content-bg-color);
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
         .page:last-child {
-            border-bottom: none;
             margin-bottom: 0;
         }
         h1, h2, h3, h4 {
-            color: #212529;
-            font-weight: 600;
+            color: var(--heading-color);
+            font-weight: 700;
         }
         h1 {
             text-align: center;
             font-size: 2.2em;
-            color: #0056b3;
+            color: var(--primary-color);
             margin-bottom: 20px;
         }
         h2 {
             font-size: 1.8em;
-            border-bottom: 2px solid #0056b3;
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
-            margin-top: 30px;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            margin-bottom: 25px;
         }
         h3 {
             font-size: 1.4em;
-            color: #0069d9;
+            color: var(--primary-color);
             margin-top: 25px;
         }
         h4 {
             font-size: 1.1em;
-            font-weight: 700;
             margin-top: 20px;
-        }
-        .text-center {
-            text-align: center;
         }
         .footer {
             text-align: center;
@@ -66,30 +121,20 @@
             color: #6c757d;
             margin-top: 20px;
         }
-        ul, ol {
-            padding-left: 25px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
         .passage, .questions {
             background-color: #f8f9fa;
-            border-left: 5px solid #0056b3;
+            border-left: 5px solid var(--green-correct);
             padding: 20px;
             margin: 20px 0;
             border-radius: 5px;
         }
-        .questions {
-            background-color: #eef7ff;
-            border-left-color: #17a2b8;
+        .passage{
+            color: #1b1c1d;
+            background-color: #f0f4f9;
         }
-        .note {
-            font-style: italic;
-            color: #555;
-            background: #fffbe6;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ffeeba;
+        .questions {
+            background-color: var(--light-blue-bg);
+            border-left-color: var(--secondary-color);
         }
         .user-answer {
             border: 1px solid #ced4da;
@@ -102,15 +147,15 @@
         }
         .user-answer:focus {
             outline: none;
-            border-color: #0056b3;
+            border-color: var(--primary-color);
             box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2);
         }
         .user-answer.correct {
-            border-color: #28a745;
+            border-color: var(--green-correct);
             background-color: #e6f7ec;
         }
         .user-answer.incorrect {
-            border-color: #dc3545;
+            border-color: var(--red-incorrect);
             background-color: #f8d7da;
         }
         .toggle-answer {
@@ -118,20 +163,20 @@
             padding: 4px 10px;
             font-size: 0.85em;
             cursor: pointer;
-            border: 1px solid #0056b3;
+            border: 1px solid var(--primary-color);
             background-color: #fff;
-            color: #0056b3;
+            color: var(--primary-color);
             border-radius: 4px;
             transition: background-color 0.2s, color 0.2s;
             vertical-align: middle;
         }
         .toggle-answer:hover {
-            background-color: #0056b3;
+            background-color: var(--primary-color);
             color: #fff;
         }
         .answer {
             font-weight: bold;
-            color: #28a745;
+            color: var(--green-correct);
             background-color: #e6f7ec;
             padding: 3px 6px;
             border-radius: 3px;
@@ -141,16 +186,24 @@
     </style>
 </head>
 <body>
+<nav class="sidebar">
+    <h3>目录</h3>
+    <ul>
+        <li><a href="#chapter4">第四讲: Completion</a></li>
+        <li><a href="#chapter5">第五讲: T/F/NG</a></li>
+        <li><a href="#chapter6">第六讲: Matching</a></li>
+        <li><a href="#chapter7">第七讲: 篇章串讲</a></li>
+        <li><a href="#chapter8">第八讲: 考前突破</a></li>
+    </ul>
+</nav>
 <div class="container">
-
     <div class="page text-center">
         <h1>雅思阅读题型精讲与实战</h1>
         <p>主讲: 宋鹏昊 (新东方在线)</p>
     </div>
-
     <!-- Chapter 4 -->
-    <div class="page">
-        <h2>第四讲: Completion 类专题突破</h2>
+    <div class="page" id="chapter4-container">
+        <h2 id="chapter4">第四讲: Completion 类专题突破</h2>
         <h3>出题形式:</h3>
         <ul>
             <li>Notes completion</li>
@@ -170,9 +223,7 @@
             <li>填空题原词重现，注意字数，关注整个意群是否通顺</li>
             <li>Summary 如果是选择，注意同义替换</li>
         </ol>
-
         <hr>
-
         <h3>1. Notes Completion</h3>
         <h4>Passage: The secret of staying young</h4>
         <div class="passage">
@@ -200,10 +251,9 @@
             </ul>
         </div>
     </div>
-
     <!-- Chapter 5 -->
-    <div class="page">
-        <h2>第五讲: T/F/NG 类专题突破</h2>
+    <div class="page" id="chapter5-container">
+        <h2 id="chapter5">第五讲: T/F/NG 类专题突破</h2>
         <h3>出题形式</h3>
         <ul>
             <li>True / False / Not Given</li>
@@ -237,10 +287,9 @@
             <p><b>22.</b> Studying animals in zoos is less stressful for the animals than studying them in the wild. <input type="text" class="user-answer" placeholder="TRUE/FALSE/NOT GIVEN"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="not given">NOT GIVEN</span></p>
         </div>
     </div>
-
     <!-- Chapter 6 -->
-    <div class="page">
-        <h2>第六讲: Matching 类专题突破</h2>
+    <div class="page" id="chapter6-container">
+        <h2 id="chapter6">第六讲: Matching 类专题突破</h2>
         <h3>出题形式</h3>
         <ul>
             <li>Matching headings (段落标题配对)</li>
@@ -258,7 +307,6 @@
             <li><b>Features:</b> 选项顺序出现，通过选项找题目</li>
             <li><b>Sentence endings:</b> 顺序出题，看整个句子是否通顺</li>
         </ol>
-
         <hr>
         <h3>1. Matching Headings</h3>
         <h4>Passage: The Development of Museums</h4>
@@ -285,10 +333,9 @@
             <p><b>30.</b> Paragraph D <input type="text" class="user-answer" placeholder="Roman numeral"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="i">i</span></p>
         </div>
     </div>
-
     <!-- Chapter 7 -->
-    <div class="page">
-        <h2>第七讲: 经典篇章串讲</h2>
+    <div class="page" id="chapter7-container">
+        <h2 id="chapter7">第七讲: 经典篇章串讲</h2>
         <h3>Reading Passage 1: EFFECTS OF NOISE</h3>
         <div class="passage">
             <p>In general, it is plausible to suppose that we should prefer peace and quiet to noise. And yet most of us have had the experience of having to adjust to sleeping in the mountains or the countryside because it was initially 'too quiet', an experience that suggests that humans are capable of adapting to a wide range of noise levels. Research supports this view. For example, Glass and Singer (1972) exposed people to short bursts of very loud noise and then measured their ability to work out problems and their physiological reactions to the noise. The noise was quite disruptive at first, but after about four minutes the subjects were doing just as well on their tasks as control subjects who were not exposed to noise. Their physiological arousal also declined quickly to the same levels as those of the control subjects.</p>
@@ -304,10 +351,9 @@
             <p><b>29.</b> Researchers discovered that high noise levels are not likely to interfere with the... <input type="text" class="user-answer" placeholder="A/B/C/D"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="a">A. successful performance of a single task.</span></p>
         </div>
     </div>
-
     <!-- Chapter 8 -->
-    <div class="page">
-        <h2>第八讲: 雅思阅读考前突破</h2>
+    <div class="page" id="chapter8-container">
+        <h2 id="chapter8">第八讲: 雅思阅读考前突破</h2>
         <h3>核心知识回顾</h3>
         <h4>雅思阅读的特点</h4>
         <ol>
@@ -340,29 +386,21 @@
             <p>微博：@宋鹏昊老师呀 | 微信公众号：诚意干货铺 (ID：songpenghao666)</p>
         </div>
     </div>
-
-
 </div>
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const buttons = document.querySelectorAll('.toggle-answer');
-        buttons.forEach(button => {
+        const answerCheckButtons = document.querySelectorAll('.toggle-answer');
+        answerCheckButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const inputField = button.previousElementSibling;
                 const answerSpan = button.nextElementSibling;
-
                 if (answerSpan && answerSpan.classList.contains('answer')) {
-                    // If answer is hidden, show it and check
                     if (answerSpan.style.display === 'none' || answerSpan.style.display === '') {
                         answerSpan.style.display = 'inline';
                         button.textContent = '隐藏答案';
-
-                        // Check the answer if input field exists
                         if (inputField && inputField.classList.contains('user-answer')) {
                             const userAnswer = inputField.value.trim().toLowerCase();
                             const correctAnswer = answerSpan.dataset.answer.trim().toLowerCase();
-
                             if (userAnswer === correctAnswer) {
                                 inputField.classList.remove('incorrect');
                                 inputField.classList.add('correct');
@@ -371,7 +409,7 @@
                                 inputField.classList.add('incorrect');
                             }
                         }
-                    } else { // If answer is visible, hide it and reset
+                    } else {
                         answerSpan.style.display = 'none';
                         button.textContent = '核对答案';
                         if (inputField) {
@@ -381,6 +419,39 @@
                 }
             });
         });
+
+        // Sidebar Active Link on Scroll
+        const sections = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('.sidebar a');
+
+        if (sections.length > 0 && navLinks.length > 0) {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const heading = entry.target.querySelector('h2');
+                        if (heading) {
+                            const sectionId = heading.id;
+                            navLinks.forEach(link => {
+                                link.classList.remove('active');
+                                if (link.getAttribute('href') === `#${sectionId}`) {
+                                    link.classList.add('active');
+                                }
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
     });
 </script>
 </body>
