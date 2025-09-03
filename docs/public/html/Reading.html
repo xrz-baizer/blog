@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雅思阅读题型精讲与实战 - 宋鹏昊</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .page {
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+        .page:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        h1, h2, h3, h4 {
+            color: #212529;
+            font-weight: 600;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #0069d9;
+            margin-top: 25px;
+        }
+        h4 {
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-top: 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-top: 20px;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .passage, .questions {
+            background-color: #f8f9fa;
+            border-left: 5px solid #0056b3;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .questions {
+            background-color: #eef7ff;
+            border-left-color: #17a2b8;
+        }
+        .note {
+            font-style: italic;
+            color: #555;
+            background: #fffbe6;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ffeeba;
+        }
+        .user-answer {
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin: 0 8px;
+            width: 150px;
+            transition: border-color 0.2s, background-color 0.2s;
+            vertical-align: middle;
+        }
+        .user-answer:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 2px rgba(0, 86, 179, 0.2);
+        }
+        .user-answer.correct {
+            border-color: #28a745;
+            background-color: #e6f7ec;
+        }
+        .user-answer.incorrect {
+            border-color: #dc3545;
+            background-color: #f8d7da;
+        }
+        .toggle-answer {
+            margin-left: 5px;
+            padding: 4px 10px;
+            font-size: 0.85em;
+            cursor: pointer;
+            border: 1px solid #0056b3;
+            background-color: #fff;
+            color: #0056b3;
+            border-radius: 4px;
+            transition: background-color 0.2s, color 0.2s;
+            vertical-align: middle;
+        }
+        .toggle-answer:hover {
+            background-color: #0056b3;
+            color: #fff;
+        }
+        .answer {
+            font-weight: bold;
+            color: #28a745;
+            background-color: #e6f7ec;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-left: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="page text-center">
+        <h1>雅思阅读题型精讲与实战</h1>
+        <p>主讲: 宋鹏昊 (新东方在线)</p>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div class="page">
+        <h2>第四讲: Completion 类专题突破</h2>
+        <h3>出题形式:</h3>
+        <ul>
+            <li>Notes completion</li>
+            <li>Table completion</li>
+            <li>Sentence completion</li>
+            <li>Summary completion</li>
+            <li>Short answer questions</li>
+            <li>Flow-chart completion</li>
+            <li>Labeling a diagram</li>
+        </ul>
+        <h3>解题方法</h3>
+        <ol>
+            <li>根据题干关键词找到答题区域</li>
+            <li>通过空前空后信息判断填入内容的类型</li>
+            <li>关注原文结构和 table/notes 结构对应关系</li>
+            <li>关注题目是否乱序，一般是顺序或“不一定”</li>
+            <li>填空题原词重现，注意字数，关注整个意群是否通顺</li>
+            <li>Summary 如果是选择，注意同义替换</li>
+        </ol>
+
+        <hr>
+
+        <h3>1. Notes Completion</h3>
+        <h4>Passage: The secret of staying young</h4>
+        <div class="passage">
+            <p><b>2</b> Such age-defying feats are rare in the animal kingdom. Naked mole rats can live for almost 30 years and stay fit for nearly their entire lives. They can still reproduce even when old, and they never get cancer. But the vast majority of animals deteriorate with age just like people do. Like the naked mole rat, ants are social creatures that usually live in highly organised colonies. 'It's this social complexity that makes P. dentata useful for studying aging in people,' says Giraldo, now at the California Institute of Technology. Humans are also highly social, a trait that has been connected to healthier aging. By contrast, most animal studies of aging use mice, worms or fruit flies, which all lead much more isolated lives.</p>
+            <p><b>3</b> In the lab, P. dentata worker ants typically live for around 140 days. Giraldo focused on ants at four age ranges: 20 to 22 days, 45 to 47 days, 95 to 97 days and 120 to 122 days. Unlike all previous studies, which only estimated how old the ants were, her work tracked the ants from the time the pupae became adults, so she knew their exact ages. Then she put them through a range of tests.</p>
+            <p><b>4</b> Giraldo watched how well the ants took care of the young of the colony, recording how often each ant attended to, carried and fed them. She compared how well 20-day-old and 95-day-old ants followed the telltale scent that the insects usually leave to mark a trail to food. She tested how ants responded to light and also measured how active they were by counting how often ants in a small dish walked across a line. And she experimented with how ants react to live prey: a tethered fruit fly. Giraldo expected the older ants to perform poorly in all these tasks. But the elderly insects were all good caretakers and trail-followers--the 95-day-old ants could track the scent even longer than their younger counterparts. They all responded to light well, and the older ants were more active. And when it came to reacting to prey, the older ants attacked the poor fruit fly just as aggressively as the young ones did, flaring their mandibles or pulling at the fly's legs.</p>
+            <p><b>5</b> Then Giraldo compared the brains of 20-day-old and 95-day-old ants, identifying any cells that were close to death. She saw no major differences with age, nor was there any difference in the location of the dying cells, showing that age didn't seem to affect specific brain functions. Ants and other insects have structures in their brains called mushroom bodies, which are important for processing information, learning and memory. She also wanted to see if aging affects the density of synaptic complexes within these structures--regions where neurons come together. Again, the answer was no. What was more, the old ants didn't experience any drop in the levels of either serotonin or dopamine--brain chemicals whose decline often coincides with aging. In humans, for example, a decrease in serotonin has been linked to Alzheimer's disease.</p>
+        </div>
+        <div class="questions">
+            <h4>Questions 1-8</h4>
+            <p><b>Ysabel Giraldo's research</b></p>
+            <p>Focused on a total of <b>1.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="four">four</span> different age groups of ants, analyzing:</p>
+            <p><b>Behaviour:</b></p>
+            <ul>
+                <li>how well ants looked after their <b>2.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="young">young</span></li>
+                <li>their ability to locate <b>3.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="food">food</span> using a scent trail</li>
+                <li>the effect that <b>4.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="light">light</span> had on them</li>
+                <li>how <b>5.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="aggressively">aggressively</span> they attacked prey</li>
+            </ul>
+            <p><b>Brains:</b></p>
+            <ul>
+                <li>comparison between age and the <b>6.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="location">location</span> of dying cells in the brains of ants</li>
+                <li>condition of synaptic complexes (areas in which <b>7.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="neurons">neurons</span> meet) in the brain's 'mushroom bodies'</li>
+                <li>level of two <b>8.</b> <input type="text" class="user-answer" placeholder="请在此输入答案"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="chemicals">chemicals</span> in the brain associated with ageing</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chapter 5 -->
+    <div class="page">
+        <h2>第五讲: T/F/NG 类专题突破</h2>
+        <h3>出题形式</h3>
+        <ul>
+            <li>True / False / Not Given</li>
+            <li>Yes / No / Not Given</li>
+        </ul>
+        <h3>解题方法</h3>
+        <ol>
+            <li>找到句子 key idea，要看的是“这件事” True/False 还是 Not Given</li>
+            <li>没提直接 NG，提到在 T 和 F 中选择</li>
+            <li>通过关键词和顺序原则，找准定位区域</li>
+            <li>NG 指的是定位区域 NG，不是全文 NG</li>
+            <li>使用 not 检查，NG 加 not 还是 NG，T 加 not 变 F</li>
+            <li>关注因果关系、比较关系、绝对化表达</li>
+        </ol>
+        <hr>
+        <h3>1. True / False / Not Given</h3>
+        <h4>Passage: Why zoos are good</h4>
+        <div class="passage">
+            <p><b>A</b> In my view, it is perfectly possible for many species of animals living in zoos or wildlife parks to have a quality of life as high as, or higher than, in the wild. Animals in good zoos get a varied and high-quality diet with all the supplements required, and any illnesses they might have will be treated. Their movement might be somewhat restricted, but they have a safe environment in which to live, and they are spared bullying and social ostracism by others of their kind. They do not suffer from the threat or stress of predators, or the irritation and pain of parasites or injuries. The average captive animal will have a greater life expectancy compared with its wild counterpart, and will not die of drought, of starvation, or in the jaws of a predator. A lot of very nasty things happen to truly 'wild' animals that simply don't happen in good zoos, and to view a life that is 'free' as one that is automatically 'good' is, I think, an error. Furthermore, zoos serve several key purposes.</p>
+            <p><b>B</b> Firstly, zoos aid conservation. Colossal numbers of species are becoming extinct across the world, and many more are increasingly threatened and therefore risk extinction. Moreover, some of these collapses have been sudden, dramatic and unexpected, or were simply discovered very late in the day. A species protected in captivity can be bred up to provide a reservoir population against a population crash or extinction in the wild. A good number of species only exist in captivity, with many of these living in zoos. Still more only exist in the wild because they have been reintroduced from zoos, or have wild populations that have been boosted by captive bred animals. Without these efforts there would be fewer species alive today. Although reintroduction successes are few and far between, the numbers are increasing, and the very fact that species have been saved or reintroduced as a result of captive breeding proves the value of such initiatives.</p>
+            <p><b>C</b> Zoos also provide education. Many children and adults, especially those in cities, will never see a wild animal beyond a fox or pigeon. While it is true that television documentaries are becoming ever more detailed and impressive, and many natural history specimens are on display in museums, there really is nothing to compare with seeing a living creature in the flesh, hearing it, smelling it, watching what it does and having the time to absorb details. That alone will bring a greater understanding and perspective to many, and hopefully give them a greater appreciation for wildlife, conservation efforts and how they can contribute.</p>
+            <p><b>D</b> In addition to this, there is also the education that can take place in zoos through signs, talks and presentations which directly communicate information to visitors about the animals they are seeing and their place in the world. This was an area where zoos used to be lacking, but they are now increasingly sophisticated in their communication and outreach work. Many zoos also work directly to educate conservation workers in other countries, or send their animal keepers abroad to contribute their knowledge and skills to those working in zoos and reserves, thereby helping to improve conditions and reintroductions all over the world.</p>
+            <p><b>E</b> Zoos also play a key role in research. If we are to save wild species and restore and repair ecosystems we need to know about how key species live, act and react. Being able to undertake research on animals in zoos where there is less risk and fewer variables means real changes can be effected on wild populations. Finding out about, for example, the oestrus cycle of an animal or its breeding rate helps us manage wild populations. Procedures such as capturing and moving at-risk or dangerous individuals are bolstered by knowledge gained in zoos about doses for anaesthetics, and by experience in handling and transporting animals. This can make a real difference to conservation efforts and to the reduction of human-animal conflicts, and can provide a knowledge base for helping with the increasing threats of habitat destruction and other problems.</p>
+        </div>
+        <div class="questions">
+            <h4>Questions 18-22</h4>
+            <p><b>18.</b> An animal is likely to live longer in a zoo than in the wild. <input type="text" class="user-answer" placeholder="TRUE/FALSE/NOT GIVEN"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="true">TRUE</span></p>
+            <p><b>19.</b> There are some species in zoos which can no longer be found in the wild. <input type="text" class="user-answer" placeholder="TRUE/FALSE/NOT GIVEN"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="true">TRUE</span></p>
+            <p><b>20.</b> Improvements in the quality of TV wildlife documentaries have resulted in increased numbers of zoo visitors. <input type="text" class="user-answer" placeholder="TRUE/FALSE/NOT GIVEN"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="not given">NOT GIVEN</span></p>
+            <p><b>21.</b> Zoos have always excelled at transmitting information about animals to the public. <input type="text" class="user-answer" placeholder="TRUE/FALSE/NOT GIVEN"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="false">FALSE</span></p>
+            <p><b>22.</b> Studying animals in zoos is less stressful for the animals than studying them in the wild. <input type="text" class="user-answer" placeholder="TRUE/FALSE/NOT GIVEN"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="not given">NOT GIVEN</span></p>
+        </div>
+    </div>
+
+    <!-- Chapter 6 -->
+    <div class="page">
+        <h2>第六讲: Matching 类专题突破</h2>
+        <h3>出题形式</h3>
+        <ul>
+            <li>Matching headings (段落标题配对)</li>
+            <li>Matching information (信息段落配对)</li>
+            <li>Matching features (特征配对)</li>
+            <li>Matching sentence endings (句子结尾配对)</li>
+            <li>Multiple choice (选择题)</li>
+        </ul>
+        <h3>解题方法</h3>
+        <ol>
+            <li>注意乱序题，读文章时，随时进行标注</li>
+            <li>重点考查 scanning (扫读) 的能力</li>
+            <li><b>Headings:</b> 关注整个段落，可以先做也可以后做</li>
+            <li><b>Information:</b> 关注抽象词，考查 global understanding (全局理解)</li>
+            <li><b>Features:</b> 选项顺序出现，通过选项找题目</li>
+            <li><b>Sentence endings:</b> 顺序出题，看整个句子是否通顺</li>
+        </ol>
+
+        <hr>
+        <h3>1. Matching Headings</h3>
+        <h4>Passage: The Development of Museums</h4>
+        <div class="passage">
+            <p><b>A</b> The conviction that historical relics provide infallible testimony about the past is rooted in the nineteenth and early twentieth centuries, when science was regarded as objective and value free. As one writer observes: 'Although it is now evident that artefacts are as easily altered as chronicles, public faith in their veracity endures: a tangible relic seems ipso facto real.' Such conviction was, until recently, reflected in museum displays. Museums used to look and some still do much like storage rooms of objects packed together in showcases: good for scholars who wanted to study the subtle differences in design, but not for the ordinary visitor, to whom it all looked alike. Similarly, the information accompanying the objects often made little sense to the lay visitor. The content and format of explanations dated back to a time when the museum was the exclusive domain of the scientific researcher.</p>
+            <p><b>B</b> Recently, however, attitudes towards history and the way it should be presented have altered. The key word in heritage display is now 'experience', the more exciting the better and, if possible, involving all the senses. Good examples of this approach in the UK are the Jorvik Center in York; the National Museum of Photography, Film and Television in Bradford; and the Imperial War Museum in London. In the US the trend emerged much earlier: Williamsburg has been a prototype for many heritage developments in other parts of the world. No one can predict where the process will end. On so-called heritage sites the re-enactment of historical events is increasingly popular, and computers will soon provide virtual reality experiences, which will present visitors with a vivid image of the period of their choice, in which they themselves can act as if part of the historical environment. Such developments have been criticized as an intolerable vulgarization, but the success of many historical theme parks and similar locations suggests that the majority of the public does not share this opinion.</p>
+            <p><b>C</b> In a related development, the sharp distinction between museum and heritage sites on the one hand, and theme parks on the other, is gradually evaporating. They already borrow ideas and concepts from one another. For example, museums have adopted story lines for exhibitions, sites have accepted 'theming' as a relevant tool, and theme parks are moving towards more authenticity and research-based presentations. In zoos, animals are no longer kept in cages, but in great spaces, either in the open air or in enormous greenhouses, such as the jungle and desert environments in Burgers' Zoo in Holland. This particular trend is regarded as one of the major developments in the presentation of natural history in the twentieth century.</p>
+            <p><b>D</b> Theme parks are undergoing other changes, too, as they try to present more serious social and cultural issues, and move away from fantasy. This development is a response to market forces and, although museums and heritage sites have a special, rather distinct, role to fulfil, they are also operating in a very competitive environment, where visitors make choices on how and where to spend their free time. Heritage and museum experts do not have to invent stories and recreate historical environments to attract their visitors: their assets are already in place. However, exhibits must be both based on artefacts and facts as we know them, and attractively presented. Those who are professionally engaged in the art of interpreting history are thus in a difficult position, as they must steer a narrow course between the demands of 'evidence' and 'attractiveness', especially given the increasing need in the heritage industry for income-generating activities.</p>
+        </div>
+        <div class="questions">
+            <h4>Questions 27-30</h4>
+            <p><b>List of headings:</b></p>
+            <ul>
+                <li>i. Commercial pressures on people in charge</li>
+                <li>ii. Mixed views on current changes to museums</li>
+                <li>iii. Interpreting the facts to meet visitor expectations</li>
+                <li>iv. The international dimension</li>
+                <li>v. Collections of factual evidence</li>
+                <li>vi. Fewer differences between public attractions</li>
+            </ul>
+            <p><b>27.</b> Paragraph A <input type="text" class="user-answer" placeholder="Roman numeral"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="v">v</span></p>
+            <p><b>28.</b> Paragraph B <input type="text" class="user-answer" placeholder="Roman numeral"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="ii">ii</span></p>
+            <p><b>29.</b> Paragraph C <input type="text" class="user-answer" placeholder="Roman numeral"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="vi">vi</span></p>
+            <p><b>30.</b> Paragraph D <input type="text" class="user-answer" placeholder="Roman numeral"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="i">i</span></p>
+        </div>
+    </div>
+
+    <!-- Chapter 7 -->
+    <div class="page">
+        <h2>第七讲: 经典篇章串讲</h2>
+        <h3>Reading Passage 1: EFFECTS OF NOISE</h3>
+        <div class="passage">
+            <p>In general, it is plausible to suppose that we should prefer peace and quiet to noise. And yet most of us have had the experience of having to adjust to sleeping in the mountains or the countryside because it was initially 'too quiet', an experience that suggests that humans are capable of adapting to a wide range of noise levels. Research supports this view. For example, Glass and Singer (1972) exposed people to short bursts of very loud noise and then measured their ability to work out problems and their physiological reactions to the noise. The noise was quite disruptive at first, but after about four minutes the subjects were doing just as well on their tasks as control subjects who were not exposed to noise. Their physiological arousal also declined quickly to the same levels as those of the control subjects.</p>
+            <p>But there are limits to adaptation and loud noise becomes more troublesome if the person is required to concentrate on more than one task. For example, high noise levels interfered with the performance of subjects who were required to monitor three dials at a time, a task not unlike that of an aeroplane pilot or an air-traffic controller (Broadbent, 1957). Similarly, noise did not affect a subject's ability to track a moving line with a steering wheel, but it did interfere with the subject's ability to repeat numbers while tracking (Finkelman and Glass, 1970).</p>
+            <p>Probably the most significant finding from research on noise is that its predictability is more important than how loud it is. We are much more able to 'tune out' chronic background noise, even if it is quite loud, than to work under circumstances with unexpected intrusions of noise. In the Glass and Singer study, in which subjects were exposed to bursts of noise as they worked on a task, some subjects heard loud bursts and others heard soft bursts. For some subjects, the bursts were spaced exactly one minute apart (predictable noise); others heard the same amount of noise overall, but the bursts occurred at random intervals (unpredictable noise). Subjects reported finding the predictable and unpredictable noise equally annoying, and all subjects performed at about the same level during the noise portion of the experiment. But the different noise conditions had quite different after-effects when the subjects were required to proofread written material under conditions of no noise. As shown in Table 1 the unpredictable noise produced more errors in the later proofreading task than predictable noise; and soft, unpredictable noise actually produced slightly more errors on this task than the loud, predictable noise.</p>
+            <p>Apparently, unpredictable noise produces more fatigue than predictable noise, but it takes a while for this fatigue to take its toll on performance.</p>
+            <p>Predictability is not the only variable that reduces or eliminates the negative effects of noise. Another is control. If the individual knows that he or she can control the noise, this seems to eliminate both its negative effects at the time and its after-effects. This is true even if the individual never actually exercises his or her option to turn the noise off (Glass and Singer, 1972). Just the knowledge that one has control is sufficient.</p>
+        </div>
+        <div class="questions">
+            <h4>Questions 27-29: Multiple Choice</h4>
+            <p><b>27.</b> The writer suggests that people may have difficulty sleeping in the mountains because... <input type="text" class="user-answer" placeholder="A/B/C/D"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="d">D. they may have adapted to a higher noise level in the city.</span></p>
+            <p><b>28.</b> In noise experiments, Glass and Singer found that... <input type="text" class="user-answer" placeholder="A/B/C/D"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="c">C. bursts of noise do not seriously disrupt problem-solving in the long term.</span></p>
+            <p><b>29.</b> Researchers discovered that high noise levels are not likely to interfere with the... <input type="text" class="user-answer" placeholder="A/B/C/D"> <button class="toggle-answer">核对答案</button><span class="answer" data-answer="a">A. successful performance of a single task.</span></p>
+        </div>
+    </div>
+
+    <!-- Chapter 8 -->
+    <div class="page">
+        <h2>第八讲: 雅思阅读考前突破</h2>
+        <h3>核心知识回顾</h3>
+        <h4>雅思阅读的特点</h4>
+        <ol>
+            <li>篇章比较长</li>
+            <li>阅读速度要求高</li>
+            <li>句式不那么复杂</li>
+            <li>不注重考逻辑</li>
+            <li>语言表达比较灵活</li>
+            <li>文化背景不熟悉</li>
+        </ol>
+        <h4>几条铁律</h4>
+        <ol>
+            <li>读懂文章，才能做对题目</li>
+            <li>先解决阅读深度问题，再解决阅读速度问题</li>
+            <li>平时多做文本细读，考试才能游刃有余</li>
+        </ol>
+
+        <hr>
+        <h3>考前任务清单：</h3>
+        <h4>个人能力自检</h4>
+        <ol>
+            <li><b>核心词汇:</b> 词汇书考前刷 2-3 遍，所有词汇划完。</li>
+            <li><b>句子理解:</b> 语法中的词法句法搞清楚，不要有盲点。</li>
+            <li><b>段落结构分析:</b> 把课听完，笔记整理好，自己的心得反思也写进去，考前看 2-3 遍。</li>
+            <li><b>逐题解析:</b> 真题文章，做到三个标准：没有单词不认识 + 没有句子读不懂 + 没有题目解释不清楚。</li>
+            <li><b>阅读深度-翻译:</b> 以套题为单位精读，每篇文章 3 个段落，难度大的全文翻译。</li>
+            <li><b>压力模考:</b> 考前大量压力模考，压缩时间或者增加篇数。</li>
+        </ol>
+        <div class="footer">
+            <p>微博：@宋鹏昊老师呀 | 微信公众号：诚意干货铺 (ID：songpenghao666)</p>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.toggle-answer');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const inputField = button.previousElementSibling;
+                const answerSpan = button.nextElementSibling;
+
+                if (answerSpan && answerSpan.classList.contains('answer')) {
+                    // If answer is hidden, show it and check
+                    if (answerSpan.style.display === 'none' || answerSpan.style.display === '') {
+                        answerSpan.style.display = 'inline';
+                        button.textContent = '隐藏答案';
+
+                        // Check the answer if input field exists
+                        if (inputField && inputField.classList.contains('user-answer')) {
+                            const userAnswer = inputField.value.trim().toLowerCase();
+                            const correctAnswer = answerSpan.dataset.answer.trim().toLowerCase();
+
+                            if (userAnswer === correctAnswer) {
+                                inputField.classList.remove('incorrect');
+                                inputField.classList.add('correct');
+                            } else {
+                                inputField.classList.remove('correct');
+                                inputField.classList.add('incorrect');
+                            }
+                        }
+                    } else { // If answer is visible, hide it and reset
+                        answerSpan.style.display = 'none';
+                        button.textContent = '核对答案';
+                        if (inputField) {
+                            inputField.classList.remove('correct', 'incorrect');
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
+
