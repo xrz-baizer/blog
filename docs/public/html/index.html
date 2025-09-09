@@ -105,6 +105,15 @@
         #page-wordconverter .action-btn { background: transparent; border: none; color: var(--vp-c-text-2); cursor: pointer; padding: 0.25rem; border-radius: 4px; transition: all 0.2s ease; }
         #page-wordconverter .action-btn:hover { color: var(--vp-c-brand-1); background-color: var(--vp-c-bg-soft); }
         #page-wordconverter .output-container pre { font-family: var(--vp-font-family-mono, monospace); white-space: pre-wrap; word-break: break-all; color: var(--vp-c-text-1); margin: 0; font-size: 0.95rem; line-height: 1.6; padding: 1.5rem; }
+
+        /* Styles for Review Plan Generator */
+        #page-reviewplan .toast {
+            visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center;
+            border-radius: 8px; padding: 16px; position: fixed; z-index: 1; left: 50%;
+            transform: translateX(-50%); bottom: 30px; opacity: 0;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        #page-reviewplan .toast.show { visibility: visible; opacity: 1; }
     </style>
 </head>
 <body class="bg-[#d9f4e4]">
@@ -137,9 +146,13 @@
                 <i data-lucide="music" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
                 Audio Lyric Player
             </a>
+            <a href="#page-reviewplan" class="nav-item group flex items-center px-3 py-2 text-[#003716] rounded-lg hover:bg-[#d9f4e4] transition-colors">
+                <i data-lucide="calendar-check" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
+                Ebbinghaus Plan
+            </a>
         </nav>
         <div class="p-4 border-t border-[#bde0c9] text-xs text-[#003716]/60">
-            Version 1.1.0
+            Version 1.2.0
         </div>
     </aside>
 
@@ -266,6 +279,45 @@
         <!-- Page 6: Audio Lyric Player (Vue) -->
         <div id="page-audiolyric" class="tool-page h-full">
             <!-- Vue app will mount here -->
+        </div>
+
+        <!-- Page 7: Ebbinghaus Review Plan Generator -->
+        <div id="page-reviewplan" class="tool-page">
+            <div class="flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8">
+                <div class="w-full max-w-4xl mx-auto">
+                    <div class="bg-[#e9f8ef] shadow-lg rounded-2xl p-6 sm:p-8 border border-[#bde0c9]">
+                        <div class="text-center mb-8">
+                            <h1 class="text-3xl sm:text-4xl font-bold text-[#003716]">Ebbinghaus Review Plan Generator</h1>
+                            <p class="text-[#003716]/80 mt-2">Create the most effective vocabulary review plan based on the forgetting curve.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="totalWords" class="block text-sm font-medium text-[#003716] mb-2">Total Words</label>
+                                <input type="number" id="totalWords" value="3000" class="w-full px-4 py-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] transition duration-200" placeholder="e.g., 3000">
+                            </div>
+                            <div>
+                                <label for="dailyWords" class="block text-sm font-medium text-[#003716] mb-2">New Words Per Day</label>
+                                <input type="number" id="dailyWords" value="100" class="w-full px-4 py-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] transition duration-200" placeholder="e.g., 100">
+                            </div>
+                        </div>
+                        <div class="text-center mb-8">
+                            <button id="generate-plan-btn" class="w-full md:w-auto bg-[#40c593] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-[#35a97a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593] transition transform hover:scale-105">
+                                Generate Plan
+                            </button>
+                        </div>
+                        <div id="result-container" class="hidden">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-2xl font-bold text-[#003716]">Your Custom Review Plan</h2>
+                                <button id="copy-markdown-btn" class="bg-[#d9f4e4] text-[#003716] font-semibold py-2 px-4 rounded-lg hover:bg-[#c8ead8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#a3e6c8] transition">
+                                    Copy Markdown
+                                </button>
+                            </div>
+                            <textarea id="result" readonly class="w-full h-96 p-4 bg-[#003716]/90 text-gray-200 font-mono border border-[#003716]/50 rounded-lg resize-y focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593]"></textarea>
+                        </div>
+                    </div>
+                    <div id="toast" class="toast">Successfully copied to clipboard!</div>
+                </div>
+            </div>
         </div>
 
     </main>
@@ -613,47 +665,140 @@
         });
     })();
 
+    // --- Script for Page 7: Ebbinghaus Review Plan ---
+    (() => {
+        const page = document.getElementById('page-reviewplan');
+        if (!page) return;
+
+        const totalWordsInput = page.querySelector('#totalWords');
+        const dailyWordsInput = page.querySelector('#dailyWords');
+        const generateBtn = page.querySelector('#generate-plan-btn');
+        const copyBtn = page.querySelector('#copy-markdown-btn');
+        const resultContainer = page.querySelector('#result-container');
+        const resultTextarea = page.querySelector('#result');
+        const toastEl = page.querySelector('#toast');
+
+        function generatePlan() {
+            const totalWords = parseInt(totalWordsInput.value);
+            const dailyWords = parseInt(dailyWordsInput.value);
+
+            if (isNaN(totalWords) || isNaN(dailyWords) || totalWords <= 0 || dailyWords <= 0) {
+                showToast("Please enter valid positive numbers!", true);
+                return;
+            }
+
+            const learningDays = Math.ceil(totalWords / dailyWords);
+            const totalDays = learningDays + 14;
+
+            let markdown = `### Ebbinghaus Review Schedule (${totalWords} Words - ${dailyWords}/Day)\n\n`;
+            markdown += `**Instructions:**\n- This plan is based on the Ebbinghaus forgetting curve, with reviews scheduled for the **2nd, 4th, 8th, and 15th day** after learning.\n- A dash "-" indicates no review task for that category on that day.\n\n`;
+            markdown += "| Day   | New Words       | Review (Day 2) | Review (Day 4) | Review (Day 8) | Review (Day 15) |\n";
+            markdown += "| :--:  | :------------:  | :------------: | :------------: | :------------: | :-------------: |\n";
+
+            for (let day = 1; day <= totalDays; day++) {
+                let hasTasks = false;
+                const getWordRange = (learnDayIndex) => {
+                    if (learnDayIndex <= 0 || learnDayIndex > learningDays) return "-";
+                    const start = (learnDayIndex - 1) * dailyWords + 1;
+                    let end = learnDayIndex * dailyWords;
+                    if (end > totalWords) end = totalWords;
+                    return `${start} - ${end}`;
+                };
+
+                const newWordsText = (day <= learningDays) ? getWordRange(day) : "-";
+                if (newWordsText !== '-') hasTasks = true;
+
+                const review2Text = getWordRange(day - 1);
+                const review4Text = getWordRange(day - 3);
+                const review8Text = getWordRange(day - 7);
+                const review15Text = getWordRange(day - 14);
+
+                if (review2Text !== '-' || review4Text !== '-' || review8Text !== '-' || review15Text !== '-') {
+                    hasTasks = true;
+                }
+
+                if (day === learningDays + 1) {
+                    markdown += `|---|**End of new word learning phase. Entering review-only phase.**|---|---|---|---|\n`;
+                }
+
+                if (hasTasks) {
+                    markdown += `| Day ${day} | ${newWordsText} | ${review2Text} | ${review4Text} | ${review8Text} | ${review15Text} |\n`;
+                }
+            }
+
+            resultTextarea.value = markdown;
+            resultContainer.classList.remove('hidden');
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyToClipboard() {
+            if (!resultTextarea.value) return;
+            navigator.clipboard.writeText(resultTextarea.value).then(() => {
+                showToast("Successfully copied to clipboard!");
+            }).catch(err => {
+                showToast("Copy failed. Please copy manually.", true);
+            });
+        }
+
+        function showToast(message, isError = false) {
+            toastEl.textContent = message;
+            toastEl.style.backgroundColor = isError ? '#ef4444' : '#333';
+            toastEl.classList.add('show');
+            setTimeout(() => {
+                toastEl.classList.remove('show');
+            }, 3000);
+        }
+
+        generateBtn.addEventListener('click', generatePlan);
+        copyBtn.addEventListener('click', copyToClipboard);
+
+        // Auto-generate on load
+        generatePlan();
+
+    })();
+
+
     // --- Vue App Integration ---
     const { createApp, ref } = Vue;
 
     // Vue Component: Word Converter
     const WordConverter = {
         template: `
-            <div class="xml-converter-container">
-                <div class="title">
-                    <i class="fas fa-file-code"></i>
-                    Convert YouDao Words (XML)
-                </div>
-                <div class="file-input-wrapper">
-                    <input type="file" id="xmlFile" class="file-input" accept=".xml" @change="handleFileSelect" ref="fileInput">
-                    <label for="xmlFile" class="file-input-label">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        Select XML File
-                    </label>
-                    <div class="file-name" v-if="fileName">
-                        <i class="fas fa-file-alt"></i> {{ fileName }}
-                    </div>
-                </div>
-                <div class="button-group">
-                    <button class="convert-btn" @click="convertXMLToTXT" :disabled="!fileName">
-                        <i class="fas fa-file-alt"></i> Convert to Text
-                    </button>
-                    <button class="convert-btn json-btn" @click="convertXMLToJSON" :disabled="!fileName">
-                        <i class="fas fa-file-code"></i> Convert to JSON
-                    </button>
-                </div>
-                <div class="output-container">
-                    <div class="output-header">
-                        <span>Output</span>
-                        <div class="output-actions" v-if="outputText !== 'Converted text will appear here...'">
-                            <button class="action-btn copy-btn" @click="copyToClipboard">
-                                <i class="fas fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <pre id="output">{{ outputText }}</pre>
-                </div>
+          <div class="xml-converter-container">
+            <div class="title">
+              <i class="fas fa-file-code"></i>
+              Convert YouDao Words (XML)
             </div>
+            <div class="file-input-wrapper">
+              <input type="file" id="xmlFile" class="file-input" accept=".xml" @change="handleFileSelect" ref="fileInput">
+              <label for="xmlFile" class="file-input-label">
+                <i class="fas fa-cloud-upload-alt"></i>
+                Select XML File
+              </label>
+              <div class="file-name" v-if="fileName">
+                <i class="fas fa-file-alt"></i> {{ fileName }}
+              </div>
+            </div>
+            <div class="button-group">
+              <button class="convert-btn" @click="convertXMLToTXT" :disabled="!fileName">
+                <i class="fas fa-file-alt"></i> Convert to Text
+              </button>
+              <button class="convert-btn json-btn" @click="convertXMLToJSON" :disabled="!fileName">
+                <i class="fas fa-file-code"></i> Convert to JSON
+              </button>
+            </div>
+            <div class="output-container">
+              <div class="output-header">
+                <span>Output</span>
+                <div class="output-actions" v-if="outputText !== 'Converted text will appear here...'">
+                  <button class="action-btn copy-btn" @click="copyToClipboard">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+              <pre id="output">{{ outputText }}</pre>
+            </div>
+          </div>
         `,
         setup() {
             const fileName = ref('');
@@ -727,47 +872,47 @@
     // Vue Component: Audio Lyric Player
     const AudioLyricPlayer = {
         template: `
-            <div class="container">
-                <div class="left-panel">
-                    <h2>Audio Lyric Player</h2>
-                    <div class="file-input card-style card-shadow">
-                        <label>Import MP3 Audio</label>
-                        <input type="file" accept="audio/mp3" @change="handleAudioUpload" ref="audioInput"/>
-                        <div class="file-button" @click="$refs.audioInput.click()">
-                            <span>Select Audio File</span>
-                        </div>
-                        <div class="file-name">{{ audioFileName }}</div>
-                    </div>
-                    <div class="file-input card-style card-shadow">
-                        <label>Import LRC/SRT Lyrics</label>
-                        <input type="file" accept=".lrc,.txt,.srt" @change="handleLyricUpload" ref="lyricInput"/>
-                        <div class="file-button" @click="$refs.lyricInput.click()">
-                            <span>Select Lyric File</span>
-                        </div>
-                        <div class="file-name">{{ lyricFileName }}</div>
-                        <div class="lyric-input-container">
-                            <label>Or paste lyrics directly</label>
-                            <textarea class="lyric-input" v-model="lyricText" placeholder="Paste LRC or SRT lyrics here"></textarea>
-                        </div>
-                    </div>
-                    <div class="audio-section card-style card-shadow">
-                        <audio ref="audioPlayer" controls></audio>
-                        <div class="controls">
-                            <button @click="playFull">Play Full</button>
-                            <button @click="clearLyrics" class="clear-btn">Clear Lyrics</button>
-                        </div>
-                    </div>
+          <div class="container">
+            <div class="left-panel">
+              <h2>Audio Lyric Player</h2>
+              <div class="file-input card-style card-shadow">
+                <label>Import MP3 Audio</label>
+                <input type="file" accept="audio/mp3" @change="handleAudioUpload" ref="audioInput"/>
+                <div class="file-button" @click="$refs.audioInput.click()">
+                  <span>Select Audio File</span>
                 </div>
-                <div class="right-panel" :class="{ visible: showLyrics }">
-                    <div class="lyrics-container card-style card-shadow">
-                        <div class="lyrics-scroll">
-                            <div v-for="(line, idx) in lyrics" :key="idx" class="lyric-line" :class="{ active: idx === currentLine }" @click="playLine(idx)">
-                                {{ line.text }}
-                            </div>
-                        </div>
-                    </div>
+                <div class="file-name">{{ audioFileName }}</div>
+              </div>
+              <div class="file-input card-style card-shadow">
+                <label>Import LRC/SRT Lyrics</label>
+                <input type="file" accept=".lrc,.txt,.srt" @change="handleLyricUpload" ref="lyricInput"/>
+                <div class="file-button" @click="$refs.lyricInput.click()">
+                  <span>Select Lyric File</span>
                 </div>
+                <div class="file-name">{{ lyricFileName }}</div>
+                <div class="lyric-input-container">
+                  <label>Or paste lyrics directly</label>
+                  <textarea class="lyric-input" v-model="lyricText" placeholder="Paste LRC or SRT lyrics here"></textarea>
+                </div>
+              </div>
+              <div class="audio-section card-style card-shadow">
+                <audio ref="audioPlayer" controls></audio>
+                <div class="controls">
+                  <button @click="playFull">Play Full</button>
+                  <button @click="clearLyrics" class="clear-btn">Clear Lyrics</button>
+                </div>
+              </div>
             </div>
+            <div class="right-panel" :class="{ visible: showLyrics }">
+              <div class="lyrics-container card-style card-shadow">
+                <div class="lyrics-scroll">
+                  <div v-for="(line, idx) in lyrics" :key="idx" class="lyric-line" :class="{ active: idx === currentLine }" @click="playLine(idx)">
+                    {{ line.text }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         `,
         data() {
             return { lyrics: [], currentLine: 0, singleLineMode: false, pauseAt: null, isFullPlayMode: false, audioFileName: '', lyricFileName: '', lyricText: '', showLyrics: false }
