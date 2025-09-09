@@ -8,11 +8,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/docs/public/html/WordBookEdit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/public/html/WordBookFormatOptimization.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/html/1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/html/Questions.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/Color.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/WordbookTool.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/html/WordBookEdit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/html/WordBookFormatOptimization.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -377,6 +376,10 @@
       <workItem from="1756892238023" duration="7394000" />
       <workItem from="1756954621121" duration="3911000" />
       <workItem from="1757325466522" duration="319000" />
+      <workItem from="1757326589335" duration="1518000" />
+      <workItem from="1757384992561" duration="346000" />
+      <workItem from="1757385356731" duration="2029000" />
+      <workItem from="1757387720163" duration="259000" />
     </task>
     <servers />
   </component>
