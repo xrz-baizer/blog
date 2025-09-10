@@ -1,1012 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <title>HTML 文件列表</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Learning Toolkit</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <style>
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #d9f4e4; /* Primary Background */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #003716; /* Font Color */
+            margin: 0;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            padding: 6% 18%;
+        }
+        .header {
+            padding: 20px 20px 10px 20px;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
             color: #003716;
         }
-        .nav-item.active {
-            background-color: #c8ead8;
-            color: #003716;
-            font-weight: 600;
-        }
-        .tool-page {
-            display: none;
-        }
-        .tool-page.active {
-            display: block;
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        /* Custom scrollbar for sentence practice */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Styles from WordBookFormatOptimization */
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background-color: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #d1d5db; border-radius: 3px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background-color: #9ca3af; }
-        .smooth-transition { transition: all 0.2s ease-in-out; }
-
-        /* Styles for AudioLyricPlayer */
-        :root { --ios-blue: #007AFF; }
-        #page-audiolyric .container {
-            background: linear-gradient(135deg, #e9f8ef 0%, #d9f4e4 100%);
-            padding: 20px;
-            display: flex;
-            gap: 30px;
-            flex: 1;
-            height: 100%;
+        .inset-group {
+            background-color: #e9f8ef; /* Secondary Background */
+            border-radius: 12px;
+            margin: 0 20px 20px 20px;
             overflow: hidden;
-            justify-content: center;
+            border-top: 4px solid #4db6ac; /* Accent Color */
+            box-shadow: 0 8px 40px 0 rgba(0, 55, 22, 0.15);
         }
-        #page-audiolyric .left-panel { width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 8px; overflow-y: auto; height: fit-content; margin: auto 0; }
-        #page-audiolyric .right-panel { flex: 1; min-width: 0; display: none; height: 100%; overflow: hidden; }
-        #page-audiolyric .right-panel.visible { display: block; }
-        #page-audiolyric h2 { color: #003716; font-weight: 600; margin: 0; text-align: center; font-size: 24px; }
-        #page-audiolyric .card-style { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); border-radius: 12px; border: 1px solid rgba(200, 234, 216, 0.8); transition: all 0.3s ease; }
-        #page-audiolyric .card-shadow { box-shadow: 0 2px 10px -2px rgba(0, 55, 22, 0.05); }
-        #page-audiolyric .card-shadow:hover { box-shadow: 0 4px 20px -4px rgba(0, 55, 22, 0.1); transform: translateY(-1px); }
-        #page-audiolyric .file-input { padding: 16px 20px; box-sizing: border-box; }
-        #page-audiolyric .file-input label { display: block; color: #003716; font-size: 14px; margin-bottom: 12px; }
-        #page-audiolyric .file-input .file-button { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 12px 16px; background: rgba(64, 197, 147, 0.1); color: #40c593; border: 1px dashed rgba(64, 197, 147, 0.3); border-radius: 8px; font-size: 15px; cursor: pointer; transition: all 0.3s ease; box-sizing: border-box; }
-        #page-audiolyric .file-input .file-button:hover { background: rgba(64, 197, 147, 0.15); border-color: rgba(64, 197, 147, 0.4); }
-        #page-audiolyric .file-input .file-name { margin-top: 8px; font-size: 14px; color: #003716; word-break: break-all; padding: 0 4px; }
-        #page-audiolyric .file-input input[type="file"] { display: none; }
-        #page-audiolyric .audio-section { padding: 20px; }
-        #page-audiolyric .lyrics-container { height: 100%; padding: 24px; overflow-y: auto; position: relative; }
-        #page-audiolyric .lyric-input-container { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(200, 234, 216, 0.5); }
-        #page-audiolyric .lyric-input { width: 100%; min-height: 120px; padding: 12px; border: 1px solid rgba(200, 234, 216, 0.5); border-radius: 8px; background: rgba(255, 255, 255, 0.5); font-family: inherit; font-size: 14px; line-height: 1.5; resize: vertical; transition: all 0.3s ease; box-sizing: border-box; }
-        #page-audiolyric .lyric-input:focus { outline: none; border-color: #40c593; background: rgba(255, 255, 255, 0.8); }
-        #page-audiolyric audio { width: 100%; margin: 0; border-radius: 8px; }
-        #page-audiolyric .controls { margin-top: 10px; display: flex; gap: 12px; }
-        #page-audiolyric button { flex: 1; padding: 14px 20px; background: #40c593; color: #FFFFFF; border: none; border-radius: 10px; font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 2px 8px -2px rgba(64, 197, 147, 0.2); }
-        #page-audiolyric .clear-btn { background: rgba(255, 59, 48, 0.8); box-shadow: 0 2px 8px -2px rgba(255, 59, 48, 0.2); }
-        #page-audiolyric .clear-btn:hover { background: rgba(255, 59, 48, 1); box-shadow: 0 4px 15px -4px rgba(255, 59, 48, 0.3); }
-        #page-audiolyric button:hover { background: #35a97a; box-shadow: 0 4px 15px -4px rgba(64, 197, 147, 0.3); transform: translateY(-1px); }
-        #page-audiolyric .lyric-line { cursor: pointer; padding: 8px 16px; margin: 6px 0; border-radius: 8px; transition: all 0.4s; font-weight: 500; font-size: 18px; line-height: 1.4; }
-        #page-audiolyric .lyric-line:hover { background: rgba(255, 255, 255, 0.5); }
-        #page-audiolyric .lyric-line.active { color: #40c593; font-size: 20px; background: rgba(64, 197, 147, 0.1); }
-
-        /* Styles for ConvertWordComponent */
-        #page-wordconverter { --vp-c-bg-soft: #e9f8ef; --vp-c-divider: #bde0c9; --vp-c-brand-1: #40c593; --vp-c-brand-3: #a3e6c8; --vp-c-text-1: #003716; --vp-c-text-2: #003716; --vp-c-bg-alt: #d9f4e4; --vp-shadow-3: 0 4px 12px rgba(0,55,22,0.08); --vp-shadow-4: 0 6px 16px rgba(0,55,22,0.12); --vp-shadow-2: 0 2px 8px rgba(0,55,22,0.06); --vp-c-green-1: #28a745; --vp-c-green-2: #218838; --vp-font-family-mono: monospace;}
-        #page-wordconverter .xml-converter-container { background: var(--vp-c-bg-soft); border-radius: 16px; padding: 2.5rem; width: 100%; max-width: 800px; margin: 2rem auto; box-shadow: var(--vp-shadow-3); border: 1px solid var(--vp-c-divider); }
-        #page-wordconverter .title { font-size: 2rem; margin-bottom: 2rem; color: var(--vp-c-brand-1); text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.75rem; font-weight: 700; }
-        #page-wordconverter .file-input-wrapper { position: relative; margin-bottom: 2rem; }
-        #page-wordconverter .file-input { display: none; }
-        #page-wordconverter .file-input-label { display: flex; align-items: center; justify-content: center; width: 100%; padding: 1.5rem; background-color: var(--vp-c-bg-alt); color: var(--vp-c-text-1); border: 2px dashed var(--vp-c-brand-3); border-radius: 12px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; gap: 0.75rem; }
-        #page-wordconverter .file-input-label:hover { background-color: var(--vp-c-bg-soft); border-color: var(--vp-c-brand-1); color: var(--vp-c-brand-1); }
-        #page-wordconverter .file-name { margin-top: 1rem; color: var(--vp-c-text-2); font-size: 0.95rem; text-align: center; padding: 0.5rem; background-color: var(--vp-c-bg-alt); border-radius: 8px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; animation: fadeIn 0.5s ease; }
-        #page-wordconverter .button-group { display: flex; justify-content: center; gap: 1.5rem; margin: 2rem auto; }
-        #page-wordconverter .convert-btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; min-width: 180px; background-color: #40c593; color: white; border: none; padding: 1rem 1.5rem; border-radius: 30px; cursor: pointer; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-        #page-wordconverter .convert-btn.json-btn { background-color: #35a97a; }
-        #page-wordconverter .convert-btn:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }
-        #page-wordconverter .convert-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-        #page-wordconverter .output-container { margin-top: 1.5rem; height: 350px; overflow-y: auto; background-color: #d9f4e4; border-radius: 12px; border: 1px solid var(--vp-c-divider); }
-        #page-wordconverter .output-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid var(--vp-c-divider); background-color: var(--vp-c-bg-alt); font-weight: 600; color: var(--vp-c-text-1); }
-        #page-wordconverter .action-btn { background: transparent; border: none; color: var(--vp-c-text-2); cursor: pointer; padding: 0.25rem; border-radius: 4px; transition: all 0.2s ease; }
-        #page-wordconverter .action-btn:hover { color: var(--vp-c-brand-1); background-color: var(--vp-c-bg-soft); }
-        #page-wordconverter .output-container pre { font-family: var(--vp-font-family-mono, monospace); white-space: pre-wrap; word-break: break-all; color: var(--vp-c-text-1); margin: 0; font-size: 0.95rem; line-height: 1.6; padding: 1.5rem; }
-
-        /* Styles for Review Plan Generator */
-        #page-reviewplan .toast {
-            visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center;
-            border-radius: 8px; padding: 16px; position: fixed; z-index: 1; left: 50%;
-            transform: translateX(-50%); bottom: 30px; opacity: 0;
-            transition: opacity 0.5s, visibility 0.5s;
+        .inset-group ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-        #page-reviewplan .toast.show { visibility: visible; opacity: 1; }
+        .inset-group li {
+            border-bottom: 1px solid rgba(0, 55, 22, 0.1);
+            position: relative;
+        }
+        .inset-group li:last-child {
+            border-bottom: none;
+        }
+        .inset-group li a {
+            display: block;
+            padding: 18px 45px 18px 20px;
+            text-decoration: none;
+            color: #003716; /* Font Color */
+            font-size: 1.33rem;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+        }
+        .inset-group li a::after {
+            content: '›';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #4db6ac; /* Accent Color */
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .inset-group li:hover {
+            background-color: rgba(77, 182, 172, 0.1);
+        }
+        .inset-group li:hover a {
+            padding-left: 25px;
+            font-size: 1.5rem;
+        }
+        .empty-state {
+            padding: 40px 20px;
+            text-align: center;
+            color: #003716;
+            opacity: 0.7;
+        }
     </style>
 </head>
-<body class="bg-[#d9f4e4]">
+<body>
+    <div class="header">
+        <h1 class="page-title">HTML File List</h1>
+    </div>
 
-<div class="flex h-screen bg-[#e9f8ef]">
-    <!-- Sidebar Navigation -->
-    <aside class="w-64 border-r border-[#bde0c9] flex-shrink-0 flex flex-col">
-        <div class="p-4 flex items-center space-x-2 border-b border-[#bde0c9]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#003716]"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
-            <h1 class="text-lg font-bold text-[#003716]">Learning Tools</h1>
-        </div>
-        <nav class="flex-1 p-4 space-y-2">
-            <a href="#page-deduplication" class="nav-item group flex items-center px-3 py-2 text-[#003716] rounded-lg hover:bg-[#d9f4e4] transition-colors">
-                <i data-lucide="copy-x" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
-                Deduplicate Words
-            </a>
-            <a href="#page-edit" class="nav-item group flex items-center px-3 py-2 text-[#003716] rounded-lg hover:bg-[#d9f4e4] transition-colors">
-                <i data-lucide="file-edit" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
-                Edit Wordbook
-            </a>
-            <a href="#page-format" class="nav-item group flex items-center px-3 py-2 text-[#003716] rounded-lg hover:bg-[#d9f4e4] transition-colors">
-                <i data-lucide="file-json-2" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
-                Format JSON
-            </a>
-            <a href="#page-wordconverter" class="nav-item group flex items-center px-3 py-2 text-[#003716] rounded-lg hover:bg-[#d9f4e4] transition-colors">
-                <i data-lucide="file-cog" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
-                Convert Words XML
-            </a>
-            <a href="#page-audiolyric" class="nav-item group flex items-center px-3 py-2 text-[#003716] rounded-lg hover:bg-[#d9f4e4] transition-colors">
-                <i data-lucide="music" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
-                Audio Lyric Player
-            </a>
-            <a href="#page-reviewplan" class="nav-item group flex items-center px-3 py-2 text-[#003716] rounded-lg hover:bg-[#d9f4e4] transition-colors">
-                <i data-lucide="calendar-check" class="w-5 h-5 mr-3 text-[#003716] opacity-70 group-hover:opacity-100"></i>
-                Ebbinghaus Plan
-            </a>
-        </nav>
-        <div class="p-4 border-t border-[#bde0c9] text-xs text-[#003716]/60">
-            Version 1.2.0
-        </div>
-    </aside>
+    <div class="inset-group">
+        <div id="file-list"></div>
+    </div>
+    <script>
+        // --- 您可以在此数组中手动添加您的HTML文件信息 ---
+        // 格式: { name: '网页名称', url: './your-file.html' }
+        // "url" 是相对于当前 index.html 文件的路径。
+        const files = [
+            // 示例 (取消注释以查看效果):
+            { name: 'EnglishLearningToolkit.html', url: 'EnglishLearningToolkit.html' },
+            { name: 'EbbinghausReviewPlanGenerator.html', url: 'EbbinghausReviewPlanGenerator.html' },
+            { name: 'Color.html', url: 'Color.html' },
+            { name: 'PracticeRewritingSentences（基础句型改写训练）', url: './PracticeRewritingSentences.html' }
+        ];
 
-    <!-- Main Content Area -->
-    <main class="flex-1 overflow-y-auto bg-[#d9f4e4]">
+        const listContainer = document.getElementById('file-list');
 
-        <!-- Page 2: Wordbook Deduplication -->
-        <div id="page-deduplication" class="tool-page">
-            <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-                <div class="w-full max-w-4xl mx-auto">
-                    <header class="text-center mb-8">
-                        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#003716]">Wordbook Deduplication Tool</h1>
-                        <p class="mt-3 text-lg text-[#003716]/80">Compare two wordbooks to find and clean up duplicates.</p>
-                    </header>
-                    <main class="bg-[#e9f8ef] p-6 sm:p-8 rounded-2xl shadow-sm border border-[#bde0c9]">
-                        <div id="word-lists-container" class="space-y-8">
-                            <div class="fade-in">
-                                <label for="word-list-1" class="block text-sm font-medium text-[#003716] mb-2">Wordbook 1 (Baseline)</label>
-                                <div class="relative">
-                                    <textarea id="word-list-1" rows="8" class="block w-full text-sm p-4 bg-[#d9f4e4] border border-[#bde0c9] rounded-xl focus:ring-[#40c593] focus:border-[#40c593] transition-colors placeholder:text-[#003716]/50" placeholder='[{"name":"hello","trans":["Hi"]},{"name":"world","trans":["The earth"]}]'></textarea>
-                                    <div id="status-1" class="absolute bottom-3 right-3 text-xs text-[#003716]/60">0 words</div>
-                                </div>
-                                <div id="error-1" class="text-xs text-red-500 mt-1 h-4"></div>
-                            </div>
-                            <div class="fade-in">
-                                <div class="flex justify-between items-center mb-2">
-                                    <label for="word-list-2" class="block text-sm font-medium text-[#003716]">Wordbook 2 (To be processed)</label>
-                                    <button id="deduplicate-btn" class="px-3 py-1 text-xs font-semibold bg-[#d9f4e4] text-[#003716] rounded-lg hover:bg-[#c8ead8] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">Deduplicate this book</button>
-                                </div>
-                                <div class="relative">
-                                    <textarea id="word-list-2" rows="8" class="block w-full text-sm p-4 bg-[#d9f4e4] border border-[#bde0c9] rounded-xl focus:ring-[#40c593] focus:border-[#40c593] transition-all duration-300 placeholder:text-[#003716]/50" placeholder='[{"name":"hello","trans":["Hi"]},{"name":"apple","trans":["A fruit"]}]'></textarea>
-                                    <div id="status-2" class="absolute bottom-3 right-3 text-xs text-[#003716]/60">0 words</div>
-                                </div>
-                                <div id="error-2" class="text-xs text-red-500 mt-1 h-4"></div>
-                            </div>
-                        </div>
-                        <div class="mt-8 flex justify-end">
-                            <button id="compare-btn" class="w-full sm:w-auto px-6 py-2.5 text-base font-semibold bg-[#40c593] text-white rounded-lg shadow-sm hover:bg-[#35a97a] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#35a97a]">Start Comparison</button>
-                        </div>
-                    </main>
-                    <div id="results-section" class="mt-8 hidden">
-                        <div class="bg-[#e9f8ef] p-6 sm:p-8 rounded-2xl shadow-sm border border-[#bde0c9] fade-in">
-                            <h2 class="text-2xl font-bold text-[#003716] mb-6">Analysis Results</h2>
-                            <div id="duplicates-container"></div>
-                            <div id="no-duplicates-msg" class="hidden text-center py-8">
-                                <i data-lucide="check-circle-2" class="mx-auto w-12 h-12 text-[#40c593]"></i>
-                                <p class="mt-4 text-xl font-medium text-[#003716]">Excellent!</p>
-                                <p class="mt-2 text-[#003716]/70">No duplicate words from Wordbook 1 were found in Wordbook 2.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 3: Wordbook Editor -->
-        <div id="page-edit" class="tool-page">
-            <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-                <div class="w-full max-w-3xl mx-auto bg-[#e9f8ef] p-6 sm:p-8 rounded-2xl shadow-sm border border-[#bde0c9]">
-                    <header class="text-center mb-8">
-                        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#003716]">Wordbook Editor</h1>
-                    </header>
-
-                    <div id="upload-section" class="border-2 border-dashed border-[#bde0c9] p-8 text-center rounded-xl mb-6 hover:border-[#40c593] transition-colors">
-                        <label for="file-input-edit" id="upload-label" class="cursor-pointer text-[#40c593] font-semibold">
-                            Click here to upload your JSON wordbook
-                        </label>
-                        <input type="file" id="file-input-edit" accept=".json" class="hidden">
-                        <p id="file-name-display" class="mt-2 text-sm text-[#003716]/70"></p>
-                    </div>
-
-                    <div id="controls" class="hidden mb-4 pb-4 border-b border-[#bde0c9] flex items-center flex-wrap gap-4">
-                        <div class="flex items-center">
-                            <input type="checkbox" id="select-all" class="h-4 w-4 rounded border-[#bde0c9] text-[#40c593] focus:ring-[#40c593]">
-                            <label for="select-all" class="ml-2 block text-sm font-medium text-[#003716]">Select All</label>
-                        </div>
-                        <button id="bulk-delete-btn" class="px-4 py-2 text-sm font-semibold bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Delete Selected</button>
-                        <button id="export-btn" class="ml-auto px-4 py-2 text-sm font-semibold bg-[#40c593] text-white rounded-lg hover:bg-[#35a97a] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">Export Remaining</button>
-                    </div>
-
-                    <ul id="word-list" class="list-none p-0 max-h-[50vh] overflow-y-auto"></ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 4: JSON Format Optimizer -->
-        <div id="page-format" class="tool-page">
-            <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
-                <div class="w-full max-w-7xl bg-[#e9f8ef]/70 backdrop-blur-xl border border-[#bde0c9]/80 rounded-2xl shadow-lg p-6 md:p-8">
-                    <div class="text-center mb-8">
-                        <h1 class="text-3xl font-semibold text-[#003716]">JSON Format Converter</h1>
-                        <p class="text-[#003716]/80 mt-2">Convert a standard JSON array into a format with each inner object on a single line.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="inputJson" class="block text-sm font-medium text-[#003716] mb-2">Input JSON</label>
-                            <textarea id="inputJson" rows="15" class="custom-scrollbar w-full p-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] smooth-transition text-[#003716] font-mono text-sm" placeholder="Paste your JSON here..."></textarea>
-                        </div>
-                        <div>
-                            <label for="outputJson" class="block text-sm font-medium text-[#003716] mb-2">Output Result</label>
-                            <div class="relative">
-                                <textarea id="outputJson" rows="15" readonly class="custom-scrollbar w-full p-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] smooth-transition text-[#003716] font-mono text-sm" placeholder="The converted result will be displayed here..."></textarea>
-                                <button id="copyBtn" class="absolute top-2.5 right-2.5 flex items-center justify-center h-8 w-8 bg-[#d9f4e4] hover:bg-[#c8ead8] text-[#003716] rounded-full smooth-transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">
-                                    <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="smooth-transition"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                                    <svg id="checkIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-[#40c593] hidden smooth-transition"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-8 text-center">
-                        <button id="convertBtn" class="bg-[#40c593] hover:bg-[#35a97a] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 active:scale-100 smooth-transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">
-                            Convert Format
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Page 5: Word Converter (Vue) -->
-        <div id="page-wordconverter" class="tool-page">
-            <!-- Vue app will mount here -->
-        </div>
-
-        <!-- Page 6: Audio Lyric Player (Vue) -->
-        <div id="page-audiolyric" class="tool-page h-full">
-            <!-- Vue app will mount here -->
-        </div>
-
-        <!-- Page 7: Ebbinghaus Review Plan Generator -->
-        <div id="page-reviewplan" class="tool-page">
-            <div class="flex items-center justify-center min-h-screen p-4 sm:p-6 md:p-8">
-                <div class="w-full max-w-4xl mx-auto">
-                    <div class="bg-[#e9f8ef] shadow-lg rounded-2xl p-6 sm:p-8 border border-[#bde0c9]">
-                        <div class="text-center mb-8">
-                            <h1 class="text-3xl sm:text-4xl font-bold text-[#003716]">Ebbinghaus Review Plan Generator</h1>
-                            <p class="text-[#003716]/80 mt-2">Create the most effective vocabulary review plan based on the forgetting curve.</p>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="totalWords" class="block text-sm font-medium text-[#003716] mb-2">Total Words</label>
-                                <input type="number" id="totalWords" value="3000" class="w-full px-4 py-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] transition duration-200" placeholder="e.g., 3000">
-                            </div>
-                            <div>
-                                <label for="dailyWords" class="block text-sm font-medium text-[#003716] mb-2">New Words Per Day</label>
-                                <input type="number" id="dailyWords" value="100" class="w-full px-4 py-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] transition duration-200" placeholder="e.g., 100">
-                            </div>
-                        </div>
-                        <div class="text-center mb-8">
-                            <button id="generate-plan-btn" class="w-full md:w-auto bg-[#40c593] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-[#35a97a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593] transition transform hover:scale-105">
-                                Generate Plan
-                            </button>
-                        </div>
-                        <div id="result-container" class="hidden">
-                            <div class="flex justify-between items-center mb-4">
-                                <h2 class="text-2xl font-bold text-[#003716]">Your Custom Review Plan</h2>
-                                <button id="copy-markdown-btn" class="bg-[#d9f4e4] text-[#003716] font-semibold py-2 px-4 rounded-lg hover:bg-[#c8ead8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#a3e6c8] transition">
-                                    Copy Markdown
-                                </button>
-                            </div>
-                            <textarea id="result" readonly class="w-full h-96 p-4 bg-[#003716]/90 text-gray-200 font-mono border border-[#003716]/50 rounded-lg resize-y focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593]"></textarea>
-                        </div>
-                    </div>
-                    <div id="toast" class="toast">Successfully copied to clipboard!</div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-</div>
-
-
-<script>
-    // --- Combined Master Script ---
-
-    // --- Page Navigation Logic ---
-    document.addEventListener('DOMContentLoaded', () => {
-        const navItems = document.querySelectorAll('.nav-item');
-        const toolPages = document.querySelectorAll('.tool-page');
-
-        function showPage(hash) {
-            const targetHash = hash || '#page-deduplication'; // Default page
-
-            toolPages.forEach(page => {
-                if ('#' + page.id === targetHash) {
-                    page.classList.add('active', 'fade-in');
-                } else {
-                    page.classList.remove('active', 'fade-in');
+        if (!files || files.length === 0) {
+            const p = document.createElement('p');
+            p.className = 'empty-state';
+            p.textContent = '暂无文件。请编辑此HTML文件内的JavaScript数组来添加文件列表。';
+            listContainer.appendChild(p);
+        } else {
+            const ul = document.createElement('ul');
+            files.forEach(file => {
+                if (file && file.name && file.url) {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = file.url;
+                    a.textContent = file.name;
+                    li.appendChild(a);
+                    ul.appendChild(li);
                 }
             });
-
-            navItems.forEach(item => {
-                if (item.getAttribute('href') === targetHash) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-            // Initialize icons after DOM is ready
-            lucide.createIcons();
+            listContainer.appendChild(ul);
         }
-
-        // Handle initial page load
-        showPage(window.location.hash);
-
-        // Handle navigation clicks
-        navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                const hash = e.currentTarget.getAttribute('href');
-                window.location.hash = hash;
-                showPage(hash);
-            });
-        });
-
-        // Handle hash changes (e.g., browser back/forward buttons)
-        window.addEventListener('hashchange', () => {
-            showPage(window.location.hash);
-        });
-    });
-
-
-    // --- Script for Page 2: Wordbook Deduplication ---
-    (() => {
-        const page = document.getElementById('page-deduplication');
-        if (!page) return;
-
-        const list1Textarea = page.querySelector('#word-list-1');
-        const list2Textarea = page.querySelector('#word-list-2');
-        const deduplicateBtn = page.querySelector('#deduplicate-btn');
-        const compareBtn = page.querySelector('#compare-btn');
-        const resultsSection = page.querySelector('#results-section');
-        const duplicatesContainer = page.querySelector('#duplicates-container');
-        const noDuplicatesMsg = page.querySelector('#no-duplicates-msg');
-
-        const parseList = (textarea, listIndex) => {
-            const errorEl = page.querySelector(`#error-${listIndex}`);
-            errorEl.textContent = '';
-            const content = textarea.value.trim();
-            if (!content) return [];
-            try {
-                const data = JSON.parse(content);
-                if (!Array.isArray(data)) throw new Error('Input must be an array.');
-                return data.filter(item => item && typeof item.name === 'string');
-            } catch (e) {
-                errorEl.textContent = `Wordbook ${listIndex} has a JSON format error.`;
-                return null;
-            }
-        };
-
-        const updateWordCount = (textarea, listIndex) => {
-            const statusEl = page.querySelector(`#status-${listIndex}`);
-            const errorEl = page.querySelector(`#error-${listIndex}`);
-            errorEl.textContent = '';
-            try {
-                const content = textarea.value.trim();
-                if (!content) {
-                    statusEl.textContent = '0 words';
-                    return;
-                }
-                const data = JSON.parse(content);
-                statusEl.textContent = Array.isArray(data) ? `${data.length} words` : 'Format error';
-            } catch (e) {
-                statusEl.textContent = 'Format error';
-            }
-        };
-
-        const deduplicateList2 = () => {
-            const data = parseList(list2Textarea, 2);
-            if (data === null) return;
-            const uniqueArray = [];
-            const seenWords = new Set();
-            for (const item of data) {
-                const word = item.name.toLowerCase().trim();
-                if (!seenWords.has(word)) {
-                    uniqueArray.push(item);
-                    seenWords.add(word);
-                }
-            }
-            list2Textarea.value = JSON.stringify(uniqueArray, null, 2);
-            updateWordCount(list2Textarea, 2);
-            list2Textarea.classList.add('ring-2', 'ring-green-500');
-            setTimeout(() => list2Textarea.classList.remove('ring-2', 'ring-green-500'), 1500);
-        };
-
-        const compareLists = () => {
-            const list1Data = parseList(list1Textarea, 1);
-            const list2Data = parseList(list2Textarea, 2);
-            if (list1Data === null || list2Data === null) return;
-            const list1WordSet = new Set(list1Data.map(item => item.name.toLowerCase().trim()));
-            const duplicates = list2Data.filter(item => list1WordSet.has(item.name.toLowerCase().trim()));
-            renderResults(duplicates);
-        };
-
-        const renderResults = (duplicates) => {
-            duplicatesContainer.innerHTML = '';
-            resultsSection.classList.remove('hidden');
-            if (duplicates.length === 0) {
-                noDuplicatesMsg.classList.remove('hidden');
-                return;
-            }
-            noDuplicatesMsg.classList.add('hidden');
-            const duplicateNames = new Set(duplicates.map(d => d.name.toLowerCase().trim()));
-            let html = `<div class="flex flex-wrap justify-between items-center gap-2">
-                <div>
-                    <h3 class="text-lg font-semibold text-[#003716]">Duplicate Words in Wordbook 2 (${duplicates.length})</h3>
-                    <p class="mt-1 text-sm text-[#003716]/70">These words also appear in Wordbook 1.</p>
-                </div>
-                <div class="flex-shrink-0 flex gap-2">
-                    <button id="remove-duplicates-btn" class="px-3 py-1 text-xs font-semibold bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Remove All</button>
-                    <button id="copy-duplicates-btn" class="px-3 py-1 text-xs font-semibold bg-[#d9f4e4] text-[#003716] rounded-lg hover:bg-[#c8ead8] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">Copy List</button>
-                </div>
-            </div>
-            <div class="mt-4 flow-root"><ul role="list" class="-my-4 divide-y divide-[#bde0c9]">`;
-            duplicates.sort((a,b) => a.name.localeCompare(b.name)).forEach(item => {
-                html += `<li class="flex items-center space-x-4 py-4">
-                    <div class="min-w-0 flex-1">
-                        <p class="truncate text-base font-bold text-[#40c593]">${item.name}</p>
-                        <p class="mt-1 text-sm text-[#003716]/70">${(item.trans || []).join(', ')}</p>
-                    </div>
-                </li>`;
-            });
-            html += `</ul></div>`;
-            duplicatesContainer.innerHTML = html;
-
-            page.querySelector('#remove-duplicates-btn')?.addEventListener('click', () => {
-                const currentList2Data = parseList(list2Textarea, 2);
-                if (currentList2Data === null) return;
-                const filteredData = currentList2Data.filter(item => !duplicateNames.has(item.name.toLowerCase().trim()));
-                list2Textarea.value = JSON.stringify(filteredData, null, 2);
-                updateWordCount(list2Textarea, 2);
-                compareLists();
-            });
-
-            page.querySelector('#copy-duplicates-btn')?.addEventListener('click', (e) => {
-                const btn = e.currentTarget;
-                const wordsToCopy = duplicates.map(item => item.name).join('\n');
-                navigator.clipboard.writeText(wordsToCopy).then(() => {
-                    btn.textContent = 'Copied!';
-                    setTimeout(() => { btn.textContent = 'Copy List'; }, 2000);
-                });
-            });
-        };
-
-        list1Textarea.addEventListener('input', () => updateWordCount(list1Textarea, 1));
-        list2Textarea.addEventListener('input', () => updateWordCount(list2Textarea, 2));
-        deduplicateBtn.addEventListener('click', deduplicateList2);
-        compareBtn.addEventListener('click', compareLists);
-    })();
-
-
-    // --- Script for Page 3: Wordbook Editor ---
-    (() => {
-        const page = document.getElementById('page-edit');
-        if (!page) return;
-
-        const fileInput = page.querySelector('#file-input-edit');
-        const fileNameDisplay = page.querySelector('#file-name-display');
-        const controlsDiv = page.querySelector('#controls');
-        const selectAllCheckbox = page.querySelector('#select-all');
-        const bulkDeleteBtn = page.querySelector('#bulk-delete-btn');
-        const exportBtn = page.querySelector('#export-btn');
-        const wordListUl = page.querySelector('#word-list');
-        let vocabulary = [];
-        let originalFilename = '';
-
-        fileInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (!file) return;
-            originalFilename = file.name;
-            fileNameDisplay.textContent = `Loaded: ${originalFilename}`;
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                try {
-                    vocabulary = JSON.parse(e.target.result);
-                    vocabulary.forEach((word, index) => word.id = `word-${Date.now()}-${index}`);
-                    renderWordList();
-                    controlsDiv.style.display = 'flex';
-                } catch (error) {
-                    alert(`Error parsing file. Please ensure it's a valid JSON format.\nDetails: ${error.message}`);
-                    resetApp();
-                }
-            };
-            reader.readAsText(file);
-        });
-
-        function renderWordList() {
-            wordListUl.innerHTML = '';
-            if (vocabulary.length === 0) {
-                wordListUl.innerHTML = '<li class="text-center text-[#003716]/70 py-4">Word list is empty.</li>';
-                return;
-            }
-            vocabulary.forEach(word => {
-                const listItem = document.createElement('li');
-                listItem.className = 'word-item flex items-start p-4 border-b border-[#bde0c9] hover:bg-[#d9f4e4]';
-                listItem.dataset.id = word.id;
-                const transHtml = (word.trans || []).map(t => `<li class="text-sm">${t}</li>`).join('');
-                listItem.innerHTML = `
-                    <input type="checkbox" class="word-checkbox h-4 w-4 rounded border-[#bde0c9] text-[#40c593] focus:ring-[#40c593] mt-1 mr-4 flex-shrink-0" data-id="${word.id}">
-                    <div class="flex-grow">
-                        <div class="font-bold text-[#003716]">${word.name}</div>
-                        <ul class="list-disc list-inside text-[#003716]/80 mt-1">${transHtml}</ul>
-                    </div>
-                    <button class="delete-btn text-red-500 hover:text-red-700 ml-4 flex-shrink-0" data-id="${word.id}" title="Delete this word">&times;</button>
-                `;
-                wordListUl.appendChild(listItem);
-            });
-            selectAllCheckbox.checked = false;
-        }
-
-        wordListUl.addEventListener('click', (event) => {
-            if (event.target.classList.contains('delete-btn')) {
-                const wordIdToDelete = event.target.dataset.id;
-                vocabulary = vocabulary.filter(word => word.id !== wordIdToDelete);
-                renderWordList();
-            }
-        });
-
-        selectAllCheckbox.addEventListener('change', () => {
-            page.querySelectorAll('.word-checkbox').forEach(checkbox => {
-                checkbox.checked = selectAllCheckbox.checked;
-            });
-        });
-
-        bulkDeleteBtn.addEventListener('click', () => {
-            const checkedIds = new Set([...page.querySelectorAll('.word-checkbox:checked')].map(cb => cb.dataset.id));
-            if (checkedIds.size === 0) {
-                alert('Please select words to delete.');
-                return;
-            }
-            vocabulary = vocabulary.filter(word => !checkedIds.has(word.id));
-            renderWordList();
-        });
-
-        exportBtn.addEventListener('click', () => {
-            if (vocabulary.length === 0) {
-                alert('No words to export.');
-                return;
-            }
-            const dataToExport = vocabulary.map(({ name, trans }) => ({ name, trans }));
-            const jsonString = JSON.stringify(dataToExport, null, 2);
-            const blob = new Blob([jsonString], { type: 'application/json' });
-            const [name, ext] = originalFilename.split('.');
-            const newFilename = `${name}_edited.${ext || 'json'}`;
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = newFilename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(a.href);
-        });
-
-        function resetApp() {
-            vocabulary = [];
-            originalFilename = '';
-            fileInput.value = '';
-            fileNameDisplay.textContent = '';
-            wordListUl.innerHTML = '';
-            controlsDiv.style.display = 'none';
-        }
-    })();
-
-
-    // --- Script for Page 4: JSON Format Optimizer ---
-    (() => {
-        const page = document.getElementById('page-format');
-        if (!page) return;
-
-        const inputJsonEl = page.querySelector('#inputJson');
-        const outputJsonEl = page.querySelector('#outputJson');
-        const convertBtn = page.querySelector('#convertBtn');
-        const copyBtn = page.querySelector('#copyBtn');
-        const copyIcon = page.querySelector('#copyIcon');
-        const checkIcon = page.querySelector('#checkIcon');
-
-        inputJsonEl.value = JSON.stringify([
-            { "name": "unbiased", "trans": ["adj. fair, impartial"] },
-            { "name": "uniform", "trans": ["adj. consistent, unchanging"] },
-            { "name": "uphold", "trans": ["vt. to support, to maintain"] }
-        ], null, 2);
-
-        convertBtn.addEventListener('click', () => {
-            const inputText = inputJsonEl.value.trim();
-            if (!inputText) {
-                outputJsonEl.value = 'Error: Input cannot be empty.';
-                return;
-            }
-            try {
-                const parsedJson = JSON.parse(inputText);
-                if (!Array.isArray(parsedJson)) {
-                    outputJsonEl.value = 'Error: Input must be a valid JSON array.';
-                    return;
-                }
-                const resultLines = parsedJson.map(item => JSON.stringify(item));
-                outputJsonEl.value = `[\n${resultLines.join(',\n')}\n]`;
-            } catch (error) {
-                outputJsonEl.value = `Error: Invalid JSON format.\n\nDetails: ${error.message}`;
-            }
-        });
-
-        copyBtn.addEventListener('click', () => {
-            if (!outputJsonEl.value || outputJsonEl.value.startsWith('Error')) return;
-            navigator.clipboard.writeText(outputJsonEl.value).then(() => {
-                copyIcon.classList.add('hidden');
-                checkIcon.classList.remove('hidden');
-                setTimeout(() => {
-                    copyIcon.classList.remove('hidden');
-                    checkIcon.classList.add('hidden');
-                }, 2000);
-            }).catch(err => console.error('Could not copy text: ', err));
-        });
-    })();
-
-    // --- Script for Page 7: Ebbinghaus Review Plan ---
-    (() => {
-        const page = document.getElementById('page-reviewplan');
-        if (!page) return;
-
-        const totalWordsInput = page.querySelector('#totalWords');
-        const dailyWordsInput = page.querySelector('#dailyWords');
-        const generateBtn = page.querySelector('#generate-plan-btn');
-        const copyBtn = page.querySelector('#copy-markdown-btn');
-        const resultContainer = page.querySelector('#result-container');
-        const resultTextarea = page.querySelector('#result');
-        const toastEl = page.querySelector('#toast');
-
-        function generatePlan() {
-            const totalWords = parseInt(totalWordsInput.value);
-            const dailyWords = parseInt(dailyWordsInput.value);
-
-            if (isNaN(totalWords) || isNaN(dailyWords) || totalWords <= 0 || dailyWords <= 0) {
-                showToast("Please enter valid positive numbers!", true);
-                return;
-            }
-
-            const learningDays = Math.ceil(totalWords / dailyWords);
-            const totalDays = learningDays + 14;
-
-            let markdown = `### Ebbinghaus Review Schedule (${totalWords} Words - ${dailyWords}/Day)\n\n`;
-            markdown += `**Instructions:**\n- This plan is based on the Ebbinghaus forgetting curve, with reviews scheduled for the **2nd, 4th, 8th, and 15th day** after learning.\n- A dash "-" indicates no review task for that category on that day.\n\n`;
-            markdown += "| Day   | New Words       | Review (Day 2) | Review (Day 4) | Review (Day 8) | Review (Day 15) |\n";
-            markdown += "| :--:  | :------------:  | :------------: | :------------: | :------------: | :-------------: |\n";
-
-            for (let day = 1; day <= totalDays; day++) {
-                let hasTasks = false;
-                const getWordRange = (learnDayIndex) => {
-                    if (learnDayIndex <= 0 || learnDayIndex > learningDays) return "-";
-                    const start = (learnDayIndex - 1) * dailyWords + 1;
-                    let end = learnDayIndex * dailyWords;
-                    if (end > totalWords) end = totalWords;
-                    return `${start} - ${end}`;
-                };
-
-                const newWordsText = (day <= learningDays) ? getWordRange(day) : "-";
-                if (newWordsText !== '-') hasTasks = true;
-
-                const review2Text = getWordRange(day - 1);
-                const review4Text = getWordRange(day - 3);
-                const review8Text = getWordRange(day - 7);
-                const review15Text = getWordRange(day - 14);
-
-                if (review2Text !== '-' || review4Text !== '-' || review8Text !== '-' || review15Text !== '-') {
-                    hasTasks = true;
-                }
-
-                if (day === learningDays + 1) {
-                    markdown += `|---|**End of new word learning phase. Entering review-only phase.**|---|---|---|---|\n`;
-                }
-
-                if (hasTasks) {
-                    markdown += `| Day ${day} | ${newWordsText} | ${review2Text} | ${review4Text} | ${review8Text} | ${review15Text} |\n`;
-                }
-            }
-
-            resultTextarea.value = markdown;
-            resultContainer.classList.remove('hidden');
-            resultContainer.scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function copyToClipboard() {
-            if (!resultTextarea.value) return;
-            navigator.clipboard.writeText(resultTextarea.value).then(() => {
-                showToast("Successfully copied to clipboard!");
-            }).catch(err => {
-                showToast("Copy failed. Please copy manually.", true);
-            });
-        }
-
-        function showToast(message, isError = false) {
-            toastEl.textContent = message;
-            toastEl.style.backgroundColor = isError ? '#ef4444' : '#333';
-            toastEl.classList.add('show');
-            setTimeout(() => {
-                toastEl.classList.remove('show');
-            }, 3000);
-        }
-
-        generateBtn.addEventListener('click', generatePlan);
-        copyBtn.addEventListener('click', copyToClipboard);
-
-        // Auto-generate on load
-        generatePlan();
-
-    })();
-
-
-    // --- Vue App Integration ---
-    const { createApp, ref } = Vue;
-
-    // Vue Component: Word Converter
-    const WordConverter = {
-        template: `
-          <div class="xml-converter-container">
-            <div class="title">
-              <i class="fas fa-file-code"></i>
-              Convert YouDao Words (XML)
-            </div>
-            <div class="file-input-wrapper">
-              <input type="file" id="xmlFile" class="file-input" accept=".xml" @change="handleFileSelect" ref="fileInput">
-              <label for="xmlFile" class="file-input-label">
-                <i class="fas fa-cloud-upload-alt"></i>
-                Select XML File
-              </label>
-              <div class="file-name" v-if="fileName">
-                <i class="fas fa-file-alt"></i> {{ fileName }}
-              </div>
-            </div>
-            <div class="button-group">
-              <button class="convert-btn" @click="convertXMLToTXT" :disabled="!fileName">
-                <i class="fas fa-file-alt"></i> Convert to Text
-              </button>
-              <button class="convert-btn json-btn" @click="convertXMLToJSON" :disabled="!fileName">
-                <i class="fas fa-file-code"></i> Convert to JSON
-              </button>
-            </div>
-            <div class="output-container">
-              <div class="output-header">
-                <span>Output</span>
-                <div class="output-actions" v-if="outputText !== 'Converted text will appear here...'">
-                  <button class="action-btn copy-btn" @click="copyToClipboard">
-                    <i class="fas fa-copy"></i>
-                  </button>
-                </div>
-              </div>
-              <pre id="output">{{ outputText }}</pre>
-            </div>
-          </div>
-        `,
-        setup() {
-            const fileName = ref('');
-            const outputText = ref('Converted text will appear here...');
-            const fileInput = ref(null);
-
-            const handleFileSelect = (event) => {
-                const file = event.target.files[0];
-                if (file) fileName.value = file.name;
-            };
-
-            const copyToClipboard = () => {
-                navigator.clipboard.writeText(outputText.value)
-                    .then(() => alert('Copied to clipboard!'))
-                    .catch(err => console.error('Failed to copy: ', err));
-            };
-
-            const convertXML = (outputType) => {
-                const file = fileInput.value.files[0];
-                if (!file) {
-                    alert("Please select an XML file.");
-                    return;
-                }
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    const xmlContent = event.target.result;
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlContent, "application/xml");
-                    if (xmlDoc.querySelector('parsererror')) {
-                        outputText.value = 'Error: Invalid XML file';
-                        return;
-                    }
-
-                    if (outputType === 'txt') {
-                        const words = xmlDoc.querySelectorAll('word, w, word-list, wordlist');
-                        const wordList = [...words].map(w => w.textContent.trim()).filter(Boolean);
-                        outputText.value = wordList.length > 0 ? wordList.join('\n') : 'No words found.';
-                        downloadFile(outputText.value, 'words.txt', 'text/plain');
-                    } else if (outputType === 'json') {
-                        const items = xmlDoc.querySelectorAll('item');
-                        const wordList = [...items].map(item => {
-                            const word = item.querySelector('word')?.textContent.trim();
-                            const trans = item.querySelector('trans')?.textContent.trim();
-                            if (word && trans) {
-                                const translations = trans.split('；').map(t => t.trim().replace(/\\n/g, '')).filter(Boolean).slice(0, 3);
-                                return { name: word, trans: translations };
-                            }
-                            return null;
-                        }).filter(Boolean);
-                        outputText.value = wordList.length > 0 ? JSON.stringify(wordList, null, 2) : 'No valid items found.';
-                        downloadFile(JSON.stringify(wordList, null, 2), 'words.json', 'application/json');
-                    }
-                };
-                reader.readAsText(file);
-            };
-
-            const downloadFile = (content, filename, type) => {
-                const blob = new Blob([content], { type });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = filename;
-                a.click();
-                URL.revokeObjectURL(url);
-            };
-
-            return { fileName, outputText, fileInput, handleFileSelect, copyToClipboard, convertXMLToTXT: () => convertXML('txt'), convertXMLToJSON: () => convertXML('json') };
-        }
-    };
-
-    // Vue Component: Audio Lyric Player
-    const AudioLyricPlayer = {
-        template: `
-          <div class="container">
-            <div class="left-panel">
-              <h2>Audio Lyric Player</h2>
-              <div class="file-input card-style card-shadow">
-                <label>Import MP3 Audio</label>
-                <input type="file" accept="audio/mp3" @change="handleAudioUpload" ref="audioInput"/>
-                <div class="file-button" @click="$refs.audioInput.click()">
-                  <span>Select Audio File</span>
-                </div>
-                <div class="file-name">{{ audioFileName }}</div>
-              </div>
-              <div class="file-input card-style card-shadow">
-                <label>Import LRC/SRT Lyrics</label>
-                <input type="file" accept=".lrc,.txt,.srt" @change="handleLyricUpload" ref="lyricInput"/>
-                <div class="file-button" @click="$refs.lyricInput.click()">
-                  <span>Select Lyric File</span>
-                </div>
-                <div class="file-name">{{ lyricFileName }}</div>
-                <div class="lyric-input-container">
-                  <label>Or paste lyrics directly</label>
-                  <textarea class="lyric-input" v-model="lyricText" placeholder="Paste LRC or SRT lyrics here"></textarea>
-                </div>
-              </div>
-              <div class="audio-section card-style card-shadow">
-                <audio ref="audioPlayer" controls></audio>
-                <div class="controls">
-                  <button @click="playFull">Play Full</button>
-                  <button @click="clearLyrics" class="clear-btn">Clear Lyrics</button>
-                </div>
-              </div>
-            </div>
-            <div class="right-panel" :class="{ visible: showLyrics }">
-              <div class="lyrics-container card-style card-shadow">
-                <div class="lyrics-scroll">
-                  <div v-for="(line, idx) in lyrics" :key="idx" class="lyric-line" :class="{ active: idx === currentLine }" @click="playLine(idx)">
-                    {{ line.text }}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        `,
-        data() {
-            return { lyrics: [], currentLine: 0, singleLineMode: false, pauseAt: null, isFullPlayMode: false, audioFileName: '', lyricFileName: '', lyricText: '', showLyrics: false }
-        },
-        watch: {
-            lyricText(newVal) {
-                if (newVal.trim()) { this.lyrics = this.parseLyrics(newVal); this.showLyrics = true; }
-            }
-        },
-        mounted() {
-            this.$refs.audioPlayer.addEventListener('timeupdate', this.handleTimeUpdate);
-            this.$refs.audioPlayer.addEventListener('ended', this.handleAudioEnded);
-        },
-        methods: {
-            parseLyrics(text) { return text.includes('-->') ? this.parseSRT(text) : this.parseLRC(text); },
-            parseLRC(lrc) {
-                const lines = lrc.split('\n'), result = [];
-                const timeExp = /\[(\d{2}):(\d{2})(?:\.(\d{2,3}))?\]/;
-                for (let line of lines) {
-                    const match = timeExp.exec(line);
-                    if (match) {
-                        const time = parseInt(match[1])*60 + parseInt(match[2]) + (match[3] ? parseInt(match[3].padEnd(3,'0'))/1000 : 0);
-                        result.push({ time, text: line.replace(timeExp, '').trim() });
-                    }
-                }
-                return result;
-            },
-            parseSRT(srt) {
-                const lines = srt.split('\n'), result = [];
-                const timeExp = /(\d{2}):(\d{2}):(\d{2}),(\d{3})/;
-                for (let i = 0; i < lines.length; i++) {
-                    if (lines[i].includes('-->')) {
-                        const match = lines[i].match(timeExp);
-                        if (match) {
-                            const time = parseInt(match[1])*3600 + parseInt(match[2])*60 + parseInt(match[3]) + parseInt(match[4])/1000;
-                            const text = lines[i + 1]?.trim();
-                            if(text) result.push({ time, text });
-                        }
-                    }
-                }
-                return result;
-            },
-            handleAudioUpload(e) {
-                const file = e.target.files[0];
-                if (file) { this.audioFileName = file.name; this.$refs.audioPlayer.src = URL.createObjectURL(file); }
-            },
-            handleLyricUpload(e) {
-                const file = e.target.files[0];
-                if (file) {
-                    this.lyricFileName = file.name;
-                    const reader = new FileReader();
-                    reader.onload = (ev) => { this.lyricText = ev.target.result; };
-                    reader.readAsText(file);
-                }
-            },
-            handleTimeUpdate() {
-                const player = this.$refs.audioPlayer;
-                if (!player || this.lyrics.length === 0) return;
-                const current = player.currentTime;
-                if (this.singleLineMode && this.pauseAt !== null && current >= this.pauseAt) {
-                    player.pause(); this.singleLineMode = false; this.pauseAt = null;
-                } else if (this.isFullPlayMode) {
-                    let i = 0;
-                    while (i < this.lyrics.length - 1 && current >= this.lyrics[i + 1].time) i++;
-                    this.currentLine = i;
-                }
-            },
-            handleAudioEnded() { this.isFullPlayMode = false; this.singleLineMode = false; this.pauseAt = null; },
-            playLine(idx) {
-                const player = this.$refs.audioPlayer;
-                if (!player || !this.lyrics[idx]) return;
-                player.currentTime = this.lyrics[idx].time;
-                this.isFullPlayMode = false; this.singleLineMode = true;
-                this.pauseAt = this.lyrics[idx + 1] ? Math.max(player.currentTime, this.lyrics[idx + 1].time - 0.5) : null;
-                player.play(); this.currentLine = idx;
-            },
-            playFull() {
-                const player = this.$refs.audioPlayer;
-                if (!player || this.lyrics.length === 0) return;
-                player.currentTime = 0; this.isFullPlayMode = true; this.singleLineMode = false; this.pauseAt = null;
-                player.play(); this.currentLine = 0; this.showLyrics = true;
-            },
-            clearLyrics() {
-                this.lyrics = []; this.lyricText = ''; this.lyricFileName = ''; this.showLyrics = false; this.currentLine = 0;
-                this.$refs.lyricInput.value = '';
-            }
-        }
-    };
-
-    // Mount Vue Apps
-    createApp(WordConverter).mount('#page-wordconverter');
-    createApp(AudioLyricPlayer).mount('#page-audiolyric');
-
-</script>
+    </script>
 </body>
 </html>
-

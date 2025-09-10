@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艾宾浩斯复习计划生成器</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Base Styles --- */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.7;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #d9f4e4; /* Primary Background */
+            color: #003716; /* Font Color */
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #e9f8ef; /* Secondary Background */
+            padding: 2em 3em;
+            border-radius: 15px;
+            box-shadow: 0 8px 40px 0 rgba(0, 55, 22, 0.15);
+            border-top: 4px solid #4db6ac; /* Accent Color */
+        }
+        .text-center {
+            text-align: center;
+        }
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5em;
+            margin-bottom: 2em;
+        }
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+        }
+
+        /* --- Typography --- */
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin: 0 0 0.25em 0;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        p {
+            margin: 0 0 1.5em 0;
+            opacity: 0.8;
+        }
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5em;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2em;
+            opacity: 0.6;
+            font-size: 0.9em;
+        }
+
+        /* --- Form Elements --- */
+        input[type="number"] {
+            width: 100%;
+            padding: 0.8em 1em;
+            border: 1px solid rgba(0, 55, 22, 0.2);
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #003716;
+            font-size: 1rem;
+            transition: all 0.2s ease-in-out;
+            box-sizing: border-box;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #4db6ac;
+            box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.2);
+        }
+
+        /* --- Buttons --- */
+        .button {
+            cursor: pointer;
+            font-weight: 600;
+            padding: 0.8em 1.5em;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.25s ease-in-out;
+            font-size: 1rem;
+        }
+        .button-primary {
+            background-color: #4db6ac; /* Button Color */
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(77, 182, 172, 0.2);
+        }
+        .button-primary:hover {
+            background-color: #3a9d92; /* Darker shade */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(77, 182, 172, 0.3);
+        }
+        .button-secondary {
+            background-color: transparent;
+            color: #4db6ac;
+            border: 2px solid #4db6ac;
+        }
+        .button-secondary:hover {
+            background-color: #4db6ac;
+            color: #ffffff;
+        }
+
+        /* --- Result Area --- */
+        #result-container {
+            display: none; /* Initially hidden */
+        }
+        #result-container.visible {
+            display: block;
+        }
+        textarea#result {
+            width: 100%;
+            height: 400px;
+            padding: 1.5em;
+            border: 1px solid rgba(0, 55, 22, 0.2);
+            border-radius: 8px;
+            background-color: #002a10; /* Darker version of font color */
+            color: #e9f8ef; /* Secondary Background for text */
+            font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+        textarea#result:focus {
+            outline: none;
+            border-color: #4db6ac;
+            box-shadow: 0 0 0 3px rgba(77, 182, 172, 0.2);
+        }
+
+        /* --- Toast Notification --- */
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #003716; /* Font Color */
+            color: #e9f8ef; /* Secondary Background */
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 10;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 30px;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+            bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="text-center">
+        <h1>艾宾浩斯复习计划生成器</h1>
+        <p>根据遗忘曲线，为您量身定制最高效的词汇复习计划。</p>
+    </div>
+
+    <!-- Input Section -->
+    <div class="input-grid">
+        <div>
+            <label for="totalWords">总单词量</label>
+            <input type="number" id="totalWords" value="3000" placeholder="例如: 3000">
+        </div>
+        <div>
+            <label for="dailyWords">每日新学单词量</label>
+            <input type="number" id="dailyWords" value="300" placeholder="例如: 300">
+        </div>
+        <div>
+            <label for="chapterSize">每章单词量</label>
+            <input type="number" id="chapterSize" value="100" placeholder="例如: 100">
+        </div>
+    </div>
+
+    <!-- Action Button -->
+    <div class="text-center" style="margin: 2.5em 0;">
+        <button onclick="generatePlan()" class="button button-primary">
+            生成复习计划
+        </button>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result-container">
+        <div class="result-header">
+            <h2>您的专属复习计划</h2>
+            <button onclick="copyToClipboard()" class="button button-secondary">
+                复制 Markdown
+            </button>
+        </div>
+        <textarea id="result" readonly></textarea>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2025 艾宾浩斯复习计划生成器. All rights reserved.</p>
+</footer>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast">已成功复制到剪贴板！</div>
+
+<script>
+    // Main function to generate the study plan
+    function generatePlan() {
+        // 1. Get and parse inputs
+        const totalWords = parseInt(document.getElementById('totalWords').value);
+        const dailyWords = parseInt(document.getElementById('dailyWords').value);
+        const chapterSize = parseInt(document.getElementById('chapterSize').value);
+
+        // 2. Validate inputs
+        if (isNaN(totalWords) || isNaN(dailyWords) || isNaN(chapterSize) || totalWords <= 0 || dailyWords <= 0 || chapterSize <= 0) {
+            showToast("请输入有效的正整数！", true);
+            return;
+        }
+
+        // 3. Calculate key numbers
+        const learningDays = Math.ceil(totalWords / dailyWords);
+        const totalDays = learningDays + 14;
+
+        // 4. Build Markdown string header
+        let markdown = `### 艾宾浩斯复习表 (${totalWords}词-每日${dailyWords}词-每章${chapterSize}词)\n\n`;
+        markdown += `**使用说明:**\n- 本计划基于艾宾浩斯遗忘曲线，复习节点设置为学习后的**第2天、第4天、第8天、第15天**。\n- “-”代表当天无此项复习任务。\n\n`;
+        markdown += "| 第x天 | 新学内容 | 复习 (第2天) | 复习 (第4天) | 复习 (第8天) | 复习 (第15天) |\n";
+        markdown += "| :---: | :---: | :---: | :---: | :---: | :---: |\n";
+
+        // 5. Loop through each day of the plan to build the table body
+        for (let day = 1; day <= totalDays; day++) {
+            let newWordsText = "-";
+            let review2Text = "-";
+            let review4Text = "-";
+            let review8Text = "-";
+            let review15Text = "-";
+            let hasTasks = false;
+
+            // --- Helper function to get content text as chapters ---
+            const getContentText = (learnDayIndex) => {
+                if (learnDayIndex <= 0 || learnDayIndex > learningDays) return "-";
+
+                const startWord = (learnDayIndex - 1) * dailyWords + 1;
+                let endWord = learnDayIndex * dailyWords;
+                if (endWord > totalWords) {
+                    endWord = totalWords;
+                }
+
+                const startChapter = Math.floor((startWord - 1) / chapterSize) + 1;
+                const endChapter = Math.ceil(endWord / chapterSize);
+
+                if (startChapter === endChapter) {
+                    return `第${startChapter}章`;
+                } else {
+                    return `第${startChapter}～${endChapter}章`;
+                }
+            };
+
+            // --- New Words ---
+            if (day <= learningDays) {
+                newWordsText = getContentText(day);
+                hasTasks = true;
+            }
+
+            // --- All Reviews ---
+            review2Text = getContentText(day - 1);
+            review4Text = getContentText(day - 3);
+            review8Text = getContentText(day - 7);
+            review15Text = getContentText(day - 14);
+
+            if (review2Text !== '-' || review4Text !== '-' || review8Text !== '-' || review15Text !== '-') {
+                hasTasks = true;
+            }
+
+            // Add a separator when learning phase ends
+            if (day === learningDays + 1) {
+                markdown += `|---|**新词学习阶段结束，进入纯复习阶段**|---|---|---|---|
+`;
+            }
+
+            // Add the row to the table only if it has any tasks
+            if (hasTasks) {
+                markdown += `| 第${day}天 | ${newWordsText} | ${review2Text} | ${review4Text} | ${review8Text} | ${review15Text} |\n`;
+            }
+        }
+
+        // 6. Display the result
+        const resultContainer = document.getElementById('result-container');
+        const resultTextarea = document.getElementById('result');
+        resultTextarea.value = markdown;
+        resultContainer.classList.add('visible');
+
+        // Scroll to the result
+        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Function to copy the generated markdown to clipboard
+    function copyToClipboard() {
+        const textarea = document.getElementById('result');
+        if (!textarea.value) return;
+
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            showToast("已成功复制到剪贴板！");
+        } catch (err) {
+            showToast("复制失败，请手动复制。", true);
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+        window.getSelection().removeAllRanges(); // Deselect
+    }
+
+    // Function to show a toast notification
+    function showToast(message, isError = false) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.style.backgroundColor = isError ? '#c81e1e' : '#4db6ac';
+        toast.style.color = isError ? '#ffffff' : '#ffffff';
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // Automatically generate a plan on page load with default values
+    window.onload = generatePlan;
+</script>
+</body>
+</html>
+
