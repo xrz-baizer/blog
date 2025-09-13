@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis of provided text</title>
+    <style>
+        :root {
+            --bg-color-light: #d9f4e4;
+            --bg-color-medium: #d9f4e4;
+            --text-color-dark: #003716;
+            --primary-color: #4db6ac;
+            --primary-color-dark: #3a9d92;
+            --white-color: #fff;
+            --code-bg-color: #c4eed0;
+            --modal-backdrop: rgba(0, 0, 0, 0.5);
+            --font-family: "PingFang SC", Arial, sans-serif
+        }
+        html {
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            transition: margin-left 0.3s ease;
+        }
+        #toggle-sidebar-btn {
+            position: fixed;
+            top: 50%;
+            left: 20%;
+            transform: translateY(-50%) translateX(-100%);
+            width: 1rem;
+            height: 50px;
+            background-color: var(--primary-color);
+            opacity: 0.3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 0;
+            font-size: 1.5em;
+            line-height: 50px;
+            text-align: center;
+            transition: left 0.3s ease;
+        }
+        body.sidebar-collapsed #toggle-sidebar-btn {
+            left: 0;
+            transform: translateY(-50%) translateX(0);
+             border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: var(--code-bg-color);
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        body.sidebar-collapsed .sidebar {
+            transform: translateX(-100%);
+        }
+        body.modal-open .sidebar {
+            transform: translateX(-100%);
+        }
+        .sidebar-controls {
+            padding: 15px;
+            background-color: var(--code-bg-color);
+            border-bottom: 1px solid var(--primary-color);
+            z-index: 10;
+        }
+        .sidebar-controls button {
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            cursor: pointer;
+            border: 1px solid var(--primary-color);
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .sidebar-controls button:last-child {
+            margin-bottom: 0;
+        }
+        .sidebar-controls button:hover {
+            background-color: var(--primary-color-dark);
+        }
+        .sidebar-nav {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 10px 20px 20px 20px;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .sidebar-nav::-webkit-scrollbar {
+            display: none;
+        }
+        .sidebar-nav h3 {
+            color: var(--text-color-dark);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        .sidebar-nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar-nav li {
+            margin-bottom: 10px;
+            font-size: .9rem;
+            font-weight: bold;
+        }
+        .sidebar-nav a {
+            text-decoration: none;
+            color: var(--text-color-dark);
+            display: block;
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+        .sidebar-nav a:hover, .sidebar-nav a.active {
+            background-color: var(--bg-color-medium);
+        }
+        .sidebar-nav ul ul {
+            padding-left: 20px;
+            list-style-type: none;
+            padding-top: 5px;
+            margin-bottom: 0;
+        }
+        .sidebar-nav ul ul li {
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .sidebar-nav ul ul a {
+            padding: 5px 15px;
+        }
+        .sidebar-nav > ul > li > a {
+            position: relative;
+        }
+        .sidebar-nav .toggle-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.2s ease-in-out;
+            font-size: 0.8em;
+        }
+        .sidebar-nav > ul > li > a.collapsed .toggle-icon {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        .sidebar-nav .submenu {
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            max-height: 300px;
+        }
+        .sidebar-nav .submenu.collapsed {
+            max-height: 0;
+        }
+        .main-content {
+            margin-left: 20%;
+            padding: 20px;
+            width: 80%;
+            transition: margin-left 0.3s ease, width 0.3s ease;
+        }
+        body.sidebar-collapsed .main-content {
+            margin-left: 0;
+            width: 100%;
+        }
+        body.modal-open .main-content {
+            margin-left: 0;
+            width: 100%;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: var(--bg-color-medium);
+            padding: 50px;
+            border-radius: 8px;
+            transition: max-width 0.3s ease-in-out;
+        }
+        .container.container-wide {
+            max-width: 990px;
+        }
+        h2 {
+            color: var(--text-color-dark);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            padding-top: 60px; 
+            margin-top: -40px; 
+        }
+        h4 {
+            color: var(--text-color-dark);
+            padding-top: 60px;
+            margin-top: -40px; 
+        }
+        p {
+            margin-bottom: 10px;
+            font-size: 1.16rem;
+        }
+        code {
+            background-color: var(--code-bg-color);
+             font-family: var(--font-family);
+            padding: 2px 4px 4px;
+            border-radius: 3px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--primary-color);
+            margin: 20px 0;
+        }
+        .toggle-btn {
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            margin-left: 10px;
+            cursor: pointer;
+            border: 1px solid var(--primary-color);
+            background-color: var(--bg-color-medium);
+            color: var(--primary-color);
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+        .toggle-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        .analysis-content.collapsed {
+            display: none;
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: var(--modal-backdrop);
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .modal-content {
+            background-color: var(--bg-color-light);
+            margin: 5% auto; 
+            padding: 40px;
+            border: 1px solid var(--primary-color);
+            width: 60%; 
+            max-width: 800px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .modal-close-btn {
+            color: var(--primary-color-dark);
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .modal-close-btn:hover,
+        .modal-close-btn:focus {
+            color: var(--text-color-dark);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .modal-body::-webkit-scrollbar {
+            display: none;
+        }
+        .modal-body h3 {
+            color: var(--text-color-dark);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .modal-body p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggle-sidebar-btn">&laquo;</button>
+    <div class="sidebar">
+        <div class="sidebar-controls">
+            <button id="toggle-width-btn">默认宽度</button>
+            <button id="read-full-article-btn">Read Full Article</button>
+            <button id="expand-all-btn">All Show</button>
+            <button id="collapse-all-btn">All Hide</button>
+        </div>
+        <div class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="#p-a">Paragraph A</a>
+                    <ul class="submenu">
+                        <li><a href="#p-a-1">第一句</a></li>
+                        <li><a href="#p-a-2">第二句</a></li>
+                        <li><a href="#p-a-3">第三句</a></li>
+                        <li><a href="#p-a-4">第四句</a></li>
+                        <li><a href="#p-a-5">第五句</a></li>
+                        <li><a href="#p-a-6">第六句</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#p-b">Paragraph B</a>
+                    <ul class="submenu">
+                        <li><a href="#p-b-1">第一句</a></li>
+                        <li><a href="#p-b-2">第二句</a></li>
+                        <li><a href="#p-b-3">第三句</a></li>
+                        <li><a href="#p-b-4">第四句</a></li>
+                        <li><a href="#p-b-5">第五句</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#p-c">Paragraph C</a>
+                    <ul class="submenu">
+                        <li><a href="#p-c-1">第一句</a></li>
+                        <li><a href="#p-c-2">第二句</a></li>
+                        <li><a href="#p-c-3">第三句</a></li>
+                        <li><a href="#p-c-4">第四句</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#p-d">Paragraph D</a>
+                    <ul class="submenu">
+                        <li><a href="#p-d-1">第一句</a></li>
+                        <li><a href="#p-d-2">第二句</a></li>
+                        <li><a href="#p-d-3">第三句</a></li>
+                        <li><a href="#p-d-4">第四句</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#p-e">Paragraph E</a>
+                    <ul class="submenu">
+                        <li><a href="#p-e-1">第一句</a></li>
+                        <li><a href="#p-e-2">第二句</a></li>
+                        <li><a href="#p-e-3">第三句</a></li>
+                        <li><a href="#p-e-4">第四句</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#p-f">Paragraph F</a>
+                    <ul class="submenu">
+                        <li><a href="#p-f-1">第一句</a></li>
+                        <li><a href="#p-f-2">第二句</a></li>
+                        <li><a href="#p-f-3">第三句</a></li>
+                        <li><a href="#p-f-4">第四句</a></li>
+                        <li><a href="#p-f-5">第五句</a></li>
+                        <li><a href="#p-f-6">第六句</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container container-wide">
+            <h2 id="p-a">Paragraph A</h2>
+    
+            <h4 id="p-a-1"><strong>第一句</strong><button class="toggle-btn" data-target="ul-p-a-1">Hide</button></h4>
+            <p><strong>The conviction that historical relics provide infallible testimony about the past <code>is</code> rooted in the nineteenth and early twentieth centuries, when science was regarded as objective and value free.</strong></p>
+            <ul id="ul-p-a-1" class="analysis-content">
+                <li><strong>翻译:</strong> 历史文物能为过去提供绝对可靠的证据，这种信念植根于19世纪和20世纪初，当时科学被认为是客观且价值中立的。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>conviction</strong> (信念): 坚定的看法或信仰。</li>
+                        <li><strong>historical relics</strong> (历史文物): 指具有历史价值的遗物。</li>
+                        <li><strong>infallible testimony</strong> (绝对可靠的证据): <code>infallible</code> 意为“绝无错误的”，<code>testimony</code> 指“证据”或“证词”。</li>
+                        <li><strong>be rooted in</strong> (植根于): 表示某事物的起源或基础。</li>
+                        <li><strong>objective and value free</strong> (客观且价值中立的): 科学研究的理想状态，不受主观偏见和价值观影响。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个主系表结构的句子。主语是 <strong>The conviction</strong>，系动词是 <strong>is</strong>，表语是 <strong>rooted in...</strong>。</li>
+                        <li><strong>that historical relics provide infallible testimony about the past</strong> 是一个同位语从句，用来说明 <strong>conviction</strong> 的具体内容。</li>
+                        <li><strong>when science was regarded as objective and value free</strong> 是一个非限制性定语从句，修饰前面的时间 <strong>the nineteenth and early twentieth centuries</strong>。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-a-2"><strong>第二句</strong><button class="toggle-btn" data-target="ul-p-a-2">Hide</button></h4>
+            <p><strong>As one writer observes: 'Although it <code>is</code> now evident that artefacts <code>are</code> as easily altered as chronicles, public faith in their veracity endures: a tangible relic <code>seems</code> ipso facto real.'</strong></p>
+            <ul id="ul-p-a-2" class="analysis-content">
+                <li><strong>翻译:</strong> 正如一位作家所观察到的：“尽管现在很明显，手工艺品和历史记录一样容易被篡改，但公众对其真实性的信念依然存在：一件有形的文物似乎就因此而真实。”</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>observes</strong> (观察到/评论说): 在此意为“评论说”。</li>
+                        <li><strong>evident</strong> (明显的): 清楚明白的。</li>
+                        <li><strong>artefacts</strong> (手工艺品/文物): 人工制品。</li>
+                        <li><strong>altered</strong> (被篡改/改变): 动词 alter 的过去分词。</li>
+                        <li><strong>chronicles</strong> (历史记录/编年史): 按时间顺序记载历史的文献。</li>
+                        <li><strong>public faith</strong> (公众信念): 大众的信任。</li>
+                        <li><strong>veracity</strong> (真实性): 真实、准确。</li>
+                        <li><strong>endures</strong> (持续/存在): 动词，指持续存在。</li>
+                        <li><strong>tangible relic</strong> (有形的文物): 可以触摸到的真实遗物。</li>
+                        <li><strong>ipso facto</strong> (因此/根据事实本身): 拉丁语短语，意为“就凭那个事实”。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个引语。<strong>As one writer observes</strong> 是引述的开头。</li>
+                        <li>引文内部是一个复合句，由一个让步状语从句和一个主句构成，主句后跟一个冒号引出的解释说明。</li>
+                        <li><strong>Although it is now evident that artefacts are as easily altered as chronicles</strong> 是让步状语从句。</li>
+                        <li><strong>public faith in their veracity endures</strong> 是主句。</li>
+                        <li><strong>a tangible relic seems ipso facto real</strong> 是对主句的进一步解释。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-a-3"><strong>第三句</strong><button class="toggle-btn" data-target="ul-p-a-3">Hide</button></h4>
+            <p><strong>Such conviction <code>was</code>, until recently, reflected in museum displays.</strong></p>
+            <ul id="ul-p-a-3" class="analysis-content">
+                <li><strong>翻译:</strong> 直到最近，这种信念都反映在博物馆的陈列中。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>Such conviction</strong> (这种信念): 指代上文提到的公众对文物真实性的信念。</li>
+                        <li><strong>until recently</strong> (直到最近): 时间状语，暗示情况现在可能有所改变。</li>
+                        <li><strong>was reflected in</strong> (反映在...): 被动语态，表示“在...中得到体现”。</li>
+                        <li><strong>museum displays</strong> (博物馆陈列): 博物馆的展览布置。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个简单的被动语态句子。主语是 <strong>Such conviction</strong>，谓语是 <strong>was reflected</strong>。</li>
+                        <li><strong>until recently</strong> 是插入语，作时间状语。</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <hr>
+
+            <h4 id="p-a-4"><strong>第四句</strong><button class="toggle-btn" data-target="ul-p-a-4">Hide</button></h4>
+            <p><strong>Museums used to <code>look</code> - and some still <code>do</code> - much like storage rooms of objects packed together in showcases: good for scholars who wanted to study the subtle differences in design, but not for the ordinary visitor, to whom it all looked alike.</strong></p>
+            <ul id="ul-p-a-4" class="analysis-content">
+                <li><strong>翻译:</strong> 过去的博物馆——有些现在仍然如此——看起来很像储藏室，展品挤在陈列柜里：这对于那些希望研究设计上细微差异的学者来说是好的，但对于普通游客来说却不然，因为在他们看来，所有东西都大同小异。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>used to look</strong> (过去常常看起来): 表示过去的习惯或状态。</li>
+                        <li><strong>packed together</strong> (挤在一起): 形容物品摆放密集。</li>
+                        <li><strong>showcases</strong> (陈列柜): 玻璃展示柜。</li>
+                        <li><strong>subtle differences</strong> (细微的差异): 不易察觉的差别。</li>
+                        <li><strong>ordinary visitor</strong> (普通游客): 非专业背景的参观者。</li>
+                        <li><strong>looked alike</strong> (看起来相似): 外观上没有区别。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个复合句。主句是 <strong>Museums used to look... much like storage rooms...</strong>。</li>
+                        <li><strong>and some still do</strong> 是一个插入的并列分句，表示对比。</li>
+                        <li>冒号后的部分是解释说明，其中包含一个对比结构 <strong>good for..., but not for...</strong>。</li>
+                        <li><strong>to whom it all looked alike</strong> 是一个非限制性定语从句，修饰 <strong>the ordinary visitor</strong>。</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <hr>
+
+            <h4 id="p-a-5"><strong>第五句</strong><button class="toggle-btn" data-target="ul-p-a-5">Hide</button></h4>
+            <p><strong>Similarly, the information accompanying the objects often <code>made</code> little sense to the lay visitor.</strong></p>
+            <ul id="ul-p-a-5" class="analysis-content">
+                <li><strong>翻译:</strong> 同样地，伴随展品的信息对于外行游客来说通常也难以理解。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>Similarly</strong> (同样地): 副词，用于引出相似的观点。</li>
+                        <li><strong>accompanying the objects</strong> (伴随展品的): 现在分词短语作定语，修饰 <strong>the information</strong>。</li>
+                        <li><strong>made little sense to</strong> (对...来说难以理解): 固定搭配，表示“没有意义”或“讲不通”。</li>
+                        <li><strong>lay visitor</strong> (外行游客): 与 <strong>ordinary visitor</strong> 意思相近，指非专业人士。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个简单句。主语是 <strong>the information</strong>，谓语是 <strong>made</strong>。</li>
+                        <li><strong>accompanying the objects</strong> 是现在分词短语作后置定语。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-a-6"><strong>第六句</strong><button class="toggle-btn" data-target="ul-p-a-6">Hide</button></h4>
+            <p><strong>The content and format of explanations <code>dated back</code> to a time when the museum <code>was</code> the exclusive domain of the scientific researcher.</strong></p>
+            <ul id="ul-p-a-6" class="analysis-content">
+                <li><strong>翻译:</strong> 说明文字的内容和格式可以追溯到一个博物馆还是科研人员专属领域的时代。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>content and format</strong> (内容和格式): 指信息的实质和呈现方式。</li>
+                        <li><strong>dated back to</strong> (追溯到): 动词短语，指始于某个时间。</li>
+                        <li><strong>exclusive domain</strong> (专属领域): 专有的范围或领地。</li>
+                        <li><strong>scientific researcher</strong> (科研人员): 从事科学研究的人。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个复合句。主句是 <strong>The content and format of explanations dated back to a time</strong>。</li>
+                        <li><strong>when the museum was the exclusive domain of the scientific researcher</strong> 是一个定语从句，修饰 <strong>a time</strong>。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2 id="p-b">Paragraph B</h2>
+
+            <h4 id="p-b-1"><strong>第一句</strong><button class="toggle-btn" data-target="ul-p-b-1">Hide</button></h4>
+            <p><strong>Recently, however, attitudes towards history and the way it should be presented <code>have altered</code>.</strong></p>
+            <ul id="ul-p-b-1" class="analysis-content">
+                <li><strong>翻译:</strong> 然而，最近人们对历史以及历史呈现方式的态度已经改变。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>attitudes towards</strong> (对...的态度): 看法和想法。</li>
+                        <li><strong>the way it should be presented</strong> (它应该被呈现的方式): <strong>it</strong> 指代 <strong>history</strong>。</li>
+                        <li><strong>have altered</strong> (已经改变): 现在完成时，表示变化已经发生并持续到现在。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个简单句。主语是 <strong>attitudes towards history and the way it should be presented</strong>，谓语是 <strong>have altered</strong>。</li>
+                        <li><strong>it should be presented</strong> 是一个定语从句，修饰 <strong>the way</strong>，但关系代词 <strong>that</strong> 或 <strong>in which</strong> 被省略了。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-b-2"><strong>第二句</strong><button class="toggle-btn" data-target="ul-p-b-2">Hide</button></h4>
+            <p><strong>The key word in heritage display <code>is</code> now 'experience', the more exciting the better and, if possible, involving all the senses.</strong></p>
+            <ul id="ul-p-b-2" class="analysis-content">
+                <li><strong>翻译:</strong> 现在，遗产展示的关键词是“体验”，而且体验越刺激越好，如果可能的话，还要调动所有的感官。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>heritage display</strong> (遗产展示): 与 <strong>museum display</strong> 类似，但范围更广，包括历史遗迹等。</li>
+                        <li><strong>experience</strong> (体验): 亲身经历和感受。</li>
+                        <li><strong>the more..., the better</strong> (越...越好): 常用句型，表示正比关系。</li>
+                        <li><strong>involving all the senses</strong> (调动所有感官): 现在分词短语，补充说明 <strong>experience</strong> 的特点。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>主句是 <strong>The key word in heritage display is now 'experience'</strong>。</li>
+                        <li><strong>the more exciting the better</strong> 是一个独立的比较结构，作补充说明。</li>
+                        <li><strong>involving all the senses</strong> 是现在分词短语，同样是补充说明 <strong>experience</strong>。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-b-3"><strong>第三句</strong><button class="toggle-btn" data-target="ul-p-b-3">Hide</button></h4>
+            <p><strong>Good examples of this approach in the UK <code>are</code> the Jorvik Centre in York; the National Museum of Photography, Film and Television in Bradford; and the Imperial War Museum in London.</strong></p>
+            <ul id="ul-p-b-3" class="analysis-content">
+                <li><strong>翻译:</strong> 在英国，这种方法的好例子有约克的维京中心、布拉德福德的国家摄影、电影和电视博物馆，以及伦敦的帝国战争博物馆。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>this approach</strong> (这种方法): 指上文提到的以“体验”为核心的展示方式。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个主系表结构的简单句，列举了三个例子作为表语。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-b-4"><strong>第四句</strong><button class="toggle-btn" data-target="ul-p-b-4">Hide</button></h4>
+            <p><strong>In the US the trend <code>emerged</code> much earlier: Williamsburg <code>has been</code> a prototype for many heritage developments in other parts of the world.</strong></p>
+            <ul id="ul-p-b-4" class="analysis-content">
+                <li><strong>翻译:</strong> 在美国，这一趋势出现得更早：威廉斯堡已经成为世界其他地区许多遗产开发项目的原型。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>trend</strong> (趋势): 潮流，倾向。</li>
+                        <li><strong>emerged</strong> (出现): 动词 emerge 的过去式。</li>
+                        <li><strong>prototype</strong> (原型): 原始模型，标准。</li>
+                        <li><strong>heritage developments</strong> (遗产开发项目): 对历史遗产的开发和利用。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个由冒号连接的两个分句。前一个分句说明趋势在美国出现得早，后一个分句举出威廉斯堡作为例子。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-b-5"><strong>第五句</strong><button class="toggle-btn" data-target="ul-p-b-5">Hide</button></h4>
+            <p><strong>No one can <code>predict</code> where the process will end. On so-called heritage sites the re-enactment of historical events <code>is</code> increasingly popular, and computers will soon <code>provide</code> virtual reality experiences, which will <code>present</code> visitors with a vivid image of the period of their choice, in which they themselves can <code>act</code> as if part of the historical environment. Such developments <code>have been criticised</code> as an intolerable vulgarisation, but the success of many historical theme parks and similar locations <code>suggests</code> that the majority of the public <code>does not share</code> this opinion.</strong></p>
+            <ul id="ul-p-b-5" class="analysis-content">
+                <li><strong>翻译:</strong> 没人能预测这个过程将终于何处。在所谓的遗产地，历史事件的重演越来越受欢迎，计算机也很快将提供虚拟现实体验，这将为游客呈现他们所选时期的生动画面，他们自己也可以在其中扮演角色，仿佛置身于历史环境之中。这些发展被批评为无法容忍的庸俗化，但许多历史主题公园和类似场所的成功表明，大多数公众并不同意这种看法。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>predict</strong> (预测): 预言。</li>
+                        <li><strong>so-called</strong> (所谓的): 表示一种称谓，有时带有不以为然的语气。</li>
+                        <li><strong>re-enactment</strong> (重演): 再次上演。</li>
+                        <li><strong>virtual reality</strong> (虚拟现实): VR技术。</li>
+                        <li><strong>vivid image</strong> (生动的画面): 清晰逼真的图像。</li>
+                        <li><strong>period of their choice</strong> (他们所选的时期): 游客自己选择的历史阶段。</li>
+                        <li><strong>intolerable vulgarisation</strong> (无法容忍的庸俗化): 指变得低俗、粗俗，且到了不能接受的程度。</li>
+                        <li><strong>share this opinion</strong> (同意这种看法): 持有相同的观点。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个长句，由多个分句通过并列和从属关系连接而成。</li>
+                        <li>第一部分是 <strong>No one can predict where the process will end</strong>，其中 <strong>where...</strong> 是宾语从句。</li>
+                        <li>第二部分由两个并列句构成：<strong>the re-enactment... is... popular</strong> 和 <strong>computers will soon provide...</strong>。</li>
+                        <li><strong>which will present...</strong> 是一个非限制性定语从句，修饰 <strong>virtual reality experiences</strong>。</li>
+                        <li><strong>in which they themselves can act...</strong> 是一个介词+关系代词引导的定语从句，修饰 <strong>a vivid image of the period of their choice</strong>。</li>
+                        <li>最后一部分是由 <strong>but</strong> 连接的两个转折关系的并列句：<strong>Such developments have been criticised...</strong> 和 <strong>the success... suggests that...</strong>。</li>
+                        <li><strong>that the majority of the public does not share this opinion</strong> 是 <strong>suggests</strong> 的宾语从句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2 id="p-c">Paragraph C</h2>
+
+            <h4 id="p-c-1"><strong>第一句</strong><button class="toggle-btn" data-target="ul-p-c-1">Hide</button></h4>
+            <p><strong>In a related development, the sharp distinction between museum and heritage sites on the one hand, and theme parks on the other, <code>is</code> gradually evaporating.</strong></p>
+            <ul id="ul-p-c-1" class="analysis-content">
+                <li><strong>翻译:</strong> 在一个相关的发展中，博物馆和遗产地与主题公园之间的明显区别正在逐渐消失。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>In a related development</strong> (在一个相关的发展中): 承上启下的短语。</li>
+                        <li><strong>sharp distinction</strong> (明显的区别): 清晰的界限。</li>
+                        <li><strong>on the one hand, ... on the other</strong> (一方面...另一方面): 用于对比两者。</li>
+                        <li><strong>is gradually evaporating</strong> (正在逐渐消失): <code>evaporate</code> 原意是“蒸发”，这里比喻“消失”。现在进行时表示变化正在发生。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个简单句。主语是 <strong>the sharp distinction...</strong>，谓语是 <strong>is evaporating</strong>。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-c-2"><strong>第二句</strong><button class="toggle-btn" data-target="ul-p-c-2">Hide</button></h4>
+            <p><strong>They already <code>borrow</code> ideas and concepts from one another.</strong></p>
+            <ul id="ul-p-c-2" class="analysis-content">
+                <li><strong>翻译:</strong> 它们已经开始互相借鉴创意和概念。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>borrow... from one another</strong> (互相借鉴): 彼此采纳对方的想法。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个简单的陈述句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-c-3"><strong>第三句</strong><button class="toggle-btn" data-target="ul-p-c-3">Hide</button></h4>
+            <p><strong>For example, museums <code>have adopted</code> story lines for exhibitions, sites <code>have accepted</code> 'theming' as a relevant tool, and theme parks <code>are moving</code> towards more authenticity and research-based presentations.</strong></p>
+            <ul id="ul-p-c-3" class="analysis-content">
+                <li><strong>翻译:</strong> 例如，博物馆为展览引入了故事情节，遗址地接受了“主题化”作为一种相关工具，而主题公园则正朝着更具真实性和基于研究的展示方向发展。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>story lines</strong> (故事情节): 为展览设定的叙事线索。</li>
+                        <li><strong>theming</strong> (主题化): 设定一个中心主题。</li>
+                        <li><strong>relevant tool</strong> (相关工具): 有用的方法。</li>
+                        <li><strong>authenticity</strong> (真实性): 真实可信的程度。</li>
+                        <li><strong>research-based presentations</strong> (基于研究的展示): 以学术研究为基础的展览。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个由 <strong>and</strong> 连接的三个并列句，分别说明了博物馆、遗址地和主题公园的变化。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-c-4"><strong>第四句</strong><button class="toggle-btn" data-target="ul-p-c-4">Hide</button></h4>
+            <p><strong>In zoos, animals <code>are</code> no longer <code>kept</code> in cages, but in great spaces, either in the open air or in enormous greenhouses, such as the jungle and desert environments in Burgers' Zoo in Holland. This particular trend <code>is regarded</code> as one of the major developments in the presentation of natural history in the twentieth century.</strong></p>
+            <ul id="ul-p-c-4" class="analysis-content">
+                <li><strong>翻译:</strong> 在动物园里，动物不再被关在笼子里，而是生活在广阔的空间里，无论是在露天还是在巨大的温室里，例如荷兰伯格斯动物园的丛林和沙漠环境。这一特殊趋势被认为是20世纪自然历史展示领域的重大发展之一。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>no longer</strong> (不再): 表示今非昔比。</li>
+                        <li><strong>in the open air</strong> (在露天): 户外。</li>
+                        <li><strong>greenhouses</strong> (温室): 玻璃暖房。</li>
+                        <li><strong>is regarded as</strong> (被认为是): 被看作。</li>
+                        <li><strong>major developments</strong> (重大发展): 重要的进步。</li>
+                        <li><strong>presentation of natural history</strong> (自然历史的展示): 关于自然界的展览方式。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>第一句是一个被动语态的句子，其中包含 <strong>not... but...</strong> 结构，表示“不是...而是...”，以及 <strong>either... or...</strong> 结构。</li>
+                        <li>第二句也是一个被动语态的句子，对第一句描述的趋势进行评价。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2 id="p-d">Paragraph D</h2>
+
+            <h4 id="p-d-1"><strong>第一句</strong><button class="toggle-btn" data-target="ul-p-d-1">Hide</button></h4>
+            <p><strong>Theme parks <code>are undergoing</code> other changes, too, as they <code>try</code> to present more serious social and cultural issues, and <code>move away</code> from fantasy.</strong></p>
+            <ul id="ul-p-d-1" class="analysis-content">
+                <li><strong>翻译:</strong> 主题公园也正在经历其他变化，因为它们试图呈现更严肃的社会和文化问题，并摆脱幻想。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>are undergoing</strong> (正在经历): 正在发生变化。</li>
+                        <li><strong>social and cultural issues</strong> (社会和文化问题): 与社会和文化相关的话题。</li>
+                        <li><strong>move away from</strong> (摆脱/远离): 不再专注于。</li>
+                        <li><strong>fantasy</strong> (幻想): 虚构的、不真实的东西。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个复合句。主句是 <strong>Theme parks are undergoing other changes, too</strong>。</li>
+                        <li><strong>as they try to... and move away from...</strong> 是一个原因状语从句，解释变化的原因。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-d-2"><strong>第二句</strong><button class="toggle-btn" data-target="ul-p-d-2">Hide</button></h4>
+            <p><strong>This development <code>is</code> a response to market forces and, although museums and heritage sites <code>have</code> a special, rather distinct, role to fulfil, they <code>are</code> also <code>operating</code> in a very competitive environment, where visitors <code>make</code> choices on how and where to spend their free time.</strong></p>
+            <ul id="ul-p-d-2" class="analysis-content">
+                <li><strong>翻译:</strong> 这一发展是对市场力量的回应，而且，尽管博物馆和遗产地有其特殊且相当独特的角色需要履行，但它们也同样在一个竞争激烈的环境中运营，游客们会在这个环境中选择如何以及在何处度过他们的空闲时间。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>a response to</strong> (对...的回应): 作为对某事物的反应。</li>
+                        <li><strong>market forces</strong> (市场力量): 市场经济中的供求关系等影响因素。</li>
+                        <li><strong>distinct role</strong> (独特的角色): 与众不同的作用。</li>
+                        <li><strong>fulfil a role</strong> (履行角色): 发挥作用。</li>
+                        <li><strong>competitive environment</strong> (竞争激烈的环境): 充满竞争的氛围。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个复杂的复合句。主干是由 <strong>and</strong> 连接的两个并列分句。</li>
+                        <li>第一个分句是 <strong>This development is a response to market forces</strong>。</li>
+                        <li>第二个分句内部包含一个由 <strong>although</strong> 引导的让步状语从句：<strong>although museums and heritage sites have a special, rather distinct, role to fulfil</strong>。</li>
+                        <li>第二个分句的主句是 <strong>they are also operating in a very competitive environment</strong>。</li>
+                        <li><strong>where visitors make choices...</strong> 是一个定语从句，修饰 <strong>environment</strong>。</li>
+                        <li><strong>how and where to spend their free time</strong> 是不定式短语，作 <strong>choices on</strong> 的宾语。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-d-3"><strong>第三句</strong><button class="toggle-btn" data-target="ul-p-d-3">Hide</button></h4>
+            <p><strong>Heritage and museum experts <code>do not have to invent</code> stories and <code>recreate</code> historical environments to attract their visitors: their assets <code>are</code> already in place.</strong></p>
+            <ul id="ul-p-d-3" class="analysis-content">
+                <li><strong>翻译:</strong> 遗产和博物馆专家不必为了吸引游客而编造故事和重建历史环境：他们的资产早已就位。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>invent stories</strong> (编造故事): 虚构情节。</li>
+                        <li><strong>recreate historical environments</strong> (重建历史环境): 复制过去的环境。</li>
+                        <li><strong>assets</strong> (资产): 指博物馆和遗产地拥有的真实文物和遗迹。</li>
+                        <li><strong>in place</strong> (就位/存在): 已经存在并且可用。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>由冒号连接的两个分句。前一句说明专家们不必做什么，后一句解释原因。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-d-4"><strong>第四句</strong><button class="toggle-btn" data-target="ul-p-d-4">Hide</button></h4>
+            <p><strong>However, exhibits <code>must be</code> both based on artefacts and facts as we know them, and attractively presented. Those who are professionally engaged in the art of interpreting history <code>are</code> thus in a difficult position, as they must <code>steer</code> a narrow course between the demands of 'evidence' and 'attractiveness', especially given the increasing need in the heritage industry for income-generating activities.</strong></p>
+            <ul id="ul-p-d-4" class="analysis-content">
+                <li><strong>翻译:</strong> 然而，展品必须既要基于我们所知的文物和事实，又要呈现得引人入胜。因此，那些专业从事历史阐释艺术的人们正处于一个两难的境地，因为他们必须在“证据”和“吸引力”的要求之间走出一条狭窄的道路，特别是考虑到遗产行业对创收活动日益增长的需求。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>based on</strong> (基于): 以...为基础。</li>
+                        <li><strong>attractively presented</strong> (呈现得引人入胜): 以吸引人的方式展示。</li>
+                        <li><strong>professionally engaged in</strong> (专业从事): 以...为职业。</li>
+                        <li><strong>interpreting history</strong> (阐释历史): 解释历史。</li>
+                        <li><strong>steer a narrow course between</strong> (在...之间走出一条狭窄的道路): 比喻在两个对立的要求中找到平衡。</li>
+                        <li><strong>demands of 'evidence' and 'attractiveness'</strong> (“证据”和“吸引力”的要求): 对真实性和观赏性的双重需求。</li>
+                        <li><strong>given</strong> (考虑到): 介词，表示原因。</li>
+                        <li><strong>income-generating activities</strong> (创收活动): 能带来收入的活动。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>第一句使用了 <strong>both... and...</strong> 结构。</li>
+                        <li>第二句是一个复合句。主句是 <strong>Those who are... are thus in a difficult position</strong>。</li>
+                        <li><strong>who are professionally engaged in the art of interpreting history</strong> 是一个定语从句，修饰 <strong>Those</strong>。</li>
+                        <li><strong>as they must steer...</strong> 是一个原因状语从句。</li>
+                        <li><strong>especially given the increasing need...</strong> 是一个独立主格结构，作状语，进一步说明原因。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2 id="p-e">Paragraph E</h2>
+
+            <h4 id="p-e-1"><strong>第一句</strong><button class="toggle-btn" data-target="ul-p-e-1">Hide</button></h4>
+            <p><strong>It could <code>be claimed</code> that in order to make everything in heritage more 'real', historical accuracy must be increasingly altered.</strong></p>
+            <ul id="ul-p-e-1" class="analysis-content">
+                <li><strong>翻译:</strong> 可以说，为了让遗产中的一切更“真实”，历史的准确性必须被越来越多地改变。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>It could be claimed that...</strong> (可以说...): 一种委婉的提出观点的方式。</li>
+                        <li><strong>in order to</strong> (为了): 表目的。</li>
+                        <li><strong>historical accuracy</strong> (历史的准确性): 与历史事实相符的程度。</li>
+                        <li><strong>increasingly altered</strong> (越来越多地被改变): 变化程度在增加。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个主语从句。<strong>It</strong> 是形式主语，真正的主语是 <strong>that</strong> 引导的从句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-e-2"><strong>第二句</strong><button class="toggle-btn" data-target="ul-p-e-2">Hide</button></h4>
+            <p><strong>For example, Pithecanthropus erectus <code>is depicted</code> in an Indonesian museum with Malay facial features, because this <code>corresponds</code> to public perceptions.</strong></p>
+            <ul id="ul-p-e-2" class="analysis-content">
+                <li><strong>翻译:</strong> 例如，在一家印度尼西亚的博物馆里，直立猿人被描绘成具有马来人的面部特征，因为这符合公众的普遍认知。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>Pithecanthropus erectus</strong> (直立猿人): 古人类学名词。</li>
+                        <li><strong>is depicted</strong> (被描绘成): 被动语态。</li>
+                        <li><strong>Malay facial features</strong> (马来人的面部特征): 具有马来人种特点的脸部样貌。</li>
+                        <li><strong>corresponds to</strong> (符合/与...一致): 动词短语。</li>
+                        <li><strong>public perceptions</strong> (公众的普遍认知): 大众的看法和理解。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个由 <strong>because</strong> 引导的原因状语从句连接的复合句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-e-3"><strong>第三句</strong><button class="toggle-btn" data-target="ul-p-e-3">Hide</button></h4>
+            <p><strong>Similarly, in the Museum of Natural History in Washington, Neanderthal man <code>is shown</code> making a dominant gesture to his wife. Such presentations <code>tell</code> us more about contemporary perceptions of the world than about our ancestors.</strong></p>
+            <ul id="ul-p-e-3" class="analysis-content">
+                <li><strong>翻译:</strong> 同样地，在华盛顿的自然历史博物馆里，尼安德特人被展示为对他的妻子做出一个支配性的手势。这样的呈现更多地告诉我们当代人对世界的看法，而不是关于我们祖先的情况。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>Neanderthal man</strong> (尼安德特人): 古人类学名词。</li>
+                        <li><strong>is shown making...</strong> (被展示为正在做...): <strong>show sb doing sth</strong> 的被动形式。</li>
+                        <li><strong>dominant gesture</strong> (支配性的手势): 体现控制或主导地位的姿态。</li>
+                        <li><strong>contemporary perceptions</strong> (当代的看法): 现代人的观念。</li>
+                        <li><strong>more about... than about...</strong> (更多是关于...而不是关于...): 比较结构。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>第一句是被动语态。</li>
+                        <li>第二句是一个比较句，比较了这些展示内容所揭示的两个方面。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-e-4"><strong>第四句</strong><button class="toggle-btn" data-target="ul-p-e-4">Hide</button></h4>
+            <p><strong>There <code>is</code> one compensation, however, for the professionals who make these interpretations: if they <code>did not provide</code> the interpretation, visitors would <code>do</code> it for themselves, based on their own ideas, misconceptions and prejudices. And no matter how exciting the result, it would <code>contain</code> a lot more bias than the presentations provided by experts.</strong></p>
+            <ul id="ul-p-e-4" class="analysis-content">
+                <li><strong>翻译:</strong> 然而，对于做出这些阐释的专业人士来说，有一点可以聊以自慰：如果他们不提供阐释，游客们会根据自己的想法、误解和偏见自己去解读。而且，无论结果多么激动人心，它所包含的偏见会比专家提供的呈现多得多。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>compensation</strong> (补偿/慰藉): 可以弥补缺憾的事物。</li>
+                        <li><strong>interpretations</strong> (阐释): 解释，说明。</li>
+                        <li><strong>misconceptions</strong> (误解): 错误的观念。</li>
+                        <li><strong>prejudices</strong> (偏见): 成见。</li>
+                        <li><strong>no matter how</strong> (无论多么): 引导让步状语从句。</li>
+                        <li><strong>bias</strong> (偏见): 倾向性，不公正。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>第一部分是一个 <strong>There be</strong> 句型，后面跟一个冒号引出的解释。</li>
+                        <li>冒号后面是一个由 <strong>if</strong> 引导的虚拟条件句（与现在事实相反）。</li>
+                        <li><strong>based on...</strong> 是过去分词短语作状语。</li>
+                        <li>第二部分由 <strong>And</strong> 连接，其中包含一个 <strong>no matter how</strong> 引导的让步状语从句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2 id="p-f">Paragraph F</h2>
+
+            <h4 id="p-f-1"><strong>第一句</strong><button class="toggle-btn" data-target="ul-p-f-1">Hide</button></h4>
+            <p><strong>Human bias <code>is</code> inevitable, but another source of bias in the representation of history <code>has to do</code> with the transitory nature of the materials themselves.</strong></p>
+            <ul id="ul-p-f-1" class="analysis-content">
+                <li><strong>翻译:</strong> 人的偏见是不可避免的，但历史呈现中的另一个偏见来源与材料本身的短暂性有关。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>Human bias</strong> (人的偏见): 来自于人的主观倾向。</li>
+                        <li><strong>inevitable</strong> (不可避免的): 必然发生的。</li>
+                        <li><strong>representation of history</strong> (历史的呈现): 对历史的展现方式。</li>
+                        <li><strong>has to do with</strong> (与...有关): 相当于 <strong>is related to</strong>。</li>
+                        <li><strong>transitory nature</strong> (短暂性): 容易消失、不能持久的特性。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个由 <strong>but</strong> 连接的并列句，提出了两种偏见的来源。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-f-2"><strong>第二句</strong><button class="toggle-btn" data-target="ul-p-f-2">Hide</button></h4>
+            <p><strong>The simple fact <code>is</code> that not everything from history <code>survives</code> the historical process.</strong></p>
+            <ul id="ul-p-f-2" class="analysis-content">
+                <li><strong>翻译:</strong> 一个简单的事实是，并非所有历史上的东西都能在历史进程中幸存下来。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>survives the historical process</strong> (在历史进程中幸存下来): 经历时间的考验而保存下来。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个主系表结构的句子，其中表语是一个由 <strong>that</strong> 引导的从句（表语从句）。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-f-3"><strong>第三句</strong><button class="toggle-btn" data-target="ul-p-f-3">Hide</button></h4>
+            <p><strong>Castles, palaces and cathedrals <code>have</code> a longer lifespan than the dwellings of ordinary people.</strong></p>
+            <ul id="ul-p-f-3" class="analysis-content">
+                <li><strong>翻译:</strong> 城堡、宫殿和教堂比普通人的住所寿命更长。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>lifespan</strong> (寿命): 存在的时间。</li>
+                        <li><strong>dwellings</strong> (住所): 居住的地方。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个比较句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-f-4"><strong>第四句</strong><button class="toggle-btn" data-target="ul-p-f-4">Hide</button></h4>
+            <p><strong>The same <code>applies</code> to the furnishings and other contents of the premises.</strong></p>
+            <ul id="ul-p-f-4" class="analysis-content">
+                <li><strong>翻译:</strong> 同样的情况也适用于这些场所的家具和其他内部物品。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>The same applies to</strong> (同样的情况也适用于): 固定搭配，表示“同样适用于”。</li>
+                        <li><strong>furnishings</strong> (家具): 房屋内的陈设。</li>
+                        <li><strong>premises</strong> (场所/建筑物): 指上文提到的城堡、宫殿等。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个简单句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-f-5"><strong>第五句</strong><button class="toggle-btn" data-target="ul-p-f-5">Hide</button></h4>
+            <p><strong>In a town like Leyden in Holland, which in the seventeenth century <code>was occupied</code> by approximately the same number of inhabitants as today, people <code>lived</code> within the walled town, an area more than five times smaller than modern Leyden. In most of the houses several families <code>lived</code> together in circumstances beyond our imagination.</strong></p>
+            <ul id="ul-p-f-5" class="analysis-content">
+                <li><strong>翻译:</strong> 在像荷兰莱顿这样的城镇里——它在17世纪时的人口与今天大致相同——人们居住在有城墙的镇内，那片区域比现代莱顿小五倍多。在大多数房子里，好几个家庭生活在一起，其状况超乎我们的想象。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>was occupied by</strong> (被...居住/占据): 被动语态。</li>
+                        <li><strong>inhabitants</strong> (居民): 居住者。</li>
+                        <li><strong>walled town</strong> (有城墙的镇): 古代有城墙围绕的城镇。</li>
+                        <li><strong>circumstances beyond our imagination</strong> (超乎我们想象的状况): 我们难以想象的生活条件。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>第一句是一个复合句。主句是 <strong>people lived within the walled town</strong>。</li>
+                        <li><strong>which in the seventeenth century was occupied...</strong> 是一个非限制性定语从句，修饰 <strong>Leyden in Holland</strong>。</li>
+                        <li><strong>an area more than five times smaller than modern Leyden</strong> 是 <strong>the walled town</strong> 的同位语，作补充说明。</li>
+                        <li>第二句是一个简单句。</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h4 id="p-f-6"><strong>第六句</strong><button class="toggle-btn" data-target="ul-p-f-6">Hide</button></h4>
+            <p><strong>Yet in museums, fine period rooms <code>give</code> only an image of the lifestyle of the upper class of that era. No wonder that people who stroll around exhibitions <code>are filled</code> with nostalgia; the evidence in museums <code>indicates</code> that life <code>was</code> so much better in the past. This notion <code>is induced</code> by the bias in its representation in museums and heritage centres.</strong></p>
+            <ul id="ul-p-f-6" class="analysis-content">
+                <li><strong>翻译:</strong> 然而在博物馆里，精美的时代房间只展现了那个时代上层阶级的生活方式。难怪逛展览的人们会充满怀旧之情；博物馆里的证据表明，过去的生活要好得多。这种观念是由博物馆和遗产中心在呈现历史时的偏见所引起的。</li>
+                <li><strong>词汇与词组分析:</strong>
+                    <ul>
+                        <li><strong>period rooms</strong> (时代房间): 按特定历史时期风格布置的房间。</li>
+                        <li><strong>upper class</strong> (上层阶级): 社会上层人士。</li>
+                        <li><strong>No wonder that...</strong> (难怪...): 用于引出意料之中的结果。</li>
+                        <li><strong>stroll around</strong> (闲逛): 悠闲地走动。</li>
+                        <li><strong>be filled with nostalgia</strong> (充满怀旧之情): 对过去的美好时光感到向往。</li>
+                        <li><strong>notion</strong> (观念): 看法，想法。</li>
+                        <li><strong>is induced by</strong> (由...引起): 被动语态，表示因果关系。</li>
+                    </ul>
+                </li>
+                <li><strong>句型分析:</strong>
+                    <ul>
+                        <li>这是一个由三个句子组成的段落。</li>
+                        <li>第一句以 <strong>Yet</strong> 开头，表示转折。</li>
+                        <li>第二句使用 <strong>No wonder that...</strong> 句型，其中 <strong>that</strong> 引导一个名词性从句。<strong>who stroll around exhibitions</strong> 是定语从句，修饰 <strong>people</strong>。分号后的部分解释原因，其中 <strong>that life was so much better in the past</strong> 是 <strong>indicates</strong> 的宾语从句。</li>
+                        <li>第三句是被动语态，总结了这种怀旧观念产生的原因。</li>
+                    </ul>
+                </li>
+            </ul>
+    
+        </div>
+    </div>
+
+    <!-- Full Article Modal -->
+    <div id="full-article-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <div class="modal-body">
+                <!-- Content will be injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleWidthBtn = document.getElementById('toggle-width-btn');
+            const container = document.querySelector('.container');
+
+            if (toggleWidthBtn && container) {
+                toggleWidthBtn.addEventListener('click', () => {
+                    container.classList.toggle('container-wide');
+                    if (container.classList.contains('container-wide')) {
+                        toggleWidthBtn.textContent = '默认宽度';
+                    } else {
+                        toggleWidthBtn.textContent = '加宽';
+                    }
+                });
+            }
+
+            const toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
+            const body = document.body;
+
+            if (toggleSidebarBtn) {
+                toggleSidebarBtn.addEventListener('click', () => {
+                    body.classList.toggle('sidebar-collapsed');
+                    if (body.classList.contains('sidebar-collapsed')) {
+                        toggleSidebarBtn.innerHTML = '&raquo;';
+                    } else {
+                        toggleSidebarBtn.innerHTML = '&laquo;';
+                    }
+                });
+            }
+
+            const sidebarNav = document.querySelector('.sidebar-nav');
+            const mainLinks = sidebarNav.querySelectorAll('ul > li > a');
+
+            // --- Sidebar Accordion ---
+            mainLinks.forEach(link => {
+                const submenu = link.nextElementSibling;
+                if (submenu && submenu.classList.contains('submenu')) {
+                    const icon = document.createElement('span');
+                    icon.className = 'toggle-icon';
+                    icon.textContent = '▼';
+                    link.appendChild(icon);
+
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const wasCollapsed = link.classList.contains('collapsed');
+
+                        mainLinks.forEach(otherLink => {
+                            if (otherLink !== link) {
+                                otherLink.classList.add('collapsed');
+                                const otherSubmenu = otherLink.nextElementSibling;
+                                if (otherSubmenu && otherSubmenu.classList.contains('submenu')) {
+                                    otherSubmenu.classList.add('collapsed');
+                                }
+                            }
+                        });
+
+                        if (wasCollapsed) {
+                            link.classList.remove('collapsed');
+                            submenu.classList.remove('collapsed');
+                        } else {
+                            link.classList.add('collapsed');
+                            submenu.classList.add('collapsed');
+                        }
+                    });
+                }
+            });
+
+            // --- Initial State: Collapse all submenus ---
+            sidebarNav.querySelectorAll('.submenu').forEach(submenu => {
+                submenu.classList.add('collapsed');
+                const prevLink = submenu.previousElementSibling;
+                if (prevLink && prevLink.tagName === 'A') {
+                    prevLink.classList.add('collapsed');
+                }
+            });
+
+            // --- Scroll-spy functionality ---
+            window.addEventListener('scroll', () => {
+                const sections = document.querySelectorAll('.main-content h2[id], .main-content h4[id]');
+                const sidebarLinks = sidebarNav.querySelectorAll('a');
+                let currentId = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 70) {
+                        currentId = section.getAttribute('id');
+                    }
+                });
+
+                sidebarLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentId) {
+                        link.classList.add('active');
+                        
+                        const parentSubmenu = link.closest('.submenu');
+                        if (parentSubmenu && parentSubmenu.classList.contains('collapsed')) {
+                            const parentAnchor = parentSubmenu.previousElementSibling;
+                            mainLinks.forEach(otherLink => {
+                                if (otherLink !== parentAnchor) {
+                                    otherLink.classList.add('collapsed');
+                                    const otherSubmenu = otherLink.nextElementSibling;
+                                    if (otherSubmenu) otherSubmenu.classList.add('collapsed');
+                                }
+                            });
+                            parentSubmenu.classList.remove('collapsed');
+                            if (parentAnchor) parentAnchor.classList.remove('collapsed');
+                        }
+                    }
+                });
+            });
+
+            // --- Toggle functionality for analysis content ---
+            const analysisContainer = document.querySelector('.container');
+            analysisContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('toggle-btn')) {
+                    const targetId = e.target.dataset.target;
+                    const analysisUl = document.getElementById(targetId);
+                    if (analysisUl) {
+                        analysisUl.classList.toggle('collapsed');
+                        e.target.textContent = analysisUl.classList.contains('collapsed') ? 'Show' : 'Hide';
+                    }
+                }
+            });
+
+            // --- Global & Sidebar buttons ---
+            const expandAllBtn = document.getElementById('expand-all-btn');
+            const collapseAllBtn = document.getElementById('collapse-all-btn');
+            const readFullArticleBtn = document.getElementById('read-full-article-btn');
+            const modal = document.getElementById('full-article-modal');
+            const modalCloseBtn = document.querySelector('.modal-close-btn');
+            const modalBody = modal.querySelector('.modal-body');
+
+            expandAllBtn.addEventListener('click', () => {
+                document.querySelectorAll('.analysis-content').forEach(ul => ul.classList.remove('collapsed'));
+                document.querySelectorAll('.toggle-btn').forEach(btn => btn.textContent = 'Hide');
+            });
+
+            collapseAllBtn.addEventListener('click', () => {
+                document.querySelectorAll('.analysis-content').forEach(ul => ul.classList.add('collapsed'));
+                document.querySelectorAll('.toggle-btn').forEach(btn => btn.textContent = 'Show');
+            });
+
+            // --- Modal Functionality ---
+            function openModal() {
+                const articleContainer = document.querySelector('.main-content .container');
+                const paragraphHeaders = articleContainer.querySelectorAll('h2');
+                let fullTextHTML = '';
+
+                paragraphHeaders.forEach(h2 => {
+                    fullTextHTML += `<h3>${h2.textContent}</h3>`;
+                    let paragraphText = '';
+                    let currentNode = h2.nextElementSibling;
+
+                    while (currentNode && currentNode.tagName !== 'H2') {
+                        if (currentNode.tagName === 'H4') {
+                            const sentenceP = currentNode.nextElementSibling;
+                            if (sentenceP && sentenceP.tagName === 'P') {
+                                paragraphText += sentenceP.textContent.trim() + ' ';
+                            }
+                        }
+                        currentNode = currentNode.nextElementSibling;
+                    }
+                    fullTextHTML += `<p>${paragraphText.trim()}</p>`;
+                });
+
+                modalBody.innerHTML = fullTextHTML;
+                modal.style.display = "block";
+                document.body.classList.add('modal-open');
+            }
+
+            function closeModal() {
+                modal.style.display = "none";
+                document.body.classList.remove('modal-open');
+            }
+
+            readFullArticleBtn.addEventListener('click', openModal);
+            modalCloseBtn.addEventListener('click', closeModal);
+            window.addEventListener('click', (event) => {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -8,10 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/docs/public/html/EbbinghausReviewPlanGenerator.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/public/html/EnglishLearningToolkit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/html/Color.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/Color.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -386,6 +383,7 @@
       <workItem from="1757418627117" duration="150000" />
       <workItem from="1757495703717" duration="150000" />
       <workItem from="1757496135791" duration="2623000" />
+      <workItem from="1757746757751" duration="10000" />
     </task>
     <servers />
   </component>
