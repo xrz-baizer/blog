@@ -2,7 +2,27 @@
 
 ## Subscription
 
-tbd
+### Google Pay
+
+- 谷歌账号：地区设置美国（越南也行、新加坡不行 ）
+
+  - 美国最便宜
+  - 修改谷歌账号地址：https://policies.google.com/country-association-form
+
+  - https://www.cnblogs.com/luchaoshuai/p/18760504
+
+- 代理IP：美国
+
+- 账单地址生成（俄勒冈州-全免税）：https://www.meiguodizhi.com/usa-address/oregon
+
+- 仅支持安卓：Mac上可以使用Android Studio模拟器
+
+### 虚拟卡
+
+https://bpay.net/ask/d/36
+https://bpay.net/ask/d/8/10
+
+
 
 ## Commands
 
