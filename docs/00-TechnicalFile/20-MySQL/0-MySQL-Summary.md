@@ -387,7 +387,7 @@ UndoLog被称之为回滚日志，保存的备份数据不仅用于实现事务�
 
   - `SELECT * FROM your_table WHERE id = 1 FOR UPDATE;`
   - 使用时必须要有主键唯一索引，防止行锁升级为表锁。
-  -  [参考另一篇：select-for-update](../../01-Essay/select-for-update.md) 
+  -  [参考另一篇：select-for-update](../../01-Essay/疑难杂症/select-for-update.md) 
 
 - **使用中间件提供的API强制走主库查询**：
 
