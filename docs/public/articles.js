@@ -53,7 +53,7 @@ export const articlesMap = {
   "01-Essay/0-Blog自动部署.md": " 前言 为建立个人知识库，打造个人博客，用于记录成体系的知识、随笔等。 最终实现效果： 1. 在本地Typora编写文章 2. 执行`publish-blog`命令即可发布（执行deploy.sh脚本） 1. 将需要发布的文章复制到Blog项目的docs目录中 2. 推送Blog项目至Github备份 3. 重新构建Blog生成静态html文件 4. 压缩静态文件推送至远程服务器/app目录再解压",
   "01-Essay/0-使用ECS为本地搭建开发环境.md": " 服务器准备 > 购买的华为云服务： > > - 116.205.134.46 > > - 2vCPUs 4GiB ac7.large.2 > > - CentOS 7.6 64bit 注意为对应安全组开放端口，或者直接开放所有端口，并限制只允许本机IP访问 - 查询本机IP地址：https://ip111.c... 本地配置 配置host映射，后续可直接使用hostname登入服务器 ```sh",
   "01-Essay/Command-line-shortcut-keys.md": " > iTerm2 的快捷键操作可分为两类：一类是由 Shell 环境（如 Zsh 或 Bash）通过 Readline 库提供的快捷键，适用于大多数命令行程序；另一类是 iTerm2 应用本身提供的，用于管理窗口、标签页和面板等图形界面元素。 一、光标移动 (Navigation) 在命令行界面输入时，用于高效移动光标的快捷键。 快捷键 (Keystroke) `Ctrl + A` `Ctrl ",
-  "01-Essay/claude-code-user-manual.md": " Subscription Google Pay - 谷歌账号：地区设置美国（越南也行、新加坡不行 ） - 美国最便宜 - 修改谷歌账号地址：https://policie... - https://www.cnb... - 代理IP：美国 - 账单地址生成（俄勒冈州-全免税）：https://www.mei... - 仅支持安卓：Mac上可以使用Android Studio模拟器 虚拟卡 htt",
+  "01-Essay/claude-code-user-manual.md": " Subscription 申请海外信用卡绑定Google Pay支付 Commands > Official documentation: https://docs.an... - `# xxx` 实时写入Memory - `! xxx` 执行本地bash命令 - `claude -p 'question'` 单次咨询claude - `ctrl + j` 输入框换行 - `shift + ta",
   "01-Essay/index.md": "<category/>",
   "01-Essay/开源框架.md": " GitHub - 一人公司方法论：https://github.... - PDF提取工具：https://github.... - 证件照生成：https://github.... - Github代码阅读神器：https://deepwik... 前端动画组件库 - https://vue-bit... - https://reactbi... - https://gsap.co... - ",
   "01-Essay/疑难杂症/0-微服务架构下全链路超时控制分析.md": " 1. 背景 本文档旨在深入分析在一次典型的“前端 -> 网关 -> 后端”调用链路中，各层级存在的超时控制机制。我们将以`gsSync`接口批量更新任务所引发的`thread interrupted`异常为案例，详细拆解从用户请求到服务间调用的每一个环节，理解不同超时配置的作用、默认值及其影响，从而为设计健壮的长时间任务处理方案提供理论依据。 2. 标准调用链路及超时分析 一个典型的调用链路可以",
