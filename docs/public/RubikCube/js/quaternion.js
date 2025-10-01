@@ -26,7 +26,9 @@ Quaternion.prototype.init = function(x, y, z, w) {
 
 Quaternion.prototype.normalize = function() {
 	var norm = Math.sqrt(this.x*this.x + this.y*this.y + this.z*this.z + this.w*this.w);
-	return new this.constructor(this.x/norm, this.y/norm, this.z/norm, this.w/norm);
+	if (norm === 0) { return new this.constructor(0, 0, 0, 1); }
+	var invNorm = 1 / norm;
+	return new this.constructor(this.x*invNorm, this.y*invNorm, this.z*invNorm, this.w*invNorm);
 }
 
 Quaternion.prototype.conjugate = function() {
@@ -60,7 +62,7 @@ Quaternion.prototype.toAngle = function() {
 Quaternion.prototype.toRotation = function() {
 	var axis = this.toAxis();
 	var angle = this.toAngle();
-	return "rotate3d(" + axis[0].toFixed(10) + "," + axis[1].toFixed(10) + "," + axis[2].toFixed(10) + "," + angle.toFixed(10) + "deg)";
+	return "rotate3d(" + axis[0].toFixed(6) + "," + axis[1].toFixed(6) + "," + axis[2].toFixed(6) + "," + angle.toFixed(4) + "deg)";
 }
 
 Quaternion.prototype.toRotations = function() {

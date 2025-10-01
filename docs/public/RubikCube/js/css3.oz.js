@@ -1,4 +1,5 @@
-OZ.CSS3 = { 
+OZ.CSS3 = {
+	_prefixCache: {},
 	getProperty: function(property) {
 		var prefix = this.getPrefix(this._normalize(property));
 		if (prefix === null) { return null; }
@@ -13,12 +14,19 @@ OZ.CSS3 = {
 		return true;
 	},
 	getPrefix: function(property) {
+		if (property in this._prefixCache) {
+			return this._prefixCache[property];
+		}
 		var prefixes = ["", "ms", "Webkit", "O", "Moz"];
 		for (var i=0;i<prefixes.length;i++) {
 			var p = prefixes[i];
 			var prop = (p ? p + property.charAt(0).toUpperCase() + property.substring(1) : property);
-			if (prop in this._node.style) { return p; }
+			if (prop in this._node.style) {
+				this._prefixCache[property] = p;
+				return p;
+			}
 		}
+		this._prefixCache[property] = null;
 		return null;
 	},
 	_normalize: function(property) {

@@ -1,8 +1,5 @@
 Array.prototype.clone = function() {
-	var c = [];
-	var len = this.length;
-	for (var i=0;i<len;i++) { c.push(this[i]); }
-	return c;
+	return this.slice(0);
 }
 
 Array.prototype.random = function() {
@@ -89,6 +86,7 @@ Cube.prototype.init = function(position) {
 	this._node = OZ.DOM.elm("div", {className:"cube", position:"absolute", width:Face.SIZE+"px", height:Face.SIZE+"px"});
 	this._faces = {};
 	this._tmpFaces = {};
+	this._lastRotationState = false;
 	OZ.CSS3.set(this._node, "transform-style", "preserve-3d");
 
 	this._update();
@@ -130,14 +128,17 @@ Cube.prototype.prepareColorChange = function(sourceCube, rotation) {
 }
 
 Cube.prototype.commitColorChange = function() {
-	OZ.DOM.clear(this._node);
-	this._faces = {};
-	for (var p in this._tmpFaces) { 
+	// Update colors without clearing DOM
+	for (var p in this._tmpFaces) {
 		var type = parseInt(p);
-		this.setFace(type, this._tmpFaces[p]); 
+		if (type in this._faces) {
+			this._faces[type].setColor(this._tmpFaces[p]);
+		} else {
+			this.setFace(type, this._tmpFaces[p]);
+		}
 	}
 	this._tmpFaces = {};
-	
+
 	this._rotation = null;
 	this._update();
 }
@@ -169,9 +170,13 @@ Cube.prototype._update = function() {
 	z += half + 1/2;
 	transform += "translate3d("+(x*(Face.SIZE+Cube.GAP))+"px, "+(y*(Face.SIZE+Cube.GAP))+"px, "+(z*(Face.SIZE+Cube.GAP))+"px)";
 
-	var prop = OZ.CSS3.getProperty("transform");
-	var val = this._rotation ? prop + " 300ms" : "";
-	OZ.CSS3.set(this._node, "transition", val);
+	var hasRotation = !!this._rotation;
+	if (this._lastRotationState !== hasRotation) {
+		var prop = OZ.CSS3.getProperty("transform");
+		var val = hasRotation ? prop + " 300ms" : "";
+		OZ.CSS3.set(this._node, "transition", val);
+		this._lastRotationState = hasRotation;
+	}
 
 	OZ.CSS3.set(this._node, "transform", transform);
 }
@@ -194,6 +199,7 @@ Rubik.prototype.init = function() {
 	this._cubes = [];
 	this._faces = [];
 	this._faceNodes = [];
+	this._faceMap = new Map();
 	this._interval = null;
 	this._autorotatePaused = false;
 	this._help = {};
@@ -202,8 +208,9 @@ Rubik.prototype.init = function() {
 		mouse: [],
 		face: null
 	};
-	
+
 	this._rotation = Quaternion.fromRotation([1, 0, 0], -35).multiply(Quaternion.fromRotation([0, 1, 0], 45));
+	this._autoRotationIncrement = Quaternion.fromRotation([1, 1, 0], 0.3);
 	this._node = OZ.DOM.elm("div", {position:"absolute", left:"50%", top:"55%", width:"0px", height:"0px"});
 	document.body.appendChild(this._node);
 	
@@ -261,7 +268,7 @@ Rubik.prototype._initUI = function() {
 
 Rubik.prototype._autorotate = function() {
 	if (this._autorotatePaused) { return; }
-	this._rotation = this._rotation.multiply(Quaternion.fromRotation([1, 1, 0], 0.3));
+	this._rotation = this._rotation.multiply(this._autoRotationIncrement);
 	this._update();
 	window.requestAnimationFrame(this._autorotate.bind(this));
 }
@@ -306,27 +313,23 @@ Rubik.prototype._eventToFace = function(e) {
 	} else {
 		var node = OZ.Event.target(e);
 	}
-	var index = this._faceNodes.indexOf(node);
-	if (index == -1) { return null; }
-	return this._faces[index];
+	return this._faceMap.get(node) || null;
 }
 
 Rubik.prototype._dragStart = function(e) {
-	this._faces = [];
-	this._faceNodes = [];
+	this._faceMap.clear();
 	for (var i=0;i<this._cubes.length;i++) {
 		var faces = this._cubes[i].getFaces();
 		for (var p in faces) {
-			this._faces.push(faces[p]);
-			this._faceNodes.push(faces[p].getNode());
+			this._faceMap.set(faces[p].getNode(), faces[p]);
 		}
 	}
-	
+
 	OZ.Event.prevent(e);
 	this._drag.face = this._eventToFace(e);
 	e = (e.touches ? e.touches[0] : e);
 	this._drag.mouse = [e.clientX, e.clientY];
-	
+
 	this._drag.ec.push(OZ.Event.add(document.body, "mousemove touchmove", this._dragMove.bind(this)));
 	this._drag.ec.push(OZ.Event.add(document.body, "mouseup touchend", this._dragEnd.bind(this)));
 }
@@ -464,16 +467,19 @@ Rubik.prototype._rotateZ = function(dir, layer) {
 
 Rubik.prototype._rotateCubes = function(cubes, rotation) {
 	var suffixes = ["X", "Y", ""];
-	
+
 	var prefix = OZ.CSS3.getPrefix("transition");
 	if (prefix === null) {
 		this._finalizeRotation(cubes, rotation);
 	} else {
-		var cb = function() {
-			OZ.Event.remove(e);
+		var transitionEnded = false;
+		var cb = function(e) {
+			if (transitionEnded) { return; }
+			transitionEnded = true;
+			OZ.Event.remove(eventId);
 			this._finalizeRotation(cubes, rotation);
 		}
-		var e = OZ.Event.add(document.body, "webkitTransitionEnd transitionend MSTransitionEnd oTransitionEnd", cb.bind(this));
+		var eventId = OZ.Event.add(cubes[0].getNode(), "webkitTransitionEnd transitionend MSTransitionEnd oTransitionEnd", cb.bind(this));
 
 		var str = "";
 		for (var i=0;i<3;i++) {
@@ -482,7 +488,7 @@ Rubik.prototype._rotateCubes = function(cubes, rotation) {
 		}
 		for (var i=0;i<cubes.length;i++) { cubes[i].setRotation(str); }
 	}
-	
+
 }
 
 /**
@@ -490,34 +496,32 @@ Rubik.prototype._rotateCubes = function(cubes, rotation) {
  */
 Rubik.prototype._finalizeRotation = function(cubes, rotation) {
 	var direction = 0;
-	for (var i=0;i<3;i++) { 
-		if (rotation[i]) { direction = rotation[i]; } 
+	for (var i=0;i<3;i++) {
+		if (rotation[i]) { direction = rotation[i]; }
 	}
-	
+
 	if (rotation[0]) { direction *= -1; } /* FIXME wtf */
-	
+
 	var half = Math.floor(Rubik.SIZE/2) - (Rubik.SIZE % 2 === 0 ? 1/2 : 0);
 
 	for (var i=0;i<cubes.length;i++) {
 		var x = i % Rubik.SIZE - half;
 		var y = Math.floor(i / Rubik.SIZE) - half;
-		
+
 		var source = [y*direction + half, -x*direction + half];
 		var sourceIndex = source[0] + Rubik.SIZE*source[1];
-		
+
 		cubes[i].prepareColorChange(cubes[sourceIndex], rotation);
 	}
-	
+
 	for (var i=0;i<cubes.length;i++) { cubes[i].commitColorChange(); }
-	
-	setTimeout(function() {
-		if (this._help.b) {
-			this._help.b.style.opacity = 0;
-			this._help.b = null;
-		}
-		
-		this.dispatch("rotated");
-	}.bind(this), 100);
+
+	if (this._help.b) {
+		this._help.b.style.opacity = 0;
+		this._help.b = null;
+	}
+
+	this.dispatch("rotated");
 }
 
 Rubik.prototype._build = function() {
