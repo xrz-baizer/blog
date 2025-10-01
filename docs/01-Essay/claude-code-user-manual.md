@@ -2,27 +2,7 @@
 
 ## Subscription
 
-### Google Pay
-
-- 谷歌账号：地区设置美国（越南也行、新加坡不行 ）
-
-  - 美国最便宜
-  - 修改谷歌账号地址：https://policies.google.com/country-association-form
-
-  - https://www.cnblogs.com/luchaoshuai/p/18760504
-
-- 代理IP：美国
-
-- 账单地址生成（俄勒冈州-全免税）：https://www.meiguodizhi.com/usa-address/oregon
-
-- 仅支持安卓：Mac上可以使用Android Studio模拟器
-
-### 虚拟卡
-
-https://bpay.net/ask/d/36
-https://bpay.net/ask/d/8/10
-
-
+申请海外信用卡绑定Google Pay支付
 
 ## Commands
 
@@ -39,12 +19,12 @@ https://bpay.net/ask/d/8/10
 
 ## Prompt
 
+> 主流AI系统提示词参考：https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
+
 - **思考强度：**`think` < `think hard` < `think harder` < `ultrathink`
 - **上下文压缩：**`我需要总结当前所有工作内容，后续将由其他开发者接手继续开发`
 - **修复问题：**`请分析此Bug的根本原因，并制定修复方案`
 - **前端界面提示器：**`请你严格遵守苹果的设计规范和交互规范。帮我把这个页面写出来。`
-
-
 
 ### 代码生成模板
 
@@ -107,8 +87,6 @@ https://bpay.net/ask/d/8/10
 
 
 
-
-
 ## Claude.md
 
 `~/.claude/CLAUDE.md`
@@ -129,7 +107,8 @@ https://bpay.net/ask/d/8/10
 
 - MCP
   - [Context7：帮助AI查找最新代码文档（让Claude Code能获取超过训练数据截止日期的数据）](https://github.com/upstash/context7)
-
+  - https://github.com/ChromeDevTools/chrome-devtools-mcp
+  
 - Claude Code UI：
   - https://github.com/getAsterisk/claudia
   - https://github.com/xuzhenpeng263/claudia-globa
