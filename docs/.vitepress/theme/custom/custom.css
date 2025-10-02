@@ -673,5 +673,9 @@ input[type="checkbox"]{
     --vp-c-brand-3: #298459;
 }
 
+/* 禁用侧边栏状态恢复时的过渡动画 */
+.VPSidebar.no-transition * {
+    transition: none !important;
+}
 
 

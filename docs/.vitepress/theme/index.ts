@@ -114,11 +114,176 @@ export default {
       }
     };
 
+    // 侧边栏状态持久化
+    const STORAGE_KEY_PREFIX = 'vitepress:sidebar:state:';
+
+    const getSidebarKey = () => {
+      // 获取当前路径的第一级目录作为 key
+      const pathParts = route.path.split('/').filter(p => p);
+      const basePath = pathParts[0] || 'home';
+      return STORAGE_KEY_PREFIX + basePath;
+    };
+
+    const saveSidebarState = () => {
+      const state = {};
+      const groups = document.querySelectorAll('.VPSidebarItem.level-1.collapsible');
+      console.log('[Sidebar] Saving state, found groups:', groups.length);
+
+      // 如果没有找到可折叠的侧边栏项，不保存状态，避免覆盖有效状态
+      if (groups.length === 0) {
+        console.log('[Sidebar] No collapsible groups found, skipping save');
+        return;
+      }
+
+      groups.forEach((group) => {
+        const title = group.querySelector('h3.text');
+        const text = title?.textContent?.trim();
+
+        if (text) {
+          // collapsed 类表示折叠，没有这个类表示展开
+          const isOpen = !group.classList.contains('collapsed');
+          state[text] = isOpen;
+          console.log('[Sidebar] Saving:', text, '=', isOpen);
+        }
+      });
+
+      const key = getSidebarKey();
+      localStorage.setItem(key, JSON.stringify(state));
+      console.log('[Sidebar] Saved to localStorage with key:', key, state);
+    };
+
+    const restoreSidebarState = () => {
+      const key = getSidebarKey();
+      const savedState = localStorage.getItem(key);
+      console.log('[Sidebar] Restoring state from key:', key, savedState);
+      if (!savedState) return;
+
+      try {
+        const state = JSON.parse(savedState);
+        let restored = false;
+
+        // 尝试恢复侧边栏状态
+        const attemptRestore = () => {
+          if (restored) return true;
+
+          const groups = document.querySelectorAll('.VPSidebarItem.level-1.collapsible');
+          console.log('[Sidebar] Restoring, found groups:', groups.length);
+
+          if (groups.length === 0) return false;
+
+          const sidebar = document.querySelector('.VPSidebar') as HTMLElement;
+
+          groups.forEach((group) => {
+            const title = group.querySelector('h3.text');
+            const text = title?.textContent?.trim();
+
+            if (text && state.hasOwnProperty(text)) {
+              const shouldBeOpen = state[text];
+              const isCurrentlyOpen = !group.classList.contains('collapsed');
+
+              console.log('[Sidebar] Restoring:', text, 'should be:', shouldBeOpen, 'currently:', isCurrentlyOpen);
+
+              // 直接操作 CSS 类，不触发点击动画
+              if (shouldBeOpen && !isCurrentlyOpen) {
+                group.classList.remove('collapsed');
+                console.log('[Sidebar] Expanded:', text);
+              } else if (!shouldBeOpen && isCurrentlyOpen) {
+                group.classList.add('collapsed');
+                console.log('[Sidebar] Collapsed:', text);
+              }
+            }
+          });
+
+          // 显示侧边栏并恢复过渡动画
+          if (sidebar) {
+            sidebar.style.opacity = '1';
+            setTimeout(() => {
+              sidebar.classList.remove('no-transition');
+            }, 50);
+          }
+
+          if (groups.length > 0) {
+            restored = true;
+            console.log('[Sidebar] Restore completed');
+          }
+
+          return restored;
+        };
+
+        // 立即隐藏侧边栏，防止闪烁
+        const sidebar = document.querySelector('.VPSidebar') as HTMLElement;
+        if (sidebar) {
+          sidebar.style.opacity = '0';
+          sidebar.classList.add('no-transition');
+        }
+
+        // 使用 MutationObserver 监听侧边栏渲染
+        if (sidebar) {
+          const observer = new MutationObserver(() => {
+            if (attemptRestore()) {
+              observer.disconnect();
+            }
+          });
+
+          observer.observe(sidebar, {
+            childList: true,
+            subtree: true
+          });
+
+          // 设置超时自动断开，并确保显示侧边栏
+          setTimeout(() => {
+            observer.disconnect();
+            if (!restored && sidebar) {
+              sidebar.style.opacity = '1';
+              sidebar.classList.remove('no-transition');
+            }
+          }, 1000);
+        }
+
+        // 极早期尝试（在下一个微任务中）
+        Promise.resolve().then(attemptRestore);
+        // 多次尝试恢复（兜底机制）
+        setTimeout(attemptRestore, 0);
+        setTimeout(attemptRestore, 50);
+        setTimeout(attemptRestore, 150);
+      } catch (e) {
+        console.error('Failed to restore sidebar state:', e);
+        // 出错时确保侧边栏可见
+        const sidebar = document.querySelector('.VPSidebar') as HTMLElement;
+        if (sidebar) {
+          sidebar.style.opacity = '1';
+          sidebar.classList.remove('no-transition');
+        }
+      }
+    };
+
+    const setupSidebarListener = () => {
+      // 使用事件委托监听所有点击
+      const handleClick = (e: Event) => {
+        const target = e.target as HTMLElement;
+
+        // 检查是否点击了侧边栏的可折叠项
+        const caretElement = target.closest('.caret');
+        const itemElement = target.closest('.VPSidebarItem.level-1.collapsible .item');
+
+        if (caretElement || itemElement) {
+          console.log('[Sidebar] Sidebar item clicked');
+          // 延迟保存，等待 DOM 更新
+          setTimeout(saveSidebarState, 100);
+        }
+      };
+
+      document.addEventListener('click', handleClick, true); // 使用捕获阶段
+      console.log('[Sidebar] Listener setup complete');
+    };
+
     onMounted(() => { // 即时触发
       toggleAsideVisibility();
       addUpdateTimeDiv();
       initZoom();
       recordView(route.path); // 记录当前页面的访问量
+      setupSidebarListener();
+      restoreSidebarState();
       // updateSidebarVisibility();
       // window.addEventListener('resize', updateSidebarVisibility);
     });
@@ -130,6 +295,7 @@ export default {
             addUpdateTimeDiv();
             toggleAsideVisibility();
             recordView(route.path);
+            restoreSidebarState();
           });
         }
     );
