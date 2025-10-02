@@ -110,7 +110,7 @@
 
     /*--vp-home-hero-image-filter: blur(80px);*/
     .VPHero{
-        /*padding-top: 30px !important;*/
+        padding-top: 30px !important;
         padding-bottom: 20px !important;
         /*background-image: var(--vp-home-hero-image-background-image);*/
         /*filter: blur(30px);*/
@@ -218,11 +218,11 @@ body.no-sidebar .content {
 }
 
 .VPNav{
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
+    /*position: fixed !important;*/
+    /*top: 0 !important;*/
+    /*left: 0 !important;*/
+    /*right: 0 !important;*/
+    /*width: 100% !important;*/
     z-index: var(--vp-z-index-nav);
     box-shadow: rgba(0, 0, 0, 0.075) 0px 0px 18px;
 }
