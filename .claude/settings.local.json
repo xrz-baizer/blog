@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "mcp__chrome-devtools__navigate_page",
-      "mcp__chrome-devtools__performance_start_trace"
+      "mcp__chrome-devtools__performance_start_trace",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(yarn dev)",
+      "Bash(cat:*)",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__list_console_messages",
+      "mcp__chrome-devtools__resize_page",
+      "Bash(yarn:*)",
+      "Read(//var/folders/7n/w_2vlbxj40d659blrzwds4w40000gn/T/chrome-devtools-mcp-3XuM6k/**)"
     ],
     "deny": [],
     "ask": []
