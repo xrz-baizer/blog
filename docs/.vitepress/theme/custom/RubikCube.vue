@@ -163,6 +163,9 @@ onBeforeUnmount(() => {
   z-index: 1;
   -webkit-perspective: 460px;
   perspective: 460px;
+  overflow: visible; /* Safari fix: prevent flattening */
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 
 #rubik-container {
@@ -171,6 +174,10 @@ onBeforeUnmount(() => {
   height: 100%;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform; /* Safari fix: force GPU acceleration */
+  overflow: visible; /* Safari fix: prevent flattening */
 }
 
 /* 魔方本身需要可交互和保持3D效果,PC端调整魔方大小 */
@@ -190,6 +197,9 @@ onBeforeUnmount(() => {
 .rubik-cube-wrapper :deep(*) {
   -webkit-transform-style: preserve-3d !important;
   transform-style: preserve-3d !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  will-change: transform !important; /* Safari fix */
 }
 
 /* Tablet responsive */
