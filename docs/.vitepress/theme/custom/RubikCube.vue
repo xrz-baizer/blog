@@ -88,7 +88,17 @@ const initRubik = () => {
   // @ts-ignore
   rubikInstance = new Rubik()
 
-  // 等待DOM更新后获取新添加的魔方节点
+  // 立即隐藏魔方节点，防止出现闪烁
+  setTimeout(() => {
+    const cubeNode = document.body.children[document.body.children.length - 1]
+    // @ts-ignore
+    if (cubeNode && cubeNode.style && cubeNode.style.position === 'absolute') {
+      // @ts-ignore
+      cubeNode.style.opacity = '0'
+    }
+  }, 0)
+
+  // 等待DOM更新后获取新添加的魔方节点并移动到容器
   setTimeout(() => {
     // 魔方节点应该是body的最后一个子节点
     const cubeNode = document.body.children[document.body.children.length - 1]
@@ -106,6 +116,8 @@ const initRubik = () => {
       cubeNode.style.left = '50%'
       // @ts-ignore
       cubeNode.style.top = '50%'
+      // @ts-ignore
+      cubeNode.style.opacity = '1'
     }
   }, 50)
 }

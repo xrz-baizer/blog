@@ -7,16 +7,7 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/RubikCube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/RubikCube.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/embed.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik-fixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik-fixed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik.js" beforeDir="false" />
-    </list>
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -395,7 +386,7 @@
       <workItem from="1759212438306" duration="685000" />
       <workItem from="1759213977019" duration="3412000" />
       <workItem from="1759290082339" duration="6564000" />
-      <workItem from="1759325353155" duration="16936000" />
+      <workItem from="1759325353155" duration="17402000" />
     </task>
     <task id="LOCAL-00001" summary="claude init">
       <option name="closed" value="true" />
