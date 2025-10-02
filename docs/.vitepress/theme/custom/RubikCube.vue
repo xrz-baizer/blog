@@ -84,14 +84,14 @@ const initRubik = () => {
 
   container.classList.add('theme-4')
 
-  // 移除 body 上的 perspective，因为我们在 CSS 中已经设置了
+  // 移除 body 上的 perspective,因为我们在 CSS 中已经设置了
   document.body.style.perspective = ''
 
-  // 创建魔方实例（会自动添加到body）
+  // 创建魔方实例(会自动添加到body)
   // @ts-ignore
   rubikInstance = new Rubik()
 
-  // 立即隐藏魔方节点，防止出现闪烁
+  // 立即隐藏魔方节点,防止出现闪烁
   setTimeout(() => {
     const cubeNode = document.body.children[document.body.children.length - 1]
     // @ts-ignore
@@ -106,13 +106,13 @@ const initRubik = () => {
     // 魔方节点应该是body的最后一个子节点
     const cubeNode = document.body.children[document.body.children.length - 1]
 
-    // 验证这是魔方节点（检查是否有position:absolute样式）
+    // 验证这是魔方节点(检查是否有position:absolute样式)
     // @ts-ignore
     if (cubeNode && cubeNode.style && cubeNode.style.position === 'absolute') {
       // 将魔方节点移动到我们的容器中
       container.appendChild(cubeNode)
 
-      // 重置魔方节点的定位，使其在容器内居中
+      // 重置魔方节点的定位,使其在容器内居中
       // @ts-ignore
       cubeNode.style.position = 'absolute'
       // @ts-ignore
@@ -121,6 +121,18 @@ const initRubik = () => {
       cubeNode.style.top = '50%'
       // @ts-ignore
       cubeNode.style.opacity = '1'
+      // @ts-ignore - Safari兼容性:添加webkit前缀
+      cubeNode.style.webkitTransformStyle = 'preserve-3d'
+      // @ts-ignore
+      cubeNode.style.transformStyle = 'preserve-3d'
+
+      // 确保所有子元素也设置3D
+      // @ts-ignore
+      const allChildren = cubeNode.querySelectorAll('*')
+      allChildren.forEach((child: any) => {
+        child.style.webkitTransformStyle = 'preserve-3d'
+        child.style.transformStyle = 'preserve-3d'
+      })
     }
   }, 50)
 }
@@ -149,6 +161,7 @@ onBeforeUnmount(() => {
   height: 100%;
   pointer-events: none;
   z-index: 1;
+  -webkit-perspective: 460px;
   perspective: 460px;
 }
 
@@ -156,24 +169,26 @@ onBeforeUnmount(() => {
   position: relative;
   width: 100%;
   height: 100%;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
-/* 魔方本身需要可交互和保持3D效果 */
+/* 魔方本身需要可交互和保持3D效果,PC端调整魔方大小 */
 .rubik-cube-wrapper :deep(> div) {
   pointer-events: auto;
-  transform-style: preserve-3d !important;
-}
-
-/* PC端：调整魔方大小 */
-.rubik-cube-wrapper :deep(> div) {
+  -webkit-transform: scale(0.85) !important;
   transform: scale(0.85) !important;
+  -webkit-transform-origin: center center !important;
   transform-origin: center center !important;
+  -webkit-transform-style: preserve-3d !important;
   transform-style: preserve-3d !important;
 }
 
-/* 确保魔方内部的cube也保持3D */
-.rubik-cube-wrapper :deep(.cube) {
+/* 确保魔方内部的所有元素也保持3D */
+.rubik-cube-wrapper :deep(.cube),
+.rubik-cube-wrapper :deep(div),
+.rubik-cube-wrapper :deep(*) {
+  -webkit-transform-style: preserve-3d !important;
   transform-style: preserve-3d !important;
 }
 
@@ -184,11 +199,12 @@ onBeforeUnmount(() => {
   }
 
   .rubik-cube-wrapper :deep(> div) {
+    -webkit-transform: scale(0.7) !important;
     transform: scale(0.7) !important;
   }
 }
 
-/* Mobile responsive - 上下排列显示，添加透明度 */
+/* Mobile responsive - 上下排列显示,添加透明度 */
 @media (max-width: 768px) {
   .rubik-cube-wrapper {
     position: relative !important;
@@ -196,7 +212,7 @@ onBeforeUnmount(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    //opacity: 0.9;
+    /* opacity: 0.9; */
     margin-top: 20px;
   }
 
@@ -207,6 +223,7 @@ onBeforeUnmount(() => {
   }
 
   .rubik-cube-wrapper :deep(> div) {
+    -webkit-transform: scale(0.35) !important;
     transform: scale(0.35) !important;
     position: relative !important;
     left: 0 !important;
@@ -220,6 +237,7 @@ onBeforeUnmount(() => {
   }
 
   .rubik-cube-wrapper :deep(> div) {
+    -webkit-transform: scale(0.23) !important;
     transform: scale(0.23) !important;
   }
 }
