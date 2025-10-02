@@ -196,7 +196,7 @@ onBeforeUnmount(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.9;
+    //opacity: 0.9;
     margin-top: 20px;
   }
 

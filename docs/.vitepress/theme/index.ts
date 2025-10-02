@@ -13,6 +13,7 @@ import ConvertWordComponent from './tool/ConvertWordComponent.vue'
 import AudioLyricPlayer from './tool/AudioLyricPlayer.vue'
 import SelectWordComponent from './tool/SelectWordComponent.vue'
 import RubikCube from './custom/RubikCube.vue'
+import Breadcrumb from './custom/Breadcrumb.vue'
 
 import giscusTalk from 'vitepress-plugin-comment-with-giscus';
 
@@ -23,7 +24,7 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       // 在所有doc类型md文件前加载该组件
-      // 'doc-before': () => h(Update),
+      'doc-before': () => h(Breadcrumb),
       // 'aside-top': () => h(Update)
       'home-hero-image': () => h(RubikCube)
     })

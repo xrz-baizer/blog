@@ -79,6 +79,9 @@
     .VPDoc:has(.article-container){
         padding-top: 22px;
     }
+    .VPDoc{
+        padding-top: 22px!important;
+    }
 
     .VPHomeFeatures .box{
         padding: 20px 26px;
@@ -107,7 +110,7 @@
 
     /*--vp-home-hero-image-filter: blur(80px);*/
     .VPHero{
-        padding-top: 30px !important;
+        /*padding-top: 30px !important;*/
         padding-bottom: 20px !important;
         /*background-image: var(--vp-home-hero-image-background-image);*/
         /*filter: blur(30px);*/

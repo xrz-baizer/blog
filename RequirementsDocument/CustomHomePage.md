@@ -187,3 +187,10 @@ export default {
    - 初始化魔方实例
    - 响应式缩放设置
    - theme-5主题样式
+
+
+ 
+我的侧边栏是动态生成的，点击调整到具体的页面后，就只展示了当前页的内容，想返回上一级很麻烦。
+我想要在具体的layout: page页中生成一个路由导航栏，显示当前页面的路径，然后可以点击这些路径跳转到上一级页面。
+不用考虑APP端，不能影响APP端，该功能只在pc端中实现。
+- 可以使用 context7 读取相关的官方文档：https://vitepress.dev/reference/default-theme-sidebar
