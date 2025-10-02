@@ -113,7 +113,24 @@
         /*filter: blur(30px);*/
     }
     .VPHero .container{
-        /*flex-direction: column-reverse;*/
+        flex-direction: column-reverse;
+    }
+
+    /* image-container让内容上下排列 */
+    .VPHero .image-container{
+        display: flex !important;
+        flex-direction: column !important;
+        height: 300px;
+    }
+    .VPHero .image-bg{
+        top:25%;
+    }
+
+    .VPHero .image{
+        margin: -34px -24px -150px;
+    }
+    .rubik-cube-wrapper{
+        margin-top: 50px!important;
     }
 
     .LastUpdated {

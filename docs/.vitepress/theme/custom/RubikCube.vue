@@ -59,7 +59,7 @@ onMounted(async () => {
     await loadScript('/RubikCube/js/css3.oz.js')
     await loadScript('/RubikCube/js/quaternion.js')
     await loadScript('/RubikCube/js/rubik-fixed.js')  // 使用修复版本
-    await loadStyle('/RubikCube/css/style.css')
+    // await loadStyle('/RubikCube/css/style.css')  // 使用修复版本
 
     scriptsLoaded = true
 
@@ -152,7 +152,7 @@ onBeforeUnmount(() => {
 
 /* PC端：调整魔方大小 */
 .rubik-cube-wrapper :deep(> div) {
-  transform: scale(0.75) !important;
+  transform: scale(0.85) !important;
   transform-origin: center center !important;
   transform-style: preserve-3d !important;
 }
@@ -173,13 +173,16 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Mobile responsive */
+/* Mobile responsive - 上下排列显示，添加透明度 */
 @media (max-width: 768px) {
   .rubik-cube-wrapper {
-    height: 280px;
+    position: relative !important;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.9;
+    margin-top: 20px;
   }
 
   #rubik-container {
@@ -189,7 +192,7 @@ onBeforeUnmount(() => {
   }
 
   .rubik-cube-wrapper :deep(> div) {
-    transform: scale(0.42) !important;
+    transform: scale(0.35) !important;
     position: relative !important;
     left: 0 !important;
     top: 0 !important;
@@ -198,113 +201,137 @@ onBeforeUnmount(() => {
 
 @media (max-width: 480px) {
   .rubik-cube-wrapper {
-    height: 240px;
+    height: 80px;
   }
 
   .rubik-cube-wrapper :deep(> div) {
-    transform: scale(0.35) !important;
+    transform: scale(0.23) !important;
   }
 }
 </style>
 
 <style>
-/*
-  魔方主题样式 - 使用 theme-9 (光泽科技蓝玻璃20%透明度)
-*/
 
-/* Theme 1: Standard Solid - 标准实色 */
-.rubik-cube-wrapper.theme-1 :deep(.face) {
-  border: 2px solid black !important;
-}
-.rubik-cube-wrapper.theme-1 :deep(.face-color-red) { background-color: red !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-1 :deep(.face-color-blue) { background-color: blue !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-1 :deep(.face-color-green) { background-color: green !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-1 :deep(.face-color-yellow) { background-color: yellow !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-1 :deep(.face-color-white) { background-color: white !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-1 :deep(.face-color-orange) { background-color: orange !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-1 :deep(.face-color-inner) { background-color: #333 !important; background-image: none !important; }
 
-/* Theme 2: Tech Solid - 科技蓝实色 */
-.rubik-cube-wrapper.theme-2 :deep(.face) {
-  border: 2px solid black !important;
-}
-.rubik-cube-wrapper.theme-2 :deep(.face-color-red) { background-color: #00BFFF !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-2 :deep(.face-color-blue) { background-color: #1E90FF !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-2 :deep(.face-color-green) { background-color: #00FFFF !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-2 :deep(.face-color-yellow) { background-color: #7FFFD4 !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-2 :deep(.face-color-white) { background-color: #4682B4 !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-2 :deep(.face-color-orange) { background-color: #5F9EA0 !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-2 :deep(.face-color-inner) { background-color: #333 !important; background-image: none !important; }
 
-/* Theme 3: Glossy Tech Solid - 光泽科技蓝实色 */
-.rubik-cube-wrapper.theme-3 :deep(.face) {
-  border: 2px solid black !important;
-}
-.rubik-cube-wrapper.theme-3 :deep(.face-color-red) { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #00BFFF, #008FFF) !important; }
-.rubik-cube-wrapper.theme-3 :deep(.face-color-blue) { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #1E90FF, #1070CF) !important; }
-.rubik-cube-wrapper.theme-3 :deep(.face-color-green) { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #00FFFF, #00CFCF) !important; }
-.rubik-cube-wrapper.theme-3 :deep(.face-color-yellow) { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #7FFFD4, #6FDFB4) !important; }
-.rubik-cube-wrapper.theme-3 :deep(.face-color-white) { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #4682B4, #3672A4) !important; }
-.rubik-cube-wrapper.theme-3 :deep(.face-color-orange) { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #5F9EA0, #4F8E90) !important; }
-.rubik-cube-wrapper.theme-3 :deep(.face-color-inner) { background-color: #333 !important; background-image: none !important; }
-
-/* Glass Theme Base - 玻璃主题基础样式 */
-.rubik-cube-wrapper.theme-4 :deep(.face), .rubik-cube-wrapper.theme-5 :deep(.face), .rubik-cube-wrapper.theme-6 :deep(.face), .rubik-cube-wrapper.theme-7 :deep(.face), .rubik-cube-wrapper.theme-8 :deep(.face), .rubik-cube-wrapper.theme-9 :deep(.face) {
-  border: 1px solid rgba(0,0,0,0.2) !important;
-  background-color: transparent !important;
+.face {
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
-/* Theme 4: Standard Glass 10% - 标准玻璃10%透明度 */
-.rubik-cube-wrapper.theme-4 :deep(.face-color-red) { background-color: rgba(255, 0, 0, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-4 :deep(.face-color-blue) { background-color: rgba(0, 0, 255, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-4 :deep(.face-color-green) { background-color: rgba(0, 255, 0, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-4 :deep(.face-color-yellow) { background-color: rgba(255, 255, 0, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-4 :deep(.face-color-white) { background-color: rgba(255, 255, 255, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-4 :deep(.face-color-orange) { background-color: rgba(255, 165, 0, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-4 :deep(.face-color-inner) { background-color: rgba(128, 128, 128, 0.1) !important; background-image: none !important; }
+.face-color-inner { background-color: #333; }
 
-/* Theme 5: Standard Glass 20% - 标准玻璃20%透明度 */
-.rubik-cube-wrapper.theme-5 :deep(.face-color-red) { background-color: rgba(255, 0, 0, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-5 :deep(.face-color-blue) { background-color: rgba(0, 0, 255, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-5 :deep(.face-color-green) { background-color: rgba(0, 255, 0, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-5 :deep(.face-color-yellow) { background-color: rgba(255, 255, 0, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-5 :deep(.face-color-white) { background-color: rgba(255, 255, 255, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-5 :deep(.face-color-orange) { background-color: rgba(255, 165, 0, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-5 :deep(.face-color-inner) { background-color: rgba(128, 128, 128, 0.1) !important; background-image: none !important; }
+/* --- Themes --- */
 
-/* Theme 6: Tech Glass 10% - 科技蓝玻璃10%透明度 */
-.rubik-cube-wrapper.theme-6 :deep(.face-color-red) { background-color: rgba(0, 191, 255, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-6 :deep(.face-color-blue) { background-color: rgba(30, 144, 255, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-6 :deep(.face-color-green) { background-color: rgba(0, 255, 255, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-6 :deep(.face-color-yellow) { background-color: rgba(127, 255, 212, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-6 :deep(.face-color-white) { background-color: rgba(70, 130, 180, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-6 :deep(.face-color-orange) { background-color: rgba(95, 158, 160, 0.1) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-6 :deep(.face-color-inner) { background-color: rgba(128, 128, 128, 0.1) !important; background-image: none !important; }
+/* Theme 1: Standard Solid */
+.theme-1 .face-color-red { background-color: red; }
+.theme-1 .face-color-blue { background-color: blue; }
+.theme-1 .face-color-green { background-color: green; }
+.theme-1 .face-color-yellow { background-color: yellow; }
+.theme-1 .face-color-white { background-color: white; }
+.theme-1 .face-color-orange { background-color: orange; }
 
-/* Theme 7: Tech Glass 20% - 科技蓝玻璃20%透明度 */
-.rubik-cube-wrapper.theme-7 :deep(.face-color-red) { background-color: rgba(0, 191, 255, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-7 :deep(.face-color-blue) { background-color: rgba(30, 144, 255, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-7 :deep(.face-color-green) { background-color: rgba(0, 255, 255, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-7 :deep(.face-color-yellow) { background-color: rgba(127, 255, 212, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-7 :deep(.face-color-white) { background-color: rgba(70, 130, 180, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-7 :deep(.face-color-orange) { background-color: rgba(95, 158, 160, 0.2) !important; background-image: none !important; }
-.rubik-cube-wrapper.theme-7 :deep(.face-color-inner) { background-color: rgba(128, 128, 128, 0.1) !important; background-image: none !important; }
+/* Theme 2: Tech Solid */
+.theme-2 .face-color-red { background-color: #00BFFF; }
+.theme-2 .face-color-blue { background-color: #1E90FF; }
+.theme-2 .face-color-green { background-color: #00FFFF; }
+.theme-2 .face-color-yellow { background-color: #7FFFD4; }
+.theme-2 .face-color-white { background-color: #4682B4; }
+.theme-2 .face-color-orange { background-color: #5F9EA0; }
 
-/* Theme 8: Glossy Tech Glass 10% - 光泽科技蓝玻璃10%透明度 */
-.rubik-cube-wrapper.theme-8 :deep(.face-color-red) { background-color: rgba(0, 191, 255, 0.1) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-8 :deep(.face-color-blue) { background-color: rgba(30, 144, 255, 0.1) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-8 :deep(.face-color-green) { background-color: rgba(0, 255, 255, 0.1) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-8 :deep(.face-color-yellow) { background-color: rgba(127, 255, 212, 0.1) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-8 :deep(.face-color-white) { background-color: rgba(70, 130, 180, 0.1) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-8 :deep(.face-color-orange) { background-color: rgba(95, 158, 160, 0.1) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-8 :deep(.face-color-inner) { background-color: rgba(128, 128, 128, 0.1) !important; background-image: none !important; }
+/* Theme 3: Glossy Tech Solid */
+.theme-3 .face-color-red { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #00BFFF, #008FFF); }
+.theme-3 .face-color-blue { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #1E90FF, #1070CF); }
+.theme-3 .face-color-green { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #00FFFF, #00CFCF); }
+.theme-3 .face-color-yellow { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #7FFFD4, #6FDFB4); }
+.theme-3 .face-color-white { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #4682B4, #3672A4); }
+.theme-3 .face-color-orange { background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.5), transparent 40%), linear-gradient(to bottom right, #5F9EA0, #4F8E90); }
 
-/* Theme 9: Glossy Tech Glass 20% - 光泽科技蓝玻璃20%透明度 */
-.rubik-cube-wrapper.theme-9 :deep(.face-color-red) { background-color: rgba(0, 191, 255, 0.2) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-9 :deep(.face-color-blue) { background-color: rgba(30, 144, 255, 0.2) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-9 :deep(.face-color-green) { background-color: rgba(0, 255, 255, 0.2) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-9 :deep(.face-color-yellow) { background-color: rgba(127, 255, 212, 0.2) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-9 :deep(.face-color-white) { background-color: rgba(70, 130, 180, 0.2) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-9 :deep(.face-color-orange) { background-color: rgba(95, 158, 160, 0.2) !important; background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%) !important; }
-.rubik-cube-wrapper.theme-9 :deep(.face-color-inner) { background-color: rgba(128, 128, 128, 0.1) !important; background-image: none !important; }
+/* Glass Theme Base Styles */
+.theme-4 .face, .theme-5 .face, .theme-6 .face, .theme-7 .face, .theme-8 .face, .theme-9 .face {
+  border: 1px solid rgba(0,0,0,0.2);
+  background-color: transparent;
+}
+.theme-4 .face-color-inner, .theme-5 .face-color-inner, .theme-6 .face-color-inner, .theme-7 .face-color-inner, .theme-8 .face-color-inner, .theme-9 .face-color-inner {
+  background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* Theme 4: Standard - 10% Glass */
+.theme-4 .face-color-red { background-color: rgba(255, 0, 0, 0.1); }
+.theme-4 .face-color-blue { background-color: rgba(0, 0, 255, 0.1); }
+.theme-4 .face-color-green { background-color: rgba(0, 255, 0, 0.1); }
+.theme-4 .face-color-yellow { background-color: rgba(255, 255, 0, 0.1); }
+.theme-4 .face-color-white { background-color: rgba(255, 255, 255, 0.1); }
+.theme-4 .face-color-orange { background-color: rgba(255, 165, 0, 0.1); }
+
+/* Theme 5: Standard - 20% Glass */
+.theme-5 .face-color-red { background-color: rgba(255, 0, 0, 0.2); }
+.theme-5 .face-color-blue { background-color: rgba(0, 0, 255, 0.2); }
+.theme-5 .face-color-green { background-color: rgba(0, 255, 0, 0.2); }
+.theme-5 .face-color-yellow { background-color: rgba(255, 255, 0, 0.2); }
+.theme-5 .face-color-white { background-color: rgba(255, 255, 255, 0.2); }
+.theme-5 .face-color-orange { background-color: rgba(255, 165, 0, 0.2); }
+
+/* Theme 6: Tech - 10% Glass */
+.theme-6 .face-color-red { background-color: rgba(0, 191, 255, 0.1); }
+.theme-6 .face-color-blue { background-color: rgba(30, 144, 255, 0.1); }
+.theme-6 .face-color-green { background-color: rgba(0, 255, 255, 0.1); }
+.theme-6 .face-color-yellow { background-color: rgba(127, 255, 212, 0.1); }
+.theme-6 .face-color-white { background-color: rgba(70, 130, 180, 0.1); }
+.theme-6 .face-color-orange { background-color: rgba(95, 158, 160, 0.1); }
+
+/* Theme 7: Tech - 20% Glass */
+.theme-7 .face-color-red { background-color: rgba(0, 191, 255, 0.2); }
+.theme-7 .face-color-blue { background-color: rgba(30, 144, 255, 0.2); }
+.theme-7 .face-color-green { background-color: rgba(0, 255, 255, 0.2); }
+.theme-7 .face-color-yellow { background-color: rgba(127, 255, 212, 0.2); }
+.theme-7 .face-color-white { background-color: rgba(70, 130, 180, 0.2); }
+.theme-7 .face-color-orange { background-color: rgba(95, 158, 160, 0.2); }
+
+/* Theme 8: Glossy Tech - 10% Glass */
+.theme-8 .face-color-red { background-color: rgba(0, 191, 255, 0.1); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-8 .face-color-blue { background-color: rgba(30, 144, 255, 0.1); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-8 .face-color-green { background-color: rgba(0, 255, 255, 0.1); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-8 .face-color-yellow { background-color: rgba(127, 255, 212, 0.1); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-8 .face-color-white { background-color: rgba(70, 130, 180, 0.1); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-8 .face-color-orange { background-color: rgba(95, 158, 160, 0.1); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+
+/* Theme 9: Glossy Tech - 20% Glass */
+.theme-9 .face-color-red { background-color: rgba(0, 191, 255, 0.2); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-9 .face-color-blue { background-color: rgba(30, 144, 255, 0.2); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-9 .face-color-green { background-color: rgba(0, 255, 255, 0.2); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-9 .face-color-yellow { background-color: rgba(127, 255, 212, 0.2); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-9 .face-color-white { background-color: rgba(70, 130, 180, 0.2); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+.theme-9 .face-color-orange { background-color: rgba(95, 158, 160, 0.2); background-image: radial-gradient(circle at 20px 20px, rgba(255,255,255,0.2), transparent 40%); }
+
+
+/* Sidebar Styles */
+#sidebar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.5);
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+#sidebar h3 {
+  margin: 10px 0 5px 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+}
+#sidebar button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: sans-serif;
+}
 </style>

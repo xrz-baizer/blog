@@ -264,10 +264,10 @@ Rubik.prototype._reverseFormula = function(formula) {
 Rubik.prototype._startFormulaLoop = function() {
 	var self = this;
 
-	// 默认是还原状态，等待1秒后开始打乱
+	// 默认是还原状态，等待1.5秒后开始打乱
 	setTimeout(function() {
 		self._scrambleAndSolveLoop();
-	}, 1000);
+	}, 1500);
 }
 
 // 打乱和还原循环
@@ -282,10 +282,10 @@ Rubik.prototype._scrambleAndSolveLoop = function() {
 
 			// 执行还原（10秒）
 			self._executeFormula(solveFormula, function() {
-				// 还原完成后，等待0.5秒，然后重新打乱
+				// 还原完成后，等待1.5秒，然后重新打乱
 				setTimeout(function() {
 					self._scrambleAndSolveLoop();
-				}, 500);
+				}, 1500);
 			});
 		}, 500);
 	});

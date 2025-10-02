@@ -13,7 +13,7 @@ hero:
   text: "Baizer"
   tagline: "个人知识库"
   image:
-    src: /peach-blossom-lite.png
+#    src: /peach-blossom-lite.png
 #    src: /peach-blossom.svg
 #    src: /lotus.svg
 #    src: 

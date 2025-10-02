@@ -7,11 +7,15 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="init">
-      <change afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/js/css3.oz.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/RubikCube/js/css3.oz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/js/quaternion.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/RubikCube/js/quaternion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik.js" afterDir="false" />
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1">
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/RubikCube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/RubikCube.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/embed.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik-fixed.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik-fixed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/RubikCube/js/rubik.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,11 +115,11 @@
       <recent name="$PROJECT_DIR$/auto-deploy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/.vitepress/theme/custom" />
       <recent name="$PROJECT_DIR$/docs/.vitepress/theme/tool" />
       <recent name="$PROJECT_DIR$/docs/public/html" />
       <recent name="$PROJECT_DIR$/docs/01-Essay/神兵利器" />
       <recent name="$PROJECT_DIR$/docs/public" />
-      <recent name="$PROJECT_DIR$/auto-deploy" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -391,7 +395,25 @@
       <workItem from="1759212438306" duration="685000" />
       <workItem from="1759213977019" duration="3412000" />
       <workItem from="1759290082339" duration="6564000" />
+      <workItem from="1759325353155" duration="16936000" />
     </task>
+    <task id="LOCAL-00001" summary="claude init">
+      <option name="closed" value="true" />
+      <created>1759327529729</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1759327529729</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1">
+      <option name="closed" value="true" />
+      <created>1759385272190</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759385272190</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +450,9 @@
       <path value="$PROJECT_DIR$/docs/00-TechnicalFile" />
     </ignored-roots>
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="claude init" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
