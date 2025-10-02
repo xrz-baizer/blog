@@ -217,7 +217,7 @@ Rubik.prototype.init = function() {
 	this._node = OZ.DOM.elm("div", {position:"absolute", left:"50%", top:"55%", width:"0px", height:"0px"});
 	document.body.appendChild(this._node);
 
-	OZ.CSS3.set(document.body, "perspective", "460px");
+	// OZ.CSS3.set(document.body, "perspective", "460px");
 	OZ.CSS3.set(this._node, "transform-style", "preserve-3d");
 
 	this._build();

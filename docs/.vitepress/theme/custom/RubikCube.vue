@@ -84,6 +84,9 @@ const initRubik = () => {
 
   container.classList.add('theme-4')
 
+  // 移除 body 上的 perspective，因为我们在 CSS 中已经设置了
+  document.body.style.perspective = ''
+
   // 创建魔方实例（会自动添加到body）
   // @ts-ignore
   rubikInstance = new Rubik()
