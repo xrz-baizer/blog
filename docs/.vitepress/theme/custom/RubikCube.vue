@@ -91,13 +91,13 @@ const initRubik = () => {
   // @ts-ignore
   rubikInstance = new Rubik()
 
-  // 立即隐藏魔方节点,防止出现闪烁
+  // 立即隐藏魔方节点,防止出现闪烁（使用 visibility 而不是 opacity，因为 opacity 会破坏移动端的 3D 效果）
   setTimeout(() => {
     const cubeNode = document.body.children[document.body.children.length - 1]
     // @ts-ignore
     if (cubeNode && cubeNode.style && cubeNode.style.position === 'absolute') {
       // @ts-ignore
-      cubeNode.style.opacity = '0'
+      cubeNode.style.visibility = 'hidden'
     }
   }, 0)
 
@@ -120,7 +120,7 @@ const initRubik = () => {
       // @ts-ignore
       cubeNode.style.top = '50%'
       // @ts-ignore
-      cubeNode.style.opacity = '1'
+      cubeNode.style.visibility = 'visible'
       // @ts-ignore - Safari兼容性:添加webkit前缀
       cubeNode.style.webkitTransformStyle = 'preserve-3d'
       // @ts-ignore
