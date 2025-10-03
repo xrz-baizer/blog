@@ -240,6 +240,8 @@ Rubik.prototype.init = function() {
 	this._rotation = Quaternion.fromRotation([1, 0, 0], -35).multiply(Quaternion.fromRotation([0, 1, 0], 45));
 	this._autoRotationIncrement = Quaternion.fromRotation([1, 1, 0], 0.3);
 	this._node = OZ.DOM.elm("div", {position:"absolute", left:"50%", top:"55%", width:"0px", height:"0px"});
+	// 创建时就隐藏节点，避免在被移动到容器前出现黑影
+	this._node.style.visibility = "hidden";
 	document.body.appendChild(this._node);
 
 	// OZ.CSS3.set(document.body, "perspective", "460px");

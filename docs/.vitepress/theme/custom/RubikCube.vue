@@ -87,20 +87,17 @@ const initRubik = () => {
   // 移除 body 上的 perspective,因为我们在 CSS 中已经设置了
   document.body.style.perspective = ''
 
-  // 创建魔方实例(会自动添加到body)
+  // 创建魔方实例(会自动添加到body，节点创建时已被设置为hidden)
   // @ts-ignore
   rubikInstance = new Rubik()
 
-  // 等待DOM更新后获取新添加的魔方节点并移动到容器
+  // 等待DOM更新后移动节点到容器
   setTimeout(() => {
-    // 魔方节点应该是body的最后一个子节点
+    // 获取魔方节点（应该是body的最后一个子节点）
     const cubeNode = document.body.children[document.body.children.length - 1] as HTMLElement
 
     // 验证这是魔方节点(检查是否有position:absolute样式)
     if (cubeNode && cubeNode.style && cubeNode.style.position === 'absolute') {
-      // 先隐藏节点，避免移动时出现闪烁
-      cubeNode.style.visibility = 'hidden'
-
       // 创建一个wrapper来隔离scale和preserve-3d（移动端关键修复）
       const scaleWrapper = document.createElement('div')
       scaleWrapper.className = 'rubik-scale-wrapper'
@@ -130,14 +127,15 @@ const initRubik = () => {
       cubeNode.style.webkitBackfaceVisibility = 'hidden'
       cubeNode.style.backfaceVisibility = 'hidden'
 
-      // 获取当前transform值并重新应用（Safari需要触发重绘）
+      // 获取当前transform值并重新应用（Safari/移动端必需：触发3D上下文重建）
       const currentTransform = cubeNode.style.transform || cubeNode.style.webkitTransform
       if (currentTransform) {
+        // 清空transform
         cubeNode.style.webkitTransform = ''
         cubeNode.style.transform = ''
         // 强制浏览器重排
         void cubeNode.offsetHeight
-        // 重新应用transform
+        // 重新应用transform（这一步对Safari/移动端的3D效果至关重要）
         cubeNode.style.webkitTransform = currentTransform
         cubeNode.style.transform = currentTransform
       }
@@ -151,7 +149,7 @@ const initRubik = () => {
         child.style.backfaceVisibility = 'hidden'
       })
 
-      // 最后再显示节点
+      // 显示节点（节点在rubik-fixed.js中创建时已被设置为hidden）
       cubeNode.style.visibility = 'visible'
     }
   }, 50)
