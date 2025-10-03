@@ -6,7 +6,7 @@
     "vitepress-plugin-comment-with-giscus": "^1.1.15"
   },
   "scripts": {
-    "dev": "vitepress dev docs --open",
+    "dev": "vitepress dev docs --host --open",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs --port 8082"
   },

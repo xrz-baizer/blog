@@ -6,6 +6,30 @@ Array.prototype.random = function() {
 	return this[Math.floor(Math.random()*this.length)];
 }
 
+// Safari/移动端兼容：强制设置webkit前缀的辅助函数
+var setTransformStyle = function(node, property, value) {
+	// 同时设置标准属性和webkit前缀属性，确保Safari/移动端兼容
+	if (property === 'transform-style') {
+		node.style.webkitTransformStyle = value;
+		node.style.transformStyle = value;
+	} else if (property === 'backface-visibility') {
+		node.style.webkitBackfaceVisibility = value;
+		node.style.backfaceVisibility = value;
+	} else if (property === 'transform-origin') {
+		node.style.webkitTransformOrigin = value;
+		node.style.transformOrigin = value;
+	} else if (property === 'transform') {
+		node.style.webkitTransform = value;
+		node.style.transform = value;
+	} else if (property === 'transition') {
+		node.style.webkitTransition = value;
+		node.style.transition = value;
+	} else {
+		// 其他属性使用OZ.CSS3
+		OZ.CSS3.set(node, property, value);
+	}
+}
+
 var Face = OZ.Class();
 Face.SIZE	= 100;
 Face.LEFT	= 0;
@@ -27,30 +51,30 @@ Face.prototype.init = function(cube, type) {
 	this._color = null;
 	this._node = OZ.DOM.elm("div", {className:"face face"+type, width:Face.SIZE+"px", height:Face.SIZE+"px", position:"absolute", left:"0px", top:"0px"});
 	OZ.CSS3.set(this._node, "box-sizing", "border-box");
-	OZ.CSS3.set(this._node, "transform-style", "preserve-3d");
-	OZ.CSS3.set(this._node, "backface-visibility", "hidden");
+	setTransformStyle(this._node, "transform-style", "preserve-3d");
+	setTransformStyle(this._node, "backface-visibility", "hidden");
 
 	switch (type) {
 		case Face.LEFT:
-			OZ.CSS3.set(this._node, "transform-origin", "100% 50%");
-			OZ.CSS3.set(this._node, "transform", "translate3d(-"+Face.SIZE+"px, 0px, 0px) rotateY(-90deg)");
+			setTransformStyle(this._node, "transform-origin", "100% 50%");
+			setTransformStyle(this._node, "transform", "translate3d(-"+Face.SIZE+"px, 0px, 0px) rotateY(-90deg)");
 		break;
 		case Face.RIGHT:
-			OZ.CSS3.set(this._node, "transform-origin", "0% 50%");
-			OZ.CSS3.set(this._node, "transform", "translate3d("+Face.SIZE+"px, 0px, 0px) rotateY(90deg)");
+			setTransformStyle(this._node, "transform-origin", "0% 50%");
+			setTransformStyle(this._node, "transform", "translate3d("+Face.SIZE+"px, 0px, 0px) rotateY(90deg)");
 		break;
 		case Face.TOP:
-			OZ.CSS3.set(this._node, "transform-origin", "50% 100%");
-			OZ.CSS3.set(this._node, "transform", "translate3d(0px, -"+Face.SIZE+"px, 0px) rotateX(90deg)");
+			setTransformStyle(this._node, "transform-origin", "50% 100%");
+			setTransformStyle(this._node, "transform", "translate3d(0px, -"+Face.SIZE+"px, 0px) rotateX(90deg)");
 		break;
 		case Face.BOTTOM:
-			OZ.CSS3.set(this._node, "transform-origin", "50% 0%");
-			OZ.CSS3.set(this._node, "transform", "translate3d(0px, "+Face.SIZE+"px, 0px) rotateX(-90deg)");
+			setTransformStyle(this._node, "transform-origin", "50% 0%");
+			setTransformStyle(this._node, "transform", "translate3d(0px, "+Face.SIZE+"px, 0px) rotateX(-90deg)");
 		break;
 		case Face.FRONT:
 		break;
 		case Face.BACK:
-			OZ.CSS3.set(this._node, "transform", "translate3d(0px, 0px, -"+Face.SIZE+"px) rotateY(180deg)");
+			setTransformStyle(this._node, "transform", "translate3d(0px, 0px, -"+Face.SIZE+"px) rotateY(180deg)");
 		break;
 	}
 }
@@ -88,7 +112,7 @@ Cube.prototype.init = function(position) {
 	this._faces = {};
 	this._tmpFaces = {};
 	this._lastRotationState = false;
-	OZ.CSS3.set(this._node, "transform-style", "preserve-3d");
+	setTransformStyle(this._node, "transform-style", "preserve-3d");
 
 	this._update();
 }
@@ -175,11 +199,11 @@ Cube.prototype._update = function() {
 	if (this._lastRotationState !== hasRotation) {
 		var prop = OZ.CSS3.getProperty("transform");
 		var val = hasRotation ? prop + " 300ms" : "";
-		OZ.CSS3.set(this._node, "transition", val);
+		setTransformStyle(this._node, "transition", val);
 		this._lastRotationState = hasRotation;
 	}
 
-	OZ.CSS3.set(this._node, "transform", transform);
+	setTransformStyle(this._node, "transform", transform);
 }
 
 Cube.prototype.getPosition = function() {
@@ -219,7 +243,7 @@ Rubik.prototype.init = function() {
 	document.body.appendChild(this._node);
 
 	// OZ.CSS3.set(document.body, "perspective", "460px");
-	OZ.CSS3.set(this._node, "transform-style", "preserve-3d");
+	setTransformStyle(this._node, "transform-style", "preserve-3d");
 
 	this._build();
 	this._update();
@@ -322,7 +346,7 @@ Rubik.prototype._autorotate = function() {
 
 
 Rubik.prototype._update = function() {
-	OZ.CSS3.set(this._node, "transform", "translateZ(" + (-Face.SIZE/2 - Face.SIZE) + "px) " + this._rotation.toRotation() + " translateZ("+(Face.SIZE/2)+"px)");
+	setTransformStyle(this._node, "transform", "translateZ(" + (-Face.SIZE/2 - Face.SIZE) + "px) " + this._rotation.toRotation() + " translateZ("+(Face.SIZE/2)+"px)");
 }
 
 Rubik.prototype._rotateX = function(dir, layer) {
