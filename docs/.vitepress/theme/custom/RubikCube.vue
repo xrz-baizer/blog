@@ -148,7 +148,7 @@ onBeforeUnmount(() => {
 
   // 移除主题类
   if (containerRef.value) {
-    containerRef.value.classList.remove('theme-9')
+    containerRef.value.classList.remove('theme-4')
   }
 })
 </script>
@@ -214,30 +214,25 @@ onBeforeUnmount(() => {
   }
 }
 
-/* Mobile responsive - 上下排列显示,添加透明度 */
+/* Mobile responsive - 上下排列显示,移除flex布局以保持3D效果 */
 @media (max-width: 768px) {
   .rubik-cube-wrapper {
     position: relative !important;
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* opacity: 0.9; */
     margin-top: 20px;
+    /* 不使用flex布局，因为它会破坏preserve-3d */
   }
 
   #rubik-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* 不使用flex布局，保持默认的relative定位以维持3D上下文 */
   }
 
   .rubik-cube-wrapper :deep(> div) {
-    -webkit-transform: scale(0.35) !important;
-    transform: scale(0.35) !important;
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
+    -webkit-transform: translate(-50%, -50%) scale(0.35) !important;
+    transform: translate(-50%, -50%) scale(0.35) !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
   }
 }
 
@@ -247,8 +242,8 @@ onBeforeUnmount(() => {
   }
 
   .rubik-cube-wrapper :deep(> div) {
-    -webkit-transform: scale(0.23) !important;
-    transform: scale(0.23) !important;
+    -webkit-transform: translate(-50%, -50%) scale(0.23) !important;
+    transform: translate(-50%, -50%) scale(0.23) !important;
   }
 }
 </style>
