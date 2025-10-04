@@ -253,6 +253,9 @@ onBeforeUnmount(() => {
     -webkit-transform: scale(0.23);
     transform: scale(0.23);
   }
+  .theme-4 .face, .theme-5 .face, .theme-6 .face, .theme-7 .face, .theme-8 .face, .theme-9 .face {
+    border: 1px solid rgba(255,255,255,1);
+  }
 }
 </style>
 
@@ -293,7 +296,7 @@ onBeforeUnmount(() => {
 
 /* Glass Theme Base Styles */
 .theme-4 .face, .theme-5 .face, .theme-6 .face, .theme-7 .face, .theme-8 .face, .theme-9 .face {
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
   background-color: transparent;
 }
 .theme-4 .face-color-inner, .theme-5 .face-color-inner, .theme-6 .face-color-inner, .theme-7 .face-color-inner, .theme-8 .face-color-inner, .theme-9 .face-color-inner {
