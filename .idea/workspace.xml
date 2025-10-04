@@ -7,9 +7,7 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/docs/.vitepress/theme/custom/RubikCube.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.vitepress/theme/custom/RubikCube.vue" afterDir="false" />
-    </list>
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -391,7 +389,7 @@
       <workItem from="1759325353155" duration="28401000" />
       <workItem from="1759415914720" duration="8598000" />
       <workItem from="1759498197963" duration="1383000" />
-      <workItem from="1759537997961" duration="80000" />
+      <workItem from="1759537997961" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary="claude init">
       <option name="closed" value="true" />
