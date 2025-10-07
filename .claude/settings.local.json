@@ -12,7 +12,8 @@
       "mcp__chrome-devtools__list_console_messages",
       "mcp__chrome-devtools__resize_page",
       "Bash(yarn:*)",
-      "Read(//var/folders/7n/w_2vlbxj40d659blrzwds4w40000gn/T/chrome-devtools-mcp-3XuM6k/**)"
+      "Read(//var/folders/7n/w_2vlbxj40d659blrzwds4w40000gn/T/chrome-devtools-mcp-3XuM6k/**)",
+      "WebFetch(domain:vitepress.yiov.top)"
     ],
     "deny": [],
     "ask": []
