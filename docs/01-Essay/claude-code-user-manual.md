@@ -97,21 +97,11 @@
 - Do not test the code by executing the relevant run command
 ```
 
+## MCP
+
+ https://mcpcat.io/guides/best-mcp-servers-for-claude-code/?utm_source=chatgpt.com#the-quick-answer
+
 ##  Plugins
-
-- [集成 IntelliJ IDEA](https://docs.anthropic.com/en/docs/claude-code/ide-integrations#jet-brains)
-
-- 代码回退支持：https://github.com/RonitSachdev/ccundo
-  - Claude Code自带的`/resume`只能恢复之前的会话记录，不能回退代码。
-  - 使用方法：结束Claude Code会话后，执行`ccundo list`（只能回退上一次会话）
-
-- MCP
-  - [Context7：帮助AI查找最新代码文档（让Claude Code能获取超过训练数据截止日期的数据）](https://github.com/upstash/context7)
-  - https://github.com/ChromeDevTools/chrome-devtools-mcp
-  
-- Claude Code UI：
-  - https://github.com/getAsterisk/claudia
-  - https://github.com/xuzhenpeng263/claudia-globa
 
 ### Claude Code Router
 
