@@ -24,7 +24,9 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
       // 在所有doc类型md文件前加载该组件
-      'doc-before': () => h(Breadcrumb),
+      // 'doc-before': () => h(Breadcrumb),
+      // 'aside-outline-before': () => h(Breadcrumb),
+      'aside-top': () => h(Breadcrumb),
       // 'aside-top': () => h(Update)
       'home-hero-image': () => h(RubikCube)
     })

@@ -129,8 +129,8 @@ const breadcrumbs = computed(() => {
 <style scoped>
 .breadcrumb-wrapper {
   padding: 8px 0;
-  margin-bottom: 26px;
-  border-bottom: 1px solid var(--vp-c-divider);
+  //margin-bottom: 26px;
+  //border-bottom: 1px solid var(--vp-c-divider);
 }
 
 .breadcrumb-nav {

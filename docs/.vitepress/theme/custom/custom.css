@@ -87,6 +87,12 @@
         padding: 20px 26px;
     }
 
+    .outline-title{
+        display: none;
+    }
+    .vp-doc h1 {
+        margin-top: 1rem;
+    }
     .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4{
         margin-left: -.7rem;
     }
