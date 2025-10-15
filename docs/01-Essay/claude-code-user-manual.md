@@ -4,6 +4,8 @@
 
 申请海外信用卡绑定Google Pay支付
 
+- 或者使用 Claude Code + GLM 方案：https://docs.bigmodel.cn/cn/coding-plan/tool/claude
+
 ## Commands
 
 > Official documentation: https://docs.anthropic.com/en/docs/claude-code/overview

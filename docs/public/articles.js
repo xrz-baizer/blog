@@ -53,6 +53,7 @@ export const articlesMap = {
   "01-Essay/0-Blog自动部署.md": " 前言 为建立个人知识库，打造个人博客，用于记录成体系的知识、随笔等。 最终实现效果： 1. 在本地Typora编写文章 2. 执行`publish-blog`命令即可发布（执行deploy.sh脚本） 1. 将需要发布的文章复制到Blog项目的docs目录中 2. 推送Blog项目至Github备份 3. 重新构建Blog生成静态html文件 4. 压缩静态文件推送至远程服务器/app目录再解压",
   "01-Essay/0-使用ECS为本地搭建开发环境.md": " 服务器准备 > 购买的华为云服务： > > - 116.205.134.46 > > - 2vCPUs 4GiB ac7.large.2 > > - CentOS 7.6 64bit 注意为对应安全组开放端口，或者直接开放所有端口，并限制只允许本机IP访问 - 查询本机IP地址：https://ip111.c... 本地配置 配置host映射，后续可直接使用hostname登入服务器 ```sh",
   "01-Essay/Command-line-shortcut-keys.md": " > iTerm2 的快捷键操作可分为两类：一类是由 Shell 环境（如 Zsh 或 Bash）通过 Readline 库提供的快捷键，适用于大多数命令行程序；另一类是 iTerm2 应用本身提供的，用于管理窗口、标签页和面板等图形界面元素。 一、光标移动 (Navigation) 在命令行界面输入时，用于高效移动光标的快捷键。 快捷键 (Keystroke) `Ctrl + A` `Ctrl ",
+  "01-Essay/Zprofile.md": " 统计单个目录视频总时长 ```sh sumvideo() { # 1. 设定目标目录：如果提供了参数，则使用第一个参数；否则，使用当前目录。 local target_dir=\"${1:-.}\" # 2. 检查 ffprobe (ffmpeg) 是否已安装 if ! command -v ffprobe >/dev/null 2>&1; then echo \"错误: 未找到 ffprobe 命令",
   "01-Essay/claude-code-user-manual.md": " Subscription 申请海外信用卡绑定Google Pay支付 Commands > Official documentation: https://docs.an... - `# xxx` 实时写入Memory - `! xxx` 执行本地bash命令 - `claude -p 'question'` 单次咨询claude - `ctrl + j` 输入框换行 - `shift + ta",
   "01-Essay/index.md": "<category/>",
   "01-Essay/开源框架.md": " GitHub - 一人公司方法论：https://github.... - PDF提取工具：https://github.... - 证件照生成：https://github.... - Github代码阅读神器：https://deepwik... 前端动画组件库 - https://vue-bit... - https://reactbi... - https://gsap.co... - ",
