@@ -19,6 +19,12 @@
 - `ctrl + j` 输入框换行
 - `shift + tab`切换输入模式
 
+## Specific
+
+- 从0到1开始新项目（0～1）：https://github.com/github/spec-kit
+- 在现有的模块在增加功能（1～N）：http://github.com/Fission-AI/OpenSpec
+- 生成前端UI页面：https://stitch.withgoogle.com/?pli=1
+
 ## Prompt
 
 > 主流AI系统提示词参考：https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools

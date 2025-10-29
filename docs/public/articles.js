@@ -54,7 +54,7 @@ export const articlesMap = {
   "01-Essay/0-使用ECS为本地搭建开发环境.md": " 服务器准备 > 购买的华为云服务： > > - 116.205.134.46 > > - 2vCPUs 4GiB ac7.large.2 > > - CentOS 7.6 64bit 注意为对应安全组开放端口，或者直接开放所有端口，并限制只允许本机IP访问 - 查询本机IP地址：https://ip111.c... 本地配置 配置host映射，后续可直接使用hostname登入服务器 ```sh",
   "01-Essay/Command-line-shortcut-keys.md": " > iTerm2 的快捷键操作可分为两类：一类是由 Shell 环境（如 Zsh 或 Bash）通过 Readline 库提供的快捷键，适用于大多数命令行程序；另一类是 iTerm2 应用本身提供的，用于管理窗口、标签页和面板等图形界面元素。 一、光标移动 (Navigation) 在命令行界面输入时，用于高效移动光标的快捷键。 快捷键 (Keystroke) `Ctrl + A` `Ctrl ",
   "01-Essay/Zprofile.md": " 统计单个目录视频总时长 ```sh sumvideo() { # 1. 设定目标目录：如果提供了参数，则使用第一个参数；否则，使用当前目录。 local target_dir=\"${1:-.}\" # 2. 检查 ffprobe (ffmpeg) 是否已安装 if ! command -v ffprobe >/dev/null 2>&1; then echo \"错误: 未找到 ffprobe 命令",
-  "01-Essay/claude-code-user-manual.md": " Subscription 申请海外信用卡绑定Google Pay支付 Commands > Official documentation: https://docs.an... - `# xxx` 实时写入Memory - `! xxx` 执行本地bash命令 - `claude -p 'question'` 单次咨询claude - `ctrl + j` 输入框换行 - `shift + ta",
+  "01-Essay/claude-code-user-manual.md": " Subscription 申请海外信用卡绑定Google Pay支付 - 或者使用 Claude Code + GLM 方案：https://docs.bi... Commands > Official documentation: https://docs.an... - `# xxx` 实时写入Memory - `! xxx` 执行本地bash命令 - `claude -p 'questio",
   "01-Essay/index.md": "<category/>",
   "01-Essay/开源框架.md": " GitHub - 一人公司方法论：https://github.... - PDF提取工具：https://github.... - 证件照生成：https://github.... - Github代码阅读神器：https://deepwik... 前端动画组件库 - https://vue-bit... - https://reactbi... - https://gsap.co... - ",
   "01-Essay/疑难杂症/0-微服务架构下全链路超时控制分析.md": " 1. 背景 本文档旨在深入分析在一次典型的“前端 -> 网关 -> 后端”调用链路中，各层级存在的超时控制机制。我们将以`gsSync`接口批量更新任务所引发的`thread interrupted`异常为案例，详细拆解从用户请求到服务间调用的每一个环节，理解不同超时配置的作用、默认值及其影响，从而为设计健壮的长时间任务处理方案提供理论依据。 2. 标准调用链路及超时分析 一个典型的调用链路可以",
@@ -216,7 +216,6 @@ export const articlesMap = {
   "02-Other/Html工具/SelectWords.md": "<SelectWordComponent />",
   "02-Other/index.md": "<category/>",
   "02-Other/生活百科/CookeryBook.md": "四神汤 > 通用准备步骤： > > 1. 肉类处理： 无论排骨、鸡肉还是猪肚，都建议先用冷水加姜片焯水，去除腥味和杂质。 > 2. 药材处理： 所有干的药材都用清水冲洗一下（中药饮片不用），可以简单浸泡20分钟。 > 3. 调味： 盐永远在关火前加，加太早肉容易柴。 > 四神汤是健脾祛湿的基础方，这四味药材合在一起，主要力量就是把脾胃调理好，让身体自己有能力去运化水湿，性质非常平和，适合长期调理。",
-  "02-Other/生活百科/养生秘籍-泡脚篇.md": " 一、 基础泡脚法 在开始添加任何材料之前，首先要掌握最基本的泡脚方法。 - 水温：选择 40°C 至 50°C 的温水。这个温度既能有效促进血液循环，又不会烫伤皮肤。 - 水量：水量要没过脚面，最好能够到达小腿处，这样可以更好地刺激脚部穴位。 - 时间：泡脚时间不宜过长，一般控制在 15至30分钟 左右。时间过长会导致血管长时间扩张，可能引起身体其他部位供血不足。 二、 添加泡脚材料：功效升级 ",
   "02-Other/生活百科/执行标准指南.md": " GB的含义 GB是“国家标准（Guójiā Biāozhǔn）”的缩写。 GB标准由国家市场监督管理总局和中国国家标准化管理委员会发布，具有强制性或推荐性： - 强制性标准（`GB`）：法律法规要求强制执行，例如食品安全国家标准。 - 推荐性标准（`GB/T`）：建议性标准，通常适用于产品质量要求。 - 行业标准（`QB/T`，机械行业）：适用于特定行业。 - 地方标准（`DB`）：由地方政府制",
   "02-Other/生活百科/服装材料选择指南.md": " 服装的安全技术类别 根据GB 18401《国家纺织产品基本安全技术规范》，服装按安全技术性能划分为以下三个类别： 类别 A类 B类 C类 > 建议只买B类及上。商品详情、 标签未明显标出安全类别的，都是不合格产品！注意甄别！！！ 常见材料 面料 聚酯纤维 棉 羊毛 亚麻 丝绸 尼龙 腈纶 氨纶 粘纤 混纺材料 混纺材料 棉+聚酯纤维 羊毛+聚酯纤维 尼龙+氨纶 棉+氨纶 羊毛+腈纶 丝绸+聚酯纤",
   "index.md": ""
