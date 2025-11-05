@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert YouDao Words (XML)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #003716;
+        }
+
+        :root {
+            --vp-c-bg-soft: #e9f8ef;
+            --vp-c-divider: #bde0c9;
+            --vp-c-brand-1: #40c593;
+            --vp-c-brand-3: #a3e6c8;
+            --vp-c-text-1: #003716;
+            --vp-c-text-2: #003716;
+            --vp-c-bg-alt: #d9f4e4;
+            --vp-shadow-3: 0 4px 12px rgba(0,55,22,0.08);
+            --vp-shadow-4: 0 6px 16px rgba(0,55,22,0.12);
+            --vp-shadow-2: 0 2px 8px rgba(0,55,22,0.06);
+            --vp-c-green-1: #28a745;
+            --vp-c-green-2: #218838;
+            --vp-font-family-mono: monospace;
+        }
+
+        .xml-converter-container {
+            background: var(--vp-c-bg-soft);
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            box-shadow: var(--vp-shadow-3);
+            border: 1px solid var(--vp-c-divider);
+        }
+
+        .title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--vp-c-brand-1);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-weight: 700;
+        }
+
+        .file-input-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .file-input-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 1.5rem;
+            background-color: var(--vp-c-bg-alt);
+            color: var(--vp-c-text-1);
+            border: 2px dashed var(--vp-c-brand-3);
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            gap: 0.75rem;
+        }
+
+        .file-input-label:hover {
+            background-color: var(--vp-c-bg-soft);
+            border-color: var(--vp-c-brand-1);
+            color: var(--vp-c-brand-1);
+        }
+
+        .file-name {
+            margin-top: 1rem;
+            color: var(--vp-c-text-2);
+            font-size: 0.95rem;
+            text-align: center;
+            padding: 0.5rem;
+            background-color: var(--vp-c-bg-alt);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem auto;
+        }
+
+        .convert-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-width: 180px;
+            background-color: #40c593;
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .convert-btn.json-btn {
+            background-color: #35a97a;
+        }
+
+        .convert-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .convert-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .output-container {
+            margin-top: 1.5rem;
+            height: 350px;
+            overflow-y: auto;
+            background-color: #d9f4e4;
+            border-radius: 12px;
+            border: 1px solid var(--vp-c-divider);
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--vp-c-divider);
+            background-color: var(--vp-c-bg-alt);
+            font-weight: 600;
+            color: var(--vp-c-text-1);
+        }
+
+        .action-btn {
+            background: transparent;
+            border: none;
+            color: var(--vp-c-text-2);
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .action-btn:hover {
+            color: var(--vp-c-brand-1);
+            background-color: var(--vp-c-bg-soft);
+        }
+
+        .output-container pre {
+            font-family: var(--vp-font-family-mono, monospace);
+            white-space: pre-wrap;
+            word-break: break-all;
+            color: var(--vp-c-text-1);
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 1.5rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-[#d9f4e4]">
+
+<div id="app" class="min-h-screen flex items-center justify-center p-4"></div>
+
+<script>
+    const { createApp, ref } = Vue;
+
+    const WordConverter = {
+        template: `
+          <div class="xml-converter-container">
+            <div class="title">
+              <i class="fas fa-file-code"></i>
+              Convert YouDao Words (XML)
+            </div>
+            <div class="file-input-wrapper">
+              <input type="file" id="xmlFile" class="file-input" accept=".xml" @change="handleFileSelect" ref="fileInput">
+              <label for="xmlFile" class="file-input-label">
+                <i class="fas fa-cloud-upload-alt"></i>
+                Select XML File
+              </label>
+              <div class="file-name" v-if="fileName">
+                <i class="fas fa-file-alt"></i> {{ fileName }}
+              </div>
+            </div>
+            <div class="button-group">
+              <button class="convert-btn" @click="convertXMLToTXT" :disabled="!fileName">
+                <i class="fas fa-file-alt"></i> Convert to Text
+              </button>
+              <button class="convert-btn json-btn" @click="convertXMLToJSON" :disabled="!fileName">
+                <i class="fas fa-file-code"></i> Convert to JSON
+              </button>
+            </div>
+            <div class="output-container">
+              <div class="output-header">
+                <span>Output</span>
+                <div class="output-actions" v-if="outputText !== 'Converted text will appear here...'">
+                  <button class="action-btn copy-btn" @click="copyToClipboard">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+              <pre id="output">{{ outputText }}</pre>
+            </div>
+          </div>
+        `,
+        setup() {
+            const fileName = ref('');
+            const outputText = ref('Converted text will appear here...');
+            const fileInput = ref(null);
+
+            const handleFileSelect = (event) => {
+                const file = event.target.files[0];
+                if (file) fileName.value = file.name;
+            };
+
+            const copyToClipboard = () => {
+                navigator.clipboard.writeText(outputText.value)
+                    .then(() => alert('Copied to clipboard!'))
+                    .catch(err => console.error('Failed to copy: ', err));
+            };
+
+            const convertXML = (outputType) => {
+                const file = fileInput.value.files[0];
+                if (!file) {
+                    alert("Please select an XML file.");
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const xmlContent = event.target.result;
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlContent, "application/xml");
+                    if (xmlDoc.querySelector('parsererror')) {
+                        outputText.value = 'Error: Invalid XML file';
+                        return;
+                    }
+
+                    if (outputType === 'txt') {
+                        const words = xmlDoc.querySelectorAll('word, w, word-list, wordlist');
+                        const wordList = [...words].map(w => w.textContent.trim()).filter(Boolean);
+                        outputText.value = wordList.length > 0 ? wordList.join('\n') : 'No words found.';
+                        downloadFile(outputText.value, 'words.txt', 'text/plain');
+                    } else if (outputType === 'json') {
+                        const items = xmlDoc.querySelectorAll('item');
+                        const wordList = [...items].map(item => {
+                            const word = item.querySelector('word')?.textContent.trim();
+                            const trans = item.querySelector('trans')?.textContent.trim();
+                            if (word && trans) {
+                                const translations = trans.split('；').map(t => t.trim().replace(/\\n/g, '')).filter(Boolean).slice(0, 3);
+                                return { name: word, trans: translations };
+                            }
+                            return null;
+                        }).filter(Boolean);
+                        outputText.value = wordList.length > 0 ? JSON.stringify(wordList, null, 2) : 'No valid items found.';
+                        downloadFile(JSON.stringify(wordList, null, 2), 'words.json', 'application/json');
+                    }
+                };
+                reader.readAsText(file);
+            };
+
+            const downloadFile = (content, filename, type) => {
+                const blob = new Blob([content], { type });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+
+            return {
+                fileName,
+                outputText,
+                fileInput,
+                handleFileSelect,
+                copyToClipboard,
+                convertXMLToTXT: () => convertXML('txt'),
+                convertXMLToJSON: () => convertXML('json')
+            };
+        }
+    };
+
+    createApp(WordConverter).mount('#app');
+</script>
+</body>
+</html>

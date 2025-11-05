@@ -7,7 +7,18 @@
     <option name="rewriteBookmarkType" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1" />
+    <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/docs/public/html/AudioLyricPlayer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/JSONFormatConverter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/ProxyConfigurationConvert.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/WordConverter.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/WordbookDeduplication.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/html/WordbookEditor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/html/1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/html/EnglishLearningToolkit.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/EnglishLearningToolkit-back.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -393,6 +404,7 @@
       <workItem from="1759585541573" duration="2123000" />
       <workItem from="1759801753149" duration="5177000" />
       <workItem from="1760093830455" duration="1535000" />
+      <workItem from="1762323837054" duration="4627000" />
     </task>
     <task id="LOCAL-00001" summary="claude init">
       <option name="closed" value="true" />

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Format Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #003716;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background-color: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background-color: #d1d5db; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background-color: #9ca3af; }
+        .smooth-transition { transition: all 0.2s ease-in-out; }
+    </style>
+</head>
+<body class="bg-[#d9f4e4]">
+
+<div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div class="w-full max-w-7xl bg-[#e9f8ef]/70 backdrop-blur-xl border border-[#bde0c9]/80 rounded-2xl shadow-lg p-6 md:p-8">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-semibold text-[#003716]">JSON Format Converter</h1>
+            <p class="text-[#003716]/80 mt-2">Convert a standard JSON array into a format with each inner object on a single line.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+                <label for="inputJson" class="block text-sm font-medium text-[#003716] mb-2">Input JSON</label>
+                <textarea id="inputJson" rows="15" class="custom-scrollbar w-full p-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] smooth-transition text-[#003716] font-mono text-sm" placeholder="Paste your JSON here..."></textarea>
+            </div>
+            <div>
+                <label for="outputJson" class="block text-sm font-medium text-[#003716] mb-2">Output Result</label>
+                <div class="relative">
+                    <textarea id="outputJson" rows="15" readonly class="custom-scrollbar w-full p-3 bg-[#d9f4e4] border border-[#bde0c9] rounded-lg focus:ring-2 focus:ring-[#40c593] focus:border-[#40c593] smooth-transition text-[#003716] font-mono text-sm" placeholder="The converted result will be displayed here..."></textarea>
+                    <button id="copyBtn" class="absolute top-2.5 right-2.5 flex items-center justify-center h-8 w-8 bg-[#d9f4e4] hover:bg-[#c8ead8] text-[#003716] rounded-full smooth-transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">
+                        <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="smooth-transition"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <svg id="checkIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-[#40c593] hidden smooth-transition"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <button id="convertBtn" class="bg-[#40c593] hover:bg-[#35a97a] text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 active:scale-100 smooth-transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">
+                Convert Format
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const inputJsonEl = document.querySelector('#inputJson');
+        const outputJsonEl = document.querySelector('#outputJson');
+        const convertBtn = document.querySelector('#convertBtn');
+        const copyBtn = document.querySelector('#copyBtn');
+        const copyIcon = document.querySelector('#copyIcon');
+        const checkIcon = document.querySelector('#checkIcon');
+
+        // Set default example
+        inputJsonEl.value = JSON.stringify([
+            { "name": "unbiased", "trans": ["adj. fair, impartial"] },
+            { "name": "uniform", "trans": ["adj. consistent, unchanging"] },
+            { "name": "uphold", "trans": ["vt. to support, to maintain"] }
+        ], null, 2);
+
+        convertBtn.addEventListener('click', () => {
+            const inputText = inputJsonEl.value.trim();
+            if (!inputText) {
+                outputJsonEl.value = 'Error: Input cannot be empty.';
+                return;
+            }
+            try {
+                const parsedJson = JSON.parse(inputText);
+                if (!Array.isArray(parsedJson)) {
+                    outputJsonEl.value = 'Error: Input must be a valid JSON array.';
+                    return;
+                }
+                const resultLines = parsedJson.map(item => JSON.stringify(item));
+                outputJsonEl.value = `[\n${resultLines.join(',\n')}\n]`;
+            } catch (error) {
+                outputJsonEl.value = `Error: Invalid JSON format.\n\nDetails: ${error.message}`;
+            }
+        });
+
+        copyBtn.addEventListener('click', () => {
+            if (!outputJsonEl.value || outputJsonEl.value.startsWith('Error')) return;
+            navigator.clipboard.writeText(outputJsonEl.value).then(() => {
+                copyIcon.classList.add('hidden');
+                checkIcon.classList.remove('hidden');
+                setTimeout(() => {
+                    copyIcon.classList.remove('hidden');
+                    checkIcon.classList.add('hidden');
+                }, 2000);
+            }).catch(err => console.error('Could not copy text: ', err));
+        });
+    });
+</script>
+</body>
+</html>

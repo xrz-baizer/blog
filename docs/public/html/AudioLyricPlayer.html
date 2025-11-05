@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Lyric Player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body, #app {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .app-container {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            padding: 2rem;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .left-panel {
+            width: 400px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right-panel {
+            flex: 1;
+            display: none;
+            flex-direction: column;
+        }
+
+        .right-panel.visible {
+            display: flex;
+        }
+
+        .panel-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .panel-header h1 {
+            color: white;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .panel-content {
+            padding: 2rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .section {
+            margin-bottom: 1.5rem;
+        }
+
+        .section-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .upload-box {
+            border: 2px dashed #cbd5e0;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        }
+
+        .upload-box:hover {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+            transform: translateY(-2px);
+        }
+
+        .upload-box.has-file {
+            border-color: #48bb78;
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-text {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .file-name {
+            margin-top: 0.75rem;
+            color: #2d3748;
+            font-size: 0.875rem;
+            padding: 0.5rem;
+            background: white;
+            border-radius: 8px;
+            word-break: break-all;
+        }
+
+        .textarea-input {
+            width: 100%;
+            min-height: 120px;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.875rem;
+            resize: vertical;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+
+        .textarea-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        audio {
+            width: 100%;
+            margin: 1rem 0;
+            border-radius: 12px;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(252, 129, 129, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .lyrics-container {
+            padding: 2rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .lyric-line {
+            padding: 1rem 1.5rem;
+            margin: 0.5rem 0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            color: #2d3748;
+            background: rgba(237, 242, 247, 0.5);
+        }
+
+        .lyric-line:hover {
+            background: rgba(237, 242, 247, 1);
+            transform: translateX(8px);
+        }
+
+        .lyric-line.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+        }
+
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #a0aec0;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+
+        .empty-text {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+    const { createApp } = Vue;
+
+    const AudioLyricPlayer = {
+        template: `
+          <div class="app-container">
+            <div class="panel left-panel">
+              <div class="panel-header">
+                <h1>🎵 Audio Lyric Player</h1>
+              </div>
+              <div class="panel-content">
+                <div class="section fade-in">
+                  <div class="section-label">Audio File</div>
+                  <input type="file" accept="audio/*" @change="handleAudioUpload" ref="audioInput" style="display: none;"/>
+                  <div class="upload-box" :class="{ 'has-file': audioFileName }" @click="$refs.audioInput.click()">
+                    <div class="upload-icon">{{ audioFileName ? '✅' : '🎧' }}</div>
+                    <div class="upload-text">{{ audioFileName ? 'Change Audio File' : 'Select Audio File' }}</div>
+                    <div v-if="audioFileName" class="file-name">{{ audioFileName }}</div>
+                  </div>
+                </div>
+
+                <div class="section fade-in" style="animation-delay: 0.1s;">
+                  <div class="section-label">Lyrics File</div>
+                  <input type="file" accept=".lrc,.txt,.srt" @change="handleLyricUpload" ref="lyricInput" style="display: none;"/>
+                  <div class="upload-box" :class="{ 'has-file': lyricFileName }" @click="$refs.lyricInput.click()">
+                    <div class="upload-icon">{{ lyricFileName ? '✅' : '📝' }}</div>
+                    <div class="upload-text">{{ lyricFileName ? 'Change Lyrics File' : 'Select Lyrics File (LRC/SRT)' }}</div>
+                    <div v-if="lyricFileName" class="file-name">{{ lyricFileName }}</div>
+                  </div>
+                </div>
+
+                <div class="section fade-in" style="animation-delay: 0.2s;">
+                  <div class="section-label">Or Paste Lyrics</div>
+                  <textarea
+                    class="textarea-input"
+                    v-model="lyricText"
+                    placeholder="Paste LRC or SRT lyrics here...&#10;&#10;LRC format:&#10;[00:12.00]First line&#10;[00:17.20]Second line&#10;&#10;SRT format:&#10;1&#10;00:00:12,000 --> 00:00:17,000&#10;First line"></textarea>
+                </div>
+
+                <div class="section fade-in" style="animation-delay: 0.3s;">
+                  <div class="section-label">Player Controls</div>
+                  <audio ref="audioPlayer" controls></audio>
+                  <div class="button-group">
+                    <button class="btn btn-primary" @click="playFull" :disabled="!audioFileName || lyrics.length === 0">
+                      ▶️ Play All
+                    </button>
+                    <button class="btn btn-danger" @click="clearLyrics" :disabled="lyrics.length === 0">
+                      🗑️ Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel right-panel" :class="{ visible: showLyrics }">
+              <div class="panel-header">
+                <h1>📜 Lyrics</h1>
+              </div>
+              <div class="lyrics-container">
+                <div v-if="lyrics.length === 0" class="empty-state">
+                  <div class="empty-icon">🎼</div>
+                  <div class="empty-text">No lyrics loaded yet.<br>Upload a file or paste lyrics to get started!</div>
+                </div>
+                <div v-for="(line, idx) in lyrics" :key="idx"
+                     class="lyric-line fade-in"
+                     :class="{ active: idx === currentLine }"
+                     @click="playLine(idx)"
+                     :style="{ animationDelay: (idx * 0.05) + 's' }">
+                  {{ line.text }}
+                </div>
+              </div>
+            </div>
+          </div>
+        `,
+        data() {
+            return {
+                lyrics: [],
+                currentLine: 0,
+                singleLineMode: false,
+                pauseAt: null,
+                isFullPlayMode: false,
+                audioFileName: '',
+                lyricFileName: '',
+                lyricText: '',
+                showLyrics: false
+            }
+        },
+        watch: {
+            lyricText(newVal) {
+                if (newVal.trim()) {
+                    this.lyrics = this.parseLyrics(newVal);
+                    this.showLyrics = true;
+                }
+            }
+        },
+        mounted() {
+            this.$refs.audioPlayer.addEventListener('timeupdate', this.handleTimeUpdate);
+            this.$refs.audioPlayer.addEventListener('ended', this.handleAudioEnded);
+        },
+        methods: {
+            parseLyrics(text) {
+                return text.includes('-->') ? this.parseSRT(text) : this.parseLRC(text);
+            },
+            parseLRC(lrc) {
+                const lines = lrc.split('\n'), result = [];
+                const timeExp = /\[(\d{2}):(\d{2})(?:\.(\d{2,3}))?\]/;
+                for (let line of lines) {
+                    const match = timeExp.exec(line);
+                    if (match) {
+                        const time = parseInt(match[1])*60 + parseInt(match[2]) + (match[3] ? parseInt(match[3].padEnd(3,'0'))/1000 : 0);
+                        const text = line.replace(timeExp, '').trim();
+                        if (text) result.push({ time, text });
+                    }
+                }
+                return result;
+            },
+            parseSRT(srt) {
+                const lines = srt.split('\n'), result = [];
+                const timeExp = /(\d{2}):(\d{2}):(\d{2}),(\d{3})/;
+                for (let i = 0; i < lines.length; i++) {
+                    if (lines[i].includes('-->')) {
+                        const match = lines[i].match(timeExp);
+                        if (match) {
+                            const time = parseInt(match[1])*3600 + parseInt(match[2])*60 + parseInt(match[3]) + parseInt(match[4])/1000;
+                            const text = lines[i + 1]?.trim();
+                            if(text) result.push({ time, text });
+                        }
+                    }
+                }
+                return result;
+            },
+            handleAudioUpload(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    this.audioFileName = file.name;
+                    this.$refs.audioPlayer.src = URL.createObjectURL(file);
+                }
+            },
+            handleLyricUpload(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    this.lyricFileName = file.name;
+                    const reader = new FileReader();
+                    reader.onload = (ev) => {
+                        this.lyricText = ev.target.result;
+                    };
+                    reader.readAsText(file);
+                }
+            },
+            handleTimeUpdate() {
+                const player = this.$refs.audioPlayer;
+                if (!player || this.lyrics.length === 0) return;
+                const current = player.currentTime;
+                if (this.singleLineMode && this.pauseAt !== null && current >= this.pauseAt) {
+                    player.pause();
+                    this.singleLineMode = false;
+                    this.pauseAt = null;
+                } else if (this.isFullPlayMode) {
+                    let i = 0;
+                    while (i < this.lyrics.length - 1 && current >= this.lyrics[i + 1].time) i++;
+                    this.currentLine = i;
+                }
+            },
+            handleAudioEnded() {
+                this.isFullPlayMode = false;
+                this.singleLineMode = false;
+                this.pauseAt = null;
+            },
+            playLine(idx) {
+                const player = this.$refs.audioPlayer;
+                if (!player || !this.lyrics[idx]) return;
+                player.currentTime = this.lyrics[idx].time;
+                this.isFullPlayMode = false;
+                this.singleLineMode = true;
+                this.pauseAt = this.lyrics[idx + 1] ? this.lyrics[idx + 1].time - 0.3 : player.duration;
+                player.play();
+                this.currentLine = idx;
+            },
+            playFull() {
+                const player = this.$refs.audioPlayer;
+                if (!player || this.lyrics.length === 0) return;
+                player.currentTime = 0;
+                this.isFullPlayMode = true;
+                this.singleLineMode = false;
+                this.pauseAt = null;
+                player.play();
+                this.currentLine = 0;
+                this.showLyrics = true;
+            },
+            clearLyrics() {
+                this.lyrics = [];
+                this.lyricText = '';
+                this.lyricFileName = '';
+                this.showLyrics = false;
+                this.currentLine = 0;
+                this.$refs.lyricInput.value = '';
+            }
+        }
+    };
+
+    createApp(AudioLyricPlayer).mount('#app');
+</script>
+</body>
+</html>

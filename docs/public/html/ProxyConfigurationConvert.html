@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sing-box 转 Clash.Meta</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 使用 Inter 字体 */
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        /* 简单的玻璃拟态效果 */
+        .glass-card {
+            background: rgba(41, 51, 65, 0.7); /* bg-gray-800 with 70% opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* 自定义滚动条 */
+        textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: #2d3748; /* bg-gray-700 */
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #4a5568; /* bg-gray-600 */
+            border-radius: 4px;
+        }
+        textarea::-webkit-scrollbar-thumb:hover {
+            background: #718096; /* bg-gray-500 */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 min-h-screen flex items-center justify-center p-4">
+
+<div class="w-full max-w-4xl glass-card rounded-xl shadow-2xl p-6 md:p-8">
+    <h1 class="text-2xl md:text-3xl font-bold text-center mb-6 text-white">
+        sing-box JSON 转换为 Clash.Meta YAML
+    </h1>
+
+    <!-- IP 地址输入 -->
+    <div class="mb-4">
+        <label for="ip-input" class="block text-sm font-medium text-gray-300 mb-2">
+            <span class="text-red-400 font-bold">*</span> 你的 VPS IP 地址 (必需)
+        </label>
+        <input type="text" id="ip-input" placeholder="例如: 188.188.188.188" class="w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150">
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- 左侧：输入 -->
+        <div>
+            <label for="json-input" class="block text-sm font-medium text-gray-300 mb-2">1. 粘贴 `sb gen ...` 的输出</label>
+            <textarea id="json-input" rows="12" class="w-full bg-gray-700 text-white border-gray-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 transition duration-150 p-4" placeholder="粘贴 `sb gen reality` 或 `sb gen ss` 等命令的完整输出..."></textarea>
+        </div>
+
+        <!-- 右侧：输出 -->
+        <div>
+            <div class="flex justify-between items-center mb-2">
+                <label for="yaml-output" class="block text-sm font-medium text-gray-300">2. 生成的 YAML 配置</label>
+                <button id="copy-btn" class="text-sm bg-gray-600 hover:bg-gray-500 text-white py-1 px-3 rounded-md transition duration-150">
+                    复制
+                </button>
+            </div>
+            <pre id="yaml-output-wrapper" class="w-full h-48 md:h-[288px] bg-gray-900 rounded-md p-4 overflow-auto"><code id="yaml-output" class="text-gray-300 whitespace-pre-wrap"></code></pre>
+        </div>
+    </div>
+
+    <!-- 转换按钮和状态 -->
+    <div class="mt-6">
+        <button id="convert-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md shadow-lg transition duration-200 ease-in-out">
+            转换
+        </button>
+        <p id="status-message" class="text-center text-sm mt-4 text-green-400"></p>
+    </div>
+</div>
+
+<script>
+    // DOM 元素
+    const jsonInput = document.getElementById('json-input');
+    const ipInput = document.getElementById('ip-input');
+    const convertBtn = document.getElementById('convert-btn');
+    const yamlOutput = document.getElementById('yaml-output');
+    const copyBtn = document.getElementById('copy-btn');
+    const statusMessage = document.getElementById('status-message');
+
+    // 转换按钮点击事件
+    convertBtn.onclick = function() {
+        const jsonString = jsonInput.value;
+        const serverIp = ipInput.value.trim();
+
+        // 清空状态
+        statusMessage.textContent = '';
+        yamlOutput.textContent = '';
+
+        // --- 1. 输入验证 ---
+        if (!serverIp) {
+            showStatus("请输入你的 VPS IP 地址！", true);
+            ipInput.focus();
+            return;
+        }
+        if (!jsonString) {
+            showStatus("请输入 sing-box JSON！", true);
+            jsonInput.focus();
+            return;
+        }
+
+        // --- 2. 清理和解析 JSON ---
+        let cleanJsonString = '';
+        try {
+            // 尝试直接解析
+            JSON.parse(jsonString);
+            cleanJsonString = jsonString;
+        } catch (e) {
+            // 如果直接解析失败，尝试提取 {} 之间的内容
+            const startIndex = jsonString.indexOf('{');
+            const endIndex = jsonString.lastIndexOf('}');
+            if (startIndex === -1 || endIndex === -1) {
+                showStatus("JSON 格式错误，未找到 '{' 或 '}'。", true);
+                return;
+            }
+            cleanJsonString = jsonString.substring(startIndex, endIndex + 1);
+        }
+
+        let data;
+        try {
+            data = JSON.parse(cleanJsonString);
+            if (!data.inbounds || data.inbounds.length === 0) {
+                showStatus("JSON 结构错误：未找到 'inbounds'。", true);
+                return;
+            }
+        } catch (error) {
+            showStatus(`JSON 解析失败: ${error.message}`, true);
+            return;
+        }
+
+        // --- 3. 核心转换逻辑 ---
+        try {
+            const yaml = convertToYaml(data, serverIp);
+            yamlOutput.textContent = yaml;
+            showStatus("转换成功！", false);
+        } catch (error) {
+            showStatus(`转换失败: ${error.message}`, true);
+        }
+    };
+
+    /**
+     * 核心转换函数
+     * @param {object} data - 解析后的 JSON 对象
+     * @param {string} serverIp - 用户输入的 IP 地址
+     * @returns {string} - YAML 格式的字符串
+     */
+    function convertToYaml(data, serverIp) {
+        const inbound = data.inbounds[0];
+        const type = inbound.type;
+        const port = inbound.listen_port;
+        // 移除 .json 后缀，作为节点名
+        const name = inbound.tag.replace(/\.json$/, '');
+
+        let yamlLines = [];
+        yamlLines.push(`  - name: ${name}`);
+
+        switch (type) {
+            case 'shadowsocks':
+                yamlLines.push(`    type: ss`);
+                yamlLines.push(`    server: ${serverIp}`);
+                yamlLines.push(`    port: ${port}`);
+                // 密码用单引号包裹，防止特殊字符（如 '=='）导致 YAML 错误
+                yamlLines.push(`    password: '${inbound.password}'`);
+                yamlLines.push(`    cipher: ${inbound.method}`);
+                yamlLines.push(`    udp: true`); // 默认开启 UDP
+                break;
+
+            case 'vless':
+                if (!inbound.tls || !inbound.tls.reality || !inbound.tls.reality.enabled) {
+                    throw new Error("JSON 不是 VLESS-REALITY 类型。");
+                }
+                const user = inbound.users[0];
+                const reality = inbound.tls.reality;
+
+                // 查找公钥
+                const publicKeyOutbound = data.outbounds.find(o => o.tag && o.tag.startsWith('public_key_'));
+                const publicKey = publicKeyOutbound ? publicKeyOutbound.tag.replace('public_key_', '') : '!!公钥未找到!!';
+
+                yamlLines.push(`    type: vless`);
+                yamlLines.push(`    server: ${serverIp}`);
+                yamlLines.push(`    port: ${port}`);
+                yamlLines.push(`    uuid: ${user.uuid}`);
+                yamlLines.push(`    network: tcp`); // 脚本默认
+                yamlLines.push(`    tls: true`);
+                yamlLines.push(`    udp: true`); // 默认开启 UDP
+                yamlLines.push(`    flow: ${user.flow}`);
+                yamlLines.push(`    servername: ${inbound.tls.server_name}`);
+                yamlLines.push(`    client-fingerprint: chrome`); // 脚本默认
+                yamlLines.push(`    reality-opts:`);
+                yamlLines.push(`      public-key: ${publicKey}`);
+
+                const shortId = reality.short_id && reality.short_id[0] ? reality.short_id[0] : '';
+                if (shortId) {
+                    yamlLines.push(`      short-id: ${shortId}`);
+                }
+                break;
+
+            case 'hysteria2':
+                const hy2User = inbound.users[0];
+                yamlLines.push(`    type: hysteria2`);
+                yamlLines.push(`    server: ${serverIp}`);
+                yamlLines.push(`    port: ${port}`);
+                yamlLines.push(`    password: ${hy2User.password}`);
+                // 脚本默认使用自签名证书，Clash.Meta 必须跳过验证
+                yamlLines.push(`    skip-cert-verify: true`);
+                yamlLines.push(`    alpn:`);
+                yamlLines.push(`      - ${inbound.tls.alpn[0]}`);
+                yamlLines.push(`    udp: true`); // Hysteria2 必须
+                break;
+
+            case 'tuic':
+                const tuicUser = inbound.users[0];
+                yamlLines.push(`    type: tuic`);
+                yamlLines.push(`    server: ${serverIp}`);
+                yamlLines.push(`    port: ${port}`);
+                yamlLines.push(`    uuid: ${tuicUser.uuid}`);
+                yamlLines.push(`    password: ${tuicUser.password}`);
+                // 脚本默认使用自签名证书，Clash.Meta 必须跳过验证
+                yamlLines.push(`    skip-cert-verify: true`);
+                yamlLines.push(`    alpn:`);
+                yamlLines.push(`      - ${inbound.tls.alpn[0]}`);
+                if (inbound.congestion_control) {
+                    yamlLines.push(`    congestion-controller: ${inbound.congestion_control}`);
+                }
+                yamlLines.push(`    udp: true`); // TUIC 必须
+                break;
+
+            default:
+                throw new Error(`不支持的协议类型: ${type}`);
+        }
+
+        return yamlLines.join('\n');
+    }
+
+    /**
+     * 显示状态/错误消息
+     * @param {string} message - 要显示的消息
+     * @param {boolean} isError - 是否为错误消息 (红色)
+     */
+    function showStatus(message, isError = false) {
+        statusMessage.textContent = message;
+        if (isError) {
+            statusMessage.classList.remove('text-green-400');
+            statusMessage.classList.add('text-red-400');
+        } else {
+            statusMessage.classList.remove('text-red-400');
+            statusMessage.classList.add('text-green-400');
+        }
+    }
+
+    // 复制按钮点击事件
+    copyBtn.onclick = function() {
+        const textToCopy = yamlOutput.textContent;
+        if (!textToCopy) {
+            showStatus("没有内容可以复制。", true);
+            return;
+        }
+
+        // 使用 document.execCommand (在 iframe 中更可靠)
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showStatus("已复制到剪贴板！", false);
+        } catch (err) {
+            showStatus("复制失败。", true);
+        }
+        document.body.removeChild(textArea);
+    };
+
+</script>
+</body>
+</html>

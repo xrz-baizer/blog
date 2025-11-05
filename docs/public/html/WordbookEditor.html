@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordbook Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #003716;
+        }
+    </style>
+</head>
+<body class="bg-[#d9f4e4]">
+
+<div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div class="w-full max-w-3xl mx-auto bg-[#e9f8ef] p-6 sm:p-8 rounded-2xl shadow-sm border border-[#bde0c9]">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#003716]">Wordbook Editor</h1>
+        </header>
+
+        <div id="upload-section" class="border-2 border-dashed border-[#bde0c9] p-8 text-center rounded-xl mb-6 hover:border-[#40c593] transition-colors">
+            <label for="file-input-edit" id="upload-label" class="cursor-pointer text-[#40c593] font-semibold">
+                Click here to upload your JSON wordbook
+            </label>
+            <input type="file" id="file-input-edit" accept=".json" class="hidden">
+            <p id="file-name-display" class="mt-2 text-sm text-[#003716]/70"></p>
+        </div>
+
+        <div id="controls" class="hidden mb-4 pb-4 border-b border-[#bde0c9] flex items-center flex-wrap gap-4">
+            <div class="flex items-center">
+                <input type="checkbox" id="select-all" class="h-4 w-4 rounded border-[#bde0c9] text-[#40c593] focus:ring-[#40c593]">
+                <label for="select-all" class="ml-2 block text-sm font-medium text-[#003716]">Select All</label>
+            </div>
+            <button id="bulk-delete-btn" class="px-4 py-2 text-sm font-semibold bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Delete Selected</button>
+            <button id="export-btn" class="ml-auto px-4 py-2 text-sm font-semibold bg-[#40c593] text-white rounded-lg hover:bg-[#35a97a] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#40c593]">Export Remaining</button>
+        </div>
+
+        <ul id="word-list" class="list-none p-0 max-h-[50vh] overflow-y-auto"></ul>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const fileInput = document.querySelector('#file-input-edit');
+        const fileNameDisplay = document.querySelector('#file-name-display');
+        const controlsDiv = document.querySelector('#controls');
+        const selectAllCheckbox = document.querySelector('#select-all');
+        const bulkDeleteBtn = document.querySelector('#bulk-delete-btn');
+        const exportBtn = document.querySelector('#export-btn');
+        const wordListUl = document.querySelector('#word-list');
+        let vocabulary = [];
+        let originalFilename = '';
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (!file) return;
+            originalFilename = file.name;
+            fileNameDisplay.textContent = `Loaded: ${originalFilename}`;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    vocabulary = JSON.parse(e.target.result);
+                    vocabulary.forEach((word, index) => word.id = `word-${Date.now()}-${index}`);
+                    renderWordList();
+                    controlsDiv.style.display = 'flex';
+                } catch (error) {
+                    alert(`Error parsing file. Please ensure it's a valid JSON format.\nDetails: ${error.message}`);
+                    resetApp();
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        function renderWordList() {
+            wordListUl.innerHTML = '';
+            if (vocabulary.length === 0) {
+                wordListUl.innerHTML = '<li class="text-center text-[#003716]/70 py-4">Word list is empty.</li>';
+                return;
+            }
+            vocabulary.forEach(word => {
+                const listItem = document.createElement('li');
+                listItem.className = 'word-item flex items-start p-4 border-b border-[#bde0c9] hover:bg-[#d9f4e4]';
+                listItem.dataset.id = word.id;
+                const transHtml = (word.trans || []).map(t => `<li class="text-sm">${t}</li>`).join('');
+                listItem.innerHTML = `
+                    <input type="checkbox" class="word-checkbox h-4 w-4 rounded border-[#bde0c9] text-[#40c593] focus:ring-[#40c593] mt-1 mr-4 flex-shrink-0" data-id="${word.id}">
+                    <div class="flex-grow">
+                        <div class="font-bold text-[#003716]">${word.name}</div>
+                        <ul class="list-disc list-inside text-[#003716]/80 mt-1">${transHtml}</ul>
+                    </div>
+                    <button class="delete-btn text-red-500 hover:text-red-700 ml-4 flex-shrink-0" data-id="${word.id}" title="Delete this word">&times;</button>
+                `;
+                wordListUl.appendChild(listItem);
+            });
+            selectAllCheckbox.checked = false;
+        }
+
+        wordListUl.addEventListener('click', (event) => {
+            if (event.target.classList.contains('delete-btn')) {
+                const wordIdToDelete = event.target.dataset.id;
+                vocabulary = vocabulary.filter(word => word.id !== wordIdToDelete);
+                renderWordList();
+            }
+        });
+
+        selectAllCheckbox.addEventListener('change', () => {
+            document.querySelectorAll('.word-checkbox').forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        });
+
+        bulkDeleteBtn.addEventListener('click', () => {
+            const checkedIds = new Set([...document.querySelectorAll('.word-checkbox:checked')].map(cb => cb.dataset.id));
+            if (checkedIds.size === 0) {
+                alert('Please select words to delete.');
+                return;
+            }
+            vocabulary = vocabulary.filter(word => !checkedIds.has(word.id));
+            renderWordList();
+        });
+
+        exportBtn.addEventListener('click', () => {
+            if (vocabulary.length === 0) {
+                alert('No words to export.');
+                return;
+            }
+            const dataToExport = vocabulary.map(({ name, trans }) => ({ name, trans }));
+            const jsonString = JSON.stringify(dataToExport, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const [name, ext] = originalFilename.split('.');
+            const newFilename = `${name}_edited.${ext || 'json'}`;
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = newFilename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+        });
+
+        function resetApp() {
+            vocabulary = [];
+            originalFilename = '';
+            fileInput.value = '';
+            fileNameDisplay.textContent = '';
+            wordListUl.innerHTML = '';
+            controlsDiv.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>
