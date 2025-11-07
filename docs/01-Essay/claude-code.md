@@ -1,4 +1,4 @@
-# Claude Code User Manual
+# Claude Code Best Practice
 
 ## Subscription
 
@@ -24,6 +24,45 @@
 - 从0到1开始新项目（0～1）：https://github.com/github/spec-kit
 - 在现有的模块在增加功能（1～N）：http://github.com/Fission-AI/OpenSpec
 - 生成前端UI页面：https://stitch.withgoogle.com/?pli=1
+
+### Spec kit
+
+```sh
+# 初始化项目
+specify init [forest-focus] --ai claude
+
+
+# 进入项目
+cd forest-focus
+
+# 1. 铁律
+/constitution Keep the iOS Forest-style focus app radically simple and offline-first.
+Enforce test-first development, 60fps animations, <2s cold start, and VoiceOver/Dynamic Type support.
+
+# 2. 规范
+/specify Build a Forest-style Pomodoro app for iOS: start a 25-minute session to "plant"
+a tree that grows through 5 stages; cancel/quit kills the tree; completion saves it to a
+personal forest. Show countdown, pause/resume, local notification, and background-accurate timing.
+Store completed/abandoned sessions locally; show a forest grid and stats (total trees, total focus
+time, today's count, daily streak). Out of scope: custom durations, species, sync, sharing, watch, widgets.
+
+# 3. 澄清
+/clarify
+
+# 4. 计划
+/plan Use SwiftUI + SwiftData on iOS 17+. Timer via Combine; local notifications via
+UNUserNotificationCenter; smooth 60fps growth animations; no third-party deps.
+Use XCTest/XCUITest; keep memory ~<50MB during active sessions.
+
+# 5. 任务
+/tasks
+
+# 6. 分析
+/analyze
+
+# 7. 实现
+/implement
+```
 
 ## Prompt
 
