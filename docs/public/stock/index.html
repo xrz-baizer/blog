@@ -748,49 +748,12 @@
             padding-bottom: 0.625rem;
         }
 
-        /* Scroll indicator shadow on mobile */
+        /* Enhanced scrollbar on mobile */
         @media (max-width: 767px) {
             .table-wrapper {
                 /* Force scrollbar to always show on mobile */
                 scrollbar-width: thin;
                 scrollbar-color: rgba(102, 126, 234, 0.5) rgba(102, 126, 234, 0.15);
-            }
-
-            .table-wrapper::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0.625rem; /* Account for scrollbar height */
-                width: 2rem;
-                background: linear-gradient(to left, rgba(15, 12, 41, 0.8), transparent);
-                pointer-events: none;
-                opacity: 1;
-                transition: opacity 0.3s ease;
-                z-index: 1;
-            }
-
-            .table-wrapper.scrolled-to-end::after {
-                opacity: 0;
-            }
-
-            /* Add visual hint for scrollable content */
-            .table-wrapper::before {
-                content: '← 滑动查看更多 →';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                color: rgba(102, 126, 234, 0.6);
-                font-size: 0.75em;
-                white-space: nowrap;
-                pointer-events: none;
-                z-index: 2;
-                opacity: 0.8;
-            }
-
-            .table-wrapper.scrolled-to-end::before {
-                content: '已到末尾';
             }
         }
 
