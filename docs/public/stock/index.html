@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Investment Reminder Tool</title>
+    <style>
+        :root {
+            /* 柔和白色色系 */
+            --text-primary: rgba(230, 230, 240, 0.95);
+            --text-secondary: rgba(210, 210, 230, 0.9);
+            --text-tertiary: rgba(200, 200, 220, 0.8);
+            --text-muted: rgba(180, 180, 200, 0.7);
+
+            /* 原有颜色 */
+            --bg-gradient-1: #0f0c29;
+            --bg-gradient-2: #302b63;
+            --bg-gradient-3: #24243e;
+            --primary-purple: #667eea;
+            --primary-violet: #764ba2;
+            --success-green: #10b981;
+            --danger-red: #f87171;
+            --warning-yellow: #fbbf24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 0.5rem;
+            position: relative;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                max-height: 100vh;
+            }
+        }
+
+        /* Tech-style background animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 20%, rgba(138, 192, 216, 0.2) 0%, transparent 50%);
+            animation: gradient 15s ease infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes gradient {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 87.5rem;
+                max-height: calc(100vh - 1rem);
+            }
+        }
+
+        /* Glass morphism card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(1.25rem);
+            -webkit-backdrop-filter: blur(1.25rem);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+            padding: 1rem;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .glass-card {
+                overflow-y: auto;
+                min-height: 0;
+            }
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .main-grid {
+                grid-template-columns: 23.75rem 1fr;
+                flex: 1;
+                overflow: hidden;
+                min-height: 0;
+            }
+        }
+
+        .section-title {
+            color: var(--text-primary);
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 0.25rem;
+            height: 1.375rem;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 0.125rem;
+        }
+
+        .input-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .input-group label {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 1em;
+            font-weight: 500;
+            margin-bottom: 0.375rem;
+            flex-wrap: wrap;
+        }
+
+        .input-group input,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.75rem;
+            color: white;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(102, 126, 234, 0.6);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .fund-input-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0.625rem;
+        }
+
+        .base-price-inline {
+            font-size: 0.85em;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .base-price-inline:empty {
+            display: none;
+        }
+
+        .base-price-inline:not(:empty)::before {
+            content: '(';
+            color: var(--text-secondary);
+        }
+
+        .base-price-inline:not(:empty)::after {
+            content: ')';
+            color: var(--text-secondary);
+        }
+
+        .base-date {
+            color: #10b981;
+        }
+
+        .base-value {
+            color: #f87171;
+            font-weight: 500;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 0.625rem;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0.25rem 0.9375rem rgba(102, 126, 234, 0.4);
+            margin-top: 0.375rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-0.125rem);
+            box-shadow: 0 0.375rem 1.25rem rgba(102, 126, 234, 0.6);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            background: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .info-box {
+            background: rgba(33, 150, 243, 0.15);
+            border: 1px solid rgba(33, 150, 243, 0.3);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.625rem;
+            margin-top: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+        }
+
+        /* Strategy tables */
+        .strategy-tables {
+            margin-bottom: 0.75rem;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+
+        .strategy-table {
+            margin-bottom: 0.625rem;
+            overflow-x: auto;
+            max-width: 100%;
+        }
+
+        .strategy-table h4 {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1em;
+            margin-bottom: 0.375rem;
+            font-weight: 600;
+        }
+
+        .strategy-table table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 100%;
+        }
+
+        .strategy-table th,
+        .strategy-table td {
+            padding: 0.5rem 0.625rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95em;
+        }
+
+        .strategy-table th {
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .strategy-table td strong {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Result cards */
+        .result-card {
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.625rem;
+            border-radius: 0.75rem;
+            border-left: 0.1875rem solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
+            max-width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(1.25rem);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-card:hover {
+            transform: translateX(0.25rem) scale(1.02);
+        }
+
+        .result-left {
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+        }
+
+        .result-name {
+            font-weight: 700;
+            font-size: 1.15em;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 0.25rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .result-action {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.7);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .result-date {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.125rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .result-right {
+            text-align: right;
+            padding-left: 1rem;
+        }
+
+        .result-change {
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .result-price {
+            font-size: 0.85em;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 0.25rem;
+        }
+
+        .positive { color: #f87171; }
+        .negative { color: #10b981; }
+
+        /* Loading state */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 0.125rem solid rgba(255, 255, 255, 0.2);
+            border-top: 0.125rem solid #667eea;
+            border-radius: 50%;
+            width: 1.5rem;
+            height: 1.5rem;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 0.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 0.875em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 1.25rem;
+            right: 1.25rem;
+            left: 1.25rem;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(0.625rem);
+            color: white;
+            padding: 0.875rem 1.25rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transform: translateY(1.25rem);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            font-size: 0.95em;
+            max-width: calc(100vw - 2.5rem);
+        }
+
+        @media (min-width: 768px) {
+            .toast {
+                left: auto;
+                max-width: 25rem;
+            }
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Initial prompt */
+        .empty-state {
+            text-align: center;
+            padding: 3.75rem 1.25rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 1em;
+        }
+
+        /* Error message */
+        .error-message {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(0.625rem);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: rgba(15, 12, 41, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1.25rem;
+            padding: 0;
+            max-width: calc(100vw - 1.25rem);
+            max-height: 85vh;
+            width: 90%;
+            box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.3s ease;
+            display: flex;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .modal-content {
+                max-width: 75rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(1.875rem);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-sidebar {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .modal-sidebar {
+                display: block;
+                width: 15.625rem;
+                min-width: 9.375rem;
+                background: rgba(0, 0, 0, 0.3);
+                padding: 1.875rem 1.25rem;
+                overflow-y: auto;
+                border-right: 1px solid rgba(255, 255, 255, 0.1);
+                flex-shrink: 0;
+            }
+        }
+
+        .modal-sidebar h3 {
+            font-size: 1.1em;
+            color: rgba(230, 230, 240, 0.95);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-toc {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .modal-toc li {
+            margin: 8px 0;
+        }
+
+        .modal-toc a {
+            color: rgba(200, 200, 220, 0.8);
+            text-decoration: none;
+            font-size: 0.95em;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .modal-toc a:hover {
+            background: rgba(102, 126, 234, 0.2);
+            color: rgba(230, 230, 240, 1);
+            transform: translateX(5px);
+        }
+
+        .modal-toc a.active {
+            background: rgba(102, 126, 234, 0.3);
+            color: rgba(230, 230, 240, 1);
+        }
+
+        .modal-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 768px) {
+            .modal-header {
+                padding: 1.5625rem 1.875rem;
+            }
+        }
+
+        .modal-header h2 {
+            font-size: 1.5em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+        }
+
+        @media (min-width: 768px) {
+            .modal-header h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: rgba(200, 200, 220, 0.8);
+            font-size: 1.5em;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            color: rgba(210, 210, 230, 0.9);
+            line-height: 1.8;
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+            font-size: 0.875em;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body {
+                padding: 1.875rem;
+                font-size: 1em;
+            }
+        }
+
+        .modal-body h3 {
+            color: rgba(230, 230, 240, 0.95);
+            font-size: 1.3em;
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            border-left: 0.25rem solid #667eea;
+            padding-left: 0.75rem;
+            scroll-margin-top: 1.25rem;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body h3 {
+                font-size: 1.4em;
+                margin-top: 1.5625rem;
+                margin-bottom: 0.9375rem;
+            }
+        }
+
+        .modal-body h4 {
+            color: rgba(220, 220, 235, 0.9);
+            font-size: 1.1em;
+            margin-top: 1rem;
+            margin-bottom: 0.625rem;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body h4 {
+                font-size: 1.2em;
+                margin-top: 1.25rem;
+                margin-bottom: 0.625rem;
+            }
+        }
+
+        .modal-body table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.9375rem 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 0.625rem;
+            overflow: hidden;
+            display: block;
+            overflow-x: auto;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body table {
+                display: table;
+                overflow-x: visible;
+            }
+        }
+
+        .modal-body th,
+        .modal-body td {
+            padding: 0.625rem 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9em;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body th,
+            .modal-body td {
+                padding: 0.75rem 0.9375rem;
+                font-size: 1em;
+            }
+        }
+
+        .modal-body th {
+            background: rgba(102, 126, 234, 0.2);
+            color: rgba(230, 230, 240, 0.95);
+            font-weight: 600;
+        }
+
+        .modal-body ul,
+        .modal-body ol {
+            padding-left: 1.5625rem;
+            margin: 0.625rem 0;
+        }
+
+        .modal-body li {
+            margin: 0.5rem 0;
+        }
+
+        .modal-body strong {
+            color: rgba(230, 230, 240, 0.95);
+        }
+
+        .modal-body blockquote {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 0.25rem solid #667eea;
+            padding: 0.9375rem 1.25rem;
+            margin: 0.9375rem 0;
+            border-radius: 0 0.625rem 0.625rem 0;
+        }
+
+        /* Secondary button */
+        .btn-secondary {
+            width: 100%;
+            padding: 0.75rem 1.25rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.625rem;
+            font-size: 1.05em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-0.125rem);
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 767px) {
+            body {
+                padding: 0.625rem;
+                overflow-x: hidden;
+            }
+
+            .glass-card {
+                padding: 1.125rem;
+                margin-bottom: 0.9375rem;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .section-title {
+                font-size: 1.1em;
+            }
+
+            .result-change {
+                font-size: 1.3em;
+            }
+
+            .result-price {
+                font-size: 0.75em;
+            }
+
+            .summary-value {
+                font-size: 1.5em;
+            }
+
+            .result-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .result-right {
+                padding-left: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.25rem;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 0.25rem;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Compact header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 0.5rem;
+            padding: 0.375rem 0;
+            flex-shrink: 0;
+        }
+
+        .page-header h1 {
+            font-size: 1.8em;
+            font-weight: 600;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            letter-spacing: 0.03125rem;
+        }
+
+        .page-header p {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.5);
+            margin: 0.125rem 0 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>Investment Reminder Tool</h1>
+        <p>Auto-monitor add position & take profit opportunities</p>
+    </div>
+    <div class="main-grid">
+        <!-- Left Panel -->
+        <div class="glass-card">
+            <h3 class="section-title">Investment Configuration</h3>
+
+            <div class="input-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" value="2025-11-01">
+            </div>
+
+            <div class="input-group">
+                <label for="strategy">Strategy</label>
+                <select id="strategy" onchange="updateStrategyTables()">
+                    <option value="short">Short-term (3-5 years)</option>
+                    <option value="long">Long-term (8-10 years)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>
+                    NASDAQ 100
+                    <span class="base-price-inline" id="fund1_base_price"></span>
+                </label>
+                <div class="fund-input-row">
+                    <input type="text" id="fund1_symbol" value="QQQ" placeholder="Symbol">
+                    <input type="number" id="fund1_amount" value="2000" placeholder="Monthly">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>
+                    CSI 300
+                    <span class="base-price-inline" id="fund2_base_price"></span>
+                </label>
+                <div class="fund-input-row">
+                    <input type="text" id="fund2_symbol" value="510300.SS" placeholder="Symbol">
+                    <input type="number" id="fund2_amount" value="2000" placeholder="Monthly">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>
+                    Gold ETF
+                    <span class="base-price-inline" id="fund3_base_price"></span>
+                </label>
+                <div class="fund-input-row">
+                    <input type="text" id="fund3_symbol" value="159937.SZ" placeholder="Symbol">
+                    <input type="number" id="fund3_amount" value="1000" placeholder="Monthly">
+                </div>
+            </div>
+
+            <button class="btn" id="checkBtn" onclick="checkInvestment()">Check Status</button>
+
+            <button class="btn-secondary" onclick="openModal()">View Full Investment Notes</button>
+
+            <div class="info-box">
+                Real-time data query with API key rotation
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="glass-card" style="position: relative;">
+
+            <!-- Results Display -->
+            <div id="results">
+                <div class="empty-state">
+                    Analyzing...
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p class="loading-text" id="loadingText">Loading data...</p>
+            </div>
+
+            <!-- Strategy Tables -->
+            <div id="strategyTables" class="strategy-tables"></div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Modal -->
+<div class="modal" id="notesModal">
+    <div class="modal-content">
+        <div class="modal-sidebar">
+            <h3>目录</h3>
+            <ul class="modal-toc">
+                <li><a href="#section-allocation">资产配置</a></li>
+                <li><a href="#section-add-position">加仓策略</a></li>
+                <li><a href="#section-crisis">危机应对预案</a></li>
+                <li><a href="#section-profit-short">止盈策略（短期）</a></li>
+                <li><a href="#section-profit-long">止盈策略（长期）</a></li>
+                <li><a href="#section-concepts">关键概念说明</a></li>
+            </ul>
+        </div>
+        <div class="modal-main">
+            <div class="modal-header">
+                <h2>基金定投完整笔记</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3 id="section-allocation">资产配置</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>股票代码</th>
+                        <th>投资品种</th>
+                        <th>每月定投金额</th>
+                        <th>占比</th>
+                        <th>说明</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>QQQ</td>
+                        <td><strong>纳斯达克</strong></td>
+                        <td>2000元</td>
+                        <td>40%</td>
+                        <td>高成长性，但波动大，需密切关注</td>
+                    </tr>
+                    <tr>
+                        <td>510300.SS</td>
+                        <td><strong>沪深300</strong></td>
+                        <td>2000元</td>
+                        <td>40%</td>
+                        <td>中国核心资产，平衡组合</td>
+                    </tr>
+                    <tr>
+                        <td>159937.SZ</td>
+                        <td><strong>黄金</strong></td>
+                        <td>1000元</td>
+                        <td>20%</td>
+                        <td>避险配置，对冲股市波动</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>总计</strong></td>
+                        <td><strong>5000元</strong></td>
+                        <td><strong>100%</strong></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="section-add-position">加仓策略</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>品种</th>
+                        <th>首次加仓阈值</th>
+                        <th>第二次加仓阈值</th>
+                        <th>加仓金额</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>纳斯达克</strong></td>
+                        <td><strong>-12%</strong></td>
+                        <td><strong>-20%</strong></td>
+                        <td><strong>5000元 → 7000元</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>沪深300</strong></td>
+                        <td><strong>-10%</strong></td>
+                        <td><strong>-18%</strong></td>
+                        <td><strong>5000元 → 7000元</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>黄金</strong></td>
+                        <td><strong>-8%</strong></td>
+                        <td><strong>-15%</strong></td>
+                        <td><strong>每次3000元</strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>完成两次加仓后，无论市场再跌多少，都<strong>停止使用备用金</strong>。同时定投不会停止，仍在持续收集筹码，需要做的就是耐心等待市场回暖。这能确保在最黑暗的时刻仍然有"弹药"和"信心"。</p>
+                <ul>
+                    <li>同一品种加仓间隔不少于<strong>1个月</strong>。</li>
+                </ul>
+
+                <h4 id="section-crisis">危机应对预案（极端情况下的选择）</h4>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>品种</th>
+                        <th>第三次加仓阈值</th>
+                        <th>第四次加仓阈值</th>
+                        <th>每次加仓金额</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>纳斯达克</strong></td>
+                        <td><strong>-40%</strong></td>
+                        <td><strong>-55%</strong></td>
+                        <td><strong>5,000元</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>沪深300</strong></td>
+                        <td><strong>-35%</strong></td>
+                        <td><strong>-50%</strong></td>
+                        <td><strong>5,000元</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>黄金</strong></td>
+                        <td><strong>-30%</strong></td>
+                        <td><strong>-45%</strong></td>
+                        <td><strong>2,000元</strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p><strong>原则：</strong>如果市场出现历史级的大熊市，可以进行第三、第四次加仓，但规则必须更为严格。</p>
+                <ul>
+                    <li><strong>跌幅阈值极大</strong>：第三次、第四次加仓的阈值设置得<strong>非常深</strong>（-35%到-55%），这通常是多年一遇的熊市甚至金融危机才会出现的跌幅。确保不会轻易动用这部分"最终弹药"。</li>
+                    <li><strong>加仓金额固定或减少</strong>：金额不再增加，改为固定或减少，表明这是"最后的子弹"，意在表明其"救命"而非"盈利"的核心属性。</li>
+                    <li><strong>心理准备</strong>：当市场跌到需要第三次、第四次加仓时，情绪必然是极度恐慌的。此时敢于逆势买入，是对人性的极大考验。</li>
+                </ul>
+
+                <h3 id="section-profit-short">止盈策略（短期 3～5 年）</h3>
+                <h4>第一步：阶梯式目标止盈法</h4>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>品种</th>
+                        <th>第一目标区</th>
+                        <th>操作</th>
+                        <th>第二目标区</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><strong>纳斯达克</strong></td>
+                        <td><strong>+40%</strong></td>
+                        <td><strong>卖出1/3持仓</strong></td>
+                        <td><strong>+60%</strong></td>
+                        <td><strong>再卖出1/3持仓</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>沪深300</strong></td>
+                        <td><strong>+30%</strong></td>
+                        <td><strong>卖出1/3持仓</strong></td>
+                        <td><strong>+50%</strong></td>
+                        <td><strong>再卖出1/3持仓</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>黄金</strong></td>
+                        <td><strong>+25%</strong></td>
+                        <td><strong>卖出1/2持仓</strong></td>
+                        <td><strong>+40%</strong></td>
+                        <td><strong>全部清仓</strong></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h4>第二步：回撤止盈法（保护利润）</h4>
+                <ul>
+                    <li>对<strong>每次止盈后剩余的仓位</strong>，启动回撤止盈。</li>
+                    <li><strong>规则</strong>：从该部分仓位的<strong>最高点回落8%</strong> 时，立即清仓该部分剩余仓位。</li>
+                </ul>
+
+                <h4>第三步：最终时间止损法（保护本金）</h4>
+                <ul>
+                    <li>这是为中期目标设置的 <strong>"最后防线"</strong>。</li>
+                    <li><strong>规则</strong>：在投资开始的<strong>第4年年底</strong>，无论盈亏，开始执行：
+                        <ol>
+                            <li>若整体投资仍为亏损，则停止定投，并设置一个反弹退出线（如总资产回升至本金-5%以内时全部卖出）。</li>
+                            <li>若整体投资为盈利，但未触发上述止盈条件，则<strong>分批卖出</strong>（例如在未来6个月内，每月卖出1/6仓位），确保在第5年结束前<strong>全部清仓</strong>。</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <h3 id="section-profit-long">止盈策略（长期 8～10+ 年）</h3>
+                <h4>第一步：目标收益率止盈</h4>
+                <ul>
+                    <li>纳斯达克：<strong>+80% ~ +100%</strong> 时，卖出<strong>50%</strong>持仓</li>
+                    <li>沪深300：<strong>+50% ~ +60%</strong> 时，卖出<strong>50%</strong>持仓</li>
+                    <li>黄金：<strong>+30% ~ +40%</strong> 时，卖出<strong>50%</strong>持仓</li>
+                </ul>
+
+                <h4>第二步：回撤止盈（对剩余的 50% 持仓启动回撤止盈）</h4>
+                <ul>
+                    <li>纳斯达克：从最高点回撤 <strong>10%</strong> 时，清仓剩余部分</li>
+                    <li>沪深300：从最高点回撤 <strong>8%</strong> 时，清仓剩余部分</li>
+                    <li>黄金：从最高点回撤 <strong>8%</strong> 时，清仓剩余部分</li>
+                </ul>
+
+                <blockquote>
+                    <p><strong>清仓不是结束</strong>：当任一品种触发"回撤止盈"并清仓后，意味着该品种的<strong>一个完整投资周期胜利结束</strong>。</p>
+                    <p><strong>立即重启</strong>：清仓回收了大量本金和利润。此时，应<strong>立即</strong>用回收的资金，<strong>重新开始</strong>该品种的新一轮定投（例如，纳斯达克继续每月2000元）。</p>
+                    <p><strong>止盈与定投并行不悖</strong>：在"卖出50%"之后，到"清仓"之前的这段时间，<strong>每月的新固定投资金仍需继续投入</strong>，不受影响。</p>
+                </blockquote>
+
+                <h3 id="section-concepts">关键概念说明</h3>
+                <h4>回撤止盈</h4>
+                <ul>
+                    <li><strong>定义</strong>：在资产价格从最高点下跌预定幅度时卖出</li>
+                    <li><strong>目的</strong>：在保护利润的前提下，尽可能享受后续上涨</li>
+                    <li><strong>示例</strong>：10万元持仓，涨至15万元（最高点），设置10%回撤止盈，触发点为15万×0.9=13.5万元</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // API Keys 轮询池
+    const API_KEYS = [
+        '0ZFL05FH0NAYIEN7',
+        'UW019T74AXWOZYR0',
+        'TR1W93FL1FOUNQLO'
+    ];
+    let currentKeyIndex = 0;
+
+    // 获取当前 API Key
+    function getApiKey() {
+        const key = API_KEYS[currentKeyIndex];
+        currentKeyIndex = (currentKeyIndex + 1) % API_KEYS.length;
+        return key;
+    }
+
+    const BASE_URL = 'https://www.alphavantage.co/query';
+
+    const STRATEGIES = {
+        short: {
+            name: 'Short-term Strategy (3-5 years)',
+            addPositions: {
+                'nasdaq': [
+                    { threshold: -12, amount: 7000 },
+                    { threshold: -20, amount: 7000 },
+                    { threshold: -40, amount: 5000 },
+                    { threshold: -55, amount: 5000 }
+                ],
+                'csi300': [
+                    { threshold: -10, amount: 7000 },
+                    { threshold: -18, amount: 7000 },
+                    { threshold: -35, amount: 5000 },
+                    { threshold: -50, amount: 5000 }
+                ],
+                'gold': [
+                    { threshold: -8, amount: 3000 },
+                    { threshold: -15, amount: 3000 },
+                    { threshold: -30, amount: 2000 },
+                    { threshold: -45, amount: 2000 }
+                ]
+            },
+            takeProfit: {
+                'nasdaq': [
+                    { threshold: 40, action: 'Sell 1/3' },
+                    { threshold: 60, action: 'Sell another 1/3' }
+                ],
+                'csi300': [
+                    { threshold: 30, action: 'Sell 1/3' },
+                    { threshold: 50, action: 'Sell another 1/3' }
+                ],
+                'gold': [
+                    { threshold: 25, action: 'Sell 1/2' },
+                    { threshold: 40, action: 'Sell all' }
+                ]
+            }
+        },
+        long: {
+            name: 'Long-term Strategy (8-10 years)',
+            addPositions: {
+                'nasdaq': [
+                    { threshold: -12, amount: 7000 },
+                    { threshold: -20, amount: 7000 },
+                    { threshold: -40, amount: 5000 },
+                    { threshold: -55, amount: 5000 }
+                ],
+                'csi300': [
+                    { threshold: -10, amount: 7000 },
+                    { threshold: -18, amount: 7000 },
+                    { threshold: -35, amount: 5000 },
+                    { threshold: -50, amount: 5000 }
+                ],
+                'gold': [
+                    { threshold: -8, amount: 3000 },
+                    { threshold: -15, amount: 3000 },
+                    { threshold: -30, amount: 2000 },
+                    { threshold: -45, amount: 2000 }
+                ]
+            },
+            takeProfit: {
+                'nasdaq': [{ threshold: 80, action: 'Sell 50%' }],
+                'csi300': [{ threshold: 50, action: 'Sell 50%' }],
+                'gold': [{ threshold: 30, action: 'Sell 50%' }]
+            }
+        }
+    };
+
+    function updateStrategyTables() {
+        const strategy = document.getElementById('strategy').value;
+        const config = STRATEGIES[strategy];
+        const tablesDiv = document.getElementById('strategyTables');
+
+        const funds = [
+            { type: 'nasdaq', name: 'NASDAQ 100' },
+            { type: 'csi300', name: 'CSI 300' },
+            { type: 'gold', name: 'Gold ETF' }
+        ];
+
+        let html = `<h4 style="color: rgba(255, 255, 255, 0.95); font-size: 1.2em; margin-bottom: 20px; text-align: center;">${config.name}</h4>`;
+
+        // Add Position Strategy
+        html += '<div class="strategy-table">';
+        html += '<h4 style="color: #10b981; display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">Add Position Strategy (Buy on dips)</h4>';
+        html += '<table><thead><tr><th>Asset</th><th>1st Add</th><th>2nd Add</th><th>3rd Add</th><th>4th Add</th><th>Amount</th></tr></thead><tbody>';
+        funds.forEach(fund => {
+            const positions = config.addPositions[fund.type] || [];
+            html += `<tr>
+                    <td><strong>${fund.name}</strong></td>
+                    <td style="color: #86efac;">${positions[0]?.threshold || '-'}%</td>
+                    <td style="color: #4ade80;">${positions[1]?.threshold || '-'}%</td>
+                    <td style="color: #22c55e;">${positions[2]?.threshold || '-'}%</td>
+                    <td style="color: #16a34a;">${positions[3]?.threshold || '-'}%</td>
+                    <td style="color: #fbbf24;">$${positions[0]?.amount.toLocaleString() || '-'}</td>
+                </tr>`;
+        });
+        html += '</tbody></table></div>';
+
+        // Take Profit Strategy
+        html += '<div class="strategy-table" style="margin-top: 20px;">';
+        html += '<h4 style="color: #f87171; display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">Take Profit Strategy (Sell on rallies)</h4>';
+        html += '<table><thead><tr><th>Asset</th><th>Target 1</th><th>Target 2</th><th>Action</th></tr></thead><tbody>';
+        funds.forEach(fund => {
+            const profits = config.takeProfit[fund.type] || [];
+            html += `<tr>
+                    <td><strong>${fund.name}</strong></td>
+                    <td style="color: #fca5a5;">+${profits[0]?.threshold || '-'}%</td>
+                    <td style="color: #f87171;">${profits[1] ? '+' + profits[1].threshold + '%' : '-'}</td>
+                    <td style="color: #fbbf24;">${profits[0]?.action || '-'}</td>
+                </tr>`;
+        });
+        html += '</tbody></table></div>';
+
+        tablesDiv.innerHTML = html;
+    }
+
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    async function getStockData(symbol) {
+        const apiKey = getApiKey();
+        const url = `${BASE_URL}?function=TIME_SERIES_DAILY&symbol=${symbol}&outputsize=compact&apikey=${apiKey}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data['Error Message']) throw new Error(`Invalid symbol: ${symbol}`);
+        if (data['Note']) throw new Error('API rate limit, please try again later');
+        if (data['Information']) throw new Error('API daily limit reached');
+
+        return data;
+    }
+
+    function getPriceOnDate(timeSeries, targetDate) {
+        const dateStr = targetDate.toISOString().split('T')[0];
+        if (timeSeries[dateStr]) {
+            return parseFloat(timeSeries[dateStr]['4. close']);
+        }
+        const dates = Object.keys(timeSeries).sort();
+        for (let date of dates) {
+            if (date >= dateStr) {
+                return parseFloat(timeSeries[date]['4. close']);
+            }
+        }
+        return null;
+    }
+
+    function getLatestPrice(timeSeries) {
+        const dates = Object.keys(timeSeries).sort((a, b) => new Date(b) - new Date(a));
+        return {
+            date: dates[0],
+            price: parseFloat(timeSeries[dates[0]]['4. close'])
+        };
+    }
+
+    // 根据基金名称获取基金类型
+    function getFundType(fundName) {
+        const typeMap = {
+            'NASDAQ 100': 'nasdaq',
+            'CSI 300': 'csi300',
+            'Gold ETF': 'gold'
+        };
+        return typeMap[fundName] || 'nasdaq';
+    }
+
+    function generateAlert(fundName, fundSymbol, basePrice, currentPrice, strategy, latestDate) {
+        const changePercent = ((currentPrice - basePrice) / basePrice) * 100;
+        const config = STRATEGIES[strategy];
+        const fundType = getFundType(fundName);
+
+        // Check add positions
+        const addPositions = config.addPositions[fundType] || [];
+        for (const position of addPositions) {
+            if (changePercent <= position.threshold) {
+                return {
+                    type: 'danger',
+                    name: fundName,
+                    action: `Add $${position.amount.toLocaleString()} (${position.threshold}% threshold)`,
+                    changePercent,
+                    basePrice,
+                    currentPrice,
+                    latestDate
+                };
+            }
+        }
+
+        // Check take profit
+        const profits = config.takeProfit[fundType] || [];
+        for (const profit of profits) {
+            if (changePercent >= profit.threshold) {
+                return {
+                    type: 'success',
+                    name: fundName,
+                    action: `${profit.action} (+${profit.threshold}% threshold)`,
+                    changePercent,
+                    basePrice,
+                    currentPrice,
+                    latestDate
+                };
+            }
+        }
+
+        // Normal holding
+        return {
+            type: changePercent >= 0 ? 'info' : 'warning',
+            name: fundName,
+            action: 'Continue investing, no action needed',
+            changePercent,
+            basePrice,
+            currentPrice,
+            latestDate
+        };
+    }
+
+    function displayStockResult(alert) {
+        const resultsDiv = document.getElementById('results');
+        const changeClass = alert.changePercent >= 0 ? 'positive' : 'negative';
+        const changeSign = alert.changePercent >= 0 ? '+' : '';
+
+        // Determine style based on type
+        let bgColor, borderColor;
+        if (alert.type === 'danger') {
+            bgColor = 'rgba(248, 113, 113, 0.15)';
+            borderColor = '#f87171';
+        } else if (alert.type === 'success') {
+            bgColor = 'rgba(16, 185, 129, 0.15)';
+            borderColor = '#10b981';
+        } else if (alert.type === 'warning') {
+            bgColor = 'rgba(245, 158, 11, 0.15)';
+            borderColor = '#f59e0b';
+        } else {
+            bgColor = 'rgba(59, 130, 246, 0.15)';
+            borderColor = '#3b82f6';
+        }
+
+        const cardHtml = `
+                <div class="result-card" style="background: ${bgColor}; border-color: ${borderColor};">
+                    <div class="result-left">
+                        <div class="result-name">${alert.name}</div>
+                        <div class="result-action">${alert.action}</div>
+                        ${alert.latestDate ? `<div class="result-date">Updated: ${alert.latestDate}</div>` : ''}
+                    </div>
+                    <div class="result-right">
+                        <div class="result-change ${changeClass}">${changeSign}${alert.changePercent.toFixed(2)}%</div>
+                        <div class="result-price">$${alert.basePrice.toFixed(2)} → $${alert.currentPrice.toFixed(2)}</div>
+                    </div>
+                </div>
+            `;
+
+        resultsDiv.insertAdjacentHTML('beforeend', cardHtml);
+    }
+
+    async function updateBasePrices() {
+        const startDate = new Date(document.getElementById('startDate').value);
+        const funds = [
+            { index: 1, symbol: document.getElementById('fund1_symbol').value },
+            { index: 2, symbol: document.getElementById('fund2_symbol').value },
+            { index: 3, symbol: document.getElementById('fund3_symbol').value }
+        ];
+
+        funds.forEach(async (fund) => {
+            const displayElement = document.getElementById(`fund${fund.index}_base_price`);
+            displayElement.textContent = 'Loading...';
+
+            try {
+                const data = await getStockData(fund.symbol);
+                const timeSeriesKey = Object.keys(data).find(key => key.includes('Time Series'));
+
+                if (!timeSeriesKey) {
+                    displayElement.textContent = 'Error';
+                    return;
+                }
+
+                const timeSeries = data[timeSeriesKey];
+                const basePrice = getPriceOnDate(timeSeries, startDate);
+
+                if (!basePrice) {
+                    displayElement.textContent = 'No data';
+                    return;
+                }
+
+                const dateStr = startDate.toISOString().split('T')[0];
+                displayElement.innerHTML = `<span class="base-date">${dateStr}</span>: <span class="base-value">$${basePrice.toFixed(2)}</span>`;
+            } catch (error) {
+                displayElement.textContent = 'Error';
+            }
+        });
+    }
+
+    async function checkInvestment() {
+        const startDate = new Date(document.getElementById('startDate').value);
+        const strategy = document.getElementById('strategy').value;
+        const resultsDiv = document.getElementById('results');
+        const loadingDiv = document.getElementById('loading');
+        const loadingText = document.getElementById('loadingText');
+        const checkBtn = document.getElementById('checkBtn');
+
+        const funds = [
+            { name: 'NASDAQ 100', symbol: document.getElementById('fund1_symbol').value },
+            { name: 'CSI 300', symbol: document.getElementById('fund2_symbol').value },
+            { name: 'Gold ETF', symbol: document.getElementById('fund3_symbol').value }
+        ];
+
+        resultsDiv.innerHTML = '';
+        loadingDiv.classList.add('show');
+        checkBtn.disabled = true;
+
+        // Update base prices
+        updateBasePrices();
+
+        // Query all stocks concurrently and display each as it loads
+        const promises = funds.map(async (fund, i) => {
+            try {
+                const data = await getStockData(fund.symbol);
+                const timeSeriesKey = Object.keys(data).find(key => key.includes('Time Series'));
+
+                if (!timeSeriesKey) {
+                    throw new Error('Unable to retrieve stock data');
+                }
+
+                const timeSeries = data[timeSeriesKey];
+                const basePrice = getPriceOnDate(timeSeries, startDate);
+                const latest = getLatestPrice(timeSeries);
+
+                if (!basePrice) {
+                    throw new Error('Unable to retrieve base date price');
+                }
+
+                const alert = generateAlert(fund.name, fund.symbol, basePrice, latest.price, strategy, latest.date);
+
+                // Display current stock result immediately
+                displayStockResult(alert);
+            } catch (error) {
+                // Display error result immediately
+                displayStockResult({
+                    type: 'danger',
+                    name: fund.name,
+                    action: `Error: ${error.message}`,
+                    changePercent: 0,
+                    basePrice: 0,
+                    currentPrice: 0
+                });
+            }
+        });
+
+        // Wait for all queries to complete before hiding loading
+        try {
+            await Promise.all(promises);
+            loadingDiv.classList.remove('show');
+            checkBtn.disabled = false;
+            showToast('Check complete!');
+        } catch (error) {
+            loadingDiv.classList.remove('show');
+            checkBtn.disabled = false;
+            showToast('Check failed: ' + error.message);
+        }
+    }
+
+    function openModal() {
+        document.getElementById('notesModal').classList.add('show');
+        // Initialize TOC highlighting
+        initTOCHighlight();
+    }
+
+    function closeModal() {
+        document.getElementById('notesModal').classList.remove('show');
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('notesModal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
+
+    // TOC highlighting based on scroll position
+    function initTOCHighlight() {
+        const modalBody = document.querySelector('.modal-body');
+        const tocLinks = document.querySelectorAll('.modal-toc a');
+        const sections = document.querySelectorAll('.modal-body h3[id], .modal-body h4[id]');
+
+        // Smooth scroll on TOC click
+        tocLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Highlight active section on scroll
+        modalBody.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (modalBody.scrollTop >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // Listen for Start Date changes
+    document.getElementById('startDate').addEventListener('change', () => {
+        // Update base prices and re-check investment status
+        checkInvestment();
+    });
+
+    // Listen for stock symbol changes
+    ['fund1_symbol', 'fund2_symbol', 'fund3_symbol'].forEach(id => {
+        document.getElementById(id).addEventListener('change', () => {
+            // Update strategy tables and re-check investment status
+            updateStrategyTables();
+            checkInvestment();
+        });
+    });
+
+    // Listen for strategy changes (already calls updateStrategyTables)
+    document.getElementById('strategy').addEventListener('change', () => {
+        // Re-check investment with new strategy
+        checkInvestment();
+    });
+
+    window.addEventListener('load', () => {
+        updateStrategyTables();
+        // Auto-query on page load
+        checkInvestment();
+    });
+</script>
+</body>
+</html>

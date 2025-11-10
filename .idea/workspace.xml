@@ -8,7 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91c99fff-a8b9-46a7-a0dc-1acf853f9499" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/docs/public/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/stock/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/public/articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/public/articles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -399,7 +400,8 @@
       <workItem from="1762334418232" duration="3127000" />
       <workItem from="1762407156181" duration="387000" />
       <workItem from="1762410278176" duration="3017000" />
-      <workItem from="1762495031767" duration="103000" />
+      <workItem from="1762495031767" duration="2178000" />
+      <workItem from="1762744113858" duration="1090000" />
     </task>
     <task id="LOCAL-00001" summary="claude init">
       <option name="closed" value="true" />
