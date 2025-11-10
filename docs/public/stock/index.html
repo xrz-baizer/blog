@@ -51,6 +51,7 @@
             body {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 overflow: hidden;
                 max-height: 100vh;
             }
@@ -274,6 +275,7 @@
             margin-bottom: 0.75rem;
             overflow-x: auto;
             max-width: 100%;
+            -webkit-overflow-scrolling: touch;
         }
 
         .strategy-table {
@@ -295,6 +297,23 @@
             min-width: 100%;
         }
 
+        @media (max-width: 767px) {
+            .strategy-table table {
+                display: block;
+                width: max-content;
+                min-width: 100%;
+                overflow-x: auto;
+            }
+
+            .strategy-table thead,
+            .strategy-table tbody,
+            .strategy-table tr {
+                display: table;
+                width: 100%;
+                table-layout: auto;
+            }
+        }
+
         .strategy-table th,
         .strategy-table td {
             padding: 0.5rem 0.625rem;
@@ -302,6 +321,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.85);
             font-size: 0.95em;
+            white-space: nowrap;
         }
 
         .strategy-table th {
@@ -508,18 +528,21 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 1.25rem;
             padding: 0;
-            max-width: calc(100vw - 1.25rem);
-            max-height: 85vh;
-            width: 90%;
+            max-width: calc(100vw - 2.5rem);
+            max-height: 90vh;
+            width: 95%;
             box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.5);
             animation: slideUp 0.3s ease;
             display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
 
         @media (min-width: 768px) {
             .modal-content {
                 max-width: 75rem;
+                width: 90%;
+                flex-direction: row;
             }
         }
 
@@ -606,9 +629,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.25rem;
+            padding: 0.875rem 1rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             flex-shrink: 0;
+            gap: 0.5rem;
         }
 
         @media (min-width: 768px) {
@@ -618,12 +642,14 @@
         }
 
         .modal-header h2 {
-            font-size: 1.5em;
+            font-size: 1.2em;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin: 0;
+            flex: 1;
+            min-width: 0;
         }
 
         @media (min-width: 768px) {
@@ -637,14 +663,22 @@
             border: none;
             color: rgba(200, 200, 220, 0.8);
             font-size: 1.5em;
-            width: 2.25rem;
-            height: 2.25rem;
+            width: 2rem;
+            height: 2rem;
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 768px) {
+            .modal-close {
+                width: 2.25rem;
+                height: 2.25rem;
+            }
         }
 
         .modal-close:hover {
@@ -657,6 +691,7 @@
             line-height: 1.8;
             padding: 1rem;
             overflow-y: auto;
+            overflow-x: hidden;
             flex: 1;
             font-size: 0.875em;
         }
@@ -701,21 +736,81 @@
             }
         }
 
+        /* Table wrapper for scrolling */
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: visible;
+            margin: 0.9375rem 0;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 0.625rem;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+
+        /* Scroll indicator shadow on mobile */
+        @media (max-width: 767px) {
+            .table-wrapper {
+                /* Force scrollbar to always show on mobile */
+                scrollbar-width: thin;
+                scrollbar-color: rgba(102, 126, 234, 0.5) rgba(102, 126, 234, 0.15);
+            }
+
+            .table-wrapper::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0.625rem; /* Account for scrollbar height */
+                width: 2rem;
+                background: linear-gradient(to left, rgba(15, 12, 41, 0.8), transparent);
+                pointer-events: none;
+                opacity: 1;
+                transition: opacity 0.3s ease;
+                z-index: 1;
+            }
+
+            .table-wrapper.scrolled-to-end::after {
+                opacity: 0;
+            }
+
+            /* Add visual hint for scrollable content */
+            .table-wrapper::before {
+                content: '← 滑动查看更多 →';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                color: rgba(102, 126, 234, 0.6);
+                font-size: 0.75em;
+                white-space: nowrap;
+                pointer-events: none;
+                z-index: 2;
+                opacity: 0.8;
+            }
+
+            .table-wrapper.scrolled-to-end::before {
+                content: '已到末尾';
+            }
+        }
+
         .modal-body table {
             width: 100%;
             border-collapse: collapse;
-            margin: 0.9375rem 0;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 0.625rem;
             overflow: hidden;
-            display: block;
-            overflow-x: auto;
+            margin: 0;
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 767px) {
             .modal-body table {
-                display: table;
-                overflow-x: visible;
+                min-width: 600px;
+            }
+
+            .modal-body table td,
+            .modal-body table th {
+                white-space: nowrap;
             }
         }
 
@@ -791,9 +886,34 @@
                 overflow-x: hidden;
             }
 
+            .container {
+                max-width: 100%;
+                width: 100%;
+            }
+
             .glass-card {
                 padding: 1.125rem;
                 margin-bottom: 0.9375rem;
+                max-width: 100%;
+            }
+
+            .input-group input,
+            .input-group select {
+                width: 100%;
+                max-width: 100%;
+                min-width: 0;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+            }
+
+            .fund-input-row {
+                max-width: 100%;
+            }
+
+            .fund-input-row input {
+                min-width: 0;
+                max-width: 100%;
             }
 
             .header h1 {
@@ -851,38 +971,32 @@
             background: rgba(255, 255, 255, 0.3);
         }
 
-        /* Compact header */
-        .page-header {
-            text-align: center;
-            margin-bottom: 0.5rem;
-            padding: 0.375rem 0;
-            flex-shrink: 0;
+        /* Enhanced scrollbar for table wrappers on mobile */
+        @media (max-width: 767px) {
+            .table-wrapper::-webkit-scrollbar {
+                height: 0.625rem;
+            }
+
+            .table-wrapper::-webkit-scrollbar-track {
+                background: rgba(102, 126, 234, 0.15);
+                border-radius: 0.3125rem;
+            }
+
+            .table-wrapper::-webkit-scrollbar-thumb {
+                background: rgba(102, 126, 234, 0.5);
+                border-radius: 0.3125rem;
+            }
+
+            .table-wrapper::-webkit-scrollbar-thumb:hover {
+                background: rgba(102, 126, 234, 0.7);
+            }
         }
 
-        .page-header h1 {
-            font-size: 1.8em;
-            font-weight: 600;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 0;
-            letter-spacing: 0.03125rem;
-        }
-
-        .page-header p {
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.5);
-            margin: 0.125rem 0 0 0;
-        }
+        /* Removed page header styles */
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="page-header">
-        <h1>Investment Reminder Tool</h1>
-        <p>Auto-monitor add position & take profit opportunities</p>
-    </div>
     <div class="main-grid">
         <!-- Left Panel -->
         <div class="glass-card">
@@ -988,114 +1102,120 @@
             </div>
             <div class="modal-body">
                 <h3 id="section-allocation">资产配置</h3>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>股票代码</th>
-                        <th>投资品种</th>
-                        <th>每月定投金额</th>
-                        <th>占比</th>
-                        <th>说明</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>QQQ</td>
-                        <td><strong>纳斯达克</strong></td>
-                        <td>2000元</td>
-                        <td>40%</td>
-                        <td>高成长性，但波动大，需密切关注</td>
-                    </tr>
-                    <tr>
-                        <td>510300.SS</td>
-                        <td><strong>沪深300</strong></td>
-                        <td>2000元</td>
-                        <td>40%</td>
-                        <td>中国核心资产，平衡组合</td>
-                    </tr>
-                    <tr>
-                        <td>159937.SZ</td>
-                        <td><strong>黄金</strong></td>
-                        <td>1000元</td>
-                        <td>20%</td>
-                        <td>避险配置，对冲股市波动</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><strong>总计</strong></td>
-                        <td><strong>5000元</strong></td>
-                        <td><strong>100%</strong></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>股票代码</th>
+                            <th>投资品种</th>
+                            <th>每月定投金额</th>
+                            <th>占比</th>
+                            <th>说明</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>QQQ</td>
+                            <td><strong>纳斯达克</strong></td>
+                            <td>2000元</td>
+                            <td>40%</td>
+                            <td>高成长性，但波动大，需密切关注</td>
+                        </tr>
+                        <tr>
+                            <td>510300.SS</td>
+                            <td><strong>沪深300</strong></td>
+                            <td>2000元</td>
+                            <td>40%</td>
+                            <td>中国核心资产，平衡组合</td>
+                        </tr>
+                        <tr>
+                            <td>159937.SZ</td>
+                            <td><strong>黄金</strong></td>
+                            <td>1000元</td>
+                            <td>20%</td>
+                            <td>避险配置，对冲股市波动</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>总计</strong></td>
+                            <td><strong>5000元</strong></td>
+                            <td><strong>100%</strong></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h3 id="section-add-position">加仓策略</h3>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>品种</th>
-                        <th>首次加仓阈值</th>
-                        <th>第二次加仓阈值</th>
-                        <th>加仓金额</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><strong>纳斯达克</strong></td>
-                        <td><strong>-12%</strong></td>
-                        <td><strong>-20%</strong></td>
-                        <td><strong>5000元 → 7000元</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>沪深300</strong></td>
-                        <td><strong>-10%</strong></td>
-                        <td><strong>-18%</strong></td>
-                        <td><strong>5000元 → 7000元</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>黄金</strong></td>
-                        <td><strong>-8%</strong></td>
-                        <td><strong>-15%</strong></td>
-                        <td><strong>每次3000元</strong></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>品种</th>
+                            <th>首次加仓阈值</th>
+                            <th>第二次加仓阈值</th>
+                            <th>加仓金额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>纳斯达克</strong></td>
+                            <td><strong>-12%</strong></td>
+                            <td><strong>-20%</strong></td>
+                            <td><strong>5000元 → 7000元</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>沪深300</strong></td>
+                            <td><strong>-10%</strong></td>
+                            <td><strong>-18%</strong></td>
+                            <td><strong>5000元 → 7000元</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>黄金</strong></td>
+                            <td><strong>-8%</strong></td>
+                            <td><strong>-15%</strong></td>
+                            <td><strong>每次3000元</strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p>完成两次加仓后，无论市场再跌多少，都<strong>停止使用备用金</strong>。同时定投不会停止，仍在持续收集筹码，需要做的就是耐心等待市场回暖。这能确保在最黑暗的时刻仍然有"弹药"和"信心"。</p>
                 <ul>
                     <li>同一品种加仓间隔不少于<strong>1个月</strong>。</li>
                 </ul>
 
                 <h4 id="section-crisis">危机应对预案（极端情况下的选择）</h4>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>品种</th>
-                        <th>第三次加仓阈值</th>
-                        <th>第四次加仓阈值</th>
-                        <th>每次加仓金额</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><strong>纳斯达克</strong></td>
-                        <td><strong>-40%</strong></td>
-                        <td><strong>-55%</strong></td>
-                        <td><strong>5,000元</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>沪深300</strong></td>
-                        <td><strong>-35%</strong></td>
-                        <td><strong>-50%</strong></td>
-                        <td><strong>5,000元</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>黄金</strong></td>
-                        <td><strong>-30%</strong></td>
-                        <td><strong>-45%</strong></td>
-                        <td><strong>2,000元</strong></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>品种</th>
+                            <th>第三次加仓阈值</th>
+                            <th>第四次加仓阈值</th>
+                            <th>每次加仓金额</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>纳斯达克</strong></td>
+                            <td><strong>-40%</strong></td>
+                            <td><strong>-55%</strong></td>
+                            <td><strong>5,000元</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>沪深300</strong></td>
+                            <td><strong>-35%</strong></td>
+                            <td><strong>-50%</strong></td>
+                            <td><strong>5,000元</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>黄金</strong></td>
+                            <td><strong>-30%</strong></td>
+                            <td><strong>-45%</strong></td>
+                            <td><strong>2,000元</strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <p><strong>原则：</strong>如果市场出现历史级的大熊市，可以进行第三、第四次加仓，但规则必须更为严格。</p>
                 <ul>
                     <li><strong>跌幅阈值极大</strong>：第三次、第四次加仓的阈值设置得<strong>非常深</strong>（-35%到-55%），这通常是多年一遇的熊市甚至金融危机才会出现的跌幅。确保不会轻易动用这部分"最终弹药"。</li>
@@ -1105,40 +1225,42 @@
 
                 <h3 id="section-profit-short">止盈策略（短期 3～5 年）</h3>
                 <h4>第一步：阶梯式目标止盈法</h4>
-                <table>
-                    <thead>
-                    <tr>
-                        <th>品种</th>
-                        <th>第一目标区</th>
-                        <th>操作</th>
-                        <th>第二目标区</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td><strong>纳斯达克</strong></td>
-                        <td><strong>+40%</strong></td>
-                        <td><strong>卖出1/3持仓</strong></td>
-                        <td><strong>+60%</strong></td>
-                        <td><strong>再卖出1/3持仓</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>沪深300</strong></td>
-                        <td><strong>+30%</strong></td>
-                        <td><strong>卖出1/3持仓</strong></td>
-                        <td><strong>+50%</strong></td>
-                        <td><strong>再卖出1/3持仓</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>黄金</strong></td>
-                        <td><strong>+25%</strong></td>
-                        <td><strong>卖出1/2持仓</strong></td>
-                        <td><strong>+40%</strong></td>
-                        <td><strong>全部清仓</strong></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>品种</th>
+                            <th>第一目标区</th>
+                            <th>操作</th>
+                            <th>第二目标区</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>纳斯达克</strong></td>
+                            <td><strong>+40%</strong></td>
+                            <td><strong>卖出1/3持仓</strong></td>
+                            <td><strong>+60%</strong></td>
+                            <td><strong>再卖出1/3持仓</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>沪深300</strong></td>
+                            <td><strong>+30%</strong></td>
+                            <td><strong>卖出1/3持仓</strong></td>
+                            <td><strong>+50%</strong></td>
+                            <td><strong>再卖出1/3持仓</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>黄金</strong></td>
+                            <td><strong>+25%</strong></td>
+                            <td><strong>卖出1/2持仓</strong></td>
+                            <td><strong>+40%</strong></td>
+                            <td><strong>全部清仓</strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h4>第二步：回撤止盈法（保护利润）</h4>
                 <ul>
@@ -1573,6 +1695,10 @@
         document.getElementById('notesModal').classList.add('show');
         // Initialize TOC highlighting
         initTOCHighlight();
+        // Initialize table scroll indicators after modal is shown
+        setTimeout(() => {
+            initTableScrollIndicators();
+        }, 100);
     }
 
     function closeModal() {
@@ -1646,10 +1772,32 @@
         checkInvestment();
     });
 
+    // Handle table scroll indicators
+    function initTableScrollIndicators() {
+        const tableWrappers = document.querySelectorAll('.table-wrapper');
+
+        tableWrappers.forEach(wrapper => {
+            function updateScrollIndicator() {
+                const isScrolledToEnd = wrapper.scrollLeft >= (wrapper.scrollWidth - wrapper.clientWidth - 5);
+                if (isScrolledToEnd) {
+                    wrapper.classList.add('scrolled-to-end');
+                } else {
+                    wrapper.classList.remove('scrolled-to-end');
+                }
+            }
+
+            wrapper.addEventListener('scroll', updateScrollIndicator);
+            // Initial check
+            updateScrollIndicator();
+        });
+    }
+
     window.addEventListener('load', () => {
         updateStrategyTables();
         // Auto-query on page load
         checkInvestment();
+        // Initialize table scroll indicators
+        initTableScrollIndicators();
     });
 </script>
 </body>
