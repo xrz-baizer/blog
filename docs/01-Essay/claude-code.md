@@ -73,6 +73,43 @@ Use XCTest/XCUITest; keep memory ~<50MB during active sessions.
 - **修复问题：**`请分析此Bug的根本原因，并制定修复方案`
 - **前端界面提示器：**`请你严格遵守苹果的设计规范和交互规范。帮我把这个页面写出来。`
 
+### Develop Prompt
+
+```
+Add [a feature] to [a specific location].
+Add input validation to the user registration form in the `user.js` file.
+Add a function to recalculate the Supplier Assessment in the supplier module.
+Add an import function to the supplier module.
+Implement a button component that supports enabling and disabling automatic playback.
+Implement a button component that supports switching themes.
+Refactor this function to make it more [readable / efficient].
+Refactor this code to make it better.
+Convert this configuration from YAML to JSON.
+
+Show me all the changes that I have made today.
+Commit my changes with a descriptive message.
+Commit my changes with the message "fix xxx".
+Review my change and suggest improvements.
+
+Summarize the changes I have made today.
+Summarize the changes I have made today and generate a document.
+Generate documentation in md format for this function.
+Place it in the [current / `xxx/`] directory.
+
+There is a bug where [describe the bug scenario]. Fix it.
+There is a bug where the page crashes when the API returns null.
+Suggest a few ways to fix [a specific code issue].
+Error message in the [console / terminal]: xxx
+
+Write unit tests for the recalculate function.
+Generate test cases for the order process with an empty cart.
+
+What does [this project / this file / this module] do?
+What technologies does this project use?
+Explain the structure of the project.
+How is [a specific feature] implemented in this project?
+```
+
 ### 代码生成模板
 
 ```
