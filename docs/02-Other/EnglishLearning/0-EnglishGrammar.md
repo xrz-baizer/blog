@@ -1110,7 +1110,7 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 #### 关系代词
 
-- **that 那个**（The rabbit is eating a carrot **that** bought.）
+- **that 那个**（The rabbit is eating a carrot **that** I bought.）
 - **which 哪一个**（The food **which** the teacher likes is a carrot.）
 - **who 谁**（The teacher **who** ate a carrot is a rabbit.）
 - **whom 谁**（The teacher **whom** I saw yesterday is a rabbit.）
