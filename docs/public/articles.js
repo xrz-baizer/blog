@@ -210,7 +210,7 @@ export const articlesMap = {
   "02-Other/EnglishLearning/PronunciationSkills.md": " 读音规则（常用） 元音字母`a` `e` `i` `o` `u`在开/闭音节中发不同的音 开音节（单词后面没有辅音结尾） 开音节是以一个元音结尾的音节，通常没有辅音跟在元音后面。一般发其字母本身的音。 - 例如：be, go, she, my。 闭音节 闭音节是以一个辅音结尾的音节，元音字母前通常有一个或多个辅音。一般发短元音音值。 - 例如：cat, pen, sit, top, run。 元",
   "02-Other/EnglishLearning/Writing-Template.md": " \"三段日记法\"（适合短篇） 开头：写当天最重要的一件事。 - Today, the most important thing was... 中间：描述过程，加入一些细节。 - First, I... - Then, I... - Finally, I... 结尾：写感受或收获。 - I think today was... - I realized that... - I hope tomorr",
   "02-Other/EnglishLearning/造句1-基础句型.md": " AI Copilot - [造句作业批改：Gemini-Pro（Advenced）(Lasts until 09-02)](https://gemini.... - [句子结构解析：Gemini-Pro（Advenced）(Lasts until 09-02)](https://gemini.... - [Senior English Teacher：Gemini-Pro（Advenced）](",
-  "02-Other/EnglishLearning/造句2-通用句型.md": " Introduction >形容词只修饰名词，副词修饰其它的词（通常修饰动词） > >区分表目的的 to/for： > >- to + 动词 (Verb) → 表示目的为一个动作 > >- for + 名词 (Noun) → 表示目的为一个事物或事件 >- We need to find a time to meet. >- We need to find a time for a meetin",
+  "02-Other/EnglishLearning/造句2-通用句型.md": " Table of Contents - [引出原因或解释 (Explaining Causes)](#引出原因或解释-explaining-causes) - [This is mainly because ... （这主要是因为……）](#this-is-mainly-because--这主要是因为) - [The reason why ... is that ... （……的原因是……）](",
   "02-Other/Html工具/AudioLyricPlayer.md": "<audioLyricPlayer />",
   "02-Other/Html工具/ConvertWords.md": "<convertWordComponent />",
   "02-Other/Html工具/SelectWords.md": "<SelectWordComponent />",

@@ -58,8 +58,7 @@ onMounted(async () => {
     await loadScript('/RubikCube/js/oz.js')
     await loadScript('/RubikCube/js/css3.oz.js')
     await loadScript('/RubikCube/js/quaternion.js')
-    await loadScript('/RubikCube/js/rubik-fixed.js')  // 使用修复版本
-    // await loadStyle('/RubikCube/css/style.css')  // 使用修复版本
+    await loadScript('/RubikCube/js/rubik-fixed.js') 
 
     scriptsLoaded = true
 
