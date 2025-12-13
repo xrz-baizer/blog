@@ -780,70 +780,186 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 - **in** 2025 (在2025年)
 - **in** the 1990s (在20世纪90年代)
 
+## 英语标点符号用法
+
+
+### 逗号 (The Comma) `，`
+
+逗号是英语中使用频率最高，也是规则最复杂的标点符号。它的核心作用是**表示句子内部的停顿或分隔**。
+
+#### 1. 列举清单 (Lists)
+
+当列举三个或三个以上的项目时，使用逗号分隔。
+
+- **规则**：Item 1, Item 2, and Item 3.
+- **例句**：I bought apples, bananas, and oranges.
+- **注意**：列举项中最后一个 `and` 前面的逗号被称为 **Oxford Comma (牛津逗号)**。虽然在某些非正式写作中可以省略，但在学术和正式写作中建议保留，以避免歧义。
+  - *歧义示例 (无牛津逗号)*: I love my parents, Lady Gaga and Superman. (意思变成了：我的父母是 Lady Gaga 和超人)
+  - *清晰示例 (有牛津逗号)*: I love my parents, Lady Gaga, and Superman.
+
+#### 2. 连接两个完整句子 (Compound Sentences)
+
+当使用并列连词（FANBOYS）连接两个完整的独立句子时，必须在连词前加逗号。
+
+- **FANBOYS** = For, And, Nor, But, Or, Yet, So
+- **结构**：完整句子1, + 连词 + 完整句子2.
+- **例句**：
+  - It was raining, **so** I took an umbrella.
+  - He wanted to go, **but** he was too tired.
+- **常见错误 (Comma Splice)**：千万**不要**只用一个逗号连接两个句子，也不要漏掉连词。
+  - ❌ *错*: He is nice, I like him. (这是“逗号粘连”错误)
+  - ✅ *对*: He is nice, **so** I like him.
+  - ✅ *对*: He is nice; I like him. (用分号)
+  - ✅ *对*: He is nice. I like him. (用句号)
+
+#### 3. 引导性短语/从句之后 (Introductory Elements)
+
+如果句子以一个较长的介词短语、状语从句或分词短语开头，通常需要用逗号将其与主句分开。
+
+- **高频连接词**：当连接词（如 **Although, If, When, Because**）引导的从句放在句首时，必须用逗号把它和主句隔开。
+  - *注意*：如果这些连词引导的从句放在**句尾**（主句之后），通常**不需要**逗号。
+  - *比较*：**Because** I was sick, I didn't go. (要逗号) vs. I didn't go **because** I was sick. (不要逗号)
+- **结构**：[引导部分], [主句].
+- **例句**：
+  - **If you are ready**, let's go. (状语从句开头)
+  - **Although it rained**, we played soccer. (连接词 Although 置于句首)
+  - **In the middle of the night**, I heard a noise. (介词短语开头)
+  - **Running quickly**, he caught the bus. (分词短语开头)
+    - **However**, I don't agree. (连接副词开头)
+
+#### 4. 插入语和非限制性定语从句 (Parenthetical Elements)
+
+当句子中间插入了**非必要**的信息（如果删掉不影响句子核心意思），需要在该信息的前后各加一个逗号。
+
+- **例句**：
+  - Mr. Smith, **my neighbor**, is a doctor. (同位语)
+  - London, **which is the capital of UK**, is a beautiful city. (非限制性定语从句)
+- **对比 (无需逗号)**：
+  - The student **who sits next to me** is smart. (限制性定语从句：这里的 "who sits next to me" 是用来锁定特定某一个学生的，删掉就不知道在说谁了，所以不能加逗号。)
+
+#### 5. 分隔形容词 (Coordinate Adjectives)
+
+当两个形容词修饰同一个名词，且这两个形容词地位平等（可以互换位置，也可以在中间加 `and`），则需要用逗号分隔。
+
+- **例句**：He is a **smart, funny** guy. (可以说 funny and smart guy)
+- **例外**：如果形容词有累积关系（不可互换），则不用逗号。
+  - She wore a **bright red** shirt. (Bright 修饰的是 red，不是 shirt，不能说 red bright shirt，所以不用逗号)
+
+#### 6. 日期、地址和称呼
+
+- **日期**：在年和日之间加逗号。
+  - July 4, 1776, is an important date.
+- **地址**：分隔街道、城市、州/国家。
+  - I live at 123 Baker Street, London, UK.
+- **直接称呼**：跟人说话时，名字前后要加逗号。
+  - **Tom**, can you help me?
+  - I promise, **Mom**, I will clean my room.
+
+### 第二部分：其他常见易混淆标点
+
+#### 1. 句号 (Period / Full Stop) `.`
+
+- 用于陈述句的结尾。
+- 用于缩写 (如 Mr., Dr., e.g., etc.)。
+
+#### 2. 分号 (Semicolon) `;`
+
+分号的停顿比逗号长，比句号短。
+
+- **连接两个紧密相关的独立句子**（不使用连词时）。
+  - I have a big test tomorrow; I can't go out tonight.
+- **用于复杂的列表**（如果列表项内部已经包含了逗号，为了避免混乱，项与项之间用分号）。
+  - I visited Paris, France; Tokyo, Japan; and New York, USA.
+
+#### 3. 冒号 (Colon) `:`
+
+- **引出列表、解释或引用**。冒号前面的必须是一个完整的句子。
+  - I have three hobbies: reading, swimming, and cooking.
+  - Please remember the golden rule: treat others as you want to be treated.
+
+#### 4. 破折号 (Dash) `—` vs. 连字符 (Hyphen) `-`
+
+这是两个完全不同的符号，但在中文输入法下容易混淆。
+
+- **连字符 (-)**：很短，用于连接复合词。
+  - part-time job, self-confidence, 21-year-old.
+- **破折号 (— / em-dash)**：较长，用于强调、解释或突然转折（类似于加强版的逗号或冒号）。
+  - My friends—Tom, Jerry, and Spike—are coming over.
+
+#### 5. 撇号 (Apostrophe) `'`
+
+- **表示所有格**：John's car (单数), the teachers' room (复数以s结尾).
+- **表示缩写**：don't (do not), it's (it is).
+- **易错点**：`It's` 是 "It is" 的缩写；`Its` 是 "它的" (所有格)，没有撇号。
+
+#### 6. 引号 (Quotation Marks) `""`
+
+- 在美式英语中，句号和逗号通常放在引号**内部**。
+  - "I love you," she said.
+  - He said, "I'll be back."
+
 ## 副词的位置
 
 副词用来修饰动词、形容词、其他副词或整个句子，说明动作或状态的 **方式、频率、地点、时间、程度** 等。
 
-### 副词的基本位置原则
-
-一个简单好记的原则是：**助动词/情态动词后，be动词后，实义动词前**。
-
-**==Be 动词之后==**
-
-- He is **always** on time. (他总是很准时。)
-- She is **often** late for class. (她上课经常迟到。)
-- They were **very** happy after winning the game. (赢得比赛后他们非常开心。)
-
-**==助动词/情态动词之后==**
-
-- I have **already** finished my homework. (我已经完成了我的作业。)
-- You should **never** give up. (你永远不应该放弃。)
-- He can **easily** solve this problem. (他能轻松解决这个问题。)
-
-**==实义动词之前==**
-
-- She **often** reads in the evening. (她经常在晚上阅读。)
-- I **rarely** watch TV. (我很少看电视。)
-- They **usually** eat out on weekends. (他们通常在周末外出吃饭。)
+一个简单好记的基本原则是：**==助动词/情态动词后，be动词后，实义动词前==**。
 
 ### 按功能分类的副词位置详解
 
-#### 1. 方式副词 (Adverbs of Manner)
+#### 1. ==方式副词== (Adverbs of Manner)
 
-- **常见词**：carefully, well, hard, slowly, quickly, fast
-- **位置**：通常放在 **动词或宾语之后**。
+- **位置：通常放在 动词或宾语之后。**
+
+- **基础词**：`carefully`, `well`, `hard`, `slowly`, `quickly`, `fast`
+  - **积极/正面**：`happily` (高兴地), `fluently` (流利地), `politely` (礼貌地), `gently` (温柔地), `beautifully` (优美地)
+  - **消极/负面**：`badly` (糟糕地), `angrily` (生气地), `loudly` (大声地), `rudely` (粗鲁地)
+  - **状态**：`suddenly` (突然地), `quietly` (安静地), `secretly` (秘密地)
 - He drives **carefully**. (他开车很小心。)
 - She speaks English **fluently**. (她英语说得很流利。)
 - They finished the project **quickly**. (他们很快地完成了这个项目。)
 
-#### 2. 频率副词 (Adverbs of Frequency)
+#### 2. ==频率副词== (Adverbs of Frequency)
 
-- **常见词**：always, usually, often, sometimes, seldom, never
-- **位置**：遵循基本位置原则（be动词后，助动词后，实义动词前）。
+- **位置：遵循基本位置原则（be动词后，助动词后，实义动词前）。**
+
+- **基础词**：`always` (100%), `usually` (80%), `often` (60%), `sometimes` (40%), `seldom` (20%), `never` (0%)
+  - **高频**：`frequently` (频繁地), `constantly` (不断地/总是), `continually` (连续地)
+  - **低频**：`rarely` (很少), `hardly ever` (几乎不), `occasionally` (偶尔/间或)
+  - **周期性**：`daily` (每天), `weekly` (每周), `annually` (每年) —— *注：周期性副词通常放句末*。
 - I **always** study in the morning. (我总是在早上学习。)
 - He is **sometimes** busy. (他有时候很忙。)
 - Do you **usually** get up so early? (你通常这么早起床吗？)
 
-#### 3. 时间副词 (Adverbs of Time)
+#### 3. ==时间副词== (Adverbs of Time)
 
-- **常见词**：today, yesterday, now, then, soon, recently
 - **位置**：通常放在 **句末**，也可为强调而放在 **句首**。
+- **基础词**：`today`, `yesterday`, `now`, `then`, `soon`, `recently`
+  - **过去**：`lately` (最近), `previously` (以前), `afterwards` (后来)
+  - **现在/未来**：`currently` (目前), `immediately` (立刻), `eventually` (最终/终于), `shortly` (不久)
+  - **早晚**：`early` (早), `late` (晚), `tonight` (今晚)
 - We will have a meeting **tomorrow**. (我们明天要开会。)
 - **Yesterday**, I went to the museum. (昨天我去了博物馆。)
 - I saw him **recently**. (我最近见过他。)
 
-#### 4. 地点副词 (Adverbs of Place)
+#### 4. ==地点副词== (Adverbs of Place)
 
-- **常见词**：here, there, everywhere, outside, upstairs
 - **位置**：通常放在 **句末**。
+- **基础词**：`here`, `there`, `everywhere`, `outside`, `upstairs`
+  - **方位**：`indoors` (室内), `outdoors` (室外), `downstairs` (楼下), `nearby` (附近)
+  - **范围**：`abroad` (在国外), `overseas` (在海外), `anywhere` (任何地方), `nowhere` (无处)
+  - **方向**：`backwards` (向后), `forwards` (向前), `homewards` (向家)
 - The kids are playing **outside**. (孩子们在外面玩。)
 - Please put the box **here**. (请把箱子放在这里。)
 - Let's go **somewhere** quiet. (我们去个安静的地方吧。)
 
-#### 5. 程度副词 (Adverbs of Degree)
+#### 5. ==程度副词== (Adverbs of Degree)
 
-- **常见词**：very, quite, too, extremely, almost, enough
 - **位置**：通常放在所修饰的 **形容词或副词之前**。
+- **基础词**：`very`, `quite`, `too`, `extremely`, `almost`, `enough`
+  - **极高程度**：`absolutely` (绝对地), `totally` (完全地), `completely` (彻底地), `entirely` (全部地)
+  - **中高程度**：`really` (真地), `highly` (高度地/非常), `deeply` (深深地)
+  - **中低程度**：`fairly` (相当/还算), `rather` (相当/有点), `pretty` (非常/相当)
+  - **低/否定程度**：`barely` (仅仅/几乎不), `scarcely` (几乎不), `slightly` (稍微),
 - The weather is **extremely** cold. (天气极其寒冷。)
 - He runs **very** fast. (他跑得非常快。)
 - This book is **quite** interesting. (这本书相当有趣。)
@@ -852,15 +968,48 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
   - The water is warm **enough** to swim. (水足够暖和，可以游泳了。)
   - You didn't work hard **enough**. (你不够努力。)
 
+### 特殊类别：句子副词 (Sentence Adverbs)
+
+这类副词修饰**整个句子**，表达说话者的观点或态度。
+
+- **位置**：通常放在 **句首**，用逗号隔开。
+- **常见词**：
+  - **`Luckily` / `Fortunately`** (幸运地)
+  - **`Obviously`** (显然地)
+  - **`Actually`** (实际上)
+  - **`Suddenly`** (突然地)
+  - **`Personally`** (就个人而言)
+  - **`Honestly`** (老实说)
+- **例句**：
+  - **Luckily**, no one was hurt. (幸运的是，没人受伤。)
+  - **Obviously**, he didn't study for the test. (显然，他没复习。)
+
 ### 多个副词在句中的顺序
 
 当一个句子中出现多个不同类型的副词来修饰同一个动词时，一般的排列顺序是：
 
-**方式副词 → 地点副词 → 时间副词**
+**方式副词 → 地点副词 → 时间副词（方地时）**
 
 - She sang **beautifully** (方式) **in the concert** (地点) **last night** (时间). (她昨晚在音乐会上唱得非常美。)
 - He worked **hard** (方式) **at home** (地点) **all day** (时间). (他一整天都在家努力工作。)
 - The children played **happily** (方式) **in the garden** (地点) **all afternoon** (时间). (孩子们整个下午都在花园里开心地玩耍。)
+
+### 容易混淆的副词形式 
+
+有些副词加了 `-ly` 后意义会发生完全改变：
+
+1. **`Hard` (努力/困难) vs. `Hardly` (几乎不)**
+   - He works **hard**. (他工作努力。)
+   - He **hardly** works. (他几乎不工作。)
+2. **`Late` (晚/迟) vs. `Lately` (最近)**
+   - He arrived **late**. (他迟到了。)
+   - I haven't seen him **lately**. (我**最近**没见过他。)
+3. **`Near` (近) vs. `Nearly` (几乎/差不多)**
+   - He lives **near** the school. (他住在学校附近。)
+   - I'm **nearly** finished. (我**差不多**完成了。)
+4. **`High` (高) vs. `Highly` (高度地/非常)**
+   - The bird flew **high**. (鸟飞得很高。)
+   - He is a **highly** respected teacher. (他是一位**高度**受尊敬的老师。)
 
 ## 比较句 (Comparative Sentences)
 
