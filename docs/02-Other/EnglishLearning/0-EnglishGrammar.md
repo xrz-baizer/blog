@@ -2,29 +2,78 @@
 
 ## 前言
 
-- 语法过了初学者的坎之后就不再是需要刻意去研究的东西，非英语专业尤其如此。
-- 理解句子先找==动词（谓语）==
-
-### 为什么感觉句子“脱离”了语法规则？
-
-1. **修饰语的加入**：
-   - 句子中常出现时间、地点或原因状语（如 *During lunch*），它们使句子显得更复杂，但主干结构仍在。
-2. **省略与替代**：
-   - 英语句子为简洁或流畅，可能会省略某些不必要的词，如连接词、重复的主语等。
-   - *but to ask my colleagues* 其实可以看作是 *but I had to ask my colleagues* 的简化表达。
-3. **真实语言表达更灵活**：
-   - 实际英语中，会通过短语、分词、修饰语等丰富句子内容，而不单单遵循简单的句型。
-   - 比如，第一个句子如果直接写为 *My iPhone suddenly stopped working.* 就是更基础的结构，但少了细节和描述。
-
-### 如何解决阅读疑惑？
-
-1. **抓住句子主干**：先忽略修饰部分，只关注主谓结构。例如：
-   - 原句：*During lunch, my iPhone 13 Pro suddenly went white screen and became unresponsive.*
-   - 主干：*My iPhone went white screen and became unresponsive.*
-2. **熟悉常见扩展方式**：
-   - 状语、插入语、并列结构是常见的扩展手段，可以多练习类似句子的拆解。
-3. **通过上下文推测意思**：
-   - 即使一开始不能完全理解句型，也可以先抓住核心信息，然后结合上下文逐渐理解修饰部分的作用。
+>**形容词只修饰名词，副词修饰其它的词（通常修饰动词）**
+>
+>**区分表目的的 to/for：**
+>
+>- to + 动词 (Verb) → 表示目的为一个动作：We need to find a time **to meet**.
+>- for + 名词 (Noun) → 表示目的为一个事物或事件：We need to find a time **for a meeting**.
+>
+>**介词（介词词组）**：后面只能出现名词（动名词）
+>
+>- 注意：to也可做介词，表示**方向、关系、接收者**等，此时后面就是**跟名词**而不是动词了
+>
+>**副词的位置，默认规则为：实义动词前、助动词/情态动词后、be动词后**
+>
+>- 主要是频率副词（always, usually, often, sometimes, never 等）的位置规则
+>
+>- 时间、地点副词通常放在句末
+>- 程度副词位置更灵活：I **completely** forgot. / I forgot **completely**.
+>
+>**感官动词（look,smell,taste,sound,feel）**：作系动词时，后面要跟形容词
+>
+>**双宾语的位置**：间接宾语（人）在前，直接宾语（物）在后，也可以对调，但是需要借助介词 to 或者 for
+>
+>- 通常是**人**在前，**物**在后，此时可以省略介词。当反过来时则必须增加介词
+>
+>**可数名词**：表达单数时用不定冠词（a,an），表达复数时后面加s
+>
+>**不可数名词**：不能加 a/an，不能加 s，用 some/much/a lot of 等修饰
+>
+>**冠词的使用：修饰名词**
+>
+>- 单数、可数名词前必须要加 a/an，表示泛指
+>- 表示特指时，都可以用 the
+>
+>**主谓一致：**（simply-version：一般现在时中，当主语是单数时，动词用三单，情态动词除外）
+>
+>- 主语为复数时，动词用复数（动词的复数形式其实就是动词原型）
+>- 主语为单数时，动词用三单（加-s/es）
+>- 有情态动词时（can/may/must等） ，动词用原形（无视主语单复数）
+>
+>**英语中表达“A的B”主要有三种方式（优先考虑 直接拼接名词）**
+>
+>- 当表达 **A是B** 的**种类**、**用途**或**材料**时，无需用 of 或 's，直接将两个名词拼接即可。（Job opportunity）
+>  - 注意：当用一个名词修饰另一个名词时，前面修饰词通常用**单数**。（Job opportunitys）
+>- ’s 所有格：人、动物、时间（Tom's car）
+>- of 所有格：物体归属、抽象概念（The end of the movie）
+>
+>**英语中表达“变”的五种方式：**
+>
+>- 逐渐变用 get：You get fat; It gets colder 
+>- 颜色变用 turn：The leaves turn yellow; Your face turn red
+>- 身份变用 become：I become the emperor; She becomes a doctor
+>- 往坏变用 go：The milk went(go) sour; You go bananas
+>
+>
+>---
+>
+>**翻译技巧**：如果中文句子里没有明确的谓语，那么谓语就是隐藏的“是”，并且“是”后面的内容多半是形容词。
+>
+>**怎么使用定语从句和名词从句**？
+>
+>- 想用一个句子 **修饰** 先行词就用**定语从句**
+>- 想用一个句子 **充当/代替** 主句中的 **主语/宾语/表语/同位语** 时，就用**名词性从句**
+>
+>**翻译时，转换辅助动词为介词**（中文是高频使用动词，而英文是高频使用介词，要学会运用介词来构建句子关系）
+>
+>- **工具/方式/手段：by, with, through, in**
+>  - Please use English to speak -> Please speak **in** English
+>  - People use the internet to learn English -> People learn Enlgish **through** the internet
+>- **状态/伴随（穿着/戴着/怀着）：in, with , of**
+>  - The girl who wears glasses -> The gril **with** glasses.
+>  - He who is wearing a black coat -> He is **in** a black coat.
+>  - She took the award **with** excitement.
 
 ## 句子种类
 
