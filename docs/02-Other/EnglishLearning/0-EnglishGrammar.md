@@ -6,8 +6,8 @@
 >
 >**区分表目的的 to/for：**
 >
->- to + 动词 (Verb) → 表示目的为一个动作：We need to find a time **to meet**.
->- for + 名词 (Noun) → 表示目的为一个事物或事件：We need to find a time **for a meeting**.
+>- to + 动词 → 表示目的为一个动作：We need to find a time **to meet**.
+>- for + 名词 → 表示目的为一个事物或事件：We need to find a time **for a meeting**.
 >
 >**介词（介词词组）**：后面只能出现名词（动名词）
 >
@@ -26,9 +26,11 @@
 >
 >- 通常是**人**在前，**物**在后，此时可以省略介词。当反过来时则必须增加介词
 >
->**可数名词**：表达单数时用不定冠词（a,an），表达复数时后面加s
+>**冠词的使用：修饰名词**
 >
->**不可数名词**：不能加 a/an，不能加 s，用 some/much/a lot of 等修饰
+>- **可数名词**：表达单数时用不定冠词（a,an），表达复数时后面加s
+>
+>- **不可数名词**：不能加 a/an，不能加 s，用 some/much/a lot of 等修饰
 >
 >**冠词的使用：修饰名词**
 >
@@ -45,6 +47,7 @@
 >
 >- 当表达 **A是B** 的**种类**、**用途**或**材料**时，无需用 of 或 's，直接将两个名词拼接即可。（Job opportunity）
 >  - 注意：当用一个名词修饰另一个名词时，前面修饰词通常用**单数**。（Job opportunitys）
+>
 >- ’s 所有格：人、动物、时间（Tom's car）
 >- of 所有格：物体归属、抽象概念（The end of the movie）
 >
