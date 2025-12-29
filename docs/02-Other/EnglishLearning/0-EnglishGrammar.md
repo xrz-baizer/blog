@@ -32,8 +32,8 @@
 >  - 其他限定： 用 my, your, this, that 等。
 >
 >- **不可数名词**：不能加 a/an/s，只能用 some/much/a lot of/little 等修饰，特指用 **the**
+>  - 用 a/an/s/some 都是表泛指，想表特指就用 the
 >
->- 用 a/an/s/some 都是表泛指，想表特指就用 the
 >
 >**主谓一致：**（simply-version：一般现在时中，当主语是单数时，动词用三单，情态动词除外）
 >
@@ -44,9 +44,9 @@
 >**英语中表达“A的B”主要有三种方式（优先考虑 直接拼接名词）**
 >
 >- 当表达 **A是B** 的**种类**、**用途**或**材料**时，无需用 of 或 's，直接将两个名词拼接即可。（Job opportunity）
-> - 注意：当用一个名词修饰另一个名词时，前面修饰词通常用**单数**。（Job opportunitys）
+>  - 注意：当用一个名词修饰另一个名词时，前面修饰词通常用**单数**。（Job opportunitys）
 >
-> - ’s 所有格：人、动物、时间（Tom's car）
+>- ’s 所有格：人、动物、时间（Tom's car）
 >- of 所有格：物体归属、抽象概念（The end of the movie）
 >
 >**英语中表达“变”的五种方式：**
@@ -66,14 +66,19 @@
 >- 想用一个句子 **修饰** 先行词就用**定语从句**
 >- 想用一个句子 **充当/代替** 主句中的 **主语/宾语/表语/同位语** 时，就用**名词性从句**
 >
+>**What和That怎么选？：**
+>
+>- that：陈述事实（这件事）
+>- what：强调内容（什东西）
+>
 >**翻译时，转换辅助动词为介词**（中文是高频使用动词，而英文是高频使用介词，要学会运用介词来构建句子关系）
 >
 >- **工具/方式/手段：by, with, through, in**
-> - Please use English to speak -> Please speak **in** English
-> - People use the internet to learn English -> People learn Enlgish **through** the internet
-> - **状态/伴随（穿着/戴着/怀着）：in, with , of**
+>  - Please use English to speak -> Please speak **in** English
+>  - People use the internet to learn English -> People learn Enlgish **through** the internet
+>- **状态/伴随（穿着/戴着/怀着）：in, with , of**
 >  - The girl who wears glasses -> The gril **with** glasses.
-> - He who is wearing a black coat -> He is **in** a black coat.
+>  - He who is wearing a black coat -> He is **in** a black coat.
 >  - She took the award **with** excitement.
 
 ## 句子种类
