@@ -1759,7 +1759,7 @@ B站讲解：https://www.bilibili.com/video/BV1XY411J7aG?vd_source=201e659a1198f
 
 #### 3.1. 表达愿望 (Wish)
 
-**结构**：wish + 从句
+**结构：==wish + 从句==**
 
 - 从句中动词用过去式，表示与现在事实相反的愿望。
 - 用过去完成时，表示与过去事实相反的愿望。
@@ -1785,12 +1785,13 @@ B站讲解：https://www.bilibili.com/video/BV1XY411J7aG?vd_source=201e659a1198f
    - If I **had known**, I **would have helped** you. （如果我当时知道，我就会帮助你。）
    - If she **had studied**, she **might have passed** the exam. （如果她努力学习，她可能会通过考试。）
 
-#### 3.3. 表示建议、要求或必要性 (Suggestions, Requests, Necessity)
+#### 3.3. 表示建议、要求、命令或必要性
 
-**结构**：主句用表建议、要求等的动词 + that 从句
-从句中动词用**动词原形**。
+**结构：==主句用表建议、要求等的动词 + that 从句==**
 
-**常见动词/形容词**：suggest, insist, demand, recommend, important, necessary 等。
+- 注意：从句中动词用**==动词原形==**。
+
+**常见动词/形容词**：require, suggest, insist, demand, recommend, important, necessary 等。
 
 **例子**：
 
