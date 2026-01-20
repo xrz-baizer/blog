@@ -1182,7 +1182,7 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 - **If** you **heat** ice, it **melts**. (如果你加热冰，它就会融化。)
 -  **If** plants **don't get** water, they **die**. (如果植物得不到水，它们就会死亡。)
 
-#### 2. 第一条件句 (First Conditional)【常用】
+#### 2. 第一条件句 (First Conditional)【常用】【虚拟语气】
 
 **用途：描述一个未来可能发生的真实情况以及其可能的结果。这是对未来的“预测”或“计划”。**
 
@@ -1191,7 +1191,7 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 - **If** it **rains** tomorrow, we **will cancel** the trip. (如果明天下雨，我们就会取消行程。)
 -  **If** you **study** hard, you **will pass** the exam. (如果你努力学习，你就会通过考试。)
 
-#### 3. 第二条件句 (Second Conditional)【常用】
+#### 3. 第二条件句 (Second Conditional)【常用】【虚拟语气】
 
 **用途：描述一个与现在或未来事实相反的假设或想象。常用于表达“如果我是...我就会...”这种不真实的愿望。**
 

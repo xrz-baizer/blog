@@ -383,7 +383,8 @@ GitHub：https://github.com/remsky/Kokoro-FastAPI
 ```sh
 docker run -d --name Kokorotts \
   -p 8880:8880 \
-  --memory 2048m \
-  ghcr.io/remsky/kokoro-fastapi-cpu:v0.2.2
+  --memory 3072m \
+  ghcr.io/remsky/kokoro-fastapi-cpu:latest
 ```
 
+http://tencentserver:8880/web/
