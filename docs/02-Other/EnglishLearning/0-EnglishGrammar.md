@@ -334,6 +334,7 @@ What 后面通常接名词或名词短语，强调事物本身。
 **结构：==疑问词 + 助动词/情态动词 + 主语 + 谓语 + 其它?==**
 
 - **其实就是：==疑问词 + 一般疑问句==**
+- **注意：当疑问词作主语时，不需要增加助动词。直接是“==疑问词 + 谓语动词==”**
 
 常见的疑问词：**What, Where, When, Why, Who, Which, How**
 
@@ -645,6 +646,7 @@ The rabbit will eat the carrot.
 > 6. **用在某些专有名词前**：
 >    - **江河、海洋、山脉、群岛**：*the Yangtze River* (长江), *the Pacific Ocean* (太平洋), *the Himalayas* (喜马拉雅山脉)
 >    - **由普通名词构成的国家或机构名称**：*the United States* (美国), *the United Nations* (联合国)
+>      - 国家：某种专有名词则不加，比如China，而普通名词则会加，比如：The People's Republic of China
 >    - **报纸、建筑物、博物馆名称**：*the New York Times* (纽约时报), *the Eiffel Tower* (埃菲尔铁塔)
 >    - **姓氏的复数形式，表示一家人**：*the Smiths* (史密斯一家)
 
@@ -1206,7 +1208,7 @@ This is a B/C/D/G/J/K/P/Q/R/T/U/V/W/Y/Z.
 
 **用途：描述一个与过去事实相反的假设，通常用来表达对过去的懊悔或抱怨。**
 
- **==结构：If + 过去完成时 (had + 动词的过去分词), would have + 动词过去分词==**
+ **==结构：If + 过去完成时 (had + done), would have + done==**
 
 - **If** I **had left** earlier, I **would have caught** the train. (如果我当时早点出发，我就赶上火车了。 -> 事实是我出发晚了，没赶上)
 - **If** she **had studied**, she **would have passed** the exam. (如果她当时学习了，她就能通过考试了。 -> 事实是她没学，所以没通过)
